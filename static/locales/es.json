@@ -24,11 +24,11 @@
     "JasperReports": "Es un proyecto web con spring que es capaz de generar informes a partir de plantillas de jasper reports."
   },
   "career":{
-    "my_career": "My Career",
-    "AXPE": "AXPE",
-    "AXPE_des": "Trabajo en AXPE desarrollando aplicaciones empresariales.",
-    "AXPE_date": "Apr. 2016",
-    "AXPE_job": "Python Developer",
+    "my_career": "Mi trayectoria profesional",
+    "SATEC": "SATEC",
+    "SATEC_des": "Trabajo en SATEC desarrollando aplicaciones empresariales.",
+    "SATEC_date": "Apr. 2016",
+    "SATEC_job": "Python Developer",
     "college": "Graduación Ingeniero informático",
     "college_des": "Diciembre 2005, Conseguí el título de ingeniero informático y empece mi andadura como profesional.",
     "college_date": "Diciembre 2005",

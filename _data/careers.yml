@@ -1,15 +1,15 @@
 - name:
-    detail: AXPE
-    i18n: AXPE
+    detail: SATEC
+    i18n: SATEC
   desc:
-    detail: Trabajo en AXPE desarrollando aplicaciones empresariales.
-    i18n: AXPE_des
+    detail: Trabajo en SATEC desarrollando aplicaciones empresariales.
+    i18n: SATEC_des
   date:
     detail: Marzo. 2014
-    i18n: AXPE_date
+    i18n: SATEC_date
   job:
     detail: Java Developer
-    i18n: AXPE_job
+    i18n: SATEC_job
   icon: fa-university 
 
 #- name:
