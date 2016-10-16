@@ -1,6 +1,6 @@
 {
   "website":{
-    "title": "Javier's blog"
+    "title": "Blog de Javier Martín Alonso"
   },
   "nav":{
     "home": "Home",
@@ -13,7 +13,7 @@
   },
   "about_me":{
     "about_me": "About Me",
-    "des": "I am a computer engineer and I make a living developing enterprise Java applications. Life is a continuous learning process, so developing this blog makes me the most rigorous work."
+    "des": "Soy ingeniero informático y me gano la vida desarrollando aplicaciones java empresariales. La vida es un proceso de aprendizaje continuo, por lo que desarrollar este blog me hace el trabajo más riguroso."
   },
   "skills":{
     "my_skills": "My Skills"
