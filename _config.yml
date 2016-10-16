@@ -50,7 +50,7 @@ sections:
     tpl: 'blog.html'
     css: 'testimonials navy-section'
 
-    # Comento la seccion de links no la necesito por ahora
+# Comento la seccion de links no la necesito por ahora
 #   - id: 'links'
 #     i18n: 'nav.link'
 #     name: 'Links'
@@ -67,10 +67,11 @@ languages:
 # blog img path
 img_path: 'https://javiermartinalonso.github.io/static/img/blog'
 
+# Comento la seccion de donate no la necesito por ahora
 # donate
-donate:
-  wechat: 'static/img/pay/wechat.png'
-  alipay: 'static/img/pay/alipay.png'
+#donate:
+#  wechat: 'static/img/pay/wechat.png'
+#  alipay: 'static/img/pay/alipay.png'
 
 # comment
 changyan:
