@@ -1,23 +1,22 @@
 # Welcome to Jekyll!
 
 # Website settings
-title: "Jalpc"
-description: "Jack's blog,use Jekyll and github pages."
-keywords: "Jack,Jalpc,blog,Jekyll,github,gh-pages"
+title: "Javier Martín Alonso"
+description: "Blog de Javier Martín Alonso,usando Jekyll y github pages."
+keywords: "Javier,Javier Martín,blog,Jekyll,github,gh-pages"
 baseurl: "/"
-url: "http://www.jack003.com"
-# url: "http://127.0.0.1:4000"
+url: "https://javiermartinalonso.github.io/"
 
 # author
 author:
-  name: 'Jack'
-  first_name: 'Jia'
-  last_name: 'Kun'
-  email: 'me@jack003.com'
-  facebook_username: 'jiakunnj'
-  github_username: 'Jack614'
-  head_img: 'static/img/landing/Jack.jpg'
-  desc: 'I am a Python engineer with website development, automation Ops and writing scripts experience. Life is a continuous learning process, so work makes me more rigorous, travel makes my life more colorful. I can make lots of friends when I coding and travel.'
+  name: 'Javier'
+  first_name: 'Martín'
+  last_name: 'Alonso'
+  email: 'javimartinalonso@gmail.com'
+  facebook_username: 'javier.martinalonso.73'
+  github_username: 'javiermartinalonso'
+  head_img: 'static/img/landing/javi.jpg'
+  desc: 'Soy ingeniero informático y me gano la vida desarrollando aplicaciones java empresariales. La vida es un proceso de aprendizaje continuo, por lo que desarrollar este blog me hace el trabajo más riguroso.'
 
 # sections
 sections:
@@ -59,13 +58,13 @@ sections:
 
 # localization
 languages:
+  - locale: 'es'
+    flag: 'static/img/flags/Spain.png'
   - locale: 'en'
     flag: 'static/img/flags/United-States.png'
-  - locale: 'zh'
-    flag: 'static/img/flags/China.png'
 
 # blog img path
-img_path: 'http://www.jack003.com/static/img/blog'
+img_path: 'https://javiermartinalonso.github.io/static/img/blog'
 
 # donate
 donate:
@@ -77,20 +76,20 @@ changyan:
   # appid: cysfY7ULn
   # conf: prod_861928934cecb7a18e15bedaed9dae29
 disqus:
-  name: jalpc
-  public_key: tj2MPaNlHMONwTH5bGDNSXyaBpW7q282MeUzh5CwcjJerNhK8Kxk3aWo7IckzTX7
+#   name: jalpc
+#   public_key: tj2MPaNlHMONwTH5bGDNSXyaBpW7q282MeUzh5CwcjJerNhK8Kxk3aWo7IckzTX7
 
 # share
 bshare:
-  uuid: 513f778e-a8f7-4c20-9ec2-d29cc2328d75
+#   uuid: 513f778e-a8f7-4c20-9ec2-d29cc2328d75
 
 # baidu analytics
 ba:
-  uuid: 317acca9ef9255b934e46371e471431d
+#   uuid: 317acca9ef9255b934e46371e471431d
 
 # google analytics
 ga:
-  id: UA-73784599-1
+#   id: UA-73784599-1
 
 # Build settings
 encoding: "utf-8"
