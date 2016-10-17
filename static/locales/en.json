@@ -20,7 +20,7 @@
   },
   "projects":{
     "my_projects": "My Projects",
-    "SPRING_LDAP_MANAGEMENT" "project with which we make a product for managing an LDAP from a web manager."
+    "SPRING_LDAP_MANAGEMENT" "project with which we make a product for managing an LDAP from a web manager.",
      "JasperReports": "This is a web project with spring that is able to generate reports from templates jasper reports."
   },
   "career":{
