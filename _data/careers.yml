@@ -10,7 +10,7 @@
   job:
     detail: Java Developer
     i18n: SATEC_job
-  icon: fa-university 
+  icon: fa-coffee
 
 #- name:
 #    detail: Netease Game
@@ -38,4 +38,4 @@
   job:
     detail: Student
     i18n: college_job
-  icon: fa-book
+  icon: fa-university 
