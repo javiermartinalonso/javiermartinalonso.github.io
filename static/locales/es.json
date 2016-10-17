@@ -4,16 +4,16 @@
   },
   "nav":{
     "home": "Home",
-    "about_me": "Acerca de mí",
+    "about_me": "Presentación",
     "skills": "Habilidades",
-    "projects": "Projectos",
-    "career": "Recorrido profesional",
+    "projects": "Proyectos",
+    "career": "Trayectoria",
     "blog": "Blog",
     "link": "Link"
   },
   "about_me":{
-    "about_me": "Acerca de mí",
-    "des": "Soy ingeniero informático y me gano la vida desarrollando aplicaciones java empresariales. La vida es un proceso de aprendizaje continuo, por lo que desarrollar este blog me hace el trabajo más riguroso."
+    "about_me": "Presentación",
+    "des": "Soy ingeniero informático y me gano la vida desarrollando aplicaciones java empresariales. La vida es un proceso de aprendizaje continuo, os invito a que me acompañeis en el camino."
   },
   "skills":{
     "my_skills": "Mis habilidades"
@@ -27,7 +27,7 @@
     "my_career": "Mi trayectoria profesional",
     "SATEC": "SATEC",
     "SATEC_des": "Trabajo en SATEC desarrollando aplicaciones empresariales.",
-    "SATEC_date": "Apr. 2016",
+    "SATEC_date": "Apr. 2014",
     "SATEC_job": "JAVA Developer",
     "college": "Graduación Ingeniero informático",
     "college_des": "Diciembre 2005, Conseguí el título de ingeniero informático y empece mi andadura como profesional.",

@@ -13,35 +13,25 @@
   },
   "about_me":{
     "about_me": "About Me",
-    "des": "I am a computer engineer and I make a living developing enterprise Java applications. Life is a continuous learning process, so developing this blog makes me the most rigorous work."
+    "des": "I am a computer engineer and I make a living developing enterprise Java applications. Life is a continuous learning process, I invite you to accompany me on the road."
   },
   "skills":{
     "my_skills": "My Skills"
   },
   "projects":{
     "my_projects": "My Projects",
-    "saplatform": "Saplatform is a automated service for operations, it has asset management, project release, database access function, it can control mass servers.",
-    "jalpc": "Jalpc is a simple, beautiful and swift theme for Jekyll. It has comprehensive function, it can be easily used and edited. It's adapted for many kinds devices.",
-    "angularjs": "It is a web font application written by Angularjs and deployed by Jekyll on github (gh-pages), the backend platform is Leancloud, you can use Parse as well.",
-    "rsser": "Rsser is an Ionic application, with this application we can read news and articles freely, you can add rss address from the given list and add it manually."
+    "SPRING_LDAP_MANAGEMENT" "project with which we make a product for managing an LDAP from a web manager."
+     "JasperReports": "This is a web project with spring that is able to generate reports from templates jasper reports."
   },
   "career":{
     "my_career": "My Career",
-    "nextcode": "Nextcode",
-    "nextcode_des": "Now I am in Nextcode and develop website with Python code for genetic analysis.",
-    "nextcode_date": "Apr. 2016",
-    "nextcode_job": "Python Developer",
-    "netease": "Netease Game",
-    "netease_des": "In Netease game, I learned game service system and use Python code for ops.",
-    "netease_date": "Jun. 2015",
-    "netease_job": "Dev Ops",
-    "ucloud": "Ucloud",
-    "ucloud_des": "In ucloud, I started to deal with servers and Linux system and use shell scripts to manage massive server.",
-    "ucloud_date": "Sep. 2013",
-    "ucloud_job": "Dev Ops",
+    "SATEC": "SATEC",
+    "SATEC_des": "SATEC I'm working on developing business applications.",
+    "SATEC_date": "Apr. 2014",
+    "SATEC_job": "JAVA Developer",
     "college": "Graduation",
-    "college_des": "At July 2013,I graduated from college and started my IT technology tour.",
-    "college_date": "Jul. 2013",
+    "college_des": "At December 2005,I graduated from college and started my IT technology tour.",
+    "college_date": "Dec. 2005",
     "college_job": "Student"
   },
   "blog":{
