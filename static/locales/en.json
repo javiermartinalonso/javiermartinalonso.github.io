@@ -19,20 +19,20 @@
     "my_skills": "My Skills"
   },
   "projects":{
-    "my_projects": "My Projects",
-    "SPRING_LDAP_MANAGEMENT": "project with which we make a product for managing an LDAP from a web manager.",
-    "JasperReports": "This is a web project with spring that is able to generate reports from templates jasper reports."
+    "my_projects": "Mis proyectos",
+    "SPRING_LDAP_MANAGEMENT": "Proyecto con el que queremos hacer un producto para gestionar un LDAP desde un gestor WEB.",
+    "JasperReports": "Es un proyecto web con spring que es capaz de generar informes a partir de plantillas de jasper reports."
   },
   "career":{
-    "my_career": "My Career",
+    "my_career": "Mi trayectoria profesional",
     "SATEC": "SATEC",
-    "SATEC_des": "SATEC I'm working on developing business applications.",
+    "SATEC_des": "Trabajo en SATEC desarrollando aplicaciones empresariales.",
     "SATEC_date": "Apr. 2014",
     "SATEC_job": "JAVA Developer",
-    "college": "Graduation",
-    "college_des": "At December 2005,I graduated from college and started my IT technology tour.",
-    "college_date": "Dec. 2005",
-    "college_job": "Student"
+    "college": "Graduación Ingeniero informático",
+    "college_des": "Diciembre 2005, Conseguí el título de ingeniero informático y empece mi andadura como profesional.",
+    "college_date": "Diciembre 2005",
+    "college_job": "Studiante"
   },
   "blog":{
     "my_blog": "My Blog"
