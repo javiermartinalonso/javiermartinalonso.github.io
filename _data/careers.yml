@@ -12,19 +12,47 @@
     i18n: SATEC_job
   icon: fa-coffee
 
-#- name:
-#    detail: Netease Game
-#    i18n: netease
-#  desc:
-#    detail: In Netease game, I learned game service system and use Python code for ops.
-#    i18n: netease_des
-#  date:
-#    detail: Jun. 2015
-#    i18n: nextcode_date
-#  job:
-#    detail: Dev Ops
-#    i18n: netease_job
-#  icon: fa-gamepad
+- name:
+    detail: AXPE CONSULTING SL
+    i18n: AXPE
+  desc:
+    detail: Tareas de consultoría, gestión de proyecto de prestamos PRODUBAN/ISBAN grupo Santander.
+    i18n: AXPE_des
+  date:
+    detail: Abril. 2008
+    i18n: AXPE_date
+  job:
+    detail: Consultant / Team Leader / Project Manager
+    i18n: AXPE_job
+  icon: fa-coffee
+
+- name:
+    detail: NEXT CS
+    i18n: NEXT
+  desc:
+    detail: Desarrollo de framework de persistencia para la gerencia de la Seg. social.
+    i18n: NEXT_des
+  date:
+    detail: Febrero. 2007
+    i18n: NEXT_date
+  job:
+    detail: Analyst
+    i18n: NEXT_job
+  icon: fa-coffee
+
+- name:
+    detail: VECTOR SF
+    i18n: VECTOR
+  desc:
+    detail: Programador de aplicaciones de gestión Bancaria.
+    i18n: VECTOR_des
+  date:
+    detail: Febrero. 2006
+    i18n: VECTOR_date
+  job:
+    detail: Senior programmer
+    i18n: VECTOR_job
+  icon: fa-coffee
 
 - name:
     detail: Graduación Ingeniero informático
