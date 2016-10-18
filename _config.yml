@@ -50,12 +50,12 @@ sections:
     tpl: 'blog.html'
     css: 'testimonials navy-section'
 
-# Comento la seccion de links no la necesito por ahora
-#   - id: 'links'
-#     i18n: 'nav.link'
-#     name: 'Links'
-#     tpl: 'links.html'
-#     css: 'contact'
+ Comento la seccion de links no la necesito por ahora
+   - id: 'links'
+     i18n: 'nav.link'
+     name: 'Links'
+     tpl: 'links.html'
+     css: 'contact'
 
 # localization
 languages:
