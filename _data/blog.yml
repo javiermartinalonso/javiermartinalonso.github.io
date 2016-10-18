@@ -4,8 +4,8 @@
 - name: Bonita BPM
   href: '/bonita/'
 
-- name: Linux
-  href: '/linux/'
+- name: LDAP
+  href: '/LDAP/'
 
 - name: Spring
   href: '/spring/'
