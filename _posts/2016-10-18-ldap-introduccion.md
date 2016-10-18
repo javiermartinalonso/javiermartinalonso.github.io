@@ -25,6 +25,12 @@ Un árbol de directorio LDAP a veces refleja varios límites políticos, geográ
 
 Habitualmente, almacena la información de autenticación (usuario y contraseña) y es utilizado para autenticarse aunque es posible almacenar otra información (datos de contacto del usuario, ubicación de diversos recursos de la red, permisos, certificados, etc). 
 
+![ejemplo ldap](https://www.edrawsoft.com/images/network/ldap_Full.png)
+
+<img src="https://www.edrawsoft.com/images/network/ldap_Full.png" alt="ejemplo LDAP" class="img-preview">
+
+<img src="https://www.edrawsoft.com/images/network/ldap_Full.png" alt="ejemplo LDAP" align="middle">
+
 A manera de síntesis, LDAP es un protocolo de acceso unificado a un conjunto de información sobre una red.
 
 La versión actual es LDAPv3, y se encuentra definido en los RFCs RFC 2251 y RFC 2256 (documento base de LDAP), RFC 2829 (método de autentificación para LDAP), RFC 2830 (extensión para TLS), y RFC 3377 (especificación técnica)
@@ -44,4 +50,4 @@ Entre las implementaciones de LDAP más conocidas tenemos el Directorio Activo d
 
 <https://es.wikipedia.org/wiki/Protocolo_Ligero_de_Acceso_a_Directorios>
 
-<http://es.bonitasoft.com/>
+<https://www.edrawsoft.com/LDAP.php>
