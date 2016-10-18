@@ -45,6 +45,6 @@ Bonita BPM puede aplicarse en varios proyectos que requieran flujos de trabajo c
 * Dispón de varias e independientes organizaciones con nuestra plataforma multi-tenant
 
 ## Referencias
-https://es.wikipedia.org/wiki/Bonita_Open_Solution
+<https://es.wikipedia.org/wiki/Bonita_Open_Solution>
 
-http://es.bonitasoft.com/
+<http://es.bonitasoft.com/>
