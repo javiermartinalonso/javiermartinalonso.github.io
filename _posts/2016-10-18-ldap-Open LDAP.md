@@ -4,7 +4,7 @@ title:  "OpenLDAP"
 date:   2016-10-18
 desc: "OpenLDAP"
 keywords: "OpenLDAP"
-categories: [ldap]
+categories: [LDAP]
 tags: [OpenLDAP,ldap,instalación, windows]
 icon: fa-code
 ---

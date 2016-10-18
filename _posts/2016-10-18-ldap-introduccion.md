@@ -4,7 +4,7 @@ title:  "LDAP Introducción"
 date:   2016-10-18
 desc: "LDAP Introducción"
 keywords: "LDAP,Introducción"
-categories: [ldap]
+categories: [LDAP]
 tags: [ldap,Introducción]
 icon: fa-code
 ---

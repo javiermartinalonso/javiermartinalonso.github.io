@@ -1,12 +1,14 @@
-- name: Bonita BPM
-  percentage: 15
-
 - name: Spring
   percentage: 85
-
-- name: Linux/Shell
-  percentage: 65
 
 - name: jQuery
   percentage: 70
 
+- name: Linux/Shell
+  percentage: 65  
+
+- name: Bonita BPM
+  percentage: 15
+
+- name: LDAP
+  percentage: 15
