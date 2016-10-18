@@ -9,7 +9,7 @@ tags: [ldap,Introducción]
 icon: fa-code
 ---
 
-### LDAP
+# LDAP
 
 ## ¿A que nos referimos cuando hablamos de LDAP?
 
