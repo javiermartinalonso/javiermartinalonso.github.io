@@ -49,8 +49,7 @@ sections:
     name: 'Blog'
     tpl: 'blog.html'
     css: 'testimonials navy-section'
-
- Comento la seccion de links no la necesito por ahora
+# Links
    - id: 'links'
      i18n: 'nav.link'
      name: 'Links'
