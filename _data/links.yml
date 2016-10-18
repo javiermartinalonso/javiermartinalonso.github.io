@@ -1,11 +1,5 @@
-- last_name: 'de Arcos'
-  first_name: 'Jaime'
+- last_name:  de Arcos
+  first_name: Jaime
   desc: 'Full Stack Developer'
   website: 'https://jaimedearcos.github.io/'
   email: 'jaime.dearcos@gmail.com'
-
-#- last_name: Lucas
-#  first_name: Schejtman
-#  desc: 'Full Stack Developer.'
-#  website: 'http://lucasschejtman.github.io'
-#  email: 'lucas.schejtman@gmail.com'
