@@ -49,7 +49,7 @@ sections:
     name: 'Blog'
     tpl: 'blog.html'
     css: 'testimonials navy-section'
-# Links
+    
    - id: 'links'
      i18n: 'nav.link'
      name: 'Links'
