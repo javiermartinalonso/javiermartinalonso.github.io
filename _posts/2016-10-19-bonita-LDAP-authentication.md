@@ -67,11 +67,11 @@ Hay que identificar cuál de los siguientes casos se aplica:
 
 * <em><strong>userProvider</strong></em>: Ponga esto en <em>ldap://\<ldap server address>:\<ldap server port\>/\<DN  of the LDAP entry under which all users are located\></em>. Por ejemplo:<em>ldap://localhost:389/CN=Users,DC=MyDomain,DC=com</em>
 
-* <em><strong>userFilter(sólo si es necesario)</strong></em>: el valor debe ser una petición de búsqueda que se encuentra a sus usuarios en el servidor LDAP. La solicitud de búsqueda puede ser, por ejemplo: '(&(objectClass=user)(userPrincipalName={USERNAME}@mydomain.com))'. Utilice una herramienta de LDAP (como Apache Directory Studio) para validar que la solicitud devuelve el resultado esperado si se reemplaza '{usuario}' con un nombre de usuario real.
+* <em><strong>userFilter(sólo si es necesario)</strong></em>: el valor debe ser una petición de búsqueda que se encuentra a sus usuarios en el servidor LDAP. La solicitud de búsqueda puede ser, por ejemplo: <em>(&(objectClass=user)(userPrincipalName={USERNAME}@mydomain.com))</em>. Utilice una herramienta de LDAP (como Apache Directory Studio) para validar que la solicitud devuelve el resultado esperado si se reemplaza <em><strong>{usuario}</strong></em> con un nombre de usuario real.
 
 * <em><strong>authIdentity(sólo si es necesario)</strong></em>: hay dos casos: 
-Si se puede construir el DN de usuario, establezca el valor del atributo con el usuario y el DN de '{USERNAME}' la etiqueta. Por ejemplo 'uid={USERNAME},ou=users,dc=example,dc=com' . 
-Si se utiliza una userFilter y los usuarios pueden buscar, establezca el valor de '{USERNAME}@mydomain.com' para AD y el DN de usuario (igual al anterior) para otros servidores LDAP.
+Si se puede construir el DN de usuario, establezca el valor del atributo con el usuario y el DN de <em><strong>{USERNAME}</strong></em> la etiqueta. Por ejemplo <em><strong>uid={USERNAME},ou=users,dc=example,dc=com</strong></em>. 
+Si se utiliza una userFilter y los usuarios pueden buscar, establezca el valor de <em><strong>{USERNAME}@mydomain.com</strong></em> para AD y el DN de usuario (igual al anterior) para otros servidores LDAP.
 
 * <em><strong>tryFirstPass (sólo si es necesario)</strong></em>: ponga esto en true.
 
