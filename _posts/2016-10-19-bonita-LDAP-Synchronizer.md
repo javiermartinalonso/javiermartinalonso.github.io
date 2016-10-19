@@ -95,6 +95,24 @@ Aqui se explica más en detalle como realizar esta tarea:
 
 <http://documentation.bonitasoft.com/6.x-7.2/bonita-home-876>
 
+## Restricciones de la organización producidos por la herramienta:
+
+- El nombre de cada grupo debe ser único, independientemente de su jerarquía. No puede haber dos grupos que se llamen igual en la jerarquía del LDAP que sincronicemos.
+- Hay que usar los object domain indicados en la documentación, no nos podemos inventar uno nuevo.
+
+
+La herramienta, no sincroniza los cambios en la jerarquía de grupos, pero mantiene la jerarquía antigua
+
+### Cuestiones:
+
+#### ¿Qué pasa si borro un grupo en el LDAP?
+- No desaparece el grupo en la organización de bonita ni se toca sus miembros. 
+- Si un usuario pertenecía antes a ese grupo y exclusivamente a ese grupo, después de sincronizar el usuario pasa a estar inactivo.
+- Si incluimos un usuario inactivo en un grupo nuevo, se incluye esto en su membresia y el usuario pasa a estar activo.
+
+#### ¿Qué pasa si borro un usuario en el LDAP?
+- si borras el objeto person de ese usuario del grupo people: Pasa a inactivo en el motor de bonita.
+- si borro su pertenencia a un grupo: No pasa nada. Debe borrarse como integrante de todos los grupos para que pase a inactivo en el motor de bonita, aunque exista su definición como objeto person en el grupo people. Para el usuario en el motor de bonita no se toca su membresia antigua. Si el usuario pertenecía antes a un grupo, después de sincronizar sigue perteneciendo a ese grupo. Pasa a estar inactivo en la organización de bonita pero toda su membresia se guarda.
 
 ## Referencias
 
