@@ -16,9 +16,7 @@ La idea es que yo debería poder llevar este Bundle a otro entorno/máquina y re
 
 ## ¿Cómo instalar el bundle bonita JBOSS?
 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7T-5n1i-ycU?list=PLkQrLrDQK4Z3Ncpm1CLbHs0CvqYV1XJXU" frameborder="0" allowfullscreen></iframe>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/R7aeligaIyU?list=PLkQrLrDQK4Z3Ncpm1CLbHs0CvqYV1XJXU" frameborder="0" allowfullscreen></iframe>
 
 ## Referencias
 
