@@ -77,11 +77,13 @@ A continuación se presentan todas las acciones realizadas por la herramienta si
 La herramienta se puede determinar la lista de los usuarios que pertenecen a un grupo de la organización examinado estas propiedades, dependiendo de objectClass del grupo:
 
 <em><strong>
-* member: group objectclass
-* memberURL: groupOfURLs objectclass
-* member: groupOfNames objectclass
-* uniqueMember: groupOfUniqueNames objectclass
-* ds-target-group-dn: ds-virtual-static-group objectclass
+<ol>
+  <li>member: group objectclass</li>
+  <li>memberURL: groupOfURLs objectclass</li>
+  <li>member: groupOfNames objectclass</li>
+  <li>uniqueMember: groupOfUniqueNames objectclass</li>  
+  <li>ds-target-group-dn: ds-virtual-static-group objectclass</li>  
+</ol>
 </strong></em>
 
 ## Configuracion de la herramienta
