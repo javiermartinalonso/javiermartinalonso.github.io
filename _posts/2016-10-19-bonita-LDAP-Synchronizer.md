@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Bonita BPM LDAP synchronizer"
-date:   2016-10-16
+date:   2016-10-19
 desc: "Bonita BPM Herramientas para la gestión de una organización"
 keywords: "Bonita BPM, organizacion, LDAP synchronizer"
 categories: [bonita]
