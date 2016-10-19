@@ -27,20 +27,18 @@ El servicio de sincronización de LDAP mantiene la información de la organizaci
 El sincronizador LDAP se conecta con el servidor LDAP y el motor de Bonita BPM  para leer los datos desde el servidor LDAP y modificar la organización en la base de datos del motor Bonita BPM utilizando la API. Tanto el servidor LDAP del motor y deben estar en ejecución cuando se ejecuta la herramienta de LDAP sincronizador.
 El programa sincronizador funciona en backend. No hay ninguna interfaz de usuario: todos los valores de configuración se especifican en los archivos y todas las salidas se escriben en un archivo de registro de log.
 
-the LDAP synchronizer, which is available with the Bonita BPM Performance, Efficiency, and Teamwork editions.
-
 El sincronizador, sincroniza los objetos LDAP que heredan de la clase "person" con los "users" en Bonita BPM. La aplicación del sincronizador no es compatible con los metadatos de usuario de bonita y no puede sincronizar las contraseñas. Tras la sincronización al usuarios se le asigna una nueva contraseña que coincide con el identificador del usuario.
 
 ## Los archivos de configuración
 Hay cinco archivos de propiedades:
 
-* bonita.properties: define la configuración de conexión contra el motor de Bonita y especifica la cuenta utilizada para la sincronización de usuario (requiere privilegios de administración del portal).
-* ldap.properties:	 define la configuración de conexión LDAP y especifica la cuenta utilizada para la navegación del usuario.
-* logger.properties: proporciona los ajustes para el registrador de logs. Los ajustes por defecto debería estar bien para la mayoría de usos.
-* mapper.properties: especifica el mapeo (binding) entre los atributos de usuario del directorio LDAP y los usuarios de Bonita BPM.
-* sync.properties:	 define los ajustes del proceso de sincronización.
+* <strong>bonita.properties</strong>:	define la configuración de conexión contra el motor de Bonita y especifica la cuenta utilizada para la sincronización de usuario (requiere privilegios de administración del portal).
+* <strong>ldap.properties</strong>:	 define la configuración de conexión LDAP y especifica la cuenta utilizada para la navegación del usuario.
+* <strong>logger.properties</strong>:	proporciona los ajustes para el registrador de logs. Los ajustes por defecto debería estar bien para la mayoría de usos.
+* <strong>mapper.properties</strong>:	especifica el mapeo (binding) entre los atributos de usuario del directorio LDAP y los usuarios de Bonita BPM.
+* <strong>sync.properties</strong>:	define los ajustes del proceso de sincronización.
 
-Todos los archivos de configuración se pueden encontrar en el directorio [home syncronizer]/conf. 
+Todos los archivos de configuración se pueden encontrar en el directorio <em>[home syncronizer]/conf</em>. 
 
 ## Ejecución del sincronizador
 
@@ -63,11 +61,11 @@ A continuación se presentan todas las acciones realizadas por la herramienta si
 	
 La herramienta se puede determinar la lista de los usuarios que pertenecen a un grupo de la organización examinado estas propiedades, dependiendo de objectClass del grupo:
 
-* member: group objectclass
+* <em>member: group objectclass
 * memberURL: groupOfURLs objectclass
 * member: groupOfNames objectclass
 * uniqueMember: groupOfUniqueNames objectclass
-* ds-target-group-dn: ds-virtual-static-group objectclass
+* ds-target-group-dn: ds-virtual-static-group objectclass</em>
 
 ## Configuracion de la herramienta
 
@@ -79,6 +77,7 @@ Aqui se explica más en detalle como realizar esta tarea:
 
 
 ## Referencias
+
 http://documentation.bonitasoft.com/6.x-7.2/organization-management-bonita-bpm-studio
 http://documentation.bonitasoft.com/6.x-7.2/ldap-synchronizer-3
 http://documentation.bonitasoft.com/6.x-7.2/bonita-home-876
