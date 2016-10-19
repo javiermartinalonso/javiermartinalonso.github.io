@@ -17,7 +17,7 @@ Muchas distribuciones GNU/Linux incluyen el software OpenLDAP para el soporte LD
 
 Veamos como podemos montar un servicio centralizado de autenticación con OpenLDAP:
 
-[![00 INSTALACION OPENLDAP WINDOWS](http://img.youtube.com/vi/t6KBm5pAsFo/0.jpg)](http://www.youtube.com/watch?v=t6KBm5pAsFo "00 INSTALACION OPENLDAP WINDOWS")
+<iframe width="560" height="315" src="https://www.youtube.com/embed/t6KBm5pAsFo" frameborder="0" allowfullscreen></iframe>
 
 ## Referencias
 <https://es.wikipedia.org/wiki/OpenLDAP>
