@@ -93,7 +93,8 @@ Si edita este fichero los ajustes se aplicarán a todos los nuevos tenants. Para
 Usted tendrá que realizar los cambios siguientes:
 
 * Comentar la linea de authenticationService
-* Añadir esta nueva línea: 
+* Añadir esta nueva línea:
+	
 	<em><strong>authentication.service.ref.name=jaasAuthenticationService</strong></em>
 
 ## Referencias
