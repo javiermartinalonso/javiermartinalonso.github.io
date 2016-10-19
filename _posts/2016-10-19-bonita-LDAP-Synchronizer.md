@@ -58,15 +58,15 @@ A continuación se presentan todas las acciones realizadas por la herramienta si
 8. Crea la membresia de los usuarios, grupo y rol al que pertenece.
 
 	
-	<p><strong> Nota: </strong><br> 
-	Esto último, está estraido de la documentación oficial de bonita. Pero hay que hacer alguna aclaración, pues no es del todo cierto:<br>
+	<p><em><strong> Nota: 
+	Esto último, está estraido de la documentación oficial de bonita. Pero hay que hacer alguna aclaración, pues no es del todo cierto:
 	
-	<strong>El sincronizador LDAP de Bonita BPM no es capaz de migrar la jerarquía de grupos (grupos, subgrupos anidados). Esto es intencional: se asume que el Directorio puede cambiar, y cuando se cambia, no queremos afectar a la organización definida en el motor de Bonita (tener en cuenta el LDAP se usa para gestionar todas las aplicaciones y recursos de una empresa y no sólo la organización que deben usar nuestros procesos BPM).</strong><br>
+* El sincronizador LDAP de Bonita BPM no es capaz de migrar la jerarquía de grupos (grupos, subgrupos anidados). Esto es intencional: se asume que el Directorio puede cambiar, y cuando se cambia, no queremos afectar a la organización definida en el motor de Bonita (tener en cuenta el LDAP se usa para gestionar todas las aplicaciones y recursos de una empresa y no sólo la organización que deben usar nuestros procesos BPM).
 		
-	<strong>Lo anterior implica que tenemos que detectar cuando se da el caso de que la organizacion de los grupos de una empresa ha cambiado y aplicar una gestión manual desde el portal de bonita, tras la sincronización:
-<br>			Habría que revisar la jerarquia de grupos.
-<br>			Habría que revisar la membresia de los usuarios (grupo + rol).
-</strong></p>
+* Lo anterior implica que tenemos que detectar cuando se da el caso de que la organizacion de los grupos de una empresa ha cambiado y aplicar una gestión manual desde el portal de bonita, tras la sincronización:
+- Habría que revisar la jerarquia de grupos.
+- Habría que revisar la membresia de los usuarios (grupo + rol).
+</strong></em></p>
 	
 La herramienta se puede determinar la lista de los usuarios que pertenecen a un grupo de la organización examinado estas propiedades, dependiendo de objectClass del grupo:
 
