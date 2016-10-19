@@ -68,4 +68,4 @@ Usted tendrá que realizar los cambios siguientes:
 
 ## Referencias
 
-http://documentation.bonitasoft.com/6.x-7.2/active-directory-or-ldap-authentication-0
+<http://documentation.bonitasoft.com/6.x-7.2/active-directory-or-ldap-authentication-0>
