@@ -9,7 +9,7 @@ tags: [Bonita BPM,LDAP authentication,organizacion]
 icon: fa-code
 ---
 
-#Premisas
+# Premisas
 
 * Esta documentación se aplica a una instalación Bonita BPM existente y en funcionamiento (ver las instrucciones de instalación ).
 * Con el fin de tener en funcionamiento la autenticación de <em><strong>Active Directory/LDAP<em><strong>, el nombre de usuario (<em><strong>username<em><strong>) debe existir tanto en el directorio LDAP y en la base de datos Bonita BPM (la contraseña del usuario se comprueba contra el servidor LDAP, pero la información del usuario se lee desde la base de datos Bonita BPM). 
@@ -25,7 +25,7 @@ Este tipo de configuración se basa en una implementación específica del servi
 
 ## Nombre del contexto contra el que se hace login.
 
-La configuración de JAAS puede incluir uno o varios contextos de inicio de sesión. El contexto de inicio de sesión Bonita BPM debe ser nombrado <em><strong>BonitaAuthentication-<TENANT_ID> (donde <TENANT_ID>es el ID del cliente)</em></strong>.
+La configuración de JAAS puede incluir uno o varios contextos de inicio de sesión. El contexto de inicio de sesión Bonita BPM debe ser nombrado <em><strong>BonitaAuthentication-\<TENANT_ID\> (donde \<TENANT_ID\> es el ID del cliente)</em></strong>.
 
 ## Crear o editar el archivo de configuración del servidor de aplicaciones
 
