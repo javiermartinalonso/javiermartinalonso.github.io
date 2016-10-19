@@ -6701,7 +6701,7 @@ body.landing-page {
   height: auto;
 }
 .landing-page .header-back {
-  height: 470px;
+  height: 630px;
   width: 100%;
 }
 .landing-page .header-back.one {
@@ -6714,13 +6714,13 @@ body.landing-page {
   background: url('../img/landing/header_three.jpg') 50% 0 no-repeat;
 }
 .landing-page .carousel {
-  height: 470px;
+  height: 630px;
 }
 .landing-page .carousel-caption {
   z-index: 10;
 }
 .landing-page .carousel .item {
-  height: 470px;
+  height: 630px;
   background-color: #777;
 }
 .landing-page .carousel-inner > .item > img {
@@ -6728,7 +6728,7 @@ body.landing-page {
   top: 0;
   left: 0;
   min-width: 100%;
-  height: 470px;
+  height: 630px;
 }
 .landing-page .carousel-fade .carousel-inner .item {
   opacity: 0;
