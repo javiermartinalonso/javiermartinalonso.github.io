@@ -11,7 +11,7 @@ icon: fa-code
 
 # Premisas
 
-* Esta documentación se aplica a una instalación Bonita BPM existente y en funcionamiento ([bonita-bundle-JBOSS](https://javiermartinalonso.github.io/bonita/2016/10/18/bonita-bundle-JBOSS.html "ver las instrucciones de instalación").
+* Esta documentación se aplica a una instalación Bonita BPM existente y en funcionamiento ([ver las instrucciones de instalación](https://javiermartinalonso.github.io/bonita/2016/10/18/bonita-bundle-JBOSS.html "bonita-bundle-JBOSS")).
 
 * Con el fin de tener en funcionamiento la autenticación de <em><strong>Active Directory/LDAP</strong></em>, el nombre de usuario (<em><strong>username</strong></em>) debe existir tanto en el directorio LDAP y en la base de datos Bonita BPM (la contraseña del usuario se comprueba contra el servidor LDAP, pero la información del usuario se lee desde la base de datos Bonita BPM). 
 
