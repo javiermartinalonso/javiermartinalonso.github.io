@@ -6822,6 +6822,9 @@ body.landing-page {
   font-weight: 600;
   text-transform: uppercase;
 }
+.landing-page .features {
+    min-height: 650px;
+}
 .landing-page .features-block {
   margin-top: 40px;
 }
