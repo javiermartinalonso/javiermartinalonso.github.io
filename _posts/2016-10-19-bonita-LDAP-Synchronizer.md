@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Bonita BPM Herramientas para la gestión de una organización"
+title:  "Bonita BPM LDAP synchronizer"
 date:   2016-10-16
 desc: "Bonita BPM Herramientas para la gestión de una organización"
 keywords: "Bonita BPM, organizacion, LDAP synchronizer"
@@ -13,9 +13,11 @@ icon: fa-code
 
 Bonita BPM tiene tres herramientas que puede utilizar para administrar la información de su organización:
 
-* Bonita BPM Studio: para la creación de su definición inicial de la organización, debe ser importada a Bonita BPM Portal antes de empezar a usar el portal en modo de producción, y para la gestión de información de la organización mientras prueba un proceso en el desarrollo. Bonita BPM Studio contiene una organización ejemplo, llamado ACME. Esta organización contiene un pequeño número de usuarios, que pertenecen a diferentes grupos con roles realistas. Puede utilizar esta organización muestra para probar un proceso que se desarrolla. Puede modificar la organización ACME y puede crear otras organizaciones.
-* Bonita BPM Portal: para la gestión de información de la organización de la producción dentro de Bonita BPM. Puede administrar usuarios, grupos y roles. También puede importar o exportar la información de la organización.
-* Sincronizador de LDAP (sólo está disponible con licencia en las versiones de pago): sirve para mantener la organización Bonita BPM sincronizado con el directorio LDAP externo. La sincronización es unidireccional, desde LDAP a Bonita BPM. Puede ejecutar el sincronizador de una vez para cargar la organización luego administrar dentro Bonita BPM Portal, o puede ejecutar el sincronizador en un horario y gestionar la organización externa.
+* <strong>Bonita BPM Studio</strong>: para la creación de la definición inicial de la organización, debe ser importada a Bonita BPM Portal antes de empezar a usar el portal en modo de producción, y para la gestión de información de la organización mientras prueba un proceso en el desarrollo. Bonita BPM Studio contiene una organización ejemplo, llamado ACME. Esta organización contiene un pequeño número de usuarios, que pertenecen a diferentes grupos con roles realistas. Puede utilizar esta organización de muestra para probar un proceso que está en desarrollo. Se puede modificar la organización ACME y se puede crear otras organizaciones.
+
+* <strong>Bonita BPM Portal</strong>: para la gestión de información de la organización de la producción dentro de Bonita BPM. Puede administrar usuarios, grupos y roles. También puede importar o exportar la información de la organización.
+
+* <strong>Sincronizador de LDAP</strong>: (sólo está disponible con licencia en las versiones de pago): sirve para mantener la organización Bonita BPM sincronizado con el directorio LDAP externo. La sincronización es unidireccional, desde LDAP a Bonita BPM. Puede ejecutar el sincronizador de una vez para cargar la organización luego administrar dentro Bonita BPM Portal, o puede ejecutar el sincronizador en un horario y gestionar la organización externa.
 
 
 # Bonita Sincronyzer LDAP (Sincronizador de LDAP  de Bonita)
@@ -53,11 +55,11 @@ A continuación se presentan todas las acciones realizadas por la herramienta si
 - Para todos los usuarios que pertenecen a los grupos del motor Bonita BPM y no son miembros en los grupos del directorio LDAP de origen, la herramienta de sincronización, elimina la membresia del usuario (usuario: rol, grupo). No borra usuarios en el motor de bonita, ya que en la filosofia de un BPM hay que mantener la información de que usuario realizó que acciones, aunque este ya no esté activo en la organización.
 - Crea la membresia de los usuarios, grupo y rol al que pertenece.
 
-	Nota: esto último, está estraido de la documentación oficial de bonita. Pero hay que hacer alguna aclaración, pues no es del todo cierto:
-	* El sincronizador LDAP de Bonita BPM no es capaz de migrar la jerarquía de grupos (grupos, subgrupos anidados). Esto es intencional: se asume que el Directorio puede cambiar, y cuando se cambia, no queremos afectar a la organización definida en el motor de Bonita (tener en cuenta el LDAP se usa para gestionar todas las aplicaciones y recursos de una empresa y no sólo la organización que deben usar nuestros procesos BPM).
-	* Lo anterior implica que tenemos que detectar cuando se da el caso de que la organizacion de los grupos de una empresa ha cambiado y aplicar una gestión manual desde el portal de bonita, tras la sincronización:
-		-	Habría que revisar la jerarquia de grupos.
-		-	Habría que revisar la membresia de los usuarios (grupo + rol).
+	<strong> Nota: esto último, está estraido de la documentación oficial de bonita. Pero hay que hacer alguna aclaración, pues no es del todo cierto:
+		* El sincronizador LDAP de Bonita BPM no es capaz de migrar la jerarquía de grupos (grupos, subgrupos anidados). Esto es intencional: se asume que el Directorio puede cambiar, y cuando se cambia, no queremos afectar a la organización definida en el motor de Bonita (tener en cuenta el LDAP se usa para gestionar todas las aplicaciones y recursos de una empresa y no sólo la organización que deben usar nuestros procesos BPM).
+		* Lo anterior implica que tenemos que detectar cuando se da el caso de que la organizacion de los grupos de una empresa ha cambiado y aplicar una gestión manual desde el portal de bonita, tras la sincronización:
+			-	Habría que revisar la jerarquia de grupos.
+			-	Habría que revisar la membresia de los usuarios (grupo + rol).</strong>
 	
 La herramienta se puede determinar la lista de los usuarios que pertenecen a un grupo de la organización examinado estas propiedades, dependiendo de objectClass del grupo:
 
