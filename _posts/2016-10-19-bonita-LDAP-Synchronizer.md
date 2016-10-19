@@ -57,14 +57,16 @@ A continuación se presentan todas las acciones realizadas por la herramienta si
 7. Para todos los usuarios que pertenecen a los grupos del motor Bonita BPM y no son miembros en los grupos del directorio LDAP de origen, la herramienta de sincronización, elimina la membresia del usuario (usuario: rol, grupo). No borra usuarios en el motor de bonita, ya que en la filosofia de un BPM hay que mantener la información de que usuario realizó que acciones, aunque este ya no esté activo en la organización.
 8. Crea la membresia de los usuarios, grupo y rol al que pertenece.
 
-	<strong> Nota:<br> 
+	<strong> 
+	Nota:<br> 
 	Esto último, está estraido de la documentación oficial de bonita. Pero hay que hacer alguna aclaración, pues no es del todo cierto:<br>
 	
-		* El sincronizador LDAP de Bonita BPM no es capaz de migrar la jerarquía de grupos (grupos, subgrupos anidados). Esto es intencional: se asume que el Directorio puede cambiar, y cuando se cambia, no queremos afectar a la organización definida en el motor de Bonita (tener en cuenta el LDAP se usa para gestionar todas las aplicaciones y recursos de una empresa y no sólo la organización que deben usar nuestros procesos BPM).<br>
+	El sincronizador LDAP de Bonita BPM no es capaz de migrar la jerarquía de grupos (grupos, subgrupos anidados). Esto es intencional: se asume que el Directorio puede cambiar, y cuando se cambia, no queremos afectar a la organización definida en el motor de Bonita (tener en cuenta el LDAP se usa para gestionar todas las aplicaciones y recursos de una empresa y no sólo la organización que deben usar nuestros procesos BPM).<br>
 		
-		* Lo anterior implica que tenemos que detectar cuando se da el caso de que la organizacion de los grupos de una empresa ha cambiado y aplicar una gestión manual desde el portal de bonita, tras la sincronización:
-<br>			-	Habría que revisar la jerarquia de grupos.
-<br>			-	Habría que revisar la membresia de los usuarios (grupo + rol).</strong>
+	Lo anterior implica que tenemos que detectar cuando se da el caso de que la organizacion de los grupos de una empresa ha cambiado y aplicar una gestión manual desde el portal de bonita, tras la sincronización:
+<br>			Habría que revisar la jerarquia de grupos.
+<br>			Habría que revisar la membresia de los usuarios (grupo + rol).
+</strong>
 	
 La herramienta se puede determinar la lista de los usuarios que pertenecen a un grupo de la organización examinado estas propiedades, dependiendo de objectClass del grupo:
 
