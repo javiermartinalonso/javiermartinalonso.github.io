@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Bonita bundle JBOSS"
-date:   2016-10-20
+date:   2016-10-18
 desc: "Bonita BPM bundle JBOSS"
 keywords: "Bonita BPM,bundle, portal, JBOSS"
 categories: [bonita]
