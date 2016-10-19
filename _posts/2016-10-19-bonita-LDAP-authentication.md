@@ -29,13 +29,13 @@ La configuración de JAAS puede incluir uno o varios contextos de inicio de sesi
 
 ## Crear o editar el archivo de configuración del servidor de aplicaciones
 
-Nota: todos los archivos de configuración entre mayúsculas y minúsculas
+Nota: todos los archivos de configuración distinguen entre mayúsculas y minúsculas, son case sensitive
 
 ### JBOSS
 
-Editar el siguiente fichero <em><strong><JBOSS_HOME>/standalone/configuration/standalone.xml</em></strong> y modificar la entrada <em><strong>security-domains</em></strong>.
-Añadir el contexto de inicio de sesión Bonita BPM utilizando la sintaxis específica de JBoss justo antes de la etiqueta <em><strong></security-domains></em></strong>. 
-Tenga en cuenta que <em><strong>security-domain-name</em></strong> es en realidad el nombre de contexto de inicio de sesión JAAS (por ejemplo Bonita BPM).
+Editar el siguiente fichero <em><strong>\<JBOSS_HOME\>/standalone/configuration/standalone.xml</em></strong> y modificar la entrada <em><strong>security\-domains</em></strong>.
+Añadir el contexto de inicio de sesión Bonita BPM utilizando la sintaxis específica de JBoss justo antes de la etiqueta <em><strong>\</security-domains></em></strong>. 
+Tenga en cuenta que <em><strong>security\-domain\-name</em></strong> es en realidad el nombre de contexto de inicio de sesión JAAS (por ejemplo Bonita BPM).
 
 
 
