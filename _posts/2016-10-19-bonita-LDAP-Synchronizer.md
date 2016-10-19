@@ -70,26 +70,26 @@ A continuación se presentan todas las acciones realizadas por la herramienta si
 	
 La herramienta se puede determinar la lista de los usuarios que pertenecen a un grupo de la organización examinado estas propiedades, dependiendo de objectClass del grupo:
 
-* <em>member: group objectclass
+* <em><strong>member</strong>: group objectclass
 * memberURL: groupOfURLs objectclass
 * member: groupOfNames objectclass
 * uniqueMember: groupOfUniqueNames objectclass
-* ds-target-group-dn: ds-virtual-static-group objectclass</em>
+* ds-target-group-dn: ds-virtual-static-group objectclass</strong></em>
 
 ## Configuracion de la herramienta
 
-El sincronizador LDAP es de hecho una aplicación java cliente del motor de Bonita. Se basa en la librería bonita-client.jar y por lo tanto requiere una carpeta Bonita-Home.
-Hay que copiar el bonita-home en el raiz de la herramienta de sincronizacion, ya que es una aplicacion java que debe conectarse con el motor de bonita.
-En el archivo [home sincronyzer Ldap]/bonita_home/engine-client/conf/bonita-client-custom.properties se define la forma en la que la libreria cliente se conecta al motor de Bonita BPM.
+El sincronizador LDAP es de hecho una aplicación java cliente del motor de Bonita. Se basa en la librería <em>bonita-client.jar</em> y por lo tanto requiere una carpeta <em>Bonita-Home</em>.
+Hay que copiar el <em>bonita-home</em> en el raiz de la herramienta de sincronizacion, ya que es una aplicacion java que debe conectarse con el motor de bonita.
+En el archivo <em>[home sincronyzer Ldap]/bonita_home/engine-client/conf/bonita-client-custom.properties</em> se define la forma en la que la libreria cliente se conecta al motor de Bonita BPM.
 Aqui se explica más en detalle como realizar esta tarea:
 <http://documentation.bonitasoft.com/6.x-7.2/bonita-home-876>
 
 
 ## Referencias
 
-http://documentation.bonitasoft.com/6.x-7.2/organization-management-bonita-bpm-studio
-http://documentation.bonitasoft.com/6.x-7.2/ldap-synchronizer-3
-http://documentation.bonitasoft.com/6.x-7.2/bonita-home-876
-https://vimeo.com/142633250
-https://vimeo.com/141901603
-https://vimeo.com/143372621
+<http://documentation.bonitasoft.com/6.x-7.2/organization-management-bonita-bpm-studio><br> 
+<http://documentation.bonitasoft.com/6.x-7.2/ldap-synchronizer-3><br> 
+<http://documentation.bonitasoft.com/6.x-7.2/bonita-home-876><br> 
+<https://vimeo.com/142633250><br> 
+<https://vimeo.com/141901603><br> 
+<https://vimeo.com/143372621><br> 
