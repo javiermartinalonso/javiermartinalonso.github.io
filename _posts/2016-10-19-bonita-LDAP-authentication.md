@@ -12,7 +12,7 @@ icon: fa-code
 # Premisas
 
 * Esta documentación se aplica a una instalación Bonita BPM existente y en funcionamiento (ver las instrucciones de instalación ).
-* Con el fin de tener en funcionamiento la autenticación de <em><strong>Active Directory/LDAP<em><strong>, el nombre de usuario (<em><strong>username<em><strong>) debe existir tanto en el directorio LDAP y en la base de datos Bonita BPM (la contraseña del usuario se comprueba contra el servidor LDAP, pero la información del usuario se lee desde la base de datos Bonita BPM). 
+* Con el fin de tener en funcionamiento la autenticación de <em><strong>Active Directory/LDAP</strong></em>, el nombre de usuario (<em><strong>username</strong></em>) debe existir tanto en el directorio LDAP y en la base de datos Bonita BPM (la contraseña del usuario se comprueba contra el servidor LDAP, pero la información del usuario se lee desde la base de datos Bonita BPM). 
 * Se recomienda utilizar el [sincronizador de LDAP](https://javiermartinalonso.github.io/bonita/2016/10/19/bonita-LDAP-Synchronizer.html "sincronizador de LDAP") para crear usuarios Bonita BPM en una base de datos Bonita BPM a partir de los usarios de un ldap.
 
 # Visión de conjunto
@@ -43,8 +43,7 @@ Tenga en cuenta que <em><strong>security\-domain\-name</strong></em> es en reali
             <authentication>
                 <login-module code="com.sun.security.auth.module.LdapLoginModule" flag="required">
                     <module-option name="userProvider" value="ldap://localhost:389/ou=all%20people,dc=example,dc=com"/>
-                    <module-option name="userFilter" value="(&amp;(objectClass=user)(userPrincipalName={USERNAME}@myExampleDomain.com))"/>
-                    <module-option name="authIdentity" value="{USERNAME}@myExampleDomain.com"/>
+                    <module-option name="authIdentity" value="uid={USERNAME},ou=people,dc=example,dc=com"/>
                     <module-option name="useSSL" value="false"/>
                     <module-option name="debug" value="true"/>
                 </login-module>
