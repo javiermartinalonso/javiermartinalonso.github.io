@@ -22,7 +22,4 @@ La idea es que yo debería poder llevar este Bundle a otro entorno/máquina y re
 
 ## Referencias
 
-
-<https://es.wikipedia.org/wiki/Bonita_Open_Solution>
-
-<http://es.bonitasoft.com/>
+<http://documentation.bonitasoft.com/6.x-7.2/jboss-bundle-3>
