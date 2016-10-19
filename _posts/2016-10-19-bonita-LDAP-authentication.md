@@ -25,7 +25,7 @@ Este tipo de configuración se basa en una implementación específica del servi
 
 ## Nombre del contexto contra el que se hace login.
 
-La configuración de JAAS puede incluir uno o varios contextos de inicio de sesión. El contexto de inicio de sesión Bonita BPM debe ser nombrado <em><strong>BonitaAuthentication\-\<TENANT_ID\> (donde \<TENANT_ID\> es el ID del cliente)</em></strong>.
+La configuración de JAAS puede incluir uno o varios contextos de inicio de sesión. El contexto de inicio de sesión Bonita BPM debe ser nombrado <em><strong>BonitaAuthentication\-\<TENANT_ID\> (donde \<TENANT_ID\> es el ID del cliente)</strong></em>.
 
 ## Crear o editar el archivo de configuración del servidor de aplicaciones
 
@@ -33,9 +33,9 @@ Nota: todos los archivos de configuración distinguen entre mayúsculas y minús
 
 ### JBOSS
 
-Editar el siguiente fichero <em><strong>\<JBOSS_HOME\>/standalone/configuration/standalone.xml</em></strong> y modificar la entrada <em><strong>security\-domains</em></strong>.
-Añadir el contexto de inicio de sesión Bonita BPM utilizando la sintaxis específica de JBoss justo antes de la etiqueta <em><strong>\</security-domains></em></strong>. 
-Tenga en cuenta que <em><strong>security\-domain\-name</em></strong> es en realidad el nombre de contexto de inicio de sesión JAAS (por ejemplo Bonita BPM).
+Editar el siguiente fichero <em><strong>\<JBOSS_HOME\>/standalone/configuration/standalone.xml</strong></em> y modificar la entrada <em><strong>security\-domains</strong></em>.
+Añadir el contexto de inicio de sesión Bonita BPM utilizando la sintaxis específica de JBoss justo antes de la etiqueta <em><strong>\</security-domains\></strong></em>. 
+Tenga en cuenta que <em><strong>security\-domain\-name</strong></em> es en realidad el nombre de contexto de inicio de sesión JAAS (por ejemplo Bonita BPM).
 
 
 
@@ -59,12 +59,12 @@ Tenga en cuenta que <em><strong>security\-domain\-name</em></strong> es en reali
 La instalación predeterminada Bonita BPM viene con una aplicación de servicio de autenticación basado en la base de datos del motor de BonitaBPM. 
 Con el fin de activar la autenticación de <strong>Active Directory/LDAP</strong> la implementación del servicio necesita ser cambiado. 
 Para ello, edite <em><strong>bonita-home/engine-server/conf/tenants/template/bonita-tenant-sp-custom.properties</strong></em>
-Si edita este fichero los ajustes se aplicarán a todos los nuevos tenants. Para un tenant existente, edite el archivo de propiedades en: <em><strong>bonita-home/engine-server/conf/tenants/<tenant-id></strong></em>
+Si edita este fichero los ajustes se aplicarán a todos los nuevos tenants. Para un tenant existente, edite el archivo de propiedades en: <em><strong>bonita-home/engine-server/conf/tenants/\<tenant-id\></strong></em>
 
 Usted tendrá que realizar los cambios siguientes:
 
 * Comentario la linea de authenticationServicel
-* Añadir esta nueva línea: <em><strong>authentication.service.ref.name=jaasAuthenticationService</em></strong>
+* Añadir esta nueva línea: <em><strong>authentication.service.ref.name=jaasAuthenticationService</strong></em>
 
 
 ## Referencias
