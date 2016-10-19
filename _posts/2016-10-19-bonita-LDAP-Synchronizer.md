@@ -70,7 +70,7 @@ A continuación se presentan todas las acciones realizadas por la herramienta si
 	
 La herramienta se puede determinar la lista de los usuarios que pertenecen a un grupo de la organización examinado estas propiedades, dependiendo de objectClass del grupo:
 
-* <em><strong>member</strong>: group objectclass
+* <em><strong>member: group objectclass
 * memberURL: groupOfURLs objectclass
 * member: groupOfNames objectclass
 * uniqueMember: groupOfUniqueNames objectclass
