@@ -25,7 +25,7 @@ Este tipo de configuración se basa en una implementación específica del servi
 
 ## Nombre del contexto contra el que se hace login.
 
-La configuración de JAAS puede incluir uno o varios contextos de inicio de sesión. El contexto de inicio de sesión Bonita BPM debe ser nombrado <em><strong>BonitaAuthentication-\<TENANT_ID\> (donde \<TENANT_ID\> es el ID del cliente)</em></strong>.
+La configuración de JAAS puede incluir uno o varios contextos de inicio de sesión. El contexto de inicio de sesión Bonita BPM debe ser nombrado <em><strong>BonitaAuthentication\-\<TENANT_ID\> (donde \<TENANT_ID\> es el ID del cliente)</em></strong>.
 
 ## Crear o editar el archivo de configuración del servidor de aplicaciones
 
