@@ -31,7 +31,7 @@ La configuración de JAAS puede incluir uno o varios contextos de inicio de sesi
 
 Nota: todos los archivos de configuración distinguen entre mayúsculas y minúsculas, son case sensitive
 
-### JBOSS
+### Para el caso de JBOSS
 
 Editar el siguiente fichero <em><strong>\<JBOSS_HOME\>/standalone/configuration/standalone.xml</strong></em> y modificar la entrada <em><strong>security\-domains</strong></em>.
 Añadir el contexto de inicio de sesión Bonita BPM utilizando la sintaxis específica de JBoss justo antes de la etiqueta <em><strong>\</security-domains\></strong></em>. 
@@ -43,6 +43,7 @@ Tenga en cuenta que <em><strong>security\-domain\-name</strong></em> es en reali
             <authentication>
                 <login-module code="com.sun.security.auth.module.LdapLoginModule" flag="required">
                     <module-option name="userProvider" value="ldap://localhost:389/ou=all%20people,dc=example,dc=com"/>
+		    <module-option name="userFilter" value="(&amp;(objectClass=user)(userPrincipalName={USERNAME}@myExampleDomain.com))"/>		    
                     <module-option name="authIdentity" value="uid={USERNAME},ou=people,dc=example,dc=com"/>
                     <module-option name="useSSL" value="false"/>
                     <module-option name="debug" value="true"/>
@@ -50,7 +51,34 @@ Tenga en cuenta que <em><strong>security\-domain\-name</strong></em> es en reali
             </authentication>
         </security-domain>
 		
-		
+
+##¿qué atributos debemos inyectar en el Login\-Module?
+
+Es importante identificar qué atributos tenemos que establecer dentro del módulo <em>login\-module</em>. Este será al menos uno de <em><strong>authIdentity, userFilter, tryFirstPass, java.naming.security.principal o java.naming.security.credentials</strong></em>. 
+
+Hay que identificar cuál de los siguientes casos se aplica:
+
+* Si usted puede construir el DN de usuario inyectando directamente el nombre de usuario => establecer sólo el atributo <em><strong>authIdentity</strong></em>.
+* Si no se puede construir el DN de búsqueda y anónima se permite => establecer sólo el atributo <em><strong>userFilter</strong></em>.
+* Si no se puede construir el DN y la búsqueda anónima está anulada y los usuarios autenticados pueden buscar => ajustar los atributos <em><strong>userFilter</strong></em> y <em><strong>authIdentity</strong></em>.
+* Si no se puede construir el DN y la búsqueda anónima está anulada y los usuarios autenticados no pueden buscar =>  ajustar los atributos <em><strong>userFilter, authIdentity, tryFirstPass, java.naming.security.principal</strong></em> y <em><strong>java.naming.security.credentials</strong></em>.
+
+## ¿Qué valores debemos asignar a los atributos en el Login\-Module?
+
+* <em><strong>userProvider</strong></em>: Ponga esto en 'ldap://<ldap server address>:<ldap server port>/<DN  of the LDAP entry under which all users are located>'. Por ejemplo:'ldap://localhost:389/CN=Users,DC=MyDomain,DC=com'
+
+* <em><strong>userFilter(sólo si es necesario)</strong></em>: el valor debe ser una petición de búsqueda que se encuentra a sus usuarios en el servidor LDAP. La solicitud de búsqueda puede ser, por ejemplo: '(&(objectClass=user)(userPrincipalName={USERNAME}@mydomain.com))'. Utilice una herramienta de LDAP (como Apache Directory Studio) para validar que la solicitud devuelve el resultado esperado si se reemplaza '{usuario}' con un nombre de usuario real.
+
+* <em><strong>authIdentity(sólo si es necesario)</strong></em>: hay dos casos: 
+Si se puede construir el DN de usuario, establezca el valor del atributo con el usuario y el DN de '{USERNAME}' la etiqueta. Por ejemplo 'uid={USERNAME},ou=users,dc=example,dc=com' . 
+Si se utiliza una userFilter y los usuarios pueden buscar, establezca el valor de '{USERNAME}@mydomain.com' para AD y el DN de usuario (igual al anterior) para otros servidores LDAP.
+
+* <em><strong>tryFirstPass (sólo si es necesario)</strong></em>: ponga esto en true.
+
+* <em><strong>java.naming.security.principal (Sólo si es necesario)</strong></em>: especifique el nombre de usuario (AD) o el usuario DN (otros servidores LDAP) de un usuario que puede realizar búsquedas en el servidor.
+
+* <em><strong>java.naming.security.credentials (Sólo si es necesario)</strong></em>: especifica la contraseña de un usuario que puede realizar búsquedas en el servidor.
+
 ## Pasos de configuración
 
 ### Cambio de servicio de autenticación Bonita BPM
@@ -62,7 +90,7 @@ Si edita este fichero los ajustes se aplicarán a todos los nuevos tenants. Para
 
 Usted tendrá que realizar los cambios siguientes:
 
-* Comentario la linea de authenticationServicel
+* Comentar la linea de authenticationService
 * Añadir esta nueva línea: <em><strong>authentication.service.ref.name=jaasAuthenticationService</strong></em>
 
 
