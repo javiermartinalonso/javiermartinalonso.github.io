@@ -52,9 +52,9 @@ Tenga en cuenta que <em><strong>security\-domain\-name</strong></em> es en reali
         </security-domain>
 		
 
-##¿qué atributos debemos inyectar en el Login\-Module?
+## ¿Qué atributos debemos inyectar en el Login\-Module?
 
-Es importante identificar qué atributos tenemos que establecer dentro del módulo <em>login\-module</em>. Este será al menos uno de <em><strong>authIdentity, userFilter, tryFirstPass, java.naming.security.principal o java.naming.security.credentials</strong></em>. 
+Es importante identificar qué atributos tenemos que establecer dentro del módulo <strong><em>login\-module</em></strong>. Este será al menos uno de <em><strong>authIdentity, userFilter, tryFirstPass, java.naming.security.principal o java.naming.security.credentials</strong></em>. 
 
 Hay que identificar cuál de los siguientes casos se aplica:
 
@@ -65,7 +65,7 @@ Hay que identificar cuál de los siguientes casos se aplica:
 
 ## ¿Qué valores debemos asignar a los atributos en el Login\-Module?
 
-* <em><strong>userProvider</strong></em>: Ponga esto en 'ldap://<ldap server address>:<ldap server port>/<DN  of the LDAP entry under which all users are located>'. Por ejemplo:'ldap://localhost:389/CN=Users,DC=MyDomain,DC=com'
+* <em><strong>userProvider</strong></em>: Ponga esto en <em>ldap://\<ldap server address>:\<ldap server port\>/\<DN  of the LDAP entry under which all users are located\></em>. Por ejemplo:<em>ldap://localhost:389/CN=Users,DC=MyDomain,DC=com</em>
 
 * <em><strong>userFilter(sólo si es necesario)</strong></em>: el valor debe ser una petición de búsqueda que se encuentra a sus usuarios en el servidor LDAP. La solicitud de búsqueda puede ser, por ejemplo: '(&(objectClass=user)(userPrincipalName={USERNAME}@mydomain.com))'. Utilice una herramienta de LDAP (como Apache Directory Studio) para validar que la solicitud devuelve el resultado esperado si se reemplaza '{usuario}' con un nombre de usuario real.
 
