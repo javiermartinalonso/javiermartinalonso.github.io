@@ -5444,7 +5444,7 @@ table.shoping-cart-table tr td:last-child {
   color: #3385FF;
 }
 .vote-icon {
-  text-align: right;
+  /*text-align: right;*/
   font-size: 38px;
   display: block;
   color: #e8e9ea;
