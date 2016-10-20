@@ -6,7 +6,7 @@ desc: "Bonita BPM Introducción"
 keywords: "Bonita BPM,Introducción"
 categories: [bonita]
 tags: [Bonita BPM,Introducción]
-icon: fa-code
+icon: fa-cogs
 ---
 
 # Introducción a Bonita BPM 

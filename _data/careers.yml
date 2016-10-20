@@ -10,7 +10,7 @@
   job:
     detail: Java Developer
     i18n: SATEC_job
-  icon: fa-coffee
+  icon: fa-black-tie
 
 - name:
     detail: AXPE CONSULTING SL
@@ -24,7 +24,7 @@
   job:
     detail: Consultant / Team Leader / Project Manager
     i18n: AXPE_job
-  icon: fa-coffee
+  icon: fa-credit-card
 
 - name:
     detail: NEXT CS
@@ -38,7 +38,7 @@
   job:
     detail: Analyst
     i18n: NEXT_job
-  icon: fa-coffee
+  icon: fa-database
 
 - name:
     detail: VECTOR SF
@@ -52,7 +52,7 @@
   job:
     detail: Senior programmer
     i18n: VECTOR_job
-  icon: fa-coffee
+  icon: fa-credit-card-alt
 
 - name:
     detail: Graduación Ingeniero informático

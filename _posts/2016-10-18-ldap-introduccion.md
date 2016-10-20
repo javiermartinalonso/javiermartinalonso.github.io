@@ -6,7 +6,7 @@ desc: "LDAP Introducción"
 keywords: "LDAP,Introducción"
 categories: [LDAP]
 tags: [ldap,Introducción]
-icon: fa-code
+icon: fa-sitemap
 ---
 
 # LDAP

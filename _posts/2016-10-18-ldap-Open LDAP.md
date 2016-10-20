@@ -6,7 +6,7 @@ desc: "OpenLDAP"
 keywords: "OpenLDAP"
 categories: [LDAP]
 tags: [OpenLDAP,ldap,instalación, windows]
-icon: fa-code
+icon: fa-sitemap
 ---
 
 # OpenLDAP

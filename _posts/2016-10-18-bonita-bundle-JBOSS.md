@@ -6,7 +6,7 @@ desc: "Bonita BPM bundle JBOSS"
 keywords: "Bonita BPM,bundle, portal, JBOSS"
 categories: [bonita]
 tags: [Bonita BPM,bundle, portal, JBOSS]
-icon: fa-code
+icon: fa-cogs
 ---
 
 # ¿Qué es un bundle? 

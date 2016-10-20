@@ -6,7 +6,7 @@ desc: "Productos Bonita BPM"
 keywords: "Productos Bonita BPM,bundle, portal, JBOSS, Tomcat, Bonita BPM Studio"
 categories: [bonita]
 tags: [Productos Bonita BPM,bundle, portal, JBOSS, Tomcat, Bonita BPM Studio]
-icon: fa-code
+icon: fa-cogs
 ---
 
 # Productos Bonita BPM
