@@ -47,7 +47,8 @@
     "college_job": "Student"
   },
   "blog":{
-    "my_blog": "My Blog"
+    "my_blog": "My Blog",
+    "latest_blog": "Últimas entradas"
   },
   "link":{
     "link": "Link",
