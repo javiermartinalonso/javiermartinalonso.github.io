@@ -40,8 +40,10 @@
                     <li><a href="{{ site.url}}/feed.xml" target="blank"><i class="fa fa-rss"></i></a>
                     </li>
                     </li>
-                    <li><a href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" target="blank"><i class="fa fa-bell-o"></i></a>
-                    </li>                    
+                    {% if site.feedburner %}
+                        <li><a href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" target="blank"><i class="fa fa-bell-o"></i></a>
+                        </li>  
+                    {% endif %}   
                 </ul>
             </div>
         </div>
