@@ -81,6 +81,10 @@ disqus:
   name: javiermartinalonso
 #   public_key: tj2MPaNlHMONwTH5bGDNSXyaBpW7q282MeUzh5CwcjJerNhK8Kxk3aWo7IckzTX7
 
+#feed
+feedburner:
+  uri: JavierMartnAlonso
+
 # counter
 counter:
   name: javiermartinalonso

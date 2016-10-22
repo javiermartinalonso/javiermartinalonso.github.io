@@ -50,6 +50,9 @@
     "my_blog": "My Blog",
     "latest_blog": "Últimas entradas"
   },
+  "feedburner":{
+    "my_feedburner": "Subscribe to Javier Martín Alonso by Email"
+  },  
   "link":{
     "link": "Link",
     "view": "views"
