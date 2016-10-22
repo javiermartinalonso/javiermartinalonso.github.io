@@ -2,14 +2,14 @@
     <div class="row">
         <div class="col-lg-12 text-center wow zoomIn" id="i18_blog">
             <div style="height: 80px;"></div>
-            <a class="btn btn-lg btn-default btn-rounded btn-outline wow bounceIn" href="/blog/"><span data-i18n="blog.my_blog">Mi blog</span></a>
-
- {% if site.feedburner %}
- <link href="http://feeds.feedburner.com/{{ site.feedburner.uri }}" rel="alternate" title="{{ site.title }}" type="application/atom+xml" />
-
- <a href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES"><span data-i18n="feedburner.my_feedburner">Suscríbite a Javier Martín Alonso por Email</span></a>
- {% endif %}
-
+            <div>
+            	<a class="btn btn-lg btn-default btn-rounded btn-outline wow bounceIn" href="/blog/"><span data-i18n="blog.my_blog">Mi blog</span></a>
+            </div>
+            <div>
+				 {% if site.feedburner %}
+				 	<a href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" class="subscribe"><i class="fa fa-bell-o" aria-hidden="true"></i><span data-i18n="feedburner.my_feedburner">Suscríbite a Javier Martín Alonso por Email</span></a>
+				 {% endif %}
+			</div>
             <div style="height: 80px;"></div>
         </div>
     </div>
