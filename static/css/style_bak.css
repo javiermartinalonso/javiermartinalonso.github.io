@@ -4361,6 +4361,12 @@ body.mini-navbar.fixed-sidebar .logo-element {
   animation: none;
 }
 /* SEARCH PAGE */
+.search-container {
+  position: fixed; 
+  right: 1em; 
+  bottom: 1em; 
+  z-index: 9999;  
+}
 .search-form {
   margin-top: 10px;
 }

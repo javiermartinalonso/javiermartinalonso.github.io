@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    /*
+    /* servicio de counter sin configurar
     $.ajax({
         type: "get",
         async: false,
