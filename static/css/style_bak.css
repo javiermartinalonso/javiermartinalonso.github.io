@@ -4363,8 +4363,8 @@ body.mini-navbar.fixed-sidebar .logo-element {
 /* SEARCH PAGE */
 .search-container {
   position: fixed; 
-  right: 1em; 
-  bottom: 1em; 
+  right: 3em; 
+  bottom: 3em; 
   z-index: 9999;  
 }
 .search-form {
