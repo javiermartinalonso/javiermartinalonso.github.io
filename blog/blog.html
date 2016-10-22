@@ -51,9 +51,16 @@ permalink: /blog/
 
 </div>
 
-{% if site.feedburner %}
-    <div class="subscribe_footer">
-        <a href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES"><i class="fa fa-bell-o" aria-hidden="true"></i><span data-i18n="feedburner.my_feedburner">Suscríbite</span></a>
+<div class="row">
+    {% if site.feedburner %}
+        <div class="subscribe_footer">
+            <a href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES"><i class="fa fa-bell-o" aria-hidden="true"></i><span data-i18n="feedburner.my_feedburner">Suscríbite</span></a>
+        </div>
+    {% endif %}
+    
+    <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
+        <p id="{{ site.name }}_site_pv"><strong>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}</strong></p>
     </div>
-{% endif %}
+</div>
+
 
