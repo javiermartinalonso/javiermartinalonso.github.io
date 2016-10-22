@@ -7355,3 +7355,8 @@ body.rtls.top-navigation .footer.fixed {
   color: white;
   margin-top: 3em;  
 }
+.subscribe_footer {
+  text-align: center;
+  font-size: 20px;
+  margin: 1em;  
+}
