@@ -16,6 +16,13 @@ permalink: /
     <img src="/search/img/cb-search.png"  id="search-btn"  title="Haga doble clic en ctrl para buscar"/>
 </div>
 
+<div class="i18_navbar">
+    {% for language in site.languages %}
+        <a id="set_lang_{{ language.locale }}" class="btn btn-sm set_{{ language.locale }}" data-locale="{{ language.locale }}"> <img src="{{ language.flag | prepend: site.baseurl }}" height="16px" width="16px">
+        </a>
+    {% endfor %}
+</div>
+
 <div class="navbar-wrapper">
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
@@ -38,15 +45,6 @@ permalink: /
                       </a>
                     </li>
                 {% endfor %}
-
-                {% for language in site.languages %}
-                  <li>
-                    <a id="set_lang_{{ language.locale }}" class="btn btn-sm set_{{ language.locale }}" data-locale="{{ language.locale }}">
-                      <img src="{{ language.flag | prepend: site.baseurl }}" height="16px" width="16px">
-                    </a>
-                  </li>
-                {% endfor %}
-
                 </ul>
             </div>
         </div>
