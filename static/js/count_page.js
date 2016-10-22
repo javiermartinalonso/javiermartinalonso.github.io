@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    /*
     $.ajax({
         type: "get",
         async: false,
@@ -13,4 +14,5 @@ $(document).ready(function() {
             console.log('error');
         }
     });
+    */
 });
