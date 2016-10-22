@@ -1,6 +1,12 @@
 $(document).ready(function() {
-    pre_content = $("#jalpc_site_pv").html();
-    $("#jalpc_site_pv").html(pre_content);
+    pre_content = $("#{{ site.name }}_site_pv").html();
+    $("#{{ site.name }}_site_pv").html(pre_content);
+
+    /*
+    * TODO: Tiene montado un servicio rest propio que le devuelve el numero de visitas
+    * habria que cambiar esto o siempre nos dara el numero de visitas de otro
+    * url: "http://jalpc-a.leanapp.cn/api/jalpc_count",
+    */
     $.ajax({
         type: "get",
         async: false,
@@ -10,7 +16,7 @@ $(document).ready(function() {
         jsonpCallback: "flightHandler",
         success: function(json) {
             var website_count = json.count;
-            $("#jalpc_site_pv").html('<span class="navy">' + website_count + '</span>&nbsp;<span data-i18n="link.view">views</span>&nbsp;||&nbsp;' + pre_content);
+            $("#{{ site.name }}_site_pv").html('<span class="navy">' + website_count + '</span>&nbsp;<span data-i18n="link.view">views</span>&nbsp;||&nbsp;' + pre_content);
         },
         error: function() {
             console.log('fail');

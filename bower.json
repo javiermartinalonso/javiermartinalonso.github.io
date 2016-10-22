@@ -1,8 +1,8 @@
 {
-  "name": "jalpc_jekyll_theme",
-  "homepage": "http://www.jack003.com",
+  "name": "{{ site.disqus.name }}_jekyll_theme",
+  "homepage": "https://javiermartinalonso.github.io/",
   "authors": [
-    "Jack <407613594@qq.com>"
+    "Javier <javimartinalonso@gmail.com>"
   ],
   "description": "For blog use.",
   "main": "",
