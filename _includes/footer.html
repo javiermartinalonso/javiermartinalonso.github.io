@@ -1,15 +1,16 @@
- <div class="row i18container">
-    {% if site.feedburner %}
-        <div class="subscribe_footer">
-            <a href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" style="color: #aeaeae"><i class="fa fa-bell-o" aria-hidden="true"></i> <span data-i18n="feedburner.my_feedburner">Suscríbete</span></a>
-        </div>
-    {% endif %}
+<div class="footer">
+  <div class="row i18container">
+      {% if site.feedburner %}
+          <div>
+              <a class="btn btn-lg btn-default btn-rounded btn-outline wow bounceIn subscribe" href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" style="color: #aeaeae"><i class="fa fa-bell-o" aria-hidden="true"></i> <span data-i18n="feedburner.my_feedburner">Suscríbete</span></a>
+          </div>
+      {% endif %}
 
-    <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
-        <p id="{{ site.name }}_site_pv"><strong>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}</strong></p>
-    </div>
+      <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
+          <p id="{{ site.name }}_site_pv"><strong>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}</strong></p>
+      </div>
+  </div>
 </div>
-
 <!-- anulo el control por javascript del scroll sobre la barra de navegacion hace que desaparezca
 <script src="{{ "static/js/scroll.js" | prepend: site.baseurl }}"></script>-->
 <script src="{{"static/js/localization.js" | prepend: site.baseurl }}"></script>

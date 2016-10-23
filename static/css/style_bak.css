@@ -3515,6 +3515,11 @@ ol.unstyled {
   border-top: 1px solid #e7eaec;
   margin-left: 220px;
 }
+.footer.subscribe {
+  text-align: center;
+  font-size: 20px;
+  /*padding: 1em;  */
+}
 body.mini-navbar .footer.fixed,
 body.body-small.mini-navbar .footer.fixed {
   margin: 0 0 0 70px;
@@ -6983,6 +6988,12 @@ body.landing-page {
   z-index: 1;
   bottom: -15px;
   left: 30px;
+}
+.landing-page .section_blog .subscribe {
+  font-size: 20px;
+  color: white;
+  margin-top: 3em;
+  border: 0px solid transparent;
 }
 .landing-page .btn-primary.btn-outline:hover,
 .landing-page .btn-success.btn-outline:hover,
