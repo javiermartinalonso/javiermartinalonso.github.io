@@ -48,7 +48,7 @@
   },
   "blog":{
     "my_blog": "My Blog",
-    "latest_blog": "Últimas entradas"
+    "latest_blog": "latest blog"
   },
   "feedburner":{
     "my_feedburner": "Subscribe by Email"
