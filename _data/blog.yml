@@ -1,11 +1,11 @@
-- name: Blog
+- name: 'Blog'
   href: '/blog/'
 
-- name: Bonita BPM
+- name: 'Bonita BPM'
   href: '/bonita/'
 
-- name: LDAP
+- name: 'LDAP'
   href: '/LDAP/'
 
-- name: Spring
+- name: 'Spring'
   href: '/spring/'
