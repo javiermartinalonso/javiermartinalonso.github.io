@@ -1,5 +1,6 @@
 ---
 layout: post
+section: "Bonita BPM"
 title:  "Bonita bundle JBOSS"
 date:   2016-10-18
 desc: "Bonita BPM bundle JBOSS"

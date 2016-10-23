@@ -1,5 +1,6 @@
 ---
 layout: post
+section: "Bonita BPM"
 title:  "Productos Bonita BPM"
 date:   2016-10-17
 desc: "Productos Bonita BPM"

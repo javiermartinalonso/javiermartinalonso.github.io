@@ -1,5 +1,6 @@
 ---
 layout: post
+section: "LDAP"
 title:  "OpenLDAP"
 date:   2016-10-18
 desc: "OpenLDAP"

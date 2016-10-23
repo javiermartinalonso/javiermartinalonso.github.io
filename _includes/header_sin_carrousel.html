@@ -27,7 +27,7 @@
                 <ul class="nav navbar-nav navbar-right" id="i18_navbar">
                     <li><a class="page-scroll" href="/blog/">{{ site.index.home }}</a></li>
                     {% for tag in site.data.blog %}
-                        {% if page.title == tag.name %}
+                        {% if page.section == tag.name %}
                         <li class="active">
                         {% else %}
                         <li>

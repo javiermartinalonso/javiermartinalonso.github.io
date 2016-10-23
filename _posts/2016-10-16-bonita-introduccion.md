@@ -1,5 +1,6 @@
 ---
 layout: post
+section: "Bonita BPM"
 title:  "Bonita BPM Introducción"
 date:   2016-10-16
 desc: "Bonita BPM Introducción"
