@@ -7,5 +7,5 @@
 - name: 'JasperReports'
   i18n: 'JasperReports'
   url: '/javiermartinalonso/CORE'
-  img: 'static/img/landing/jasper-mini-logo.png'
+  img: 'static/img/landingjasper-mini-logo-2.jpg'
   desc: "Es un proyecto web con spring que es capaz de generar informes a partir de plantillas de jasper reports."
