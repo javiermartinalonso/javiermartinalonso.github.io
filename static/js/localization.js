@@ -2,7 +2,7 @@ $(document).ready(function() {
   var i18nOpts = {
     lng: 'es',
     fallbackLng: 'es',
-    resGetPath: '../static/locales/__lng__.json'
+    resGetPath: '../../../../../../../../../../static/locales/__lng__.json'
   };
 
   var translate = function() {
