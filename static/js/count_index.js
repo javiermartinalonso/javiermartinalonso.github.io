@@ -1,4 +1,5 @@
 $(document).ready(function () {
+/*
     pre_content = $("#javiermartinalonso_site_pv").html();
     $("#javiermartinalonso_site_pv").html(pre_content);
     $.ajax({
@@ -50,4 +51,5 @@ $(document).ready(function () {
             console.log(textStatus);
         }
     });
+*/
 });

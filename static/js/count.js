@@ -6,7 +6,7 @@ $(document).ready(function() {
     * TODO: Tiene montado un servicio rest propio que le devuelve el numero de visitas
     * habria que cambiar esto o siempre nos dara el numero de visitas de otro
     * url: "http://jalpc-a.leanapp.cn/api/jalpc_count",
-    */
+
     $.ajax({
         type: "get",
         async: false,
@@ -22,4 +22,5 @@ $(document).ready(function() {
             console.log('fail');
         }
     });
+    */
 });
