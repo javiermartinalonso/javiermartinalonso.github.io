@@ -31,16 +31,19 @@ permalink: /
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right" id="i18_navbar">
                     {% for section in site.sections %}
-                        <li>
-                          <a class="page-scroll" href="#{{ section.id }}">
-                            <span data-i18n="{{ section.i18n }}">{{ section.name }}</span>
-
-                          </a>
-                        </li>
+                        {% if section.name != 'blog' %}
+                            <li>
+                              <a class="page-scroll" href="#{{ section.id }}">
+                                <span data-i18n="{{ section.i18n }}">{{ section.name }}</span>
+                              </a>
+                            </li>
+                        {% endif %}
                     {% endfor %}
                     <!-- sección fija blog, accedemos directamente -->
                         <li>
-                          <a class="page-scroll" href="/blog/"><span data-i18n="blog.my_blog">Mi blog</span></a>
+                          <a class="page-scroll" href="/blog/">
+                            <span data-i18n="blog.my_blog">Mi blog</span>
+                        </a>
                         </li>
                     {% for language in site.languages %}
                         <li>
