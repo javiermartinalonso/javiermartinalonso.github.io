@@ -38,7 +38,10 @@ permalink: /
                           </a>
                         </li>
                     {% endfor %}
-
+                    <!-- sección fija blog, accedemos directamente -->
+                        <li>
+                          <a class="page-scroll" href="/blog/"><span data-i18n="blog.my_blog">Mi blog</span></a>
+                        </li>
                     {% for language in site.languages %}
                         <li>
                             <a id="set_lang_{{ language.locale }}" class="btn btn-sm set_{{ language.locale }}" data-locale="{{ language.locale }}">
