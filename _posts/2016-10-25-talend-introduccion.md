@@ -38,8 +38,8 @@ Una tarea puede llamar a un servicio web que no está disponible y recibir un 50
 
 Es una herramienta open-source (licencia GPL) que permite de forma visual modelar transformaciones de datos generando código Java. Ofrece un diseñador visual (basado en Eclipse RCP) que permite definir todo el flujo de transformaciones en base a componentes predefinidos (más de 400, también se pueden crear y ampliar).
 
-<div style="align-content: center; width: 100%;">
-	<img src="/static/img/blog/talend/talend_job.png" alt="job">
+<div style="text-align: center;">
+	<img src="/static/img/blog/talend/talend_job.png" alt="job" style="width: 90%">
 </div>
 
 Este diseñador proporciona una vista gráfica de los procesos, con componentes arrastrables que permiten: mappings, transformaciones, etc; funciones especializadas como data filtering, data multiplexing, o ELT; y soporte para RDBMS, file formats, LDAP directories, etc.
