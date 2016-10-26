@@ -94,7 +94,8 @@ Si se utiliza una userFilter y los usuarios pueden buscar, establezca el valor d
 
 La instalación predeterminada Bonita BPM viene con una aplicación de servicio de autenticación basado en la base de datos del motor de BonitaBPM. 
 Con el fin de activar la autenticación de ***Active Directory/LDAP*** la implementación del servicio necesita ser cambiada. 
-Para ello, edite ***bonita-home/engine-server/conf/tenants/template/bonita-tenant-sp-custom.properties***
+Para ello, edite ***bonita-home/engine-server/conf/tenants/template/bonita-tenant-sp-custom.properties.***
+
 Si edita este fichero los ajustes se aplicarán a todos los nuevos tenants. Para un tenant existente concreto, edite el archivo de propiedades en: ___bonita-home/engine-server/conf/tenants/<tenant-id\>___
 
 Usted tendrá que realizar los cambios siguientes:
