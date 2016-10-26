@@ -22,7 +22,7 @@ icon: fa-cogs
 
 Bonita BPM puede ser configurado para realizar la autenticación de usuario en un [servidor LDAP](https://javiermartinalonso.github.io/ldap/2016/10/18/ldap-Open-LDAP.html "servidor LDAPn") como ***Active Directory, Apache Directory Server, o OpenLDAP***.
 
-Este tipo de configuración se basa en una implementación específica del servicio de autenticación del motor Bonita BPM que delega el nombre de usuario y la contraseña de verificación real a un <em>servicio JAAS</em> configurado con un módulo de inicio de sesión específico para LDAP.
+Este tipo de configuración se basa en una implementación específica del servicio de autenticación del motor Bonita BPM que delega el nombre de usuario y la contraseña de verificación real a un ***servicio JAAS*** configurado con un módulo de inicio de sesión específico para LDAP.
 
 # Crear un archivo de configuración JAAS
 
@@ -57,7 +57,7 @@ Tenga en cuenta que ***security-domain-name*** es en realidad el nombre de conte
 Es importante identificar qué atributos tenemos que establecer dentro del módulo ***login-module***. Este será al menos uno de ***authIdentity, userFilter, tryFirstPass, java.naming.security.principal o java.naming.security.credentials***. 
 
 Lo primero que hay que tener claro es si **¿Es posible construir el nombre completo del usuario con el id con el que el usuario se identifica al iniciar la sesión?** 
-Por ejemplo Si el nombre de usuario es ***john.smithy***:
+Por ejemplo Si el nombre de usuario es ***john.smith***:
 
 - y el DN del usuario es: ***CN=John Smith,CN=Users,DC=MyDomain,DC=com*** entonces **no** es posible construir el DN dinámicamente.
 - y el DN del usuario es: ***uid=john.smith,ou=people,dc=example,dc=com***.
@@ -72,7 +72,9 @@ Por lo tanto hay que identificar cuál de los siguientes casos se aplica:
 
 ## ¿Qué valores debemos asignar a los atributos en el Login-Module?
 
-* ***userProvider***: Ponga esto en ***ldap://<ldap server address>:<ldap server port>/<DN  of the LDAP entry under which all users are located>***. Por ejemplo:***ldap://localhost:389/CN=Users,DC=MyDomain,DC=com***
+* ***userProvider***: Ponga esto en ***ldap://\<ldap server address\>:\<ldap server port\>/\<DN del nodo del LDAP bajo el cual están localizados los usuarios\>***. 
+ 
+	Por ejemplo:***ldap://localhost:389/CN=Users,DC=MyDomain,DC=com***
 
 * ***userFilter(sólo si es necesario)***: el valor debe ser una petición de búsqueda que se encuentra a sus usuarios en el servidor LDAP. La solicitud de búsqueda puede ser, por ejemplo: ***(&(objectClass=user)(userPrincipalName={USERNAME}@mydomain.com))***. Utilice una herramienta de LDAP (como Apache Directory Studio) para validar que la solicitud devuelve el resultado esperado si se reemplaza ***{USERNAME}*** con un nombre de usuario real.
 
