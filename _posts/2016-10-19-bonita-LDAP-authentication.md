@@ -59,7 +59,15 @@ Tenga en cuenta que <em><strong>security\-domain\-name</strong></em> es en reali
 
 Es importante identificar qué atributos tenemos que establecer dentro del módulo <strong><em>login\-module</em></strong>. Este será al menos uno de <em><strong>authIdentity, userFilter, tryFirstPass, java.naming.security.principal o java.naming.security.credentials</strong></em>. 
 
-Hay que identificar cuál de los siguientes casos se aplica:
+Lo primero que hay que tener claro es si ¿Es posible construir el nombre completo del usuario con el nombre de usuario que el usuario especifica al iniciar la sesión? 
+Por ejemplo Si el nombre de usuario es <strong><em>john.smithy</em></strong> :
+-  y el DN del usuario es: <em>CN=John Smith,CN=Users,DC=MyDomain,DC=com</em>
+entonces no es posible construir el DN dinámicamente.
+
+- y el DN del usuario es: <em>uid=john.smith,ou=people,dc=example,dc=com.</em>
+entonces si somos capaces de construir el DN dinámicamente.
+
+Por lo tanto hay que identificar cuál de los siguientes casos se aplica:
 
 * Si usted puede construir el DN de usuario inyectando directamente el nombre de usuario => establecer sólo el atributo <em><strong>authIdentity</strong></em>.
 * Si no se puede construir el DN de búsqueda y anónima se permite => establecer sólo el atributo <em><strong>userFilter</strong></em>.
