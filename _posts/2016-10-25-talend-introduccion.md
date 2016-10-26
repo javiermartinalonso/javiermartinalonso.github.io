@@ -10,7 +10,6 @@ tags: [Talend,Talend Open Studio, Introducción, Integration]
 icon: fa-exchange
 ---
 
-
 # ETL con Talend
 
 <strong>Extract, Transform and Load («extraer, transformar y cargar», frecuentemente abreviado ETL)</strong> es el proceso que permite a las organizaciones mover datos desde múltiples fuentes, reformatearlos y limpiarlos, y cargarlos en otra base de datos, data mart, o data warehouse para analizar, o en otro sistema operacional para apoyar un proceso de negocio. Los procesos ETL también se pueden utilizar para la integración con sistemas heredados.
