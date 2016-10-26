@@ -1,4 +1,4 @@
----
+****---
 layout: post
 section: "Bonita BPM"
 title:  "Bonita BPM LDAP authentication"
@@ -14,13 +14,13 @@ icon: fa-cogs
 
 * Esta documentación se aplica a una instalación Bonita BPM existente y en funcionamiento ([ver las instrucciones de instalación](https://javiermartinalonso.github.io/bonita/2016/10/18/bonita-bundle-JBOSS.html "bonita-bundle-JBOSS")).
 
-* Con el fin de tener en funcionamiento la autenticación de <em><strong>Active Directory/LDAP</strong></em>, el nombre de usuario (<em><strong>username</strong></em>) debe existir tanto en el directorio LDAP y en la base de datos Bonita BPM (la contraseña del usuario se comprueba contra el servidor LDAP, pero la información del usuario se lee desde la base de datos Bonita BPM). 
+* Con el fin de tener en funcionamiento la autenticación de ***Active Directory/LDAP***, el nombre de usuario (***username***) debe existir tanto en el directorio LDAP y en la base de datos Bonita BPM (la contraseña del usuario se comprueba contra el servidor LDAP, pero la información del usuario se lee desde la base de datos Bonita BPM). 
 
 * Se recomienda utilizar el [sincronizador de LDAP](https://javiermartinalonso.github.io/bonita/2016/10/19/bonita-LDAP-Synchronizer.html "sincronizador de LDAP") para crear usuarios Bonita BPM en una base de datos Bonita BPM a partir de los usarios de un ldap.
 
 # Visión de conjunto
 
-Bonita BPM puede ser configurado para realizar la autenticación de usuario en un <em>([servidor LDAP](https://javiermartinalonso.github.io/ldap/2016/10/18/ldap-Open-LDAP.html "servidor LDAPn") como Active Directory, Apache Directory Server, o OpenLDAP</em>.
+Bonita BPM puede ser configurado para realizar la autenticación de usuario en un [servidor LDAP](https://javiermartinalonso.github.io/ldap/2016/10/18/ldap-Open-LDAP.html "servidor LDAPn") como ***Active Directory, Apache Directory Server, o OpenLDAP***.
 
 Este tipo de configuración se basa en una implementación específica del servicio de autenticación del motor Bonita BPM que delega el nombre de usuario y la contraseña de verificación real a un <em>servicio JAAS</em> configurado con un módulo de inicio de sesión específico para LDAP.
 
@@ -28,7 +28,7 @@ Este tipo de configuración se basa en una implementación específica del servi
 
 ## Nombre del contexto contra el que se hace login.
 
-La configuración de JAAS puede incluir uno o varios contextos de inicio de sesión. El contexto de inicio de sesión Bonita BPM debe ser nombrado <em><strong>BonitaAuthentication\-\<TENANT_ID\> (donde \<TENANT_ID\> es el ID del cliente)</strong></em>.
+La configuración de JAAS puede incluir uno o varios contextos de inicio de sesión. El contexto de inicio de sesión Bonita BPM debe ser nombrado ***BonitaAuthentication-\<TENANT_ID\> (donde \<TENANT_ID\> es el ID del cliente)***.
 
 ## Crear o editar el archivo de configuración del servidor de aplicaciones
 
@@ -36,75 +36,71 @@ Nota: todos los archivos de configuración distinguen entre mayúsculas y minús
 
 ### Para el caso de JBOSS
 
-Editar el siguiente fichero <em><strong>\<JBOSS_HOME\>/standalone/configuration/standalone.xml</strong></em> y modificar la entrada <em><strong>security\-domains</strong></em>.
-Añadir el contexto de inicio de sesión Bonita BPM utilizando la sintaxis específica de JBoss justo antes de la etiqueta <em><strong>\</security-domains\></strong></em>. 
-Tenga en cuenta que <em><strong>security\-domain\-name</strong></em> es en realidad el nombre de contexto de inicio de sesión JAAS (por ejemplo Bonita BPM).
+Editar el siguiente fichero ***\<JBOSS_HOME\>/standalone/configuration/standalone.xml*** y modificar la entrada ***security-domains***.
+Añadir el contexto de inicio de sesión Bonita BPM utilizando la sintaxis específica de JBoss justo antes de la etiqueta ***\</security-domains\>***. 
+Tenga en cuenta que ***security-domain-name*** es en realidad el nombre de contexto de inicio de sesión JAAS (por ejemplo Bonita BPM).
 
+	<security-domain name="BonitaAuthentication-1">
+	    <authentication>
+	        <login-module code="com.sun.security.auth.module.LdapLoginModule" flag="required">
+	            <module-option name="userProvider" value="ldap://localhost:389/ou=all%20people,dc=example,dc=com"/>
+	    <module-option name="userFilter" value="(&amp;(objectClass=user)(userPrincipalName={USERNAME}@myExampleDomain.com))"/>		    
+	            <module-option name="authIdentity" value="uid={USERNAME},ou=people,dc=example,dc=com"/>
+	            <module-option name="useSSL" value="false"/>
+	            <module-option name="debug" value="true"/>
+	        </login-module>
+	    </authentication>
+	</security-domain>
 
+## ¿Qué atributos debemos inyectar en el Login-Module?
 
-        <security-domain name="BonitaAuthentication-1">
-            <authentication>
-                <login-module code="com.sun.security.auth.module.LdapLoginModule" flag="required">
-                    <module-option name="userProvider" value="ldap://localhost:389/ou=all%20people,dc=example,dc=com"/>
-		    <module-option name="userFilter" value="(&amp;(objectClass=user)(userPrincipalName={USERNAME}@myExampleDomain.com))"/>		    
-                    <module-option name="authIdentity" value="uid={USERNAME},ou=people,dc=example,dc=com"/>
-                    <module-option name="useSSL" value="false"/>
-                    <module-option name="debug" value="true"/>
-                </login-module>
-            </authentication>
-        </security-domain>
-		
+Es importante identificar qué atributos tenemos que establecer dentro del módulo ***login-module***. Este será al menos uno de ***authIdentity, userFilter, tryFirstPass, java.naming.security.principal o java.naming.security.credentials***. 
 
-## ¿Qué atributos debemos inyectar en el Login\-Module?
+Lo primero que hay que tener claro es si **¿Es posible construir el nombre completo del usuario con el id con el que el usuario se identifica al iniciar la sesión?** 
+Por ejemplo Si el nombre de usuario es ***john.smithy***:
 
-Es importante identificar qué atributos tenemos que establecer dentro del módulo <strong><em>login\-module</em></strong>. Este será al menos uno de <em><strong>authIdentity, userFilter, tryFirstPass, java.naming.security.principal o java.naming.security.credentials</strong></em>. 
-
-Lo primero que hay que tener claro es si ¿Es posible construir el nombre completo del usuario con el nombre de usuario que el usuario especifica al iniciar la sesión? 
-Por ejemplo Si el nombre de usuario es <strong><em>john.smithy</em></strong> :
--  y el DN del usuario es: <em>CN=John Smith,CN=Users,DC=MyDomain,DC=com</em>
-entonces no es posible construir el DN dinámicamente.
-
-- y el DN del usuario es: <em>uid=john.smith,ou=people,dc=example,dc=com.</em>
-entonces si somos capaces de construir el DN dinámicamente.
+- y el DN del usuario es: ***CN=John Smith,CN=Users,DC=MyDomain,DC=com*** entonces **no** es posible construir el DN dinámicamente.
+- y el DN del usuario es: ***uid=john.smith,ou=people,dc=example,dc=com***.
+entonces **si** somos capaces de construir el DN dinámicamente.
 
 Por lo tanto hay que identificar cuál de los siguientes casos se aplica:
 
-* Si usted puede construir el DN de usuario inyectando directamente el nombre de usuario => establecer sólo el atributo <em><strong>authIdentity</strong></em>.
-* Si no se puede construir el DN de búsqueda y anónima se permite => establecer sólo el atributo <em><strong>userFilter</strong></em>.
-* Si no se puede construir el DN y la búsqueda anónima está anulada y los usuarios autenticados pueden buscar => ajustar los atributos <em><strong>userFilter</strong></em> y <em><strong>authIdentity</strong></em>.
-* Si no se puede construir el DN y la búsqueda anónima está anulada y los usuarios autenticados no pueden buscar =>  ajustar los atributos <em><strong>userFilter, authIdentity, tryFirstPass, java.naming.security.principal</strong></em> y <em><strong>java.naming.security.credentials</strong></em>.
+* Si usted puede construir el DN de usuario inyectando directamente el id del usuario:  establecer sólo el atributo ***authIdentity***.
+* Si no se puede construir el DN directamente y la búsqueda anónima en el LDAP se permite: establecer sólo el atributo ***userFilter***.
+* Si no se puede construir el DN y la búsqueda anónima en el LDAP está anulada, pero los usuarios autenticados pueden buscar: ajustar los atributos ***userFilter*** y ***authIdentity***.
+* Si no se puede construir el DN y la búsqueda anónima está anulada y los usuarios autenticados no pueden buscar en el LDAP: ajustar los atributos ***userFilter, authIdentity, tryFirstPass, java.naming.security.principal*** y ***java.naming.security.credentials***.
 
-## ¿Qué valores debemos asignar a los atributos en el Login\-Module?
+## ¿Qué valores debemos asignar a los atributos en el Login-Module?
 
-* <em><strong>userProvider</strong></em>: Ponga esto en <strong><em>ldap://\<ldap server address>:\<ldap server port\>/\<DN  of the LDAP entry under which all users are located\></em></strong>. Por ejemplo:<strong><em>ldap://localhost:389/CN=Users,DC=MyDomain,DC=com</em></strong>
+* ***userProvider***: Ponga esto en ***ldap://<ldap server address>:<ldap server port>/<DN  of the LDAP entry under which all users are located>***. Por ejemplo:***ldap://localhost:389/CN=Users,DC=MyDomain,DC=com***
 
-* <em><strong>userFilter(sólo si es necesario)</strong></em>: el valor debe ser una petición de búsqueda que se encuentra a sus usuarios en el servidor LDAP. La solicitud de búsqueda puede ser, por ejemplo: <strong><em>(&(objectClass=user)(userPrincipalName={USERNAME}@mydomain.com))</em></strong>. Utilice una herramienta de LDAP (como Apache Directory Studio) para validar que la solicitud devuelve el resultado esperado si se reemplaza <em><strong>{usuario}</strong></em> con un nombre de usuario real.
+* ***userFilter(sólo si es necesario)***: el valor debe ser una petición de búsqueda que se encuentra a sus usuarios en el servidor LDAP. La solicitud de búsqueda puede ser, por ejemplo: ***(&(objectClass=user)(userPrincipalName={USERNAME}@mydomain.com))***. Utilice una herramienta de LDAP (como Apache Directory Studio) para validar que la solicitud devuelve el resultado esperado si se reemplaza ***{USERNAME}*** con un nombre de usuario real.
 
-* <em><strong>authIdentity(sólo si es necesario)</strong></em>: hay dos casos: 
-Si se puede construir el DN de usuario, establezca el valor del atributo con el usuario y el DN de <em><strong>{USERNAME}</strong></em> la etiqueta. Por ejemplo <em><strong>uid={USERNAME},ou=users,dc=example,dc=com</strong></em>. 
-Si se utiliza una userFilter y los usuarios pueden buscar, establezca el valor de <em><strong>{USERNAME}@mydomain.com</strong></em> para AD y el DN de usuario (igual al anterior) para otros servidores LDAP.
+* ***authIdentity(sólo si es necesario)***: hay dos casos: 
+Si se puede construir el DN de usuario, establezca el valor del atributo uid con el id del usuario en la etiqueta ***{USERNAME}***. Por ejemplo ***uid={USERNAME},ou=users,dc=example,dc=com***. 
+Si se utiliza una userFilter y los usuarios pueden buscar, establezca el valor de ***{USERNAME}@mydomain.com*** para AD y el DN de usuario (igual al anterior) para otros servidores LDAP.
 
-* <em><strong>tryFirstPass (sólo si es necesario)</strong></em>: ponga esto en true.
+* ***tryFirstPass (sólo si es necesario)***: ponga esto en true.
 
-* <em><strong>java.naming.security.principal (Sólo si es necesario)</strong></em>: especifique el nombre de usuario (AD) o el usuario DN (otros servidores LDAP) de un usuario que puede realizar búsquedas en el servidor.
+* ***java.naming.security.principal (Sólo si es necesario)***: especifique el nombre de usuario (AD) o el usuario DN (otros servidores LDAP) de un usuario que puede realizar búsquedas en el servidor.
 
-* <em><strong>java.naming.security.credentials (Sólo si es necesario)</strong></em>: especifica la contraseña de un usuario que puede realizar búsquedas en el servidor.
+* ***java.naming.security.credentials (Sólo si es necesario)***: especifica la contraseña de un usuario que puede realizar búsquedas en el servidor.
 
-## Pasos de configuración
+## Configuración de la autenticación contra LDAP
 
 ### Cambio de servicio de autenticación Bonita BPM
 
 La instalación predeterminada Bonita BPM viene con una aplicación de servicio de autenticación basado en la base de datos del motor de BonitaBPM. 
-Con el fin de activar la autenticación de <strong>Active Directory/LDAP</strong> la implementación del servicio necesita ser cambiado. 
-Para ello, edite <em><strong>bonita-home/engine-server/conf/tenants/template/bonita-tenant-sp-custom.properties</strong></em>
-Si edita este fichero los ajustes se aplicarán a todos los nuevos tenants. Para un tenant existente, edite el archivo de propiedades en: <em><strong>bonita-home/engine-server/conf/tenants/\<tenant-id\></strong></em>
+Con el fin de activar la autenticación de ***Active Directory/LDAP*** la implementación del servicio necesita ser cambiada. 
+Para ello, edite ***bonita-home/engine-server/conf/tenants/template/bonita-tenant-sp-custom.properties***
+Si edita este fichero los ajustes se aplicarán a todos los nuevos tenants. Para un tenant existente concreto, edite el archivo de propiedades en: ***bonita-home/engine-server/conf/tenants/<tenant-id>***
 
 Usted tendrá que realizar los cambios siguientes:
 
 * Comentar la linea de authenticationService
 * Añadir esta nueva línea:
 	
-	<em><strong>authentication.service.ref.name=jaasAuthenticationService</strong></em>
+	***authentication.service.ref.name=jaasAuthenticationService***
 
 ## Referencias
 
