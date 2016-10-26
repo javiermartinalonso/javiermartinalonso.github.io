@@ -1,4 +1,4 @@
-****---
+---
 layout: post
 section: "Bonita BPM"
 title:  "Bonita BPM LDAP authentication"
