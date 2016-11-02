@@ -12,9 +12,9 @@ icon: fa-cogs
 
 # Introducción a Bonita BPM 
 
-Bonita BPM es una suite ofimática para la creación y gestión de potentes aplicaciones basadas en procesos de negocio (BPM) y realización de Workflows.
+Bonita BPM es una suite ofimática para la creación y gestión de potentes aplicaciones basadas en **procesos de negocio (BPM) y realización de Workflows**.
 
-Bonita BPM puede aplicarse en varios proyectos que requieran flujos de trabajo complejos tales como Administración de la cadena de suministro, e-gobierno, etcétera.
+Bonita BPM puede aplicarse en varios proyectos que requieran flujos de trabajo complejos tales como **Administración de la cadena de suministro, e-gobierno**, etcétera.
 
 ## ¿Qué puedes hacer con Bonita BPM?
 
