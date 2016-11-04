@@ -56,6 +56,9 @@
   "link":{
     "link": "Link",
     "view": "views"
+  },
+  "footer":{
+    "rights" : "All Rights Reserved."
   }
 
 }

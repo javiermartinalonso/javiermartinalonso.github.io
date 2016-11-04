@@ -7,8 +7,32 @@
       {% endif %}
 
       <div class="col-lg-8 col-lg-offset-2 text-center">
-          <p id="{{ site.name }}_site_pv"><strong>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}</strong></p>
+          <p id="{{ site.name }}_site_pv"><strong>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. {{ footer.rights }}</strong></p>
       </div>
+
+
+      <!-- CONTACTO -->
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+        <ul class="list-inline social-icon">
+            <li><a href="https://github.com/{{ site.author.github_username }}" target="blank"><i class="fa fa-github"></i></a>
+            </li>
+            <!--
+            <li><a href="https://www.facebook.com/{{ site.author.facebook_username }}" target="blank"><i class="fa fa-facebook"></i></a>
+            -->
+            <li><a href="{{ site.author.linkldn }}" target="blank"><i class="fa fa-linkedin"></i></a>
+            <li><a href="mailto:{{ site.author.email }}"><i class="fa fa-envelope-o"></i></a>
+            </li>
+            </li>
+            <li><a href="{{ site.url}}/feed.xml" target="blank"><i class="fa fa-rss"></i></a>
+            </li>
+            </li>
+            {% if site.feedburner %}
+                <li><a href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" target="blank"><i class="fa fa-bell-o"></i></a>
+                </li>  
+            {% endif %}   
+        </ul>
+      </div>
+
   </div>
 </div>
 <!-- anulo el control por javascript del scroll sobre la barra de navegacion hace que desaparezca

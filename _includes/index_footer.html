@@ -2,6 +2,44 @@
 <script src="{{"static/js/localization.js" | prepend: site.baseurl }}"></script>
 <script async src="{{"static/js/count.min.js" | prepend: site.baseurl }}"></script>
 
+<div class="footer">
+  <div class="row i18container">
+      {% if site.feedburner %}
+          <div>
+              <a class="btn btn-lg btn-default btn-rounded btn-outline wow bounceIn subscribe" href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" style="color: #aeaeae"><i class="fa fa-bell-o" aria-hidden="true"></i> <span data-i18n="feedburner.my_feedburner">Suscríbete</span></a>
+          </div>
+      {% endif %}
+
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+          <p id="{{ site.name }}_site_pv"><strong>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. {{ footer.rights }}</strong></p>
+      </div>
+
+
+      <!-- CONTACTO -->
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+        <ul class="list-inline social-icon">
+            <li><a href="https://github.com/{{ site.author.github_username }}" target="blank"><i class="fa fa-github"></i></a>
+            </li>
+            <!--
+            <li><a href="https://www.facebook.com/{{ site.author.facebook_username }}" target="blank"><i class="fa fa-facebook"></i></a>
+            -->
+            <li><a href="{{ site.author.linkldn }}" target="blank"><i class="fa fa-linkedin"></i></a>
+            <li><a href="mailto:{{ site.author.email }}"><i class="fa fa-envelope-o"></i></a>
+            </li>
+            </li>
+            <li><a href="{{ site.url}}/feed.xml" target="blank"><i class="fa fa-rss"></i></a>
+            </li>
+            </li>
+            {% if site.feedburner %}
+                <li><a href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" target="blank"><i class="fa fa-bell-o"></i></a>
+                </li>  
+            {% endif %}   
+        </ul>
+      </div>
+      
+  </div>
+</div>
+
 <!-- Baidu analytics -->
 {% if site.ba %}
   <script>
