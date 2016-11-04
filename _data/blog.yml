@@ -10,5 +10,8 @@
 - name: 'TALEND'
   href: '/talend/'
 
+- name: 'JAVA'
+  href: '/java/'
+
 - name: 'Spring'
   href: '/spring/'
