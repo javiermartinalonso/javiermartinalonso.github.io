@@ -20,6 +20,7 @@ var cbpAnimatedHeader = (function() {
 
     function scrollPage() {
       $('.navbar-default').toggleClass('navbar-scroll', scrollY() >= changeHeaderOn);
+      $('.btn-logo-home-default').toggleClass('btn-logo-home-scroll', scrollY() >= changeHeaderOn);
     }
 
     function scrollY() {
