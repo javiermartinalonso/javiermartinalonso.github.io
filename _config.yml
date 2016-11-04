@@ -7,7 +7,7 @@ keywords: "Javier,Javier Martín,blog,Jekyll,github,gh-pages"
 baseurl: "/"
 url: "https://javiermartinalonso.github.io"
 name: javiermartinalonso
-img_logo_path: 'static/img/blog'favicon.ico
+img_logo_path: 'static/img/favicon.ico'
 
 # author
 author:
