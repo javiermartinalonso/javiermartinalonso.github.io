@@ -85,13 +85,16 @@ Creamos una ***“Nueva”*** variable del sistema:
 
 Le asignamos como ***“Nombre de la variable”***: **JAVA\_HOME** y como ***“Valor de variable”*** el path o ruta donde hemos instalado el JDK de nuestro java:
 
+<div style="text-align: center;">
+	<img src="/static/img/blog/windows/editar-variable-sistema-java-home.png" alt="Editar variable de Entorno Java\_home.">
+</div>
+
 > **NOTA**: En windows hay que reiniciar el sistema tras cambiar el valor a esta variable para que el valor de la variable se haga efectivo.
 
 
 - **PATH**:
 
-Para configurarla simplemente desde la pantalla de ***“Variables de entorno”*** anterior, clickamos sobre ***“Nueva”*** variable de usuario:
-
+Para configurarla simplemente desde la pantalla de ***“Variables de entorno”*** anterior, clickamos sobre ***“Nueva”*** variable de entorno:
 
 <div style="text-align: center;">
 	<img src="/static/img/blog/windows/nueva-variable-sistema.png" alt="Crear nueva variable de sistema.">
@@ -102,7 +105,7 @@ Para configurarla simplemente desde la pantalla de ***“Variables de entorno”
 Asignamos los siguientes valores: ***“Nombre de la variable“***: PATH y  ***“Valor de la variable”***: ***%JAVA_HOME%\bin***.
 
 <div style="text-align: center;">
-	<img src="/static/img/blog/windows/nueva-variable-sistema.png" alt="Asignación de los valores de la variable PATH.">
+	<img src="/static/img/blog/windows/editar-variable-sistema-path.png" alt="Asignación de los valores de la variable PATH.">
 </div>
 
 **OJO** : Si la variable ya esta creada, en vez de crear una nueva, editamos la que tenemos. En este caso NO BORRES el valor de la variable, simplemente introduce el nuevo valor separado por ***“;”***. Este podría ser un ejemplo: ***C:\WINDOWS;C:\WINDOWS\system32;%JAVA_HOME%\bin***
