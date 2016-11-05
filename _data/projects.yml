@@ -1,11 +1,11 @@
 - name: 'SPRING_LDAP_MANAGEMENT'
   i18n: 'SPRING_LDAP_MANAGEMENT'
   url: '/javiermartinalonso/SPRING_LDAP_MANAGEMENT'
-  img: 'static/img/landing/spring-security-project.png'
+  img: 'static/img/blog/spring/spring-security-project.png'
   desc: 'Proyecto con el que queremos hacer un producto para gestionar un LDAP desde un gestor WEB.'
 
 - name: 'JasperReports'
   i18n: 'JasperReports'
   url: '/javiermartinalonso/CORE'
-  img: 'static/img/landing/jasper-mini-logo-2.jpg'
+  img: 'static/img/blog/jasper/jasper-mini-logo-2.jpg'
   desc: "Es un proyecto web con spring que es capaz de generar informes a partir de plantillas de jasper reports."
