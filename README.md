@@ -4,7 +4,9 @@
 
 Esta es mi página web personal y contiene entre otras cosas mi blog. 
 
-Diseñado como un tema de Jekyll de aspecto simple, diáfano y veloz para Jekyll. Responsivo, pensado para poder ser visualizado de forma fluida en cualquier dispositivo.
+Diseñado como un tema de Jekyll de aspecto simple, diáfano y veloz.
+
+Responsivo: pensado para poder ser visualizado de forma fluida en cualquier dispositivo.
 
 Los menus y las páginas son multilingües excepto el contenido de los artículos.
 
@@ -16,8 +18,6 @@ Estaré encantado si quieren ponerse en contacto conmigo para darme algún conse
 * [Bootstrap](http://www.bootcss.com)
 * [jPages](http://luis-almeida.github.io/jPages)
 * [i18next](http://i18next.github.io/i18next)
-* [pixyll](https://github.com/johnotander)
-* [androiddevelop](https://github.com/androiddevelop)
 
 ## ¿Cómo contribuir?
 
