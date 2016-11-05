@@ -3,7 +3,8 @@
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badge/)
 
 # Página personal y Blog de Javier Martín Alonso
-[![Javier Martín Alonso](https://javiermartinalonso.github.io/)](hhttps://javiermartinalonso.github.io/)
+
+[Javier Martín Alonso](https://javiermartinalonso.github.io/ "Página personal y Blog de Javier Martín Alonso")
 
 ![Blog](blog.png)
 
