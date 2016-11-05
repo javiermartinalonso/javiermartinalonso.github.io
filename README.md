@@ -2,6 +2,11 @@
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badge/)
 
+# Página personal y Blog de Javier Martín Alonso
+[![Javier Martín Alonso](https://javiermartinalonso.github.io/)](hhttps://javiermartinalonso.github.io/)
+
+![Blog](blog.png)
+
 Esta es mi página web personal y contiene entre otras cosas mi blog. 
 
 Diseñado como un tema de Jekyll de aspecto simple, diáfano y veloz.
