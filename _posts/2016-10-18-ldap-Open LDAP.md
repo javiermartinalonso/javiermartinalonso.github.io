@@ -4,7 +4,7 @@ section: "LDAP"
 title:  "OpenLDAP"
 date:   2016-10-18
 desc: "OpenLDAP"
-keywords: "OpenLDAP"
+keywords: "OpenLDAP,ldap,instalación, windows"
 categories: [LDAP]
 tags: [OpenLDAP,ldap,instalación, windows]
 icon: fa-sitemap
