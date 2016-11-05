@@ -12,16 +12,17 @@ layout: default
                         	<button class="btn btn-white btn-xs" type="button">{{ category }}</button>
                         {% endfor %}
                     </div>
+                    
+                    <!-- imagen tecnologia o tema-->
+                    <div style="text-align: center;">
+                        <img src="{{ page.image | prepend: site.baseurl  }}" alt="{{ page.section }}" style="height: 150px;>
+                    </div>
+
                     <div class="text-center article-title">
                         <span class="text-muted"><i class="fa fa-clock-o"></i> {{ page.date | date: "%-d %b %Y" }}</span>
                         <h1>
                             {{ page.title }}
                         </h1>
-                    </div>
-
-                    <!-- imagen tecnologia o tema-->
-                    <div style="text-align: center;">
-                        <img src="{{ page.image | prepend: site.baseurl  }}" alt="{{ page.section }}">
                     </div>
 
                     	{{ content }}
