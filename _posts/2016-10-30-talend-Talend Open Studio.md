@@ -1,11 +1,8 @@
-http://blogs.antartec.com/opensource/2011/11/primeros-pasos-en-talend/
-
-
 ---
 layout: post
 section: "TALEND"
 title:  "Talend Open Studio Data Integration"
-date:   2016-10-25
+date:   2016-10-30
 desc: "Herramienta ETL para la migración e integración de datos"
 keywords: "Talend,Talend Open Studio, herramienta, Integration"
 categories: [talend]
@@ -17,20 +14,29 @@ icon: fa-exchange
 
 Talend Open Studio es una herramienta Open Source de integración y gestión de datos, así como integración de aplicaciones empresariales: en palabras simples una herramienta ETL.
 
-Talend está basado en Java, requiere específicamente JDK 6 y por tanto puede ser ejecutado en Windows y Linux sin mayor dificultad, solo basta con descomprimir su ‘instalador’.
+Talend está basado en Java, requiere específicamente JDK 6 y por tanto puede ser ejecutado en Windows y Linux sin mayor dificultad, solo basta con descomprimir su ***‘instalador’***.
 
 ## Niveles de Talend
 
 Talend basa su diseño en 3 niveles:
 
+- **Business Models (Modelos de Negocios):** nivel diseñado para modelar de manera teórica la aplicación, para lo cual se realizan diagramas de flujo básicos con actores de los procesos.
 
-**- Business Models (Modelos de Negocios):** es nivel diseñado para modelar de manera teórica la aplicación, para lo cual se realizan diagramas de flujo básicos con actores de los procesos.
+<div style="text-align: center;">
+	<img src="/static/img/blog/talend/bussines-dessigner.png" alt="Business Model Dessigner">
+</div>
 
-**- Job Designs (Diseño de Trabajos):** el nivel mas interesante, en el cual se diseña el trabajo en sí, el código que será ejecutado.
+- **Job Designs (Diseño de Trabajos):** el nivel mas interesante, en el cual se diseña el trabajo en sí, el código que será ejecutado.
 
-**- Contexts (Contextos):** el es nivel que contiene los contextos, los cuales pueden ser definidos como variables globales de ejecución del programa, como la carpeta donde se ejecutará la aplicación final o variables iniciales de entrada.
+<div style="text-align: center;">
+	<img src="/static/img/blog/talend/job-dessigns.png" alt="Business Model Dessigner">
+</div>
 
-Pantallazo Talend 1
+- **Contexts (Contextos):** el es nivel que contiene los contextos, los cuales pueden ser definidos como variables globales de ejecución del programa, como la carpeta donde se ejecutará la aplicación final o variables iniciales de entrada.
+
+<div style="text-align: center;">
+	<img src="/static/img/blog/talend/contexts.png" alt="Business Model Dessigner">
+</div>
 
 ### Job Designs
 
@@ -42,40 +48,37 @@ Dichos Subjobs se encuentran separados en la paleta en diversas categorías: ***
 
 Algunos Subjobs que pueden resultar interesantes son:
 
+- **Conexiones estandarizadas y personalizables a bases de datos**, incluye soporte a gran cantidad de las bases de datos Open Source (MySQL, PostgreSQL, SLQLite) e incluso Sybase y Oracle.
 
-**- Conexiones estandarizadas y personalizables a bases de datos**, incluye soporte a gran cantidad de las bases de datos Open Source (MySQL, PostgreSQL, SLQLite) e incluso Sybase y Oracle.
-
-**- Ejecutores de consultas y procedimientos almacenados** en las mencionadas bases de datos.
+- **Ejecutores de consultas y procedimientos almacenados** en las mencionadas bases de datos.
 Código Java personalizable.
 
-**- Iteradores, repetidores de subtareas**.
+- **Iteradores, repetidores de subtareas**.
 
-**- Inscripción de variables globales**, muy usado para mantener una variable global, ya que los subjobs solo crean variables locales.
+- **Inscripción de variables globales**, muy usado para mantener una variable global, ya que los subjobs solo crean variables locales.
 
-**- Extractores e insertores de datos de archivos** (xml, properties), también configurables.
+- **Extractores e insertores de datos de archivos** (xml, properties), también configurables.
 
-**- Conexión a FTP** para envío y descarga de archivos.
-**- Compresión de archivos.**
+- **Conexión a FTP** para envío y descarga de archivos.
+- **Compresión de archivos.**
 
-**- Modificadores de carpetas** (crear, eliminar, modificar).
-**- Filtros de información.**
-
-Pantallazo Talend 2
+- **Modificadores de carpetas** (crear, eliminar, modificar).
+- **Filtros de información.**
 
 Los mencionados y varios otros elementos más se unen mediante un flujo secuencial, guiado por flechas extraídas de cada uno de ellos (visibles haciendo click derecho) que hacen referencias a eventos de dos clases:
 
 
-**- row:** evento que transmite data del elemento al elemento apuntado.
+- **row:** evento que transmite datos del elemento del que parte al elemento apuntado.
 
-**- trigger:** conjunto de eve﻿ntos, activados por posibles modos de ejecución.
+- **trigger:** conjunto de eve﻿ntos, activados por posibles modos de ejecución.
 
-	**- OnSubjobOk:** cuando el elemento ha sido ejecutado sin errores.
+	- **OnSubjobOk:** cuando el elemento ha sido ejecutado sin errores.
 
-	**- OnSubjobError:** cuando el elemento ha tenido algún error en la ejecución.
+	- **OnSubjobError:** cuando el elemento ha tenido algún error en la ejecución.
 
-	**- otros eventos**, dependiendo del tipo de Subjob.
+	- **otros eventos**, dependiendo del tipo de Subjob.
 
-Adicionalmente, un Job puede contener a uno o varios otros Jobs e invocarlos como parte de un nuevo flujo, ejecutando los Subjobs contenidos dentro de cada uno.
+Adicionalmente, un Job puede contener a uno o varios Jobs e invocarlos como parte de un nuevo flujo, ejecutando los Subjobs contenidos dentro de cada uno.
 
 Finalmente, cada Job es exportable a un archivo comprimido en formato ZIP, que contiene el ejecutable: un archivo .jar llamado a partir de un archivo .bat (para Windows) o un archivo .sh (Linux).
 

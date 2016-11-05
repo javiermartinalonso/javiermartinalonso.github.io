@@ -1,7 +1,7 @@
 ---
 layout: post
 section: "TALEND"
-title:  "Talend Open Studio Data Integration"
+title:  "Talend Introducción"
 date:   2016-10-25
 desc: "Herramienta ETL para la migración e integración de datos"
 keywords: "Talend,Talend Open Studio, Introducción, Integration"
