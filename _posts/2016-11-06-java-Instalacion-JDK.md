@@ -8,7 +8,7 @@ keywords: "java,jdk,instalación, windows"
 categories: [java]
 tags: [java,jdk,instalación, windows]
 icon: icon-java-bold
-image: /static/img/blog/java/LOGO-Java.png
+image: static/img/blog/java/LOGO-Java.png
 ---
 
 # Instalación JDK
