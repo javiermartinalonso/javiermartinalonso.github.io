@@ -19,7 +19,7 @@ Java es un lenguaje de programación de propósito general, concurrente, orienta
 Pero cuando nos referimos a java no nos referimos sólo a un lenguaje de programación sino a **la plataforma Java** que es el nombre de un entorno o plataforma de computación originaria de Sun Microsystems, capaz de ejecutar aplicaciones desarrolladas usando el lenguaje de programación Java u otros lenguajes que compilen a bytecode y un conjunto de herramientas de desarrollo. La plataforma no es un hardware específico o un sistema operativo, sino más bien una máquina virtual encargada de la ejecución de las aplicaciones, y un conjunto de bibliotecas estándar que ofrecen una funcionalidad común.
 
 <div style="text-align: center;">
-	<img src="/static/img/blog/java/diagrama-conceptual-java.png" alt="Diagrama conceptual Java." style="width: 90%">
+	<img src="/static/img/blog/java/diagrama-conceptual-java.png" alt="Diagrama conceptual Java.">
 </div>
 
 ## Ediciones de la plataforma Java
@@ -35,7 +35,7 @@ La configuración de una plataforma Java afecta fundamentalmente a los servicios
 - **Java ME**: esta edición de la plataforma, **Micro Edition**, está enfocada a la creación de programas que se ejecutarán en sistemas con recursos limitados, tales como teléfonos móviles, electrodomésticos y dispositivos de domótica o equipos para entornos empotrados como la Rasperry Pi y similares.
 
 <div style="text-align: center;">
-	<img src="/static/img/blog/java/ediciones_java.png" alt="Diagrama conceptual Java." style="width: 90%">
+	<img src="/static/img/blog/java/ediciones_java.png" alt="Diagrama conceptual Java.">
 </div>
 
 > **Nota**: ***Java SE, EE, ME, la JVM y otras partes de Java*** son en realidad especificaciones abstractas de los servicios y modos de funcionamiento de los distintos elementos de la plataforma. Encontraremos múltiples implementaciones de dichas especificaciones. Por ejemplo, HotSpot es la implementación de Oracle de la JVM, existiendo implementaciones alternativas de esa misma especificación como la de OpenJDK o la de IBM.
