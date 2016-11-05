@@ -8,6 +8,7 @@ keywords: "java,jdk,instalación,windows,JAVA_HOME,PATH"
 categories: [java]
 tags: [java,jdk,instalación, windows,JAVA_HOME,PATH]
 icon: icon-java-bold
+image: /static/img/blog/java/LOGO-Java.png
 ---
 
 # Variables de entorno de JAVA

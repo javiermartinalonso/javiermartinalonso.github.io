@@ -13,11 +13,17 @@ layout: default
                         {% endfor %}
                     </div>
                     <div class="text-center article-title">
-                    <span class="text-muted"><i class="fa fa-clock-o"></i> {{ page.date | date: "%-d %b %Y" }}</span>
+                        <span class="text-muted"><i class="fa fa-clock-o"></i> {{ page.date | date: "%-d %b %Y" }}</span>
                         <h1>
                             {{ page.title }}
                         </h1>
                     </div>
+
+                    <!-- imagen tecnologia o tema-->
+                    <div style="text-align: center;">
+                        <img src="{{ page.image }}" alt="{{ page.section }}">
+                    </div>
+
                     	{{ content }}
                     <hr>
                     <div class="row">
