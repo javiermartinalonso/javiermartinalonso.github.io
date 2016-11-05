@@ -29,10 +29,10 @@ En la página oficial de ORACLE, encontrará dos opciones: **Download JDK** y **
 Hay diferentes [ediciones de la plataforma Java](https://javiermartinalonso.github.io/java/2016/11/05/java-Primeros-Pasos-1.html "ediciones de la plataforma Java"), y hay que tener clara cuál es la edición que necesitamos según el tipo de producto que deseamos desarrollar.
 
 <div style="text-align: center;">
-	<img src="/static/img/blog/java/ediciones_java.png" alt="Diagrama conceptual Java." style="width: 90%">
+	<img src="/static/img/blog/java/ediciones_java.png" alt="Diagrama conceptual Java.">
 </div>
 
-incluir algún vídeo explicativo
+> **Pendiente incluir algún vídeo explicativo**
 
 
 
@@ -65,33 +65,47 @@ Para configurar esta variable simplemente desde la pantalla de ***“Variables d
 #### Configuración en WINDOWS
 
 - **JAVA\_HOME**:
-Desde el “Panel de Control” pinchamos en  “Sistema” o bien sobre “MiPC” pulsamos el botón derecho y clickamos  sobre “Propiedades“. Una vez en la pantalla que aparece a continuación hacemos click en “Configuración avanzada del sistemas“.
+Desde el ***“Panel de Control”*** pinchamos en ***“Sistema”*** o bien sobre ***“MiPC”*** pulsamos el botón derecho y clickamos sobre ***“Propiedades“***. Una vez en la pantalla que aparece a continuación hacemos click en ***“Configuración avanzada del sistemas“***.
 
-Configuración de Sistema
+<div style="text-align: center;">
+	<img src="/static/img/blog/windows/conf-avanzada_sistema.png" alt="Configuración avanzada del Sistema.">
+</div>
 
-En la siguiente pantalla vamos a  la pestaña “Opciones avanzadas” y clickamos sobre “Variables de entorno“, tal y como se muestra a continuación:
+En la siguiente pantalla vamos a la pestaña ***“Opciones avanzadas”*** y clickamos sobre ***“Variables de entorno“***, tal y como se muestra a continuación:
 
-opciones avanzadas variables de entorno
+<div style="text-align: center;">
+	<img src="/static/img/blog/windows/variables-entorno.png" alt="opciones avanzadas variables de entorno.">
+</div>
 
-Creamos una “Nueva” variable del sistema:
+Creamos una ***“Nueva”*** variable del sistema:
 
-Nueva Variable de Entorno
+<div style="text-align: center;">
+	<img src="/static/img/blog/windows/nueva-variable-sistema.png" alt="Nueva Variable de Entorno.">
+</div>
 
-Le asignamos como “Nombre de la variable”: JAVA_HOME y como “Valor de variable” el path o ruta donde hemos instalado el JDK de nuestro java:
-En windows hay que reiniciar el sistema tras cambiar el valor a esta variable para que el valor de la variable se haga efectivo.
+Le asignamos como ***“Nombre de la variable”***: **JAVA\_HOME** y como ***“Valor de variable”*** el path o ruta donde hemos instalado el JDK de nuestro java:
+
+> **NOTA**: En windows hay que reiniciar el sistema tras cambiar el valor a esta variable para que el valor de la variable se haga efectivo.
 
 
 - **PATH**:
 
-Para configurarla simplemente desde la pantalla de “Variables de entorno” anterior, clickamos sobre “Nueva” variable de usuario:
+Para configurarla simplemente desde la pantalla de ***“Variables de entorno”*** anterior, clickamos sobre ***“Nueva”*** variable de usuario:
 
-Crear nueva variable de usuario
 
-OJO : Si la variable ya esta creada, en vez de crear una nueva, editamos la que tenemos.
+<div style="text-align: center;">
+	<img src="/static/img/blog/windows/nueva-variable-sistema.png" alt="Crear nueva variable de sistema.">
+</div>
 
-Asignamos los siguientes valores: “Nombre de la variable“: PATH y  “Valor de la variable”: %JAVA_HOME%\bin.Asignación de los valores de la variable de usuario PATH
+> **OJO** : Si la variable ya esta creada, en vez de crear una nueva, editamos la que tenemos.
 
-OJO : Si la variable ya esta creada, en vez de crear una nueva, editamos la que tenemos. En este caso NO BORRES el valor de la variable, simplemente introduce el nuevo valor separado por “;”. Este podría ser un ejemplo: C:\WINDOWS;C:\WINDOWS\system32;%JAVA_HOME%\bin
+Asignamos los siguientes valores: ***“Nombre de la variable“***: PATH y  ***“Valor de la variable”***: ***%JAVA_HOME%\bin***.
+
+<div style="text-align: center;">
+	<img src="/static/img/blog/windows/nueva-variable-sistema.png" alt="Asignación de los valores de la variable PATH.">
+</div>
+
+**OJO** : Si la variable ya esta creada, en vez de crear una nueva, editamos la que tenemos. En este caso NO BORRES el valor de la variable, simplemente introduce el nuevo valor separado por ***“;”***. Este podría ser un ejemplo: ***C:\WINDOWS;C:\WINDOWS\system32;%JAVA_HOME%\bin***
 
 Con esto ya quedan configuradas las variable de entorno de Java en nuestro sistema de tal manera que podremos compilar y ejecutar nuestras clases independientemente de donde las tengas almacenadas.
 
