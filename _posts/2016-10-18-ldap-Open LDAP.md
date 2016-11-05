@@ -8,6 +8,7 @@ keywords: "OpenLDAP,ldap,instalación, windows"
 categories: [LDAP]
 tags: [OpenLDAP,ldap,instalación, windows]
 icon: fa-sitemap
+image: static/img/blog/ldap/ldap-logo.png
 ---
 
 # OpenLDAP

@@ -8,6 +8,7 @@ keywords: "Productos Bonita BPM,bundle, portal, JBOSS, Tomcat, Bonita BPM Studio
 categories: [bonita]
 tags: [Productos Bonita BPM,bundle, portal, JBOSS, Tomcat, Bonita BPM Studio]
 icon: fa-cogs
+image: static/img/blog/bonita/bonita-logo.png
 ---
 
 # Productos Bonita BPM

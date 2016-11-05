@@ -8,6 +8,7 @@ keywords: "Talend,Talend Open Studio, Introducción, Integration"
 categories: [talend]
 tags: [Talend,Talend Open Studio, Introducción, Integration]
 icon: fa-exchange
+image: static/img/blog/talend/talend-logo.png
 ---
 
 # ETL con Talend

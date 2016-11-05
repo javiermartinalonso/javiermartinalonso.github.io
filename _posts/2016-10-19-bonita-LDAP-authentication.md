@@ -8,6 +8,7 @@ keywords: "Bonita BPM, organizacion, LDAP authentication"
 categories: [bonita]
 tags: [Bonita BPM,LDAP authentication,organizacion] 
 icon: fa-cogs
+image: static/img/blog/bonita/bonita-logo.png
 ---
 
 # Premisas

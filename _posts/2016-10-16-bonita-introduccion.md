@@ -8,6 +8,7 @@ keywords: "Bonita BPM,Introducción"
 categories: [bonita]
 tags: [Bonita BPM,Introducción]
 icon: fa-cogs
+image: static/img/blog/bonita/bonita-logo.png
 ---
 
 # Introducción a Bonita BPM 

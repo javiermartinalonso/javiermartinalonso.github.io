@@ -8,6 +8,7 @@ keywords: "LDAP,Introducción"
 categories: [LDAP]
 tags: [ldap,Introducción]
 icon: fa-sitemap
+image: static/img/blog/ldap/ldap-logo.png
 ---
 
 # LDAP
