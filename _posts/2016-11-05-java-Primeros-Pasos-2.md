@@ -8,7 +8,7 @@ keywords: "java,JDK,JVM,JRE,IDE, Java SE,JavaFX,Java EE,Java ME"
 categories: [java]
 tags: [java,JDK,JVM,JRE,IDE, Java SE,JavaFX,Java EE,Java ME]
 icon: icon-java-bold
-image: /static/img/blog/java/LOGO-Java.png
+image: static/img/blog/java/LOGO-Java.png
 ---
 
 # Primeros pasos con Java (2 de 2)
