@@ -6627,6 +6627,7 @@ body.landing-page {
   background-color: transparent;
   border-color: transparent;
   transition: all 0.3s ease-in-out 0s;
+  margin-bottom: 0px;
 }
 .landing-page .navbar-default .nav li a {
   color: #fff;
@@ -7050,7 +7051,7 @@ body.landing-page {
     /* Bump up size of carousel content */
   }
   .landing-page .navbar-wrapper {
-    margin-top: 20px;
+    margin-top: 0px;
   }
   .landing-page .navbar-wrapper .container {
     padding-right: 15px;

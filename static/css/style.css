@@ -7046,7 +7046,7 @@ body.landing-page {
     /* Bump up size of carousel content */
   }
   .landing-page .navbar-wrapper {
-    margin-top: 20px;
+    margin-top: 0px;
   }
   .landing-page .navbar-wrapper .container {
     padding-right: 15px;
