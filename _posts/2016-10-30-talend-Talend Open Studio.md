@@ -24,19 +24,19 @@ Talend basa su diseño en 3 niveles:
 - **Business Models (Modelos de Negocios):** nivel diseñado para modelar de manera teórica la aplicación, para lo cual se realizan diagramas de flujo básicos con actores de los procesos.
 
 <div style="text-align: center;">
-	<img src="/static/img/blog/talend/bussines-dessigner.png" alt="Business Model Dessigner">
+	<img src="/static/img/blog/talend/bussines-dessigner.png" class="img-preview" alt="Business Model Dessigner">
 </div>
 
 - **Job Designs (Diseño de Trabajos):** el nivel mas interesante, en el cual se diseña el trabajo en sí, el código que será ejecutado.
 
 <div style="text-align: center;">
-	<img src="/static/img/blog/talend/job-dessigns.png" alt="Business Model Dessigner">
+	<img src="/static/img/blog/talend/job-dessigns.png" class="img-preview" alt="Business Model Dessigner">
 </div>
 
 - **Contexts (Contextos):** el es nivel que contiene los contextos, los cuales pueden ser definidos como variables globales de ejecución del programa, como la carpeta donde se ejecutará la aplicación final o variables iniciales de entrada.
 
 <div style="text-align: center;">
-	<img src="/static/img/blog/talend/contexts.png" alt="Business Model Dessigner">
+	<img src="/static/img/blog/talend/contexts.png" class="img-preview" alt="Business Model Dessigner">
 </div>
 
 ### Job Designs

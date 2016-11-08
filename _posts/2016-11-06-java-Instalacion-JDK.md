@@ -30,7 +30,7 @@ En la página oficial de ORACLE, encontrará dos opciones: **Download JDK** y **
 Hay diferentes [ediciones de la plataforma Java](https://javiermartinalonso.github.io/java/2016/11/05/java-Primeros-Pasos-1.html "ediciones de la plataforma Java"), y hay que tener clara cuál es la edición que necesitamos según el tipo de producto que deseamos desarrollar.
 
 <div style="text-align: center;">
-	<img src="/static/img/blog/java/ediciones_java.png" alt="Diagrama conceptual Java.">
+	<img src="/static/img/blog/java/ediciones_java.png" class="img-preview" alt="Diagrama conceptual Java.">
 </div>
 
 > **Pendiente incluir algún vídeo explicativo**
