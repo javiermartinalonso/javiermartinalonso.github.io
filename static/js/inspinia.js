@@ -219,7 +219,7 @@ $(document).ready(function () {
         }
 
         if (fixednavbar == 'on') {
-            $(".navbar-static-top").removeClass('navbar-static-top').addClass('navbar-fixed-top');
+            //$(".navbar-static-top").removeClass('navbar-static-top').addClass('navbar-fixed-top');
             $('.btn-logo-home-default').removeClass('btn-logo-home-default').addClass('btn-logo-home-scroll');
             
             body.addClass('fixed-nav');
