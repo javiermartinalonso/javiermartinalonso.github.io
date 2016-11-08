@@ -13,6 +13,17 @@ $(document).ready(function() {
         event.preventDefault();
         $("#navbar").collapse('hide');
     });
+
+
+    // Si está colapsado el menu
+    if ($(".navbar-collapse").hasClass('in'))
+    {  
+        $(".navbar-static-top").removeClass('navbar-static-top').addClass('navbar-fixed-top');
+        $('.btn-logo-home-default').removeClass('btn-logo-home-default').addClass('btn-logo-home-scroll');
+        
+        body.addClass('fixed-nav'); 
+    }
+
 });
 
 // check if browser support HTML5 local storage
