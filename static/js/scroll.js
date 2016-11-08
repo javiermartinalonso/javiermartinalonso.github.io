@@ -15,8 +15,9 @@ $(document).ready(function() {
     });
 
 
+navbar
     // Si está colapsado el menu
-    if ($(".navbar-collapse").hasClass('in'))
+    if (!$("#navbar").is(":visible"))
     {  
         $(".navbar-static-top").removeClass('navbar-static-top').addClass('navbar-fixed-top');
         $('.btn-logo-home-default').removeClass('btn-logo-home-default').addClass('btn-logo-home-scroll');
