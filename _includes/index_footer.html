@@ -10,8 +10,8 @@
       </div>
     {% endif %}
       
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
+    <div>
+      <ul>
         {% for language in site.languages %}
           <a id="set_lang_{{ language.locale }}" class="btn btn-sm set_{{ language.locale }}" data-locale="{{ language.locale }}">
               <img src="{{ language.flag | prepend: site.baseurl }}" height="16px" width="16px">
