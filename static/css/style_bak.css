@@ -2492,7 +2492,7 @@ label.error {
 .img-preview {
   overflow: hidden;
   text-align: center;
- /* width: 100%;*/
+  width: 100%;
 }
 .img-preview-sm {
   height: 130px;
