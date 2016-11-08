@@ -6600,7 +6600,7 @@ body.landing-page {
   border-bottom: 2px solid #3385FF;
 }
 .landing-page .navbar-wrapper {
-  position: fixed;
+  position: relative;
   top: 0;
   right: 0;
   left: 0;
