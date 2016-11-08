@@ -9,15 +9,16 @@
               <a class="btn btn-lg btn-default btn-rounded btn-outline wow bounceIn subscribe" href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" style="color: #aeaeae"><i class="fa fa-bell-o" aria-hidden="true"></i> <span data-i18n="feedburner.my_feedburner">Suscríbete</span></a>
           </div>
       {% endif %}
+      <ul>
+        {% for language in site.languages %}
+            <li>
+                <a id="set_lang_{{ language.locale }}" class="btn btn-sm set_{{ language.locale }}" data-locale="{{ language.locale }}">
+                    <img src="{{ language.flag | prepend: site.baseurl }}" height="16px" width="16px">
+                </a>
+            </li>
+        {% endfor %} 
+      </ul>
 
-      {% for language in site.languages %}
-          <li>
-              <a id="set_lang_{{ language.locale }}" class="btn btn-sm set_{{ language.locale }}" data-locale="{{ language.locale }}">
-                  <img src="{{ language.flag | prepend: site.baseurl }}" height="16px" width="16px">
-              </a>
-          </li>
-      {% endfor %} 
-                
       <div class="col-lg-8 col-lg-offset-2 text-center">
           <p id="{{ site.name }}_site_pv"><strong>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. <span data-i18n="footer.rights">Todos los derechos reservados.</span></strong></p>
       </div>
