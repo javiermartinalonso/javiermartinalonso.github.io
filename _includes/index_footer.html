@@ -13,7 +13,7 @@
     <div class="col-lg-8 col-lg-offset-2 text-center">
       <p id="{{ site.name }}_site_pv"><strong>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. <span data-i18n="footer.rights">Todos los derechos reservados.</span></strong></p>
     </div>
-    <div class="flags">
+    <div class="col-lg-1 flags">
       {% for language in site.languages %}
         <a id="set_lang_{{ language.locale }}" class="btn btn-sm set_{{ language.locale }}" data-locale="{{ language.locale }}">
             <img src="{{ language.flag | prepend: site.baseurl }}" height="16px" width="16px">
