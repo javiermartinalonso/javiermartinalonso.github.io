@@ -5,7 +5,7 @@
             <h1><span data-i18n="skills.my_skills">Mis habilidades</span></h1>
         </div>
     </div>
-    <div class="row features-block">
+    <div class="features-block">
         {% for skill in site.data.skills %}
             {% assign loopindex = forloop.index | modulo: 2 %}
         <div class="row">
