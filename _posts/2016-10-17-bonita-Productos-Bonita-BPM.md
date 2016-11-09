@@ -13,8 +13,11 @@ image: static/img/blog/bonita/bonita-logo.png
 
 # Productos Bonita BPM
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/29jevhdg1Jk?list=PLkQrLrDQK4Z3Ncpm1CLbHs0CvqYV1XJXU" frameborder="0" allowfullscreen></iframe>
-
+<div class="delimitador-multimedia">
+    <div class="contenido-multimedia">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/29jevhdg1Jk?list=PLkQrLrDQK4Z3Ncpm1CLbHs0CvqYV1XJXU" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
 
 ## Referencias
 
