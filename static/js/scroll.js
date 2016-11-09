@@ -17,7 +17,7 @@ $(document).ready(function() {
     // Si está colapsado el menu
     if (!$("#navbar").is(":visible"))
     {  
-        //$(".navbar-static-top").removeClass('navbar-static-top').addClass('navbar-fixed-top');
+        $(".navbar-fixed-top").removeClass('navbar-fixed-top').addClass('navbar-static-top');
         $('.btn-logo-home-default').removeClass('btn-logo-home-default').addClass('btn-logo-home-scroll');
     }
 
