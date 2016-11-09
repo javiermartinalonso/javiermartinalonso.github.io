@@ -3439,7 +3439,7 @@ video {
   padding: 0 20px;
 }
 .wrapper-content {
-  padding: 65px 10px 40px;
+  padding: 0px 10px 40px;
 }
 #page-wrapper {
   padding: 0 15px;
@@ -7397,5 +7397,5 @@ body.rtls.top-navigation .footer.fixed {
 }
 
 .section-blog {
-  margin-top: 70px;
+  margin-top: 65px;
 }
