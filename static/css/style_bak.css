@@ -8282,3 +8282,7 @@ body.md-skin {
   text-transform: uppercase; 
   font-size: 16px;
 }
+
+.section-blog {
+  margin-top: 70px;
+}
