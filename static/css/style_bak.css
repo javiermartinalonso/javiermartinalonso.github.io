@@ -6627,7 +6627,7 @@ body.landing-page {
   background-color: transparent;
   border-color: transparent;
   transition: all 0.3s ease-in-out 0s;
-  margin: 20px 0px 10px 0px;
+  padding: 20px 0px 10px 0px;
 }
 .landing-page .navbar-default .nav li a {
   color: #fff;
