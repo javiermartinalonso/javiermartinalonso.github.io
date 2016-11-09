@@ -7148,7 +7148,7 @@ body.landing-page {
   }
   .landing-page .navbar .navbar-header .navbar-toggle {
     background-color: #ffffff;
-    padding: 25px 15px 25px 0px;
+    padding: 25px 10px 25px 0px;
     border: none;
   }
 }
@@ -8272,7 +8272,7 @@ body.md-skin {
 
 .btn-logo-home-scroll {
   border: 0px; 
-  margin: 10px 10px 15px; 
+  margin: 10px 10px 15px 0px;  
   background: transparent;
   color: inherit; 
   font-family: 'Open Sans',helvetica,arial,sans-serif; 
