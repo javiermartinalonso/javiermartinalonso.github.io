@@ -6623,7 +6623,6 @@ body.landing-page {
   background-color: transparent;
   border-color: transparent;
   transition: all 0.3s ease-in-out 0s;
-  padding: 20px 0px 10px 0px;
 }
 .landing-page .navbar-default .nav li a {
   color: #fff;
@@ -7089,7 +7088,7 @@ body.landing-page {
   .landing-page .navbar-default {
     background-color: #fff;
     border-color: #fff;
-    /*padding: 15px 0;*/
+    padding: 20px 0px 10px 0px;
   }
   .landing-page .navbar-default .navbar-nav > .active > a:focus {
     background: transparent;
