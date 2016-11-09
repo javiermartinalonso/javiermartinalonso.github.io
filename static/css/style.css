@@ -7403,7 +7403,8 @@ body.rtls.top-navigation .footer.fixed {
 
 /* Para tener un ancho máximo debemos de establecer el width del DIV.delimitador */
 .delimitador-multimedia{
-width:560px;
+text-align: center;
+max-width: 560px;
 margin:auto;
 }
 /* El contenedor con el padding-top crea el tamaño del vídeo */
