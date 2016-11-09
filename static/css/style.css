@@ -7385,7 +7385,8 @@ body.rtls.top-navigation .footer.fixed {
 
 .btn-logo-home-scroll {
   border: 0px; 
-  /*margin: 10px 10px 15px 0px; */
+  margin: 10px 10px 0px 0px;
+  padding: 5px 5px 5px 5px;
   background: transparent;
   color: inherit; 
   font-family: 'Open Sans',helvetica,arial,sans-serif; 
