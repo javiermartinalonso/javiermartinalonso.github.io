@@ -23,6 +23,7 @@ $(document).ready(function() {
     else
     {
         $(".navbar-static-top").removeClass('navbar-static-top').addClass('navbar-fixed-top');
+        $('.btn-logo-home-scroll').removeClass('btn-logo-home-scroll').addClass('btn-logo-home-default');
     }
 
 });
