@@ -20,7 +20,7 @@ layout: null
             {% else %}
                 {{ post.content | truncatewords: 50 | xml_escape }}...
             {% endif %}
-            <a href="{{ post.url }}">read more</a>
+            <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">...read more</a>
         </description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
