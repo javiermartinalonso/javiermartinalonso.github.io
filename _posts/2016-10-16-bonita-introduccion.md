@@ -25,10 +25,10 @@ Bonita BPM puede aplicarse en varios proyectos que requieran flujos de trabajo c
 * Colabora usando el repositorio compartido de procesos
 * Simplifica la integración con sistemas externos. Sé creativo, tienes la libertad, puedes crear tus propias extensiones.
 * Conéctate con prácticamente cualquier sistema empresarial directamente - CRMs, ECMs, ERPs, bases de datos y más
+* Crea tus propios conectores con un framework extensible y las herramientas.
 
 <!--more-->
 
-* Crea tus propios conectores con un framework extensible y las herramientas.
 * Intégrate fácilmente a través de las APIs disponibles y extensibles mediante Java o REST
 * Sincroniza automáticamente tu organización para una gestión de usuarios eficiente
 * Construye atractivas aplicaciones de negocio
