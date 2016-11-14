@@ -10,6 +10,9 @@
   <!-- favicon -->
   <link rel="shortcut icon" href="{{ "static/img/favicon.ico" | prepend: site.baseurl }}">
 
+  <!-- feed -->
+  <link rel="alternate" title="{{ site.title }}" type="application/rss+xml" href="{{"feed.xml" | prepend: site.baseurl }}" />
+  
   <!-- Third-party CSS -->
   <link href="{{"bower_components/normalize-css/normalize.min.css" | prepend: site.baseurl }}" rel="stylesheet">
   <link href="{{"bower_components/bootstrap/dist/css/bootstrap.min.css" | prepend: site.baseurl }}" rel="stylesheet">
