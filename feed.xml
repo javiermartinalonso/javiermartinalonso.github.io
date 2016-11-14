@@ -21,6 +21,8 @@ layout: null
                 {{ post.content | xml_escape | truncatewords: 50}}
             {% endif %}
             <link>{{ post.url | prepend: site.url }}</link>
+            <a href="{{ post.url | prepend: site.url }}">... read more</a>
+            <link href="{{ post.url | prepend: site.url }}">... read more</link>
         </description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
