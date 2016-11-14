@@ -16,11 +16,10 @@ layout: null
         <title>{{ post.title | xml_escape }}</title>
         <description>
             {% if post.content contains '<!--more-->' %}
-                {{ post.content | split:'<!--more-->' | first | xml_escape }}
+                {{ post.content | split:'<!--more-->' | first | xml_escape }}...
             {% else %}
-                {{ post.content | truncatewords: 50 | xml_escape }}
+                {{ post.content | truncatewords: 50 | xml_escape }}...
             {% endif %}
-            ...
             <a href="{{ post.url }}">read more</a>
         </description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
