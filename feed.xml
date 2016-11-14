@@ -15,7 +15,7 @@ layout: null
       <item>
         <title>{{ post.title | xml_escape }}</title>
         <description>
-            &lt;div style="text-align:enter;"&gt;
+            &lt;div style="text-align:center;"&gt;
                 &lt;img src="{{ post.image | prepend: site.baseurl }}" alt="{{ post.section }}"&gt;
             &lt;/div&gt;
             {% if post.content contains '<!--more-->' %}
