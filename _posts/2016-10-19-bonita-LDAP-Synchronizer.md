@@ -60,7 +60,6 @@ A continuación se presentan todas las acciones realizadas por la herramienta si
 7. Para todos los usuarios que pertenecen a los grupos del motor Bonita BPM y no son miembros en los grupos del directorio LDAP de origen, la herramienta de sincronización, elimina la membresía del usuario (usuario: rol, grupo). No borra usuarios en el motor de bonita, ya que en la filosofía de un BPM hay que mantener la información de que usuario realizó qué acciones, aunque este ya no esté activo en la organización.
 8. Crea la membresía de los usuarios, grupo y rol al que pertenece.
 
-	
 	<p><em><strong> Nota:</strong><br>
 	
 	<strong> Esto último, está extraído de la documentación oficial de bonita. Pero hay que hacer alguna aclaración, pues no es del todo cierto:</strong><br>
@@ -104,7 +103,6 @@ Aquí se explica más en detalle cómo realizar esta tarea:
 
 - El nombre de cada grupo debe ser único, independientemente de su jerarquía. No puede haber dos grupos que se llamen igual en la jerarquía del LDAP que sincronicemos.
 - Hay que usar los object domain indicados en la documentación, no nos podemos inventar uno nuevo.
-
 
 La herramienta, no sincroniza los cambios en la jerarquía de grupos, pero mantiene la jerarquía antigua que configuramos a mano desde el portal.
 
