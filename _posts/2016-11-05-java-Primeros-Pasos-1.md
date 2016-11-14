@@ -19,6 +19,8 @@ Java es un lenguaje de programación de propósito general, concurrente, orienta
 
 Pero cuando nos referimos a java no nos referimos sólo a un lenguaje de programación sino a **la plataforma Java** que es el nombre de un entorno o plataforma de computación originaria de Sun Microsystems, capaz de ejecutar aplicaciones desarrolladas usando el lenguaje de programación Java u otros lenguajes que compilen a bytecode y un conjunto de herramientas de desarrollo. La plataforma no es un hardware específico o un sistema operativo, sino más bien una máquina virtual encargada de la ejecución de las aplicaciones, y un conjunto de bibliotecas estándar que ofrecen una funcionalidad común.
 
+<!--more-->
+
 <div style="text-align: center;">
 	<img src="/static/img/blog/java/diagrama-conceptual-java.png" class="img-thumbnail" alt="Diagrama conceptual Java.">
 </div>

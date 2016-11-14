@@ -18,6 +18,8 @@ image: static/img/blog/java/LOGO-Java.png
 Con ***descargarnos e instalar el JDK de java***, tenemos todo lo necesario para empezar a programar en java, basta con buscar en
 Google ***"download java jdk"***. Esto te llevará a la página principal de descarga del JDK en el sitio de Oracle. elegir la distribución de JDK que necesitamos según el sistema en el que vamos a trabajar. Al instalar el JDK, también instalaremos la ***JVM***. Y para simplificar el trabajo del día a día deberíamos usar un ***IDE de desarrollo***. Veamos estos conceptos en detalle.
 
+<!--more-->
+
 - ***Java Development Kit o (JDK)***, es un software que provee herramientas de desarrollo para la creación de programas en Java.
 
 - **JVM (Java Virtual Machine)** Java no genera código ejecutable sino que utiliza una ***máquina virtual Java*** denominada la **Java Virtual Machine (JVM)**, lo que implica que el código generado tiene una representación intermedia llamada **bytecode Java o codigo binario de Java**.

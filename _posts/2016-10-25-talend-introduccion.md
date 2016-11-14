@@ -25,6 +25,9 @@ image: static/img/blog/talend/talend-logo.png
 ## ¿Qué ventajas te ofrece trabajar con Talend?
 
 * <strong>Desarrollo gráfico basado en diagramas de flujo</strong>: Esto te permite documentar a la vez que desarrollas.
+
+<!--more-->
+
 * <strong>Escribir código reutilizable y fiable</strong>: Grupos de contexto, repositorio de código de rutinas, componentes personalizados y otros objetos del repositorio.
 * <strong>Modularidad del trabajo</strong>.Se puede cojer una gran tarea y descomponerla en varios trabajos más pequeños que pueden ser orquestados por un maestro.
 * <strong>Control de errores</strong>: Es posible, por ejemplo, referirse a un Objeto null y recibir un NullPointerException. Podemos detectar esta excepción y tratarla, en vez de terminar inmediatamente, ya que esto puede no ser el resultado deseado.

@@ -19,6 +19,8 @@ LDAP son las siglas de Lightweight Directory Access Protocol (en español Protoc
 
 LDAP también se considera una base de datos (aunque su sistema de almacenamiento puede ser diferente) ya que acepta consultas de manera similar a como se realizaría en una base de datos tradicional.
 
+<!--more-->
+
 Un directorio es un conjunto de objetos con atributos organizados en una manera lógica y jerárquica. 
 El ejemplo más común es el directorio telefónico, que consiste en una serie de nombres (personas u organizaciones) que están ordenados alfabéticamente, donde cada nombre tiene una dirección y un número de teléfono adjuntos. 
 Para entenderlo mejor, es un libro o carpeta, en la cual se escriben nombres de personas, teléfonos y direcciones, y se ordena alfabéticamente.

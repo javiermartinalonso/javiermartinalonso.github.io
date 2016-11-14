@@ -24,6 +24,10 @@ La idea es que yo debería poder llevar este Bundle a otro entorno/máquina y re
     </div>
 </div>
 
+<!--more-->
+
 ## Referencias
 
 <http://documentation.bonitasoft.com/6.x-7.2/jboss-bundle-3>
+
+

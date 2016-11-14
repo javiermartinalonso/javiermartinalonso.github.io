@@ -23,6 +23,8 @@ Talend basa su diseño en 3 niveles:
 
 - **Business Models (Modelos de Negocios):** nivel diseñado para modelar de manera teórica la aplicación, para lo cual se realizan diagramas de flujo básicos con actores de los procesos.
 
+<!--more-->
+
 <div style="text-align: center;">
 	<img src="/static/img/blog/talend/bussines-dessigner.png" class="img-thumbnail" alt="Business Model Dessigner">
 </div>

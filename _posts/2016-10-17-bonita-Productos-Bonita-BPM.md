@@ -22,3 +22,5 @@ image: static/img/blog/bonita/bonita-logo.png
 ## Referencias
 
 <http://www.bonitasoft.com/>
+
+<!--more-->
