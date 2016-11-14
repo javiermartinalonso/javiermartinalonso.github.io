@@ -25,7 +25,7 @@ Antes de empezar con la explicación de la instalación del JDK de java, me gust
 
 Debemos acudir a la página oficial de ORACLE para obtener la versión que deseamos instalar. A menudo resulta un poco complicado navegar por este tipo de ***"macrositios"***; te recomiendo ir por la vía rápida y buscar en Google ***"download java jdk"***. Esto te llevará a la página principal de descarga del JDK en el sito de Oracle.
 
-\<\!\-\-more\-\-\>
+<!--more-->
 
 En la página oficial de ORACLE, encontrará dos opciones: **Download JDK** y **Download JRE**. Debido a que vamos a escribir código para luego compilarlo, es necesario descargar el JDK porque, como vimos, el JRE no incluye las herramientas necesarias.
 

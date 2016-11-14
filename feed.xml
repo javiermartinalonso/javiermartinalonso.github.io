@@ -14,14 +14,14 @@ layout: null
     {% for post in site.posts %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-
-        {% if post.content contains '<!--more-->' %}
-            {{ post.content | split:'<!--more-->' | first }}
-        {% else %}
-            {{ post.content | truncatewords: 50 }}
-        {% endif %}
-        <a href="{{ post.url }}">read more</a>
+        <description>
+            {% if post.content contains '<!--more-->' %}
+                {{ post.content | split:'<!--more-->' | first }}
+            {% else %}
+                {{ post.content | truncatewords: 50 }}
+            {% endif %}
+            <a href="{{ post.url }}">read more</a>
+        </description>
 
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>

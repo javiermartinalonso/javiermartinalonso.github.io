@@ -24,7 +24,7 @@ En concreto para Java se suelen configurar 2 variables de entorno:***path y java
 ## Configurar variables del sistema path y java\_home
 - **JAVA\_HOME**, es una variable de entorno del sistema que informa al sistema operativo sobre la ruta donde se encuentra instalado Java. Por ejemplo si tenemos instalada más una versión de java, sirve para indicar cuál es la activa en el sistema. Para configurarla seguiremos los siguientes pasos: Debemos establecer esta variable de entorno, después de instalar el JDK para asegurarnos de que la instalación es correcta y que java puede ser ejecutado por otras aplicaciones que dependan del JRE, por ejemplo: maven, eclipse, tomcat, ...
 
-\<\!\-\-more\-\-\>
+<!--more-->
 
 - **PATH** es una variable de entorno del sistema que informa al Sistema Operativo sobre la ruta de distintos directorios fundamentales para el funcionamiento de los programas. En la variable PATH debemos indicar donde se encuentran los programas ejecutables de Java necesarios para el desarrollo de aplicaciones como pueden ser el compilador (***javac***)  y el intérprete(***java***). Es donde el intérprete de comandos buscará los comandos de ejecución que escribamos en la consola, siempre y cuando no usemos una ruta específica para llamar al comando.
 Para configurar esta variable simplemente desde la pantalla de ***“Variables de entorno***” anterior, clickamos sobre ***“Nueva”*** variable de usuario:
