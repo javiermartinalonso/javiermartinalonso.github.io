@@ -16,11 +16,12 @@ layout: null
         <title>{{ post.title | xml_escape }}</title>
         <description>
             {% if post.content contains '<!--more-->' %}
-                {{ post.content | split:'<!--more-->' | first | xml_escape }}
+                {{ post.content | split:'<!--more-->' | first | xml_escape | truncatewords: 50}}
             {% else %}
-                {{ post.content | truncatewords: 50 | xml_escape }}
+                {{ post.content | xml_escape | truncatewords: 50}}
             {% endif %}
-            \<a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}"\>...read more\<\/a\>
+            \<a href=""\>\<\/a\>
+            [...read more]({{ post.url | prepend: site.baseurl | prepend: site.url }} {{ post.title }})
         </description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
