@@ -17,8 +17,6 @@ image: static/img/blog/bonita/bonita-logo.png
 
 * Con el fin de tener en funcionamiento la autenticación de ***Active Directory/LDAP***, el nombre de usuario (***username***) debe existir tanto en el directorio LDAP y en la base de datos Bonita BPM (la contraseña del usuario se comprueba contra el servidor LDAP, pero la información del usuario se lee desde la base de datos Bonita BPM). 
 
-<!--more-->
-
 * Se recomienda utilizar el [sincronizador de LDAP](https://javiermartinalonso.github.io/bonita/2016/10/19/bonita-LDAP-Synchronizer.html "sincronizador de LDAP") para crear usuarios Bonita BPM en una base de datos Bonita BPM a partir de los usarios de un ldap.
 
 # Visión de conjunto
@@ -26,6 +24,8 @@ image: static/img/blog/bonita/bonita-logo.png
 Bonita BPM puede ser configurado para realizar la autenticación de usuario en un [servidor LDAP](https://javiermartinalonso.github.io/ldap/2016/10/18/ldap-Open-LDAP.html "servidor LDAPn") como ***Active Directory, Apache Directory Server, o OpenLDAP***.
 
 Este tipo de configuración se basa en una implementación específica del servicio de autenticación del motor Bonita BPM que delega el nombre de usuario y la contraseña de verificación real a un ***servicio JAAS*** configurado con un módulo de inicio de sesión específico para LDAP.
+
+<!--more-->
 
 # Crear un archivo de configuración JAAS
 

@@ -17,12 +17,11 @@ Bonita BPM tiene tres herramientas que puede utilizar para administrar la inform
 
 * <strong>Bonita BPM Studio</strong>: para la creación de la definición inicial de la organización, debe ser importada a Bonita BPM Portal antes de empezar a usar el portal en modo de producción, y para la gestión de información de la organización mientras prueba un proceso en el desarrollo. Bonita BPM Studio contiene una organización ejemplo, llamado ACME. Esta organización contiene un pequeño número de usuarios, que pertenecen a diferentes grupos con roles realistas. Puede utilizar esta organización de muestra para probar un proceso que está en desarrollo. Se puede modificar la organización ACME y se puede crear otras organizaciones.
 
-<!--more-->
-
 * <strong>Bonita BPM Portal</strong>: para la gestión de información de la organización de la producción dentro de Bonita BPM. Puede administrar usuarios, grupos y roles. También puede importar o exportar la información de la organización.
 
 * <strong>Sincronizador de LDAP</strong>: (sólo está disponible con licencia en las versiones de pago) sirve para mantener la organización Bonita BPM sincronizado con el directorio LDAP externo. La sincronización es unidireccional, desde LDAP a Bonita BPM. Puede ejecutar el sincronizador de una vez para cargar la organización luego administrar dentro Bonita BPM Portal, o puede ejecutar el sincronizador en un horario y gestionar la organización externa.
 
+<!--more-->
 
 # Bonita Sincronyzer LDAP (Sincronizador de LDAP  de Bonita)
 
