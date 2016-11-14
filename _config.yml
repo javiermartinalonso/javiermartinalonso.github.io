@@ -2,8 +2,8 @@
 
 # Website settings
 title: "Javier Martín Alonso"
-description: "Blog de Javier Martín Alonso,usando Jekyll y github pages."
-keywords: "Javier,Javier Martín,blog,Jekyll,github,gh-pages"
+description: "Blog de Javier Martín Alonso, sobre lenguajes de programación (java, javascript, html) y herramientas de programación."
+keywords: "Javier,Javier Martín,blog,JAVA, SPRING, HTML"
 baseurl: "/"
 url: "https://javiermartinalonso.github.io"
 name: javiermartinalonso
