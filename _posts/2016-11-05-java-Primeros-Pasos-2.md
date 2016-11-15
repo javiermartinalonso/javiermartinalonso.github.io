@@ -33,17 +33,14 @@ Google ***"download java jdk"***. Esto te llevará a la página principal de des
 	Esta arquitectura permite que las aplicaciones de Java no estén obligatoriamente atadas al sistema operativo en el que se construyen y así un programa desarrollado en Windows puede ser ejecutado en Linux, Mac o Unix y viceversa.
 
 	<div style="text-align: center;">
-		<img src="/static/img/blog/java/Java-jvm.png" class="img-thumbnail" alt="Esquema de la arquitectura general de un programa en ejecución en una Máquina Virtual Java.">
+		<img src="/static/img/blog/java/Java-jvm.png" class="img-thumbnail" alt="Esquema de la arquitectura general de un programa en ejecución en una Máquina Virtual Java."/>
 	</div>
 
 	Esta forma de hacer las cosas no hace de Java un lenguaje lento, de hecho las implementaciones de la **JVM** incluyen compiladores **Just in Time (JIT)** que se encargan de optimizar el código para la plataforma en la que se está ejecutando. La **JVM** es una especificación por cuanto pueden existir varias implementaciones. La más utilizada es la oficial distribuida por ORACLE aunque existen otras como el OpenJDK, Apache Harmony, entre otras. En el mismo equipo pueden convivir varias JVM y ser ejecutadas al mismo tiempo.
 
-
-
 - **IDE (Integrated Development Environment)**
 
 	En español: ***Entorno de Desarrollo Integrado***. Es una herramienta que te hará la vida como programador más fácil, te ayudará a crear un proyecto desde plantillas, compilar, refactorizar, etc. Te recomiendo usar ***Eclipse***, o si vas a usar el framework de java Spring, su id basado en eclipse ***Spring Tool Suite***.
-
 
 ## Articulos relacionados
 
