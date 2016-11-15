@@ -63,13 +63,14 @@ Código Java personalizable.
 - **Extractores e insertores de datos de archivos** (xml, properties), también configurables.
 
 - **Conexión a FTP** para envío y descarga de archivos.
+
 - **Compresión de archivos.**
 
 - **Modificadores de carpetas** (crear, eliminar, modificar).
+
 - **Filtros de información.**
 
 Los mencionados y varios otros elementos más se unen mediante un flujo secuencial, guiado por flechas extraídas de cada uno de ellos (visibles haciendo click derecho) que hacen referencias a eventos de dos clases:
-
 
 - **row:** evento que transmite datos del elemento del que parte al elemento apuntado.
 
