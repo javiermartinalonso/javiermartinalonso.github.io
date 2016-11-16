@@ -24,8 +24,8 @@ layout: null
             {% else %}
                 {{ post.content | truncatewords: 140 | xml_escape }}
             {% endif %}
-	    
         &lt;a href="{{ post.url | prepend: site.url }}"&gt;sigue leyendo en la entrada original&lt;/a&gt;
+        &lt;br /&gt;
         &lt;br /&gt;
             &lt;a href="{{ prepend: site.url }}/blog/" &gt;otros artículos del blog&lt;/a&gt;
         </description>
