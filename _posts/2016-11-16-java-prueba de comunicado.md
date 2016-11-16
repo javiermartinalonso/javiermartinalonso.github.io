@@ -1,8 +1,8 @@
 ---
 layout: post
 section: "JAVA"
-title:  "Variables de entorno de JAVA"
-date:   2016-11-06
+title: "Prueba de comunicado"
+date: 2016-11-16
 desc: "Variables de entorno de JAVA"
 keywords: "java,jdk,instalación,windows,JAVA_HOME,PATH"
 categories: [java]
