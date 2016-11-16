@@ -18,15 +18,14 @@ layout: null
             &lt;div style="text-align:center;"&gt;
                 &lt;img src="{{ post.image | prepend: site.baseurl }}" alt="{{ post.section }}"&gt;
             &lt;/div&gt;
+
             {% if post.content contains '<!--more-->' %}
-                {{ post.content | split:'<!--more-->' | first | xml_escape }}...
+                {{ post.content | split:'<!--more-->' | first | append: ' ... &lt;a href="{{ post.url | prepend: site.url }}"&gt;sigue leyendo en la entrada original&lt;/a&gt;' | xml_escape }}
             {% else %}
-                {{ post.content | truncatewords: 50 | xml_escape }}
-	    {% endif %}
+                {{ post.content | truncatewords: 50 | append: ' ...' | xml_escape }}
+            {% endif %}
 	    
-            &lt;a href="{{ post.url | prepend: site.url }}"&gt;sigue leyendo en la entrada original&lt;/a&gt;
-            &lt;br /&gt;
-            &lt;a href="{{ post.url | prepend: site.url }}"&gt;otros artículos del blog&lt;/a&gt;
+            &lt;a href="/blog/" &gt;otros artículos del blog&lt;/a&gt;
         </description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <link>{{ post.url | prepend: site.url }}</link>
