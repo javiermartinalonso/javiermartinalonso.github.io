@@ -22,7 +22,7 @@ layout: null
             {% if post.content contains '<!--more-->' %}
                 {{ post.content | split:'<!--more-->' | first | append: ' ... ' | xml_escape }}
             {% else %}
-                {{ post.content | truncatewords: 50 | append: ' ... ' | xml_escape }}
+                {{ post.content | truncatewords: 140 | xml_escape }}
             {% endif %}
 	    
         &lt;a href="{{ post.url | prepend: site.url }}"&gt;sigue leyendo en la entrada original&lt;/a&gt;
