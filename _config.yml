@@ -4,7 +4,7 @@
 title: "Javier Martín Alonso"
 description: "Blog de Javier Martín Alonso, sobre lenguajes de programación (java, javascript, html) y herramientas de programación."
 keywords: "Javier,Javier Martín,blog,JAVA, SPRING, HTML"
-baseurl: "/"
+baseurl: "https://javiermartinalonso.github.io/"
 url: "https://javiermartinalonso.github.io"
 name: javiermartinalonso
 img_logo_path: 'static/img/favicon.ico'
