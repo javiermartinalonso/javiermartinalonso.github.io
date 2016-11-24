@@ -6881,9 +6881,10 @@ body.landing-page {
 .landing-page .social-icon a {
   background: #ccc;
   color: #fff;
-  padding: 4px 8px;
-  height: 28px;
-  width: 28px;
+  font-size: 14px;
+  padding: 5px 4px;
+  height: 30px;
+  width: 30px;
   display: block;
   border-radius: 50px;
 }
