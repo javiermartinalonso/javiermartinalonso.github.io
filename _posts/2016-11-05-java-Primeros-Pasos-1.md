@@ -13,7 +13,7 @@ image: static/img/blog/java/LOGO-Java.png
 
 # Primeros pasos con Java (1 de 2)
 
-## ¿Qué es Java?
+## ¿Qué es Java? ##
 
 Java es un lenguaje de programación de propósito general, concurrente, orientado a objetos. Su intención es permitir que los desarrolladores de aplicaciones escriban el programa una vez y lo ejecuten en cualquier dispositivo.
 
@@ -24,7 +24,7 @@ Pero cuando nos referimos a java no nos referimos sólo a un lenguaje de program
 </div>
 
 <!--more-->
-## Ediciones de la plataforma Java
+## Ediciones de la plataforma Java ##
 
 La configuración de una plataforma Java afecta fundamentalmente a los servicios que esta ofrece, las herramientas adicionales que incorpora y también a aspectos menos visibles, como el modo de funcionamiento de la JVM. De acuerdo a la documentación actual de Oracle **podemos distinguir las siguientes cuatro plataformas Java**:
 
@@ -42,13 +42,14 @@ La configuración de una plataforma Java afecta fundamentalmente a los servicios
 
 > **Nota**: ***Java SE, EE, ME, la JVM y otras partes de Java*** son en realidad especificaciones abstractas de los servicios y modos de funcionamiento de los distintos elementos de la plataforma. Encontraremos múltiples implementaciones de dichas especificaciones. Por ejemplo, HotSpot es la implementación de Oracle de la JVM, existiendo implementaciones alternativas de esa misma especificación como la de OpenJDK o la de IBM.
 
-## Articulos relacionados
+## Artículos relacionados ##
 
 [Primeros Pasos con Java (2 de 2)]({{ site.baseurl }}java/2016/11/05/java-Primeros-Pasos-2.html "Primeros Pasos con Java (2 de 2)")
 
-## Referencias
-<a href="http://www.oracle.com/technetwork/es/java/index.html">http://www.oracle.com/technetwork/es/java/index.html</a>
+## Referencias ##
 
-<a href="https://es.wikipedia.org/wiki/Java_(lenguaje_de_programaci%C3%B3n)">https://es.wikipedia.org/wiki/Java_(lenguaje\_de\_programación)</a>
+[http://www.oracle.com/technetwork/es/java/index.html](http://www.oracle.com/technetwork/es/java/index.html "http://www.oracle.com/technetwork/es/java/index.html")
 
-<a href="https://es.wikipedia.org/wiki/Plataforma_Java">https://es.wikipedia.org/wiki/Plataforma\_Java</a>
+[https://es.wikipedia.org/wiki/Java (lenguaje de programacion)](https://es.wikipedia.org/wiki/Java\_(lenguaje_de_programaci%C3%B3n) "https://es.wikipedia.org/wiki/Java\_(lenguaje_de_programaci%C3%B3n)")
+
+[https://es.wikipedia.org/wiki/Plataforma_Java](https://es.wikipedia.org/wiki/Plataforma_Java "https://es.wikipedia.org/wiki/Plataforma_Java")
