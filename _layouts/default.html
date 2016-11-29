@@ -16,7 +16,7 @@
 
     {{ content }}
 
-	{% if page.title != 'index' %}
+	{% if page.title != 'index' and if page.title != 'blog' %}
 	    {% include footer.html %}
 	{% else %}
 		{% include index_footer.html %}
