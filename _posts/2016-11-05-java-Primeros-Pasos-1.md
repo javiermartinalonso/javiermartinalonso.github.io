@@ -50,6 +50,6 @@ La configuración de una plataforma Java afecta fundamentalmente a los servicios
 
 [http://www.oracle.com/technetwork/es/java/index.html](http://www.oracle.com/technetwork/es/java/index.html "http://www.oracle.com/technetwork/es/java/index.html")
 
-[https://es.wikipedia.org/wiki/Java (lenguaje de programacion)](https://es.wikipedia.org/wiki/Java\_(lenguaje_de_programaci%C3%B3n) "https://es.wikipedia.org/wiki/Java\_(lenguaje_de_programaci%C3%B3n)")
+[https://es.wikipedia.org/wiki/Java (lenguaje de programacion)](https://es.wikipedia.org/wiki/Java_(lenguaje_de_programaci%C3%B3n) "https://es.wikipedia.org/wiki/Java_(lenguaje_de_programaci%C3%B3n)")
 
 [https://es.wikipedia.org/wiki/Plataforma_Java](https://es.wikipedia.org/wiki/Plataforma_Java "https://es.wikipedia.org/wiki/Plataforma_Java")
