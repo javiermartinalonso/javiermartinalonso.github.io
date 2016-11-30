@@ -48,6 +48,6 @@ Entre las implementaciones de LDAP más conocidas tenemos el Directorio Activo d
 
 ## Referencias ##
 
-<https://es.wikipedia.org/wiki/Protocolo_Ligero_de_Acceso_a_Directorios>
+[https://es.wikipedia.org/wiki/Protocolo Ligero de_Acceso a Directorios](https://es.wikipedia.org/wiki/Protocolo_Ligero_de_Acceso_a_Directorios "https://es.wikipedia.org/wiki/Protocolo_Ligero_de_Acceso_a_Directorios")
 
-<https://www.edrawsoft.com/LDAP.php>
+[https://www.edrawsoft.com/LDAP.php](https://www.edrawsoft.com/LDAP.php "https://www.edrawsoft.com/LDAP.php")
