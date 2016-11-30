@@ -75,7 +75,7 @@ Asignamos los siguientes valores: ***“Nombre de la variable“***: PATH y  ***
 	<img src="{{ site.baseurl }}static/img/blog/windows/editar-variable-sistema-path.png" class="img-thumbnail" alt="Asignación de los valores de la variable PATH."/>
 </div>
 
-> **OJO** : Si la variable ya esta creada, en vez de crear una nueva, editamos la que tenemos. En este caso NO BORRES el valor de la variable, simplemente introduce el nuevo valor separado por ***“;”***. Este podría ser un ejemplo: ***C:\WINDOWS;C:\WINDOWS\system32; %JAVA_HOME%\bin***
+> **OJO** : Si la variable ya esta creada, en vez de crear una nueva, editamos la que tenemos. En este caso NO BORRES el valor de la variable, simplemente introduce el nuevo valor separado por ***“;”***. Este podría ser un ejemplo: ***C:\WINDOWS; C:\WINDOWS\system32; %JAVA_HOME%\bin***
 
 Con esto ya quedan configuradas las variable de entorno de Java en nuestro sistema de tal manera que podremos compilar y ejecutar nuestras clases independientemente de donde las tengas almacenadas.
 
