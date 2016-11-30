@@ -39,6 +39,6 @@ Hay diferentes [ediciones de la plataforma Java](https://javiermartinalonso.gith
 
 ## Referencias ##
 
-[http://docs.oracle.com/javase/7/docs/webnotes/install/windows/jdk-installation-windows.html](http://docs.oracle.com/javase/7/docs/webnotes/install/windows/jdk-installation-windows.html "http://docs.oracle.com/javase/7/docs/webnotes/install/windows/jdk-installation-windows.html")
+[http://docs.oracle.com/jdk installation windows.html](http://docs.oracle.com/javase/7/docs/webnotes/install/windows/jdk-installation-windows.html "http://docs.oracle.com/javase/7/docs/webnotes/install/windows/jdk-installation-windows.html")
 
-[https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows jdk install.html](https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html "https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html")
+[https://docs.oracle.com/windows jdk install.html](https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html "https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html")
