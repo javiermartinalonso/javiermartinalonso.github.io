@@ -11,9 +11,9 @@ icon: icon-java-bold
 image: static/img/blog/java/LOGO-Java.png
 ---
 
-# Variables de entorno de JAVA
+# Variables de entorno de JAVA #
 
-## ¿Qué es una variable de sistema o entorno?
+## ¿Qué es una variable de sistema o entorno? ##
 
 Una variable del entorno es un valor dinámico cargado en la memoria, que puede ser utilizado por varios procesos que funcionan simultáneamente. En la mayoría de los sistemas operativos, la ubicación de algunas bibliotecas o de los archivos ejecutables del sistema más importantes puede variar según la instalación.
 
@@ -21,7 +21,7 @@ Por eso es posible, para un programa dado, remitirse a una ubicación basada en 
 
 En concreto para Java se suelen configurar 2 variables de entorno:***path y java\_home***
 
-## Configurar variables del sistema path y java\_home
+## Configurar variables del sistema path y java\_home ##
 - **JAVA\_HOME**, es una variable de entorno del sistema que informa al sistema operativo sobre la ruta donde se encuentra instalado Java. Por ejemplo si tenemos instalada más una versión de java, sirve para indicar cuál es la activa en el sistema. Para configurarla seguiremos los siguientes pasos: Debemos establecer esta variable de entorno, después de instalar el JDK para asegurarnos de que la instalación es correcta y que java puede ser ejecutado por otras aplicaciones que dependan del JRE, por ejemplo: maven, eclipse, tomcat, ...
 
 <!--more-->
@@ -29,7 +29,7 @@ En concreto para Java se suelen configurar 2 variables de entorno:***path y java
 - **PATH** es una variable de entorno del sistema que informa al Sistema Operativo sobre la ruta de distintos directorios fundamentales para el funcionamiento de los programas. En la variable PATH debemos indicar donde se encuentran los programas ejecutables de Java necesarios para el desarrollo de aplicaciones como pueden ser el compilador (***javac***)  y el intérprete(***java***). Es donde el intérprete de comandos buscará los comandos de ejecución que escribamos en la consola, siempre y cuando no usemos una ruta específica para llamar al comando.
 Para configurar esta variable simplemente desde la pantalla de ***“Variables de entorno***” anterior, clickamos sobre ***“Nueva”*** variable de usuario:
 
-### Configuración en WINDOWS
+### Configuración en WINDOWS ###
 
 - **JAVA\_HOME**:
 Desde el ***“Panel de Control”*** pinchamos en ***“Sistema”*** o bien sobre ***“MiPC”*** pulsamos el botón derecho y clickamos sobre ***“Propiedades“***. Una vez en la pantalla que aparece a continuación hacemos click en ***“Configuración avanzada del sistemas“***.
@@ -85,5 +85,6 @@ Con esto ya quedan configuradas las variable de entorno de Java en nuestro siste
 > 
 > con esto deberíamos ver si el resultado obtenido por pantalla es el esperado.
 
-## Referencias
-<a href="https://docs.oracle.com/cd/E19509-01/820-3208/inst_cli_jdk\_javahome\_t/">https://docs.oracle.com/cd/E19509-01/820-3208/inst_cli_jdk\_javahome\_t/</a>
+## Referencias ##
+
+[https://docs.oracle.com/cd/E19509-01/820-3208/inst cli jdk javahome t/](https://docs.oracle.com/cd/E19509-01/820-3208/inst_cli_jdk_javahome_t/ "https://docs.oracle.com/cd/E19509-01/820-3208/inst_cli_jdk_javahome_t/")

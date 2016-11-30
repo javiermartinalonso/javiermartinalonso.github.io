@@ -11,9 +11,9 @@ icon: fa-sitemap
 image: static/img/blog/ldap/ldap-logo.png
 ---
 
-# LDAP
+# LDAP #
 
-## ¿A que nos referimos cuando hablamos de LDAP?
+## ¿A que nos referimos cuando hablamos de LDAP? ##
 
 LDAP son las siglas de Lightweight Directory Access Protocol (en español Protocolo Ligero/Simplificado de Acceso a Directorios) que hacen referencia a un protocolo a nivel de aplicación que permite el acceso a un servicio de directorio ordenado y distribuido para buscar diversa información en un entorno de red. 
 
@@ -35,7 +35,7 @@ A manera de síntesis, LDAP es un protocolo de acceso unificado a un conjunto de
 
 La versión actual es LDAPv3, y se encuentra definido en los RFCs RFC 2251 y RFC 2256 (documento base de LDAP), RFC 2829 (método de autentificación para LDAP), RFC 2830 (extensión para TLS), y RFC 3377 (especificación técnica)
 
-## Usos
+## Usos ##
 
 LDAP se utiliza a menudo por organizaciones como un repositorio central de información del usuario y como un servicio de autenticación. 
 También se puede utilizar para almacenar la información del papel o rol que desempeñan los usuarios dentro de las aplicaciones que se usan por la organización.
@@ -46,7 +46,7 @@ Por esos motivos, desde el punto de vista de la seguridad, es recomendable dispo
 
 Entre las implementaciones de LDAP más conocidas tenemos el Directorio Activo de Windows y OpenLDAP para sistemas Linux/Unix (también puede integrarse con clientes Windows). 
 
-## Referencias
+## Referencias ##
 
 <https://es.wikipedia.org/wiki/Protocolo_Ligero_de_Acceso_a_Directorios>
 

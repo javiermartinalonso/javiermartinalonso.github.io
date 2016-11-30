@@ -11,7 +11,7 @@ icon: fa-cogs
 image: static/img/blog/bonita/bonita-logo.png
 ---
 
-# Productos Bonita BPM
+# Productos Bonita BPM #
 
 <div class="delimitador-multimedia">
     <div class="contenido-multimedia">
@@ -19,7 +19,7 @@ image: static/img/blog/bonita/bonita-logo.png
     </div>
 </div>
 
-## Referencias
+## Referencias ##
 
 <http://www.bonitasoft.com/>
 

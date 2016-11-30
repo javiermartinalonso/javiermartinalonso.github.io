@@ -11,9 +11,9 @@ icon: icon-java-bold
 image: static/img/blog/java/LOGO-Java.png
 ---
 
-# Primeros pasos con Java (2 de 2)
+# Primeros pasos con Java (2 de 2) #
 
-## ¿Que necesitamos para programar con Java?
+## ¿Que necesitamos para programar con Java? ##
 
 Con ***descargarnos e instalar el JDK de java***, tenemos todo lo necesario para empezar a programar en java, basta con buscar en
 Google ***"download java jdk"***. Esto te llevará a la página principal de descarga del JDK en el sitio de Oracle. elegir la distribución de JDK que necesitamos según el sistema en el que vamos a trabajar. Al instalar el JDK, también instalaremos la ***JVM***. Y para simplificar el trabajo del día a día deberíamos usar un ***IDE de desarrollo***. Veamos estos conceptos en detalle.
@@ -42,13 +42,13 @@ Google ***"download java jdk"***. Esto te llevará a la página principal de des
 
 	En español: ***Entorno de Desarrollo Integrado***. Es una herramienta que te hará la vida como programador más fácil, te ayudará a crear un proyecto desde plantillas, compilar, refactorizar, etc. Te recomiendo usar ***Eclipse***, o si vas a usar el framework de java Spring, su id basado en eclipse ***Spring Tool Suite***.
 
-## Articulos relacionados
+## Articulos relacionados ##
 
 [Primeros Pasos con Java (1 de 2)](https://javiermartinalonso.github.io/java/2016/11/05/java-Primeros-Pasos-1.html "Primeros Pasos con Java (1 de 2)")
 
-## Referencias
-<a href="http://www.oracle.com/technetwork/es/java/index.html">http://www.oracle.com/technetwork/es/java/index.html</a>
+## Referencias ##
+[http://www.oracle.com/technetwork/es/java/index.html](http://www.oracle.com/technetwork/es/java/index.html "http://www.oracle.com/technetwork/es/java/index.html")
 
-<a href="https://es.wikipedia.org/wiki/M%C3%A1quina_virtual_Java">https://es.wikipedia.org/wiki/Máquina\_virtual\_Java</a>
+[https://es.wikipedia.org/wiki/Máquina virtual Java](https://es.wikipedia.org/wiki/M%C3%A1quina_virtual_Java "https://es.wikipedia.org/wiki/M%C3%A1quina_virtual_Java")
 
-<a href="https://es.wikipedia.org/wiki/Java_(lenguaje_de_programaci%C3%B3n)">https://es.wikipedia.org/wiki/Java_(lenguaje\_de\_programación)</a>
+[https://es.wikipedia.org/wiki/Java (lenguaje de programación)](https://es.wikipedia.org/wiki/Java_(lenguaje_de_programaci%C3%B3n) "https://es.wikipedia.org/wiki/Java_(lenguaje_de_programaci%C3%B3n)")

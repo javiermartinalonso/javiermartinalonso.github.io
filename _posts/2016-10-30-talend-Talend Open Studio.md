@@ -11,13 +11,13 @@ icon: fa-exchange
 image: static/img/blog/talend/talend-logo.png
 ---
 
-# Talend Open Studio Data Integration
+# Talend Open Studio Data Integration #
 
 Talend Open Studio es una herramienta Open Source de integración y gestión de datos, así como integración de aplicaciones empresariales: en palabras simples una herramienta ETL.
 
 Talend está basado en Java, requiere específicamente JDK 6 y por tanto puede ser ejecutado en Windows y Linux sin mayor dificultad, solo basta con descomprimir su ***‘instalador’***.
 
-## Niveles de Talend
+## Niveles de Talend ##
 
 Talend basa su diseño en 3 niveles:
 
@@ -41,7 +41,7 @@ Talend basa su diseño en 3 niveles:
 	<img src="{{ site.baseurl }}static/img/blog/talend/contexts.png" class="img-thumbnail" alt="Business Model Dessigner"/>
 </div>
 
-### Job Designs
+### Job Designs ###
 
 Es el nivel empleado con mayor frecuencia en Talend Open Studio. Formado por el conjunto de Jobs, o tareas a realizar. Cada Job inicialmente de una grilla (grid) en blanco, donde se arrastran elementos de una paleta ubicada en la parte derecha del diseñador.
 
@@ -89,11 +89,10 @@ Finalmente, cada Job es exportable a un archivo comprimido en formato ZIP, que c
 En resumen, podemos decir que Talend es una herramienta versátil para el proceso de ETL, con un buen entorno de desarrollo visual y múltiples conexiones a bases de datos  sin embargo tiene una curva de aprendizaje un poco elevada y un par de bugs pendientes por resolver.
 
 
-## Referencias
-<a href="http://www.talend.com">Talend Home Page Página oficial de la compañía desarrolladora de Talend</a>
+## Referencias ##
 
-<a href="https://es.wikipedia.org/wiki/Extract,_transform_and_load">ETL Wikipedia Definiciones de conceptos básicos sobre ETL</a>
+[http://www.talend.com](http://www.talend.com "http://www.talend.com")
 
-<a href="https://es.wikipedia.org/wiki/Java_(lenguaje_de_programaci%C3%B3n)">https://es.wikipedia.org/wiki/Java_(lenguaje_de_programación)</a>
+[https://es.wikipedia.org/wiki/Extract, transform and load](https://es.wikipedia.org/wiki/Extract,_transform_and_load "https://es.wikipedia.org/wiki/Extract, transform and load")
 
-<a href="https://www.talendforge.org/tutorials/menu.php">Talend Tutoriales Algunos manuales de uso</a>
+[https://www.talendforge.org/tutorials/menu.php](https://www.talendforge.org/tutorials/menu.php "https://www.talendforge.org/tutorials/menu.php")

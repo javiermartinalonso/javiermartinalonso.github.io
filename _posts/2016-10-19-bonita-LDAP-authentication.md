@@ -11,7 +11,7 @@ icon: fa-cogs
 image: static/img/blog/bonita/bonita-logo.png
 ---
 
-# Premisas
+# Premisas #
 
 * Esta documentación se aplica a una instalación Bonita BPM existente y en funcionamiento ([ver las instrucciones de instalación](https://javiermartinalonso.github.io/bonita/2016/10/18/bonita-bundle-JBOSS.html "bonita-bundle-JBOSS")).
 
@@ -19,7 +19,7 @@ image: static/img/blog/bonita/bonita-logo.png
 
 * Se recomienda utilizar el [sincronizador de LDAP](https://javiermartinalonso.github.io/bonita/2016/10/19/bonita-LDAP-Synchronizer.html "sincronizador de LDAP") para crear usuarios Bonita BPM en una base de datos Bonita BPM a partir de los usarios de un ldap.
 
-# Visión de conjunto
+# Visión de conjunto #
 
 Bonita BPM puede ser configurado para realizar la autenticación de usuario en un [servidor LDAP](https://javiermartinalonso.github.io/ldap/2016/10/18/ldap-Open-LDAP.html "servidor LDAPn") como ***Active Directory, Apache Directory Server, o OpenLDAP***.
 
@@ -27,17 +27,17 @@ Este tipo de configuración se basa en una implementación específica del servi
 
 <!--more-->
 
-# Crear un archivo de configuración JAAS
+# Crear un archivo de configuración JAAS #
 
-## Nombre del contexto contra el que se hace login.
+## Nombre del contexto contra el que se hace login. ##
 
 La configuración de JAAS puede incluir uno o varios contextos de inicio de sesión. El contexto de inicio de sesión Bonita BPM debe ser nombrado ***BonitaAuthentication-\<TENANT_ID\> (donde \<TENANT_ID\> es el ID del cliente)***.
 
-## Crear o editar el archivo de configuración del servidor de aplicaciones
+## Crear o editar el archivo de configuración del servidor de aplicaciones ##
 
 Nota: todos los archivos de configuración distinguen entre mayúsculas y minúsculas, son case sensitive
 
-### Para el caso de JBOSS
+### Para el caso de JBOSS ###
 
 Editar el siguiente fichero ***\<JBOSS_HOME\>/standalone/configuration/standalone.xml*** y modificar la entrada ***security-domains***.
 Añadir el contexto de inicio de sesión Bonita BPM utilizando la sintaxis específica de JBoss justo antes de la etiqueta ***\</security-domains\>***. 
@@ -55,7 +55,7 @@ Tenga en cuenta que ***security-domain-name*** es en realidad el nombre de conte
 	    </authentication>
 	</security-domain>
 
-## ¿Qué atributos debemos inyectar en el Login-Module?
+## ¿Qué atributos debemos inyectar en el Login-Module? ##
 
 Es importante identificar qué atributos tenemos que establecer dentro del módulo ***login-module***. Este será al menos uno de ***authIdentity, userFilter, tryFirstPass, java.naming.security.principal o java.naming.security.credentials***. 
 
@@ -73,7 +73,7 @@ Por lo tanto hay que identificar cuál de los siguientes casos se aplica:
 * Si no se puede construir el DN y la búsqueda anónima en el LDAP está anulada, pero los usuarios autenticados pueden buscar: ajustar los atributos ***userFilter*** y ***authIdentity***.
 * Si no se puede construir el DN y la búsqueda anónima está anulada y los usuarios autenticados no pueden buscar en el LDAP: ajustar los atributos ***userFilter, authIdentity, tryFirstPass, java.naming.security.principal*** y ***java.naming.security.credentials***.
 
-## ¿Qué valores debemos asignar a los atributos en el Login-Module?
+## ¿Qué valores debemos asignar a los atributos en el Login-Module? ##
 
 * ***userProvider***: Ponga esto en ***ldap://\<ldap server address\>:\<ldap server port\>/\<DN del nodo del LDAP bajo el cual están localizados los usuarios\>***. 
  
@@ -91,9 +91,9 @@ Si se utiliza una userFilter y los usuarios pueden buscar, establezca el valor d
 
 * ***java.naming.security.credentials (Sólo si es necesario)***: especifica la contraseña de un usuario que puede realizar búsquedas en el servidor.
 
-## Configuración de la autenticación contra LDAP
+## Configuración de la autenticación contra LDAP ##
 
-### Cambio de servicio de autenticación Bonita BPM
+### Cambio de servicio de autenticación Bonita BPM ###
 
 La instalación predeterminada Bonita BPM viene con una aplicación de servicio de autenticación basado en la base de datos del motor de BonitaBPM. 
 Con el fin de activar la autenticación de ***Active Directory/LDAP*** la implementación del servicio necesita ser cambiada. 
@@ -108,6 +108,6 @@ Usted tendrá que realizar los cambios siguientes:
 	
 	***authentication.service.ref.name=jaasAuthenticationService***
 
-## Referencias
+## Referencias ##
 
 <http://documentation.bonitasoft.com/6.x-7.2/active-directory-or-ldap-authentication-0>

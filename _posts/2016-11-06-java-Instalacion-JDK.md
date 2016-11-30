@@ -11,17 +11,17 @@ icon: icon-java-bold
 image: static/img/blog/java/LOGO-Java.png
 ---
 
-# Instalación JDK
+# Instalación JDK #
 
 Antes de empezar con la explicación de la instalación del JDK de java, me gustaría aclarar un par de conceptos que suelen confundir a los neófitos de java.
 
-## Que son JRE y JDK y sus diferencias
+## Que son JRE y JDK y sus diferencias ##
 
 - **Java Runtime Enviroment (JRE)** **incluye una implementación de la JVM**, librerías y el conjunto de software necesario para ejecutar las aplicaciones cliente de Java, al igual que el plugin para que los navegadores de internet ***(browser)*** ejecuten código especial de Java llamado ***“applet”***.
 
 - **Java Development Kit (JDK)** está dirigido a desarrolladores, **incluye el JRE** y el conjunto de herramientas de línea de comandos necesario para compilar el código, empaquetarlo en archivos con extensión ***“JAR”***, generar documentación, entre otros. Es por esta razón por la que las herramientas de desarrollo requieren que el JDK se encuentre instalado.
 
-## Instalar JDK
+## Instalar JDK ##
 
 Debemos acudir a la página oficial de ORACLE para obtener la versión que deseamos instalar. A menudo resulta un poco complicado navegar por este tipo de ***"macrositios"***; te recomiendo ir por la vía rápida y buscar en Google ***"download java jdk"***. Esto te llevará a la página principal de descarga del JDK en el sito de Oracle.
 
@@ -37,7 +37,8 @@ Hay diferentes [ediciones de la plataforma Java](https://javiermartinalonso.gith
 
 > **Pendiente incluir algún vídeo explicativo**
 
-## Referencias
-<a href="http://docs.oracle.com/javase/7/docs/webnotes/install/windows/jdk-installation-windows.html">http://docs.oracle.com/javase/7/docs/webnotes/install/windows/jdk-installation-windows.html</a>
+## Referencias ##
 
-<a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html">https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html</a>
+[http://docs.oracle.com/javase/7/docs/webnotes/install/windows/jdk-installation-windows.html](http://docs.oracle.com/javase/7/docs/webnotes/install/windows/jdk-installation-windows.html "http://docs.oracle.com/javase/7/docs/webnotes/install/windows/jdk-installation-windows.html")
+
+[https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows jdk install.html](https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html "https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html")

@@ -11,7 +11,7 @@ icon: fa-cogs
 image: static/img/blog/bonita/bonita-logo.png
 ---
 
-# Herramientas de Bonita BPM para la gestión de una organización
+# Herramientas de Bonita BPM para la gestión de una organización #
 
 Bonita BPM tiene tres herramientas que puede utilizar para administrar la información de su organización:
 
@@ -23,7 +23,7 @@ Bonita BPM tiene tres herramientas que puede utilizar para administrar la inform
 
 <!--more-->
 
-# Bonita Sincronyzer LDAP (Sincronizador de LDAP  de Bonita)
+# Bonita Sincronyzer LDAP (Sincronizador de LDAP  de Bonita) #
 
 El sincronizador de LDAP es un servicio para la sincronización de los usuarios y grupos de directorio LDAP Bonita BPM y en una sola dirección, LDAP a Bonita BPM.
 El servicio de sincronización de LDAP mantiene la información de la organización Bonita BPM sincronizado con un directorio LDAP externo, mediante la creación, actualización o eliminación de usuarios y grupos en la organización para que coincida lo más posible a los atributos de lista de usuarios definidos en LDAP. No modifica el directorio LDAP.
@@ -32,7 +32,7 @@ El programa sincronizador funciona en backend. No hay ninguna interfaz de usuari
 
 El sincronizador, sincroniza los objetos LDAP que heredan de la clase <strong><em>person</em></strong> con los <strong><em>users</em></strong> en Bonita BPM. La aplicación del sincronizador no es compatible con los metadatos de usuario de bonita y no puede sincronizar las contraseñas. Tras la sincronización a los usuarios nuevos se les asigna una nueva contraseña que coincide con el identificador del usuario. Esto no es problemático en el caso de tener configurado el acceso a bonita a través del LDAP, ya que los usuarios se logarían con la pass definida en el LDAP que sería la misma para el resto de aplicaciones que validen contra ese LDAP.
 
-## Los archivos de configuración
+## Los archivos de configuración ##
 Hay cinco archivos de propiedades:
 
 * <strong>bonita.properties</strong>:	define la configuración de conexión contra el motor de Bonita y especifica la cuenta del portal de Bonita BPM utilizada para la sincronización de usuario (requiere privilegios de administración del portal).
@@ -47,7 +47,7 @@ Hay cinco archivos de propiedades:
 
 Todos los archivos de configuración se pueden encontrar en el directorio <strong><em>[home syncronizer]/conf</em></strong>. 
 
-## Ejecución del sincronizador
+## Ejecución del sincronizador ##
 
 A continuación se presentan todas las acciones realizadas por la herramienta sincronizador de LDAP:
 
@@ -90,7 +90,7 @@ La herramienta puede determinar la lista de los usuarios que pertenecen a un gru
 	</strong></em>
 </div>
 
-## Configuración de la herramienta
+## Configuración de la herramienta ##
 
 El sincronizador LDAP es de hecho una aplicación java cliente del motor de Bonita. Se basa en la librería <strong><em>bonita-client.jar</em></strong> y por lo tanto requiere una carpeta <strong><em>Bonita-Home</em></strong>.
 Hay que copiar el <strong><em>bonita-home</em></strong> en el raíz de la herramienta de sincronización, ya que es una aplicación java que debe conectarse con el motor de bonita y esta carpeta no viene incluida en la descarga de la herramienta.
@@ -99,29 +99,29 @@ Aquí se explica más en detalle cómo realizar esta tarea:
 
 <http://documentation.bonitasoft.com/6.x-7.2/bonita-home-876>
 
-## Restricciones de la organización producidos por la herramienta:
+## Restricciones de la organización producidos por la herramienta: ##
 
 - El nombre de cada grupo debe ser único, independientemente de su jerarquía. No puede haber dos grupos que se llamen igual en la jerarquía del LDAP que sincronicemos.
 - Hay que usar los object domain indicados en la documentación, no nos podemos inventar uno nuevo.
 
 La herramienta, no sincroniza los cambios en la jerarquía de grupos, pero mantiene la jerarquía antigua que configuramos a mano desde el portal.
 
-### Cuestiones:
+### Cuestiones: ###
 
-#### ¿Qué pasa si borro un grupo en el LDAP?
+#### ¿Qué pasa si borro un grupo en el LDAP? ####
 - No desaparece el grupo en la organización de bonita ni se toca sus miembros. 
 - Si un usuario pertenecía antes a ese grupo y exclusivamente a ese grupo, después de sincronizar el usuario pasa a estar inactivo.
 - Si en el LDAP incluimos un usuario inactivo en un grupo nuevo, se incluye, en el motor de bonita, su pertenecia en su membresia y el usuario pasa a estar activo.
 
-#### ¿Qué pasa si borro un usuario en el LDAP?
+#### ¿Qué pasa si borro un usuario en el LDAP? ####
 - si borras el objeto person de ese usuario del grupo people: entonces pasa a inactivo en el motor de bonita.
 - si borro su pertenencia a un grupo: No pasa nada. Debe borrarse como integrante de todos los grupos para que pase a inactivo en el motor de bonita, aunque exista su definición como objeto person en el grupo people. Para el usuario en el motor de bonita no se toca su membresia antigua. Si el usuario pertenecía antes a un grupo, después de sincronizar sigue perteneciendo a ese grupo. Pasa a estar inactivo en la organización de bonita pero toda su membresia se guarda.
 
-#### ¿Qué pasa con los cambios en el LDAP de la pass del usuario?
+#### ¿Qué pasa con los cambios en el LDAP de la pass del usuario? ####
 - Si existe el campo usserPassword en el objeto Person y modificas su valor y luego sincronizas, entonces cambia la pass en el portal de bonita.
 - Si no existe ese campo al sincronizar le asigna la pass según el valor del uid.
 
-## Referencias
+## Referencias ##
 
 <http://documentation.bonitasoft.com/6.x-7.2/organization-management-bonita-bpm-studio><br> 
 <http://documentation.bonitasoft.com/6.x-7.2/ldap-synchronizer-3><br> 

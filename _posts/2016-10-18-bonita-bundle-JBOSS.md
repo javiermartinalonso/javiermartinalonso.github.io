@@ -11,12 +11,12 @@ icon: fa-cogs
 image: static/img/blog/bonita/bonita-logo.png
 ---
 
-# ¿Qué es un bundle? 
+# ¿Qué es un bundle? #
 
 Un Bundle es básicamente una carpeta que contiene los archivos necesarios para un grupo de funcionalidades específicas, como por ejemplo un blog, un carrito de compras o hasta un servidor de aplicaciones J2EE con la app del portal de bonita desplegada, listo para ejecutarse sin ninguna configuración. 
 La idea es que yo debería poder llevar este Bundle a otro entorno/máquina y reutilizarlo si quiero, sin necesidad de hacer apenas modificaciones.
 
-## ¿Cómo instalar el bundle bonita JBOSS?
+## ¿Cómo instalar el bundle bonita JBOSS? ##
 
 <div class="delimitador-multimedia">
     <div class="contenido-multimedia">
@@ -26,7 +26,7 @@ La idea es que yo debería poder llevar este Bundle a otro entorno/máquina y re
 
 <!--more-->
 
-## Referencias
+## Referencias ##
 
 <http://documentation.bonitasoft.com/6.x-7.2/jboss-bundle-3>
 

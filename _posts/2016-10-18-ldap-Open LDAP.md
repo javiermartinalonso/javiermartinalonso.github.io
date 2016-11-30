@@ -11,7 +11,7 @@ icon: fa-sitemap
 image: static/img/blog/ldap/ldap-logo.png
 ---
 
-# OpenLDAP
+# OpenLDAP #
 
 OpenLDAP es una implementación libre y de código abierto del protocolo Lightweight Directory Access Protocol (LDAP) desarrollada por el proyecto OpenLDAP.
 Está liberada bajo su propia licencia OpenLDAP Public License. LDAP es un protocolo de comunicación independiente de la plataforma.
@@ -27,7 +27,7 @@ Veamos como podemos montar un servicio centralizado de autenticación con OpenLD
     </div>
 </div>
 
-## Referencias
+## Referencias ##
 <https://es.wikipedia.org/wiki/OpenLDAP>
 
 <http://www.openldap.org/>
