@@ -106,7 +106,7 @@ Usted tendrá que realizar los cambios siguientes:
 * Comentar la linea de authenticationService
 * Añadir esta nueva línea:
 	
-	***authentication.service.ref.name=jaasAuthenticationService***
+	***authentication.service.ref.name= jaasAuthenticationService***
 
 ## Referencias ##
 
