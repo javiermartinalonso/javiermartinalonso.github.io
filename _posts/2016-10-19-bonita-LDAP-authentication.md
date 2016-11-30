@@ -39,7 +39,7 @@ Nota: todos los archivos de configuración distinguen entre mayúsculas y minús
 
 ### Para el caso de JBOSS ###
 
-Editar el siguiente fichero ***\<JBOSS_HOME\>/standalone/configuration/standalone.xml*** y modificar la entrada ***security-domains***.
+Editar el siguiente fichero ***\<JBOSS_HOME\> /standalone/ configuration/ standalone.xml*** y modificar la entrada ***security-domains***.
 Añadir el contexto de inicio de sesión Bonita BPM utilizando la sintaxis específica de JBoss justo antes de la etiqueta ***\</security-domains\>***. 
 Tenga en cuenta que ***security-domain-name*** es en realidad el nombre de contexto de inicio de sesión JAAS (por ejemplo Bonita BPM).
 
@@ -62,8 +62,8 @@ Es importante identificar qué atributos tenemos que establecer dentro del módu
 Lo primero que hay que tener claro es si **¿Es posible construir el nombre completo del usuario con el id con el que el usuario se identifica al iniciar la sesión?** 
 Por ejemplo Si el nombre de usuario es ***john.smith***:
 
-- y el DN del usuario es: ***CN=John Smith,CN=Users,DC=MyDomain,DC=com*** entonces **no** es posible construir el DN dinámicamente.
-- y el DN del usuario es: ***uid=john.smith,ou=people,dc=example,dc=com***.
+- y el DN del usuario es: ***CN=John Smith, CN=Users, DC=MyDomain, DC=com*** entonces **no** es posible construir el DN dinámicamente.
+- y el DN del usuario es: ***uid=john.smith, ou=people, dc=example, dc=com***.
 entonces **si** somos capaces de construir el DN dinámicamente.
 
 Por lo tanto hay que identificar cuál de los siguientes casos se aplica:
@@ -77,7 +77,7 @@ Por lo tanto hay que identificar cuál de los siguientes casos se aplica:
 
 * ***userProvider***: Ponga esto en ***ldap://\<ldap server address\>:\<ldap server port\>/\<DN del nodo del LDAP bajo el cual están localizados los usuarios\>***. 
  
-	Por ejemplo:***ldap://localhost:389/CN=Users,DC=MyDomain,DC=com***
+	Por ejemplo:***ldap://localhost:389/CN=Users, DC=MyDomain, DC=com***
 
 * ***userFilter(sólo si es necesario)***: el valor debe ser una petición de búsqueda que se encuentra a sus usuarios en el servidor LDAP. La solicitud de búsqueda puede ser, por ejemplo: ***(&(objectClass=user)(userPrincipalName={USERNAME}@mydomain.com))***. Utilice una herramienta de LDAP (como Apache Directory Studio) para validar que la solicitud devuelve el resultado esperado si se reemplaza ***{USERNAME}*** con un nombre de usuario real.
 
