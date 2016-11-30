@@ -1,75 +1,70 @@
 <div class="footer">
   <div class="row i18container">
-      {% if site.feedburner %}
-          <div>
-              <a class="btn btn-lg btn-default btn-rounded btn-outline wow bounceIn subscribe" href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" style="color: #aeaeae"><i class="fa fa-bell-o" aria-hidden="true"></i> <span data-i18n="feedburner.my_feedburner">Suscríbete</span></a>
-          </div>
-      {% endif %}
-
-      <div class="col-lg-8 col-lg-offset-2 text-center">
-          <p id="{{ site.name }}_site_pv"><strong>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. <span data-i18n="footer.rights">Todos los derechos reservados.</span></strong></p>
+    {% if site.feedburner %}
+      <div>
+        <a class="btn btn-lg btn-default btn-rounded btn-outline wow bounceIn subscribe" href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" style="color: #aeaeae"><i class="fa fa-bell-o" aria-hidden="true"></i> <span data-i18n="feedburner.my_feedburner">Suscríbete</span></a>
       </div>
-      <div class="col-lg-1 flags">
-        {% for language in site.languages %}
-          <a id="set_lang_{{ language.locale }}" class="btn btn-sm set_{{ language.locale }}" data-locale="{{ language.locale }}">
-              <img src="{{ language.flag | prepend: site.baseurl }}" height="16px" width="16px">
-          </a>
-        {% endfor %} 
-      </div>
+    {% endif %}
+      
+    <div class="col-lg-8 col-lg-offset-2 text-center">
+      <p id="{{ site.name }}_site_pv"><strong>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. <span data-i18n="footer.rights">Todos los derechos reservados.</span></strong></p>
+    </div>
+    <div class="col-lg-1 flags">
+      {% for language in site.languages %}
+        <a id="set_lang_{{ language.locale }}" class="btn btn-sm set_{{ language.locale }}" data-locale="{{ language.locale }}">
+            <img src="{{ language.flag | prepend: site.baseurl }}" height="16px" width="16px">
+        </a>
+      {% endfor %} 
+    </div>
 
-      <!-- CONTACTO -->
-      <div class="col-lg-8 col-lg-offset-2 text-center">
-        <ul class="list-inline social-icon">
-          <li>
-              <a href="https://github.com/{{ site.author.github_username }}" target="blank">
-                  <i class="fa fa-github"></i>
-              </a>
-          </li>
 
-          <li>
-              <a href="{{ site.author.youtube_canal_name }}" target="blank">
-                  <i class="fa fa-youtube-play" aria-hidden="true"></i>
-              </a>
-          </li>
+    <!-- CONTACTO -->
+    <div class="col-lg-8 col-lg-offset-2 text-center">
+      <ul class="list-inline social-icon">
+        <li>
+            <a href="https://github.com/{{ site.author.github_username }}" target="blank">
+                <i class="fa fa-github"></i>
+            </a>
+        </li>
 
-          <!--
-          <li><a href="https://www.facebook.com/{{ site.author.facebook_username }}" target="blank"><i class="fa fa-facebook"></i></a>
-          -->
-          <li>
-              <a href="{{ site.author.linkldn }}" target="blank">
-                  <i class="fa fa-linkedin"></i>
-              </a>
-          </li>
+        <li>
+            <a href="{{ site.author.youtube_canal_name }}" target="blank">
+                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+            </a>
+        </li>
 
-          <li>
-              <a href="mailto:{{ site.author.email }}">
-                  <i class="fa fa-envelope-o"></i>
-              </a>
-          </li>
+        <!--
+        <li><a href="https://www.facebook.com/{{ site.author.facebook_username }}" target="blank"><i class="fa fa-facebook"></i></a>
+        -->
+        <li>
+            <a href="{{ site.author.linkldn }}" target="blank">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </li>
 
-          <li>
-              <a href="{{ site.baseurl }}feed.xml" target="blank">
-                  <i class="fa fa-rss"></i>
-              </a>
-          </li>
+        <li>
+            <a href="mailto:{{ site.author.email }}">
+                <i class="fa fa-envelope-o"></i>
+            </a>
+        </li>
 
-          {% if site.feedburner %}
-              <li>
-              <a href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" target="blank">
-                  <i class="fa fa-bell-o"></i>
-              </a>
-              </li>  
-          {% endif %}   
-        </ul>
-      </div>
+        <li>
+            <a href="{{ site.baseurl }}feed.xml" target="blank">
+                <i class="fa fa-rss"></i>
+            </a>
+        </li>
+
+        {% if site.feedburner %}
+            <li>
+            <a href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" target="blank">
+                <i class="fa fa-bell-o"></i>
+            </a>
+            </li>  
+        {% endif %}   
+      </ul>
+    </div>
   </div>
 </div>
-
-<script async src="{{ "static/js/count_page.js" | prepend: site.baseurl }}"></script>
-
-<!-- anulo el control por javascript del scroll sobre la barra de navegacion hace que desaparezca
-<script src="{{ "static/js/scroll.js" | prepend: site.baseurl }}"></script>-->
-<script src="{{"static/js/localization.js" | prepend: site.baseurl }}"></script>
 
 <!-- Baidu analytics -->
 {% if site.ba %}
@@ -96,37 +91,4 @@
     ga('send', 'pageview');
 
   </script>
-{% endif %}
-
-{% if site.disqus %}
-  <script type="text/javascript">
-    var disqusShortName = "{{ site.disqus.name }}";
-
-    var disqusPublicKey = "{{ site.disqus.public_key }}";
-
-    var urlArray = [];
-    $('.disqus-comment-count').each(function () {
-      var url = $(this).attr('data-disqus-url');
-      urlArray.push('link:' + url);
-    });
-    $.ajax({
-      type: 'GET',
-      url: "https://disqus.com/api/3.0/threads/set.jsonp",
-      data: { api_key: disqusPublicKey, forum : disqusShortName, thread : urlArray },
-      cache: false,
-      dataType: "jsonp",
-      success: function (result) {
-        for (var i in result.response) {
-          var count = result.response[i].posts;
-          if ( count ) {
-            $('.disqus-comment-count[data-disqus-url="' + result.response[i].link + '"]').html(count);
-          }
-        }
-      }
-    });
-</script>
-{% endif %}
-
-{% if site.changyan %}
-  <script id="cy_cmt_num" src="http://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cysfY7ULn"></script>
 {% endif %}

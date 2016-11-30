@@ -16,10 +16,10 @@
 
     {{ content }}
 
+	{% include footer.html %}
+
 	{% if page.title != 'index' and page.title != 'Blog' %}
-	    {% include footer.html %}
-	{% else %}
-		{% include index_footer.html %}
+		{% include discuss_footer.html %}
 	{% endif %}
 
 </body>
