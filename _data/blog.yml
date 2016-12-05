@@ -13,5 +13,8 @@
 - name: 'JAVA'
   href: '/java/'
 
+- name: 'Angular'
+  href: '/Angular/'
+
 - name: 'Spring'
   href: '/spring/'
