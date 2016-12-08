@@ -21,12 +21,6 @@ Presenta un rendimiento óptimo y mucho más simple y comprensible que la versi�
 
 Angular 2 es otro framework, no simplemente una nueva versión de angularJS.
 
-- Angular es un ***framework para desarrollar aplicaciones web dinámicas***.
-- Provee una estructura organizativa para tus archivos, html, JavaScript y css de modo que nos permite mantener tu ***front-end con código limpio***.
-- Apareció su primera ***release en 2011***.
-- Principalmente es ***mantenido por Google*** con la ayuda de la comunidad open-source.
-- Tienes el ***backend en el servidor y el front-end en el cliente web***.
-
 # Principales ventajas con respecto angularJS #
 
 - **Velocidad**: Angular 2 mejora la velocidad.
