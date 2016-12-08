@@ -81,10 +81,8 @@ Eso lanzará el servidor web y lo pondrá en marcha. Además, en el terminal ver
 En la siguiente imagen ves la salida del navegador .
 
 <div style="text-align: center;">
-	<img src="{{ site.baseurl }}static/img/blog/angular/hola-mundo.png" class="img-thumbnail" alt="estructura carpetas proyecto nuevo."/>
+	<img src="{{ site.baseurl }}static/img/blog/angular/hola-mundo.png" class="img-thumbnail" alt="hola mundo."/>
 </div>
-
-
 
 ## Ficheros fuente: ##
 
