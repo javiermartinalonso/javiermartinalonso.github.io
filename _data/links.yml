@@ -1,5 +1,13 @@
-- last_name:  Jaime
-  first_name: de Arcos
+- last_name:  de Arcos
+  first_name: Jaime
   desc: 'Full Stack Developer'
   website: 'https://jaimedearcos.github.io/'
   email: 'jaime.dearcos@gmail.com'
+  head_img: 'http://i.imgur.com/coLCTR9.png'
+
+- last_name:  Martín Alonso
+  first_name: Javier
+  desc: 'Administrador del blog'
+  website: 'https://javiermartinalonso.github.io/'
+  email: 'javimartinalonso@gmail.com'
+  head_img: 'https://javiermartinalonso.github.io/static/img/favicon.ico'

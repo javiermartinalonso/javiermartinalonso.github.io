@@ -6,28 +6,32 @@
         </div>
     </div>
     <div class="row">
-    {% for link in site.data.links %}
-        {% assign loopindex = forloop.index | modulo: 3 %}
-        {% if forloop.last %}
-            {% if forloop.last == forloop.first %}
-        <div class="col-sm-4 col-sm-offset-4 wow zoomIn">
+        
+        {% for link in site.data.links %}
+            {% assign loopindex = forloop.index | modulo: 3 %}
+            {% if forloop.last %}
+                {% if forloop.last == forloop.first %}
+                    <div class="col-sm-4 col-sm-offset-4 wow zoomIn">
                 {% else %}
-        <div class="col-sm-4 wow {% if loopindex != 0 %} col-sm-offset-4 fadeInRight {% else %} zoomIn {% endif %}">
+                    <div class="col-sm-4 wow {% if loopindex != 0 %} col-sm-offset-4 fadeInRight {% else %} zoomIn {% endif %}">
+                {% endif %}
+            {% else %}
+                <div class="col-sm-4 wow {% if loopindex == 1 %} fadeInLeft {% else if loopindex == 2 %} zoomIn {% else %} fadeInRight {% endif %}">
             {% endif %}
-        {% else %}
-        <div class="col-sm-4 wow {% if loopindex == 1 %} fadeInLeft {% else if loopindex == 2 %} zoomIn {% else %} fadeInRight {% endif %}">
-        {% endif %}
-        <div class="team-member">
-            <h4><span class="navy">{{ link.last_name }}</span> {{ link.first_name }}</h4>
-            <p>{{ link.desc }}</p>
-            <ul class="list-inline social-icon">
-                <li><a href="{{ link.website }}" target="blank"><i class="fa fa-link"></i></a>
-                </li>
-                <li><a href="mailto:{{ link.email }}"><i class="fa fa-envelope-o"></i></a>
-                </li>
-            </ul>
-        </div>
-        </div>
-    {% endfor %}
+
+                    <div class="team-member wow zoomIn">
+                        <img src="{{ link.head_img }}" height="110" width="110" class="img-responsive img-circle" alt="">
+                        <h4><span class="navy">{{ link.first_name }} {{ link.last_name }}</span></h4>
+                        <p>{{ link.desc }}</p>
+                        <ul class="list-inline social-icon">
+                            <li><a href="{{ link.website }}" target="blank"><i class="fa fa-link"></i></a>
+                            </li>
+                            <li><a href="mailto:{{ link.email }}"><i class="fa fa-envelope-o"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        {% endfor %}
+        
     </div>
 </div>
