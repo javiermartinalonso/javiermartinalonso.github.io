@@ -4,9 +4,9 @@ section: "Angular"
 title:  "!!Hola Mundo!! con Angular"
 date:   2016-12-12
 desc: "Primeros Pasos con Angular"
-keywords: "node.js,Angular,AngularJS,TypeScript"
+keywords: "node.js,Angular,TypeScript"
 categories: [Angular]
-tags: [node.js,Angular,AngularJS,TypeScript]
+tags: [node.js,Angular,TypeScript]
 icon: fa-font
 image: static/img/blog/angular/angular-logo_150.png
 # variables para sustituir las llaves, sino no van a aparecer en el html hay que referenciarlas así {{ page.saludo }}
