@@ -13,7 +13,7 @@ image: static/img/blog/angular/angular-logo_150.png
 
 # Introducción #
 
-Angular, es un framework de JavaScript de código abierto, mantenido por Google, que se utiliza para crear y mantener ***aplicaciones web de una sola página (SPA single-page application)***, es una aplicación web o es un sitio web que cabe en una sola página con el propósito de dar una experiencia más fluida a los usuarios como una aplicación de escritorio. Su objetivo es aumentar las aplicaciones basadas en navegador con capacidad de Modelo Vista Controlador (MVC), en un esfuerzo para hacer que el desarrollo y las pruebas sean más fáciles.
+Angular, es un framework de JavaScript de código abierto, mantenido por Google, que se utiliza para crear y mantener ***aplicaciones web de una sola página (SPA single-page application)***, es una aplicación web que cabe en una sola página con el propósito de dar una experiencia más fluida a los usuarios como una aplicación de escritorio. Su objetivo es aumentar las aplicaciones basadas en navegador con capacidad de ***Modelo Vista Controlador (MVC)***, en un esfuerzo para hacer que el desarrollo y las pruebas sean más fáciles.
 
 Angular sigue el patrón ***MVVM (Model View View-Model)*** de ingeniería de software y alienta la articulación flexible entre la presentación, datos y componentes lógicos. Con el uso de la inyección de dependencias (esto suena un poco a Spring, no?), Angular lleva servicios tradicionales del lado del servidor, tales como controladores dependientes de la vista, a las aplicaciones web del lado del cliente. En consecuencia, gran parte de la carga en el backend se reduce, lo que conlleva a aplicaciones web mucho más ligeras.
 
@@ -36,8 +36,8 @@ Angular 2 es otro framework, no simplemente una nueva versión de angularJS.
 - **Services**: ahora se corresponde con un class.
 - **Testabilidad**: Cualquier elemento de la aplicación es fácilmente testeable gracias a frameworks como Karma y Jasmine. También es posible implementar tests de aceptación de selenium con Protractor.
 - **Integración con otras tecnologías**:
-No es un framework que se crea autosuficiente para todo, una de sus mayores fortalezas es que se integra a la perfección con otras tecnologías que permiten crear web components como: ***react, de Facebook; Polymer, del propio Google y X-Tag, de MicroSoft***. Además la empresa PrimeTek, famosa por sus librerías de componentes PrimeFaces y PrimeUI, está liberando todos estos componentes como directivas que se integran especialmente con Angular 2, en su proyecto PrimeNG.
-- **Simplicidad**: El código de angular 2 está programado con ***[TypeScript](http://www.typescriptlang.org/ "TypeScrip")*** que es una extensión de Microsoft de javascript y que transpila (se compila y se transforma) a ***JavaScript ES2015***. Es un lenguaje tipado y orientado a objetos. Proporciona una sintaxis mucha más entendible y cercana a lenguajes de programación orientados a objetos como Java o C# y los templates definen claramente las características de la vista de un componente y sus relaciones con otros componentes.
+No es un framework que se crea autosuficiente para todo, una de sus mayores fortalezas es que se integra a la perfección con otras tecnologías que permiten crear web components como: ***react, de Facebook; Polymer, del propio Google y X-Tag, de MicroSoft***. Además la empresa ***PrimeTek***, famosa por sus librerías de componentes ***PrimeFaces y PrimeUI***, está liberando todos estos componentes como directivas que se integran especialmente con Angular 2, en su proyecto ***PrimeNG***.
+- **Simplicidad**: El código de angular 2 está programado con ***[TypeScript](http://www.typescriptlang.org/ "TypeScrip")*** que es una extensión de Microsoft de javascript y que transpila (se compila y se transforma) a ***JavaScript ES2015***. Es un lenguaje tipado y orientado a objetos. Proporciona una sintaxis mucha más entendible y cercana a lenguajes de programación orientados a objetos como ***Java o C#*** y los templates definen claramente las características de la vista de un componente y sus relaciones con otros componentes.
 
 Todo esto redunda en una curva de aprendizaje mucho más pequeña que hace que la productividad de los equipos aumente, permitiendo que se focalicen en la lógica de negocio y la presentación; el framework ya se encarga del resto.
 
@@ -63,6 +63,7 @@ Actualmente podemos hacer uso de ECMAscript 6 y de TypeScript pero los navegador
 Todos los navegadores están trabajando en tener soporte para estos nuevos lenguajes lo antes posible, cuando llegue ese momento los transpiladores dejarán de tener sentido a no ser que salga una nueva especificación.
 
 En el caso de ECMAScript 6 los transpiladores que se utilizan son babel o traceur, mientras que TypeScript ya proporciona su propio transpilador. En Angular 2 se puede utilizar cualquier tipo de sintaxis, ES5, ES6, TypeScript e incluso Dart.
+
 ## Referencias ##
 
 [https://angular.io](https://angular.io "https://angular.io")
