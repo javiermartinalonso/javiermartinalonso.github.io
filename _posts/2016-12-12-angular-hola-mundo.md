@@ -68,6 +68,24 @@ un mensaje dentro de una cabecera <h1\>. El mensaje está definido por la expres
 > 
 > Véase que en este caso se hace el uso del símbolo de ***acento grave `*** para rodear el código html y no confundir con la tilde normal, este es un error muy normal que te puede volver loco cuando estas comenzando. 
 
+## Lanzar el proyecto desde un servidor web ##
+
+Para servir la aplicación lanzamos el comando "serve" desde linea de comandos en la ruta del proyecto .
+
+    ng serve
+
+Eso lanzará el servidor web y lo pondrá en marcha. Además, en el terminal verás como salida del comando la ruta donde el servidor está funcionando. Generalmente será algo como esto (pero te sugerimos verificar el puerto en la salida de tu terminal):
+
+    http://localhost:4200/
+
+En la siguiente imagen ves la salida del navegador .
+
+<div style="text-align: center;">
+	<img src="{{ site.baseurl }}static/img/blog/angular/hola-mundo.png" class="img-thumbnail" alt="estructura carpetas proyecto nuevo."/>
+</div>
+
+
+
 ## Ficheros fuente: ##
 
 [ver fuente del ejemplo](https://github.com/javiermartinalonso/Angular-2/tree/master/hola-mundo "ver fuente del ejemplo")
