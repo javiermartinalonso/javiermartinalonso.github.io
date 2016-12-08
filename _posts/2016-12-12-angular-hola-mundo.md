@@ -19,11 +19,11 @@ saludo: '{{ title }}'
 - Conocimientos de ***HTML y CSS***
 - Conocimientos de Javascript, concretamente ***JavaScript ES2015***.
 - ***[NodeJS y NPM instalados]({{ site.baseurl }}angular/2016/12/06/angular-node-js-y-npm-instalacion.html)***
-- Opcionalmente, pero muy aconsejable, tener instalado **[angular-cli]({{ site.baseurl }}angular/2016/12/08/angular-cli.html "angular-cli")**.
+- Opcionalmente, pero muy aconsejable, tener instalado **[angular-cli]({{ site.baseurl }}angular/2016/12/09/angular-cli.html "angular-cli")**.
 
 ## !!Hola Mundo!! con Angular ##
 
-Para generar la **creación del esqueleto, o scaffolding** de nuestra aplicación básica de angular de la que vamos a partir para generar nuestro **!!hola mundo!!**, puedes copiarte el ***[código fuente directamente](https://github.com/javiermartinalonso/Angular-2/tree/master/hola-mundo "ver fuente del ejemplo")*** o puedes revisar un post anterior del blog donde explicamos como usar ***[angular-cli]({{ site.baseurl }}angular/2016/12/08/angular-cli.html "angular-cli")*** para crearlo.
+Para generar la **creación del esqueleto, o scaffolding** de nuestra aplicación básica de angular de la que vamos a partir para generar nuestro **!!hola mundo!!**, puedes copiarte el ***[código fuente directamente](https://github.com/javiermartinalonso/Angular-2/tree/master/hola-mundo "ver fuente del ejemplo")*** o puedes revisar un post anterior del blog donde explicamos como usar ***[angular-cli]({{ site.baseurl }}angular/2016/12/09/angular-cli.html "angular-cli")*** para crearlo.
 
 Las aplicaciones angular están hechas de ***componentes*** . Un componente es la combinación de una ***plantilla HTML (Template)*** y una ***clase (class)*** de componente que controla una parte de la pantalla. En el fichero ***hola-mundo\src\app\app.component.ts*** se puede ver un ejemplo de un componente que muestra una cadena simple:
 
