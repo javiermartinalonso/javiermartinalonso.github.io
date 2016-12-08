@@ -9,8 +9,8 @@ categories: [Angular]
 tags: [node.js,Angular,AngularJS,TypeScript]
 icon: fa-font
 image: static/img/blog/angular/angular-logo_150.png
-# variables para sustituir las llaves, sino no van a aparecer en el html
-title: '{{ title }}'
+# variables para sustituir las llaves, sino no van a aparecer en el html hay que referenciarlas así {{ page.saludo }}
+saludo: '{{ title }}'
 ---
 
 ## Requisitos previos ##
@@ -57,14 +57,14 @@ Si vemos ahora el contenido de **hola-mundo\src\index.html (dentro de la etiquet
 La propiedad ***"templateUrl"*** define la ruta de la definición del componente html. En este caso ***hola-mundo\src\app\app.component.html***
 
     <h1>
-      {{ title }}
+      {{page.saludo}}
     </h1>
 
 un mensaje dentro de una cabecera <h1\>. El mensaje está definido por la expresión \{\{title\}\} la cual es una expresión angular de ***interpolacion doble corchete (Interpolation binding) (Propiedad de unión/mapeo que ayuda a mostrar los datos de aplicaciones en la interfaz de usuario)***. En tiempo de ejecución, angular reemplaza \{\{title\}\} con el valor del componente de la propiedad **"title"**.
 
 > También podríamos haber usado la propiedad ***template*** en vez de ***templateUrl*** y haber codificado directamente el html dentro del decorador ***@component*** :
 > 
->     template: `<h1> {{ title }} </h1>`
+>     template: `<h1> {{ page.saludo }} </h1>`
 > 
 > Véase que en este caso se hace el uso del símbolo de ***acento grave `*** para rodear el código html y no confundir con la tilde normal, este es un error muy normal que te puede volver loco cuando estas comenzando. 
 
