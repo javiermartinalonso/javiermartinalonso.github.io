@@ -13,7 +13,7 @@ image: static/img/blog/angular/angular-logo_150.png
 
 # Introducción #
 
-Angular, es un framework de JavaScript de código abierto, mantenido por Google, que se utiliza para crear y mantener ***aplicaciones web de una sola página (SPA single-page application)***, es una aplicación web que cabe en una sola página con el propósito de dar una experiencia más fluida a los usuarios como una aplicación de escritorio. Su objetivo es aumentar las aplicaciones basadas en navegador con capacidad de ***Modelo Vista Controlador (MVC)***, en un esfuerzo para hacer que el desarrollo y las pruebas sean más fáciles.
+Angular es un marco para crear aplicaciones cliente en HTML, es un framework de JavaScript de código abierto, mantenido por Google, que se utiliza para crear y mantener ***aplicaciones web de una sola página (SPA single-page application)***, es una aplicación web que cabe en una sola página con el propósito de dar una experiencia más fluida a los usuarios como una aplicación de escritorio. Su objetivo es aumentar las aplicaciones basadas en navegador con capacidad de ***Modelo Vista Controlador (MVC)***, en un esfuerzo para hacer que el desarrollo y las pruebas sean más fáciles.
 
 Angular sigue el patrón ***MVVM (Model View View-Model)*** de ingeniería de software y alienta la articulación flexible entre la presentación, datos y componentes lógicos. Con el uso de la inyección de dependencias (esto suena un poco a Spring, no?), Angular lleva servicios tradicionales del lado del servidor, tales como controladores dependientes de la vista, a las aplicaciones web del lado del cliente. En consecuencia, gran parte de la carga en el backend se reduce, lo que conlleva a aplicaciones web mucho más ligeras.
 <!--more-->

@@ -66,6 +66,11 @@
   </div>
 </div>
 
+<!-- Configuracion de resaltado correcto de código -->
+<link rel="stylesheet" href="{{"bower_components/highlight/styles/vs.css" | prepend: site.baseurl }}" >
+<script src="{{"bower_components/highlight/highlight.pack.js" | prepend: site.baseurl }}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 <!-- Baidu analytics -->
 {% if site.ba %}
   <script>
