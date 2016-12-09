@@ -70,13 +70,13 @@ Eso lanzará el servidor web y lo pondrá en marcha. Además, en el terminal ver
 
     http://localhost:4200/
 
-En la siguiente imagen ves la salida del terminal .
+En la siguiente imagen puedes ver la salida del terminal .
 
 <div style="text-align: center;">
 	<img src="{{ site.baseurl }}static/img/blog/angular/consola-ng-serve.png" class="img-thumbnail" alt="estructura carpetas proyecto nuevo."/>
 </div>
 
-Podrías modificar el puerto perfectamente si lo deseas, simplemente indicando el puerto deseado con la opción --port:
+Podrías modificar el puerto si lo deseas, simplemente con la opción --port:
 
     ng serve --port 4201
 
