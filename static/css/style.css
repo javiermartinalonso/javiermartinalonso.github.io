@@ -7424,3 +7424,7 @@ width:100%;
 top:0px;
 left:0px;
 }
+
+blockquote {
+  font-size: 13px;
+}
