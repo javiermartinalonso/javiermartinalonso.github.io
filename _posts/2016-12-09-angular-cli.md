@@ -18,6 +18,8 @@ Es un intérprete de línea de comandos de Angular 2 que te facilitará el inici
 **Facilita los flujos de desarrollo, depuración, testing o deploy**...  Durante la etapa de producción o testing también nos ayudará, permitiendo preparar los archivos que deben ser subidos al servidor, ***transpilar*** las fuentes, etc.
 <!--more-->
 
+Puedes partir de proyectos starters para hacer más llevadero el desarrollo, pero… ¿No sería más cómodo tener una herramienta que pueda hacer todo esto por ti?
+
 Angular CLI no es una herramienta de terceros, sino que nos la ofrece el propio equipo de Angular.
 
 ## Requisitos previos ##
@@ -80,9 +82,55 @@ Podrías modificar el puerto si lo deseas, simplemente con la opción --port:
 
     ng serve --port 4201
 
-Angular CLI tiene mucho más
+## Generar código ##
 
-En esta pequeña introducción solo te hemos explicado cómo iniciar un nuevo proyecto de Angular 2 y cómo servirlo después por medio del comando serve. Pero lo cierto es que detrás de Angular CLI hay muchas otras **[instrucciones](https://cli.angular.io/reference.pdf "instrucciones")** de gran utilidad. Principalmente, como hemos comentado, encontrarás una gran cantidad de comandos que permiten crear el esqueleto de componentes, directivas, servicios, etc.
+Hay elementos de código que mantienen una cierta estructura y no necesitas escribirla cada vez que creas un archivo nuevo. Existen code snippets que te ayudan con esto, claro, pero aún así tienes que ir a la carpeta adecuada, crear el archivo… ¡olvídate! tienes `ng generate`.
+
+Este comando te permite generar varios elementos habituales en Angular 2:
+
+- **Componentes:**
+
+        ng generate component myComponent
+
+- **Servicios**:
+
+        ng generate service myService
+
+- **Pipes**: 
+
+        ng generate pipe myPipe
+
+- **Rutas**:
+
+        ng generate route myRoute
+
+- **Directivas**: 
+
+        ng generate directive myDirective
+
+## Comprobar la sintaxis ##
+
+Puedes ejecutar el linter con el comando:
+
+    ng lint
+
+## Ejecutar tests unitarios##
+
+Puedes lanzar los tests unitarios con karma con el comando:
+
+    ng test
+
+## Ejecutar tests end to end ##
+
+Puedes lanzar los tests end to end con protractor con el comando:
+
+    ng e2e
+
+## Angular CLI tiene mucho más ##
+
+En esta pequeña introducción solo te hemos explicado cómo iniciar un nuevo proyecto de Angular 2 y cómo servirlo después por medio del comando serve. 
+
+Pero lo cierto es que detrás de Angular CLI hay muchas otras **[instrucciones](https://cli.angular.io/reference.pdf "instrucciones")** de gran utilidad. Principalmente, como hemos comentado, encontrarás una gran cantidad de comandos que permiten crear el esqueleto de componentes, directivas, servicios, etc.
 
 ## Ficheros fuente: ##
 
