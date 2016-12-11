@@ -25,7 +25,7 @@ Para generar la **creación del esqueleto, o scaffolding** de nuestra aplicació
 
 ## Lanzar el proyecto desde un servidor web ##
 
-Para servir la aplicación lanzamos el comando "serve" desde linea de comandos en la ruta del proyecto .
+Para servir la aplicación lanzamos el comando **"serve"** desde linea de comandos en la ruta del proyecto .
 
     ng serve
 
@@ -74,7 +74,7 @@ Como hemos cambiado el nombre del componente, debemos modificar todas sus refere
 </div>
 
 
-> **Nota**: Como editor estoy usando [Visual Studio Code](https://code.visualstudio.com/ "Visual Studio Code"), seleccionando el nombre del componente y **apretando F2, podremos cambiar todas las referencias del componente**. Con **shift+F12 podemos comprobar todas las referencias**, ver imagen anterior.
+> **Nota**: Como editor estoy usando [Visual Studio Code](https://code.visualstudio.com/ "Visual Studio Code") (en un futuro escribiré un post centrándonos en este IDE), seleccionando el nombre del componente y **apretando F2, podremos cambiar todas las referencias del componente**. Con **shift+F12 podemos comprobar todas las referencias**, ver imagen anterior.
 
 En el fichero ***hola-mundo/src/index.html***, cambiaremos la etiqueta ***<app-root\>*** por el contenido del selector ***<hola-mundo\>***:
 
@@ -88,7 +88,7 @@ tal que así:
       <hola-mundo>Loading...</hola-mundo>
     </body>
 
-> **Nota**: Al modificar los archivos del componente, cualquiera de ellos, tanto el html, css o ts, se debería refrescar automáticamente la página donde estás visualizando tu proyecto una vez puesto en marcha con el comando "ng serve", gracias al sistema de "live-reload" que te monta Angular CLI en cualquier proyeto Angular 2.
+> **Nota**: Al modificar los archivos del componente, cualquiera de ellos, tanto el **html, css o ts**, se debería refrescar automáticamente la página donde estás visualizando tu proyecto una vez puesto en marcha con el comando `ng serve`, gracias al sistema de **"live-reload"** que te monta **[angular-cli]({{ site.baseurl }}angular/2016/12/09/angular-cli.html "angular-cli")** en cualquier proyecto Angular 2.
 
 En la siguiente imagen puedes ver la salida del navegador .
 

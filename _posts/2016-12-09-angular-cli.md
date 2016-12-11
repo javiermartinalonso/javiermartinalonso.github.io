@@ -20,7 +20,7 @@ Es un intérprete de línea de comandos de Angular 2 que te facilitará el inici
 
 Puedes partir de proyectos starters para hacer más llevadero el desarrollo, pero… ¿No sería más cómodo tener una herramienta que pueda hacer todo esto por ti?
 
-Angular CLI no es una herramienta de terceros, sino que nos la ofrece el propio equipo de Angular.
+**Angular CLI** no es una herramienta de terceros, sino que nos la ofrece el propio equipo de **Angular**.
 
 ## Requisitos previos ##
 
@@ -34,17 +34,17 @@ Esto lo conseguimos desde el terminal, lanzando el comando:
 
     npm install -g angular-cli
 
-Durante el proceso de instalación se instalará el propio Angular CLI junto con todas sus dependencias. La instalación puede tardar varios minutos dependiendo de la velocidad de tu conexión a Internet. Entre las **[dependencias](https://david-dm.org/angular/angular-cli "dependencias")**, puedes ver alguna interesante como ***less*** (para minimificación), ***webpack*** (empaquetado, compilación ...), ***karma*** (para test unitarios)
+Durante el proceso de instalación se instalará el propio** Angular CLI** junto con todas sus dependencias. La instalación puede tardar varios minutos dependiendo de la velocidad de tu conexión a Internet. Entre las **[dependencias](https://david-dm.org/angular/angular-cli "dependencias")**, puedes ver alguna interesante como ***less*** (para minimificación), ***webpack*** (empaquetado, compilación ...), ***karma*** (para test unitarios)
 
 Una vez instalado dispondrás del comando ***"ng"*** a partir del cual lanzarás cualquiera de las acciones que se pueden hacer mediante la interfaz de comandos de Angular. Puedes comenzar lanzando el comando de ayuda:
 
     ng --help
 
-> **Nota**: ng (que se lee "enyi") es el apelativo familiar de "Angular" que se conoce desde el inicio del framework.
+> **Nota**: ng (que se lee ***"enyi"***) es el apelativo familiar de ***"Angular"*** que se conoce desde el inicio del framework.
 > También encontrarás una excelente ayuda si entras en la página de [Angular CLI](https://cli.angular.io/ "Angular-CLI"), navegando por sus secciones, o bien en el propio repositorio de [GitHub angular-cli](https://github.com/angular/angular-cli "GitHub angular-cli").
 
-Crear el esqueleto de una aplicación Angular 2
-Uno de los comandos que puedes lanzar con Angular CLI es el de creación de un nuevo proyecto Angular 2. Este comando se ejecuta mediante ***"new"***, seguido del nombre del proyecto que queramos crear.
+Crear el esqueleto de una aplicación **Angular 2**
+Uno de los comandos que puedes lanzar con **Angular CLI** es el de creación de un nuevo proyecto **Angular 2**. Este comando se ejecuta mediante ***"new"***, seguido del nombre del proyecto que queramos crear.
 
     ng new hola-mundo
 
@@ -56,26 +56,32 @@ Lanzado este comando se creará una carpeta igual que el nombre del proyecto ind
 
 Además, como hemos dicho, se instalarán y se configurarán en el proyecto una gran cantidad de herramientas útiles para la etapa del desarrollo front-end. De hecho, gran cantidad de los directorios y archivos generados al crear un nuevo proyecto son necesarios para que estas herramientas funcionen. Entre otras cosas tendremos:
 
-- Un servidor para servir el proyecto por HTTP
-- Un sistema de live-reload, para que cuando cambiamos archivos de la aplicación se refresque el navegador
-- Herramientas para testing
-- Herramientas para despliegue del proyecto
+- Un **servidor** para servir el proyecto por HTTP
+- Un sistema de **live-reload**, para que cuando cambiamos archivos de la aplicación se refresque el navegador
+- Herramientas para **testing**
+- Herramientas para **despliegue del proyecto**
 - Etc.
 
 ## Lanzar el proyecto desde un servidor web ##
 
-Angular CLI lleva integrado un servidor web, lo que quiere decir que podemos visualizar y usar el proyecto sin necesidad de cualquier otro software. Para servir la aplicación lanzamos el comando "serve".
+**Angular CLI** lleva integrado un servidor web, lo que quiere decir que podemos visualizar y usar el proyecto sin necesidad de cualquier otro software. Para servir la aplicación lanzamos el comando **"serve"**.
 
     ng serve
 
-Eso lanzará el servidor web y lo pondrá en marcha. Además, en el terminal verás como salida del comando la ruta donde el servidor está funcionando. Generalmente será algo como esto (pero te sugerimos verificar el puerto en la salida de tu terminal):
+Eso lanzará el servidor web y lo pondrá en marcha. 
+
+<div style="text-align: center;">
+	<img src="{{ site.baseurl }}static/img/blog/angular/app-works.png" class="img-thumbnail" alt="app-works"/>
+</div>
+
+Además, en el terminal verás como salida del comando la ruta donde el servidor está funcionando. Generalmente será algo como esto (pero te sugerimos verificar el puerto en la salida de tu terminal):
 
     http://localhost:4200/
 
 En la siguiente imagen puedes ver la salida del terminal .
 
 <div style="text-align: center;">
-	<img src="{{ site.baseurl }}static/img/blog/angular/consola-ng-serve.png" class="img-thumbnail" alt="estructura carpetas proyecto nuevo."/>
+	<img src="{{ site.baseurl }}static/img/blog/angular/consola-ng-serve.png" class="img-thumbnail" alt="consola."/>
 </div>
 
 Podrías modificar el puerto si lo deseas, simplemente con la opción --port:
@@ -84,9 +90,9 @@ Podrías modificar el puerto si lo deseas, simplemente con la opción --port:
 
 ## Generar código ##
 
-Hay elementos de código que mantienen una cierta estructura y no necesitas escribirla cada vez que creas un archivo nuevo. Existen code snippets que te ayudan con esto, claro, pero aún así tienes que ir a la carpeta adecuada, crear el archivo… ¡olvídate! tienes `ng generate`.
+Hay elementos de código que mantienen una cierta estructura y no necesitas escribirla cada vez que creas un archivo nuevo. Existen **code snippets** que te ayudan con esto, claro, pero aún así tienes que ir a la carpeta adecuada, crear el archivo… ¡olvídate! tienes `ng generate`.
 
-Este comando te permite generar varios elementos habituales en Angular 2:
+Este comando te permite generar varios elementos habituales en **Angular 2**:
 
 - **Componentes:**
 
@@ -110,27 +116,27 @@ Este comando te permite generar varios elementos habituales en Angular 2:
 
 ## Comprobar la sintaxis ##
 
-Puedes ejecutar el linter con el comando:
+Puedes ejecutar el **linter** con el comando:
 
     ng lint
 
 ## Ejecutar tests unitarios##
 
-Puedes lanzar los tests unitarios con karma con el comando:
+Puedes lanzar los **tests** unitarios con **karma** con el comando:
 
     ng test
 
 ## Ejecutar tests end to end ##
 
-Puedes lanzar los tests end to end con protractor con el comando:
+Puedes lanzar los **tests end to end** con **protractor** con el comando:
 
     ng e2e
 
 ## Angular CLI tiene mucho más ##
 
-En esta pequeña introducción solo te hemos explicado cómo iniciar un nuevo proyecto de Angular 2 y cómo servirlo después por medio del comando serve. 
+En esta pequeña introducción solo te hemos explicado cómo iniciar un nuevo proyecto de **Angular 2** y cómo servirlo después por medio del comando **serve**. 
 
-Pero lo cierto es que detrás de Angular CLI hay muchas otras **[instrucciones](https://cli.angular.io/reference.pdf "instrucciones")** de gran utilidad. Principalmente, como hemos comentado, encontrarás una gran cantidad de comandos que permiten crear el esqueleto de componentes, directivas, servicios, etc.
+Pero lo cierto es que detrás de **Angular CLI** hay muchas otras **[instrucciones](https://cli.angular.io/reference.pdf "instrucciones")** de gran utilidad. Principalmente, como hemos comentado, encontrarás una gran cantidad de comandos que permiten crear el **esqueleto de componentes, directivas, servicios**, etc.
 
 ## Ficheros fuente: ##
 
