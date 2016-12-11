@@ -1,0 +1,29 @@
+## Requisitos previos ##
+
+- Un conocimiento básico de terminal y la ***línea de comandos***
+- ***[NodeJS](https://nodejs.org "NodeJS")*** y ***NPM instalado (se incluye en la instalacion de NodeJS)***
+- Conocimientos básicos de ***JS***, ***CSS*** y de ***HTML***
+
+No tienes que saber Node para desarrollar con Angular, pero sí necesitas tenerlo para poder instalar y usar Angular-CLI.
+
+
+http://www.emezeta.com/articulos/como-configurar-atom-editor-y-sus-mejores-plugins
+
+https://code.visualstudio.com
+
+
+
+ES5: Si quieres puedes seguir desarrollando con el javascript de hoy en día, EcmaScript 5, que es el que todavía usan la mayoría de las personas y lo que es 100% compatible con los navegadores sin necesidad de usar transpiladores como BabelJS.
+
+ES6: La nueva versión de EcmaScript nos facilita la vida en muchos aspectos y nos permite nuevas herramientas para mejorar los flujos de trabajo. Para que sea totalmente compatible hace falta usar herramientas como Babel, que transforman el código ES6 en ES5, entendible por los navegadores.
+
+TypeScript: es un superset de Javascript, un lenguaje que nos permite llevar Javascript a un nuevo nivel, capaz de satisfacer las necesidades empresariales, potenciar la calidad del código y los beneficios de la Programación Orientada a Objetos. La desventaja que nos encontramos es de nuevo la necesidad de usar transpiladores y que tu código ya no será un estándar.
+
+
+
+https://docs.npmjs.com/getting-started/using-a-package.json
+Un package.jsonarchivo que ofrece un montón de grandes cosas:
+
+Sirve como documentación para que paquetes depende de su proyecto.
+Se le permite especificar las versiones de un paquete que su proyecto puede utilizar el uso de reglas semánticas de versiones .
+Hace que su acumulación reproducible que significa que su manera más fácil de compartir con otros desarrolladores.

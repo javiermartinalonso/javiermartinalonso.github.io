@@ -15,6 +15,8 @@ image: static/img/blog/angular/angular-logo_150.png
 
 **Node.js®** Node.js® es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome. Node.js usa un modelo de operaciones E/S sin bloqueo y **orientado a eventos asíncronos**, que lo hace liviano y eficiente y que nos permite **construir aplicaciones altamente escalables**.
 
+Dada la capacidad de procesamiento asíncrono es una herramienta ideal para generar **sistemas que respondan en tiempo real**. Y por su escasa demanda de hardware **se usa también en proyectos de Internet of Things**.
+
 **El ecosistema de paquetes de Node.js, npm**, es el ecosistema mas grande de librerías de código abierto en el mundo.
 
 **Node.js** y **NPM** son esenciales para el desarrollo de webs modernas con plataformas angular o similares. **Node.js** provee de herramientas de desarollo. **NPM package manager**, es en sí mismo una aplicación construida con **Node.js**, y te ayuda a instalar bibliotecas de JavaScript.
@@ -28,7 +30,6 @@ Hemos dicho que la meta número uno declarada de Node es ***"proporcionar una ma
 En telecomunicaciones y en ingeniería informática, la **escalabilidad** es la propiedad deseable de un sistema, una red o un proceso, que indica su habilidad para reaccionar y adaptarse sin perder calidad, o bien manejar el crecimiento continuo de trabajo de manera fluida, o bien para estar preparado para hacerse más grande sin perder calidad en los servicios ofrecidos.
 
 > ¿Cuál es el problema con los programas de servidor actuales? Hagamos cuentas. En lenguajes como Java™ y PHP, cada conexión genera un nuevo hilo que potencialmente viene acompañado de 2 MB de memoria. En un sistema que tiene 8 GB de RAM, esto da un número máximo teórico de conexiones concurrentes de cerca de 4.000 usuarios. A medida que crece su base de clientes, si usted desea que su aplicación soporte más usuarios, necesitará agregar más y más servidores. Desde luego, esto suma en cuanto a los costos de servidor del negocio, a los costos de tráfico, los costos laborales, y más. Además de estos costos están los costos por los problemas técnicos potenciales — un usuario puede estar usando diferentes servidores para cada solicitud, así que cualquier recurso compartido debe almacenarse en todos los servidores. Por todas estas razones, el cuello de botella en toda la arquitectura de aplicación Web (incluyendo el rendimiento del tráfico, la velocidad de procesador y la velocidad de memoria) era el número máximo de conexiones concurrentes que podía manejar un servidor.
-
 
 Node resuelve este problema cambiando la forma en que se realiza una conexión con el servidor. En lugar de generar un nuevo hilo de OS para cada conexión (y de asignarle la memoria acompañante), cada conexión **dispara una ejecución de evento dentro del proceso del motor de Node**. Node también afirma que nunca se quedará en punto muerto, porque no se permiten bloqueos y porque no se bloquea directamente para llamados E/S. Node afirma que un servidor que lo ejecute puede soportar decenas de miles de conexiones concurrentes.
 

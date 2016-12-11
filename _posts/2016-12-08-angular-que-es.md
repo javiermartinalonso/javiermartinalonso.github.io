@@ -43,20 +43,23 @@ Todo esto redunda en una curva de aprendizaje mucho más pequeña que hace que l
 
 Angular desea aprovecha las últimas mejoras en los estándares front-end.
 
-Estas mejoras son los web components, que son recomendación de la W3C desde Julio 2014 y permiten extender el HTML a nuestro antojo; y la nueva especificación de JavaScript que desde Junio 2015 cuenta con la especificación ECMAScript 6, de la que se nutre TypeScript para añadirle tipos de datos, interfaces y mejoras en la programación orientada a objetos.
+Estas mejoras son los web components, que son recomendación de la W3C desde Julio 2014 y permiten extender el HTML a nuestro antojo; y la nueva especificación de **JavaScript** que desde Junio 2015 cuenta con la especificación **ECMAScript 6**, de la que se nutre ***[TypeScript](http://www.typescriptlang.org/ "TypeScrip")*** para añadirle tipos de datos, interfaces y mejoras en la programación orientada a objetos.
 
 Como ya he dicho los web components nos permiten extender el HTML como queramos, es decir, nos permiten crear etiquetas personalizadas que encapsulan el contenido en HTML, el comportamiento en JavaScript y el estilo en CSS y todo gracias a estas cuatro especificaciones:
 
-- **Custom Elements**: es la tecnología que nos permite crear las etiquetas semánticamente correctas para la funcionalidad que le queramos dar. Es buena práctica que esta etiqueta incluya un ‘-‘, para reducir el riesgo de colisiones, ya que la W3C se compromete a no crear etiquetas que incluyan este carácter.
-- **HTML Imports**: es la tecnología que nos permite importar un código HTML en otro HTML, se utiliza para la distribución de las librerías de web components.
-- **Templates**: es la tecnología que permite crear la estructura visual del web component. No tiene ningún efecto sobre la página, es decir, no se incluye en el DOM hasta que algún elemento la procesa, hace una copia y la incluye en el DOM.
-- **Shadow DOM**: es la tecnología que permite encapsular el web component para que no se vea afectado por el DOM general de la página a no ser que lo permitamos explícitamente. En otras palabras, es todo el contenido que encapsula la etiqueta del web component. En algunos navegadores podemos verlo inspeccionando la página.
+- **Custom Elements**: es la tecnología que nos permite crear las etiquetas semánticamente correctas para la funcionalidad que le queramos dar. Es buena práctica que esta etiqueta incluya un ‘-‘, para reducir el riesgo de colisiones, ya que ***la W3C se compromete a no crear etiquetas que incluyan este carácter***.
 
-Actualmente podemos hacer uso de ECMAscript 6 y de TypeScript pero los navegadores no se actualizan tan rápido a estos cambios en JavaScript, por lo que ahora estamos en un punto en el que si utilizamos las nuevas sintaxis, antes de poder ejecutarse en los navegadores tienen que pasar un proceso de transpilado, que convierte su contenido a sintaxis de ECMAScript 5 que es la que actualmente soportan todos los navegadores.
+- **HTML Imports**: es la tecnología que nos permite importar un código HTML en otro HTML, se utiliza para la ***distribución de las librerías de web components***.
+
+- **Templates**: ***es la tecnología que permite crear la estructura visual del web component***. No tiene ningún efecto sobre la página, es decir, no se incluye en el DOM hasta que algún elemento la procesa, hace una copia y la incluye en el DOM.
+
+- **Shadow DOM**: es la tecnología que permite encapsular el web component para que no se vea afectado por el **DOM** general de la página a no ser que lo permitamos explícitamente. En otras palabras, ***es todo el contenido que encapsula la etiqueta del web component***. En algunos navegadores podemos verlo inspeccionando la página.
+
+Actualmente podemos hacer uso de **ECMAscript 6** y de ***[TypeScript](http://www.typescriptlang.org/ "TypeScrip")*** pero los navegadores no se actualizan tan rápido a estos cambios en JavaScript, por lo que ahora estamos en un punto en el que si utilizamos las nuevas sintaxis, antes de poder ejecutarse en los navegadores tienen que pasar un proceso de transpilado, que convierte su contenido a sintaxis de **ECMAScript 5** que es la que actualmente soportan todos los navegadores.
 
 Todos los navegadores están trabajando en tener soporte para estos nuevos lenguajes lo antes posible, cuando llegue ese momento los transpiladores dejarán de tener sentido a no ser que salga una nueva especificación.
 
-En el caso de ECMAScript 6 los transpiladores que se utilizan son babel o traceur, mientras que TypeScript ya proporciona su propio transpilador. En Angular 2 se puede utilizar cualquier tipo de sintaxis, ES5, ES6, TypeScript e incluso Dart.
+En el caso de **ECMAScript 6** los **transpiladores** que se utilizan son **babel** o **traceur**, mientras que ***[TypeScript](http://www.typescriptlang.org/ "TypeScrip")*** ya proporciona su propio **transpilador**. En **Angular 2** se puede utilizar cualquier tipo de sintaxis, **ES5**, **ES6**, ***[TypeScript](http://www.typescriptlang.org/ "TypeScrip")*** e incluso **Dart**.
 
 ## Referencias ##
 
