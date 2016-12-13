@@ -13,6 +13,10 @@ image: static/img/blog/angular/angular-logo_150.png
 saludo: '{{ title }}'
 ---
 
+https://angular.io/docs/ts/latest/guide/appmodule.html#!#main
+
+http://academia-binaria.com/componentes-los-bloques-de-construccion-de-angular-2/
+
 http://www.desarrolloweb.com/articulos/concepto-teorico-componente-angular2.html
 
 Árbol de componentes

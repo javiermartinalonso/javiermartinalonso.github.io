@@ -11,6 +11,11 @@ icon: fa-font
 image: static/img/blog/angular/angular-logo_150.png
 ---
 
+
+http://academia-binaria.com/hola-mundo-en-angular-2/
+
+https://www.youtube.com/watch?v=Y7izsxhPpQY&feature=youtu.be
+
 http://www.desarrolloweb.com/articulos/analisis-carpetas-proyecto-angular2.html
 
 https://angular.io/docs/ts/latest/guide/setup-systemjs-anatomy.html
