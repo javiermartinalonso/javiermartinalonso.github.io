@@ -24,6 +24,7 @@ Pero cuando nos referimos a java no nos referimos sólo a un lenguaje de program
 </div>
 
 <!--more-->
+
 ## Ediciones de la plataforma Java ##
 
 La configuración de una plataforma Java afecta fundamentalmente a los servicios que esta ofrece, las herramientas adicionales que incorpora y también a aspectos menos visibles, como el modo de funcionamiento de la JVM. De acuerdo a la documentación actual de Oracle **podemos distinguir las siguientes cuatro plataformas Java**:
