@@ -23,11 +23,11 @@ Pero cuando nos referimos a java no nos referimos sólo a un lenguaje de program
 	<img src="{{ site.baseurl }}static/img/blog/java/diagrama-conceptual-java.png" class="img-thumbnail" alt="Diagrama conceptual Java."/>
 </div>
 
-<!--more-->
-
 ## Ediciones de la plataforma Java ##
 
 La configuración de una plataforma Java afecta fundamentalmente a los servicios que esta ofrece, las herramientas adicionales que incorpora y también a aspectos menos visibles, como el modo de funcionamiento de la JVM. De acuerdo a la documentación actual de Oracle **podemos distinguir las siguientes cuatro plataformas Java**:
+
+<!--more-->
 
 - **Java SE**: la conocida como **Standard Edition** es la edición más difundida de la plataforma Java. Incorpora los elementos necesarios para crear aplicaciones de escritorio con o sin interfaz gráfica de usuario, acceso al sistema de archivos, comunicación a través de redes, concurrencia y otros servicios básicos.
 
