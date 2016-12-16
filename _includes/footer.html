@@ -1,3 +1,15 @@
+<div class="search-container">
+    <img src="{{ site.baseurl }}search/img/cb-search.png" id="search-btn" title="Haga doble clic en ctrl para buscar"/>
+</div>
+
+<div class="col-lg-1 flags">
+  {% for language in site.languages %}
+    <a id="set_lang_{{ language.locale }}" class="btn btn-sm set_{{ language.locale }}" data-locale="{{ language.locale }}">
+        <img src="{{ language.flag | prepend: site.baseurl }}" height="16px" width="16px">
+    </a>
+  {% endfor %} 
+</div>
+
 <div class="footer">
   <div class="row i18container">
     {% if site.feedburner %}
@@ -7,16 +19,12 @@
     {% endif %}
       
     <div class="col-lg-8 col-lg-offset-2 text-center">
-      <p id="{{ site.name }}_site_pv"><strong>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. <span data-i18n="footer.rights">Todos los derechos reservados.</span></strong></p>
+      <p id="{{ site.name }}_site_pv"><strong>&copy; {{ 'now' | date: "%Y" }} 
+            <a href="{{ site.url }}">
+              {{ site.title }}. 
+            </a>
+      <span data-i18n="footer.rights">Todos los derechos reservados.</span></strong></p>
     </div>
-    <div class="col-lg-1 flags">
-      {% for language in site.languages %}
-        <a id="set_lang_{{ language.locale }}" class="btn btn-sm set_{{ language.locale }}" data-locale="{{ language.locale }}">
-            <img src="{{ language.flag | prepend: site.baseurl }}" height="16px" width="16px">
-        </a>
-      {% endfor %} 
-    </div>
-
 
     <!-- CONTACTO -->
     <div class="col-lg-8 col-lg-offset-2 text-center">
