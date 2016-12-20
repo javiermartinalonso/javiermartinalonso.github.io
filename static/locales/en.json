@@ -55,10 +55,10 @@
     "my_feedburner": "Subscribe by Email"
   },  
   "link":{
-    "link": "Partnerships",
-    "view": "views"
+    "link": "Partnerships"
   },
   "footer":{
-    "rights" : "All Rights Reserved."
+    "rights" : "All Rights Reserved.",
+    "views" : "views"
   }
 }

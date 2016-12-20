@@ -12,3 +12,6 @@
 
 - name: LDAP
   percentage: 15
+
+- name: ANGULAR 2
+  percentage: 15  

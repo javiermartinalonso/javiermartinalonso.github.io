@@ -11,19 +11,26 @@
 </div>
 
 <div class="footer">
-  <div class="row i18container">
+
+  <div class="row i18container"> 
+
+    <!-- SUBSCRIPCION-->
     {% if site.feedburner %}
       <div>
         <a class="btn btn-lg btn-default btn-rounded btn-outline wow bounceIn subscribe" href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" style="color: #aeaeae"><i class="fa fa-bell-o" aria-hidden="true"></i> <span data-i18n="feedburner.my_feedburner">Suscríbete</span></a>
       </div>
     {% endif %}
-      
+    
+    <!-- DERECHOS RESERVADOS-->
     <div class="col-lg-8 col-lg-offset-2 text-center">
-      <p id="{{ site.name }}_site_pv"><strong>&copy; {{ 'now' | date: "%Y" }} 
-            <a href="{{ site.url }}">
-              {{ site.title }}. 
-            </a>
-      <span data-i18n="footer.rights">Todos los derechos reservados.</span></strong></p>
+      <p id="{{ site.name }}_site_pv">
+        <strong>&copy; {{ 'now' | date: "%Y" }} 
+          <a href="{{ site.url }}">
+            {{ site.title }}. 
+          </a>
+          <span data-i18n="footer.rights">Todos los derechos reservados.</span>
+        </strong>
+      </p>
     </div>
 
     <!-- CONTACTO -->
@@ -71,6 +78,12 @@
         {% endif %}   
       </ul>
     </div>
+
+    <!-- CONTADOR VISITAS -->
+    <div class="col-lg-8 col-lg-offset-2 text-center">     
+      <a href="http://www.contadorvisitasgratis.com" title="contador de visitas para blog"><img src="http://counter3.01counter.com/private/contadorvisitasgratis.php?c=637d21d18035bddc833c077db71fe64a" border="0" title="contador de visitas para blog" alt="contador de visitas para blog"></a> 
+      <span data-i18n="footer.views"> visitas.</span>
+    </div>
   </div>
 </div>
 
@@ -105,3 +118,7 @@
 
   </script>  
 {% endif %}
+
+
+<!-- Contador de visitas-->
+<script type="text/javascript" src="http://counter3.01counter.com/private/countertab.js?c=637d21d18035bddc833c077db71fe64a"></script>

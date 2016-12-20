@@ -55,10 +55,10 @@
     "my_feedburner": "Suscríbete por Email"
   },
   "link":{
-    "link": "Colaboradores",
-    "view": "views"
+    "link": "Colaboradores"
   },
   "footer":{
-    "rights" : "Todos los derechos reservados."
+    "rights" : "Todos los derechos reservados.",
+    "views" : "visitas"
   }
 }
