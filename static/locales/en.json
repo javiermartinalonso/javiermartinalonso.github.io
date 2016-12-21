@@ -60,5 +60,8 @@
   "footer":{
     "rights" : "All Rights Reserved.",
     "views" : "views"
+  },
+  "pagination":{
+    "not_results" : "Sorry, but we did not find any article published in this section!"
   }
 }
