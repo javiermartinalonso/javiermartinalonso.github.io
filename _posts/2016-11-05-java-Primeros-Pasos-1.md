@@ -8,7 +8,7 @@ keywords: "java,JDK,JVM,JRE,IDE, Java SE,JavaFX,Java EE,Java ME"
 categories: [java]
 tags: [java,JDK,JVM,JRE,IDE, Java SE,JavaFX,Java EE,Java ME]
 icon: icon-java-bold
-image: static/img/blog/java/LOGO-Java.png
+image: static/img/blog/java/java-logo.png
 ---
 
 # Primeros pasos con Java (1 de 2)
@@ -19,7 +19,7 @@ Java es un lenguaje de programación de propósito general, concurrente, orienta
 
 Pero cuando nos referimos a java no nos referimos sólo a un lenguaje de programación sino a **la plataforma Java** que es el nombre de un entorno o plataforma de computación originaria de Sun Microsystems, capaz de ejecutar aplicaciones desarrolladas usando el lenguaje de programación Java u otros lenguajes que compilen a bytecode y un conjunto de herramientas de desarrollo. La plataforma no es un hardware específico o un sistema operativo, sino más bien una máquina virtual encargada de la ejecución de las aplicaciones, y un conjunto de bibliotecas estándar que ofrecen una funcionalidad común.
 
-<div style="text-align: center;">
+<div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/java/diagrama-conceptual-java.png" class="img-thumbnail" alt="Diagrama conceptual Java."/>
 </div>
 
@@ -37,7 +37,7 @@ La configuración de una plataforma Java afecta fundamentalmente a los servicios
 
 - **Java ME**: esta edición de la plataforma, **Micro Edition**, está enfocada a la creación de programas que se ejecutarán en sistemas con recursos limitados, tales como teléfonos móviles, electrodomésticos y dispositivos de domótica o equipos para entornos empotrados como la Rasperry Pi y similares.
 
-<div style="text-align: center;">
+<div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/java/ediciones_java.png" class="img-thumbnail" alt="Diagrama conceptual Java."/>
 </div>
 

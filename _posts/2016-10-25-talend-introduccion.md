@@ -41,7 +41,7 @@ Una tarea puede llamar a un servicio web que no está disponible y recibir un 50
 
 Es una herramienta open-source (licencia GPL) que permite de forma visual modelar transformaciones de datos generando código Java. Ofrece un diseñador visual (basado en Eclipse RCP) que permite definir todo el flujo de transformaciones en base a componentes predefinidos (más de 400, también se pueden crear y ampliar).
 
-<div style="text-align: center;">
+<div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/talend/talend_job.png" alt="job" class="img-thumbnail" style="width: 90%"/>
 </div>
 

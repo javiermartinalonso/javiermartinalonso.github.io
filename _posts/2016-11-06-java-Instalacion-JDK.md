@@ -8,7 +8,7 @@ keywords: "java,jdk,instalación, windows"
 categories: [java]
 tags: [java,jdk,instalación, windows]
 icon: icon-java-bold
-image: static/img/blog/java/LOGO-Java.png
+image: static/img/blog/java/java-logo.png
 ---
 
 # Instalación JDK #
@@ -31,7 +31,7 @@ En la página oficial de ORACLE, encontrará dos opciones: **Download JDK** y **
 
 Hay diferentes [ediciones de la plataforma Java](https://javiermartinalonso.github.io/java/2016/11/05/java-Primeros-Pasos-1.html "ediciones de la plataforma Java"), y hay que tener clara cuál es la edición que necesitamos según el tipo de producto que deseamos desarrollar.
 
-<div style="text-align: center;">
+<div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/java/ediciones_java.png" class="img-thumbnail" alt="Diagrama conceptual Java."/>
 </div>
 

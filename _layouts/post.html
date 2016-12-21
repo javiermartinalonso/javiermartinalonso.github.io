@@ -14,7 +14,7 @@ layout: default
                         </div>
                         
                         <!-- imagen tecnologia o tema-->
-                        <div style="text-align: center;">
+                        <div style="text-align: center;margin: 1em;">
                             <img src="{{ page.image | prepend: site.baseurl }}" alt="{{ page.section }}">
                         </div>
 
@@ -41,9 +41,6 @@ layout: default
                                 <div class="small text-right">
                                     <h5>Stats:</h5>
                                     <div> 
-                                        {% if site.changyan %}
-                                            <i class="fa fa-comments-o"> </i> <span id = "url::{{post.url | prepend: page.url}}" class = "cy_cmt_count" ></span> comments
-                                        {% endif %}
                                         {% if site.disqus %}
                                         <i class="fa fa-clock-o"> </i> <span></span> {{ 'now' | date: "%-d %b %Y" }}
                                         <i class="fa fa-comments-o"> </i> <span class='disqus-comment-count' data-disqus-url="{{ site.url }}{{ page.url }}">0</span>

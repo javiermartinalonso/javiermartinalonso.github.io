@@ -3,7 +3,7 @@ layout: post
 section: "Bonita BPM"
 title:  "Productos Bonita BPM"
 date:   2016-10-17
-desc: "Productos Bonita BPM"
+desc: "Video sobre las ediciones y herramientas de Bonita BPM"
 keywords: "Productos Bonita BPM,bundle, portal, JBOSS, Tomcat, Bonita BPM Studio"
 categories: [bonita]
 tags: [Productos Bonita BPM,bundle, portal, JBOSS, Tomcat, Bonita BPM Studio]

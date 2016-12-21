@@ -25,7 +25,7 @@ El ***componente*** es uno de los pilares más importantes en el sistema angular
 
 Un componente está compuesto por tres partes fundamentales:
 
-<div style="text-align: center;">
+<div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/angular/components.png" class="img-thumbnail" alt="components."/>
 </div>
 

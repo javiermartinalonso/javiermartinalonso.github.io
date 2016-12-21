@@ -1,4 +1,15 @@
-
+---
+layout: post
+section: "Spring"
+title:  "Spring-Boot"
+date:   2016-12-16
+desc: "Spring-boot establece un estándar en el diseño de aplicaciones basadas en spring de modo que estén listas para ponerse en funcionamiento tan pronto como sea posible, además ayuda durante la fase de desarrollo e incluso con la integración en producción."
+keywords: "Spring, Spring-Boot"
+categories: [Spring]
+tags: [Spring, Spring-Boot]
+icon: fa-leaf
+image: static/img/blog/spring/spring-logo.png
+---
 
 https://www.adictosaltrabajo.com/tutoriales/flyway-como-integrar-en-maven/
 

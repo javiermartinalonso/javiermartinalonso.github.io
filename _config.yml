@@ -81,12 +81,8 @@ img_path: 'https://javiermartinalonso.github.io/static/img/blog'
 #  alipay: 'static/img/pay/alipay.png'
 
 # comment
-#changyan:
-#  appid: cysfY7ULn
-#  conf: prod_861928934cecb7a18e15bedaed9dae29
 disqus:
   name: javiermartinalonso
-#   public_key: tj2MPaNlHMONwTH5bGDNSXyaBpW7q282MeUzh5CwcjJerNhK8Kxk3aWo7IckzTX7
 
 #feed
 feedburner:

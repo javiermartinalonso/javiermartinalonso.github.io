@@ -3491,9 +3491,11 @@ ol.unstyled {
   bottom: 0;
   left: 0;
   /*padding: 10px 20px;
-  position: fixed;*/
+  position: fixed;
+  */
   right: 0;
   text-align: center;
+  padding: 1em 1em 3em 1em;
 }
 .footer.fixed_full {
   position: fixed;
@@ -5471,7 +5473,7 @@ table.shoping-cart-table tr td:last-child {
 }
 .vote-icon {
   /*text-align: right;*/
-  font-size: 38px;
+  font-size: 8em;
   display: block;
   color: #e8e9ea;
 }

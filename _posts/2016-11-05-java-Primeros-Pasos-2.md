@@ -8,7 +8,7 @@ keywords: "java,JDK,JVM,JRE,IDE, Java SE,JavaFX,Java EE,Java ME"
 categories: [java]
 tags: [java,JDK,JVM,JRE,IDE, Java SE,JavaFX,Java EE,Java ME]
 icon: icon-java-bold
-image: static/img/blog/java/LOGO-Java.png
+image: static/img/blog/java/java-logo.png
 ---
 
 # Primeros pasos con Java (2 de 2) #
@@ -32,7 +32,7 @@ Google ***"download java jdk"***. Esto te llevará a la página principal de des
 
 	Esta arquitectura permite que las aplicaciones de Java no estén obligatoriamente atadas al sistema operativo en el que se construyen y así un programa desarrollado en Windows puede ser ejecutado en Linux, Mac o Unix y viceversa.
 
-	<div style="text-align: center;">
+	<div style="text-align: center;margin: 1em;">
 		<img src="{{ site.baseurl }}static/img/blog/java/Java-jvm.png" class="img-thumbnail" alt="Esquema de la arquitectura general de un programa en ejecución en una Máquina Virtual Java."/>
 	</div>
 

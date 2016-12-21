@@ -8,7 +8,7 @@ keywords: "java,jdk,instalación,windows,JAVA_HOME,PATH"
 categories: [java]
 tags: [java,jdk,instalación, windows,JAVA_HOME,PATH]
 icon: icon-java-bold
-image: static/img/blog/java/LOGO-Java.png
+image: static/img/blog/java/java-logo.png
 ---
 
 # Variables de entorno de JAVA #
@@ -34,25 +34,25 @@ Para configurar esta variable simplemente desde la pantalla de ***“Variables d
 - **JAVA\_HOME**:
 Desde el ***“Panel de Control”*** pinchamos en ***“Sistema”*** o bien sobre ***“MiPC”*** pulsamos el botón derecho y clickamos sobre ***“Propiedades“***. Una vez en la pantalla que aparece a continuación hacemos click en ***“Configuración avanzada del sistemas“***.
 
-<div style="text-align: center;">
+<div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/windows/conf-avanzada_sistema.png" class="img-thumbnail" alt="Configuración avanzada del Sistema."/>
 </div>
 
 En la siguiente pantalla vamos a la pestaña ***“Opciones avanzadas”*** y clickamos sobre ***“Variables de entorno“***, tal y como se muestra a continuación:
 
-<div style="text-align: center;">
+<div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/windows/variables-entorno.png" class="img-thumbnail" alt="opciones avanzadas variables de entorno."/>
 </div>
 
 Creamos una ***“Nueva”*** variable del sistema:
 
-<div style="text-align: center;">
+<div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/windows/nueva-variable-sistema.png" class="img-thumbnail" alt="Nueva Variable de Entorno."/>
 </div>
 
 Le asignamos como ***“Nombre de la variable”***: **JAVA\_HOME** y como ***“Valor de variable”*** el path o ruta donde hemos instalado el JDK de nuestro java:
 
-<div style="text-align: center;">
+<div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/windows/editar-variable-sistema-java-home.png" class="img-thumbnail" alt="Editar variable de Entorno Java\_home."/>
 </div>
 
@@ -63,7 +63,7 @@ Le asignamos como ***“Nombre de la variable”***: **JAVA\_HOME** y como ***�
 
 Para configurarla simplemente desde la pantalla de ***“Variables de entorno”*** anterior, clickamos sobre ***“Nueva”*** variable de entorno:
 
-<div style="text-align: center;">
+<div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/windows/nueva-variable-sistema.png" class="img-thumbnail" alt="Crear nueva variable de sistema."/>
 </div>
 
@@ -71,7 +71,7 @@ Para configurarla simplemente desde la pantalla de ***“Variables de entorno”
 
 Asignamos los siguientes valores: ***“Nombre de la variable“***: PATH y  ***“Valor de la variable”***: ***%JAVA_HOME%\bin***.
 
-<div style="text-align: center;">
+<div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/windows/editar-variable-sistema-path.png" class="img-thumbnail" alt="Asignación de los valores de la variable PATH."/>
 </div>
 

@@ -3,7 +3,7 @@ layout: post
 section: "Bonita BPM"
 title:  "Bonita bundle JBOSS"
 date:   2016-10-18
-desc: "Bonita BPM bundle JBOSS"
+desc: "Video sobre la instalación del bundle JBOSS de Bonita BPM"
 keywords: "Bonita BPM,bundle, portal, JBOSS"
 categories: [bonita]
 tags: [Bonita BPM,bundle, portal, JBOSS]

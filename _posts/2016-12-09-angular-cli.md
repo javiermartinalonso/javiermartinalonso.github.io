@@ -3,7 +3,7 @@ layout: post
 section: "Angular"
 title:  "Angular CLI"
 date:   2016-12-09
-desc: "Angular CLI: Es un intérprete de línea de comandos de Angular 2 que te facilitará el inicio y desarrollo de proyectos, ocupándose de la **creación del esqueleto, o scaffolding**, de la mayoría de los componentes de una aplicación Angular."
+desc: "Angular CLI: Es un intérprete de línea de comandos de Angular 2 que te facilitará el inicio y desarrollo de proyectos, ocupándose de la creación del esqueleto, o scaffolding, de la mayoría de los componentes de una aplicación Angular."
 keywords: "node.js,npm,angular-cli,Karma,Angular,less,webpack"
 categories: [Angular]
 tags: [node.js,npm,angular-cli,Karma,Angular,less,webpack]

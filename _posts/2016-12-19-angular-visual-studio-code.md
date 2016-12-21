@@ -27,7 +27,7 @@ Pero personalmente creo que el editor ideal para trabajar con el **framework Ang
 
 Nos vamos a la web de **[Visual Studio Code](https://code.visualstudio.com/ "Visual Studio Code")** y además de información con todas sus bondades, tenemos el enlace para bajarnos el paquete en función de nuestro S.O. El instalable se descarga, doble click, y listo. El proceso es de lo más simple.
 
-<div style="text-align: center;">
+<div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/angular/visual-studio-download.png" class="img-thumbnail" style="height: 90%;width: 90%;" alt="visual studio download"/>
 </div>
 
@@ -35,13 +35,13 @@ Nos vamos a la web de **[Visual Studio Code](https://code.visualstudio.com/ "Vis
 
 - **[Intellisense](https://code.visualstudio.com/docs/editor/intellisense "Intellisense")**: Autocompletar, contexto, información de la variable/método/clase que hemos seleccionado. Su sistema **IntelliSense** es muy potente y detecta las librerías importadas, nos muestra la definición de los métodos al ponernos encima con el cursor, nos oferece autocompletado al escribir…
 
-<div style="text-align: center;">
+<div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/angular/vscode-intellisense.gif" class="img-thumbnail" alt="visual studio intellisense"/>
 </div>
 
 - **[Gestor de Git](https://code.visualstudio.com/Docs/editor/versioncontrol "Gestor de Git")**: integrado en el propio **IDE** un **gestor de Git** que te muestra los cambios de código e incluso desde donde puedes hacer **commit, pull y push** es un plus para muchos developers.
 
-<div style="text-align: center;">
+<div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/angular/versioncontrol_merge.png" class="img-thumbnail" style="height: 90%;width: 90%;" alt="visual studio git"/>
 </div>
 
@@ -71,7 +71,7 @@ Una de las ventajas de que sea **Open Source** es que puedes manipular el códig
 
 Todas las extensiones de **VSCode** se instalan seleccionando el icono con forma de cuadrado.
 
-<div style="text-align: center;">
+<div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/angular/vscode-extensiones.png" class="img-thumbnail" alt="vscode extensiones"/>
 </div>
 
@@ -81,7 +81,7 @@ Escribimos el nombre de la extensión y te aparecerán las coincidencias, cuando
 
 - **[RelativePath](https://marketplace.visualstudio.com/items?itemName=jakob101.RelativePath "RelativePath")** es una extensión que indexa los archivos del proyecto para autocompletar las rutas locales que escribimos (en los imports de código, por ejemplo). Allí donde queramos incluir un path relativo, clickamos la combinación de teclas `Ctrl + Shift + H` y se abrirá un desplegable con los archivos del proyecto y una caja de búsqueda en la que podemos empezar a escribir para filtrar. Seleccionamos el archivo que queremos incluir y nos aparece su path relativo en el editor, ahí donde habíamos colocado el cursor.
 
-<div style="text-align: center;">
+<div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/angular/vscode-relativepath.gif" class="img-thumbnail" style="height: 90%;width: 90%;" alt="vscode extensiones RelativePath"/>
 </div>
 
@@ -99,7 +99,7 @@ Escribimos el nombre de la extensión y te aparecerán las coincidencias, cuando
 
 	Los snippets empiezan por **ng2**. Solo tienes que empezar a escribir y seleccionar el snippet deseado haciendo ENTER: ¡Tu archivo se llena de código como por arte de magia!
 
-	<div style="text-align: center;">
+	<div style="text-align: center;margin: 1em;">
 		<img src="{{ site.baseurl }}static/img/blog/angular/typescript-snippets-vscode.gif" class="img-thumbnail" alt="typescript snippets vscode"/>
 	</div>
 
@@ -126,7 +126,7 @@ Escribimos el nombre de la extensión y te aparecerán las coincidencias, cuando
 
 - **[Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome "Debugger for Chrome")** extensión para hacer debug desde el propio **IDE VSCode** lo que estás ejecutando en Chrome. Tras instalar el plugin, para abrir la vista de depuración puedes buscarla desde la opción **"Ver"** del menu superior o con el atajo `Crtl+Shift+D`. Selecciona el icono del engranaje **"settings"** elegimos la opción Chrome. Nos abre el archivo de configuración ***launch.json***.
 
-<div style="text-align: center;">
+<div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/angular/vscode-extension-debugger.png" class="img-thumbnail" style="height: 90%;width: 90%;" alt="VS Code - Debugger for Chrome"/>
 </div>
 
@@ -147,7 +147,7 @@ Resumiendo, lo único que tienes que hacer es:
 1. Haz click en el botón verde de ejecución.
 1. Eso debería lanzar una ventana de Chrome en la url base del servidor que estás ejecutando en local, con tu app cargada, y vinculada a tu debugger.
  
-<div style="text-align: center;">
+<div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/angular/vscode-debugger-for-chrome.gif" class="img-thumbnail" style="height: 90%;width: 90%;" alt="VS Code - Debugger for Chrome"/>
 </div>
 
