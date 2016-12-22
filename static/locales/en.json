@@ -48,6 +48,7 @@
   },
   "blog":{
     "my_blog": "BLOG",
+    "access_blog": "Access the blog",
     "presentation": "In this blog we want to deepen the development of business solutions from a professional point of view. This is why we will focus on advanced concepts of Architecture, Frameworks, languages and programming tools. We will apply good practices, look for the latest tools in the market to support our developments ... and above all we will try to learn, improve as Professionals and have fun along the way.", 
     "latest_blog": "latest blog"
   },

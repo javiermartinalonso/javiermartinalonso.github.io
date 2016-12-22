@@ -1,16 +1,27 @@
 <div class="container section_blog" id="i18_blog">
+    <div class="row m-b-lg">
+        <div class="col-lg-12 text-center">
+            <div class="navy-line"></div>
+            <h1><span data-i18n="blog.my_blog">Mi blog</span></h1>
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-12 text-center wow zoomIn">
-            <div style="height: 80px;"></div>
-            <div>
-            	<a class="btn btn-lg btn-default btn-rounded btn-outline wow bounceIn" href="/blog/"><span data-i18n="blog.my_blog">Mi blog</span></a>
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-justify">
+                    <h2><span data-i18n="blog.presentation" style="font-size: 1em;">En este blog queremos profundizar en el desarrollo de soluciones empresariales desde un punto de vista profesional. Es por esto que pondremos el foco en conceptos avanzados de Arquitectura, Frameworks, lenguajes y herramientas de programación. Aplicaremos buenas prácticas, buscaremos las últimas herramientas del mercado para apoyar nuestros desarrollos... y sobre todo intentaremos aprender, mejorar como profesionales y divertirnos por el camino.</span></h2>
+                </div>
             </div>
-            <div>
-				 {% if site.feedburner %}
-				 	<a class="btn btn-lg btn-default btn-rounded btn-outline wow bounceIn subscribe" href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" style="color: white"><i class="fa fa-bell-o" aria-hidden="true"></i> <span data-i18n="feedburner.my_feedburner">Suscríbete</span></a>
-				 {% endif %}
-			</div>
-            <div style="height: 80px;"></div>
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1">
+                    <a class="btn btn-lg btn-default btn-rounded btn-outline wow bounceIn subscribe" href="/blog/"><span data-i18n="blog.access_blog">Accede al blog</span></a>
+                </div>     
+                <div class="col-md-5">
+    				 {% if site.feedburner %}
+    				 	<a class="btn btn-lg btn-default btn-rounded btn-outline wow bounceIn subscribe" href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" style="color: white"><i class="fa fa-bell-o" aria-hidden="true"></i> <span data-i18n="feedburner.my_feedburner">Suscríbete</span></a>
+    				 {% endif %}
+    			</div>
+            </div>
         </div>
     </div>
 </div>
