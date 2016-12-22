@@ -556,32 +556,66 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
 .top-navigation .navbar-nav .open .dropdown-menu .dropdown-header {
   padding: 10px 15px 10px 20px;
 }
-@media (max-width: 768px) {
-  .top-navigation .navbar-header {
-    display: block;
-    float: none;
-  }
-}
 .menu-visible-lg,
 .menu-visible-md {
   display: none !important;
 }
+@media (max-width:768px){
+  .top-navigation .navbar-header{
+    display:block;float:none
+  }
+}
+
+.menu-visible-lg,.menu-visible-md{display:none!important}
+
 @media (min-width: 1200px) {
   .menu-visible-lg {
     display: block !important;
+  }
+
+  .vote-icon {
+    /*text-align: right;*/
+    font-size: 8em;
+    display: block;
+    color: #e8e9ea;
   }
 }
 @media (min-width: 992px) {
   .menu-visible-md {
     display: block !important;
   }
+
+  .vote-icon {
+    /*text-align: right;*/
+    font-size: 8em;
+    display: block;
+    color: #e8e9ea;
+  }  
 }
-@media (max-width: 767px) {
+@media (max-width:992px){
+  .menu-visible-lg,
+  .menu-visible-md{
+    display:block!important
+  } 
+  .vote-icon{
+    font-size: 5em;
+    display: block;
+    color: #e8e9ea;
+  }
+}
+@media (max-width: 768px) {
   .menu-visible-md {
     display: block !important;
   }
   .menu-visible-lg {
     display: block !important;
+  }
+
+  .vote-icon {
+    /*text-align: right;*/
+    font-size: 3em;
+    display: block;
+    color: #e8e9ea;
   }
 }
 .btn {
@@ -5466,12 +5500,13 @@ table.shoping-cart-table tr td:last-child {
 .vote-info a:hover {
   color: #3385FF;
 }
+/*
 .vote-icon {
-  /*text-align: right;*/
   font-size: 8em;
   display: block;
   color: #e8e9ea;
 }
+*/
 .vote-icon.active {
   color: #3385FF;
 }
