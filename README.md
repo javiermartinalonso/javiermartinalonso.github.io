@@ -21,6 +21,7 @@ Estaré encantado si quieren ponerse en contacto conmigo para darme algún conse
 ## Tecnologías empleadas
 
 * [Jekyll](http://jekyllrb.com)
+* [Liquid template engine] (https://shopify.github.io/liquid/)
 * [Bootstrap](http://www.bootcss.com)
 * [jPages](http://luis-almeida.github.io/jPages)
 * [i18next](http://i18next.github.io/i18next)
