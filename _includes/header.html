@@ -3,11 +3,11 @@
     <input type="text" class="form-control search-content" id="search-content" style="position: fixed; top: 60px" placeholder="Search Blog">
 
     <div style="position: fixed; top: 16px; right: 16px; z-index: 9999;">
-        <img src="{{ site.baseurl }}search/img/cb-close.png" id="close-btn"/>
+        <img src="/search/img/cb-close.png" id="close-btn"/>
     </div>
 </div>
 
-<nav class="navbar navbar-default navbar-static-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container" style="width: auto;">
         <div class="navbar-header page-scroll">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -17,22 +17,28 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="btn btn-lg btn-default btn-logo-home-scroll" href="/" id="i18_title">
+            <a class="btn btn-lg btn-default btn-logo-home-default" href="#page-top" id="i18_title">                
                 <img src="{{ site.img_logo_path | prepend: site.baseurl }}" height="35px" width="35px" class="img-responsive" alt="" style="display: inline; margin-right: 1em;">
                 <span data-i18n="website.title">{{ site.title }}</span>
             </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right" id="i18_navbar">
-                <li><a class="page-scroll" href="/blog/">{{ site.index.home }}</a></li>
-                {% for tag in site.data.blog %}
-                    {% if page.title == tag.name %}
-                    <li class="active">
-                    {% else %}
-                    <li>
+                {% for section in site.sections %}
+                    {% if section.id != 'blog' %}
+                        <li>
+                          <a class="page-scroll" href="#{{ section.id }}">
+                            <span data-i18n="{{ section.i18n }}">{{ section.name }}</span>
+                          </a>
+                        </li>
                     {% endif %}
-                    <a class="page-scroll" href="{{ tag.href }}">{{ tag.name }}</a></li>
-                {% endfor %}                   
+                {% endfor %}
+                <!-- seccion fija blog, accedemos directamente -->
+                <li>
+                  <a class="page-scroll" href="/blog/">
+                    <span data-i18n="blog.my_blog">BLOG</span>
+                </a>
+                </li>
             </ul>
         </div>
     </div>
@@ -42,7 +48,7 @@
     <ol class="carousel-indicators">
         <li data-target="#inSlider" data-slide-to="0" class="active"></li>
         <li data-target="#inSlider" data-slide-to="1"></li>
-        <li data-target="#inSlider" data-slide-to="2"></li>		
+        <li data-target="#inSlider" data-slide-to="2"></li>     
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="item active">
@@ -50,12 +56,11 @@
                 <div class="carousel-caption">
                 </div>
                 <div class="carousel-image wow zoomIn">
-                    <!-- <img src="{{ site.baseurl }}static/img/landing/laptop.png" alt="laptop"/> -->
+                    <!-- <img src="static/img/landing/laptop.png" alt="laptop"/> -->
                 </div>
             </div>
             <!-- Set background for slide in css -->
             <div class="header-back one"></div>
-
         </div>
         <div class="item">
             <div class="container">
@@ -72,7 +77,7 @@
             </div>
             <!-- Set background for slide in css -->
             <div class="header-back three"></div>
-        </div>				
+        </div>      
     </div>
     <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>

@@ -10,7 +10,9 @@
 
 <body id="page-top" class="landing-page">
 
-	{% if page.title != 'index' %}
+	{% if page.title == 'index' %}
+		{% include header.html %}
+	{% else %}
 	    {% include header_sin_carrousel.html %}
 	{% endif %}
 
