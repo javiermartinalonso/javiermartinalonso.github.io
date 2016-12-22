@@ -7040,7 +7040,7 @@ body.landing-page {
   font-size: 20px;
   color: white;
   margin-top: 3em;
-  border: 0px solid transparent;
+  border: 2px solid;
 }
 .landing-page .btn-primary.btn-outline:hover,
 .landing-page .btn-success.btn-outline:hover,
