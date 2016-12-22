@@ -23,11 +23,12 @@ image: static/img/blog/talend/talend-logo.png
     		<ul id="pag-itemContainer" style="list-style:none;">
             {% assign counter = 0 %}
     		{% for post in site.categories['talend'] %}
-        		{% assign counter = counter | plus: 1 %}
 
                 {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
                 {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
                 {% if posttime < nowunix %}
+
+                {% assign counter = counter | plus: 1 %}                
         		<li>
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="ibox">
