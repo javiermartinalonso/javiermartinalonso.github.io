@@ -159,9 +159,13 @@ esto generará una salida por consola similar a esto:
 
 > ***Nota***: Puedes [customizar el banner por defecto de carga de spring](http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-banner "customizar el banner por defecto de carga de spring") y usar por ejemplo esta [herramienta web para generar un banner personalizado de spring-boot](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20 "herramienta web para generar un banner personalizado de spring-boot").
 
-
 Cuando se ejecuta la aplicación, **[spring-boot](https://projects.spring.io/spring-boot/ "spring-boot")** detecta que dispone de un controlador Spring MVC y pone en marcha de una instancia de Apache Tomcat 7 incorporado, de forma predeterminada. Por tanto ya podemos probar la ejecución de la aplicación y acceder a la respuesta del endpoint REST mediante la apertura de su navegador en la ruta `http://localhost:8080`.
 
+Si tu abres un navegador web en la ruta `localhost:8080` deberias poder ver la siguiente salida en el navegador:
+
+    Hello World!
+
+Para salir correctamente de la aplicación presione `ctrl-c`.
 ## Modificando la configuración por defecto ##
 
 La configuración del servidor, como el puerto en el que queremos que arranque se puede configurar mediante la especificación de propiedades, ya sea a través de la línea de comandos, usando: `--D argumentos` o por medio de un archivo de propiedades ***application.properties*** localizado en el CLASSPATH (en este caso al generarse el scafolding se ha creado vacío en ***src/main/resources***) y que se consultará automáticamente durante el arranque del servidor. Por lo tanto, para cambiar el puerto en el que Tomcat escucha, es posible especificar `--Dserver.port=8081`, para que el servidor escuche en el puerto 8081. Si se especifica `server.port=0`, se encontrará automáticamente un puerto no utilizado para escuchar en su lugar.
