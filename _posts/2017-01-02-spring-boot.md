@@ -2,7 +2,7 @@
 layout: post
 section: "Spring"
 title:  "Spring-Boot"
-date:   2016-01-02
+date:   2017-01-02
 desc: "Spring-boot establece un estándar en el diseño de aplicaciones basadas en spring de modo que estén listas para ponerse en funcionamiento tan pronto como sea posible, además ayuda durante la fase de desarrollo e incluso con la integración en producción."
 keywords: "Spring, Spring-Boot"
 categories: [Spring]

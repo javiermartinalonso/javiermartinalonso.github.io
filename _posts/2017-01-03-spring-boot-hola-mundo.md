@@ -2,7 +2,7 @@
 layout: post
 section: "Spring"
 title:  "Hola mundo!!! con Spring-Boot"
-date:   2016-01-03
+date:   2017-01-03
 desc: "En este post explicamos cómo funciona Spring-boot a través de la creación de un hola mundo!!!."
 keywords: "Spring, Spring-Boot, Spring Tool Suite, STS, starters, configuracion por defecto, buenas prácticas"
 categories: [Spring]
