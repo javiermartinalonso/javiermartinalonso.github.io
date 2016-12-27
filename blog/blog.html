@@ -35,9 +35,6 @@ permalink: /blog/
 
                     {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
                     {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
-
-                    {{ posttime }}
-                    {{ nowunix }}
                     {% if posttime < nowunix %}
                     <div class="vote-item">
                         <div class="row">
