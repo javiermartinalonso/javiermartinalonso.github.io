@@ -5,11 +5,11 @@ title: "Javier Martín Alonso"
 description: "Blog de Javier Martín Alonso, sobre desarrollo de soluciones empresariales. Arquitectura, Frameworks, lenguajes y herramientas de programación."
 keywords: "Javier,Javier Martín, Javier Martín Alonso, blog,JAVA, SPRING, ANGULAR, JAVSCRIPT, BONITASOFT, BONITA BPM, BONITA, EXPERTO"
 #Produccion
-baseurl: "https://javiermartinalonso.github.io/"
-url: "https://javiermartinalonso.github.io"
+#baseurl: "https://javiermartinalonso.github.io/"
+#url: "https://javiermartinalonso.github.io"
 #local
-#baseurl: "/"
-#url: ""
+baseurl: "/"
+url: ""
 name: javiermartinalonso
 img_logo_path: 'static/img/favicon.ico'
 
@@ -24,7 +24,7 @@ author:
   youtube_canal_name: 'https://www.youtube.com/user/jmartal'
   github_username: 'javiermartinalonso'
   head_img: 'static/img/blog/javi.jpg'
-  desc: 'Soy ingeniero informático y me gano la vida desarrollando soluciones java empresariales. La vida es un proceso de aprendizaje continuo, os invito a que me acompañéis en el camino.'
+  desc: 'Soy ingeniero informático y me gano la vida desarrollando soluciones empresariales. La vida es un proceso de aprendizaje continuo, os invito a que me acompañéis en el camino.'
 
 # sections
 sections:
