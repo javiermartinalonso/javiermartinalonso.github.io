@@ -1,8 +1,8 @@
 ---
 layout: post
-section: "arquitectura"
+section: "ARQUITECTURA"
 title:  Configuración de entornos"
-date:   2017-01-20
+date:   2017-01-19
 desc: "En el ámbito de gestión del ciclo de vida de un proyecto o producto software, solemos separar el propio código de la configuración que depende del entorno, p.ej. integraciones con sistemas externos, configuración JVM, pooles, etc.."
 keywords: "Spring, Spring-Boot, arquitectura, entorno de despliegue, Propiedades del sistema, Profiles en Maven, Profiles en Spring"
 categories: [arquitectura]
@@ -36,9 +36,8 @@ Como ejemplo, tomemos una arquitectura habitual con **maven** y **Spring**, que 
 
 - Para el ***entorno de desarrollo local (y tests)***, que configura una ***conexión directa a una base de datos*** de desarrollo o test.
 
-> **NOTA**: La buena práctica en entornos de despliegue es el uso de una fuente de datos JNDI en lugar de una conexión local. Incluso Tomcat y Jetty que implementan sólo una fracción del perfil web de Java EE, proporcionan esta característica ingeniosa y útil.
-	
-> ***La Interfaz de Nombrado y Directorio Java (Java Naming and Directory Interface)*** es una ***Interfaz de Programación de Aplicaciones (API)*** de Java para servicios de directorio. Permite a los clientes descubrir y buscar objetos y datos a través de un nombre. De esta manera podemos desacoplar las aplicaciones de los recursos que consumen y aprovechamos que el acceso a los servidores en los entornos de producción están securizados para definir en ellos los datasources y hacerlos accesibles a través de un identificador JNDI evitando así que las aplicaciones deban conocer exactamente los datos de conexión que tienen un impacto alto en la seguridad y el mantenimiento de la aplicación. De esta forma se puede migrar el servidor de bbdd de una maquina a otra y cambiar la información de la conexión JNDI en el servidor y la aplicación no se vería afectada.
+> **NOTA**: La buena práctica en entornos de despliegue es el uso de una ***fuente de datos JNDI*** en lugar de una conexión local. Incluso Tomcat y Jetty que implementan sólo una fracción del perfil web de Java EE, proporcionan esta característica ingeniosa y útil.
+> ***JNDI***, ***La Interfaz de Nombrado y Directorio Java (Java Naming and Directory Interface)*** es una ***Interfaz de Programación de Aplicaciones (API)*** de Java para servicios de directorio. Permite a los clientes descubrir y buscar objetos y datos a través de un nombre. De esta manera podemos desacoplar las aplicaciones de los recursos que consumen y aprovechamos que el acceso a los servidores en los entornos de producción están securizados para definir en ellos los datasources y hacerlos accesibles a través de un identificador ***JNDI*** evitando así que las aplicaciones deban conocer exactamente los datos de conexión que tienen un impacto alto en la seguridad y el mantenimiento de la aplicación. De esta forma se puede migrar el servidor de bbdd de una maquina a otra y cambiar la información de la conexión ***JNDI*** en el servidor y la aplicación no se vería afectada.
 > 
 En la mayoría de las aplicaciones Java, esto se logra a través de archivos ***conf-entorno.properties*** identificando el entorno dedicado a través de una nomenclatura correcta.
  
@@ -53,7 +52,7 @@ Durante la fase de desarrollo, no hay razón para que nos obliguemos a utilizar 
 
 ### 1. Propiedades del sistema ###
 
-***Propiedades del sistema*** consisten en un ***nombre***, ***descripción***, el ***tipo*** de información (por ejemplo, entero, cadena, verdadero | falso, y así sucesivamente), y el ***valor del sistema***. *El uso de una propiedad del sistema en vez de un valor codificado en secuencias de comandos del lado del servidor hace que el sistema sea más fácil de mantener y le ofrece la flexibilidad para realizar cambios en el comportamiento del sistema sin necesidad de reprogramación*.
+***Propiedades del sistema*** consisten en un ***nombre***, ***descripción***, el ***tipo*** de información (por ejemplo, entero, cadena, verdadero \| falso, y así sucesivamente), y el ***valor del sistema***. ***El uso de una propiedad del sistema en vez de un valor codificado en secuencias de comandos del lado del servidor hace que el sistema sea más fácil de mantener y le ofrece la flexibilidad para realizar cambios en el comportamiento del sistema sin necesidad de reprogramación***.
 
 Puede utilizar las propiedades del sistema ya definidos en la ***tabla de la propiedad del sistema [sys_properties]***, o puede crear sus propias propiedades del sistema para llevar a cabo las funciones personalizadas en el sistema. Se recomienda que se utilice una convención de nomenclatura estándar para las propiedades del sistema, y crear categorías de propiedades para agrupar las propiedades del sistema relacionados.
 

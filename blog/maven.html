@@ -1,9 +1,9 @@
 ---
 layout: blog
-section: "JAVA"
-title: JAVA
-permalink: /java/
-image: static/img/blog/java/java-logo.png
+section: "MAVEN"
+title: MAVEN
+permalink: /maven/
+image: static/img/blog/maven/maven-logo.png
 ---
 
 <div class="container section-blog" id="i18_career">
@@ -22,7 +22,7 @@ image: static/img/blog/java/java-logo.png
         <div class="row">
     		<ul id="pag-itemContainer" style="list-style:none;">
             {% assign counter = 0 %}
-    		{% for post in site.categories['java'] %}
+    		{% for post in site.categories['maven'] %}
 
                 {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
                 {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
