@@ -10,6 +10,12 @@
 - name: 'TALEND'
   href: '/talend/'
 
+- name: 'ARQUITECTURA'
+  href: '/arquitectura/'
+
+- name: 'MAVEN'
+  href: '/maven/'
+
 - name: 'JAVA'
   href: '/java/'
 
