@@ -1,7 +1,7 @@
 ---
 layout: post
 section: "ARQUITECTURA"
-title:  Configuración de entornos"
+title:  "Configuración de entornos"
 date:   2017-01-19
 desc: "En el ámbito de gestión del ciclo de vida de un proyecto o producto software, solemos separar el propio código de la configuración que depende del entorno, p.ej. integraciones con sistemas externos, configuración JVM, pooles, etc.."
 keywords: "Spring, Spring-Boot, arquitectura, entorno de despliegue, Propiedades del sistema, Profiles en Maven, Profiles en Spring"
