@@ -1,12 +1,12 @@
 ---
 layout: post
 section: "Spring"
-title:  Spring profiles"
+title:  Spring boot - Tips"
 date:   2017-03-03
-desc: "En este post explicamos cómo funcionan los Spring profiles y como configurarlos para distintos entornos de desarrollo."
-keywords: "Spring, Spring-Boot, Spring Tool Suite"
+desc: "En este post explicamos pequeños trucos o funcionalidades que podemos realizar con spring-boot."
+keywords: "Spring, Spring-Boot, Spring Tool Suite, STS"
 categories: [Spring]
-tags: [Spring, Spring-Boot, Spring Tool Suite, STS, configuracion por defecto, buenas prácticas]
+tags: [Spring, Spring-Boot, Spring Tool Suite, STS]
 icon: fa-leaf
 image: static/img/blog/spring/spring-logo.png
 ---

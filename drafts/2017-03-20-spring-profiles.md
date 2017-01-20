@@ -130,7 +130,6 @@ Incluso si la configuración anterior creará un grano regular para FooPropertie
 
 
 
-
 http://docs.spring.io/spring-boot/docs/current/maven-plugin/examples/run-profiles.html
 
 ## MIX configuracion de profiles Maven-Spring-boot ##
