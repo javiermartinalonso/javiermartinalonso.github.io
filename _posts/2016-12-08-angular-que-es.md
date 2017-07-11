@@ -5,7 +5,7 @@ title:  "¿Qué es Angular?"
 date:   2016-12-08
 desc: "Introducción y primeros pasos con Angular"
 keywords: "node.js,Angular,AngularJS,TypeScript"
-categories: [Angular]
+categories: [angular]
 tags: [node.js,Angular,AngularJS,TypeScript]
 icon: fa-font
 image: static/img/blog/angular/angular-logo_150.png

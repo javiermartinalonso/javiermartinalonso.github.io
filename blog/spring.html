@@ -23,7 +23,7 @@ image: static/img/blog/spring/spring-logo.png
             <div class="col-lg-8 col-lg-offset-1">                 
         		<ul id="pag-itemContainer" style="list-style:none;">
                 {% assign counter = 0 %}
-        		{% for post in site.categories['Spring'] %}
+        		{% for post in site.categories['spring'] %}
 
                     {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
                     {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}

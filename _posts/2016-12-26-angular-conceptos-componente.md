@@ -5,7 +5,7 @@ title:  "Conceptos: Componente"
 date:   2016-12-26
 desc: "Estudiamos el concepto de componente dentro de la tecnología Angular."
 keywords: "Angular, Componente,MVVM,MVC,template,class,decorator,controller"
-categories: [Angular]
+categories: [angular]
 tags: [Angular, Componente,MVVM,MVC,template,class,decorator,controller]
 icon: fa-font
 image: static/img/blog/angular/angular-logo_150.png

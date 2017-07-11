@@ -5,7 +5,7 @@ title:  "!!Hola Mundo!! con Angular"
 date:   2016-12-12
 desc: "Primeros Pasos con Angular"
 keywords: "node.js,Angular,TypeScript"
-categories: [Angular]
+categories: [angular]
 tags: [node.js,Angular,TypeScript]
 icon: fa-font
 image: static/img/blog/angular/angular-logo_150.png
