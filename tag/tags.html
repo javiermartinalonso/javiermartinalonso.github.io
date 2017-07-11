@@ -1,0 +1,86 @@
+---
+layout: blog
+title: Tags
+permalink: /tag/
+icon: tags
+---
+
+<div class="container section-blog" id="i18_blog">
+    
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-1">
+            <div class="page clearfix">
+                <div class="left">
+                    <h1>{{page.title}}</h1>
+                    <hr>
+                    {% capture tags %}
+                      {% for tag in site.tags %}
+                        {{ tag[0] }}
+                      {% endfor %}
+                    {% endcapture %}
+                    {% assign sortedtags = tags | split:' ' | sort %}
+
+                    <ul>
+                    {% for tag in sortedtags %}
+                      <h2 id="{{ tag }}">{{ tag }}</h2>
+                      {% for post in site.tags[tag] %}
+                        <li>
+                            <time>
+                            {{ post.date | date:"%F" }} {{ post.date | date: "%a" }}.
+                            </time>
+                            <a class="title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+
+                            {% include category.html %}
+                            {% include tag.html %}
+                        </li>
+                      {% endfor %}
+                    {% endfor %}
+                    </ul>
+
+                </div>
+                <button class="anchor"><i class="fa fa-anchor"></i></button>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+             <div class="tags-right">
+                <div class="wrap">
+
+
+                    <!-- SUBSCRIPCION-->
+                    {% include subscription.html %}
+
+                    <!-- Content -->
+                    <div class="side content">
+                        <div>
+                            <i class="fa fa-tags"></i>
+                            Tags
+                        </div>                    
+
+                        <ul id="content-side" class="content-ul">
+                            {% for tag in sortedtags %}
+                            <li>
+                                <a data-scroll href="#{{ tag }}">
+                                    {{ tag }} ({{ site.tags[tag].size }})
+                                </a>
+                            </li>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>
+
+
+        
+</div>
+<script src="{{ "/js/pageContent.js " | prepend: site.baseurl }}" charset="utf-8"></script>
+<script>
+$(document).ready(function() {
+   
+        $(".navbar-fixed-top").removeClass('navbar-fixed-top').addClass('navbar-static-top');
+    
+});
+</script>

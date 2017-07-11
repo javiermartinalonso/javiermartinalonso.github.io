@@ -6,7 +6,7 @@ date:   2016-12-19
 desc: "Visual Studio Code: Es un ID perfecto para trabajar con Angular. Es gratuito, open source y multiplataforma. Creado por Microsoft y enfocado a trabajar con TypeScript"
 keywords: "Angular, IDE, Visual Studio Code, VSCode,TypeScript, IntelliSense, RelativePath, TSLint, TypeScript snippets,Debugger for Chrome"
 categories: [Angular]
-tags: [Angular, IDE, Visual Studio Code, VSCode,TypeScript, IntelliSense, RelativePath, TSLint, TypeScript snippets,Debugger for Chrome]
+tags: [Angular, IDE, VisualStudioCode, VSCode,TypeScript, IntelliSense, RelativePath, TSLint, TypeScript_snippets,Debugger_for_Chrome]
 icon: fa-font
 image: static/img/blog/angular/angular-logo_150.png
 ---

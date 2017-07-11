@@ -6,7 +6,7 @@ date:   2016-10-19
 desc: "Bonita BPM Herramientas para la gestión de una organización"
 keywords: "Bonita BPM, organizacion, LDAP synchronizer"
 categories: [bonita]
-tags: [Bonita BPM,LDAP synchronizer,organizacion] 
+tags: [Bonita,BPM,LDAP-synchronizer,organizacion] 
 icon: fa-cogs
 image: static/img/blog/bonita/bonita-logo.png
 ---

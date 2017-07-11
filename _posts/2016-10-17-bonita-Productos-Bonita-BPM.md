@@ -6,7 +6,7 @@ date:   2016-10-17
 desc: "Video sobre las ediciones y herramientas de Bonita BPM"
 keywords: "Productos Bonita BPM,bundle, portal, JBOSS, Tomcat, Bonita BPM Studio"
 categories: [bonita]
-tags: [Productos Bonita BPM,bundle, portal, JBOSS, Tomcat, Bonita BPM Studio]
+tags: [Bonita,BPM,Bonita_BPM_Studio]
 icon: fa-cogs
 image: static/img/blog/bonita/bonita-logo.png
 ---

@@ -4,9 +4,9 @@ section: "LDAP"
 title:  "LDAP Introducción"
 date:   2016-10-18
 desc: "LDAP son las siglas de Lightweight Directory Access Protocol (en español Protocolo Ligero/Simplificado de Acceso a Directorios) que hacen referencia a un protocolo a nivel de aplicación que permite el acceso a un servicio de directorio ordenado y distribuido para buscar diversa información en un entorno de red."
-keywords: "LDAP,Introducción"
+keywords: "LDAP"
 categories: [LDAP]
-tags: [ldap,Introducción]
+tags: [ldap]
 icon: fa-sitemap
 image: static/img/blog/ldap/ldap-logo.png
 ---

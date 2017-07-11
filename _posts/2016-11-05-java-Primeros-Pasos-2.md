@@ -6,7 +6,7 @@ date:   2016-11-05
 desc: "Primeros Pasos con Java (2 de 2)"
 keywords: "java,JDK,JVM,JRE,IDE, Java SE,JavaFX,Java EE,Java ME"
 categories: [java]
-tags: [java,JDK,JVM,JRE,IDE, Java SE,JavaFX,Java EE,Java ME]
+tags: [java,JDK,JVM,JRE,IDE, JavaSE,JavaFX,JavaEE,JavaME]
 icon: icon-java-bold
 image: static/img/blog/java/java-logo.png
 ---

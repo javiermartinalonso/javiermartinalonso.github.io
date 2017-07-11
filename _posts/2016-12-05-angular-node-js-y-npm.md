@@ -6,7 +6,7 @@ date:   2016-12-05
 desc: "Información sobre NodeJs y NPM y como instalarlos "
 keywords: "node.js,npm,AngularJS, Angular"
 categories: [Angular]
-tags: [node.js,npm,AngularJS, Angular"]
+tags: [node.js,npm,AngularJS,Angular]
 icon: fa-font
 image: static/img/blog/angular/angular-logo_150.png
 ---

@@ -4,9 +4,9 @@ section: "Bonita BPM"
 title:  "Bonita BPM Introducción"
 date:   2016-10-16
 desc: "Bonita BPM es una suite ofimática para la creación y gestión de potentes aplicaciones basadas en procesos de negocio (BPM) y realización de Workflows."
-keywords: "Bonita BPM,Introducción"
+keywords: "Bonita,BPM,Introducción"
 categories: [bonita]
-tags: [Bonita BPM,Introducción]
+tags: [Bonita,BPM]
 icon: fa-cogs
 image: static/img/blog/bonita/bonita-logo.png
 ---

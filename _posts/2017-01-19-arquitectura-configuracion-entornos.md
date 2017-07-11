@@ -6,7 +6,7 @@ date:   2017-01-19
 desc: "En el ámbito de gestión del ciclo de vida de un proyecto o producto software, solemos separar el propio código de la configuración que depende del entorno, p.ej. integraciones con sistemas externos, configuración JVM, pooles, etc.."
 keywords: "Spring, Spring-Boot, arquitectura, entorno de despliegue, Propiedades del sistema, Profiles en Maven, Profiles en Spring"
 categories: [arquitectura]
-tags: [Spring, arquitectura, entorno de despliegue, Propiedades del sistema, Profiles en Maven, Profiles en Spring]
+tags: [Spring, arquitectura, entorno_de_despliegue, Propiedades_del_sistema, Profiles_en_Maven, Profiles_en_Spring]
 icon: fa-university
 image: static/img/blog/arquitectura/arquitectura-logo.png
 ---
