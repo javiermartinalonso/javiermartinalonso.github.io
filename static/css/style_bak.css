@@ -5276,7 +5276,7 @@ table.issue-tracker tbody tr td {
 }
 /* DIFF */
 ins {
-  background-color: #c6ffc6;
+  /*background-color: #c6ffc6;*/
   text-decoration: none;
 }
 del {
