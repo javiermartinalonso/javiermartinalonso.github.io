@@ -15,7 +15,7 @@
                     <div class="side">
                         <div>
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                            Recent Posts
+                            <span data-i18n="glosary.Recent_Posts">Recent Posts</span>
                         </div>
                         <ul class="content-ul" recent>
                             {% for post in site.posts offset: 0 limit: 10  %}
@@ -28,7 +28,7 @@
                     <div class="side ">
                         <div>
                             <i class="fa fa-th-list"></i>
-                            Categories
+                            <span data-i18n="glosary.Categories">Categories</span>
                         </div>
                         <ul class="content-ul" cate>
                             {% for category in site.categories %}
@@ -48,7 +48,7 @@
                     <div class="side">
                         <div>
                             <i class="fa fa-tags"></i>
-                            Tags
+                            <span data-i18n="glosary.Tags">Tags</span>              
                         </div>
                         <div class="tags-cloud">
                             {% assign first = site.tags.first %}
@@ -89,14 +89,8 @@
                         </div>
                     </div>
 
-                    <!-- <div class="side">
-                        <div>
-                            <i class="fa fa-external-link"></i>
-                            Links
-                        </div>
-                        <ul  class="content-ul">
+                    <!-- publicidad --> 
+                    {% include caja_publicidad.html %}
 
-                        </ul>
-                    </div> -->
                 </div>
             </div>

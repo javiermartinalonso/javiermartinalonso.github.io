@@ -64,5 +64,11 @@
   },
   "pagination":{
     "not_results" : "Lo sentimos, pero no encontramos ningún artículo publicado en esta sección!"
-  }
+  },
+  "glosary":{
+    "Sponsored_Content": "Contenido patrocinado",
+    "Recent_Posts": "Últimas entradas",
+    "Categories": "Categorias",
+    "Tags": "Tags"
+  }  
 }
