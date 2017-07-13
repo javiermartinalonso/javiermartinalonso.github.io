@@ -1,0 +1,14 @@
+{% if counter > 10 %}
+    <div class="row text-center">
+		<div class="pag-holder-blog"></div>
+	</div>
+{% endif %}
+{% if counter == 0 %}
+    <div class="row text-center">
+		<p><span data-i18n="pagination.not_results">Lo sentimos, pero no encontramos ningún artículo publicado en esta sección!</span></p>
+    </div>
+
+    <div id="publiInArticle" class="row">
+        {% include publiInArticle.html %}
+    </div>          
+{% endif %}
