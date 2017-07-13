@@ -81,6 +81,14 @@ image: static/img/blog/spring/spring-logo.png
                         </div>
                     </li>
                     {% endif %}
+
+                    {% if forloop.last == true %}
+                        {% include pagination_blog.html %}  
+                        <div id="publiInArticle" class="row">
+                            {% include publiInArticle.html %}
+                        </div>     
+                    {% endif %}  
+                                       
                 {% endfor %}
                 </ul>
                 {% include pagination.html %}

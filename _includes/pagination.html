@@ -1,10 +1,14 @@
 {% if counter > 5 %}
-    <div class="col-lg-6 col-lg-offset-6">
+    <div class="row text-center">
 		<div class="pag-holder"></div>
 	</div>
 {% endif %}
 {% if counter == 0 %}
-    <div class="col-lg-8 col-lg-offset-2 text-center">
+    <div class="row text-center">
 		<p><span data-i18n="pagination.not_results">Lo sentimos, pero no encontramos ningún artículo publicado en esta sección!</span></p>
     </div>
+
+    <div id="publiInArticle" class="row">
+        {% include publiInArticle.html %}
+    </div>       
 {% endif %}

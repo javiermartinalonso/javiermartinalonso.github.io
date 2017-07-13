@@ -85,9 +85,19 @@ image: static/img/blog/angular/angular-logo_150.png
                         </div>
                     </li>
                     {% endif %}
+
+                    {% if forloop.last == true %}
+                        {% include pagination_blog.html %}  
+                        <div id="publiInArticle" class="row">
+                            {% include publiInArticle.html %}
+                        </div>     
+                    {% endif %}                     
                 {% endfor %}
                 </ul>
                 {% include pagination.html %}
+                <div id="publiInArticle" class="row">
+                    {% include publiInArticle.html %}
+                </div>                   
             </div>
 
             <div class="col-lg-3">
