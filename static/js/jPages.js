@@ -348,6 +348,9 @@
       this._itemsShowing = this._items.slice(range.start, range.end);
       if (this._cssAnimSupport && this.options.animation.length) this.cssAnimations(page);
       else this.jQAnimations(page);
+      
+      $('html, body').animate({ scrollTop: 0 }, 'slow');
+
       return range;
     },
 
