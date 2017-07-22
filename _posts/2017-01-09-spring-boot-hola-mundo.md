@@ -76,7 +76,7 @@ El wizard nos ha generado el scafolding o estructura de nuestro proyecto. Podemo
 
 	> ***Nota***: Si necesitaramos realizar una configuración más compleja del arranque de [spring](https://spring.io/projects "spring"). sería en esta clase donde realizaríamos estos cambios. Aqui puedes ver un [ejemplo más complejo con configuración para gestionar la seguridad](https://github.com/spring-projects/spring-boot/blob/master/spring-boot-samples/spring-boot-sample-web-method-security/src/main/java/sample/security/method/SampleMethodSecurityApplication.java "ejemplo más complejo con configuración para gestionar la seguridad")
 
-- **ServletInitializer.java**: En este caso como se trata de una aplicación web, necesita que se inicialice el contendeor de servlets de **[spring-boot](https://projects.spring.io/spring-boot/ "spring-boot")**.
+- **ServletInitializer.java**: En este caso como se trata de una aplicación web, necesita que se inicialice el contenedor de servlets de **[spring-boot](https://projects.spring.io/spring-boot/ "spring-boot")**.
 
 	    package es.jmartin.spring.boot;
 	    
@@ -161,7 +161,7 @@ esto generará una salida por consola similar a esto:
 
 Cuando se ejecuta la aplicación, **[spring-boot](https://projects.spring.io/spring-boot/ "spring-boot")** detecta que dispone de un controlador Spring MVC y pone en marcha de una instancia de Apache Tomcat 7 incorporado, de forma predeterminada. Por tanto ya podemos probar la ejecución de la aplicación y acceder a la respuesta del endpoint REST mediante la apertura de su navegador en la ruta `http://localhost:8080`.
 
-Si tu abres un navegador web en la ruta `localhost:8080` deberias poder ver la siguiente salida en el navegador:
+Si abres un navegador web en la ruta `localhost:8080` deberías poder ver la siguiente salida en el navegador:
 
     Hello World!
 
