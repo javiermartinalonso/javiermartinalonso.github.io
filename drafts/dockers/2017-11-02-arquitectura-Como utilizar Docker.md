@@ -1,9 +1,9 @@
 ---
 layout: post
 section: "ARQUITECTURA"
-title:  "Introducción a Dockers"
-date:   2017-01-19
-desc: "Docker es una herramienta open-source que nos permite realizar una ‘virtualización ligera’, con la que poder empaquetar entornos y aplicaciones que posteriormente podremos desplegar en cualquier sistema que disponga de esta tecnología."
+title:  "Cómo utilizar Docker"
+date:   2016-11-02
+desc: ""
 keywords: "Dockers"
 categories: [arquitectura]
 tags: [Dockers]
@@ -23,13 +23,15 @@ Para ejecutar el daemon de docker:
 
     sudo docker -d &
 
-Sintaxis de uso:
+## Sintaxis de uso ##
 
 Usar docker (vía CLI) consiste en pasarle una cadena de opciones y comandos seguidos de argumentos. Tenga en cuenta que docker necesita privilegios de sudo para poder trabajar.
 
     sudo docker [option] [command] [arguments]
 
-Nota: A continuación se proporcionan instrucciones y explicaciones para ser usadas como una guía y para darle una idea general de usar y trabajar con docker. La mejor manera de familiarizarse con ella es la práctica en un nuevo VPS. No tengas miedo de romper algo, ¡de hecho, rompes cosas! Con docker, puede guardar su progreso y continuar desde allí muy fácilmente.
+
+
+> ***Nota***: A continuación se proporcionan instrucciones y explicaciones para ser usadas como una guía y para darle una idea general de usar y trabajar con docker. La mejor manera de familiarizarse con ella es la práctica en un nuevo VPS. No tengas miedo de romper algo, ¡de hecho, rompes cosas! Con docker, puede guardar su progreso y continuar desde allí muy fácilmente.
 
 Comenzando
 
@@ -151,14 +153,14 @@ Todas las imágenes de su sistema, incluidas las que ha creado mediante confirma
 
     # Example: sudo docker images
     sudo docker images
-
-REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-my_img              latest              72461793563e        36 seconds ago      128 MB
-ubuntu              12.04               8dbd9e392a96        8 months ago        128 MB
-ubuntu              latest              8dbd9e392a96        8 months ago        128 MB
-ubuntu              precise             8dbd9e392a96        8 months ago        128 MB
-ubuntu              12.10               b750fe79269d        8 months ago        175.3 MB
-ubuntu              quantal             b750fe79269d        8 months ago        175.3 MB
+	
+	REPOSITORY  TAG IMAGE IDCREATED VIRTUAL SIZE
+	my_img  latest  72461793563e36 seconds ago  128 MB
+	ubuntu  12.04   8dbd9e392a968 months ago128 MB
+	ubuntu  latest  8dbd9e392a968 months ago128 MB
+	ubuntu  precise 8dbd9e392a968 months ago128 MB
+	ubuntu  12.10   b750fe79269d8 months ago175.3 MB
+	ubuntu  quantal b750fe79269d8 months ago175.3 MB
 
 ## Cometer cambios en una imagen: ##
 
@@ -241,6 +243,269 @@ Utilizando el ID de un contenedor, puede eliminar uno con rm .
 Puede obtener más información sobre Docker leyendo su documentación oficial
 
 Recuerde: Las cosas están progresando muy rápido en docker. El impulso impulsado por la comunidad es increíble y muchas grandes empresas tratan de unirse en la oferta de apoyo. Sin embargo, el producto todavía no está etiquetado como listos para la producción , por lo tanto, no se recomienda para ser 100% fiel en la misión despliegues críticos - todavía . Asegúrese de revisar las salidas a medida que salen y continuar manteniéndose en la cima de todas las cosas docker.
+
+***-----------------------------------------------------------------------------------------***
+
+https://docs.docker.com/get-started/part2/#recap-and-cheat-sheet-optional
+
+Aquí hay una lista de los comandos básicos de Docker de esta página, y algunos relacionados si desea explorar un poco antes de seguir adelante.
+
+	docker build -t friendlyname .  # Create image using this directory's Dockerfile
+	docker run -p 4000:80 friendlyname  # Run "friendlyname" mapping port 4000 to 80
+	docker run -d -p 4000:80 friendlyname # Same thing, but in detached mode
+	docker ps # See a list of all running containers
+	docker stop <hash> # Gracefully stop the specified container
+	docker ps -a   # See a list of all containers, even the ones not running
+	docker kill <hash>   # Force shutdown of the specified container
+	docker rm <hash>  # Remove the specified container from this machine
+	docker rm $(docker ps -a -q)   # Remove all containers from this machine
+	docker images -a   # Show all images on this machine
+	docker rmi <imagename># Remove the specified image from this machine
+	docker rmi $(docker images -q) # Remove all images from this machine
+	docker login # Log in this CLI session using your Docker credentials
+	docker tag <image> username/repository:tag  # Tag <image> for upload to registry
+	docker push username/repository:tag# Upload tagged image to registry
+	docker run username/repository:tag   # Run image from a registry
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+***-----------------------------------------------------------------------------------------***
+
+
+
+
+
+
+
+
+
+https://www.adictosaltrabajo.com/tutoriales/docker-for-dummies/
+
+
+
+En este ejemplo vamos a usar la imagen oficial de sonarqube , para crear un contenedor con Sonar instalado
+
+
+
+En el repositorio de sonarqube encontraremos información relativa a la imagen y de cómo se usa, más o menos lo que vamos a describir a continuación.
+
+El primer paso sería descargarnos la imagen
+
+
+    docker pull sonarqube
+
+Podemos listar las imágenes que tenemos en nuestro equipo
+
+
+    docker images
+
+
+
+Una vez tenemos la imagen, ya estamos en disposición de instanciar un contenedor a partir de ella.
+
+
+    docker run -d --name sonarqube -p 9000:9000 sonarqube
+
+
+Este comando lo que realiza es levantar un contenedor con los siguientes parámetros:
+
+- ***-d*** : Levanta el contenedor en segundo plano.
+- ***-name*** : Nombre asociado al contenedor
+- ***-p***: Mapeamos el puerto 9000 de nuestro equipo con el 9000 del contenedor
+
+
+Podemos comprobar los contenedores que están levantados
+
+
+    docker ps
+
+
+
+Para acceder al sonar instalado en el contenedor nos bastaría con abrir un al navegador con la URL http:/localhost:9000, pero al usar un Mac (o Windows) y necesitar de un software intermedio, boot2docker, necesitaremos conocer la ip de la máquina virtual que crea boot2docker
+
+
+    boot2docker ip
+
+
+
+Ahora ya podemos acceder a nuestro Sonar
+
+
+
+Fácil no ?? Y si necesitamos tener otro Sonar ?? Pues nada, instanciamos de nuevo la imagen para crear otro contenedor
+
+`docker run -d --name sonarqube2 -p 7000:9000 sonarqube `   
+    
+Sólo necesitamos cambiar el nombre y el mapeo de puertos, volvemos a comprobar los contenedores activos … y ahí tenemos nuestros dos contenedores
+
+
+Podemos acceder al nuevo sonar
+
+
+
+Podemos parar un contenedor:
+
+
+    docker stop sonarqube
+
+
+
+Vemos como sólo quedaría activo sonarqube2, podemos listar los contenedores independientemente de su estado con:
+
+
+    docker ps -a
+
+
+
+Para borrar un contenedor deberíamos ejecutar el siguiente comando
+
+
+    docker rm sonarqube	
+
+Hay que tener en cuenta que al borrar un contenedor perderíamos los cambios que hubiésemos realizado en él. Una de las opciones que tendríamos si queremos que los cambios que realicemos al contenedor sean permanentes, sería la de generar una imagen a partir del contenedor, para ello haríamos lo siguiente:
+
+
+    docker commit -m "<comentario>" -a "<autor>" <id_contenedor> <nombre_imagen>:<etiqueta_imagen>
+
+
+
+Con este comando lo que conseguimos es generar una imagen jpacheco/sonar construida a partir del contenedor sonarqube2, si volvemos a listar las imágenes:
+
+
+
+
+
+
+
+
+
+
+***-----------------------------------------------------------------------------------------***
+
+
+
+
+
+https://www.digitalocean.com/community/tutorials/docker-explicado-como-crear-contenedores-de-docker-corriendo-en-memcached-es
+
+
+## Construyendo nuestra primera imagen ##
+
+Para ello usaremos, como explicado antes, el comando docker build. Construiremos una imagen mediante el archivo Dockerfile en la ubicación actual.
+
+    # Ejemplo: sudo docker build -t [nombre] .
+    sudo docker build -t memcached_img .
+
+
+Ahora podemos crear nuestra primera imagen Memcached siguiendo las instrucciones de uso explicadas en la sección de archivos Dockfile básicos.
+
+Ejecuta el siguiente comando para crear una imagen, etiquetandolo como "memcached_img":
+
+    sudo docker build -t memcached_img .
+
+> **NOTA**: No olvides el punto . para que Docker pueda encontrar el archivo Dockerfile.
+
+
+¿Dónde está su imagen construida? Está en el registro local de imagen de Docker de su máquina:
+
+$ docker images
+
+REPOSITORY            TAG                 IMAGE ID
+friendlyhello         latest              326387cea398
+
+## Correr Contenedores dockerised Memcached ##
+
+Utilizando la imagen que tenemos construida, ahora podemos proceder al paso final: crear un contenedor que ejecute una instancia de MongoDB dentro, usando un nombre de nuestra elección (si lo desea con -name [name] ).
+
+Es muy simple crear cualquier número de instancias memcached perfectamente aislados y autónomos - ahora - gracias a la imagen que hemos obtenido en la sección anterior. Todo lo que tenemos que hacer es crear un nuevo contenedor con `docker run`.
+
+## Creación de un contenedor instalado en Memcached ##
+
+Para crear un nuevo contenedor, utiliza el siguiente comando, modificándolo para que se adapte a tus necesidades siguiendo este ejemplo:
+
+    # Ejemplo: sudo docker run -name [nombre del contenedor] -p [puerto de acceso: puerto expuesto] -i -t [nombre de imagen memcached]
+    sudo docker run -name memcached_ins -d -p 45001:11211 memcached_img
+
+Ahora tendremos un Docker llamado "memcached_ins", accesible desde el puerto 45001, córrelo ()run) utilizando nuestra imagen etiquetada como "memcached img", que hemos construido con anterioridad.
+
+
+
+> ***Nota***: Si un nombre no está establecido, tendremos que tratar con identificaciones alfanuméricas complejas que se pueden obtener enumerando todos los contenedores que usan sudo docker ps -l.
+
+> ***Nota***: Para separarse del contenedor, utilice la secuencia de escape CTRL + P seguida por CTRL + Q.
+
+## Limitando la memoria para un contenedor en Memcached ##
+
+Con el fin de limitar la cantidad de memoria de procesos del contenedor Docker que se puede usar, basta con ejecutar `-m [cantidad de memoria]` marcando así el límite.
+
+Para ejecutar un contenedor con memoria limitada a 256 MB:
+
+    # Ejemplo: sudo docker run -name [nombre] -m [Memory (int)][memory unit (b, k, m or g)] -d (para correr no adjuntar) -p (para configurar el acceso y exponer los puertos) [ID de la imagen]
+    sudo docker run -name memcached_ins -m 256m -d -p 45001:11211 memcached_img
+
+Para confirmar el límite de memoria, puedes inspeccionar el contenedor:
+
+    # Ejemplo: docker inspect [ID del contenedor] | grep Memory
+    sudo docker inspect memcached_ins | grep Memory
+
+Nota: El comando anterior toma la información de la memoria relacionada desde la salida de inspección. Para ver toda la información relevante acerca de tu contenedor, puedes optar por `sudo docker inspect [ID del contenedor]`.
+
+## Prueba del contenedor en Memcached ##
+
+Para el conjunto completo de instrucciones para instalar y utilizar Docker, revisa la documentación de Docker en docker.io.
+
+
+
+
+
+***-----------------------------------------------------------------------------------------***
+
+https://www.adictosaltrabajo.com/tutoriales/docker-for-dummies/
+
+
+En este último apartado vamos a ver como crear una nueva imagen a través de un fichero llamado Dockerfile.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+***-----------------------------------------------------------------------------------------***
+
+
+
 
 
 
