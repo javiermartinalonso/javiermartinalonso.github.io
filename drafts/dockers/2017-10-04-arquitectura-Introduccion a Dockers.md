@@ -17,12 +17,13 @@ image: static/img/blog/docker/docker-logo.png
 
 ***Docker*** es una herramienta open-source que nos permite realizar una ‘***virtualización ligera***’, con la que poder empaquetar entornos y aplicaciones que posteriormente podremos desplegar en cualquier sistema que disponga de esta tecnología.
 
+Todo esto **permite separar la aplicación de la infraestructura subyacente de aplicaciones y servidores (Sistema operativo, Bases de datos, servidores de aplicaciones…) y centrarse únicamente en su desarrollo y puesta en marcha**. De este modo, podemos reproducir exactamente las mismas condiciones en cuanto a arquitectura en el entorno de desarrollo y en el entorno productivo lo que ademas de facilitar el desarrollo y testeo de la aplicación, nos evitará futuros bugs y defectos relacionados con las mismas.
 <!--more -->
 
 
 Para separar los contenedores entre sí y de la máquina anfitriona, ***Docker*** utiliza las características de aislamiento del kernel Linux. Para ello ***Docker*** extiende ***LXC (LinuX Containers)***, que es un sistema de ***virtualización*** que permite crear múltiples sistemas totalmente aislados entre sí, sobre la misma máquina o sistema anfitrión.. Estos contenedores se crean utilizando imágenes de ***docker***, que pueden crearse ejecutando comandos manualmente o automáticamente a través de ***[Dockerfiles]({{ site.baseurl }}arquitectura/2016/10/25/arquitectura-Dockerfile.html "Dockerfiles")*** . Todo este enfoque permite a los contenedores ser mucho más ligeros que las ***máquinas virtuales***, tanto en espacio en disco como de consumo de recursos. Además su naturaleza les otorga una gran ***portabilidad*** y ***seguridad***. Su principal función es la de poder empaquetar aplicaciones con todas las partes necesarias, incluyendo bibliotecas, dependencias, variables de entorno y archivos de configuración.
 
-Idea básica es empaquetar en un único bloque todas las dependencias que un aplicación necesita para ejecutarse: binarios, librerías, archivos de configuración, runtime...
+**Idea básica es empaquetar en un único bloque todas las dependencias que un aplicación necesita para ejecutarse: binarios, librerías, archivos de configuración, runtime...**
 
 ## Piezas principales del Docker ##
 
@@ -139,25 +140,46 @@ Docker Hub dispone de las imágenes oficiales de postgresql, redis, mysql, ubunt
 
 
 
+
+
+## Docker para Windows ##
+
+***Docker para Windows*** es una ***aplicación Docker Community Edition (CE)***. El paquete de instalación de Docker para Windows incluye todo lo que necesita para ejecutar Docker en un sistema Windows.
+
+Los requisitos para poder instalar ***Docker para Windows***:
+
+- Versión 64 bits Windows 10 Pro, Enterprise y Educación (actualización 1511 noviembre, Build 10586 o posterior).
+- La virtualización debe estar habilitada.
+
+Lo que incluye la instalación de ***Docker para Windows*** : La instalación proporciona ***Docker Engine*** , ***Docker CLI***, ***Docker Compose*** , ***Docker Machine*** y ***Kitematic*** .
+
+
 ## Docker ToolBox ##
 
-Permite instalar y configurar un entorno docker.
+Solución de escritorio legacy. Permite instalar y configurar un entorno docker para sistemas Mac y Windows antiguos que no cumplen los requisitos de ***Docker para Mac*** y ***Docker para Windows***. 
 
 
 
+## Docker Engine ##
+
+
+## Docker CLI ##
+
+## Docker Compose ##
+
+***Compose*** es una herramienta para definir opciones de configuración que se aplican en el tiempo de construcción y ejecutar aplicaciones en contenedores multiples de Docker. ***Compose***, utiliza un*** fichero Compose*** para configurar los servicios de su aplicación. Luego, con un solo comando, crea e inicia todos los servicios de su configuración. 
+
+El ***fichero Compose*** **proporciona una forma de documentar y configurar todas las dependencias de servicio de la aplicación (bases de datos, colas, cachés, API de servicio web, etc.)**. Mediante la herramienta de línea de comandos ***Compose*** puede crear e iniciar uno o más contenedores para cada dependencia con un solo comando ( `docker-compose up`).
 
 
 
-
-
-
-
-
-
+## Docker Machine ##
 
 ## Kitematic ##
 
+Solución de escritorio legacy. Kitematic es una solución heredada, incluida con ***Docker Toolbox***. Su uso ya no es necesario en la aplicación actual ***docker for windows***.
 
+***Kitematic*** es un proyecto de código abierto construido para simplificar y agilizar el uso de Docker en un PC Mac o Windows. ***Kitematic*** automatiza el proceso de instalación y configuración de ***Docker*** y proporciona una interfaz gráfica de usuario intuitiva (GUI) para ejecutar contenedores ***Docker***. ***Kitematic*** se integra con ***Docker Machine*** para suministrar una ***VM VirtualBox***  e instalar el ***Docker Engine*** localmente en su máquina.
 
 
 

@@ -58,14 +58,14 @@ Nota: La notación "banana in a box" tiene una explicación y es que usa tanto e
 Si quisiéramos visualizar ese dato en algún otro de la vista, por ejemplo en un párrafo, usaríamos una expresión. Por ejemplo:
 
 <p>
-  Hola {{quien}}
+  Hola \{{quien}}
 </p>
 
 **Evento**: es un suceso que ocurre y para el cual se pueden definir manejadores, que son funciones que se ejecutarán como respuesta a ese suceso.
 
 Indicamos entre paréntesis el tipo de evento y como valor el código que se debe de ejecutar, o mejor, la función que se va a ejecutar para procesar el evento.
 
-<button (click)="decirAdios()">Decir adiós</button>
+<button (click)="decirAdios()">Decir adios</button>
 
 
 
@@ -84,7 +84,7 @@ En el siguiente diagrama puedes ver un resumen del flujo de la información disp
 
 
 Las propiedades tienen un flujo desde el modelo a la vista. Una información disponible en el modelo se puede asignar como valor en un elemento del HTML mediante una propiedad, usando la notación corchetes. Por ej: [propiedad]
-Las expresiones también viajan desde el modelo a la vista. La diferencia de las propiedades es que en este caso las usamos como contenido de un elemento y además que se expresan con dobles llaves. Por ej: {{expresión}}
+Las expresiones también viajan desde el modelo a la vista. La diferencia de las propiedades es que en este caso las usamos como contenido de un elemento y además que se expresan con dobles llaves. Por ej: {{expresion}}
 El binding (a dos sentidos, o doble binding) lo expresamos entre corchetes y paréntesis. En este caso la información fluye en ambos sentidos, desde el modelo a la vista y desde la vista al modelo. Por ej: [(ngBind)]
 Los eventos no es que necesariamente hagan fluir un dato, pero sí se considera un flujo de aplicación, en este caso de la vista al modelo, ya que se originan en la vista y generalmente sirven para ejecutar métodos que acabarán modificando cosas del modelo. Por ej: (evento)
 Nota: Como ves, ahora existen diversas sintaxis para expresar cosas en las vistas. Quizás nos resulte extraño, pero enseguida nos familiarizaremos. La notación más rara es la que usamos para expresar un binding en dos direcciones [(ngBing)], pero una manera sencilla de acordarnos de ella es con su denominación anglosajona "banana in a box". Los paréntesis parecen una banana, dentro de los corchetes, que parecen una caja.
