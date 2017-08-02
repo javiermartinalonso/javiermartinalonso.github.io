@@ -15,7 +15,7 @@ image: static/img/blog/docker/docker-logo.png
 http://www.josedomingo.org/pledin/2016/02/ejemplos-de-ficheros-dockerfile-creando-imagenes-docker/
 
 
-
+https://docs.docker.com/engine/docker-overview/#docker-objects
 
 
 

@@ -25,12 +25,6 @@ Para separar los contenedores entre sí y de la máquina anfitriona, ***Docker**
 
 **Idea básica es empaquetar en un único bloque todas las dependencias que un aplicación necesita para ejecutarse: binarios, librerías, archivos de configuración, runtime...**
 
-## Piezas principales del Docker ##
-
-- ***Docker daemon***: se utiliza para administrar contenedores ***docker*** ***(LXC)*** en el host que ejecuta.
-- ***Docker CLI***: se usa para mandar y comunicarse con el ***daemon docker***.
-- ***Docker image index***: un repositorio (público o privado) para imágenes de ***docker***.
-
 ## Elementos Docker Principales ##
 
 - ***Dockerfiles***: Scripts que automatizan el proceso de construcción de imágenes.
@@ -49,7 +43,11 @@ Vale hasta aquí todo esto está muy bien, pero para entender realmente que es d
 
 ***Dockerfile*** definirá lo que sucede en el entorno dentro de su ***contenedor***. El acceso a recursos como interfaces de red y unidades de disco se virtualiza dentro de este entorno, aislado del resto del sistema, por lo que debe asignar los puertos al mundo exterior y especificar qué archivos desea copiar en Ambiente. Sin embargo, después de hacer eso, puede esperar que la compilación de su aplicación definida en este ***Dockerfile*** se comportará exactamente igual dondequiera que se ejecuta.
 
-Las imágenes de ***Docker*** constituyen la base de los ***contenedores docker***, desde los que todo empieza a formarse. Son muy similares a las imágenes predeterminadas del disco del sistema operativo que se utilizan para ejecutar aplicaciones en servidores o computadoras de escritorio.
+***Las imágenes de Docker*** constituyen la base de los ***contenedores docker***, desde los que todo empieza a formarse. Son muy similares a las imágenes predeterminadas del disco del sistema operativo que se utilizan para ejecutar aplicaciones en servidores o computadoras de escritorio.
+
+**Una imagen es una plantilla de sólo lectura con instrucciones para crear un contenedor Docker.** **A menudo, una imagen se basa en otra imagen, con alguna personalización adicional**. Por ejemplo, puede crear una imagen basada en la imagen de ubuntu, pero instala el servidor web Apache y su aplicación, así como los detalles de configuración necesarios para que su aplicación se ejecute.
+
+Puede crear sus propias imágenes o puede utilizar sólo las creadas por otros y publicadas en un registro. Para crear su propia imagen, cree un ***Dockerfile*** con una sintaxis sencilla para definir los pasos necesarios para crear la ***imagen*** y ejecutarla. Cada instrucción en un ***Dockerfile*** crea una capa en la imagen. Cuando cambia el ***Dockerfile*** y reconstruye la imagen, sólo se reconstruyen las capas que han cambiado. Esto es parte de lo que hace que las imágenes sean tan ligeras, pequeñas y rápidas, en comparación con otras tecnologías de virtualización.
 
 Tener estas imágenes (por ejemplo, base de ***Ubuntu***) permite la ***portabilidad*** sin problemas a través de los sistemas. Constituyen una base sólida, coherente y confiable con todo lo que se necesita para ejecutar las aplicaciones. Cuando todo es autónomo y se elimina el riesgo de que se eliminen las actualizaciones o modificaciones a nivel del sistema, el ***contenedor*** se vuelve inmune a exposiciones externas que podrían ponerlo fuera de servicio, evitando el infierno de la dependencia .
 
@@ -122,13 +120,16 @@ En la siguiente imagen podemos ver esta diferencia entre el enfoque de las ***m�
 - Son portables, podemos desarrollar software sin preocuparnos en la plataforma en la que se va ejecutar.
 
 
+
+## Piezas principales del Docker ##
+
 ## Docker Hub ##
 
 https://hub.docker.com/
 
 servicio SaaS para compartir y administrar sus pilas de aplicaciones.
 
-Es un ***repositorio de imágenes pre-configuradas*** listas para usar (en otras palabras un ***github*** de imágenes).
+Es un ***repositorio de imágenes pre-configuradas*** listas para usar (en otras palabras un ***github*** de imágenes). Un repositorio (público o privado) para imágenes de ***docker***.
 
 El registro de imágenes de docker es un servicio en el que los usuarios comparten y colaboran en la creación de las imágenes. ***Docker Hub dispone de las imágenes oficiales de postgresql, redis, mysql, ubuntu, rabbitmq, sonarqube, mongodb … además de una multitud de imágenes que los usuarios van creando y subiendo al repositorio.***
 
@@ -160,7 +161,7 @@ Es lo que podemos llamar el ***motor del Docker***. ***Docker Engine*** es una a
  
 - Una ***API REST*** que especifica las interfaces que los programas pueden usar para hablar con el daemon e instruirlo qué hacer.
  
-- Un cliente de interfaz de línea de comandos (CLI).
+- Un ***cliente de interfaz de línea de comandos (CLI).***
 
 <div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/docker/engine-components-flow.png" alt="job" class="img-thumbnail" style="width: 90%"/>
@@ -170,24 +171,17 @@ Es lo que podemos llamar el ***motor del Docker***. ***Docker Engine*** es una a
 </div>
 
 
-***CLI*** utiliza la ***API REST Docker***  para controlar o interactuar con el ***demonio Docker*** a través de scripts o comandos directos de CLI. Muchas otras aplicaciones de Docker utilizan la API y la CLI subyacentes.
+***CLI*** utiliza la ***API REST Docker***  para controlar o interactuar con el ***demonio Docker*** a través de scripts o comandos directos de ***CLI***. Muchas otras aplicaciones de ***Docker*** utilizan la ***API*** y la ***CLI*** subyacentes.
 
-El daemon crea y administra objetos de Docker, como imágenes, contenedores, redes y volúmenes.
+***El daemon crea y administra objetos de Docker, como imágenes, contenedores, redes y volúmenes.***
 
+## Docker daemon ##
 
-> ***Nota***: Docker está licenciado bajo la licencia Open Source Apache 2.0.
-
-
-
-
-
-
-
-
-
-
-
+Se utiliza para administrar contenedores ***docker*** ***(LXC)*** en el host que ejecuta.
+ 
 ## Docker CLI ##
+
+El ***cliente Docker (CLI)*** es la principal forma en que muchos usuarios de ***Docker*** interactúan con ***daemon Docker***. Cuando utiliza comandos como `docker run`, el cliente envía estos comandos a ***dockerd daemon***, que los lleva a cabo. El comando `docker` ***utiliza la API de Docker***. ***El cliente Docker*** puede comunicarse con más de un ***daemon***.
 
 ## Docker Compose ##
 
@@ -198,6 +192,8 @@ El ***fichero Compose*** **proporciona una forma de documentar y configurar toda
 ***Compose*** es ideal para entornos de desarrollo, pruebas y estadificación, así como para flujos de trabajo de CI. Puede obtener más información sobre cada caso en casos de uso común .
 
 ## Docker Machine ##
+
+***Docker Machine*** es una herramienta que nos ayuda a crear, configurar y manejar máquinas virtuales con ***Docker Engine***.*** Con Docker Machine podemos iniciar, parar o reiniciar los nodos docker, actualizar el cliente o el demonio docker y configurar el cliente docker para acceder a los distintos Docker Engine***. ***El propósito principal del uso de esta herramienta es la de crear máquinas con Docker Engine en sistemas remotos y centralizar su gestión.***
 
 ## Kitematic ##
 
