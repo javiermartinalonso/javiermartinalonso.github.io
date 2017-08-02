@@ -23,10 +23,7 @@ Aunque vamos a definir los conceptos a lo largo del camino, es bueno que usted e
 
 También debemos asumir que está familiarizado con algunos conceptos antes de continuar:
 
-- Direcciones ***IP y puertos***
 - ***Maquinas virtuales***
-- Edición de ***archivos de configuración***
-- Familiaridad básica con las ideas de ***dependencias de código*** y construcción
 - Términos de uso de ***recursos de la máquina, como porcentajes de CPU, uso de RAM***, etc.
 
 ## Requisitos del sistema operativo ##

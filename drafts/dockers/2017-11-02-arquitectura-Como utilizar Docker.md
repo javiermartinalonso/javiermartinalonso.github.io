@@ -11,6 +11,28 @@ icon: fa-university
 image: static/img/blog/docker/docker-logo.png
 ---
 
+
+http://www.josedomingo.org/pledin/2016/02/ejemplos-de-ficheros-dockerfile-creando-imagenes-docker/
+
+
+
+
+
+
+
+
+
+## Requisitos previos ##
+Aunque vamos a definir los conceptos a lo largo del camino, es bueno que usted entienda, [qué es Docker y por qué lo utilizaría]({{ site.baseurl }}arquitectura/2016/10/04/arquitectura-Introduccion-a-Dockers.html "qué es Docker y por qué lo utilizaría") antes de comenzar.
+
+También debemos asumir que está familiarizado con algunos conceptos antes de continuar:
+
+- Direcciones ***IP y puertos***
+- ***Maquinas virtuales***
+- Edición de ***archivos de configuración***
+- Familiaridad básica con las ideas de ***dependencias de código*** y construcción
+- Términos de uso de ***recursos de la máquina, como porcentajes de CPU, uso de RAM***, etc.
+- 
 # Cómo utilizar Docker #
 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-getting-started

@@ -13,7 +13,7 @@ image: static/img/blog/docker/docker-logo.png
 
 # ¿Qué es Dockers? #
 
-**[Docker](https://www.docker.com/ "docker")** Es una tecnología que promete revolucionar la informática profesional. Se trata de una tecnología de contenedores, que básicamente consiste en la ejecución de sistemas operativos dentro de otros, obteniendo los sistemas “invitados” su propio sistema de ficheros, su propio espacio de usuarios, sus propios procesos y sus propias interfaces de red, pero compartiendo algunos elementos de la máquina anfitriona como el kernel.
+**[Docker](https://www.docker.com/ "docker")** Es una tecnología que promete revolucionar la informática profesional. Se trata de una tecnología de contenedores, que básicamente consiste en ***la ejecución de sistemas operativos dentro de otros, obteniendo los sistemas “invitados” su propio sistema de ficheros, su propio espacio de usuarios, sus propios procesos y sus propias interfaces de red, pero compartiendo algunos elementos de la máquina anfitriona como el kernel.***
 
 ***Docker*** es una herramienta open-source que nos permite realizar una ‘***virtualización ligera***’, con la que poder empaquetar entornos y aplicaciones que posteriormente podremos desplegar en cualquier sistema que disponga de esta tecnología.
 
@@ -99,20 +99,20 @@ En la siguiente imagen podemos ver esta diferencia entre el enfoque de las ***m�
 
 | ***Imágenes virtuales*** | ***Contenedores docker*** |
 | :----------: | :----------: |
-| Cada imagen se ejecuta en un sistema operativo independiente | Cada ***contenedor*** se ejecuta dentro del mismo kernel del sistema operativo |
+| Cada imagen se ejecuta en un ***sistema operativo independiente*** | Cada ***contenedor*** se ejecuta ***dentro del mismo kernel del sistema operativo*** |
 | ---------- | ---------- |
 | Consumen los recursos del sistema operativo en el que residen más los del propio sistema operativo que contienen | Un ***contenedor*** tiene sus propios ***archivos de sistema*** y ***variables de entorno***, es autosuficiente y ligero pues sólo consume los recursos del ***kernel*** que estrictamente necesita. Se acerca mucho al rendimiento nativo. |
 | ---------- | ---------- |
-|Respecto al almacenamiento en disco, una máquina virtual puede ocupar varios gigas ya que tiene que contener el sistema operativo completo|los ***contenedores Docker*** sólo contienen aquello que las diferencia del sistema operativo en las que se ejecutan|
+| Respecto al almacenamiento en disco, una ***máquina virtual*** puede ocupar varios gigas ya que tiene que contener el sistema operativo completo | Los ***contenedores Docker*** sólo contienen aquello que las diferencia del sistema operativo en las que se ejecutan |
 | ---------- | ---------- |
-|El tiempo de arranque de los servicios es mas lento, debe arrancar el sistema operativo de la imagen, más el tiempo de arranque del servicio |Los ***contenedores docker*** se arrancan en pocos segundos|
+| El tiempo de ***arranque de los servicios es mas lento***, debe arrancar el sistema operativo de la imagen, más el tiempo de arranque del servicio | Los ***contenedores docker*** se arrancan en pocos segundos |
 | ---------- | ---------- |
-||Es fácil de automatizar e implantar en entornos de ***integración continua***|
+|| Es fácil de automatizar e implantar en entornos de ***integración continua***|
 | ---------- | ---------- |
-||Existen multitud de imágenes que pueden descargarse y modificarse libremente.|
+|| Existen multitud de imágenes que pueden descargarse y modificarse libremente.|
 | ---------- | ---------- |
 
-## beneficios de docker ##
+## Beneficios de docker ##
 
 - Gran rendimiento
 - Creación y destrucción rápida
@@ -126,20 +126,13 @@ En la siguiente imagen podemos ver esta diferencia entre el enfoque de las ***m�
 
 https://hub.docker.com/
 
-es un repositorio de imágenes pre-configuradas listas para usar (en otras palabras un github de imágenes).
+servicio SaaS para compartir y administrar sus pilas de aplicaciones.
 
-Inmutabilidad de los contenedores
-docker file, carpetas compartidas
+Es un ***repositorio de imágenes pre-configuradas*** listas para usar (en otras palabras un ***github*** de imágenes).
 
+El registro de imágenes de docker es un servicio en el que los usuarios comparten y colaboran en la creación de las imágenes. ***Docker Hub dispone de las imágenes oficiales de postgresql, redis, mysql, ubuntu, rabbitmq, sonarqube, mongodb … además de una multitud de imágenes que los usuarios van creando y subiendo al repositorio.***
 
-
-
-
-Docker Hub dispone de las imágenes oficiales de postgresql, redis, mysql, ubuntu, rabbitmq, sonarqube, mongodb … además de una multitud de imágenes que los usuarios van creando y subiendo al repositorio.
-
-
-
-
+Con esta herramienta online de Docker, ***es posible vincular un dockerfile en GitHub a docker hub; pues puede crear las imágenes por ustedes y almacenarlas online. De esta manera, podrán simplemente descargarla a sus servidores.*** Esta puede ser pública o privada, por un pago pequeño al estilo de Github.
 
 
 ## Docker para Windows ##
@@ -148,30 +141,61 @@ Docker Hub dispone de las imágenes oficiales de postgresql, redis, mysql, ubunt
 
 Los requisitos para poder instalar ***Docker para Windows***:
 
-- Versión 64 bits Windows 10 Pro, Enterprise y Educación (actualización 1511 noviembre, Build 10586 o posterior).
-- La virtualización debe estar habilitada.
-
-Lo que incluye la instalación de ***Docker para Windows*** : La instalación proporciona ***Docker Engine*** , ***Docker CLI***, ***Docker Compose*** , ***Docker Machine*** y ***Kitematic*** .
-
+- ***Versión 64 bits Windows 10 Pro, Enterprise y Educación (actualización 1511 noviembre, Build 10586 o posterior).***
+- ***La virtualización debe estar habilitada.***
 
 ## Docker ToolBox ##
 
 Solución de escritorio legacy. Permite instalar y configurar un entorno docker para sistemas Mac y Windows antiguos que no cumplen los requisitos de ***Docker para Mac*** y ***Docker para Windows***. 
 
-
+Lo que incluye la instalación de ***Docker para Windows*** : La instalación proporciona ***Docker Engine*** , ***Docker CLI***, ***Docker Compose*** , ***Docker Machine***,El ***shell Docker QuickStart*** preconfigurado para un entorno de línea de comandos ***Docker***, ***Oracle VM VirtualBox*** y ***Kitematic*** .
 
 ## Docker Engine ##
+
+https://docs.docker.com/engine/docker-overview/#what-can-i-use-docker-for
+
+Es lo que podemos llamar el ***motor del Docker***. ***Docker Engine*** es una aplicación cliente-servidor con estos componentes principales:
+
+- Un servidor que es un tipo de programa de ejecución larga llamado ***proceso daemon***.
+ 
+- Una ***API REST*** que especifica las interfaces que los programas pueden usar para hablar con el daemon e instruirlo qué hacer.
+ 
+- Un cliente de interfaz de línea de comandos (CLI).
+
+<div style="text-align: center;margin: 1em;">
+	<img src="{{ site.baseurl }}static/img/blog/docker/engine-components-flow.png" alt="job" class="img-thumbnail" style="width: 90%"/>
+</div>
+<div style="text-align: center;margin: 1em;">
+<p>Flujo de componentes del motor Docker</p>
+</div>
+
+
+***CLI*** utiliza la ***API REST Docker***  para controlar o interactuar con el ***demonio Docker*** a través de scripts o comandos directos de CLI. Muchas otras aplicaciones de Docker utilizan la API y la CLI subyacentes.
+
+El daemon crea y administra objetos de Docker, como imágenes, contenedores, redes y volúmenes.
+
+
+> ***Nota***: Docker está licenciado bajo la licencia Open Source Apache 2.0.
+
+
+
+
+
+
+
+
+
 
 
 ## Docker CLI ##
 
 ## Docker Compose ##
 
-***Compose*** es una herramienta para definir opciones de configuración que se aplican en el tiempo de construcción y ejecutar aplicaciones en contenedores multiples de Docker. ***Compose***, utiliza un*** fichero Compose*** para configurar los servicios de su aplicación. Luego, con un solo comando, crea e inicia todos los servicios de su configuración. 
+***Compose*** es una herramienta para ***definir opciones de configuración que se aplican en el tiempo de construcción y ejecutar aplicaciones en contenedores multiples de Docker***. ***Compose***, utiliza un ***fichero Compose*** para configurar los servicios de su aplicación. Luego, con un solo comando, crea e inicia todos los servicios de su configuración.
 
-El ***fichero Compose*** **proporciona una forma de documentar y configurar todas las dependencias de servicio de la aplicación (bases de datos, colas, cachés, API de servicio web, etc.)**. Mediante la herramienta de línea de comandos ***Compose*** puede crear e iniciar uno o más contenedores para cada dependencia con un solo comando ( `docker-compose up`).
+El ***fichero Compose*** **proporciona una forma de documentar y configurar todas las dependencias de servicio de la aplicación (bases de datos, colas, cachés, API de servicio web, etc.)**. Mediante la herramienta de línea de comandos ***Compose*** puede crear e iniciar uno o más contenedores para cada dependencia con un solo comando `docker-compose up`.
 
-
+***Compose*** es ideal para entornos de desarrollo, pruebas y estadificación, así como para flujos de trabajo de CI. Puede obtener más información sobre cada caso en casos de uso común .
 
 ## Docker Machine ##
 
@@ -185,6 +209,76 @@ Solución de escritorio legacy. Kitematic es una solución heredada, incluida co
 
 
 
+
+
+## Usos prácticos de Docker en el día a día. ##
+
+https://openwebinars.net/blog/5-usos-practicos-de-Docker-en-el-dia-a-dia/
+
+
+
+usar mismo servidor web o de bbdd en distintos proyectos con distintas configuraciones y contenidos pero con una única instalación.
+Para un proyecto concreto se necesita unas actualizaciones o modificaciones que afectarían a los otros proyectos.
+
+....
+
+
+
+Algunos de los usos más habituales que se le dan a Docker:
+
+
+1. ***Simplificación de las configuraciones.***
+
+	Una de las ventajas de la virtualización, es que podemos crear una máquina virtual, guardar el/los archivo/s y montarla en otro equipo manteniendo el último estado y la configuración en la parte superior de su estructura.
+	
+	***Esto mismo hace Docker, pero omitiendo todo el sistema que normalmente tendríamos que generar para poder lanzar el servicio, ocupando menos espacio y tomando muchísimos menos recursos del equipo . Nos permitirá editar un fichero en el que configuramos un entorno que podemos bien desplegar, o bien aplicar a otro contenedor que ya tengamos creado consiguiendo una versatilidad que las máquinas virtuales tradicionales no nos ofrecen.***
+	
+	El poder implementar aplicaciones o configuraciones a múltiples contenedores en diferentes estructuras (IaaS, PaaS…) es ya posible, y en esto parte del mérito de es grandes empresas como Amazon o Google, compatibilizando sus servicios con la tecnología de Docker, convirtiéndose en aliados esenciales para proyectos de mediana o gran envergadura.
+
+
+2. ***Gestión de proyectos.***
+
+	Uno de los mayores problemas a los que se enfrentan los equipos de desarrollo, es el tener que trabajar todos bajo el mismo entorno . Cada equipo sobre el que se va a poner a prueba la aplicación o servicio siempre tendrá algo diferente al resto, una actualización de menos (o de más), una librería de la que otros no dispongan, o directamente un sistema operativo u otro.
+	
+	***Docker hace que el camino desarrollo à producción sea muchísimo más rápido , no teniendo más que desplegar el mismo contenedor todos los desarrolladores o testers, para recibir todos idénticos resultados.***
+	
+	El caso de una web-app que se alojará en un único servidor es el que mejor nos puede ilustrar. Si durante su desarrollo se prueba en un equipo bajo Linux y en otro gobernado por Windows, los resultados que se pueden obtener no tienen por qué coincidir. Se pueden dar falsos positivos a una situación deseada que luego en producción traerán de cabeza al equipo de desarrollo. La homogeneidad del desarrollo está a un “pull” de distancia, teniendo todos el mismo sistema base y pudiendo comparar resultados de una forma más fiable .
+
+
+3. ***Aislamiento de Aplicaciones.***
+
+	Tal y como comentábamos antes, Docker ofrecerá el mismo sistema base para desarrollar o testear aplicaciones o servicios. De igual forma es un sistema aislado del sistema anfitrión, por lo que la ejecución de una aplicación en esa máquina no afectará al puesto en el que estamos trabajando .
+	
+	***Un claro ejemplo de aislamiento de aplicaciones es cuando queremos desplegar dos servidores pero cada uno de ellos tiene diferentes dependencias que causan conflictos con las que necesita el otro. Por ejemplo: las aplicaciones de un servidor necesitan ejecutarse sobre java 7 y en el otro sobre java8. Desplegando cada servidor en contenedores distintos, solventamos este problema de forma fácil, pudiendo aislar los servidores y sus dependencias de posibles errores por dichos conflictos.***
+
+
+4. ***Ahorro de costes en servidores.***
+
+	De igual forma en la que creamos imágenes de sistemas para virtualizar equipos que desplegar para trabajar, ***podemos generar contenedores que desplieguen un servidor sobre el que ejecutar servicios .***
+	
+	Virtualizando estos servidores con Docker, el ahorro en hardware y el aprovechamiento o rendimiento del existente será considerable , sin un consumo de memoria tan alto y con la capacidad de gestionar más eficientemente la memoria disponible entre los servicios que lo requieran; a diferencia de las máquinas virtuales tradicionales que acapararán parte de esa memoria para desplegar el sistema de virtualización sobre el que irá el servidor que queramos virtualizar.
+
+
+5. ***Control de versiones y Depuración.***
+
+	***Una de las características de Docker que normalmente no se engloba en virtualización, es el sistema de control de versiones que nos ofrece , pudiendo regresar a la versión que queramos en caso de necesitarlo.***
+	
+	***Puesto que Docker funciona en tantas plataformas, es fácil mover sus aplicaciones de entornos. Puede mover fácilmente una aplicación de un entorno de prueba a la nube y viceversa siempre que lo necesite.***
+
+	Muy útil por ejemplo en el caso de un servidor web , donde tras una actualización de seguridad nos hemos dejado una abertura por la que nos han tirado el servicio . Cerramos el contenedor, regresamos a una versión anterior y lo ponemos de nuevo en producción. Desplegamos otro contenedor aislado y trabajamos en la actualización de seguridad corrigiendo el error explotado para tirar el servicio. Una vez lo hemos resuelto, no tenemos más que volver a desplegar el contenedor corregido en el entorno de producción . Esto último es cuestión de minutos , contando así con cortes de servicio mínimos para la corrección de errores o implementación de novedades.
+
+
+6. ***Aplicaciones multiusuario.***
+
+	A la hora de gestionar una aplicación que ejecute diferentes niveles en función de cada usuario, podemos encontrarnos con más de un quebradero de cabeza en lo que se refiere a permisos, uso de recursos, limitaciones, etc… Montar la arquitectura de este tipo de aplicaciones suele llevar bastante tiempo, que se podría dedicar a otro proyecto o a otro apartado, en definitiva, tiempo que es igual a dinero.
+	
+	***Docker aporta un nuevo nivel de ejecución, pudiendo contener imágenes con diferentes permisos prestablecidos, distintos usos de recursos o limitaciones, en contenedores aislados; asignando así a un usuario determinado la imagen correspondiente , sin tener que preocuparnos el que vaya a acceder donde no deba o a usar servicios que no le corresponden, porque recordemos, los contenedores Docker son sistemas aislados.***
+
+7. ***Escalar más facilmente***
+
+	Los contenedores ligeros de Docker también hacen escala y bajada rápida y sencilla. Puede lanzar rápidamente más contenedores cuando sea necesario y luego apagarlos fácilmente cuando ya no se necesiten.
+
+Estos son sólo algunos ejemplos prácticos en los que Docker facilita el desarrollo, testeo, implementación, sistema de trabajo o gestión de recursos y usuarios; ahorrando tiempo al desarrollador o la empresa y economizando los proyectos en los que se aplique.
 
 ## Referencias ##
 

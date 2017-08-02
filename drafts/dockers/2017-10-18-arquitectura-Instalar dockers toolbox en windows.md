@@ -1,9 +1,9 @@
 ---
 layout: post
 section: "ARQUITECTURA"
-title:  "Instalar Docker toolBox en Windows"
+title:  "Instalar Docker ToolBox en Windows"
 date:   2016-11-02
-desc: "Procedimiento de instalación de Docker toolbox en Windows. Solución de escritorio legacy. Permite instalar y configurar un entorno docker para sistemas Mac y Windows antiguos que no cumplen los requisitos de ***Docker para Windows***."
+desc: "Procedimiento de instalación de Docker Toolbox en Windows. Solución de escritorio legacy. Permite instalar y configurar un entorno docker para sistemas Mac y Windows antiguos que no cumplen los requisitos de ***Docker para Windows***."
 keywords: "Dockers, Windows,Docker_Toolbox,Virtual_Box,Docker_Machine,Docker_for_Windows,Docker_CLI,Docker_Engine, docker-compose"
 categories: [arquitectura]
 tags: [Dockers, Windows]
@@ -15,18 +15,27 @@ http://blog.marcnuri.com/docker-instalando-docker-en-windows/
 https://pajarokillo.wordpress.com/2016/05/09/instalacion-de-docker-sobre-windows/
 https://docs.docker.com/docker-for-windows/install "docker-for-windows"
 
+## Requisitos previos ##
+
+Aunque vamos a definir los conceptos a lo largo del camino, es bueno que usted entienda, [qué es Docker y por qué lo utilizaría]({{ site.baseurl }}arquitectura/2016/10/04/arquitectura-Introduccion-a-Dockers.html "qué es Docker y por qué lo utilizaría") antes de comenzar.
+
+También debemos asumir que está familiarizado con algunos conceptos antes de continuar:
+
+- ***Maquinas virtuales***
+- Términos de uso de ***recursos de la máquina, como porcentajes de CPU, uso de RAM***, etc.
+
+ 
 # Instalar Docker Toolbox en Windows #
 
 ## Visión de conjunto ##
 
 El sistema más actual para usar docker en windows es mediante la aplicación ***Docker para Windows***.
-El principal requisito para instalar ***Docker para Windows*** es disponer de la versión 64 bits Windows 10 Pro, Enterprise y Educación (actualización 1511 noviembre, Build 10586 o posterior). 
+El principal requisito para instalar ***Docker para Windows*** es **disponer de la versión 64 bits Windows 10 Pro, Enterprise y Educación (actualización 1511 noviembre, Build 10586 o posterior).**
 
 Una de las ventajas de la nueva solución ***Docker para Windows*** es que utiliza virtualización nativa y no requiere VirtualBox para ejecutar ***Docker***. Se ejecuta de forma nativa en Windows, por lo que no hay necesidad de un ***shell Docker QuickStart preconfigurado***. También utiliza ***Hyper-V*** para la virtualización.
 
 > ***Nota***:  Si dispones de esta versión de windows te recomiendo que instales mejor [Docker para Windows](https://docs.docker.com/docker-for-windows/install/ "Docker para Windows") y que no sigas explorando este post.
 
- 
 ***Docker Toolbox*** proporciona una forma de utilizar ***Docker*** en sistemas Windows antiguos que no cumplen con los requisitos mínimos del sistema para la aplicación ***Docker para Windows***. 
 
 El componente principal de ***Docker*** **requiere un sistema operativo Linux para poderse ejecutar**. Para ello necesitamos uno de los componentes principales de ***Docker***, el ***Docker Machine***, que ***permite crear servidores Docker en máquinas virtuales***. De este modo podemos tener servidores ***Docker*** en una ***máquina local*** o en un ***servidor en la nube (Amazon Web Services, Microsoft Azure, Openstack…)***
