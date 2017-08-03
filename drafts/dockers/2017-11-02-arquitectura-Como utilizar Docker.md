@@ -18,7 +18,7 @@ http://www.josedomingo.org/pledin/2016/02/ejemplos-de-ficheros-dockerfile-creand
 https://docs.docker.com/engine/docker-overview/#docker-objects
 
 
-
+https://pajarokillo.wordpress.com/2016/05/09/instalacion-de-docker-sobre-windows/
 
 
 

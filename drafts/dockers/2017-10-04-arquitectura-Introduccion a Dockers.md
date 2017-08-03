@@ -39,6 +39,34 @@ Vale hasta aquí todo esto está muy bien, pero para entender realmente que es d
 
 ## ¿Cómo funciona dockers? ##
 
+
+
+
+
+
+
+
+
+
+
+
+Sin entrar en muchos detalles acerca de imágenes, directorios, contenedores, volúmenes, etc. vamos a tratar de sintetizar un poco como se fundamenta la arquitectura de docker.
+
+En una primera capa encontramos el sistema operativo, aquí es dónde se ejecuta el componente principal de Docker, el demonio o proceso principal (Docker Daemon). El sistema operativo debe de estar basado en el Kernel de Linux 3.10 como mínimo. Es por ello que si vamos a trabajar con Docker desde windows, necesitaremos una máquina virtual dónde ejecutar este sistema operativo, pero eso lo veremos más adelante.
+
+En una siguiente capa encontramos las imágenes. Éstas son plantillas de solo lectura que pueden contener el sistema operativo, el servidor de aplicaciones, etc. Una imagen puede basarse en otra imagen y añadir un componente más, de esta forma, las imágenes se van apilando hasta conseguir los componentes necesarios. Hay un directorio público que contiene infinidad de imágenes, con lo que es posible que alguien ya haya creado una imagen que necesitemos.
+
+Finalmente, en la última capa encontramos el contenedor. Aquí se agrupa todo lo necesario para que pueda ejecutarse la aplicación. Cada contenedor se crea a partir de una imagen. Cada contenedor es un entorno aislado y seguro dónde ejecutar la aplicación, por lo que en general se recomienda ejecutar cada proceso en un contenedor distinto.
+
+
+
+
+
+
+
+
+
+
 ***[Dockerfiles]({{ site.baseurl }}arquitectura/2016/10/25/arquitectura-Dockerfile.html "Dockerfiles")*** son secuencias de comandos que contienen una sucesiva serie de instrucciones, direcciones y comandos que se deben ejecutar para formar una nueva ***imagen de docker***. Cada comando ejecutado se traduce en una nueva capa de la cebolla, formando el producto final. Básicamente reemplazan el proceso de hacer todo manualmente y repetidamente. Cuando se termina de ejecutar un ***Dockerfile*** , se termina formando una imagen, que luego se utiliza para iniciar (es decir, crear) un nuevo ***contenedor***.
 
 ***Dockerfile*** definirá lo que sucede en el entorno dentro de su ***contenedor***. El acceso a recursos como interfaces de red y unidades de disco se virtualiza dentro de este entorno, aislado del resto del sistema, por lo que debe asignar los puertos al mundo exterior y especificar qué archivos desea copiar en Ambiente. Sin embargo, después de hacer eso, puede esperar que la compilación de su aplicación definida en este ***Dockerfile*** se comportará exactamente igual dondequiera que se ejecuta.
@@ -193,7 +221,7 @@ El ***fichero Compose*** **proporciona una forma de documentar y configurar toda
 
 ## Docker Machine ##
 
-***Docker Machine*** es una herramienta que nos ayuda a crear, configurar y manejar máquinas virtuales con ***Docker Engine***.*** Con Docker Machine podemos iniciar, parar o reiniciar los nodos docker, actualizar el cliente o el demonio docker y configurar el cliente docker para acceder a los distintos Docker Engine***. ***El propósito principal del uso de esta herramienta es la de crear máquinas con Docker Engine en sistemas remotos y centralizar su gestión.***
+***Docker Machine*** es una herramienta que nos ayuda a crear, configurar y manejar máquinas virtuales con ***Docker Engine***. ***Con Docker Machine podemos iniciar, parar o reiniciar los nodos docker, actualizar el cliente o el demonio docker y configurar el cliente docker para acceder a los distintos Docker Engine***. ***El propósito principal del uso de esta herramienta es la de crear máquinas con Docker Engine en sistemas remotos y centralizar su gestión.***
 
 ## Kitematic ##
 

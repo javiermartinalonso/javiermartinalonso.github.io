@@ -11,9 +11,6 @@ icon: fa-university
 image: static/img/blog/docker/docker-logo.png
 ---
 
-http://blog.marcnuri.com/docker-instalando-docker-en-windows/
-https://pajarokillo.wordpress.com/2016/05/09/instalacion-de-docker-sobre-windows/
-https://docs.docker.com/docker-for-windows/install "docker-for-windows"
 
 ## Requisitos previos ##
 
@@ -45,24 +42,30 @@ Para el caso de Windows, ***Docker Machine*** creará una máquina virtual emple
 El paquete ***Docker Toolbox***  incluye todo lo necesario para crear un ***servidor Docker***, entre otras cosas ***Virtual Box, Docker-Machine y Docker Engine***. Los componentes se pueden instalar de forma opcional, por ejemplo, es posible que ya contemos con una versión actualizada de ***Virtual Box*** en nuestro sistema, por lo que no será necesario instalarlo.
 
 
-
 ## Máquina utilizada para el tutorial ##
 
 - Sistema operativo: **Windows 8.1 Pro 64bits**.
 - Memoria: **16 Gb**
+
 
 ## Lo que obtienes y cómo funciona ##
 
 ***Docker Toolbox*** incluye las siguientes herramientas ***Docker***:
 
 - ***Cliente Docker CLI*** para ejecutar ***Docker Engine*** para crear imágenes y contenedores.
-- ***Docker Machine*** para que pueda ejecutar comandos de ***Docker Engine*** desde terminales de Windows.
-- ***Docker Compose*** para ejecutar el comando ***docker-compose***.
-- ***Kitematic***, la interfaz gráfica de usuario de ***Docker***.
-- El ***shell Docker QuickStart*** preconfigurado para un entorno de ***línea de comandos Docker***.
--*** Oracle VM VirtualBox***.
 
-Dado que el ***daemon de Docker Engine*** utiliza funciones de kernel específicas de Linux, no puede ejecutar ***Docker Engine*** de forma nativa en Windows. En su lugar, debe utilizar el ***comando Docker Machine*** para crear y adjuntar una pequeña maquina virtual de Linux en su máquina. Esta VM hospeda ***Docker Engine*** para usted en su sistema Windows.
+- ***Docker Machine*** para que pueda ejecutar comandos de ***Docker Engine*** desde terminales de Windows.
+
+- ***Docker Compose*** para ejecutar el comando ***docker-compose***.
+
+- ***Kitematic***, la interfaz gráfica de usuario de ***Docker***.
+
+- El ***shell Docker QuickStart*** preconfigurado para un entorno de ***línea de comandos Docker***.
+
+- ***Oracle VM VirtualBox***.
+
+
+Dado que el ***daemon de Docker Engine*** utiliza funciones de kernel específicas de Linux, no puede ejecutar ***Docker Engine*** de forma nativa en Windows. En su lugar, debe utilizar el ***comando Docker Machine*** para crear y adjuntar una pequeña maquina virtual de Linux en su máquina a través del ***Oracle VM VirtualBox***. Esta ***VM*** hospeda ***Docker Engine*** para usted en su sistema Windows y es accesible a través del ***shell Docker QuickStart***.
 
 
 ## Paso 1: Revise su versión de windows ##
@@ -89,11 +92,12 @@ Para verificar que su máquina cumple estos requisitos, haga lo siguiente:
 En esta sección, se instala el software ***Docker Toolbox*** y varias aplicaciones "auxiliares". La instalación agrega el siguiente software a su máquina:
 
 - ***Docker Client para Windows***.
+
 - Herramienta de gestión ***Docker Toolbox y ISO***.
+
 - ***Oracle VM VirtualBox***.
+
 - ***Herramientas de Git MSYS-git UNIX***.
-
-
 
 > ***Nota***: Si tiene instalada una versión anterior de ***VirtualBox***, no vuelva a instalarla con el instalador de ***Docker Toolbox***. Cuando se le solicite, desmarque la casilla. Si tiene Virtual Box funcionando, debe cerrarlo antes de ejecutar el instalador.
 >
@@ -101,19 +105,19 @@ En esta sección, se instala el software ***Docker Toolbox*** y varias aplicacio
 
 1. Vaya a la página de [Docker Toolbox](https://www.docker.com/products/docker-toolbox "https://www.docker.com/products/docker-toolbox").
 
+	<div style="text-align: center;margin: 1em;">
+		<img src="{{ site.baseurl }}static/img/blog/docker/docker-toolbox-page.png" alt="job" class="img-thumbnail"/>
+	</div>
+
 2. Haga clic en el enlace del instalador para descargar e instale ***Docker Toolbox*** haciendo doble clic en el instalador.
  
 3. El instalador inicia el cuadro de diálogo **"Setup - Docker Toolbox"**.
 
 	Si el diálogo de seguridad de Windows le pide que permita que el programa realice un cambio, elija Sí . El sistema muestra el asistente Setup - ***Docker Toolbox for Windows***.
 
-
-
-	Página de publicación
-
-
-
-
+	<div style="text-align: center;margin: 1em;">
+		<img src="{{ site.baseurl }}static/img/blog/docker/installer_open.png" alt="job" class="img-thumbnail" />
+	</div>
 
 4. Pulse Siguiente para aceptar todos los valores predeterminados y luego Instalar .
 
@@ -121,44 +125,41 @@ En esta sección, se instala el software ***Docker Toolbox*** y varias aplicacio
 
 	Cuando se completa, el instalador informa de que tuvo éxito:
 
-	Éxito
-
-5. Desactive la opción "Ver accesos directos en el Explorador de archivos" y pulse Finalizar .
+	<div style="text-align: center;margin: 1em;">
+		<img src="{{ site.baseurl }}static/img/blog/docker/finish.png" alt="job" class="img-thumbnail"/>
+	</div>
 
 ## Paso 3: Verificar la instalación ##
 
 El instalador coloca ***Docker Toolbox*** y ***VirtualBox*** en su carpeta de aplicaciones . En este paso, inicia ***Docker Toolbox*** y ejecuta un comando ***Docker*** simple.
 
-1. En el escritorio, busque el icono de ***Docker Toolbox***.
+1. En el escritorio, busque el icono de ***Docker Quickstart***.
 
-
-
-
-
-	Utilizando ***Docker Quickstart Terminal***
+	<div style="text-align: center;margin: 1em;">
+		<img src="{{ site.baseurl }}static/img/blog/docker/quickstart-escritorio.png" alt="job" class="img-thumbnail" />
+	</div>
 	
-	Esta terminal la crea el programa de instalación en el escritorio (por lo general). Haciendo doble click sobre el icono, la aplicación abre una nueva ventana shell y crea una máquina virtual por defecto, llamada default. Desde ese momento ya podemos comenzar a utilizar comandos docker.
-
-
-
-
-	Escritorio
-
-2. Haga clic en el icono para iniciar un terminal ***Docker Toolbox***.
+2. Haga clic en el icono de ***Docker Quickstart*** para iniciar un terminal ***Docker Toolbox***.
 
 	Si el sistema muestra una solicitud de Control de cuentas de usuario para permitir que ***VirtualBox*** realice cambios en su equipo. Seleccione Sí .
 
-	El terminal hace varias cosas para configurar ***Docker Toolbox*** para usted. Cuando se hace, el terminal muestra el $mensaje.
+	Esta terminal la crea el programa de instalación en el escritorio. Haciendo doble click sobre el icono, ***la aplicación abre una nueva ventana shell y sin que nosotros seamos conscientes de ello crea una máquina virtual por defecto, llamada default en el virtual box***. Desde ese momento ya podemos comenzar a utilizar comandos docker.
 
-	Escritorio
+	<div style="text-align: center;margin: 1em;">
+		<img src="{{ site.baseurl }}static/img/blog/docker/machine-default.png" alt="job" class="img-thumbnail" />
+	</div>
+
+	Dado que el ***daemon de Docker Engine*** utiliza funciones de kernel específicas de Linux, no puede ejecutar ***Docker Engine*** de forma nativa en Windows. En su lugar, debe utilizar el ***comando Docker Machine*** para crear y adjuntar una pequeña maquina virtual de Linux en su máquina. Esta VM hospeda ***Docker Engine*** para usted en su sistema Windows.
+
+	Volviendo al terminal de ***Docker Quickstart*** hace varias cosas para configurar ***Docker Toolbox*** para usted. Cuando termina, el terminal muestra el caracter `$`.
+
+	<div style="text-align: center;margin: 1em;">
+		<img src="{{ site.baseurl }}static/img/blog/docker/quickstart-terminal.png" alt="job" class="img-thumbnail"/>
+	</div>	
 
 	El terminal ejecuta un entorno bash especial en lugar del símbolo del sistema estándar de Windows. El entorno bash es requerido por ***Docker***.
 
-3. Haga que el terminal esté activo haciendo clic en el ratón junto a la $solicitud.
-	
-	/ Terminal shell
-
-4. Ejecuta el comando ***docker*** `run hello-world`.
+3. Ejecuta el comando `docker run hello-world`.
 
 	Si todo va bien, la salida del comando se ve así:
 
@@ -185,6 +186,8 @@ El instalador coloca ***Docker Toolbox*** y ***VirtualBox*** en su carpeta de ap
 		
 		 For more examples and ideas, visit:
 		  https://docs.docker.com/userguide/
+
+	Con el comando anterior, le hemos indicado al ***cliente Docker*** que cree un ***contenedor (instancia)*** de una ***imagen Docker*** llamada **hello-world**. El ***cliente Docker*** busca esa imagen en nuestro ***repositorio local (en nuestra máquina)***, y si no la encuentra la busca en un [repositorio público de imágenes Docker](https://hub.docker.com/ "https://hub.docker.com/"), y si la encuentra, la descarga y la lanza.
 
 
 ## Cómo desinstalar Toolbox ##
@@ -214,81 +217,13 @@ Para desinstalar ***Toolbox*** en Windows, haga lo siguiente:
 
 3. Desinstale ***Docker Toolbox*** utilizando el proceso estándar de Window para desinstalar programas a través del panel de control (programas y características).
 
-
-	> ***Nota*** : Este proceso no elimina el docker-install.exearchivo. Debe eliminar el archivo usted mismo.
+	> ***Nota*** : Este proceso no elimina el archivo docker-install.exe. Debe eliminar el archivo usted mismo.
 
 4. Opcionalmente, quite el directorio `C:\Users\<your-user>\.docker`.
 
 	Si desea quitar completamente ***Docker***, puede verificar que la desinstalación eliminó el directorio `.docker` bajo su ruta de acceso de usuario. Si todavía está allí, retírelo manualmente. Este directorio almacena alguna configuración y / o estado del programa ***Docker*** (por ejemplo, información sobre máquinas creadas, como certificados). La eliminación de este directorio normalmente no es necesaria.
 
 5. Desinstale ***Oracle VirtualBox***, que se instala como parte de la instalación de ***Toolbox***.
-
-## Próximos pasos ##
-
-Pruebe el tutorial de Inicio .
-
-Explore más profundamente con más tutoriales y ejemplos sobre la construcción de imágenes, la ejecución de contenedores, la creación de redes, la administración de datos y el almacenamiento de imágenes en Docker Hub.
-
-Más información sobre Kitematic
-
-Aprenda sobre la máquina Docker
-
-Más información sobre Docker Compose
-
-Docker , documentation , install , toolbox , win
-
-
-
-
-
-
-
-
-
-
-
-https://pajarokillo.wordpress.com/2016/05/09/instalacion-de-docker-sobre-windows/
-
-
-
-
-
-Con el comando anterior, le hemos indicado al cliente Docker que cree un contenedor (instancia) de una imagen Docker llamada hello-world. El cliente Docker busca esa imagen en nuestro repositorio local (en nuestra máquina), y si no la encuentra la busca en un repositorio público de imágenes Docker, y si la encuentra, la descarga y la lanza.
-
-Utilizando la línea de comandos
-
-Instalando la Docker Toolbox ya tendríamos configuradas las variables de entorno necesarias para ejecutar comandos docker desde nuestro terminal preferido.
-
-El primer paso sería crear una máquina virtual con el comando create
-
-$ docker-machine create -d virtualbox default
-Con este comando indicamos que hacemos que se cree una máquina virtual con el driver de VirtualBox y que lleve por nombre default. Una vez ejecutado el comando, deberíamos ver en la consola algo parecido a la siguiente imagen
-
-docker_create
-
-Este comando deja corriendo la máquina virtual; podríamos arrancar VirtualBox y comprobar que la máquina virtual se ha creado y está corriendo.
-
-Si queremos ver un listado de las máquina docker disponibles, utilizamos el comando ls
-
-$ docker-machine ls
-docker_ls
-
-Para trabajar con la máquina Docker debemos establecer variables de entorno para la máquina con el comando env
-
-$ docker-machine env –shell cmd default
-docker_env
-
-Y ahora ejecutar un comando para conectar con el cliente Docker
-
-$ eval “$(docker-machine env default)”
-Y ya podríamos trabajar desde nuestra consola con el cliente Docker y ejecutar culquier comando (run, start, stop, …)
-
-
-
-
-
-
-
 
 ## Referencias ##
 
