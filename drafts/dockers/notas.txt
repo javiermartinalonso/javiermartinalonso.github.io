@@ -1,3 +1,29 @@
+¿Cómo persisto por ejemplo las modificaciones en la bbdd? --> El sistema de ficheros de la bbdd en el sistema de archivos del host?
+
+https://www.ivankrizsan.se
+
+
+*************************************************************************************************+
+Requisitos previos
+Aunque vamos a definir los conceptos a lo largo del camino, es bueno que usted entienda lo que Docker es y por qué utilizaría Docker antes de comenzar.
+
+También debemos asumir que está familiarizado con algunos conceptos antes de continuar:
+
+Direcciones IP y puertos
+Maquinas virtuales
+Edición de archivos de configuración
+Familiaridad básica con las ideas de dependencias de código y construcción
+Términos de uso de recursos de la máquina, como porcentajes de CPU, uso de RAM en bytes, etc.
+*************************************************************************************************+
+
+
+
+
+http://blog.marcnuri.com/docker-accediendo-al-shell-ssh-de-docker-machine/
+http://blog.marcnuri.com/docker-instalando-docker-en-windows/
+
+
+
 https://www.youtube.com/playlist?list=PLEtcGQaT56chIpnSavOSvaU2ZGAW7d1vE
 https://www.youtube.com/watch?v=DoZZiSxXLJs
 
@@ -10,6 +36,14 @@ https://www.youtube.com/watch?v=DoZZiSxXLJs
 https://docs.docker.com/compose
 https://docs.docker.com/compose/compose-file
 https://docs.docker.com/kitematic
+
+
+https://docs.docker.com/get-started/part3/#recap-and-cheat-sheet-optional
+https://docs.docker.com/get-started/part4/#recap-and-cheat-sheet-optional
+https://docs.docker.com/get-started/part5/#prerequisites
+
+
+
 
 
 https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/

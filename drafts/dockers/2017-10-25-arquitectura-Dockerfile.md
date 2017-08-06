@@ -13,6 +13,7 @@ image: static/img/blog/docker/docker-logo.png
 
 # Dockerfile #
 
+https://pajarokillo.wordpress.com/2016/05/23/usando-dockerfile-para-crear-imagenes-ii/
 
 https://docs.docker.com/get-started/part2/#conclusion-of-part-two
 
@@ -56,7 +57,7 @@ https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docke
 
 - **CMD**: Configura comandos por defecto para ser ejecutado durante la compilación (cuando se instancia un contenedor utilizando la imagen que se está construyendo). Este comando es similar al comando RUN con la única diferencia que este no se ejecuta durante la fase de compilación (build) sino que se ejecuta cuando iniciamos el contenedor.
 
-Esta instrucción sirve para ejecutar una acción por defecto en el arranque de un contenedor, si escribes más de una solo se ejecutará la última. Y si al arrancar un contenedor especificas un comando puedes sobrescribir esta instrucción por defecto.
+Esta instrucción sirve para ejecutar una acción por defecto en el arranque de un contenedor, si escribes más de una solo tendrá efecto la última instrucción que escribas. Y si al arrancar un contenedor especificas un comando puedes sobrescribir esta instrucción por defecto.
 
 
 
@@ -83,8 +84,8 @@ Esta instrucción sirve para ejecutar una acción por defecto en el arranque de 
 
 	Ejemplo:
 	
-		# Usage: ENV key value
-		ENV HOME /root
+		# establece la variable de entorno JAVA_HOME
+		ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
 - **EXPOSE**: El comando `EXPOSE` se utiliza para asociar un puerto especificado para habilitar la conexión en red entre el proceso en ejecución dentro del contenedor y el mundo exterior (es decir, el host). Indica los puertos TCP/IP por los que se pueden acceder a los servicios del contenedor, los típicos son 22 (SSH), 80 (HTTP) y en este caso el puerto por defecto de mysql 3306.
 
@@ -107,7 +108,7 @@ Esta instrucción sirve para ejecutar una acción por defecto en el arranque de 
 		# Usage: MAINTAINER [name] [e-mail]
 		MAINTAINER authors_name authors_email
 
-- **RUN**: Permite ejecutar una instrucción en el contenedor, por ejemplo, para instalar algún paquete mediante el gestor de paquetes (`apt-get, yum, rpm, …`). Ejecuta un comando y cambia (commit) el resultado de la la imagen final (contenedor). A diferencia de CMD, en realidad se utiliza para construir la imagen (formando otra capa encima de la anterior que está comprometida).
+- **RUN**: Permite ejecutar una instrucción en el contenedor, por ejemplo, para instalar algún paquete mediante el gestor de paquetes o ejecutar algún fichero ejecutable…(`apt-get, yum, …`). Ejecuta un comando y cambia (commit) el resultado de la la imagen final (contenedor). A diferencia de CMD, en realidad se utiliza para construir la imagen (formando otra capa encima de la anterior que está comprometida).
 
 	Ejemplo:
 	

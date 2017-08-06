@@ -64,7 +64,6 @@ El paquete ***Docker Toolbox***  incluye todo lo necesario para crear un ***serv
 
 - ***Oracle VM VirtualBox***.
 
-
 Dado que el ***daemon de Docker Engine*** utiliza funciones de kernel específicas de Linux, no puede ejecutar ***Docker Engine*** de forma nativa en Windows. En su lugar, debe utilizar el ***comando Docker Machine*** para crear y adjuntar una pequeña maquina virtual de Linux en su máquina a través del ***Oracle VM VirtualBox***. Esta ***VM*** hospeda ***Docker Engine*** para usted en su sistema Windows y es accesible a través del ***shell Docker QuickStart***.
 
 
@@ -149,7 +148,7 @@ El instalador coloca ***Docker Toolbox*** y ***VirtualBox*** en su carpeta de ap
 		<img src="{{ site.baseurl }}static/img/blog/docker/machine-default.png" alt="job" class="img-thumbnail" />
 	</div>
 
-	Dado que el ***daemon de Docker Engine*** utiliza funciones de kernel específicas de Linux, no puede ejecutar ***Docker Engine*** de forma nativa en Windows. En su lugar, debe utilizar el ***comando Docker Machine*** para crear y adjuntar una pequeña maquina virtual de Linux en su máquina. Esta VM hospeda ***Docker Engine*** para usted en su sistema Windows.
+	Dado que el ***daemon de Docker Engine*** utiliza funciones de kernel específicas de Linux, no puede ejecutar ***Docker Engine*** de forma nativa en Windows. En su lugar, debe utilizar el ***comando Docker Machine*** para crear y adjuntar una pequeña maquina virtual de Linux en su máquina a través del ***Oracle VM VirtualBox***. Esta ***VM*** hospeda ***Docker Engine*** para usted en su sistema Windows y es accesible a través del ***shell Docker QuickStart***.
 
 	Volviendo al terminal de ***Docker Quickstart*** hace varias cosas para configurar ***Docker Toolbox*** para usted. Cuando termina, el terminal muestra el caracter `$`.
 
@@ -224,6 +223,16 @@ Para desinstalar ***Toolbox*** en Windows, haga lo siguiente:
 	Si desea quitar completamente ***Docker***, puede verificar que la desinstalación eliminó el directorio `.docker` bajo su ruta de acceso de usuario. Si todavía está allí, retírelo manualmente. Este directorio almacena alguna configuración y / o estado del programa ***Docker*** (por ejemplo, información sobre máquinas creadas, como certificados). La eliminación de este directorio normalmente no es necesaria.
 
 5. Desinstale ***Oracle VirtualBox***, que se instala como parte de la instalación de ***Toolbox***.
+
+
+
+
+
+http://blog.marcnuri.com/docker-accediendo-al-shell-ssh-de-docker-machine/
+
+
+
+
 
 ## Referencias ##
 

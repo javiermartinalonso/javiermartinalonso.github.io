@@ -27,9 +27,13 @@ Para separar los contenedores entre sí y de la máquina anfitriona, ***Docker**
 
 ## Elementos Docker Principales ##
 
+- Las ***docker machines***, máquinas locales (y virtuales) o remotas (como Amazon AWS) ejecutando un ***Docker***. Como cualquier otra máquina, tiene una dirección IP física. Cada ***máquina Docker*** puede gestionar varias imágenes y contenedores
+
 - ***Dockerfiles***: Scripts que automatizan el proceso de construcción de imágenes.
+
 - ***Imágenes docker***: instantáneas de contenedores o imágenes de base del sistema operativo (por ejemplo, ***Ubuntu***).
-- ***Contenedores docker***: Contienen todo-su-aplicación.
+
+- ***Contenedores docker***: Contienen toda su aplicación con las dependencias de librerías y software que necesita. Son muy ligeros y aislados, ya que se ejecutan en un único proceso Linux.
 
 Las imágenes en ***Docker*** se podrían ver como un componente estático, pues no son más que un sistema operativo base, con un conjunto de aplicaciones empaquetadas, mientras que un ***contenedor*** es la instanciación o ejecución de una ***imagen***, pudiendo ejecutar varios ***contenedores*** a partir de una misma ***imagen***.
 
@@ -221,7 +225,7 @@ El ***fichero Compose*** **proporciona una forma de documentar y configurar toda
 
 ## Docker Machine ##
 
-***Docker Machine*** es una herramienta que nos ayuda a crear, configurar y manejar máquinas virtuales con ***Docker Engine***. ***Con Docker Machine podemos iniciar, parar o reiniciar los nodos docker, actualizar el cliente o el demonio docker y configurar el cliente docker para acceder a los distintos Docker Engine***. ***El propósito principal del uso de esta herramienta es la de crear máquinas con Docker Engine en sistemas remotos y centralizar su gestión.***
+***Docker Machine*** es una herramienta que nos ayuda a crear, configurar y manejar máquinas virtuales con ***Docker Engine***. ***Con Docker Machine podemos iniciar, parar o reiniciar los nodos docker (máquinas virtuales docker), actualizar el cliente o el demonio docker y configurar el cliente docker para acceder a los distintos Docker Engine***. ***El propósito principal del uso de esta herramienta es la de crear máquinas con Docker Engine en sistemas remotos y centralizar su gestión.***.
 
 ## Kitematic ##
 
