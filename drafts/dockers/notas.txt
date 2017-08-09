@@ -1,9 +1,28 @@
 ¿Cómo persisto por ejemplo las modificaciones en la bbdd? --> El sistema de ficheros de la bbdd en el sistema de archivos del host?
 
+* Podemos crear una imagen como una snapshop o un tag de la entrega del producto
+
+* Podemos crear sólo la infraestructura del entorno y mediante volumenes persistir los cambios en las bbdd o los wars, etc
+
+* Los cambios sobre los servidores, configuraciones, caches etc, podemos persistirlos haciendo commit de la imagen y creando una nueva.
+
+
+
 https://www.ivankrizsan.se
 
 
-*************************************************************************************************+
+*************************************************************************************************
+Ordenar argumentos de varias líneas
+
+Como siempre, para hacer sus declaraciones más Dockerfilelargas o complejas más legibles, 
+comprensibles y mantenibles, divididas RUNen múltiples líneas separadas con barras invertidas.
+
+
+Siempre que sea posible, facilite los cambios posteriores ordenando argumentos multilínea de forma alfanumérica. 
+Esto le ayudará a evitar la duplicación de paquetes y hacer la lista mucho más fácil de actualizar. 
+Esto también hace PRs mucho más fácil de leer y revisar. Agregar un espacio antes de una barra invertida ( \) ayuda también.
+
+*************************************************************************************************
 Requisitos previos
 Aunque vamos a definir los conceptos a lo largo del camino, es bueno que usted entienda lo que Docker es y por qué utilizaría Docker antes de comenzar.
 
@@ -14,7 +33,7 @@ Maquinas virtuales
 Edición de archivos de configuración
 Familiaridad básica con las ideas de dependencias de código y construcción
 Términos de uso de recursos de la máquina, como porcentajes de CPU, uso de RAM en bytes, etc.
-*************************************************************************************************+
+*************************************************************************************************
 
 
 
@@ -42,8 +61,10 @@ https://docs.docker.com/get-started/part3/#recap-and-cheat-sheet-optional
 https://docs.docker.com/get-started/part4/#recap-and-cheat-sheet-optional
 https://docs.docker.com/get-started/part5/#prerequisites
 
+https://docs.docker.com/engine/userguide/
+https://docs.docker.com/samples
 
-
+https://github.com/docker/labs/tree/master/developer-tools/java/
 
 
 https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/

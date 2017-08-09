@@ -12,6 +12,11 @@ image: static/img/blog/docker/docker-logo.png
 ---
 
 
+https://github.com/docker/labs/blob/master/beginner/chapters/webapps.md
+
+
+https://github.com/docker/labs/blob/master/beginner/chapters/alpine.md
+
 http://www.josedomingo.org/pledin/2016/02/ejemplos-de-ficheros-dockerfile-creando-imagenes-docker/
 
 
@@ -27,16 +32,18 @@ Aunque vamos a definir los conceptos a lo largo del camino, es bueno que usted e
 
 También debemos asumir que está familiarizado con algunos conceptos antes de continuar:
 
-- Direcciones ***IP y puertos***
-- ***Maquinas virtuales***
-- Edición de ***archivos de configuración***
-- Familiaridad básica con las ideas de ***dependencias de código*** y construcción
+- Direcciones ***IP y puertos***.
+- ***Maquinas virtuales***.
+- Edición de ***archivos de configuración***.
+- Familiaridad básica con las ideas de ***dependencias de código*** y construcción.
 - Términos de uso de ***recursos de la máquina, como porcentajes de CPU, uso de RAM***, etc.
-- 
+
 # Cómo utilizar Docker #
 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-getting-started
+
 https://docs.docker.com/get-started/part2/#recap-and-cheat-sheet-optional
+
 http://www.muylinux.com/2016/04/19/tutorial-docker/
 
 Una vez que tenga docker instalado, su experiencia de uso intuitivo hace que sea muy fácil de trabajar. Por ahora, tendrás el daemon docker ejecutándose en segundo plano. Si no es así, utilice el comando siguiente para ejecutar el daemon docker.
@@ -525,6 +532,10 @@ En este último apartado vamos a ver como crear una nueva imagen a través de un
 
 
 ***-----------------------------------------------------------------------------------------***
+https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch04-run-container.adoc
+
+
+
 
 
 
@@ -533,8 +544,9 @@ En este último apartado vamos a ver como crear una nueva imagen a través de un
 
 
 ## Referencias ##
-[maven-introduction-to-profiles](http://maven.apache.org/guides/introduction/introduction-to-profiles.html "maven-introduction-to-profiles")
 
-[spring-introduction-to-profiles](http://docs.spring.io/autorepo/docs/spring-boot/current/reference/html/boot-features-profiles.html "spring-introduction-to-profiles")
 
-[Spring-boot-features-external-config](http://docs.spring.io/autorepo/docs/spring-boot/current/reference/html/boot-features-external-config.html "Spring-boot-features-external-config")
+
+[https://docs.docker.com/engine/userguide/](https://docs.docker.com/engine/userguide/ "https://docs.docker.com/engine/userguide/")
+
+[https://docs.docker.com/samples](https://docs.docker.com/samples "https://docs.docker.com/samples")

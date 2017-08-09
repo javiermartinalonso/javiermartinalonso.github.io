@@ -18,6 +18,9 @@ image: static/img/blog/docker/docker-logo.png
 - Máquina virtual ***VirtualBox 5.1.24 preconfigurada para usar Ubuntu 64 bits.***
 - Sistema operativo: ***Ubuntu 16.04.1 LTS***
 
+El sistema operativo virtual es Ubuntu Server 16.04 de 64 bits. Es una versión de soporte a largo plazo, por lo que será alrededor de un tiempo. La principal motivación para la elección del sistema operativo es que tengo más experiencia con Ubuntu que con otras distribuciones de Linux. 
+Ya que quiero poder ejecutar Docker en mis máquinas virtuales, me aseguré de que Ubuntu es una de las distribuciones Linux soportadas y que 16.04 es de hecho una versión soportada.
+
 ## Requisitos previos ##
 Aunque vamos a definir los conceptos a lo largo del camino, es bueno que usted entienda, [qué es Docker y por qué lo utilizaría]({{ site.baseurl }}arquitectura/2016/10/04/arquitectura-Introduccion-a-Dockers.html "qué es Docker y por qué lo utilizaría") antes de comenzar.
 

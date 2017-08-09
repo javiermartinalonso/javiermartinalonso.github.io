@@ -18,6 +18,7 @@ image: static/img/blog/docker/docker-logo.png
 ***Docker*** es una herramienta open-source que nos permite realizar una ‘***virtualización ligera***’, con la que poder empaquetar entornos y aplicaciones que posteriormente podremos desplegar en cualquier sistema que disponga de esta tecnología.
 
 Todo esto **permite separar la aplicación de la infraestructura subyacente de aplicaciones y servidores (Sistema operativo, Bases de datos, servidores de aplicaciones…) y centrarse únicamente en su desarrollo y puesta en marcha**. De este modo, podemos reproducir exactamente las mismas condiciones en cuanto a arquitectura en el entorno de desarrollo y en el entorno productivo lo que ademas de facilitar el desarrollo y testeo de la aplicación, nos evitará futuros bugs y defectos relacionados con las mismas.
+ Docker le permite obtener su código probado y desplegado en producción lo más rápido posible.
 <!--more -->
 
 
@@ -33,7 +34,7 @@ Para separar los contenedores entre sí y de la máquina anfitriona, ***Docker**
 
 - ***Imágenes docker***: instantáneas de contenedores o imágenes de base del sistema operativo (por ejemplo, ***Ubuntu***).
 
-- ***Contenedores docker***: Contienen toda su aplicación con las dependencias de librerías y software que necesita. Son muy ligeros y aislados, ya que se ejecutan en un único proceso Linux.
+- ***Contenedores docker***: Contienen toda su aplicación con las dependencias de librerías y software que necesita. Son muy ligeros y aislados, ya que se ejecutan en un único proceso Linux. Los contenedores se pueden ejecutar, iniciar, detener, mover y eliminar.
 
 Las imágenes en ***Docker*** se podrían ver como un componente estático, pues no son más que un sistema operativo base, con un conjunto de aplicaciones empaquetadas, mientras que un ***contenedor*** es la instanciación o ejecución de una ***imagen***, pudiendo ejecutar varios ***contenedores*** a partir de una misma ***imagen***.
 
@@ -45,7 +46,7 @@ Vale hasta aquí todo esto está muy bien, pero para entender realmente que es d
 
 
 
-
+https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch02-basic-concepts.adoc
 
 
 
@@ -181,7 +182,13 @@ Los requisitos para poder instalar ***Docker para Windows***:
 
 Solución de escritorio legacy. Permite instalar y configurar un entorno docker para sistemas Mac y Windows antiguos que no cumplen los requisitos de ***Docker para Mac*** y ***Docker para Windows***. 
 
-Lo que incluye la instalación de ***Docker para Windows*** : La instalación proporciona ***Docker Engine*** , ***Docker CLI***, ***Docker Compose*** , ***Docker Machine***,El ***shell Docker QuickStart*** preconfigurado para un entorno de línea de comandos ***Docker***, ***Oracle VM VirtualBox*** y ***Kitematic*** .
+Lo que incluye la instalación de ***Docker para Windows*** : La instalación proporciona ***Docker Engine*** , ***Docker CLI***, ***Docker Compose*** , ***Docker Machine***,El ***shell Docker QuickStart*** preconfigurado para un entorno de línea de comandos ***Docker***, ***Kitematic*** y ***Oracle VM VirtualBox*** con una maquina virtual con ***Boot2docker*** .
+
+
+## Boot2docker ##
+
+***Boot2docker*** **es una distribución ligera de Linux basada en Tiny Core Linux hecha específicamente para ejecutar contenedores Docker**. Funciona completamente desde RAM, pesa unos 40Mb y arranca en unos 5s. Con la instalación de ***Docker ToolBox*** se crea una maquina virtual en el virtualBox con esta distribución y es lo que nos permite ejecutar contenedores en un sistema windows o Mac.
+
 
 ## Docker Engine ##
 
@@ -217,7 +224,9 @@ El ***cliente Docker (CLI)*** es la principal forma en que muchos usuarios de **
 
 ## Docker Compose ##
 
-***Compose*** es una herramienta para ***definir opciones de configuración que se aplican en el tiempo de construcción y ejecutar aplicaciones en contenedores multiples de Docker***. ***Compose***, utiliza un ***fichero Compose*** para configurar los servicios de su aplicación. Luego, con un solo comando, crea e inicia todos los servicios de su configuración.
+La filosofia de docker es que cada contenedor tenga la responsabilidad justa para resolver el servicio que implementa: una bbdd, un servidor de aplicaciones, ... Por tanto un proyecto complejo estará formado por múltiples contenedores Docker que deben estar orquestados correctamente.
+
+***Docker Compose*** es una herramienta para ***definir opciones de configuración que se aplican en el tiempo de construcción y ejecutar aplicaciones en contenedores multiples de Docker***. ***Docker Compose***, utiliza un un único ***fichero Compose*** para configurar los servicios de su aplicación. Luego, con un solo comando, crea e inicia todos los servicios de su configuración.
 
 El ***fichero Compose*** **proporciona una forma de documentar y configurar todas las dependencias de servicio de la aplicación (bases de datos, colas, cachés, API de servicio web, etc.)**. Mediante la herramienta de línea de comandos ***Compose*** puede crear e iniciar uno o más contenedores para cada dependencia con un solo comando `docker-compose up`.
 

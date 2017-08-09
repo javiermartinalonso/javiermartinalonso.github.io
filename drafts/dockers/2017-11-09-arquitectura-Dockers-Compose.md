@@ -13,9 +13,13 @@ image: static/img/blog/docker/docker-logo.png
 
 # Docker Compose #
 
+https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch05-compose.adoc
+
 https://docs.docker.com/compose
 
-***Compose*** es una herramienta para ***definir opciones de configuración que se aplican en el tiempo de construcción y ejecutar aplicaciones en contenedores multiples de Docker***. ***Compose***, utiliza un ***fichero Compose*** para configurar los servicios de su aplicación. Luego, con un solo comando, crea e inicia todos los servicios de su configuración.
+La filosofia de docker es que cada contenedor tenga la responsabilidad justa para resolver el servicio que implementa: una bbdd, un servidor de aplicaciones, ... Por tanto un proyecto complejo estará formado por múltiples contenedores Docker que deben estar orquestados correctamente.
+
+***Docker Compose*** es una herramienta para ***definir opciones de configuración que se aplican en el tiempo de construcción y ejecutar aplicaciones en contenedores multiples de Docker***. ***Docker Compose***, utiliza un un único ***fichero Compose*** para configurar los servicios de su aplicación. Luego, con un solo comando, crea e inicia todos los servicios de su configuración.
 
 El ***fichero Compose*** **proporciona una forma de documentar y configurar todas las dependencias de servicio de la aplicación (bases de datos, colas, cachés, API de servicio web, etc.)**. Mediante la herramienta de línea de comandos ***Compose*** puede crear e iniciar uno o más contenedores para cada dependencia con un solo comando `docker-compose up`.
 
@@ -133,3 +137,7 @@ Para obtener más información sobre el uso de funciones orientadas a la producc
 ## Referencias ##
 
 [https://docs.docker.com/compose](https://docs.docker.com/compose "https://docs.docker.com/compose")
+
+
+[https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch05-compose.adoc](https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch05-compose.adoc "https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch05-compose.adoc")
+

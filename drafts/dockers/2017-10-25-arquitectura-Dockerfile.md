@@ -110,10 +110,34 @@ Esta instrucción sirve para ejecutar una acción por defecto en el arranque de 
 
 - **RUN**: Permite ejecutar una instrucción en el contenedor, por ejemplo, para instalar algún paquete mediante el gestor de paquetes o ejecutar algún fichero ejecutable…(`apt-get, yum, …`). Ejecuta un comando y cambia (commit) el resultado de la la imagen final (contenedor). A diferencia de CMD, en realidad se utiliza para construir la imagen (formando otra capa encima de la anterior que está comprometida).
 
+	> ***Nota***: La razón de tener un único comando RUN de Docker y encadenar los comandos de shell con && es que Docker creará una capa adicional en la imagen para cada comando RUN. Cuantos menos comandos RUN contenga un archivo Docker, menor será la imagen resultante.
+	> 
 	Ejemplo:
 	
 		# Usage: RUN [command]
 		RUN aptitude install -y riak
+
+
+
+		RUN apt-get update && apt-get install -y \
+		aufs-tools \
+		automake \
+		build-essential \
+		curl \
+		dpkg-sig \
+		libcap-dev \
+		libsqlite3-dev \
+		mercurial \
+		reprepro \
+		ruby1.9.1 \
+		ruby1.9.1-dev \
+		s3cmd=1.1.* \
+		 && rm -rf /var/lib/apt/lists/*
+
+
+
+	> ***Nota***: Limpiar la caché apt mediante la eliminación de /var/lib/apt/lists reduce el tamaño de la imagen, ya que la caché apt no se almacena en una capa. Dado que la sentencia RUN comienza con apt-get update, la caché del paquete siempre se actualizará antes de apt-get install.
+
 
 - **USER**: Establece el usuario (el UID o nombre de usuario) que debe ejecutar los contenedores en función de la imagen que se está construyendo.
 
