@@ -17,7 +17,16 @@ https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch05-co
 
 https://docs.docker.com/compose
 
-La filosofia de docker es que cada contenedor tenga la responsabilidad justa para resolver el servicio que implementa: una bbdd, un servidor de aplicaciones, ... Por tanto un proyecto complejo estará formado por múltiples contenedores Docker que deben estar orquestados correctamente.
+
+## Filosofía ##
+
+- ***Los contenedores debería correr un sólo proceso***. Cada contenedor tenga la responsabilidad justa para resolver el servicio que implementa: una bbdd, un servidor de aplicaciones, ... Por tanto un proyecto complejo estará formado por múltiples contenedores Docker que deben estar orquestados correctamente.
+
+
+- ***Los contenedores son efímeros***. Eso quiere decir que deberíamos crear y borrar contenedores a nuestro antojos sin problema, por lo tanto data que queremos que sea permanente no debería estar solamente en el contenedor, porque al borrarlo esta data se pierde con él.
+
+Para resolver el punto 2 docker desarrollo algo llamado volúmenes, que es como una especie de disco duro o carpeta dentro del host en dónde esa data es guardada y permanece ahí aunque el contenedor se destruya.
+
 
 ***Docker Compose*** es una herramienta para ***definir opciones de configuración que se aplican en el tiempo de construcción y ejecutar aplicaciones en contenedores multiples de Docker***. ***Docker Compose***, utiliza un un único ***fichero Compose*** para configurar los servicios de su aplicación. Luego, con un solo comando, crea e inicia todos los servicios de su configuración.
 

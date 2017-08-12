@@ -11,6 +11,7 @@ icon: fa-university
 image: static/img/blog/docker/docker-logo.png
 ---
 
+https://github.com/brunocascio/docker-espanol
 
 https://github.com/docker/labs/blob/master/beginner/chapters/webapps.md
 
@@ -25,7 +26,11 @@ https://docs.docker.com/engine/docker-overview/#docker-objects
 
 https://pajarokillo.wordpress.com/2016/05/09/instalacion-de-docker-sobre-windows/
 
+## Máquina utilizada para el tutorial ##
 
+- Sistema operativo: **Windows 8.1 Pro 64bits**.
+- Memoria: **16 Gb**
+- **Docker toolbox** instalado.
 
 ## Requisitos previos ##
 Aunque vamos a definir los conceptos a lo largo del camino, es bueno que usted entienda, [qué es Docker y por qué lo utilizaría]({{ site.baseurl }}arquitectura/2016/10/04/arquitectura-Introduccion-a-Dockers.html "qué es Docker y por qué lo utilizaría") antes de comenzar.
@@ -38,7 +43,38 @@ También debemos asumir que está familiarizado con algunos conceptos antes de c
 - Familiaridad básica con las ideas de ***dependencias de código*** y construcción.
 - Términos de uso de ***recursos de la máquina, como porcentajes de CPU, uso de RAM***, etc.
 
+
 # Cómo utilizar Docker #
+
+Vamos a ver como se trabaja con el ***daemon docker***, invocándolo a través del ***API*** por medio del ***Cli-docker***.
+
+
+
+## Docker Engine ##
+
+https://docs.docker.com/engine/docker-overview/#what-can-i-use-docker-for
+
+Es lo que podemos llamar el ***motor del Docker***. ***Docker Engine*** es una aplicación cliente-servidor con estos componentes principales:
+
+- Un servidor que es un tipo de programa de ejecución larga llamado ***proceso daemon***.
+ 
+- Una ***API REST*** que especifica las interfaces que los programas pueden usar para hablar con el daemon e instruirlo qué hacer.
+ 
+- Un ***cliente de interfaz de línea de comandos (CLI).***
+
+<div style="text-align: center;margin: 1em;">
+	<img src="{{ site.baseurl }}static/img/blog/docker/engine-components-flow.png" alt="job" class="img-thumbnail" style="width: 90%"/>
+</div>
+<div style="text-align: center;margin: 1em;">
+<p>Flujo de componentes del motor Docker</p>
+</div>
+
+
+El ***cliente Docker (CLI)*** utiliza la ***API REST Docker***  para controlar o interactuar con el ***demonio Docker*** a través de scripts o comandos directos de ***CLI***. Muchas otras aplicaciones de ***Docker*** utilizan la ***API*** y la ***CLI*** subyacentes.
+
+***El daemon crea y administra objetos de Docker, como imágenes, contenedores, redes y volúmenes.***
+
+
 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-getting-started
 
@@ -46,97 +82,66 @@ https://docs.docker.com/get-started/part2/#recap-and-cheat-sheet-optional
 
 http://www.muylinux.com/2016/04/19/tutorial-docker/
 
-Una vez que tenga docker instalado, su experiencia de uso intuitivo hace que sea muy fácil de trabajar. Por ahora, tendrás el daemon docker ejecutándose en segundo plano. Si no es así, utilice el comando siguiente para ejecutar el daemon docker.
 
-Para ejecutar el daemon de docker:
 
-    sudo docker -d &
 
 ## Sintaxis de uso ##
 
-Usar docker (vía CLI) consiste en pasarle una cadena de opciones y comandos seguidos de argumentos. Tenga en cuenta que docker necesita privilegios de sudo para poder trabajar.
+Usar ***docker vía CLI*** consiste en escribir una cadena de opciones y comandos seguidos de argumentos. 
 
-    sudo docker [option] [command] [arguments]
+    docker [option] [command] [arguments]
 
+## Comandos del API Docker ##
 
+Comencemos con ver todos los comandos disponibles del ***API docker***.
 
-> ***Nota***: A continuación se proporcionan instrucciones y explicaciones para ser usadas como una guía y para darle una idea general de usar y trabajar con docker. La mejor manera de familiarizarse con ella es la práctica en un nuevo VPS. No tengas miedo de romper algo, ¡de hecho, rompes cosas! Con docker, puede guardar su progreso y continuar desde allí muy fácilmente.
+Solicite a ***docker*** una lista de todos los comandos disponibles:
 
-Comenzando
+    docker
 
-Comencemos con ver todos los comandos disponibles docker.
-
-Solicite a docker una lista de todos los comandos disponibles:
-
-    sudo docker
-
-Todos los comandos actualmente disponibles (a partir de 0.7.1):
-
-## Comandos de Docker ##
-
-He aquí un resumen actual (versión 0.7.1) de los comandos de Docker:
+He aquí un resumen de los comandos de Docker:
 
 - **attach**: Adjunta a un contenedor corriendo.
- 
 - **build**: Construye un contenedor de un archivo Docker.
- 
 - **commit**: Crea una nueva imagen de los cambios del contenedor.
- 
 - **cp**: Copia archivos/carpetas de los contenedores del sistema de archivos a la ruta de host.
- 
+- **create**: Crea un nuevo contenedor.
+- **deploy**: Despliega una nueva pila la actualiza si ya existe. 
 - **diff**: Inspecciona los cambios en el sistema de archivos de un contenedor.
- 
 - **events**: Obtiene eventos en tiempo real desde el servidor.
- 
+- **exec**: Ejecuta un comando en contenedor en ejecucion.
 - **export**: Transmite el contenido de un contenedor como un archivo tar.
- 
 - **history**: Muestra el historial de una imagen.
- 
 - **images**: Lista las imágenes.
- 
 - **import**: Crea una nueva imagen del sistema de archivos de los contenidos a partir de un archivo tar.
- 
 - **info**: Muestra el sistema de información de la pantalla.
- 
-- **insert**: Inserta un archivo en una imagen.
- 
 - **inspect**: Regresa información de bajo nivel en un contenedor.
- 
 - **kill**: Mata a un contenedor en ejecución (corriendo).
- 
 - **load**: Carga una imagen desde un archivo tar.
- 
 - **login**: Registra la sesión para el servidor de registro de Docker.
- 
+- **logout**: Salir de un registro de docker.
 - **logs**: Obtiene los registros de un contenedor.
- 
+- **pause**: Pausa todos los procesos dentro de uno o más contenedores.
 - **port**: Busca el puerto público el cual está NAT-eado y lo hace privado (PRIVATE_PORT).
- 
 - **ps**: Lista los Contenedores.
- 
 - **pull**: Descarga una imagen o un repositorio del servidor de registros Docker.
- 
-- **push**: Empuja una imagen o un repositorio del servidor de registro Docker.
- 
+- **push**: Empuja una imagen o un repositorio del servidor de registro.Docker.
+- **rename**: renombra un contenedor.
 - **restart**: Reinicia un contenedor en ejecución (corriendo).
- 
 - **rm**: Elimina uno o más contenedores.
- 
 - **rmi**: Elimina una o más imágenes.
- 
 - **run**: Ejecuta un comando en un contenedor.
- 
 - **save**: Guarda una imagen en un archivo tar.
- 
 - **search**: Busca una imagen en el índice de Docker.
- 
 - **start**: Inicia un contenedor detenido.
- 
+- **stats**: Mostrar una transmisión en vivo de estadísticas de uso de recursos de contenedor (es).
+- **stop**: Detener uno o más contenedores en funcionamiento.
 - **tag**: Etiqueta una imagen en un repositorio.
- 
 - **top**: Busca los procesos en ejecución de un contenedor.
- 
+- **unpause**: Desactiva la pausa de todos los procesos dentro de uno o más contenedores.
+- **update**: Actualizar la configuración de uno o más contenedores.
 - **versión**: Muestra la información de versión de Docker.
+- **wait**: Bloquear hasta que uno o más contenedores se detengan, luego imprimir sus códigos de salida.
 
 
 
@@ -146,13 +151,12 @@ He aquí un resumen actual (versión 0.7.1) de los comandos de Docker:
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-getting-started
 
 
-Compruebe la información de todo el sistema y la versión docker:
 
-    # For system-wide information on docker:
-    sudo docker info
-    
-    # For docker version:
+Para obtener la versión de docker:
     sudo docker version
+
+Compruebe la información de todo el sistema docker
+    docker info
 
 ## Trabajar con imágenes ##
 
@@ -164,10 +168,10 @@ Cuando esté listo, también puede compartir su imagen allí también. Consulte 
 
 Búsqueda de una imagen de docker: *
 
-    # Usage: sudo docker search [image name]
-    sudo docker search ubuntu
+    # Usage: docker search [image name]
+    docker search ubuntu
 
-Esto le proporcionará una lista muy larga de todas las imágenes disponibles que coincidan con la consulta: Ubuntu .
+Esto le proporcionará una lista muy larga de todas las imágenes disponibles que coincidan con la consulta: Ubuntu.
 
 ## Descargar (PULLing) una imagen: ##
 
@@ -217,11 +221,11 @@ Listando todos los contenedores actuales:
 
 De forma predeterminada, puede utilizar lo siguiente para enumerar todos los contenedores en ejecución :
 
-    sudo docker ps
+    docker ps
 
-Para tener una lista de las que se ejecutan y las que no se ejecutan , utilice:
+Para tener una lista de los contenedores tanto los que se ejecutan como los que no se ejecutan , utilice:
 
-    sudo docker ps -l
+    docker ps -l
 
 ## Creación de un nuevo contenedor ##
 
@@ -262,16 +266,192 @@ Este comando convierte su contenedor en una imagen .
 
 Recuerde que con docker, commits son baratos. No dude en utilizarlas para crear imágenes para guardar su progreso con un contenedor o para retroceder cuando lo necesite (por ejemplo, como instantáneas en el tiempo).
 
+
+
+
+
+***-----------------------------------------------------------------------------------------***
+
+
+
+
+
+
+
+
+***-----------------------------------------------------------------------------------------***
+https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch04-run-container.adoc
+
+
+***-----------------------------------------------------------------------------------------***
+
+# Contenedor de postgres #
+
+https://www.adictosaltrabajo.com/tutoriales/docker-para-bases-de-datos/
+
+Postgres dispone de un repositorio official dentro de [Docker Hub postgres repo](https://hub.docker.com/_/postgres/ "https://hub.docker.com/_/postgres/") donde podemos encontrar diferentes versiones del gestor.
+
+
+Se pueden obtener más detalles sobre la imagen mediante el comando:
+
+    docker image history postgres
+
+El funcionamiento de esta imagen difiere de las anteriores, mientras en las imágenes anteriores creábamos un Dockerfile en el que levantabamos la BBDD, ejecutábamos el script de creación generando una imagen con el esquema creado, con postgres, lo único que tenemos que realizar es dejar el archivo sql en un directorio determinado y este se ejecutará cuando arranque el contenedor.
+
+
+    #############################################################
+    # Archivo Dockerfile para ejecutar contenedores postgres
+    #############################################################
+    
+    # Establece la imagen de base a utilizar
+    FROM postgres
+    
+    # Especifica el autor que mantiene la imagen
+    MAINTAINER Javier Martín Alonso <javimartinalonso@gmail.com>
+    
+    # Variables de entorno
+    # documentacion oficial 
+    # https://hub.docker.com/_/postgres/
+    # USER
+    ENV POSTGRES_USER admin
+    # PASS
+    ENV POSTGRES_PASSWORD admin
+    # Nombre bbdd
+    ENV POSTGRES_DB world
+    # Ruta para persistir la bbdd cuando usemos un gestor de volumenes de persistencia
+    #ENV PGDATA /var/lib/postgresql/data/pgdata
+    
+    # Add VOLUMEs to allow backup of config, logs and databases
+    #VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql", "PGDATA /var/lib/postgresql/data/pgdata"]
+    
+    # Añadimos nuestro sql al directorio docker-entrypoint-initdb.d de la imagen. 
+    # Este se ejecutará al crear el contenedor
+    #dellstore.sql
+    ADD ./bbdd/world.sql /docker-entrypoint-initdb.d/ddl.sql
+
+Una vez tengamos definido el fichero Dockerfile, vamos a construir la imagen:
+
+    docker build . -t jmartin/postgres
+
+Le estamos indicando a docker que construya una imagen con el nombre jmartin/postgres a partir del DockerFile que se encuentra en la misma ruta donde ejecutamos el comando `"."` .
+
+¿Dónde está su imagen construida? Está en el registro local de imagen de Docker de su máquina. Podemos listar las imágenes que tenemos en nuestro equipo para comprobar que la imagen se ha creado correctamente:
+
+    docker images
+
+Podemos comprobar los contenedores que están levantados
+
+    docker ps
+
+Podemos comprobar todos los contenedores independientemente de su estado, estén levantados o no.
+
+    docker ps -a
+
+## Creación de un contenedor ##
+
+Una vez finalizada la construcción de la imagen, ya estamos en disposición de arrancar un contenedor a partir de la imagen que hemos creado:
+
+    docker run --name [nombre del contenedor] -p [puerto de acceso host: puerto expuesto contenedor] -i -t [nombre de imagen]
+
+    docker run --name postgres -p 5433:5432 -d jmartin/postgres
+
+Este comando lo que realiza es levantar un contenedor con los siguientes parámetros:
+
+- ***-d*** : Levanta el contenedor en segundo plano.
+- ***-name*** : Nombre asociado al contenedor
+- ***-p***: Mapeamos el puerto 5433 de nuestro equipo con el 5432 del contenedor
+
+> ***Nota***: Si un nombre no está establecido, tendremos que tratar con identificaciones alfanuméricas complejas que se pueden obtener enumerando todos los contenedores
+>  `docker ps -l.`
+>  Cada vez que ejecutamos el comando `run` de ***Docker*** estamos creando un nuevo contenedor, que puede ser listado luego con `ps -a`.
+
+Volvemos a comprobar los contenedores que están levantados
+
+
+
+    docker container ps
+
+    docker container inspect d258b6ba0919
+
+
+
+Este contenedor al arrancar creará y configurará la instancia de la BBDD (con el nombre asociado a la variable POSTGRES_DB) y ejecutará los scripts que se encuentre en el directorio /docker-entrypoint-initdb.d/ del contenedor
+
+Para acceder al servidor postgres instalado en el contenedor necesitamos conocer la ip del contenedor, pero al usar un Mac (o Windows) y necesitar de un software intermedio, boot2docker, necesitaremos conocer la ip de la máquina virtual (docker-machine) que crea boot2docker.
+
+    docker-machine ip
+
+    javier.martin@PC-MP05RUV MINGW64 ~
+    $ docker-machine ip
+    192.168.99.100
+
+obtener los nombres e IPs de los contenedores desde el docker machine:
+
+    docker inspect -f '{{.Name}} - {{.NetworkSettings.IPAddress }}' $(docker ps -aq)
+
+
+
+
+Para comprobar que todo ha ido bien vamos a crearnos una conexión con DBeaver tal como muestra la figura (username=admin, password=admin)
+
+
+Podemos comprobar como esta nuestro esquema creado
+
+
+## Limitando la memoria para un contenedor ##
+
+Con el fin de limitar la cantidad de memoria de procesos del contenedor Docker que se puede usar, basta con ejecutar `-m [cantidad de memoria]` marcando así el límite.
+
+Para ejecutar un contenedor con memoria limitada a 256 MB:
+
+    # Ejemplo: sudo docker run -name [nombre] -m [Memory (int)][memory unit (b, k, m or g)] -d (para correr no adjuntar) -p (para configurar el acceso y exponer los puertos) [ID de la imagen]
+    sudo docker run -name memcached_ins -m 256m -d -p 45001:11211 memcached_img
+
+Para confirmar el límite de memoria, puedes inspeccionar el contenedor:
+
+    # Ejemplo: docker inspect [ID del contenedor] | grep Memory
+    sudo docker inspect memcached_ins | grep Memory
+
+Nota: El comando anterior toma la información de la memoria relacionada desde la salida de inspección. Para ver toda la información relevante acerca de tu contenedor, puedes optar por `sudo docker inspect [ID del contenedor]
+ Y si necesitamos tener otro postgres ?? Pues nada, instanciamos de nuevo la imagen para crear otro contenedor
+
+    docker run --name postgres2 -p 5434:5432 -d jmartin/postgres  
+    
+Sólo necesitamos cambiar el nombre y el mapeo de puertos, volvemos a comprobar los contenedores activos … y ahí tenemos nuestros dos contenedores
+
+    docker ps
+
+
+Podemos parar un contenedor:
+
+
+    docker stop postgres
+
+
+
+Vemos como sólo quedaría activo postgres2, podemos listar los contenedores independientemente de su estado con:
+
+    docker ps -a
+
 ## Eliminación / eliminación de un contenedor: ##
 
 Utilizando el ID de un contenedor, puede eliminar uno con rm .
 
-    # Usage: sudo docker rm [container ID]
-    sudo docker rm c629b7d70666
+    # Usage: docker rm [container ID]
+    docker rm c629b7d70666
 
-Puede obtener más información sobre Docker leyendo su documentación oficial
+Para borrar un contenedor deberíamos ejecutar el siguiente comando
 
-Recuerde: Las cosas están progresando muy rápido en docker. El impulso impulsado por la comunidad es increíble y muchas grandes empresas tratan de unirse en la oferta de apoyo. Sin embargo, el producto todavía no está etiquetado como listos para la producción , por lo tanto, no se recomienda para ser 100% fiel en la misión despliegues críticos - todavía . Asegúrese de revisar las salidas a medida que salen y continuar manteniéndose en la cima de todas las cosas docker.
+    docker rm postgres	
+
+Hay que tener en cuenta que al borrar un contenedor perderíamos los cambios que hubiésemos realizado en él. Una de las opciones que tendríamos si queremos que los cambios que realicemos al contenedor sean permanentes, sería la de generar una imagen a partir del contenedor, para ello haríamos lo siguiente:
+
+
+    docker commit -m "<comentario>" -a "<autor>" <id_contenedor> <nombre_imagen>:<etiqueta_imagen>
+
+
+
+Con este comando lo que conseguimos es generar una imagen jmartin/postgres construida a partir del contenedor postgres2, si volvemos a listar las imágenes:
 
 ***-----------------------------------------------------------------------------------------***
 
@@ -279,7 +459,7 @@ https://docs.docker.com/get-started/part2/#recap-and-cheat-sheet-optional
 
 Aquí hay una lista de los comandos básicos de Docker de esta página, y algunos relacionados si desea explorar un poco antes de seguir adelante.
 
-	docker build -t friendlyname .  # Create image using this directory's Dockerfile
+	docker build -t friendlyname .  # Crea una imagen usando el fichero "dockerfile en la ruta indicada. En este caso ".", el directorio actual, que debe contener el Dockerfile.
 	docker run -p 4000:80 friendlyname  # Run "friendlyname" mapping port 4000 to 80
 	docker run -d -p 4000:80 friendlyname # Same thing, but in detached mode
 	docker ps # See a list of all running containers
@@ -302,237 +482,6 @@ Aquí hay una lista de los comandos básicos de Docker de esta página, y alguno
 
 
 
-
-
-
-
-
-
-
-
-
-***-----------------------------------------------------------------------------------------***
-
-
-
-
-
-
-
-
-
-https://www.adictosaltrabajo.com/tutoriales/docker-for-dummies/
-
-
-
-En este ejemplo vamos a usar la imagen oficial de sonarqube , para crear un contenedor con Sonar instalado
-
-
-
-En el repositorio de sonarqube encontraremos información relativa a la imagen y de cómo se usa, más o menos lo que vamos a describir a continuación.
-
-El primer paso sería descargarnos la imagen
-
-
-    docker pull sonarqube
-
-Podemos listar las imágenes que tenemos en nuestro equipo
-
-
-    docker images
-
-
-
-Una vez tenemos la imagen, ya estamos en disposición de instanciar un contenedor a partir de ella.
-
-
-    docker run -d --name sonarqube -p 9000:9000 sonarqube
-
-
-Este comando lo que realiza es levantar un contenedor con los siguientes parámetros:
-
-- ***-d*** : Levanta el contenedor en segundo plano.
-- ***-name*** : Nombre asociado al contenedor
-- ***-p***: Mapeamos el puerto 9000 de nuestro equipo con el 9000 del contenedor
-
-
-Podemos comprobar los contenedores que están levantados
-
-
-    docker ps
-
-
-
-Para acceder al sonar instalado en el contenedor nos bastaría con abrir un al navegador con la URL http:/localhost:9000, pero al usar un Mac (o Windows) y necesitar de un software intermedio, boot2docker, necesitaremos conocer la ip de la máquina virtual que crea boot2docker
-
-
-    boot2docker ip
-
-
-
-Ahora ya podemos acceder a nuestro Sonar
-
-
-
-Fácil no ?? Y si necesitamos tener otro Sonar ?? Pues nada, instanciamos de nuevo la imagen para crear otro contenedor
-
-`docker run -d --name sonarqube2 -p 7000:9000 sonarqube `   
-    
-Sólo necesitamos cambiar el nombre y el mapeo de puertos, volvemos a comprobar los contenedores activos … y ahí tenemos nuestros dos contenedores
-
-
-Podemos acceder al nuevo sonar
-
-
-
-Podemos parar un contenedor:
-
-
-    docker stop sonarqube
-
-
-
-Vemos como sólo quedaría activo sonarqube2, podemos listar los contenedores independientemente de su estado con:
-
-
-    docker ps -a
-
-
-
-Para borrar un contenedor deberíamos ejecutar el siguiente comando
-
-
-    docker rm sonarqube	
-
-Hay que tener en cuenta que al borrar un contenedor perderíamos los cambios que hubiésemos realizado en él. Una de las opciones que tendríamos si queremos que los cambios que realicemos al contenedor sean permanentes, sería la de generar una imagen a partir del contenedor, para ello haríamos lo siguiente:
-
-
-    docker commit -m "<comentario>" -a "<autor>" <id_contenedor> <nombre_imagen>:<etiqueta_imagen>
-
-
-
-Con este comando lo que conseguimos es generar una imagen jpacheco/sonar construida a partir del contenedor sonarqube2, si volvemos a listar las imágenes:
-
-
-
-
-
-
-
-
-
-
-***-----------------------------------------------------------------------------------------***
-
-
-
-
-
-https://www.digitalocean.com/community/tutorials/docker-explicado-como-crear-contenedores-de-docker-corriendo-en-memcached-es
-
-
-## Construyendo nuestra primera imagen ##
-
-Para ello usaremos, como explicado antes, el comando docker build. Construiremos una imagen mediante el archivo Dockerfile en la ubicación actual.
-
-    # Ejemplo: sudo docker build -t [nombre] .
-    sudo docker build -t memcached_img .
-
-
-Ahora podemos crear nuestra primera imagen Memcached siguiendo las instrucciones de uso explicadas en la sección de archivos Dockfile básicos.
-
-Ejecuta el siguiente comando para crear una imagen, etiquetandolo como "memcached_img":
-
-    sudo docker build -t memcached_img .
-
-> **NOTA**: No olvides el punto . para que Docker pueda encontrar el archivo Dockerfile.
-
-
-¿Dónde está su imagen construida? Está en el registro local de imagen de Docker de su máquina:
-
-$ docker images
-
-REPOSITORY            TAG                 IMAGE ID
-friendlyhello         latest              326387cea398
-
-## Correr Contenedores dockerised Memcached ##
-
-Utilizando la imagen que tenemos construida, ahora podemos proceder al paso final: crear un contenedor que ejecute una instancia de MongoDB dentro, usando un nombre de nuestra elección (si lo desea con -name [name] ).
-
-Es muy simple crear cualquier número de instancias memcached perfectamente aislados y autónomos - ahora - gracias a la imagen que hemos obtenido en la sección anterior. Todo lo que tenemos que hacer es crear un nuevo contenedor con `docker run`.
-
-## Creación de un contenedor instalado en Memcached ##
-
-Para crear un nuevo contenedor, utiliza el siguiente comando, modificándolo para que se adapte a tus necesidades siguiendo este ejemplo:
-
-    # Ejemplo: sudo docker run -name [nombre del contenedor] -p [puerto de acceso: puerto expuesto] -i -t [nombre de imagen memcached]
-    sudo docker run -name memcached_ins -d -p 45001:11211 memcached_img
-
-Ahora tendremos un Docker llamado "memcached_ins", accesible desde el puerto 45001, córrelo ()run) utilizando nuestra imagen etiquetada como "memcached img", que hemos construido con anterioridad.
-
-
-
-> ***Nota***: Si un nombre no está establecido, tendremos que tratar con identificaciones alfanuméricas complejas que se pueden obtener enumerando todos los contenedores que usan sudo docker ps -l.
-
-> ***Nota***: Para separarse del contenedor, utilice la secuencia de escape CTRL + P seguida por CTRL + Q.
-
-## Limitando la memoria para un contenedor en Memcached ##
-
-Con el fin de limitar la cantidad de memoria de procesos del contenedor Docker que se puede usar, basta con ejecutar `-m [cantidad de memoria]` marcando así el límite.
-
-Para ejecutar un contenedor con memoria limitada a 256 MB:
-
-    # Ejemplo: sudo docker run -name [nombre] -m [Memory (int)][memory unit (b, k, m or g)] -d (para correr no adjuntar) -p (para configurar el acceso y exponer los puertos) [ID de la imagen]
-    sudo docker run -name memcached_ins -m 256m -d -p 45001:11211 memcached_img
-
-Para confirmar el límite de memoria, puedes inspeccionar el contenedor:
-
-    # Ejemplo: docker inspect [ID del contenedor] | grep Memory
-    sudo docker inspect memcached_ins | grep Memory
-
-Nota: El comando anterior toma la información de la memoria relacionada desde la salida de inspección. Para ver toda la información relevante acerca de tu contenedor, puedes optar por `sudo docker inspect [ID del contenedor]`.
-
-## Prueba del contenedor en Memcached ##
-
-Para el conjunto completo de instrucciones para instalar y utilizar Docker, revisa la documentación de Docker en docker.io.
-
-
-
-
-
-***-----------------------------------------------------------------------------------------***
-
-https://www.adictosaltrabajo.com/tutoriales/docker-for-dummies/
-
-
-En este último apartado vamos a ver como crear una nueva imagen a través de un fichero llamado Dockerfile.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-***-----------------------------------------------------------------------------------------***
-https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch04-run-container.adoc
 
 
 
