@@ -11,28 +11,13 @@ icon: fa-university
 image: static/img/blog/docker/docker-logo.png
 ---
 
-https://github.com/brunocascio/docker-espanol
-
-https://github.com/docker/labs/blob/master/beginner/chapters/webapps.md
-
-
-https://github.com/docker/labs/blob/master/beginner/chapters/alpine.md
-
-http://www.josedomingo.org/pledin/2016/02/ejemplos-de-ficheros-dockerfile-creando-imagenes-docker/
-
-
-https://docs.docker.com/engine/docker-overview/#docker-objects
-
-
-https://pajarokillo.wordpress.com/2016/05/09/instalacion-de-docker-sobre-windows/
-
-## Máquina utilizada para el tutorial ##
+# Máquina utilizada para el tutorial #
 
 - Sistema operativo: **Windows 8.1 Pro 64bits**.
 - Memoria: **16 Gb**
-- **Docker toolbox** instalado.
+- **Docker toolbox** instalado con version de Docker 17.06.0-ce, build 02c1d87
 
-## Requisitos previos ##
+# Requisitos previos #
 Aunque vamos a definir los conceptos a lo largo del camino, es bueno que usted entienda, [qué es Docker y por qué lo utilizaría]({{ site.baseurl }}arquitectura/2016/10/04/arquitectura-Introduccion-a-Dockers.html "qué es Docker y por qué lo utilizaría") antes de comenzar.
 
 También debemos asumir que está familiarizado con algunos conceptos antes de continuar:
@@ -46,15 +31,7 @@ También debemos asumir que está familiarizado con algunos conceptos antes de c
 
 # Cómo utilizar Docker #
 
-Vamos a ver como se trabaja con el ***daemon docker***, invocándolo a través del ***API*** por medio del ***Cli-docker***.
-
-
-
-## Docker Engine ##
-
-https://docs.docker.com/engine/docker-overview/#what-can-i-use-docker-for
-
-Es lo que podemos llamar el ***motor del Docker***. ***Docker Engine*** es una aplicación cliente-servidor con estos componentes principales:
+Cuando hablamos de docker, normalmente nos referimos a lo que podemos llamar el ***motor del Docker***. ***Docker Engine*** es una aplicación cliente-servidor con estos componentes principales:
 
 - Un servidor que es un tipo de programa de ejecución larga llamado ***proceso daemon***.
  
@@ -69,29 +46,17 @@ Es lo que podemos llamar el ***motor del Docker***. ***Docker Engine*** es una a
 <p>Flujo de componentes del motor Docker</p>
 </div>
 
-
 El ***cliente Docker (CLI)*** utiliza la ***API REST Docker***  para controlar o interactuar con el ***demonio Docker*** a través de scripts o comandos directos de ***CLI***. Muchas otras aplicaciones de ***Docker*** utilizan la ***API*** y la ***CLI*** subyacentes.
 
 ***El daemon crea y administra objetos de Docker, como imágenes, contenedores, redes y volúmenes.***
 
-
-
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-getting-started
-
-https://docs.docker.com/get-started/part2/#recap-and-cheat-sheet-optional
-
-http://www.muylinux.com/2016/04/19/tutorial-docker/
-
-
-
-
-## Sintaxis de uso ##
+## Usar ***docker vía CLI*** ##
 
 Usar ***docker vía CLI*** consiste en escribir una cadena de opciones y comandos seguidos de argumentos. 
 
     docker [option] [command] [arguments]
 
-## Comandos del API Docker ##
+### Comandos del API Docker ###
 
 Comencemos con ver todos los comandos disponibles del ***API docker***.
 
@@ -101,88 +66,94 @@ Solicite a ***docker*** una lista de todos los comandos disponibles:
 
 He aquí un resumen de los comandos de Docker:
 
-- **attach**: Adjunta a un contenedor corriendo.
-- **build**: Construye un contenedor de un archivo Docker.
-- **commit**: Crea una nueva imagen de los cambios del contenedor.
-- **cp**: Copia archivos/carpetas de los contenedores del sistema de archivos a la ruta de host.
-- **create**: Crea un nuevo contenedor.
+- **attach**: Adjunta a un ***contenedor*** corriendo.
+- **build**: Construye un ***contenedor*** de un archivo Docker.
+- **commit**: Crea una nueva imagen de los cambios del ***contenedor***.
+- **cp**: Copia archivos/carpetas de los ***contenedores*** del sistema de archivos a la ruta de host.
+- **create**: Crea un nuevo ***contenedor***.
 - **deploy**: Despliega una nueva pila la actualiza si ya existe. 
-- **diff**: Inspecciona los cambios en el sistema de archivos de un contenedor.
+- **diff**: Inspecciona los cambios en el sistema de archivos de un ***contenedor***.
 - **events**: Obtiene eventos en tiempo real desde el servidor.
-- **exec**: Ejecuta un comando en contenedor en ejecucion.
-- **export**: Transmite el contenido de un contenedor como un archivo tar.
+- **exec**: Ejecuta un comando en ***contenedor*** en ejecucion.
+- **export**: Transmite el contenido de un ***contenedor*** como un archivo tar.
 - **history**: Muestra el historial de una imagen.
 - **images**: Lista las imágenes.
 - **import**: Crea una nueva imagen del sistema de archivos de los contenidos a partir de un archivo tar.
 - **info**: Muestra el sistema de información de la pantalla.
-- **inspect**: Regresa información de bajo nivel en un contenedor.
-- **kill**: Mata a un contenedor en ejecución (corriendo).
+- **inspect**: Regresa información de bajo nivel en un ***contenedor***.
+- **kill**: Mata a un ***contenedor*** en ejecución (corriendo).
 - **load**: Carga una imagen desde un archivo tar.
 - **login**: Registra la sesión para el servidor de registro de Docker.
 - **logout**: Salir de un registro de docker.
-- **logs**: Obtiene los registros de un contenedor.
-- **pause**: Pausa todos los procesos dentro de uno o más contenedores.
+- **logs**: Obtiene los registros de un ***contenedor***.
+- **pause**: Pausa todos los procesos dentro de uno o más ***contenedores***.
 - **port**: Busca el puerto público el cual está NAT-eado y lo hace privado (PRIVATE_PORT).
-- **ps**: Lista los Contenedores.
+- **ps**: Lista los ***Contenedores***.
 - **pull**: Descarga una imagen o un repositorio del servidor de registros Docker.
 - **push**: Empuja una imagen o un repositorio del servidor de registro.Docker.
-- **rename**: renombra un contenedor.
-- **restart**: Reinicia un contenedor en ejecución (corriendo).
-- **rm**: Elimina uno o más contenedores.
+- **rename**: renombra un ***contenedor***.
+- **restart**: Reinicia un ***contenedor*** en ejecución (corriendo).
+- **rm**: Elimina uno o más ***contenedores***.
 - **rmi**: Elimina una o más imágenes.
-- **run**: Ejecuta un comando en un contenedor.
+- **run**: Ejecuta un comando en un ***contenedor***.
 - **save**: Guarda una imagen en un archivo tar.
-- **search**: Busca una imagen en el índice de Docker.
-- **start**: Inicia un contenedor detenido.
-- **stats**: Mostrar una transmisión en vivo de estadísticas de uso de recursos de contenedor (es).
-- **stop**: Detener uno o más contenedores en funcionamiento.
+- **search**: Busca una imagen en el ***[índice de imágenes de docker](https://hub.docker.com/ "https://hub.docker.com/")***.
+- **start**: Inicia un ***contenedor*** detenido.
+- **stats**: Mostrar una transmisión en vivo de estadísticas de uso de recursos de ***contenedor*** (es).
+- **stop**: Detener uno o más ***contenedores*** en funcionamiento.
 - **tag**: Etiqueta una imagen en un repositorio.
-- **top**: Busca los procesos en ejecución de un contenedor.
-- **unpause**: Desactiva la pausa de todos los procesos dentro de uno o más contenedores.
-- **update**: Actualizar la configuración de uno o más contenedores.
+- **top**: Busca los procesos en ejecución de un ***contenedor***.
+- **unpause**: Desactiva la pausa de todos los procesos dentro de uno o más ***contenedores***.
+- **update**: Actualizar la configuración de uno o más ***contenedores***.
 - **versión**: Muestra la información de versión de Docker.
-- **wait**: Bloquear hasta que uno o más contenedores se detengan, luego imprimir sus códigos de salida.
+- **wait**: Bloquear hasta que uno o más ***contenedores*** se detengan, luego imprimir sus códigos de salida.
 
-
-
-
-
-
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-getting-started
-
-
+Por ejemplo:
 
 Para obtener la versión de docker:
+
     sudo docker version
 
-Compruebe la información de todo el sistema docker
+Comprobar la información de todo el sistema docker:
+
     docker info
+
+## Flujo de trabajo con Docker ##
+
+El flujo de trabajo con Docker, se puede resumir en tres pasos:
+
+1. **Construir imágenes** que alojen las aplicaciones.
+2. **Crear los contenedores** a partir de las imágenes para ejecutar las aplicaciones.
+3. **Compartir las imágenes en el registro (propio y/o público)**.
 
 ## Trabajar con imágenes ##
 
-http://www.muylinux.com/2016/04/19/tutorial-docker/
+La clave para empezar a trabajar con cualquier ***contenedor docker*** es el uso de ***imágenes preconfiguradas***. **Para crear el contenedor se necesita partir de una imagen que sirva de base para crearlo**. Hay muchas imágenes disponibles gratuitamente compartidas a través del ***[índice de imágenes de docker](https://hub.docker.com/ "https://hub.docker.com/")*** y desde el ***CLI*** se permite el acceso simple para consultar el repositorio de la ***imagen*** y para descargar nuevas.
 
-Como hemos discutido en detalle, la clave para empezar a trabajar con cualquier contenedor de muelle es el uso de imágenes. Hay muchas imágenes libremente disponibles compartidas a través del índice de la imagen del docker y la CLI permite el acceso simple para consultar el repositorio de la imagen y para descargar nuevos.
+Existen muchas maneras de crear una imagen Docker, aunque la más extendida es la de crearla a partir de otra ya existente aprovechando que existe un repositorio público de imágenes ya creadas que nos pueden ser útiles para este fin. Para ello se descarga la imagen elegida y se modifica para crear una imagen hija. La modificación de la misma se puede hacer de dos maneras:
 
-Cuando esté listo, también puede compartir su imagen allí también. Consulte la sección sobre "empujar" más abajo para obtener más detalles.
+A través de un fichero que indica las modificaciones a realizar
+corriendo la imagen, modificándola y salvándola con dichas modificaciones.
 
-Búsqueda de una imagen de docker: *
+Estas ***imágenes*** de base se pueden expresar explícitamente cuando se trabaja con ***docker CLI*** para crear directamente un nuevo ***contenedor*** o pueden especificarse dentro de un ***Dockerfile*** para la creación automatizada de ***imágenes***.
 
-    # Usage: docker search [image name]
+### Búsqueda de una ***imagen de docker***###
+
+    # Usage: docker search [nombre de la imagen]
     docker search ubuntu
 
 Esto le proporcionará una lista muy larga de todas las imágenes disponibles que coincidan con la consulta: Ubuntu.
 
-## Descargar (PULLing) una imagen: ##
+### Descargar (PULL) una imagen ###
 
-Ya sea cuando se está creando o creando un contenedor o antes de hacerlo, tendrá que tener una imagen presente en la máquina host donde los contenedores existirán. Con el fin de descargar imágenes (tal vez después de "búsqueda") puede ejecutar tirar para obtener uno.
+Antes de crear un ***contenedor***, tendrá que tener una imagen presente en la máquina host de la que partir. Con el fin de descargar imágenes (tal vez después de usar el comando `search`) puede ejecutar `pull` para obtener uno.
 
     # Usage: sudo docker pull [image name]
     sudo docker pull ubuntu
 
-## Listado de imágenes: ##
+### Listado de imágenes: ###
 
-Todas las imágenes de su sistema, incluidas las que ha creado mediante confirmación (ver más abajo para más detalles), se pueden enumerar usando "imágenes". Esto proporciona una lista completa de todos los disponibles.
+Todas las imágenes existentes en su sistema, se pueden enumerar usando el comando `images`. Esto proporciona una lista completa de todas las imágenes disponibles.
 
     # Example: sudo docker images
     sudo docker images
@@ -195,95 +166,90 @@ Todas las imágenes de su sistema, incluidas las que ha creado mediante confirma
 	ubuntu  12.10   b750fe79269d8 months ago175.3 MB
 	ubuntu  quantal b750fe79269d8 months ago175.3 MB
 
-## Cometer cambios en una imagen: ##
+### Comprometer cambios en una imagen: ###
 
-A medida que trabaja con un contenedor y continúa realizando acciones en él (por ejemplo, descargar e instalar software, configurar archivos, etc.), para que mantenga su estado, debe "comprometerse". Cometer se asegura de que todo continúa desde donde se fueron la próxima vez que utilice uno (es decir, una imagen).
+A medida que trabaja con un ***contenedor*** y continúa realizando acciones en él (por ejemplo, descargar e instalar software, configurar archivos, etc.), para que mantenga su estado con los cambios realizados, debe ***"comprometerse"***. El comando `commit` se asegura de que todo continúa desde donde lo dejamos la última vez, modificando la imagen anterior y creando una nueva con los nuevos cambios superpuestos como una nueva capa de cebolla.
 
-    # Usage: sudo docker commit [container ID] [image name]
+    # Usage: docker commit [container ID] [image name]
     sudo docker commit 8dbd9e392a96 my_img
 
-## Compartir imágenes (PUSH): ##
+Este comando convierte su ***contenedor*** en una imagen .
 
-Aunque es un poco temprano en este momento - en nuestro artículo , cuando has creado tu propio contenedor que te gustaría compartir con el resto del mundo, puedes usar push para que tu imagen aparezca en el índice donde todos puedan descargar y use.
+> ***Nota***: Recuerde que con docker, los commits son baratos. No dude en utilizarlas para crear imágenes para guardar su progreso con un ***contenedor*** o para retroceder cuando lo necesite (por ejemplo, como instantáneas en el tiempo).
 
-Recuerde "confirmar" todos los cambios.
+### Compartir imágenes (PUSH): ###
 
-    # Usage: sudo docker push [username/image name]  
+Cuando has creado tu propio ***contenedor*** que te gustaría compartir con el resto del mundo, puedes usar `push` para que tu imagen aparezca en el ***[índice de imágenes de docker](https://hub.docker.com/ "https://hub.docker.com/")*** donde todos puedan descargarlo y usarlo.
+
+Recuerde hacer `commit` de todos los cambios previo al `push`.
+
+    # Usage: docker push [username/image name]  
     sudo docker push my_username/my_first_image
 
-Nota: Debe registrarse en index.docker.io para enviar imágenes al índice de docker .
+> ***Nota***: Debes estar registrado en el ***[índice de imágenes de docker](https://hub.docker.com/ "https://hub.docker.com/")*** para tener permisos y poder subir nuevas imágenes al ***[índice de imágenes de docker](https://hub.docker.com/ "https://hub.docker.com/")***.
 
 ## Trabajar con contenedores ##
 
-Cuando "ejecutas" cualquier proceso usando una imagen, a cambio, tendrás un contenedor. Cuando el proceso no se está ejecutando activamente, este contenedor será un contenedor que no se ejecuta . Sin embargo, todos ellos residirán en su sistema hasta que los elimine a través del comando rm .
+Un ***contenedor*** se crea mediante el comando `run` sobre una imagen. Cuando el ***contenedor*** no se está ejecutando activamente, este ***contenedor*** será un ***contenedor*** que no se ejecuta. Sin embargo, todos ellos residirán en su sistema hasta que los elimine a través del comando `rm`.
 
-Listando todos los contenedores actuales:
 
-De forma predeterminada, puede utilizar lo siguiente para enumerar todos los contenedores en ejecución :
+
+
+
+
+
+
+
+### Listando todos los contenedores actuales ###
+
+De forma predeterminada, puede utilizar lo siguiente para enumerar todos los ***contenedores*** en ejecución :
 
     docker ps
 
-Para tener una lista de los contenedores tanto los que se ejecutan como los que no se ejecutan , utilice:
+Para tener una lista de los ***contenedores*** tanto los que se ejecutan como los que no se ejecutan , utilice:
 
     docker ps -l
 
-## Creación de un nuevo contenedor ##
 
-Actualmente no es posible crear un contenedor sin ejecutar nada (es decir, comandos). Para crear un contenedor nuevo, debe utilizar una imagen base y especificar un comando para ejecutarlo.
 
-    # Usage: sudo docker run [image name] [command to run]
-    sudo docker run my_img echo "hello"
+> ***Nota***: este comando será importante para obtener la información de los ***contenedores*** y poder trabajar así con el ***contenedor*** correcto.
+
+
+### Creación de un nuevo contenedor ###
+
+Actualmente no es posible crear un ***contenedor*** sin ejecutar nada (es decir, comandos). Para crear un ***contenedor*** nuevo, debe utilizar una imagen base y especificar un comando para ejecutarlo.
+
+    # Usage: docker run [image name] [command to run]
+    docker run my_img echo "hello"
     
     # To name a container instead of having long IDs
-    # Usage: sudo docker run -name [name] [image name] [comm.]
-    sudo docker run -name my_cont_1 my_img echo "hello"
+    # Usage: docker run -name [name] [image name] [comm.]
+    docker run -name my_cont_1 my_img echo "hello"
 
-Esto saldrá "hola" y volverá a estar donde estaba. (Es decir, el shell de su anfitrión)
+Esto mostrará "hola" y volverá a estar donde estaba. (Es decir, el shell de su anfitrión)
 
-Como no se puede cambiar el comando que se ejecuta después de haber creado un contenedor (por lo tanto, especificando uno durante la "creación"), es práctica común utilizar gestores de procesos e incluso scripts de lanzamiento personalizados para poder ejecutar comandos diferentes.
+Como no se puede cambiar el comando que se ejecuta después de haber creado un ***contenedor*** (especificando uno durante la "creación"), es práctica común utilizar gestores de procesos e incluso scripts de lanzamiento personalizados para poder ejecutar comandos diferentes.
 
-## Ejecutar un contenedor: ##
+### Ejecutar un contenedor ###
 
-Cuando crea un contenedor y se detiene (ya sea debido a su proceso de finalización o detenerlo explícitamente), puede utilizar "ejecutar" para obtener el contenedor de nuevo con el mismo comando utilizado para crearlo.
+Cuando crea un ***contenedor*** y se detiene (ya sea debido a su proceso de finalización o detenerlo explícitamente), puede utilizar `run` para obtener el ***contenedor*** de nuevo con el mismo comando utilizado para crearlo.
 
-    # Usage: sudo docker run [container ID]
+    # Usage: docker run [container ID]
     sudo docker run c629b7d70666
 
-¿Recuerdas cómo encontrar los contenedores? Véase más arriba la sección de lista de ing ellos.
+### Detención de un contenedor ###
 
-## Detención de un contenedor: ##
+Para detener el proceso de un ***contenedor***:
 
-Para detener el proceso de un contenedor:
-
-    # Usage: sudo docker stop [container ID]
+    # Usage: docker stop [container ID]
     sudo docker stop c629b7d70666
 
-## Ahorro ( confirmación ) de un contenedor: ##
-
-Si desea guardar el progreso y los cambios realizados con un contenedor, puede usar ***"commit"*** como se explicó anteriormente para guardarlo como una imagen .
-
-Este comando convierte su contenedor en una imagen .
-
-Recuerde que con docker, commits son baratos. No dude en utilizarlas para crear imágenes para guardar su progreso con un contenedor o para retroceder cuando lo necesite (por ejemplo, como instantáneas en el tiempo).
+### Guardar los cambios sobre un contenedor (commit) ###
 
 
 
 
 
-***-----------------------------------------------------------------------------------------***
-
-
-
-
-
-
-
-
-***-----------------------------------------------------------------------------------------***
-https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch04-run-container.adoc
-
-
-***-----------------------------------------------------------------------------------------***
 
 # Contenedor de postgres #
 
@@ -298,6 +264,8 @@ Se pueden obtener más detalles sobre la imagen mediante el comando:
 
 El funcionamiento de esta imagen difiere de las anteriores, mientras en las imágenes anteriores creábamos un Dockerfile en el que levantabamos la BBDD, ejecutábamos el script de creación generando una imagen con el esquema creado, con postgres, lo único que tenemos que realizar es dejar el archivo sql en un directorio determinado y este se ejecutará cuando arranque el contenedor.
 
+http://amattn.com/p/tutorial_postgresql_usage_examples_with_docker.html
+https://docs.docker.com/engine/examples/postgresql_service/#installing-postgresql-on-docker
 
     #############################################################
     # Archivo Dockerfile para ejecutar contenedores postgres
@@ -372,6 +340,17 @@ Volvemos a comprobar los contenedores que están levantados
     docker container ps
 
     docker container inspect d258b6ba0919
+
+
+
+
+
+
+
+Nota : --rm Elimina el contenedor y su imagen cuando el contenedor sale correctamente.
+
+
+
 
 
 
@@ -494,8 +473,10 @@ Aquí hay una lista de los comandos básicos de Docker de esta página, y alguno
 
 ## Referencias ##
 
-
+[https://docs.docker.com/engine/docker-overview/#what-can-i-use-docker-for](https://docs.docker.com/engine/docker-overview/#what-can-i-use-docker-for "https://docs.docker.com/engine/docker-overview/#what-can-i-use-docker-for")
 
 [https://docs.docker.com/engine/userguide/](https://docs.docker.com/engine/userguide/ "https://docs.docker.com/engine/userguide/")
 
 [https://docs.docker.com/samples](https://docs.docker.com/samples "https://docs.docker.com/samples")
+
+[https://docs.docker.com/engine/examples/postgresql_service/#installing-postgresql-on-docker](https://docs.docker.com/engine/examples/postgresql_service/#installing-postgresql-on-docker "https://docs.docker.com/engine/examples/postgresql_service/#installing-postgresql-on-docker")

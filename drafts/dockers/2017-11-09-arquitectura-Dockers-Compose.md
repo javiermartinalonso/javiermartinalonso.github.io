@@ -107,7 +107,7 @@ El nombre de proyecto predeterminado es el nombre base del directorio del proyec
 
 Si utiliza docker-compose en una máquina Windows, consulte Variables de entorno y ajuste las variables de entorno necesarias para sus necesidades específicas.
 
-## Sólo recreae los contenedores que han cambiado. ##
+## Sólo recrea los contenedores que han cambiado. ##
 
 ***Compose*** guarda en caché la configuración utilizada para crear un contenedor. Cuando reinicia un servicio que no ha cambiado, ***Compose*** vuelve a utilizar los contenedores existentes. Reutilizar contenedores significa que usted puede hacer cambios en su entorno muy rápidamente.
 

@@ -1,0 +1,3 @@
+https://www.ivankrizsan.se/2017/02/14/packaging-a-java-application-in-a-docker-image-with-maven/
+https://www.ivankrizsan.se/2017/03/12/packaging-a-java-application-in-a-docker-image-with-maven-take-2-fabric8/
+

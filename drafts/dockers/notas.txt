@@ -1,3 +1,12 @@
+Aún como borradores:
+
+2017-11-16-arquitectura-Dockers-Machine.md
+2017-11-02-arquitectura-Como utilizar Docker-Kitematik.md
+
+**********************************************************************************************************************
+
+https://docs.docker.com/engine/admin/volumes/#choose-the-right-type-of-mount
+
 ¿Cómo persisto por ejemplo las modificaciones en la bbdd? --> El sistema de ficheros de la bbdd en el sistema de archivos del host?
 
 * Podemos crear una imagen como una snapshop o un tag de la entrega del producto
@@ -6,6 +15,23 @@
 
 * Los cambios sobre los servidores, configuraciones, caches etc, podemos persistirlos haciendo commit de la imagen y creando una nueva.
 
+
+
+compose.yml
+
+version: "2"
+
+services:  
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=mydb
+	  
+	  
+	  
+	  
 
 
 https://www.ivankrizsan.se
@@ -48,7 +74,7 @@ https://www.youtube.com/playlist?list=PLEtcGQaT56chIpnSavOSvaU2ZGAW7d1vE
 https://www.youtube.com/watch?v=DoZZiSxXLJs
 
 
-
+https://docs.docker.com/engine/docker-overview
 
 
 
@@ -58,7 +84,8 @@ https://docs.docker.com/compose/compose-file
 https://docs.docker.com/kitematic
 
 
-https://docs.docker.com/get-started/part3/#recap-and-cheat-sheet-optional
+https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch02-basic-concepts.adoc
+
 https://docs.docker.com/get-started/part4/#recap-and-cheat-sheet-optional
 https://docs.docker.com/get-started/part5/#prerequisites
 
@@ -68,11 +95,10 @@ https://docs.docker.com/samples
 https://github.com/docker/labs/tree/master/developer-tools/java/
 
 
-https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/
-https://platzi.com/clases/comunidad-platzi/concepto/programacion/como-agilizar-flujos-de-trabajo-con-docker/material/
+
 
 https://openwebinars.net/cursos/docker/
-
+https://openwebinars.net/blog/5-usos-practicos-de-Docker-en-el-dia-a-dia/
 
 http://www.muylinux.com/2016/04/19/tutorial-docker/
 
@@ -80,5 +106,19 @@ https://hub.docker.com/r/jboss/wildfly/
 https://hub.docker.com/_/mysql/
 https://hub.docker.com/_/tomcat/
 
+https://picodotdev.github.io/blog-bitix/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/
+https://platzi.com/clases/comunidad-platzi/concepto/programacion/como-agilizar-flujos-de-trabajo-con-docker/material/
+https://docs.docker.com/engine/docker-overview/
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-getting-started
+https://github.com/brunocascio/docker-espanol
+https://github.com/docker/labs/blob/master/beginner/chapters/webapps.md
+https://github.com/docker/labs/blob/master/beginner/chapters/alpine.md
+https://pajarokillo.wordpress.com/2016/05/09/instalacion-de-docker-sobre-windows/
+https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch04-run-container.adoc
+https://www.adictosaltrabajo.com/tutoriales/docker-for-dummies/
+https://pajarokillo.wordpress.com/2016/05/23/usando-dockerfile-para-crear-imagenes-ii/
+https://docs.docker.com/get-started/part2
+https://www.digitalocean.com/community/tutorials/docker-explicado-como-crear-contenedores-de-docker-corriendo-en-memcached-es
 
-https://docs.docker.com/engine/docker-overview/#docker-objects
+
+https://github.com/codedellemc/labs/tree/master/setup-virtualbox-dockermachine
