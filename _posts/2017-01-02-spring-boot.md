@@ -15,7 +15,7 @@ image: static/img/blog/spring/spring-logo.png
 
 Se posiciona en la capa superior del framework **[spring](https://spring.io/projects "spring")**. Sigue el patrón **Convención sobre Configuración (Convention-Over-Configuration)** permitiendo al desarrollador enfocarse en el desarrollo de la aplicación, y eliminando la necesidad de estar preocupado con todos los demás aspectos de su ciclo de vida, incluyendo el despliegue y la gestión. 
 
-<!-- more -->
+<!--more-->
 
 > **Convención sobre Configuración (Convention-Over-Configuration)** , también conocido como **CoC** es un paradigma de programación de software que busca minimizar el número de decisiones que un desarrollador necesita hacer, ganando así en simplicidad pero no perdiendo flexibilidad por ello.
 

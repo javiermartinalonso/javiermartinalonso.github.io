@@ -3,23 +3,23 @@ layout: post
 section: "ARQUITECTURA"
 title:  "Introducción a Dockers"
 date:   2016-10-04
-desc: "Docker es una herramienta open-source que nos permite realizar una ‘virtualización ligera’, con la que poder empaquetar entornos y aplicaciones que posteriormente podremos desplegar en cualquier sistema que disponga de esta tecnología. *** Docker le permite obtener su código probado y desplegado en producción lo más rápido posible***"
-keywords: "Dockers, virtualización, portabilidad,contenedor, maquina_virtual,integración_continua, DevOps"
+desc: "Docker es una herramienta open-source que nos permite realizar una ‘virtualización ligera’, con la que poder empaquetar entornos y aplicaciones que posteriormente podremos desplegar en cualquier sistema que disponga de esta tecnología. Docker le permite obtener su código probado y desplegado en producción lo más rápido posible"
+keywords: "Dockers, virtualización, portabilidad, contenedor, maquina_virtual, integración_continua, DevOps"
 categories: [arquitectura]
-tags: [Dockers, virtualización, portabilidad,contenedor, maquina_virtualintegración_continua, DevOps]
+tags: [Dockers, virtualización, portabilidad,contenedor, maquina_virtual, integración_continua, DevOps]
 icon: fa-university
 image: static/img/blog/docker/docker-logo.png
 ---
 
 # ¿Qué es Dockers? #
 
-***[Docker](https://www.docker.com/ "docker")*** es la plataforma líder mundial en contenedores de software. **Docker** Es una tecnología que promete revolucionar la informática profesional. Se trata de una tecnología de contenedores, que básicamente consiste en ***la ejecución de sistemas operativos dentro de otros, obteniendo los sistemas “invitados” su propio sistema de ficheros, su propio espacio de usuarios, sus propios procesos y sus propias interfaces de red, pero compartiendo sólo los elementos necesarios de la máquina anfitriona como puede ser el kernel.***
+***[Docker](https://www.docker.com/ "docker")*** es la plataforma líder mundial en contenedores de software. ***Docker*** Es una tecnología que promete revolucionar la informática profesional. Se trata de una tecnología de contenedores, que básicamente consiste en ***la ejecución de sistemas operativos dentro de otros, obteniendo los sistemas “invitados” su propio sistema de ficheros, su propio espacio de usuarios, sus propios procesos y sus propias interfaces de red, pero compartiendo sólo los elementos necesarios de la máquina anfitriona como puede ser el kernel.***
 
 ***Docker*** es una herramienta open-source que nos permite realizar una ‘***virtualización ligera***’, con la que ***poder empaquetar entornos y aplicaciones que posteriormente podremos desplegar en cualquier sistema que disponga de esta tecnología***.
 
 Todo esto **permite separar la aplicación de la infraestructura subyacente de aplicaciones y servidores (Sistema operativo, Bases de datos, servidores de aplicaciones…) y centrarse únicamente en su desarrollo y puesta en marcha**. De este modo, podemos reproducir exactamente las mismas condiciones en cuanto a arquitectura en el entorno de desarrollo y en el entorno productivo lo que ademas de facilitar el desarrollo y testeo de la aplicación, nos evitará futuros bugs y defectos relacionados con las mismas.
 ***Docker le permite obtener su código probado y desplegado en producción lo más rápido posible***.
-<!--more -->
+<!--more-->
 
 Para separar los contenedores entre sí y de la máquina anfitriona, ***Docker*** utiliza las características de aislamiento del kernel Linux. Para ello ***Docker*** extiende ***LXC (LinuX Containers)***, que es un sistema de ***virtualización*** que permite crear múltiples sistemas totalmente aislados entre sí, sobre la misma máquina o sistema anfitrión.. Estos contenedores se crean utilizando imágenes de ***docker***, que pueden crearse ejecutando comandos manualmente o automáticamente a través de ***[Dockerfiles]({{ site.baseurl }}arquitectura/2016/10/25/arquitectura-Dockerfile.html "Dockerfiles")*** . Todo este enfoque permite a los contenedores ser mucho más ligeros que las ***máquinas virtuales***, tanto en espacio en disco como de consumo de recursos. Además su naturaleza les otorga una gran ***portabilidad*** y ***seguridad***.
 
@@ -46,13 +46,13 @@ Los desarrolladores que utilizan ***Docker*** no tienen que instalar y configura
 Sin entrar en muchos detalles acerca de ***imágenes***, ***directorios***, ***contenedores***, ***volúmenes***, etc. vamos a tratar de sintetizar un poco ***cómo se fundamenta la arquitectura de docker***.
 
 <div style="text-align: center;margin: 1em;">
-	<img src="{{ site.baseurl }}static/img/blog/docker/arquitectura_docker.png" alt="Arquitectura plataforma Docker" class="img-thumbnail" style="width: 90%"/>
+	<img src="{{ site.baseurl }}static/img/blog/docker/arquitectura_docker.png" alt="Arquitectura plataforma Docker" class="img-thumbnail" style="width: 40%"/>
 </div>
 <div style="text-align: center;margin: 1em;">
 <p>Arquitectura plataforma Docker</p>
 </div>
 
-***En una primera capa encontramos el sistema operativo***, aquí es dónde se ejecuta el ***componente principal de Docker, el demonio o proceso principal (Docker Daemon)***. El sistema operativo debe de estar basado en el Kernel de Linux 3.10 como mínimo. Es por ello que si vamos a trabajar con Docker desde windows, necesitaremos una máquina virtual dónde ejecutar este sistema operativo, pero eso lo veremos más adelante (***Boot2docker***).
+***En una primera capa encontramos el sistema operativo***, aquí es dónde se ejecuta el ***componente principal de Docker, el demonio o proceso principal (Docker Daemon)***. El sistema operativo debe de estar basado en el Kernel de Linux 3.10 como mínimo. Es por ello que si vamos a trabajar con ***Docker*** desde windows, necesitaremos una máquina virtual dónde ejecutar este sistema operativo, pero eso lo veremos más adelante (***Boot2docker***).
 
 En una ***siguiente capa encontramos las imágenes***. Éstas ***son plantillas de solo lectura que pueden contener el sistema operativo, el servidor de aplicaciones, etc. Una imagen puede basarse en otra imagen y añadir un componente más, de esta forma, las imágenes se van apilando hasta conseguir los componentes necesarios***. Hay un directorio público que contiene infinidad de imágenes, con lo que es posible que alguien ya haya creado una imagen que necesitemos (***[índice de imágenes de docker](https://hub.docker.com/ "https://hub.docker.com/")***).
 
@@ -128,7 +128,7 @@ En la siguiente imagen podemos ver esta diferencia entre el enfoque de las ***m�
 
 ## Usos prácticos de Docker en el día a día. ##
 
-Algunos de los usos más habituales que se le dan a Docker:
+Algunos de los usos más habituales que se le dan a ***Docker***:
 
 1. ***Simplificación de las configuraciones.***
 
@@ -136,19 +136,19 @@ Algunos de los usos más habituales que se le dan a Docker:
 	
 	***Esto mismo hace Docker, pero omitiendo todo el sistema que normalmente tendríamos que generar para poder lanzar el servicio, ocupando menos espacio y tomando muchísimos menos recursos del equipo . Nos permitirá editar un fichero en el que configuramos un entorno que podemos bien desplegar, o bien aplicar a otro contenedor que ya tengamos creado consiguiendo una versatilidad que las máquinas virtuales tradicionales no nos ofrecen.***
 	
-	El poder implementar aplicaciones o configuraciones a múltiples contenedores en diferentes estructuras (IaaS, PaaS…) es ya posible, y en esto parte del mérito de es grandes empresas como Amazon o Google, compatibilizando sus servicios con la tecnología de Docker, convirtiéndose en aliados esenciales para proyectos de mediana o gran envergadura.
+	El poder implementar aplicaciones o configuraciones a múltiples contenedores en diferentes estructuras (IaaS, PaaS…) es ya posible, y en esto parte del mérito de es grandes empresas como Amazon o Google, compatibilizando sus servicios con la tecnología de ***Docker***, convirtiéndose en aliados esenciales para proyectos de mediana o gran envergadura.
 
 2. ***Gestión de proyectos.***
 
 	Uno de los mayores problemas a los que se enfrentan los equipos de desarrollo, es el tener que trabajar todos bajo el mismo entorno . Cada equipo sobre el que se va a poner a prueba la aplicación o servicio siempre tendrá algo diferente al resto, una actualización de menos (o de más), una librería de la que otros no dispongan, o directamente un sistema operativo u otro.
 	
-	***Docker hace que el camino desarrollo à producción sea muchísimo más rápido , no teniendo más que desplegar el mismo contenedor todos los desarrolladores o testers, para recibir todos idénticos resultados.***
+	***Docker hace que el camino de desarrollo a producción sea muchísimo más rápido , no teniendo más que desplegar el mismo contenedor todos los desarrolladores o testers, para recibir todos idénticos resultados.***
 	
 	El caso de una web-app que se alojará en un único servidor es el que mejor nos puede ilustrar. Si durante su desarrollo se prueba en un equipo bajo Linux y en otro gobernado por Windows, los resultados que se pueden obtener no tienen por qué coincidir. Se pueden dar falsos positivos a una situación deseada que luego en producción traerán de cabeza al equipo de desarrollo. La homogeneidad del desarrollo está a un “pull” de distancia, teniendo todos el mismo sistema base y pudiendo comparar resultados de una forma más fiable .
 
 3. ***Aislamiento de Aplicaciones.***
 
-	Tal y como comentábamos antes, Docker ofrecerá el mismo sistema base para desarrollar o testear aplicaciones o servicios. De igual forma es un sistema aislado del sistema anfitrión, por lo que la ejecución de una aplicación en esa máquina no afectará al puesto en el que estamos trabajando .
+	Tal y como comentábamos antes, ***Docker*** ofrecerá el mismo sistema base para desarrollar o testear aplicaciones o servicios. De igual forma es un sistema aislado del sistema anfitrión, por lo que la ejecución de una aplicación en esa máquina no afectará al puesto en el que estamos trabajando .
 	
 	***Un claro ejemplo de aislamiento de aplicaciones es cuando queremos desplegar dos servidores pero cada uno de ellos tiene diferentes dependencias que causan conflictos con las que necesita el otro. Por ejemplo: las aplicaciones de un servidor necesitan ejecutarse sobre java 7 y en el otro sobre java8. Desplegando cada servidor en contenedores distintos, solventamos este problema de forma fácil, pudiendo aislar los servidores y sus dependencias de posibles errores por dichos conflictos.***
 
@@ -156,7 +156,7 @@ Algunos de los usos más habituales que se le dan a Docker:
 
 	De igual forma en la que creamos imágenes de sistemas para virtualizar equipos que desplegar para trabajar, ***podemos generar contenedores que desplieguen un servidor sobre el que ejecutar servicios .***
 	
-	Virtualizando estos servidores con Docker, el ahorro en hardware y el aprovechamiento o rendimiento del existente será considerable , sin un consumo de memoria tan alto y con la capacidad de gestionar más eficientemente la memoria disponible entre los servicios que lo requieran; a diferencia de las máquinas virtuales tradicionales que acapararán parte de esa memoria para desplegar el sistema de virtualización sobre el que irá el servidor que queramos virtualizar.
+	Virtualizando estos servidores con ***Docker***, el ahorro en hardware y el aprovechamiento o rendimiento del existente será considerable , sin un consumo de memoria tan alto y con la capacidad de gestionar más eficientemente la memoria disponible entre los servicios que lo requieran; a diferencia de las máquinas virtuales tradicionales que acapararán parte de esa memoria para desplegar el sistema de virtualización sobre el que irá el servidor que queramos virtualizar.
 
 5. ***Control de versiones y Depuración.***
 
@@ -174,9 +174,9 @@ Algunos de los usos más habituales que se le dan a Docker:
 
 7. ***Escalar más facilmente***
 
-	Los contenedores ligeros de Docker también hacen escala y bajada rápida y sencilla. Puede lanzar rápidamente más contenedores cuando sea necesario y luego apagarlos fácilmente cuando ya no se necesiten.
+	Los contenedores ligeros de ***Docker*** también hacen escala y bajada rápida y sencilla. Puede lanzar rápidamente más contenedores cuando sea necesario y luego apagarlos fácilmente cuando ya no se necesiten.
 
-Estos son sólo algunos ejemplos prácticos en los que Docker facilita el desarrollo, testeo, implementación, sistema de trabajo o gestión de recursos y usuarios; ahorrando tiempo al desarrollador o la empresa y economizando los proyectos en los que se aplique.
+Estos son sólo algunos ejemplos prácticos en los que ***Docker*** facilita el desarrollo, testeo, implementación, sistema de trabajo o gestión de recursos y usuarios; ahorrando tiempo al desarrollador o la empresa y economizando los proyectos en los que se aplique.
 
 ## Referencias ##
 

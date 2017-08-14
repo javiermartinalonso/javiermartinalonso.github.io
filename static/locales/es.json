@@ -62,6 +62,9 @@
     "rights" : "Todos los derechos reservados.",
     "views" : "visitas"
   },
+  "share":{
+    "share" : "Comparte esta página:",
+  },
   "pagination":{
     "not_results" : "Lo sentimos, pero no encontramos ningún artículo publicado en esta sección!"
   },

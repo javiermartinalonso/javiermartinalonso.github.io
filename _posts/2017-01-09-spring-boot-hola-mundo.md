@@ -25,7 +25,7 @@ Si nunca has utilizado **[spring-boot](https://projects.spring.io/spring-boot/ "
 	<img src="{{ site.baseurl }}static/img/blog/spring/spring-initializr.png" class="img-thumbnail" alt="wizard web spring initializr started project."/>
 </div>
 
-<!-- more -->
+<!--more-->
 
 , o bien si usted está utilizando el [**IDE Spring Tool Suite (STS)**](https://spring.io/tools "IDE Spring Tool Suite"). Este último tiene un wizard integrado que invoca ese mismo servicio web.
 

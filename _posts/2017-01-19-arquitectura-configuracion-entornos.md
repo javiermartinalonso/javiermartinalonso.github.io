@@ -17,7 +17,7 @@ Un requerimiento usual en el ciclo de desarrollo de sistemas empresariales es el
 
 En el ámbito de ***gestión del ciclo de vida de un proyecto o producto software***, solemos separar el propio código de la configuración que depende del entorno, p.ej. integraciones con sistemas externos, configuración JVM, pooles, etc.
 
-<!--more -->
+<!--more-->
 
 La configuración dependiente del entorno tiene un ciclo de vida separado aunque no independiente. Además, sobre todo en entornos empresariales grandes, la configuración es mantenida por personas distintas al equipo de desarrollo.
 

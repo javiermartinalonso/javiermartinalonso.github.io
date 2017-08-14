@@ -8465,3 +8465,57 @@ body.body-small .right {
 .page .anchor {
     display: none;
 }
+
+.ibox-content table th{
+  background-color: lightgrey;
+  text-align: center;
+    color: white;
+    border: 1px solid #EBEBEB;
+    padding: 15px 20px 20px 15px;
+    border-width: 5px;
+    clear: both;
+    border-spacing: 1em;
+    padding: 1em;
+    margin: 2em;
+  text-transform: uppercase;
+}
+
+.ibox-content table td{
+  background-color: none;
+  text-align: justify !important;
+    color: inherit;
+    border: 1px solid #EBEBEB;
+    padding: 15px 20px 20px 15px;
+    border-width: 5px;
+    clear: both;
+    border-spacing: 1em;
+    padding: 1em;
+    margin: 2em;
+}
+
+tbody:nth-child(odd) {background-color: #f2f2f2}
+
+.bshare-custom img {
+    width: 50px !important;
+    padding: 5px;
+    border: 0;
+    box-shadow: none !important;
+    display: inline !important;
+    vertical-align: middle;
+} 
+
+.img-social{
+  -webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0,2);
+  -moz-box-shadow: 4px 4px 4px rgba(0,0,0,0,2); 
+  box-shadow: 4px 4px 4px rgba(0,0,0,0,2);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;   
+}
+.img-social:hover{
+    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg); // IE 9
+    -moz-transform: rotate(-10deg); // Firefox
+    -o-transform: rotate(-10deg); // Safari and Chrome
+    -ms-transform: rotate(-10deg); // Opera
+}
