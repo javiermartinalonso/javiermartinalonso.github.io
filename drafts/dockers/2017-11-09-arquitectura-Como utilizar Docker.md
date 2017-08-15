@@ -40,7 +40,7 @@ Cuando hablamos de docker, normalmente nos referimos a lo que podemos llamar el 
 - Un ***cliente de interfaz de línea de comandos (CLI).***
 
 <div style="text-align: center;margin: 1em;">
-	<img src="{{ site.baseurl }}static/img/blog/docker/engine-components-flow.png" alt="job" class="img-thumbnail" style="width: 90%"/>
+	<img src="{{ site.baseurl }}static/img/blog/docker/engine-components-flow.png" alt="job" class="img-thumbnail" style="width: 60%"/>
 </div>
 <div style="text-align: center;margin: 1em;">
 <p>Flujo de componentes del motor Docker</p>
@@ -356,7 +356,7 @@ Nota : --rm Elimina el contenedor y su imagen cuando el contenedor sale correcta
 
 Este contenedor al arrancar creará y configurará la instancia de la BBDD (con el nombre asociado a la variable POSTGRES_DB) y ejecutará los scripts que se encuentre en el directorio /docker-entrypoint-initdb.d/ del contenedor
 
-Para acceder al servidor postgres instalado en el contenedor necesitamos conocer la ip del contenedor, pero al usar un Mac (o Windows) y necesitar de un software intermedio, boot2docker, necesitaremos conocer la ip de la máquina virtual (docker-machine) que crea boot2docker.
+Para acceder al servidor postgres instalado en el contenedor necesitamos conocer la ip del contenedor, pero al usar un Mac (o Windows) y necesitar de un software intermedio, boot2docker, necesitaremos conocer la ip de la máquina virtual (docker-machine) que contiene boot2docker.
 
     docker-machine ip
 

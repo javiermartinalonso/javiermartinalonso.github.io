@@ -86,8 +86,8 @@ https://docs.docker.com/kitematic
 
 https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch02-basic-concepts.adoc
 
-https://docs.docker.com/get-started/part4/#recap-and-cheat-sheet-optional
-https://docs.docker.com/get-started/part5/#prerequisites
+https://docs.docker.com/get-started/part4/
+https://docs.docker.com/get-started/part5/
 
 https://docs.docker.com/engine/userguide/
 https://docs.docker.com/samples
@@ -98,7 +98,6 @@ https://github.com/docker/labs/tree/master/developer-tools/java/
 
 
 https://openwebinars.net/cursos/docker/
-https://openwebinars.net/blog/5-usos-practicos-de-Docker-en-el-dia-a-dia/
 
 http://www.muylinux.com/2016/04/19/tutorial-docker/
 

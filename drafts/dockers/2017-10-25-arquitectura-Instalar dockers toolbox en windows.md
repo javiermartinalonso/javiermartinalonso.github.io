@@ -219,58 +219,58 @@ Para desinstalar ***Toolbox*** en Windows, haga lo siguiente:
 5. Desinstale ***Oracle VirtualBox***, que se instala como parte de la instalación de ***Toolbox***.
 
 
+# Accediendo al shell de docker-machine #
 
+Tal como hemos visto, ***docker*** puede funcionar en Windows a través de una máquina virtual generalmente sobre Virtual Box. Para ello, ***Docker*** ofrece la herramienta ***docker-machine*** que permite automatizar y ajustar automáticamente todas las tareas relacionadas con la puesta a punto y configuración de esta máquina virtual.
 
+En ocasiones, necesitaremos hacer un ajuste completo del entorno, puede ser necesario acceder manualmente al Shell de esta máquina virtual. Para ello disponemos de las distintas opciones que se enumeran a continuación.
 
-http://blog.marcnuri.com/docker-accediendo-al-shell-ssh-de-docker-machine/
+## Shell Docker QuickStart ##
 
+Como ya hemos visto, la forma más sencilla de acceder es desde la propia máquina windows a través del ***shell Docker QuickStart*** que se instala con ***docker toolbox***, que viene preconfigurado para conectar por ssh a un entorno de ***línea de comandos Docker***. No necesitaremos autenticarnos y podremos ponernos a lanzar comandos directamente.
 
-Accediendo al shell (SSH) de docker-machine
+<div style="text-align: center;margin: 1em;">
+	<img src="{{ site.baseurl }}static/img/blog/docker/shell-quickstart-terminal.png" alt="shell-quickstart-terminal" class="img-thumbnail" style="width: 60%"/>
+</div>
 
-SSH
-Por último, también podremos acceder al shell de la máquina virtual empleando cualquier cliente SSH como PuTTY. En este caso necesitaremos conocer la IP de la máquina virtual (normalmente 192.168.99.100).
+> ***Nota***: Si nos fijamos bien aquí se indica la ip y el nombre de la ***máquina virtual (docker-machine)***.
 
-Las credenciales para acceder serán usuario ‘docker’ y contraseña ‘tcuser’.
+## Comando Docker-machine ssh ##
 
-desde la línea de comandos de windows una vez arrancada la maquina virtual default
+También puede que necesitemos acceder al shell de la ***máquina virtual (docker-machine)*** empleando cualquier cliente SSH como PuTTY. En este caso necesitaremos conocer la IP de la ***máquina virtual (docker-machine)*** que contiene ***boot2docker*** (normalmente 192.168.99.100) para ello podemos  usar el comando `docker-machine ip`.
 
+    $ docker-machine ip
+    192.168.99.100
 
+Las credenciales para acceder serán usuario `docker` y contraseña `tcuser`.
+
+<div style="text-align: center;margin: 1em;">
+	<img src="{{ site.baseurl }}static/img/blog/docker/winscp.png" alt="winscp" class="img-thumbnail" style="width: 40%"/>
+</div>
+
+## Línea de comandos de windows ##
+
+Igualmente podemos acceder desde la línea de comandos de windows una vez arrancada la maquina virtual "default" en el virtualBox mediante el empleo de la propia herramienta ***docker-machine*** con el comando `docker-machine` y el subcomando `ssh`. Con ello conseguiremos un acceso a la máquina virtual en la propia línea de comandos..
+
+    # Usage: docker-machine ssh [nombre maquina docker]
     docker-machine ssh default
 
-Docker Machine SSH PuTTY
+Empleamos el comando anterior para acceder, en este caso estamos accediendo a la máquina "default" (creada en el ejemplo anterior).
 
-Tal como hemos visto en anteriores publicaciones, docker puede funcionar en Windows a través de una máquina virtual generalmente sobre Virtual Box. Para ello, Docker ofrece la herramienta docker-machine que permite automatizar y ajustar automáticamente todas las tareas relacionadas con la puesta a punto y configuración de esta máquina virtual.
-
-En ocasiones, normalmente para hacer un ajuste completo del entorno, puede ser necesario acceder manualmente al Shell de esta máquina virtual. Para ello disponemos de las distintas opciones que se enumeran a continuación.
-
-docker-machine ssh
-La forma más sencilla de acceder es mediante el empleo de la propia herramienta docker-machine con el subcomando “ssh”. Con ello conseguiremos un acceso a la máquina virtual en la propia línea de comandos.
-
-docker-machine ssh
+<div style="text-align: center;margin: 1em;">
+	<img src="{{ site.baseurl }}static/img/blog/docker/linea-comandos.png" alt="linea-comandos" class="img-thumbnail" style="width: 60%"/>
+</div>
 
 
-docker-machine ssh dev
-1
-docker-machine ssh dev
-Empleamos el comando anterior para acceder, en este caso estamos accediendo a la máquina ‘dev’ (creada en el ejemplo anterior).
+## Interfaz de Virtual Box ##
 
-Interfaz de Virtual Box
 También podemos acceder de forma fácil empleando la interfaz gráfica de Virtual Box.
 
 Para ello pulsamos en la opción “Mostrar” en la máquina virtual correspondiente y se nos abrirá una ventana con el Shell.
 
-Docker Machine Virtual Box SSH
-
-Docker Machine Virtual Box SSH Mostrar
-
-SSH
-Por último, también podremos acceder al shell de la máquina virtual empleando cualquier cliente SSH como PuTTY. En este caso necesitaremos conocer la IP de la máquina virtual (normalmente 192.168.99.100).
-
-Las credenciales para acceder serán usuario ‘docker’ y contraseña ‘tcuser’.
-
-Docker Machine SSH PuTTY
-
-Hemos visto las 2 opciones distintas para acceder al shell de nuestra máquina virtual. En siguientes publicaciones, veremos cómo esto nos puede resultar necesario para, por ejemplo, poder compartir carpetas/directorios de nuestro host anfitrión con docker-machine y de este modo poder hacerlas accesibles a los distintos contenedores como volúmenes de datos.
+<div style="text-align: center;margin: 1em;">
+	<img src="{{ site.baseurl }}static/img/blog/docker/machine-default.png" alt="machine-default" class="img-thumbnail" style="width: 80%"/>
+</div>
 
 
 ## Referencias ##
