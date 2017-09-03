@@ -86,19 +86,22 @@ La gran diferencia es que una ***máquina virtual*** necesita contener todo el s
 
 En la siguiente imagen podemos ver esta diferencia entre el enfoque de las ***máquinas virtuales*** y el utilizado por ***Docker***:
 
- <div class="row" style="margin: 1em;">
-	<div class="col-lg-6">
-		<img src="{{ site.baseurl }}static/img/blog/docker/VM.png" class="img-thumbnail" style="border: none;" alt="Diagrama de la máquina virtual"/>
-	</div>	  
-	<div class="col-lg-6">
-		<img src="{{ site.baseurl }}static/img/blog/docker/Container.png" class="img-thumbnail" style="border: none;" alt="Diagrama del contenedor"/>
+ <div class="container" style="margin: 1em;">
+	<div>
+		<div class="col-lg-6">
+			<img src="{{ site.baseurl }}static/img/blog/docker/VM.png" class="img-thumbnail" style="border: none;" alt="Diagrama de la máquina virtual"/>
+		</div>	  
+		<div class="col-lg-6">
+			<img src="{{ site.baseurl }}static/img/blog/docker/Container.png" class="img-thumbnail" style="border: none;" alt="Diagrama del contenedor"/>
+		</div>
 	</div>
-
-	<div class="col-lg-6" style="text-align: center;">
-		<strong><em>Imágenes virtuales</em></strong>
-	</div>	  
-	<div class="col-lg-6" style="text-align: center;">
-		<strong><em>Contenedores docker</em></strong>
+	<div>
+		<div class="col-lg-6" style="text-align: center;">
+			<strong><em>Imágenes virtuales</em></strong>
+		</div>	  
+		<div class="col-lg-6" style="text-align: center;">
+			<strong><em>Contenedores docker</em></strong>
+		</div>
 	</div>
 </div>
 
