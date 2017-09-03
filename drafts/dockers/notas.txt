@@ -1,3 +1,9 @@
+Curso video muy bueno
+
+https://www.youtube.com/watch?v=Fv-97I_wrJ0&index=1&list=PLEtcGQaT56chIpnSavOSvaU2ZGAW7d1vE
+
+
+
 Aún como borradores:
 
 2017-11-16-arquitectura-Dockers-Machine.md
@@ -125,3 +131,10 @@ https://github.com/codedellemc/labs/tree/master/setup-virtualbox-dockermachine
 
 https://www.adictosaltrabajo.com/tutoriales/docker-para-bases-de-datos/
 https://www.adictosaltrabajo.com/tutoriales/dbeaver/
+
+
+
+https://dzone.com/articles/a-dockerfile-for-maven-based-github-projects?edition=0&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-08-02
+
+
+https://dzone.com/articles/containers-101-what-do-you-need-to-know

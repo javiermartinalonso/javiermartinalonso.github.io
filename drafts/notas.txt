@@ -1,3 +1,7 @@
+Pendiente estudiar y documentar
+https://platzi.com/clases/graphql/
+
+
 ## Requisitos previos ##
 
 - Un conocimiento básico de terminal y la ***línea de comandos***
