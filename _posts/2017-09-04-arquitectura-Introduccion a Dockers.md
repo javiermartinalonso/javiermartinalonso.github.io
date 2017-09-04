@@ -120,14 +120,16 @@ En la siguiente imagen podemos ver esta diferencia entre el enfoque de las ***m�
 || Existen multitud de imágenes que pueden descargarse y modificarse libremente.|
 | ---------- | ---------- |
 
+
 ## Beneficios de docker ##
 
-- Gran rendimiento
-- Creación y destrucción rápida
-- Reducido tiempo de provisión
-- Produce builds portables fáciles de distribuir
-- Incluye todas las dependencias, evitando errores en la integración, eliminando ciclos de build-test-deploy
+- Gran rendimiento.
+- Creación y destrucción rápida.
+- Reducido tiempo de provisión.
+- Produce builds portables fáciles de distribuir.
+- Incluye todas las dependencias, evitando errores en la integración, eliminando ciclos de build-test-deploy.
 - Son portables, podemos desarrollar software sin preocuparnos en la plataforma en la que se va ejecutar.
+
 
 ## Usos prácticos de Docker en el día a día. ##
 
