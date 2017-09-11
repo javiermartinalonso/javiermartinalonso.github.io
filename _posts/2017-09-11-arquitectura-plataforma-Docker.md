@@ -2,7 +2,7 @@
 layout: post
 section: "ARQUITECTURA"
 title:  "Piezas principales de la plataforma Docker"
-date:   2016-09-11
+date:   2017-09-11
 desc: "El ecosistema Docker está formado por una multitud de componentes y herramientas. Aquí intento recoger y dar una pequeña introducción a las más importantes de forma que nos sea más fácil entender Docker."
 keywords: "Dockers, virtualización, contenedor, maquina_virtual, Docker-Hub, Docker-for-Windows, Docker-ToolBox, Boot2docker, Docker-Engine, Docker-daemon, Docker-CLI, Docker-Compose, Docker-Machine, cgroups, union-filesystems, Union-Fs, Kitematic"
 categories: [arquitectura]
