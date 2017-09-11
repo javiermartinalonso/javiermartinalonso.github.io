@@ -35,15 +35,18 @@ Los requisitos para poder instalar ***Docker para Windows***:
 - ***Versión 64 bits Windows 10 Pro, Enterprise y Educación (actualización 1511 noviembre, Build 10586 o posterior).***
 - ***La virtualización debe estar habilitada.***
 
+
 ## Docker ToolBox ##
 
 Solución de escritorio legacy. ***Permite instalar y configurar un entorno docker para sistemas Mac y Windows antiguos que no cumplen los requisitos de Docker para Mac y Docker para Windows***. 
 
 La instalación proporciona ***Docker Engine*** , ***Docker CLI***, ***Docker Compose*** , ***Docker Machine***, el ***shell Docker QuickStart*** preconfigurado para un entorno de línea de comandos ***Docker***, ***Kitematic*** y ***Oracle VM VirtualBox*** con una maquina virtual con ***Boot2docker*** .
 
+
 ## Boot2docker ##
 
 ***Boot2docker*** **es una distribución ligera de Linux basada en Tiny Core Linux hecha específicamente para ejecutar contenedores Docker**. Funciona completamente desde RAM, pesa unos 40Mb y arranca en unos 5s. Con la instalación de ***Docker ToolBox*** se crea una maquina virtual en el virtualBox con esta distribución y es lo que ***nos permite ejecutar contenedores en un sistema windows o Mac***.
+
 
 ## Docker Engine ##
 
@@ -62,18 +65,20 @@ Es lo que podemos llamar el ***motor del Docker***. ***Docker Engine*** es una a
 <p>Flujo de componentes del motor Docker</p>
 </div>
 
-
 ***CLI*** utiliza la ***API REST Docker***  para controlar o interactuar con el ***demonio Docker*** a través de scripts o comandos directos de ***CLI***. Muchas otras aplicaciones de ***Docker*** utilizan la ***API*** y la ***CLI*** subyacentes.
 
 ***El daemon crea y administra objetos de Docker, como imágenes, contenedores, redes y volúmenes.***
+
 
 ## Docker daemon ##
 
 Se utiliza para administrar ***contenedores docker*** ***(LXC)*** en el host que ejecuta.
  
+
 ## Docker CLI ##
 
 El ***cliente Docker (CLI)*** es la principal forma en que muchos usuarios de ***Docker*** interactúan con ***daemon Docker***. Cuando utiliza comandos como `docker run`, el cliente envía estos comandos a ***dockerd daemon***, que los lleva a cabo. El comando `docker` ***utiliza la API de Docker***. ***El cliente Docker*** puede comunicarse con más de un ***daemon***.
+
 
 ## Docker Compose ##
 
@@ -83,17 +88,20 @@ La filosofia de ***docker*** es que cada ***contenedor*** tenga la responsabilid
 
 El ***fichero Compose*** **proporciona una forma de documentar y configurar todas las dependencias de servicio de la aplicación (bases de datos, colas, cachés, API de servicio web, etc.)**. Mediante la herramienta de línea de comandos ***Compose*** puede crear e iniciar uno o más ***contenedores*** para cada dependencia con un solo comando `docker-compose up`.
 
+
 ## Docker Machine ##
 
 ***Docker Machine*** es una herramienta que nos ayuda a crear, configurar y manejar máquinas virtuales con ***Docker Engine***. ***Con Docker Machine podemos iniciar, parar o reiniciar los nodos docker (máquinas virtuales docker), actualizar el cliente o el demonio docker y configurar el cliente docker para acceder a los distintos Docker Engine***. ***El propósito principal del uso de esta herramienta es la de crear máquinas con Docker Engine en sistemas remotos y centralizar su gestión.***.
 
 Las ***docker machines***, máquinas locales (y virtuales) o remotas (como Amazon AWS) ejecutando un ***Docker***. Como cualquier otra máquina, tiene una dirección IP física. Cada ***máquina Docker*** puede gestionar varias ***imágenes*** y ***contenedores***.
 
+
 ## Sistema de archivos de unión (Union FileSystem)##
 
 [Sistema de archivos de unión](https://es.wikipedia.org/wiki/UnionFS "sistema de archivos de unión"), ***reúne todas las capas como una sola entidad cuando se trabaja con un contenedor***.
 
 ***Union filesystem*** permite lo que se conoce como acumulación de capas de cambios a través de un mount. Esto viene a ser que distintos sistemas de ficheros pueden montarse, uno por encima de otro, y el resultado es una capa fruto del conjunto de cambios individuales.
+
 
 ## Cgroups ##
 
@@ -103,11 +111,13 @@ Es una funcionalidad del kernel de linux que permite:
 
 - Proveer espacios de nombre o “namespaces” a estos grupos de procesos para las funcionalidades ID, UTS, IPC, Network, User y mount.
 
+
 ## Kitematic ##
 
 Solución de escritorio legacy. Kitematic es una solución heredada, incluida con ***Docker Toolbox***. Su uso ya no es necesario en la aplicación actual ***docker for windows***.
 
 ***Kitematic*** es un proyecto de código abierto construido para simplificar y agilizar el uso de ***docker*** en un PC Mac o Windows. ***Kitematic automatiza el proceso de instalación y configuración de Docker y proporciona una interfaz gráfica de usuario intuitiva (GUI) para ejecutar contenedores Docker***. ***Kitematic*** se integra con ***Docker Machine*** para suministrar una ***VM VirtualBox*** e instalar el ***Docker Engine*** localmente en su máquina.
+
 
 ## Referencias ##
 
