@@ -1,3 +1,9 @@
+http://training.play-with-docker.com/ops-landing/
+http://training.play-with-docker.com/dev-landing/
+http://training.play-with-docker.com/alacart/
+
+
+
 Pendiente estudiar y documentar
 https://platzi.com/clases/graphql/
 
