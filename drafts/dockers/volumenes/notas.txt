@@ -1,0 +1,72 @@
+https://www.youtube.com/watch?v=pOGVngLsaX4
+
+
+	
+	IMAGENES
+	#extraer versión especifica de una imagen
+	docker image pull ubuntu:12.04
+	
+	
+	# lista de imágenes que están disponibles localmente en su sistema
+	docker image ls
+	
+	CONTENEDORES
+	
+$ docker container stop devtest
+
+$ docker container rm devtest
+
+
+
+	VOLUMENES
+docker volume ls
+
+$ docker volume rm nginx-vol
+	
+	
+	DOCKERFILE
+	#con el -t toma un nombre de etiqueta (opcional), el .indica el directorio actual que es la ubicación del directorio que contiene el Dockerfile 
+	$ docker image build -t <YOUR_USERNAME>/myfirstapp .
+	
+	
+	
+	mkdir data
+	cd data/
+	touch test.txt
+	ls
+	cd ../
+	ls
+	docker run -it --name test1 -v ~/docker-vid/data:data ubuntu bash
+	
+	#Ejecutar el contenedor y entrar en la consola
+	docker start test1docker exec -it test1 bash
+	
+	#define dos variables de entorno
+	docker run -it -e MODE=test -e DOC_ROOT=/var/www ubuntu bash
+	
+	#borrar varios contenedores a la vez
+	docker rm id1 id2 id3
+	
+	#contenedor maestro, solo para datos y contenedores esclavos que se conectan a sus volmenes para modificar los datos.
+	
+	#definir variables de entorno a partir de un fichero con una lista de variables de entorno pares KEY=valor
+	docker run -it --env-file ./env.list ubuntu bash
+	
+	
+	
+	
+	
+docker container run --name static-site -e AUTHOR="Your Name" -d -P seqvence/static-site
+e61d12292d69556eabe2a44c16cbd54486b2527e2ce4f95438e504afb7b02810
+En el comando anterior:
+
+-d creará un contenedor con el proceso separado de nuestro terminal
+-P publicará todos los puertos de contenedores expuestos a puertos aleatorios en el host Docker
+-e es cómo pasar las variables de entorno al contenedor
+--name permite especificar un nombre de contenedor
+AUTHORes el nombre de la variable de entorno y Your Namees el valor que puede pasar
+	
+	
+	
+	
+	
