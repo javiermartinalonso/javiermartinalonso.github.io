@@ -14,7 +14,7 @@ image: static/img/blog/angular/angular-logo_150.png
 En el artículo [Angular CLI]({{ site.baseurl }}angular/2016/12/09/angular-cli.html) vimos como instalar [el cliente de angular](https://cli.angular.io/ "Angular-CLI"). Con la aparición de ***Angular 4***, debemos actualizar esta instalación.
 
 > ATENCIÓN: Si utiliza `CLI angular 1.0.0-beta.28` o menos, debe desinstalar el paquete angular-cli. Debe hacerse debido al cambio del nombre y del alcance del paquete de `angular-cli` a `@angular/cli`.
->
+> <!--more-->
 > Recuerde realizar las siguientes operaciones con perfil de administrador.
 
 ## 1. Desinstalar el paquete clásico de Angular CLI ##
