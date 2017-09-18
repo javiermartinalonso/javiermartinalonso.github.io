@@ -3,7 +3,7 @@ layout: post
 section: "ARQUITECTURA"
 title:  "Instalar Docker Ubuntu"
 date:   2017-09-18
-desc: "Procedimiento de instalación de Docker en Ubuntu"
+desc: "Procedimiento de instalación de Docker en Ubuntu. Este tutorial está basado en la documentación oficial de docker donde se explica el procedimiento de instalación de Docker en Ubuntu."
 keywords: "Dockers, Ubuntu, Docker Community Edition, Docker CE"
 categories: [arquitectura]
 tags: [Dockers, Ubuntu, Docker_Community_Edition, Docker_CE]
@@ -24,7 +24,7 @@ Este tutorial está basado en la documentación oficial de docker donde se expli
 
 # Requisitos previos #
 
-Aunque vamos a definir los conceptos a lo largo del camino, es bueno que usted entienda, [qué es Docker y por qué lo utilizaría]({{ site.baseurl }}arquitectura/2017/10/04/arquitectura-Introduccion-a-Dockers.html "qué es Docker y por qué lo utilizaría") y [cuales son las principales piezas de la plataforma docker]({{ site.baseurl }}arquitectura/2017/10/11/arquitectura-plataforma-Docker.html "cuales son las principales piezas de la plataforma docker") antes de comenzar.
+Aunque vamos a definir los conceptos a lo largo del camino, es bueno que usted entienda, [qué es Docker y por qué lo utilizaría]({{ site.baseurl }}arquitectura/2017/09/04/arquitectura-Introduccion-a-Dockers.html "qué es Docker y por qué lo utilizaría") y [cuales son las principales piezas de la plataforma docker]({{ site.baseurl }}arquitectura/2017/09/11/arquitectura-plataforma-Docker.html "cuales son las principales piezas de la plataforma docker") antes de comenzar.
 
 
 # Requisitos del sistema operativo #
