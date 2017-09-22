@@ -1,0 +1,2 @@
+ejemplo de apir restfull
+https://apidocs.imgur.com/

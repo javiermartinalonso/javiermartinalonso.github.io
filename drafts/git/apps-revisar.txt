@@ -1,0 +1,3 @@
+cliente git sourcetree
+herramienta git-flow para automatizar el trabajo con las ramas
+servidor gitLab para montar un github a nivel de intranet
