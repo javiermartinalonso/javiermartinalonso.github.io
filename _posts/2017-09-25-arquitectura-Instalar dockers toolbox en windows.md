@@ -2,7 +2,7 @@
 layout: post
 section: "ARQUITECTURA"
 title:  "Instalar Docker ToolBox en Windows"
-date:   2016-10-25
+date:   2017-09-25
 desc: "Procedimiento de instalación de Docker Toolbox en Windows. Solución de escritorio legacy. Permite instalar y configurar un entorno docker para sistemas Mac y Windows antiguos que no cumplen los requisitos de Docker para Windows."
 keywords: "Dockers, Windows,Docker_Toolbox,Virtual_Box,Docker_Machine,Docker_for_Windows,Docker_CLI,Docker_Engine, docker-compose"
 categories: [arquitectura]
@@ -14,7 +14,7 @@ image: static/img/blog/docker/docker-logo.png
 
 # Requisitos previos #
 
-Aunque vamos a definir los conceptos a lo largo del camino, es bueno que usted entienda, [qué es Docker y por qué lo utilizaría]({{ site.baseurl }}arquitectura/2017/10/04/arquitectura-Introduccion-a-Dockers.html "qué es Docker y por qué lo utilizaría") y [cuales son las principales piezas de la plataforma docker]({{ site.baseurl }}arquitectura/2017/10/11/arquitectura-plataforma-Docker.html "cuales son las principales piezas de la plataforma docker") antes de comenzar.
+Aunque vamos a definir los conceptos a lo largo del camino, es bueno que usted entienda, [qué es Docker y por qué lo utilizaría]({{ site.baseurl }}arquitectura/2017/09/04/arquitectura-Introduccion-a-Dockers.html "qué es Docker y por qué lo utilizaría") y [cuales son las principales piezas de la plataforma docker]({{ site.baseurl }}arquitectura/2017/09/11/arquitectura-plataforma-Docker.html "cuales son las principales piezas de la plataforma docker") antes de comenzar.
 
  
 # Visión de conjunto #
@@ -121,6 +121,7 @@ En esta sección, se instala el software ***Docker Toolbox*** y varias aplicacio
 	<div style="text-align: center;margin: 1em;">
 		<img src="{{ site.baseurl }}static/img/blog/docker/finish.png" alt="finish" class="img-thumbnail" style="width: 50%"/>
 	</div>
+
 
 # Paso 3: Verificar la instalación #
 
@@ -260,7 +261,6 @@ Empleamos el comando anterior para acceder, en este caso estamos accediendo a la
 <div style="text-align: center;margin: 1em;">
 	<img src="{{ site.baseurl }}static/img/blog/docker/linea-comandos.png" alt="linea-comandos" class="img-thumbnail" style="width: 60%"/>
 </div>
-
 
 ## Interfaz de Virtual Box ##
 
