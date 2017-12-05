@@ -1,0 +1,3 @@
+http://web.fi.uba.ar/~dmontal/tesis3.html
+https://www.adictosaltrabajo.com/libros/repasando-los-clasicos-patterns-of-enterpise-application-architecture-de-martin-fowler/
+http://desarrollo-java.readthedocs.io/es/latest/tutorial4.md.html
