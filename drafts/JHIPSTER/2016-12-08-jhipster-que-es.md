@@ -11,6 +11,16 @@ icon: fa-font
 image: static/img/blog/JHipster/jhipster-logo.png
 ---
 
+
+
+
+https://www.infoq.com/minibooks/jhipster-4-mini-book#minibookDownload
+http://www.jhipster-book.com/#!/
+
+
+
+
+
 = Introducción
 
 Aplicación de una sola página web:

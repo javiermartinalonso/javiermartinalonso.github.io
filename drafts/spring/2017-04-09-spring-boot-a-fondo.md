@@ -28,6 +28,64 @@ El  main() método llama al método Spring Boot  SpringApplication.run() para in
 
 ¿Mencionamos (o notaste) que no tenías que jugar con XML? ¡Qué bono! No más  web.xml tonterías de archivo. No más pregunto si pongo la etiqueta correcta en el archivo y preguntarme cuál es el problema con el párrafo de mensaje de error ilegible que le dice casi nada más. Esto es 100% Java puro. No se necesita ninguna configuración o fontanería. Lo han hecho por ti. ¡Qué bueno de ellos!
 
+
+
+
+
+
+
+
+https://spring.io/guides/tutorials/bookmarks/
+
+
+
+
+Nuestra aplicación usará Spring Boot. Una aplicación Spring Boot es, como mínimo, un public static void mainpunto de entrada y la @SpringBootApplicationanotación. Esto le dice a Spring Boot que lo ayude, siempre que sea posible. Nuestra Applicationclase también es un buen lugar para mantener las probabilidades, como las @Beandefiniciones. Así es como Application.javase verá nuestra clase más simple :
+
+package bookmarks;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import java.util.Arrays;
+
+@SpringBootApplication
+public class Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+
+	@Bean
+	CommandLineRunner init(AccountRepository accountRepository,
+			BookmarkRepository bookmarkRepository) {
+		return (evt) -> Arrays.asList(
+				"jhoeller,dsyer,pwebb,ogierke,rwinch,mfisher,mpollack,jlong".split(","))
+				.forEach(
+						a -> {
+							Account account = accountRepository.save(new Account(a,
+									"password"));
+							bookmarkRepository.save(new Bookmark(account,
+									"http://bookmark.com/1/" + a, "A description"));
+							bookmarkRepository.save(new Bookmark(account,
+									"http://bookmark.com/2/" + a, "A description"));
+						});
+	}
+
+}
+Una vez iniciado, Spring Boot llamará a todos los beans de tipo CommandLineRunner, dándoles una devolución de llamada. En este caso, CommandLineRunneres una interfaz con un método abstracto , lo que significa que, en el mundo de Java 8, podemos sustituir su definición con una expresión lambda. Todos los ejemplos de este tutorial usarán Java 8. Sin embargo, no hay ninguna razón para no poder usar Java 6 o 7, simplemente sustituyendo la sintaxis lambda más concisa por una clase interna anónima ligeramente más detallada implementando la interfaz en cuestión.
+
+
+
+
+
+
+
+
+
+
 Una vez que esté configurado y listo para comenzar a editar, echemos un rápido vistazo al  Application.java archivo. Aquí encontrarás una main clase ejecutable  . Tiene una anotación de  @SpringBootApplication. Esta es la anotación clave que hace de esta aplicación una aplicación de arranque.
 
 	package hello;
