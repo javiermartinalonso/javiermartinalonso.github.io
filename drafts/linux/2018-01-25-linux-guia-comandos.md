@@ -109,16 +109,17 @@ Los caracteres más frecuentes son:
 
 - Encontrar un archivo/directorio con un nombre que comience con un caracter particular:
 
-	`ls -ltr | grep <character>*`
+	`ls -l | grep <character>*`
 
 	Ejemplo: Encontrar fichero o directorios que comienzan con 'ab':
 	
-	`ls -lrt | grep ab*`
+	`ls -l | grep ab*`
 
 
-### 1. Leer y revisar documentos ###
+### 2. Leer y revisar documentos ###
 - **Determinar el tipo de un archivo (fichero, directorio)**
-	file <Filename>
+
+	`file <Filename>`
 
 - **Cómo ver el contenido del archivo o archivos (sin poder editarlo):**
 
@@ -191,7 +192,7 @@ grep nos permite buscar dentro de los archivos, las líneas que concuerdan con u
 
 Por ejemplo si queremos listar los archivos cuyo nombre comiencen por 'ab' en el directorio actual:
 
-	`ls -l | grep ab*` 
+`ls -l | grep ab*` 
 
 
 Como tiene muchísimas opciones, vamos a ver tan sólo las más usadas:
@@ -410,12 +411,41 @@ Para cambiar los permisos de un fichero, utiliza el comando chmod:
     
     -rwxr-xr-x documento
 
-## Información de los discos ##
+## Espacio en disco, tamaños de carpeta ##
 
 - Espacio disponible en disco
 
 	`df -h`
 
+- Tamaño total de una carpeta. Uso de disco. Muestra el espacio que esta ocupado en disco:
+
+	`du -sh [absolutePath]` 
+
+	Que nos devolverá algo así 175M. Si no incluimos un path nos dará la información sobre la carpeta en la que estamos
+
+- Contar número de archivos dentro de una carpeta. Este otro comando está un poco más rebuscado, ya que implica la utilización de find para encontrar todos los archivos, y luego los vamos a contar.
+
+	Tenemos varias formas de hacerlo, pero todas nos van a devolver un solo número que será el número total de coincidencias de archivos. Vamos a ver los tipos más útiles a la hora de hacerlo 
+
+	- Contar los archivos pero solo en carpetas dos niveles por debajo (si hay más de dos niveles de carpetas se omiten)
+	
+		`find . -maxdepth 2 -type f  | wc -l` 
+		
+		Nos devolverá un solo número como por ejemplo 2590. Fijate que he puesto -type f que lo que hace es contar solo archivos (ignoramos las carpetas) 
+
+	- Contar archivos de forma recursiva ilimitada
+	
+		`find . -type f  | wc -l` 
+
+	- Contar archivos y carpetas de forma recursiva
+
+		`find . | wc -l` 
+
+	- Contar archivos con una extensión determinada
+
+		`find . -type f -name "*.php" | wc -l` 
+
+		Con este comando estaríamos contando todos los archivos .php, fíjate que también puedes poner un nombre de archivo o una parte como por ejemplo “clase*” o “*log*” para buscar archivos con estas cadenas y contarlos.
 
 ## Atajos de teclado ##
 
@@ -474,6 +504,8 @@ w: Muestra qué usuarios están conectados actualmente.
 uptime: Muestra el tiempo que lleva encendido el sistema, y cuántos usuarios lo han usado.
 
 uname –a: Ofrece información del Kernel del sistema.
+Descripción: =unix name. Informacion sobre el tipo de unix en el que estamos, kernel, etc.
+Ejemplos: uname, uname -a
 
 cat /proc/cpuinfo: Muestra información del Microprocesador
 
@@ -486,6 +518,12 @@ free: Muestra la cantidad de memoria total, usada y libre, así como el espacio 
 
 adduser xxxxxx: Donde sustituiremos las x por el nombre del usuario que queramos añadir.
 
+Ejemplos: adduser pepe, adduser -s /bin/false pepe
+
+userdel
+Descripción: = eliminar usuario de sistema
+Ejemplos: userdel pepe
+
 passwd xxxxxxx: Donde xxxxxxx será el nombre del usuario al que queramos cambiar la contraseña. Necesitaremos conocer la contraseña ya establecida si queremos cambiarla.
 
 su: Inicia sesión como superusuario o root desde la sesión actual.
@@ -496,14 +534,42 @@ exit: Cierra la sesión del superusuario o root, volviendo al usuario desde la q
 
 
 ps: Muestra los procesos que se encuentran activos en el sistema actualmente.
+ps -aux
+Despliega todos los procesos del sistema, con nombre y tiempo de inicio.
 
 top: Muestra todos los procesos en funcionamiento.
+top Esta herramiente monitorea varios recursos del sistema y tiene un caracter dinámico, muestra uso
+de CPU por proceso, cantidad de memoria, tiempo desde su inicio,etc. vmstat Es muy similar a top ya
+que es un condensado de los procesos del sistema, para que esta herrmienta se vuelva dinamica se
+deben especificar los argumentos: vmstat -n
 
 kill “pid” (process id): Detiene el proceso asignado al pid que muestra la salida del comando ps.
 
 bg: Muestra todos los procesos pausados o en segundo plano (recordamos que Ctrl + z establecía procesos en segundo plano).
 
 fg: Trae de vuelta el proceso más reciente puesto en segundo plano.
+
+crontabAl igual que at especifica el tiempo al cual se ejecutará un programa “script”, crontab tiene la
+siguiente forma: minutos horas dias meses fin_de_semana nombre_de_usuario instrucción argumentos
+El siguiente ejemplo ejecutará el programa oracle.pl cada media hora todos los dias:
+Código :
+30 * * * * root /usr/oracle.pl
+Si se desea realizarlo mensualmente:
+Código :
+01 3 1 * * root /usr/oracle.pl
+Lo anterior ejecutará oracle.pl el dia primero de cada mes, a las 3:01 AM.
+Para especificar trabajos cron cada usuario mantiene un archivo en el directorio /var/spool/cron/ , este
+directorio lo accesa cada usario con el comando crontab -e
+La ejecución de crontab se facilita debido al archivo /etc/crontab que esepcifica trabajos crontab por
+hora,dia,semana y mes, de esta forma solo se requiere que el usuario coloque un archivo en los
+directorios correspondientes: /etc/cron.hourly | /etc/cron.daily | /etc/cron.weekly | /etc/cron.monthly
+
+
+
+
+
+
+
 
 ## Comandos de actualización del sistema ##
 
@@ -544,16 +610,55 @@ startx: Inicia la interfaz gráfica si ésta se encuentra instalada en el sistem
 
 ## Comandos de Red ##
 
+host: Determina la dirección IP de un “Host” , host -a despliega toda la información de DNS
 
-ifconfig: Lista las direcciones IP de todos los dispositivos del equipo.
+ifconfig: Configuración de interfaces de red, modems, etc. Lista las direcciones IP de todos los dispositivos del equipo.
 
 ping xxxx: Manda una señal que deberá ser devuelta por el equipo xxxx para comprobar si se encuentra en línea o no.
 
+Ejemplos: ping www.google.es
+
 whois xxxxx: Obtiene información acerca de un dominio xxxxx, como por ejemplo www.google.com
+
+traceroute
+Descripción: herramienta de red que nos muestra el camino que se necesita para llegar a otra maquina.
+Ejemplos: traceroute www.rediris.es
 
 wget xxxx: Descargará el archivo xxxx. Deberemos proporcionarle una dirección completa como por ejemplo: https://direccionip/carpeta/subcarpeta/archivo.file
 
 
+
+ifup
+Habilita la interfase especificada,ejemplo: ifup eth0 .
+ifdown
+Deshabilita la interfase especificada,ejemplo: ifdown eth0 .
+netstat -a
+Todas la conexiones de Red originadas y recibidas por el “Host”
+Descripción: la informacion sobre las conexiones de red activas.
+Ejemplos: netstat, netstat -ln, netstat -l, netstat -a
+
+netstat -r
+Muestra la tabla de ruteo “routing table” del sistema
+netstat -i
+Estadisticas de red de cada interfase
+nslookup
+Busca información en los servidores DNS,ejemplo: nslookup -query=mx osomosis.com , si no se
+especifican parametros se entra en modo interactivo
+
+route
+Descripción: gestiona las rutas a otras redes
+route add
+Permite agregar tablas de ruteo de y hacia el “Host”. Ejemplo: Para guiar toda la información de la red
+206.171.55.16 netmask 255.255.255.240 via la interfase eth0 :
+Código :
+route add ‐net 206.171.55.16 255.255.255.240 eth0
+Para rutear todo el trafico por cierta interfase (“Default Gateway”):
+Código :
+route add default gw 206.171.55.51 eth0
+Esto enviará toda la infromacion por la direccion 206.171.55.51
+route -n:
+Despliega la tabla de ruteo del “Host”. NOTA: Debe de estar “IP Forwarding” ON en
+/etc/sysconfig/network , además el “kernel” debe de estar configurado para “IP Forwarding” .
 
 
 
