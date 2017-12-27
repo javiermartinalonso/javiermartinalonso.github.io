@@ -60,7 +60,7 @@ Cualquier unidad de almacenamiento debe formar parte de esta estructura única. 
 Esta estructura de árbol y los nombres de los directorios no es al azar, tiene un sentido y una funcionalidad:
 
 <div style="text-align: center;margin: 1em;">
-	<img src="{{ site.baseurl }}static/img/blog/linux/funcionalidad-filesystem.jpg" alt="explicación jerarquía de ficheros" class="img-thumbnail" style="width: 70%"/>
+	<img src="{{ site.baseurl }}static/img/blog/linux/funcionalidad-filesystem.jpg" alt="explicación jerarquía de ficheros" class="img-thumbnail" style="width: 100%"/>
 </div>
 
 | Directorio | Descripción breve |
@@ -98,7 +98,7 @@ Esta estructura de árbol y los nombres de los directorios no es al azar, tiene 
 
 - `apropos <command>` Lista las páginas de manual que tratan acerca del comando <command>.
 
-- `whereis <command>`: Muestra la localización más probable para el programa <command>.
+- `whereis <command>` Muestra la localización más probable para el programa <command>.
 
 ## `SSH` Operaciones con host remotos ##
 
@@ -138,7 +138,7 @@ Esta estructura de árbol y los nombres de los directorios no es al azar, tiene 
 	
 		`scp user1@host1:absolutePath user2@host2:absolutePath`
 
-		ejemplo: Para copiar un archivo de un servidor a otro, hacemos lo siguiente:
+		Ejemplo: Para copiar un archivo de un servidor a otro, hacemos lo siguiente:
 		`$ scp usuario1@dominio1.com:/home/usuario1/archivo.txt usuario2@dominio2.com:/home/usuario2/`
 
 
@@ -146,11 +146,21 @@ Esta estructura de árbol y los nombres de los directorios no es al azar, tiene 
 
 - `pwd`: ***Print working directory***: Muestra el directorio de trabajo, nos mostrará la ruta en la que nos encontramos actualmente. Muy útil si hemos estado saltando de subcarpeta en subcarpeta y el prompt nos muestra sólo una ruta abreviada.
 
-- `ls`: Nos muestra una lista con el contenido del directorio actual (o el que le pasemos como argumento, por ejemplo: `ls /home/usuario`).
+- `ls`: Nos muestra una lista con el contenido del directorio actual (o el que le pasemos como argumento).
+
+	Ejemplo: `ls /home/usuario`
 
 - `ls –l` o `ll`: Muestra una lista del contenido del directorio añadiendo información adicional de los ficheros o carpetas, como permisos, fecha y hora de creación o modificación, etc…
 
 - `ls –a`: Muestra una lista de todos los ficheros del directorio, incluyendo los ficheros o carpetas ocultos.
+
+- Listar un archivo/directorio con un nombre que comience con un caracter particular:
+
+	`ls -l | grep <character>*`
+
+	Ejemplo: Listar archivo/directorio que comienzan con 'ab':
+	
+	`ls -l | grep ab*`
 
 - `cd`: nos lleva al directorio raíz.
 
@@ -165,7 +175,7 @@ Esta estructura de árbol y los nombres de los directorios no es al azar, tiene 
 
 	`find [ruta] [expresión_de_búsqueda] [acción]`
 
-	- `[ruta]` es cualquier directorio o path que se quiera indicar y desde donde inicia la búsqueda, ejemplos pueden ser `/etc`, `/home/javier`, `/`, `.` si no se indica una ruta se toma en cuenta entonces el directorio donde se este actualmente, es decir el directorio de trabajo actual, que es lo mismo que indicar punto `.`. De hecho es posible indicar más de un directorio de búsqueda como se verá más adelante en un ejemplo.
+	- `[ruta]` es cualquier directorio o path que se quiera indicar y desde donde inicia la búsqueda, ejemplos pueden ser `/etc`, `/home/javier`, `/`, `.` si no se indica una ruta se toma en cuenta entonces el directorio donde se este actualmente, es decir el directorio de trabajo actual, que es lo mismo que indicar punto `.`. De hecho es posible indicar más de un directorio de búsqueda.
 
 	- `[expresión_de_búsqueda]` es una o más opciones que puede devolver la búsqueda a realizar en si o acciones a realizar sobre la búsqueda, si no se indica ninguna expresión de búsqueda se aplica por defecto la opción ­`print` que muestra el resultado de la búsqueda.
 
@@ -174,15 +184,6 @@ Esta estructura de árbol y los nombres de los directorios no es al azar, tiene 
 	Los tres argumentos anterior son enteramente opcionales
 
 	`find / -name catalina.log`
-
-- Encontrar un archivo/directorio con un nombre que comience con un caracter particular:
-
-	`ls -l | grep <character>*`
-
-	Ejemplo: Encontrar fichero o directorios que comienzan con 'ab':
-	
-	`ls -l | grep ab*`
-
 
 ### 2. Leer y revisar documentos ###
 
@@ -204,11 +205,11 @@ Esta estructura de árbol y los nombres de los directorios no es al azar, tiene 
 	
 - **Cómo ver la última parte del contenido del archivo (sin poder editarlo):**
 
-	- Despliega en la consola las últimas entradas en el archivo catalina.out
+	- Despliega en la consola las últimas entradas en el archivo `catalina.out`
 		
 		`tail -f catalina.out`
 
-	- Despliega en la consola las últimas 1000 entradas en el archivo catalina.out
+	- Despliega en la consola las últimas 1000 entradas en el archivo `catalina.out`
 	
 		`tail -fn 1000 catalina.out`
 
@@ -216,7 +217,7 @@ Esta estructura de árbol y los nombres de los directorios no es al azar, tiene 
 
 	`more file`
 
-	Ejemplos: `more fichero`
+	Ejemplos: `more fichero.txt`
 
 - **Cómo ver el contenido del archivo con opciones avanzadas**
 
@@ -268,7 +269,7 @@ Esta estructura de árbol y los nombres de los directorios no es al azar, tiene 
  		`grep --color "ERROR" catalina.out`
  
 
-Por ejemplo si queremos listar los archivos cuyo nombre comiencen por 'ab' en el directorio actual:
+Por ejemplo si queremos listar los archivos cuyo nombre comiencen por *'ab'* en el directorio actual:
 
 `ls -l | grep ab*` 
 
@@ -378,23 +379,13 @@ En cuanto a la expresión regular:
 `([0-9]{1,3}\.){3}` Representa 3 bloques de entre uno y tres dígitos separados por puntos. Observemos que como el punto es un metacaracter, tengo que usar el caracter de escape \ para que no sea interpretado como un metacaracter, sino como un caracter normal.
 `[0-9]{1,3}` Representa el último bloque de la dirección IP, que está formado por un número de entre 1 y 3 dígitos.
 
-
-
-
-
-
-
 ### 3. Manipular archivos y directorios: Crear / Modificar ###
 
-- **Crear un nuevo archivo:**
-
-	`touch <fileName>`
+- `touch <fileName>` **Crear un nuevo archivo:**
 
 	Ejemplo: `touch abc.txt`
 
-- Cómo **Editar un archivo** ***(también sirve para crear el archivo)***
-
-	`vi <FileName>`
+- `vi <FileName>` **Editar un archivo** ***(también sirve para crear el archivo)***
 	
 	Ejemplo: `vi abc.txt`
 
@@ -428,6 +419,21 @@ En cuanto a la expresión regular:
 - `rm –r`: Elimina un directorio y todo su contenido.
 
 - `rm –i fichero`: Elimina un fichero solicitando confirmación. Es muy recomendable usarlo con la opción `–r` para poder usarlo con directorios evitando problemas.
+
+### 4. Compresión de ficheros ###
+
+- `tar` Descripción: =Tape ARchiver. archivador de ficheros.
+
+	Ejemplos: 
+		`tar cvf fichero.tar directorio`
+		`tar xvf fichero.tar`
+		`tar zcvf fichero.tgz directorio`
+		`tar zxvf fichero.tgz`
+
+- `gunzip` Descripción: descompresor compatible con ZIP.
+	
+	Ejemplos: 
+		`gunzip fichero`
 
 ## Enlaces simbólicos ##
 
@@ -474,20 +480,7 @@ Ejemplo: Supongamos que quiere apuntar el último enlace suave ahora al nuevo di
  `ln -nsf 1.1 latest`
 
 
-### 3. Compresión de ficheros ###
 
-- `tar` Descripción: =Tape ARchiver. archivador de ficheros.
-
-	Ejemplos: 
-		`tar cvf fichero.tar directorio`
-		`tar xvf fichero.tar`
-		`tar zcvf fichero.tgz directorio`
-		`tar zxvf fichero.tgz`
-
-- `gunzip` Descripción: descompresor compatible con ZIP.
-	
-	Ejemplos: 
-		`gunzip fichero`
 
 
 ## Gestión de los permisos de archivos o directorios ##
@@ -582,62 +575,47 @@ Ejemplos: `chmod +r fichero`, `chmod +w directorio`, `chmod +rw directorio -R`, 
 
 ## Espacio en disco, tamaños de carpeta ##
 
-- Espacio disponible en disco
+- `df -h` Espacio disponible en disco. Esto nos devolverá las particiones montadas, el uso de espacio en cada una y lo que nos queda de resto, y todo de forma fácil para leer.
 
-	`df -h`
+- `du -bsh [absolutePath]` Tamaño total de una carpeta. Uso de disco. Muestra el espacio que esta ocupado en disco:
 
-	Esto nos devolverá las particiones montadas, el uso de espacio en cada una y lo que nos queda de resto, y todo de forma fácil para leer.
-
-- Tamaño total de una carpeta. Uso de disco. Muestra el espacio que esta ocupado en disco:
-
-	`du -bsh [absolutePath]` 
-
-	Du tiene más opciones, pero en este caso uso estas 3:
-	-b [–bytes]: Mostrar en bytes.
-	-s [–sumarize]: Mostrar solamente el tamaño total de cada argumento.
-	-h [–human-readable]: Imprime los tamaños de forma leíble (e.g., 1K, 234M, 2G)
+	`Du` tiene más opciones, pero en este caso uso estas 3:
+	
+	- `-b` **[–bytes]**: Mostrar en bytes.
+	- `-s` **[–sumarize]**: Mostrar solamente el tamaño total de cada argumento.
+	- `-h` **[–human-readable]**: Imprime los tamaños de forma leíble (e.g., 1K, 234M, 2G)
 
 
-Si sólo quisiéramos ver cuáles son, por ejemplo, los 5 directorios más pesados en nuestro /home podríamos usa du con una serie de comandos extras, por ejemplo:
+	Si sólo quisiéramos ver cuáles son, por ejemplo, los 5 directorios más pesados en nuestro` /home` podríamos usa du con una serie de comandos extras, por ejemplo:
 
-	`$ du ‐hs * | sort ‐nr | head ‐5`
-	215G Videos
-	171G Linux
-	68G Documentos
-	50G Música
-	28G Imágenes
+		$ du ‐hs * | sort ‐nr | head ‐5
+		215G Videos
+		171G Linux
+		68G Documentos
+		50G Música
+		28G Imágenes
 
-- Imprimir todas las líneas que tiene un archivo y el número de bytes:
-
-	`wc records.log`
+- `wc records.log` Imprimir todas las líneas que tiene un archivo y el número de bytes:
 
 - Contar número de archivos dentro de una carpeta. Este otro comando está un poco más rebuscado, ya que implica la utilización de `find` para encontrar todos los archivos, y luego los vamos a contar.
 
 	Tenemos varias formas de hacerlo, pero todas nos van a devolver un solo número que será el número total de coincidencias de archivos. Vamos a ver los tipos más útiles a la hora de hacerlo 
 
-	- Contar los archivos pero solo en carpetas dos niveles por debajo (si hay más de dos niveles de carpetas se omiten)
+	- `find . -maxdepth 2 -type f  | wc -l` Contar los archivos pero solo en carpetas dos niveles por debajo (si hay más de dos niveles de carpetas se omiten)
 	
-		`find . -maxdepth 2 -type f  | wc -l` 
-		
-		Nos devolverá un solo número como por ejemplo 2590. Fijate que he puesto -type f que lo que hace es contar solo archivos (ignoramos las carpetas) 
+		> Nos devolverá un solo número como por ejemplo 2590. Fijate que he puesto `-type f` que lo que hace es contar solo archivos (ignoramos las carpetas) 
 
-	- Contar archivos de forma recursiva ilimitada
+	- `find . -type f  | wc -l` Contar archivos de forma recursiva ilimitada
 	
-		`find . -type f  | wc -l` 
+	- `find . | wc -l` Contar archivos y carpetas de forma recursiva
 
-	- Contar archivos y carpetas de forma recursiva
+	- `find . -type f -name "*.php" | wc -l` Contar archivos con una extensión determinada
 
-		`find . | wc -l` 
-
-	- Contar archivos con una extensión determinada
-
-		`find . -type f -name "*.php" | wc -l` 
-
-		Con este comando estaríamos contando todos los archivos .php, fíjate que también puedes poner un nombre de archivo o una parte como por ejemplo “clase*” o “*log*” para buscar archivos con estas cadenas y contarlos.
+		> Con este comando estaríamos contando todos los archivos .php, fíjate que también puedes poner un nombre de archivo o una parte como por ejemplo “clase*” o “*log*” para buscar archivos con estas cadenas y contarlos.
 
 ## Atajos de teclado ##
 
-- `Ctrl + Alt + Fn (1-6)`: Para abrir terminales a pantalla completa. Requiere autentificación con usuario y contraseña. Cambiaremos a la terminal correspondiente a la tecla Fn que pulsemos, correspondiendo ésta al orden en el que las abrimos. En ***Linux*** podemos tener múltiples terminales funcionando simultáneamente, por defecto controlaremos hasta 6 con esta combinación de teclas. Por ejemplo Ctrl + Alt + F1 nos lleva a la primera terminal abierta.
+- `Ctrl + Alt + Fn (1-6)`: Para abrir terminales a pantalla completa. Requiere autentificación con usuario y contraseña. Cambiaremos a la terminal correspondiente a la tecla Fn que pulsemos, correspondiendo ésta al orden en el que las abrimos. En ***Linux*** podemos tener múltiples terminales funcionando simultáneamente, por defecto controlaremos hasta 6 con esta combinación de teclas. Por ejemplo `Ctrl + Alt + F1` nos lleva a la primera terminal abierta.
 
 - `tty`: Con este comando, en el caso de tener varias terminales abiertas, nos dirá en cuál nos encontramos.
 
@@ -649,7 +627,7 @@ Si sólo quisiéramos ver cuáles son, por ejemplo, los 5 directorios más pesad
 
 - `Tab` (Tabulador) Función de  expansión. Completará el comando, nombre de fichero o directorio que estemos escribiendo. En caso de múltiples coincidencias, con una doble pulsación de esta tecla obtendremos todos los resultados posibles encontrados en el directorio o sistema.
 
-- Flecha de dirección ‘arriba’ y /o ‘abajo’: La shell almacena un historial de las órdenes tecleadas anteriormente. Nos moveremos por el historial compuesto por los últimos comandos usados.
+-` Flecha de dirección ‘arriba’ y /o ‘abajo’`: La shell almacena un historial de las órdenes tecleadas anteriormente. Nos moveremos por el historial compuesto por los últimos comandos usados.
 
 - `clear`limpia la pantalla.
 
@@ -686,9 +664,12 @@ Si sólo quisiéramos ver cuáles son, por ejemplo, los 5 directorios más pesad
 
 - `who`: muestra los usuarios de sistema que han iniciado una sesion.
 
-	Ejemplos: 
+	Ejemplos:
+ 
 	`who`
+
 	`w`
+
 	`who am i`
 
 - `whoami`: Muestra el nombre del usuario con el que estamos trabajando.
@@ -700,7 +681,9 @@ Si sólo quisiéramos ver cuáles son, por ejemplo, los 5 directorios más pesad
 - `uname –a`: (unix name) Ofrece información del Kernel del sistema.Información sobre el tipo de ***unix*** en el que estamos, kernel, etc.
 
 	Ejemplos: 
+
 	`uname`
+
 	`uname -a`
 
 - `cat /proc/cpuinfo`: Muestra información del Microprocesador
@@ -714,12 +697,15 @@ Si sólo quisiéramos ver cuáles son, por ejemplo, los 5 directorios más pesad
 - `adduser xxxxxx`: Donde sustituiremos las x por el nombre del usuario que queramos añadir.
 
 	Ejemplos: 
+
 	`adduser pepe`
+
 	`adduser -s /bin/false pepe`
 
 - `userdel`: eliminar usuario de sistema.
 
 	Ejemplos: 
+
 	`userdel pepe`
 
 - `passwd xxxxxxx`: Donde xxxxxxx será el nombre del usuario al que queramos cambiar la contraseña. Necesitaremos conocer la contraseña ya establecida si queremos cambiarla.
@@ -733,6 +719,7 @@ Si sólo quisiéramos ver cuáles son, por ejemplo, los 5 directorios más pesad
 - `ps`: Muestra los procesos que se encuentran activos en el sistema actualmente.Despliega todos los procesos del sistema, con nombre y tiempo de inicio.
 
 	Ejemplo: 
+
 	`ps axu`
 
 	Muestra los procesos de un usuario ejecutados desde la shell:
@@ -872,20 +859,6 @@ Ejemplos:
 `mail javimartinalonso@gmail.com < fichero`
 `mail -v javimartinalonso@gmail.com < fichero`
 
-https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -895,3 +868,5 @@ https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX
 ## Referencias ##
 
 https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/
+
+https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX

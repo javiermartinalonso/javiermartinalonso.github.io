@@ -7,7 +7,7 @@ desc: "OpenLDAP es una implementación libre y de código abierto del protocolo 
 keywords: "OpenLDAP,ldap,instalación, windows"
 categories: [LDAP]
 tags: [OpenLDAP,ldap,instalación, windows]
-icon: fa-sitemap
+icon: fas fa-sitemap
 image: static/img/blog/ldap/ldap-logo.png
 ---
 

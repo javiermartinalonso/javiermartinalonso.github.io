@@ -17,7 +17,7 @@
     <!-- SUBSCRIPCION-->
     {% if site.feedburner %}
       <div>
-        <a class="btn btn-lg btn-default btn-rounded btn-outline wow bounceIn subscribe" href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" target="blank" style="color: #aeaeae"><i class="fa fa-bell-o" aria-hidden="true"></i> <span data-i18n="feedburner.my_feedburner">Suscríbete</span></a>
+        <a class="btn btn-lg btn-default btn-rounded btn-outline wow bounceIn subscribe" href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" target="blank" style="color: #aeaeae"><i class="far fa-bell" aria-hidden="true"></i> <span data-i18n="feedburner.my_feedburner">Suscríbete</span></a>
       </div>
     {% endif %}
     
@@ -38,13 +38,13 @@
       <ul class="list-inline social-icon">
         <li>
             <a href="https://github.com/{{ site.author.github_username }}" target="blank">
-                <i class="fa fa-github"></i>
+                <i class="fab fa-github"></i>
             </a>
         </li>
 
         <li>
             <a href="{{ site.author.youtube_canal_name }}" target="blank">
-                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                <i class="fab fa-youtube" aria-hidden="true"></i>
             </a>
         </li>
 
@@ -53,26 +53,26 @@
         -->
         <li>
             <a href="{{ site.author.linkldn }}" target="blank">
-                <i class="fa fa-linkedin"></i>
+                <i class="fab fa-linkedin-in"></i>
             </a>
         </li>
 
         <li>
             <a href="mailto:{{ site.author.email }}">
-                <i class="fa fa-envelope-o"></i>
+                <i class="far fa-envelope"></i>
             </a>
         </li>
 
         <li>
             <a href="{{ site.baseurl }}feed.xml" target="blank">
-                <i class="fa fa-rss"></i>
+                <i class="fas fa-rss"></i>
             </a>
         </li>
 
         {% if site.feedburner %}
             <li>
             <a href="https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.uri }}&amp;loc=es_ES" target="blank">
-                <i class="fa fa-bell-o"></i>
+                <i class="far fa-bell"></i>
             </a>
             </li>  
         {% endif %}   

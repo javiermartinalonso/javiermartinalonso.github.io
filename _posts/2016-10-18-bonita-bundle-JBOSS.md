@@ -7,7 +7,7 @@ desc: "Video sobre la instalación del bundle JBOSS de Bonita BPM"
 keywords: "Bonita BPM,bundle, portal, JBOSS"
 categories: [bonita]
 tags: [Bonita,BPM,bundle,portal,JBOSS]
-icon: fa-cogs
+icon: fas fa-cogs
 image: static/img/blog/bonita/bonita-logo.png
 ---
 

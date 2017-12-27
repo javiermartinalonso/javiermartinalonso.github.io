@@ -7,7 +7,7 @@ desc: "Bonita BPM autenticar contra LDAP"
 keywords: "Bonita BPM, organizacion, LDAP authentication"
 categories: [bonita]
 tags: [Bonita,BPM,LDAP,authentication,organizacion] 
-icon: fa-cogs
+icon: fas fa-cogs
 image: static/img/blog/bonita/bonita-logo.png
 ---
 

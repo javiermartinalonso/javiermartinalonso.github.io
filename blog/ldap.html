@@ -44,9 +44,9 @@ image: static/img/blog/ldap/ldap-logo.png
                                         <!-- INFORMACION ACTIVIDAD POST -->
                                         <div class="small m-b-xs">
                                             {% if site.disqus %}
-                                                <i class="fa fa-comments-o"> </i> <span class='disqus-comment-count' data-disqus-url="{{ site.url }}{{ post.url }}">0</span>
+                                                <i class="far fa-comments"> </i> <span class='disqus-comment-count' data-disqus-url="{{ site.url }}{{ post.url }}">0</span>
                                             {% endif %}                        
-                                            <i class="fa fa-clock-o"></i> <span>{{ post.date | date: "%-d %b %Y" }}</span>
+                                            <i class="far fa-clock"></i> <span>{{ post.date | date: "%-d %b %Y" }}</span>
                                             <i class="fa fa-user"></i> <span>{{ site.author.name }}</span>
                                         </div>
                                         <!-- DESCRIPCION DEL ARTICULO-->
@@ -68,7 +68,7 @@ image: static/img/blog/ldap/ldap-logo.png
                                                     <h5>Stats:</h5>
                                                     <div> 
                                                     {% if site.disqus %}
-                                                        <i class="fa fa-comments-o"> </i> <span class='disqus-comment-count' data-disqus-url="{{ site.url }}{{ post.url }}">0</span>
+                                                        <i class="far fa-comments"> </i> <span class='disqus-comment-count' data-disqus-url="{{ site.url }}{{ post.url }}">0</span>
                                                     {% endif %}
                                                     </div>
                                                 </div>

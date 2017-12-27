@@ -7,7 +7,7 @@ desc: "Procedimiento de instalación de Docker en Windows"
 keywords: "Dockers, Windows"
 categories: [arquitectura]
 tags: [Dockers, Windows]
-icon: fa-university
+icon: fas fa-university
 image: static/img/blog/docker/docker-logo.png
 ---
 

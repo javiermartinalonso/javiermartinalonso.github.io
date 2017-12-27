@@ -7,7 +7,7 @@ desc: "En el ámbito de gestión del ciclo de vida de un proyecto o producto sof
 keywords: "Spring, Spring-Boot, arquitectura, entorno de despliegue, Propiedades del sistema, Profiles en Maven, Profiles en Spring"
 categories: [arquitectura]
 tags: [Spring, arquitectura, entorno_de_despliegue, Propiedades_del_sistema, Profiles_en_Maven, Profiles_en_Spring]
-icon: fa-university
+icon: fas fa-university
 image: static/img/blog/arquitectura/arquitectura-logo.png
 ---
 

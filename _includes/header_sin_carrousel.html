@@ -7,14 +7,15 @@
     </div>
 </div>
 
+<!--
 <nav class="navbar navbar-default navbar-fixed-top navbar-scroll" role="navigation">
+-->
+<nav role="navigation">    
     <div class="container" style="width: auto;">
-        <div class="navbar-header page-scroll">
+        <div class="visible-xs-block navbar-header page-scroll">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <span class="fas fa-bars"></span>
             </button>
 
             <a class="btn btn-lg btn-default btn-logo-home-scroll" href="/" id="i18_title">
@@ -22,6 +23,7 @@
                 <span data-i18n="website.title">{{ site.title }}</span>
             </a>                
         </div>
+
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right" id="i18_navbar">
                 {% for tag in site.data.blog %}
@@ -30,9 +32,10 @@
                     {% else %}
                     <li>
                     {% endif %}
-                    <a class="page-scroll" href="{{ tag.href }}">{{ tag.name }}</a></li>
+                    <a class="page-scroll" href="{{ tag.href }}">{{ tag.name | upcase }}</a></li>
                 {% endfor %}            
             </ul>
         </div>
+        
     </div>
 </nav>

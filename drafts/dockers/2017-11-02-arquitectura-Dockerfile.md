@@ -7,7 +7,7 @@ desc: "Dockerfiles son scripts que contienen comandos declarados sucesivamente q
 keywords: "Dockers, Dockerfile, imagen-Docker"
 categories: [arquitectura]
 tags: [Dockers, Dockerfile, imagen-Docker]
-icon: fa-university
+icon: fas fa-university
 image: static/img/blog/docker/docker-logo.png
 ---
 

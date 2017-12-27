@@ -7,7 +7,7 @@ desc: "LDAP son las siglas de Lightweight Directory Access Protocol (en español
 keywords: "LDAP"
 categories: [LDAP]
 tags: [ldap]
-icon: fa-sitemap
+icon: fas fa-sitemap
 image: static/img/blog/ldap/ldap-logo.png
 ---
 

@@ -9,7 +9,7 @@ Aquí se detallan algunas posibilidades de bases de datos open source y de pagin
 keywords: "bases de datos , bases de datos para pruebas , database sample , posgresql ejemplos de bases de datos , postgresql bases de datos , postgresql database example , sql"
 categories: [arquitectura]
 tags: [bases de datos , bases de datos para pruebas , database sample , posgresql ejemplos de bases de datos , postgresql bases de datos , postgresql database example , sql]
-icon: fa-university
+icon: fas fa-university
 image: static/img/blog/bbdd/bbdd-logo.png
 ---
 

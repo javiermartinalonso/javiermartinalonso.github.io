@@ -12,17 +12,8 @@
                     <!-- SUBSCRIPCION-->
                     {% include subscription.html %}
 
-                    <div class="side">
-                        <div>
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                            <span data-i18n="glosary.Recent_Posts">Recent Posts</span>
-                        </div>
-                        <ul class="content-ul" recent>
-                            {% for post in site.posts offset: 0 limit: 10  %}
-                                <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
+                    <!-- post -->
+                    {% include posts.html %}
 
                     <!-- Content -->
                     <div class="side ">
@@ -47,8 +38,10 @@
                     <!--  TAGS -->
                     <div class="side">
                         <div>
-                            <i class="fa fa-tags"></i>
-                            <span data-i18n="glosary.Tags">Tags</span>              
+                            <a href="{{ site.baseurl }}tag/">
+                                <i class="fa fa-tags"></i>
+                                <span data-i18n="glosary.Tags">Tags</span>   
+                            </a>              
                         </div>
                         <div class="tags-cloud">
                             {% assign first = site.tags.first %}

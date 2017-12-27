@@ -42,10 +42,10 @@ permalink: /blog/
                                             <!-- INFORMACION ACTIVIDAD POST -->
                                             <div class="small m-b-xs">
                                                 {% if site.disqus %}
-                                                    <i class="fa fa-comments-o"> </i> <span class='disqus-comment-count' data-disqus-url="{{ site.url }}{{ post.url }}">0</span>
+                                                    <i class="far fa-comments"> </i> <span class='disqus-comment-count' data-disqus-url="{{ site.url }}{{ post.url }}">0</span>
                                                 {% endif %}                        
-                                                <i class="fa fa-clock-o"></i> <span>{{ post.date | date: "%-d %b %Y" }}</span>
-                                                <i class="fa fa-user"></i> <span>{{ site.author.name }}</span>
+                                                <i class="far fa-clock"></i> <span>{{ post.date | date: "%-d %b %Y" }}</span>
+                                                <i class="far fa-user"></i> <span>{{ site.author.name }}</span>
                                             </div>
                                             <!-- DESCRIPCION DEL ARTICULO-->
                                             <div>
@@ -56,7 +56,7 @@ permalink: /blog/
                                         </div>                      
                                         <div class="col-md-2 ">
                                             <div class="vote-icon">
-                                                {% if post.icon %}<i class="fa {{ post.icon }}"> </i>{% endif %}
+                                                {% if post.icon %}<i class="{{ post.icon }}"> </i>{% endif %}
                                             </div>
                                         </div>
                                     </div>

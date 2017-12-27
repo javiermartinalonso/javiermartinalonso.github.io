@@ -1,13 +1,13 @@
 ---
 layout: post
-section: "ARQUITECTURA"
+section: "DOCKER"
 title:  "Cómo utilizar Docker con Kitematik"
 date:   2016-11-02
 desc: ""
 keywords: "Dockers"
-categories: [arquitectura]
+categories: [docker]
 tags: [Dockers]
-icon: fa-university
+icon: fab fa-docker
 image: static/img/blog/docker/docker-logo.png
 ---
 

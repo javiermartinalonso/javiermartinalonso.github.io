@@ -7,7 +7,7 @@ desc: "."
 keywords: "git, GitHub, BitBucket"
 categories: [arquitectura]
 tags: [git, GitHub, BitBucket]
-icon: fa-university
+icon: fas fa-university
 image: static/img/blog/docker/docker-logo.png
 ---
 

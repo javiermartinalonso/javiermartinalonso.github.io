@@ -7,7 +7,7 @@ desc: ""
 keywords: "Dockers"
 categories: [arquitectura]
 tags: [Dockers]
-icon: fa-university
+icon: fas fa-university
 image: static/img/blog/docker/docker-logo.png
 ---
 

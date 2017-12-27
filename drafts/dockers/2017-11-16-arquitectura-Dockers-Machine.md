@@ -1,13 +1,13 @@
 ---
 layout: post
-section: "ARQUITECTURA"
+section: "DOCKERS"
 title:  "Dockers Machine"
 date:   2016-11-16
 desc: "Docker es una herramienta open-source que nos permite realizar una ‘virtualización ligera’, con la que poder empaquetar entornos y aplicaciones que posteriormente podremos desplegar en cualquier sistema que disponga de esta tecnología."
 keywords: "Dockers, virtualización, portabilidad,contenedor, maquina_virtual, integración_continua, DevOps"
 categories: [arquitectura]
 tags: [Dockers, virtualización, portabilidad,contenedor, maquina_virtual, integración_continua, DevOps]
-icon: fa-university
+icon: fab fa-docker
 image: static/img/blog/docker/docker-logo.png
 ---
 

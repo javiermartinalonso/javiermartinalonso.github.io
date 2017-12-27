@@ -7,7 +7,7 @@ desc: "Spring-boot establece un estándar en el diseño de aplicaciones basadas 
 keywords: "Spring, Spring-Boot"
 categories: [spring]
 tags: [Spring, Spring-Boot]
-icon: fa-leaf
+icon: fas fa-leaf
 image: static/img/blog/spring/spring-logo.png
 ---
 

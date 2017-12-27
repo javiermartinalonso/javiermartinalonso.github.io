@@ -7,7 +7,7 @@ desc: "Información sobre como instalar NodeJs y NPM"
 keywords: "node.js,npm"
 categories: [angular]
 tags: [node.js,npm]
-icon: fa-font
+icon: fab fa-angular
 image: static/img/blog/angular/angular-logo_150.png
 ---
 

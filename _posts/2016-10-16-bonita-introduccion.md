@@ -7,7 +7,7 @@ desc: "Bonita BPM es una suite ofimática para la creación y gestión de potent
 keywords: "Bonita,BPM,Introducción"
 categories: [bonita]
 tags: [Bonita,BPM]
-icon: fa-cogs
+icon: fas fa-cogs
 image: static/img/blog/bonita/bonita-logo.png
 ---
 

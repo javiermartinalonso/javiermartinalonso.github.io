@@ -7,7 +7,7 @@ desc: "Primeros Pasos con Angular"
 keywords: "node.js,Angular,TypeScript"
 categories: [angular]
 tags: [node.js,Angular,TypeScript]
-icon: fa-font
+icon: fab fa-angular
 image: static/img/blog/angular/angular-logo_150.png
 ---
 

@@ -7,7 +7,7 @@ desc: "Angular CLI: Es un intérprete de línea de comandos de Angular 2 que te 
 keywords: "node.js,npm,angular-cli,Karma,Angular,less,webpack"
 categories: [angular]
 tags: [node.js,npm,angular-cli,Karma,Angular,less,webpack]
-icon: fa-font
+icon: fab fa-angular
 image: static/img/blog/angular/angular-logo_150.png
 ---
 

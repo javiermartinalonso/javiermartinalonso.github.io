@@ -7,7 +7,7 @@ desc: "En este post explicamos cómo funciona Spring-boot a través de la creaci
 keywords: "Spring, Spring-Boot, Spring Tool Suite, STS, starters, configuracion por defecto, buenas prácticas"
 categories: [spring]
 tags: [Spring, Spring-Boot, SpringToolSuite, STS, starters]
-icon: fa-leaf
+icon: fas fa-leaf
 image: static/img/blog/spring/spring-logo.png
 ---
 

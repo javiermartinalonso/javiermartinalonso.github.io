@@ -7,7 +7,7 @@ desc: "Docker es una herramienta open-source que nos permite realizar una ‘vir
 keywords: "Dockers, virtualización, portabilidad,contenedor, maquina_virtual, integración_continua, DevOps"
 categories: [arquitectura]
 tags: [Dockers, virtualización, portabilidad,contenedor, maquina_virtual, integración_continua, DevOps]
-icon: fa-university
+icon: fas fa-university
 image: static/img/blog/docker/docker-logo.png
 ---
 
