@@ -11,23 +11,23 @@ icon: fa-linux
 image: static/img/blog/linux/linux-logo.png
 ---
 
-# Interface Linea de Comando #
+# Interface Linea de Comando (Command LineInterface, CLI) #
 
 Si todo sistema operativo tiene una **Interfaz de Linea de Comandos (*Command LineInterface, CLI*)**, en **UNIX** esta interfaz tiene aun mayor importancia, ya que el uso de un **sistema UNIX** como servidor está más extendido que como sistema de escritorio. Que el interfaz sea *“austero”* permite que la potencia del sistema se use en los procesos y no en otra cosa. A estos servidores normalmente se accederá abriendo sesiones remotas en modo comando.
 
 Las órdenes o comandos son generalmente programas ejecutables que el shell encuentra y ejecuta en respuesta a las instrucciones tecleadas, tales como `chmod`, `find`, `grep` o `ls`.
 
-El shell es un intérprete de órdenes que puede expandir y modificar la orden antes de ejecutarla (por ejemplo con el uso de ***alias***, ***variables de entorno***, ***metacaracteres*** o ***caracteres comodines*** (`*`,`?`, `[]`, `-`) y el  operador tubería `|` (pipe) para la conexión de órdenes (redirección y filtros).
+El shell es un intérprete de órdenes que puede expandir y modificar la orden antes de ejecutarla (por ejemplo con el uso de ***alias***, ***variables de entorno***, ***metacaracteres*** o ***caracteres comodines*** (`*`,`?`, `[]`, `-`) y el ***operador tuberí***a `|` (***pipe***) para la conexión de órdenes (***redirección y filtros***).
 
-Por ejemplo, podríamos ver los procesos que están corriendo en el sistema usando ps y le redireccionamos la salida a sort para que los ordene por PID:
+Por ejemplo, podríamos ver los procesos que están corriendo en el sistema usando `ps` y le redireccionamos la salida a `sort` para que los ordene por PID:
 
 `$ ps -a | sort`
 
-También podemos redireccionar la salida estándar del comando cat y pasarla como entrada estándar del comando wc para contar las líneas y palabras de un archivo:
+También podemos redireccionar la salida estándar del comando `cat` y pasarla como entrada estándar del comando `wc` para contar las líneas y palabras de un archivo:
 
 `$ cat archivo.txt | wc`
 
-Tanto las redirecciones como las tuberías son conceptos fundamentales que sin duda debes manejar para empezar a sentirte cómodo con la terminal. Verás que al cabo de un tiempo no sabrás cómo pudiste vivir sin ellos.
+Tanto las ***redirecciones*** como las ***tuberías*** son conceptos fundamentales que sin duda debes manejar para empezar a sentirte cómodo con la ***terminal***. Verás que al cabo de un tiempo no sabrás cómo pudiste vivir sin ellos.
 
 ## Comodines o metacaracteres ##
 
@@ -36,16 +36,36 @@ Los caracteres más frecuentes son:
 - `*` representa cualquier cadena de caracteres, incluyendo la cadena vacía.
 - `?` representa a cualquier carácter simple.
 
-## 3. El sistema de ficheros ##
+## El sistema de ficheros ##
 
- Jerárquía estándar
-Un fichero UNIX es una secuencia de 0 o más bytes. El sistema no distingue entre ficherosASCII, binarios, o cualquier otro tipo. La interpretación del contenido de los ficheros se deja a los programas que los utilizan.La longitud de los nombres de los ficheros estaba limitada originariamente a 14 caracteres arbitrarios, pero BSD UNIX la incrementó hasta 255. Las mayúsculas y las minúsculas son significativas, lo que significa que RESUMEN, resumen, y ResumeN serían nombres diferentes.Normalmente, muchos programas asumen que los nombres de los ficheros consistan en un nombre seguido por una extensión separados por un punto. De esta forma, prueba.c es normalmente un programa en C, informe.pdf un documento de Adobe, leeme.txt un fichero de texto plano, etc. Sin embargo, estas convenciones no son impuestas por el sistema operativo.La gran diferencia de UNIX con respecto a otros sistemas es que en UNIX existe un solo árbol de directorios y no uno para cada unidad de almacenamiento (disco duro, partición de disco, unidad flash, CD/DVD, etc.). Cualquier unidad de almacenamiento debe formar parte de esta estructura única.A la operación por la cual una unidad de almacenamiento entra a formar parte del árbol de directorios del sistema se la denomina montaje del dispositivo. Existe un directorio que contiene el resto de archivos y directorios del sistema. Es el directorio raíz. El directorio raíz se representa siempre con el símbolo de barra inclinada /.
+### Jerárquía estándar ###
 
-dibujo jerarquía de directorios
+Un fichero ***UNIX*** es una secuencia de 0 o más bytes. El sistema no distingue entre ficherosASCII, binarios, no hacen ninguna diferencia entre archivos y directorios, entendiendo que un directorio es sólo un archivo que contiene los nombres de otros archivos. De la misma manera, otros elementos como imágenes, textos, programas y servicios son vistos por ***Linux*** sólo como archivos, igual que cualquier unidad extraíble o dispositivo que le conectemos. La interpretación del contenido de los ficheros se deja a los programas que los utilizan. 
+
+La longitud de los nombres de los ficheros estaba limitada originariamente a 14 caracteres arbitrarios, pero BSD ***UNIX*** la incrementó hasta 255. Las mayúsculas y las minúsculas son significativas, lo que significa que *LEEME*, *leeme*, y *Leeme* serían nombres diferentes. 
+
+Normalmente, muchos programas asumen que los nombres de los ficheros consistan en un nombre seguido por una extensión separados por un punto. De esta forma, `prueba.c` es normalmente un programa en C, `informe.pdf` un documento de Adobe, `leeme.txt` un fichero de texto plano, etc. Sin embargo, estas convenciones no son impuestas por el sistema operativo. La gran diferencia de ***UNIX*** con respecto a otros sistemas es que en ***UNIX*** existe un solo árbol de directorios y no uno para cada unidad de almacenamiento (disco duro, partición de disco, unidad flash, CD/DVD, etc.). 
+Cualquier unidad de almacenamiento debe formar parte de esta estructura única. A la operación por la cual una unidad de almacenamiento entra a formar parte del árbol de directorios del sistema se la denomina ***montaje del dispositivo***. Existe un directorio que contiene el resto de archivos y directorios del sistema. Es el directorio raíz. El directorio raíz se representa siempre con el símbolo de barra inclinada `/`.
+
+<div style="text-align: center;margin: 1em;">
+	<img src="{{ site.baseurl }}static/img/blog/linux/linux-filesystem.png" alt="jerarquía de ficheros" class="img-thumbnail" style="width: 70%"/>
+</div>
+
+> En ***Linux***, cada uno de los archivos es representado por un **inode**, ***una especie de código de serie único que contiene toda la información sobre los datos que se pueden encontrar en dicho archivo.***
+> 
+> De esta manera, cada vez que se hace una partición de disco, el sistema establece un número determinado de ***inodes***, que es la cantidad de archivos de todo tipo que podremos tener al mismo tiempo. Además, cada vez que se crea un archivo, este recibe un ***inode*** que recoge información sobre ***su propietario, el tipo de archivo que es, los permisos que tiene y su fecha de creación o edición, así como su tamaño, su localización en el disco duro y la cantidad de enlaces que apuntan hacia él.***
+
+### Funcionalidad de la jerarquía de ficheros de sistemas Unix ###
+
+Esta estructura de árbol y los nombres de los directorios no es al azar, tiene un sentido y una funcionalidad:
+
+<div style="text-align: center;margin: 1em;">
+	<img src="{{ site.baseurl }}static/img/blog/linux/funcionalidad-filesystem.jpg" alt="explicación jerarquía de ficheros" class="img-thumbnail" style="width: 70%"/>
+</div>
 
 | Directorio | Descripción breve |
 | ---------- | ---------- |
-| `/` | Directorio raíz del sistema de ficheros. |
+| `/` | Directorio raíz del sistema de ficheros. Denominado directorio Root (No confundir con el usuario root) Solo el usuario Root tiene privilegios de escritura en este directorio. No es lo mismo `/root` que `/`, el primero es el home del usuario root, el segundo es la raíz de todos los archivos|
 | `/bin` | Comandos y programas esenciales disponibles para todos los usuarios del sistema. |
 | `/boot` | Gestores de arranque. |
 | `/dev` | Contiene los dispositivos esenciales (no solo los de almacenamiento, también terminales, micrófonos, impresoras, etc). |
@@ -59,7 +79,7 @@ dibujo jerarquía de directorios
 | `/opt` | Paquetes software opcionales, que pueden ser compartidos por los usuarios. Estas aplicaciones, utilizan el directorio de usuario para guardas sus configuraciones, y de esta forma, cada usuario puede tener una configuración diferente de la misma aplicación. |
 | `/proc` | Ficheros de texto que identifican procesos activos en el sistema. |
 | `/root` | Directorio personal (`home`) del usuario root. |
-| `/sbin` | Sistema de binarios esencial, comandos y programas exclusivos del superusuario (root), por ejemplo: `init`, `route`, `ifup`). |
+| `/sbin` | Sistema de binarios esencial, comandos y programas exclusivos del superusuario (root), por ejemplo: `init`, `route`). |
 | `/tmp` | Ficheros temporales (véase también `/var/tmp`). |
 | `/usr` | La mayoría de las utilidades y aplicaciones multiusuario. 
 | `/var` | Ficheros variables, tales como logs, archivos spool, bases de datos, archivos de e-mail temporales, y archivos temporales en general. |
@@ -68,29 +88,21 @@ dibujo jerarquía de directorios
 | `/var/tmp` | Ficheros temporales que, a diferencia de `/tmp`, no se borran entre sesiones o reinicios del sistema. |
 
 
-
-
-
-
-
-
 ## Información de la línea de comandos ##
 
-- `man <command>`: Muestra el manual de uso o configuración del comando <command>.
+- `man <command>` Muestra el manual de uso o configuración del comando <command>.
 
-	Ejemplo: Muestra la documentación del comando ls.
+- `man ls` Muestra la documentación del comando ls.
 
-	`man ls`
+- `man –k <word>` Muestra las páginas de manual que contengan la palabra <word>.
 
-- `man –k <word>`: Muestra las páginas de manual que contengan la palabra <word>.
-
-- `apropos <command>`: Lista las páginas de manual que tratan acerca del comando <command>.
+- `apropos <command>` Lista las páginas de manual que tratan acerca del comando <command>.
 
 - `whereis <command>`: Muestra la localización más probable para el programa <command>.
 
 ## `SSH` Operaciones con host remotos ##
 
-- **Conectar a una terminal remota** `ssh`
+- `ssh`: **Conectar a una terminal remota**
 
 	- Conectarte a un host especificando un usuario, una vez que lo ejecutes te pedirá un password:
 
@@ -157,7 +169,7 @@ dibujo jerarquía de directorios
 
 	- `[expresión_de_búsqueda]` es una o más opciones que puede devolver la búsqueda a realizar en si o acciones a realizar sobre la búsqueda, si no se indica ninguna expresión de búsqueda se aplica por defecto la opción ­`print` que muestra el resultado de la búsqueda.
 
-	- `[acción]` es cualquier comando de Linux invocado a ejecutarse sobre cada archivo o directorio encontrado con la `[expresión_de_búsqueda]`.
+	- `[acción]` es cualquier comando de ***Linux*** invocado a ejecutarse sobre cada archivo o directorio encontrado con la `[expresión_de_búsqueda]`.
 
 	Los tres argumentos anterior son enteramente opcionales
 
@@ -403,7 +415,7 @@ En cuanto a la expresión regular:
 
 - `cp –r`: Copia un directorio con todo su contenido.
 
-- `mv`: Mueve o renombra un fichero o directorio. En la terminal de Linux, en lugar de renombrar un fichero mediante un comando exclusivo, utilizamos el mismo que para mover archivos o directorios, y lo que hacemos para renombrarlo es moverlo a la misma ruta donde se encuentra y cambiarle el nombre.
+- `mv`: Mueve o renombra un fichero o directorio. En la terminal de ***Linux***, en lugar de renombrar un fichero mediante un comando exclusivo, utilizamos el mismo que para mover archivos o directorios, y lo que hacemos para renombrarlo es moverlo a la misma ruta donde se encuentra y cambiarle el nombre.
 
 - `mv –i`: Mueve o renombra un fichero o directorio preguntando antes de sobrescribir si se diese el caso.
 
@@ -421,9 +433,13 @@ En cuanto a la expresión regular:
 
 ### Enlaces físicos ###
 
-Un enlace físico no es más que una etiqueta o un nuevo nombre asociado a un archivo. Es una forma de identificar el mismo contenido con diferentes nombres. Éste enlace no es una copia separada del archivo anterior sino un nombre diferente para exactamente el mismo contenido.
+En ***Linux***, cada uno de los archivos es representado por un **inode**, ***una especie de código de serie único que contiene toda la información sobre los datos que se pueden encontrar en dicho archivo.***
 
-Para crear un enlace físico en Linux del archivo `archivo.txt` a `nuevo_nombre.txt`, ejecutamos:
+De esta manera, cada vez que se hace una partición de disco, el sistema establece un número determinado de ***inodes***, que es la cantidad de archivos de todo tipo que podremos tener al mismo tiempo. Además, cada vez que se crea un archivo, este recibe un ***inode*** que recoge información sobre ***su propietario, el tipo de archivo que es, los permisos que tiene y su fecha de creación o edición, así como su tamaño, su localización en el disco duro y la cantidad de enlaces que apuntan hacia él.***
+
+Un enlace físico no es más que una etiqueta o un nuevo nombre asociado a un ***inode***. Es una forma de identificar el mismo contenido con diferentes nombres. Éste enlace no es una copia separada del archivo anterior sino un nombre diferente para exactamente el mismo contenido.
+
+Para crear un enlace físico en ***Linux*** del archivo `archivo.txt` a `nuevo_nombre.txt`, ejecutamos:
 
 `$ ln archivo.txt nuevo_nombre.txt`
 
@@ -496,7 +512,7 @@ Ejemplo: Supongamos que quiere apuntar el último enlace suave ahora al nuevo di
 | w | write | escribir en un archivo o directorio |
 | x | execute | ejecutar un archivo |
 
-- `chown` (change owner) nos permite cambiar de propietario en archivos y directorios de linux. Hay diferentes formas de usar el comando. La más básica es:
+- `chown` (change owner) nos permite cambiar de propietario en archivos y directorios de ***linux***. Hay diferentes formas de usar el comando. La más básica es:
 
 `chown nuevousuario archivo`
 
@@ -508,7 +524,7 @@ Establece como propietario del archivo `musica.mp3` al usuario `root`. Para camb
 
 `chown -R root /var/home`
 
-Aclarar que el comando chown en linux, usado de forma recursiva modifica el propietario de los archivos y subdirectorios, dejando el directorio principal sin cambios de propietario. Si añadimos el modificador `-c` nos informará acerca de los cambios que haga, por ejemplo
+Aclarar que el comando `chown` en ***linux***, usado de forma recursiva modifica el propietario de los archivos y subdirectorios, dejando el directorio principal sin cambios de propietario. Si añadimos el modificador `-c` nos informará acerca de los cambios que haga, por ejemplo
 
 `chown -R -c root /var/home`
 
@@ -546,7 +562,7 @@ El modificador `-v` dentro del comando `chown` nos dará informará de los permi
 
 De forma predeterminada, **cuando creamos un *archivo* en Unix**, se crea con el permiso `666 (lectura / escritura)`. 
 
-De forma predeterminada, **cuando creamos un *Directorio* en Unix**, se crea con el permiso `777 (lectura / escritura / ejecución)`. Junto con la notación numérica, los permisos de Unix también se pueden representar con los siguientes caracteres:
+De forma predeterminada, **cuando creamos un *Directorio* en Unix**, se crea con el permiso `777 (lectura / escritura / ejecución)`. Junto con la notación numérica, los permisos de ***Unix*** también se pueden representar con los siguientes caracteres:
 
 Para ver los permisos de ficheros y directorios, utiliza el comando `ls` con la opción `–l`:
 
@@ -621,7 +637,7 @@ Si sólo quisiéramos ver cuáles son, por ejemplo, los 5 directorios más pesad
 
 ## Atajos de teclado ##
 
-- `Ctrl + Alt + Fn (1-6)`: Para abrir terminales a pantalla completa. Requiere autentificación con usuario y contraseña. Cambiaremos a la terminal correspondiente a la tecla Fn que pulsemos, correspondiendo ésta al orden en el que las abrimos. En Linux podemos tener múltiples terminales funcionando simultáneamente, por defecto controlaremos hasta 6 con esta combinación de teclas. Por ejemplo Ctrl + Alt + F1 nos lleva a la primera terminal abierta.
+- `Ctrl + Alt + Fn (1-6)`: Para abrir terminales a pantalla completa. Requiere autentificación con usuario y contraseña. Cambiaremos a la terminal correspondiente a la tecla Fn que pulsemos, correspondiendo ésta al orden en el que las abrimos. En ***Linux*** podemos tener múltiples terminales funcionando simultáneamente, por defecto controlaremos hasta 6 con esta combinación de teclas. Por ejemplo Ctrl + Alt + F1 nos lleva a la primera terminal abierta.
 
 - `tty`: Con este comando, en el caso de tener varias terminales abiertas, nos dirá en cuál nos encontramos.
 
@@ -681,7 +697,7 @@ Si sólo quisiéramos ver cuáles son, por ejemplo, los 5 directorios más pesad
 
 - `uptime`: Muestra el tiempo que lleva encendido el sistema, y cuántos usuarios lo han usado.
 
-- `uname –a`: (unix name) Ofrece información del Kernel del sistema.Información sobre el tipo de unix en el que estamos, kernel, etc.
+- `uname –a`: (unix name) Ofrece información del Kernel del sistema.Información sobre el tipo de ***unix*** en el que estamos, kernel, etc.
 
 	Ejemplos: 
 	`uname`
