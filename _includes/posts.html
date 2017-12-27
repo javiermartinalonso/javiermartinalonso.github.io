@@ -1,0 +1,20 @@
+                    <div class="side">
+                        <div>
+                            <a href="{{ site.baseurl }}blog/">
+                                <i class="far fa-edit" aria-hidden="true"></i>
+                                <span data-i18n="glosary.Recent_Posts">Recent Posts</span>
+                            </a>
+                        </div>
+                        <ul class="content-ul" recent>
+                            {% for post in site.posts offset: 0 limit: 10  %}
+                                <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+                            {% endfor %}                        
+                        </ul>
+
+                        <div>
+                            <a href="{{ site.baseurl }}blog/">
+                                <i class="far fa-edit" aria-hidden="true"></i>
+                                <span data-i18n="glosary.All_Posts">All Posts</span>
+                            </a>
+                        </div>                        
+                    </div>
