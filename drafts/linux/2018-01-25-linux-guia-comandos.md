@@ -5,42 +5,24 @@ title:  "Linux: Guía de comandos"
 date:   2017-12-25
 desc: "Recopilatorio de los comandos de Unix que son más usados habitualmente."
 keywords: "linux, shell, comandos"
-categories: [Linux]
-tags: linux, shell, comandos]
-icon: fa-linux
+categories: [linux]
+tags: [linux, shell, comandos]
+icon: fab fa-linux
 image: static/img/blog/linux/linux-logo.png
 ---
 
-# Interface Linea de Comando (Command LineInterface, CLI) #
+# GNU LINUX #
 
-Si todo sistema operativo tiene una **Interfaz de Linea de Comandos (*Command LineInterface, CLI*)**, en **UNIX** esta interfaz tiene aun mayor importancia, ya que el uso de un **sistema UNIX** como servidor está más extendido que como sistema de escritorio. Que el interfaz sea *“austero”* permite que la potencia del sistema se use en los procesos y no en otra cosa. A estos servidores normalmente se accederá abriendo sesiones remotas en modo comando.
+**GNU/Linux**, también conocido como **Linux**, es un sistema operativo libre tipo **Unix**; **multiplataforma, multi-usuario y multi-tarea**. El sistema es la combinación de varios proyectos, entre los cuales destacan **GNU** (encabezado por Richard Stallman y la Free Software Foundation) y el núcleo Linux (encabezado por Linus Torvalds). Su desarrollo es uno de los ejemplos más prominentes de software libre: todo su código fuente puede ser utilizado, modificado y redistribuido libremente por cualquiera, bajo los términos de la GPL (Licencia Pública General de GNU) y otra serie de licencias libres.
 
-Las órdenes o comandos son generalmente programas ejecutables que el shell encuentra y ejecuta en respuesta a las instrucciones tecleadas, tales como `chmod`, `find`, `grep` o `ls`.
+A pesar de que **«Linux»** denomina en la jerga cotidiana al sistema operativo,​ éste es en realidad solo el ***kernel (núcleo) del sistema***. La idea tiene origen en el **proyecto GNU** a mediados de la década de 1980, así como una gran cantidad del resto de los componentes que van desde los compiladores de **GNU** hasta entornos de escritorio.​ Sin embargo, tras la aparición de **Linux** en la década de 1990 una parte significativa de los medios generales y especializados han utilizado el término **Linux** para referirse al todo. Esto ha sido motivo de polémicas.
 
-El shell es un intérprete de órdenes que puede expandir y modificar la orden antes de ejecutarla (por ejemplo con el uso de ***alias***, ***variables de entorno***, ***metacaracteres*** o ***caracteres comodines*** (`*`,`?`, `[]`, `-`) y el ***operador tuberí***a `|` (***pipe***) para la conexión de órdenes (***redirección y filtros***).
-
-Por ejemplo, podríamos ver los procesos que están corriendo en el sistema usando `ps` y le redireccionamos la salida a `sort` para que los ordene por PID:
-
-`$ ps -a | sort`
-
-También podemos redireccionar la salida estándar del comando `cat` y pasarla como entrada estándar del comando `wc` para contar las líneas y palabras de un archivo:
-
-`$ cat archivo.txt | wc`
-
-Tanto las ***redirecciones*** como las ***tuberías*** son conceptos fundamentales que sin duda debes manejar para empezar a sentirte cómodo con la ***terminal***. Verás que al cabo de un tiempo no sabrás cómo pudiste vivir sin ellos.
-
-## Comodines o metacaracteres ##
-
-Los caracteres más frecuentes son:
-
-- `*` representa cualquier cadena de caracteres, incluyendo la cadena vacía.
-- `?` representa a cualquier carácter simple.
 
 ## El sistema de ficheros ##
 
 ### Jerárquía estándar ###
 
-Un fichero ***UNIX*** es una secuencia de 0 o más bytes. El sistema no distingue entre ficherosASCII, binarios, no hacen ninguna diferencia entre archivos y directorios, entendiendo que un directorio es sólo un archivo que contiene los nombres de otros archivos. De la misma manera, otros elementos como imágenes, textos, programas y servicios son vistos por ***Linux*** sólo como archivos, igual que cualquier unidad extraíble o dispositivo que le conectemos. La interpretación del contenido de los ficheros se deja a los programas que los utilizan. 
+Un fichero ***UNIX*** es una secuencia de 0 o más bytes. El sistema no distingue entre ficheros ASCII, binarios, no hacen ninguna diferencia entre archivos y directorios, entendiendo que un directorio es sólo un archivo que contiene los nombres de otros archivos. De la misma manera, otros elementos como imágenes, textos, programas y servicios son vistos por ***Linux*** sólo como archivos, igual que cualquier unidad extraíble o dispositivo que le conectemos. La interpretación del contenido de los ficheros se deja a los programas que los utilizan. 
 
 La longitud de los nombres de los ficheros estaba limitada originariamente a 14 caracteres arbitrarios, pero BSD ***UNIX*** la incrementó hasta 255. Las mayúsculas y las minúsculas son significativas, lo que significa que *LEEME*, *leeme*, y *Leeme* serían nombres diferentes. 
 
@@ -88,6 +70,49 @@ Esta estructura de árbol y los nombres de los directorios no es al azar, tiene 
 | `/var/tmp` | Ficheros temporales que, a diferencia de `/tmp`, no se borran entre sesiones o reinicios del sistema. |
 
 
+# Interface Linea de Comando (Command LineInterface, CLI) #
+
+Si todo sistema operativo tiene una **Interfaz de Linea de Comandos (*Command LineInterface, CLI*)**, en **UNIX** esta interfaz tiene aun mayor importancia, ya que el uso de un **sistema UNIX** como servidor está más extendido que como sistema de escritorio. Que el interfaz sea *“austero”* permite que la potencia del sistema se use en los procesos y no en otra cosa. A estos servidores normalmente se accederá abriendo sesiones remotas en modo comando.
+
+Las órdenes o comandos son programas ejecutables que el shell encuentra y ejecuta en respuesta a las instrucciones tecleadas, tales como `chmod`, `find`, `grep` o `ls`.
+
+El shell es un intérprete de órdenes que puede expandir y modificar la orden antes de ejecutarla, por ejemplo con el uso de ***alias***, ***variables de entorno***, ***metacaracteres*** o ***caracteres comodines*** (`*`,`?`, `[]`, `-`) y el ***operador `&`*** o el ***operador tubería*** `|` (***pipe***) para la conexión de órdenes (***redirección y filtros***).
+
+Por ejemplo, podríamos ver los procesos que están corriendo en el sistema usando `ps` y le redireccionamos la salida a `sort` para que los ordene por PID:
+
+`$ ps -a | sort`
+
+También podemos redireccionar la salida estándar del comando `cat` y pasarla como entrada estándar del comando `wc` para contar las líneas y palabras de un archivo:
+
+`$ cat archivo.txt | wc`
+
+Tanto las ***redirecciones*** como las ***tuberías*** son conceptos fundamentales que sin duda debes manejar para empezar a sentirte cómodo con la ***terminal***. Verás que al cabo de un tiempo no sabrás cómo pudiste vivir sin ellos.
+
+
+## Concatenar comandos en linux ##
+
+### Concatenar comandos ###
+
+- Con `|` hace que la salida del primero se convierta en la entrada del segundo.
+
+		$ cmd1 | cmd2
+
+- Con `&` hará que los dos (o más) comandos se ejecuten de manera simultanea.
+
+		$ cmd1 & cmd2
+
+- Con `||` El segundo comando se ejecutará si el primero termina sin éxito.
+
+		$ cmd1 || cmd2
+
+- Con `&&` El segundo comando se ejecutará solo si el primero termina con éxito.
+
+		$ cmd1 && cmd2
+
+- Con `;` El segundo comando se ejecutará sin importar el resultado del primero.
+
+		$ cmd1 ; cmd2
+
 ## Información de la línea de comandos ##
 
 - `man <command>` Muestra el manual de uso o configuración del comando <command>.
@@ -100,7 +125,7 @@ Esta estructura de árbol y los nombres de los directorios no es al azar, tiene 
 
 - `whereis <command>` Muestra la localización más probable para el programa <command>.
 
-## `SSH` Operaciones con host remotos ##
+## Operaciones con host remotos ##
 
 - `ssh`: **Conectar a una terminal remota**
 
@@ -191,7 +216,11 @@ Esta estructura de árbol y los nombres de los directorios no es al azar, tiene 
 
 	`file <Filename>`
 
-	Ejemplos: file fichero, file *
+	Ejemplos: 
+
+	`file fichero`
+
+	`file *`
 
 - **Cómo ver el contenido del archivo o archivos (sin poder editarlo):**
 
@@ -249,136 +278,6 @@ Esta estructura de árbol y los nombres de los directorios no es al azar, tiene 
 	- Edición
 		- `v`: Cargar el editor de texto en el lugar donde se encuentre el usuario dentro del archivo. El editor que normalmente se utiliza es el `vi`
 
-
-
-
-
-
-
-
-
-
-- Hacer **búsquedas** dentro del contenido de un **fichero**. **Filtrar, resaltar** mediante expresiones regulares. `grep` nos permite buscar dentro de los archivos, las líneas que concuerdan con un patrón. Pero si no especificamos ningún nombre de archivo, tomará la entrada estándar, con lo que podemos encadenarlo con otros filtros e imprimir las líneas encontradas en la salida estándar. 
-
-	- Busca el texto ERROR en el archivo catalina.out
-
-		`grep ERROR catalina.out`
-
-	- Busca el texto ERROR en el archivo catalina.out y lo marca con un color
-
- 		`grep --color "ERROR" catalina.out`
- 
-
-Por ejemplo si queremos listar los archivos cuyo nombre comiencen por *'ab'* en el directorio actual:
-
-`ls -l | grep ab*` 
-
-Como tiene muchísimas opciones, vamos a ver tan sólo las más usadas:
-
-- `-c` En lugar de imprimir las líneas que coinciden, muestra el número de líneas que coinciden.
-- `-e` PATRON nos permite especificar varios patrones de búsqueda o proteger aquellos patrones de búsqueda que comienzan con el signo `-`.
-- `-r` busca recursivamente dentro de todos los subdirectorios del directorio actual.
-- `-v` nos muestra las líneas que no coinciden con el patrón buscado.
-- `-i` ignora la distinción entre mayúsculas y minúsculas.
-- `-n` Numera las líneas en la salida.
-- `-E` nos permite usar expresiones regulares.
-- `-o` le indica a grep que nos muestre sólo la parte de la línea que coincide con el patrón.
-- `-f` ARCHIVO extrae los patrones del archivo que especifiquemos. Los patrones del archivo deben ir uno por línea.
-- `-H` nos imprime el nombre del archivo con cada coincidencia.
-
-Veamos algunos ejemplos:
-
-- Buscar todas las líneas que contengan palabras que comiencen por `'a'` en un archivo:
-`$ grep '\<a.*\>' archivo`
-
-Otra forma de buscar, sería:
-`$ cat archivo | grep "\<a.*\>" `
-
-- Mostrar por pantalla, las líneas que contienen comentarios en el archivo `/boot/grub/menu.lst`:
-`grep "#" /boot/grub/menu.lst`
-
-- Enviar a un fichero las líneas del archivo `/boot/grub/menu.lst` que no son comentarios:
-`$ grep -v "#" /boot/grub/menu.lst`
-
-- Contar el número de interfaces de red que tenemos definidos en el fichero `/etc/network/interfaces`:
-`$ grep -c "iface" /etc/network/interfaces`
-
-- Mostrar las líneas de un fichero que contienen la palabra BADAJOZ o HUELVA:
-`$ grep -e "BADAJOZ" -e "HUELVA" archivo`
-
-- Mostrar las líneas de un fichero que contienen la palabra BADAJOZ o HUELVA, numerando las líneas de salida:
-`$ grep -n -e "BADAJOZ" -e "HUELVA" archivo`
-
-- Mostrar los ficheros que contienen la palabra TOLEDO en el directorio actual y todos sus subdirectorios:
-`$ grep -r "TOLEDO" *`
-
-Veamos algunos ejemplos con expresiones regulares:
-
-- Obtener la dirección MAC de la interfaz de red eth0 de nuestra máquina:
-`$ ifconfig eth0 | grep -oiE '([0-9A-F]{2}:){5}[0-9A-F]{2}'`
-
-Sacamos la dirección MAC de la interfaz eth0 de nuestra máquina haciendo un:
-`$ ifconfig eth0`
-
-Y aplicando el filtro grep:
-`$ grep -oiE '([0-9A-F]{2}:){5}[0-9A-F]{2}'`
-
-Las opciones que he usado en grep son:
-
--`-o` Indica que la salida del comando debe contener sólo el texto que coincide con el patrón, en lugar de toda la línea, como es lo habitual.
--`-i` Lo he usado para que ignore la distinción entre mayúsculas y minúsculas.
--`-E` Indica que vamos a usar una expresión regular extendida.
-
-En cuanto a la expresión regular, podemos dividirla en dos partes:
-`([0-9A-F]{2}:){5}` Buscamos 5 conjuntos de 2 caracteres seguidos de dos puntos `[0-9A-F]{2}` seguido por un conjunto de dos caracteres.
-
-Como las direcciones MAC se representan en hexadecimal, los caracteres que buscamos son los números del 0 al 9 y las letras desde la A a la F.
-
-- Extraer la lista de direcciones de correo electrónico de un archivo:
-`grep -Eio '[a-z0-9._-]+@[a-z0-9.-]+[a-z]{2,4}' fichero.txt`
-
-Utilizo las mismas opciones que en el caso anterior:
-
--`-o` Indica que la salida del comando debe contener sólo el texto que coincide con el patrón, en lugar de toda la línea, como es lo habitual.
--`-i` Lo he usado para que ignore la distinción entre mayúsculas y minúsculas.
--`-E` Indica que vamos a usar una expresión regular extendida.
-
-Analicemos ahora la expresión regular:
-`[a-z0-9._-]+@[a-z0-9.-]+[a-z]{2,4}`
-
-Al igual que antes, la vamos dividiendo en partes:
-`[a-z0-9._-]+` Una combinación de letras, números, y/o los símbolos `. _` y `-` de uno o más caracteres, `@` seguido de una arroba
-`[a-z0-9.-]+` seguido de una cadena de letras, números y/o los símbolos `.` y `-`
-`[a-z]{2,4}` seguido de una cadena de entre dos y cuatro caracteres.
-
-- Obtener la dirección IP de la interfaz de red eth1 de nuestra máquina:
-`$ ifconfig eth1 | grep -oiE '([0-9]{1,3}\.){3}[0-9]{1,3}' | grep -v 255`
-
-En el ejemplo anterior, hemos tomado la información que nos ofrece ifconfig:
-`ifconfig eth1`
-
-Hemos filtrado dicha información con el comando grep, obteniendo todas las direcciones IP que aparecen:
-`grep -oiE '([0-9]{1,3}\.){3}[0-9]{1,3}'`
-
-Por último, hemos filtrado la salida del comando anterior, para eliminar la dirección de broadcast junto con la máscara de red para quedarnos sólo con la dirección IP de la máquina:
-`grep -v 255`
-
-La línea anterior no mostraría las líneas que no contengan el valor 255, es decir, las direcciones de broadcast y máscara de red.
-
-Analicemos ahora el comando grep:
-`grep -oiE '([0-9]{1,3}\.){3}[0-9]{1,3}'`
-
-Al igual que en los otros dos ejemplos de expresiones regulares uso las opciones `-oiE` en el comando grep:
-
-- `-o` Indica que la salida del comando debe contener sólo el texto que coincide con el patrón, en lugar de toda la línea, como es lo habitual.
-- `-i` Lo he usado para que ignore la distinción entre mayúsculas y minúsculas.
-- `-E` Indica que vamos a usar una expresión regular extendida.
-
-En cuanto a la expresión regular:
-`'([0-9]{1,3}\.){3}[0-9]{1,3}'`
-`([0-9]{1,3}\.){3}` Representa 3 bloques de entre uno y tres dígitos separados por puntos. Observemos que como el punto es un metacaracter, tengo que usar el caracter de escape \ para que no sea interpretado como un metacaracter, sino como un caracter normal.
-`[0-9]{1,3}` Representa el último bloque de la dirección IP, que está formado por un número de entre 1 y 3 dígitos.
-
 ### 3. Manipular archivos y directorios: Crear / Modificar ###
 
 - `touch <fileName>` **Crear un nuevo archivo:**
@@ -434,6 +333,149 @@ En cuanto a la expresión regular:
 	
 	Ejemplos: 
 		`gunzip fichero`
+
+
+
+
+
+## Búsquedas con el comando `grep` ##
+
+- Hacer **búsquedas** dentro del contenido de un fichero. **Filtrar, resaltar mediante expresiones regulares**. `grep` nos permite buscar dentro de los archivos, las líneas que concuerdan con un patrón. Pero si no especificamos ningún nombre de archivo, tomará la entrada estándar, con lo que podemos encadenarlo con otros filtros e imprimir las líneas encontradas en la salida estándar. 
+
+	- Busca el texto ERROR en el archivo catalina.out
+
+		`grep ERROR catalina.out`
+
+	- Busca el texto ERROR en el archivo catalina.out y lo marca con un color
+
+ 		`grep --color "ERROR" catalina.out`
+ 
+
+Por ejemplo si queremos listar los archivos cuyo nombre comiencen por *'ab'* en el directorio actual:
+
+`ls -l | grep ab*` 
+
+Como tiene muchísimas opciones, vamos a ver tan sólo las más usadas:
+
+- `-c` En lugar de imprimir las líneas que coinciden, muestra el número de líneas que coinciden.
+- `-e` PATRON nos permite especificar varios patrones de búsqueda o proteger aquellos patrones de búsqueda que comienzan con el signo `-`.
+- `-r` busca recursivamente dentro de todos los subdirectorios del directorio actual.
+- `-v` nos muestra las líneas que no coinciden con el patrón buscado.
+- `-i` ignora la distinción entre mayúsculas y minúsculas.
+- `-n` Numera las líneas en la salida.
+- `-E` nos permite usar expresiones regulares.
+- `-o` le indica a grep que nos muestre sólo la parte de la línea que coincide con el patrón.
+- `-f` ARCHIVO extrae los patrones del archivo que especifiquemos. Los patrones del archivo deben ir uno por línea.
+- `-H` nos imprime el nombre del archivo con cada coincidencia.
+
+Veamos algunos ejemplos:
+
+- Buscar todas las líneas que contengan palabras que comiencen por `'a'` en un archivo:
+`$ grep '\<a.*\>' archivo`
+
+	Otra forma de buscar, sería: `$ cat archivo | grep "\<a.*\>" `
+
+- Mostrar por pantalla, las líneas que contienen comentarios en el archivo `/boot/grub/menu.lst`:
+`$ grep "#" /boot/grub/menu.lst`
+
+- Enviar a un fichero las líneas del archivo `/boot/grub/menu.lst` que no son comentarios:
+
+	`$ grep -v "#" /boot/grub/menu.lst`
+
+- Contar el número de interfaces de red que tenemos definidos en el fichero `/etc/network/interfaces`:
+`$ grep -c "iface" /etc/network/interfaces`
+
+- Mostrar las líneas de un fichero que contienen la palabra BADAJOZ o HUELVA:
+
+	`$ grep -e "BADAJOZ" -e "HUELVA" archivo`
+
+- Mostrar las líneas de un fichero que contienen la palabra BADAJOZ o HUELVA, numerando las líneas de salida:
+
+	`$ grep -n -e "BADAJOZ" -e "HUELVA" archivo`
+
+- Mostrar los ficheros que contienen la palabra TOLEDO en el directorio actual y todos sus subdirectorios:
+
+	`$ grep -r "TOLEDO" *`
+
+Veamos algunos ejemplos con expresiones regulares:
+
+- Obtener la dirección MAC de la interfaz de red eth0 de nuestra máquina:
+
+	`$ ifconfig eth0 | grep -oiE '([0-9A-F]{2}:){5}[0-9A-F]{2}'`
+
+	Sacamos la dirección MAC de la interfaz eth0 de nuestra máquina haciendo un:
+
+	`$ ifconfig eth0`
+
+	Y aplicando el filtro grep:
+
+	`$ grep -oiE '([0-9A-F]{2}:){5}[0-9A-F]{2}'`
+
+	Las opciones que he usado en grep son:
+
+	-`-o` Indica que la salida del comando debe contener sólo el texto que coincide con el patrón, en lugar de toda la línea, como es lo habitual.
+	-`-i` Lo he usado para que ignore la distinción entre mayúsculas y minúsculas.
+	-`-E` Indica que vamos a usar una expresión regular extendida.
+	
+	En cuanto a la expresión regular, podemos dividirla en dos partes:
+	`([0-9A-F]{2}:){5}` Buscamos 5 conjuntos de 2 caracteres seguidos de dos puntos `[0-9A-F]{2}` seguido por un conjunto de dos caracteres.
+	
+	Como las direcciones MAC se representan en hexadecimal, los caracteres que buscamos son los números del 0 al 9 y las letras desde la A a la F.
+
+- Extraer la lista de direcciones de correo electrónico de un archivo:
+
+	`grep -Eio '[a-z0-9._-]+@[a-z0-9.-]+[a-z]{2,4}' fichero.txt`
+
+	Utilizo las mismas opciones que en el caso anterior:
+	
+	-`-o` Indica que la salida del comando debe contener sólo el texto que coincide con el patrón, en lugar de toda la línea, como es lo habitual.
+	-`-i` Lo he usado para que ignore la distinción entre mayúsculas y minúsculas.
+	-`-E` Indica que vamos a usar una expresión regular extendida.
+	
+	Analicemos ahora la expresión regular:
+	`[a-z0-9._-]+@[a-z0-9.-]+[a-z]{2,4}`
+	
+	Al igual que antes, la vamos dividiendo en partes:
+	`[a-z0-9._-]+` Una combinación de letras, números, y/o los símbolos `. _` y `-` de uno o más caracteres, `@` seguido de una arroba
+	`[a-z0-9.-]+` seguido de una cadena de letras, números y/o los símbolos `.` y `-`
+	`[a-z]{2,4}` seguido de una cadena de entre dos y cuatro caracteres.
+	
+	- Obtener la dirección IP de la interfaz de red eth1 de nuestra máquina:
+	`$ ifconfig eth1 | grep -oiE '([0-9]{1,3}\.){3}[0-9]{1,3}' | grep -v 255`
+	
+	En el ejemplo anterior, hemos tomado la información que nos ofrece ifconfig:
+	`ifconfig eth1`
+	
+	Hemos filtrado dicha información con el comando grep, obteniendo todas las direcciones IP que aparecen:
+	`grep -oiE '([0-9]{1,3}\.){3}[0-9]{1,3}'`
+	
+	Por último, hemos filtrado la salida del comando anterior, para eliminar la dirección de broadcast junto con la máscara de red para quedarnos sólo con la dirección IP de la máquina:
+	`grep -v 255`
+	
+	La línea anterior no mostraría las líneas que no contengan el valor 255, es decir, las direcciones de broadcast y máscara de red.
+	
+	Analicemos ahora el comando grep:
+	`grep -oiE '([0-9]{1,3}\.){3}[0-9]{1,3}'`
+	
+	Al igual que en los otros dos ejemplos de expresiones regulares uso las opciones `-oiE` en el comando grep:
+	
+	- `-o` Indica que la salida del comando debe contener sólo el texto que coincide con el patrón, en lugar de toda la línea, como es lo habitual.
+	- `-i` Lo he usado para que ignore la distinción entre mayúsculas y minúsculas.
+	- `-E` Indica que vamos a usar una expresión regular extendida.
+	
+	En cuanto a la expresión regular:
+	`'([0-9]{1,3}\.){3}[0-9]{1,3}'`
+	`([0-9]{1,3}\.){3}` Representa 3 bloques de entre uno y tres dígitos separados por puntos. Observemos que como el punto es un metacaracter, tengo que usar el caracter de escape \ para que no sea interpretado como un metacaracter, sino como un caracter normal.
+	`[0-9]{1,3}` Representa el último bloque de la dirección IP, que está formado por un número de entre 1 y 3 dígitos.
+
+
+
+
+
+
+
+
+
 
 ## Enlaces simbólicos ##
 
@@ -617,52 +659,52 @@ Ejemplos: `chmod +r fichero`, `chmod +w directorio`, `chmod +rw directorio -R`, 
 
 - `Ctrl + Alt + Fn (1-6)`: Para abrir terminales a pantalla completa. Requiere autentificación con usuario y contraseña. Cambiaremos a la terminal correspondiente a la tecla Fn que pulsemos, correspondiendo ésta al orden en el que las abrimos. En ***Linux*** podemos tener múltiples terminales funcionando simultáneamente, por defecto controlaremos hasta 6 con esta combinación de teclas. Por ejemplo `Ctrl + Alt + F1` nos lleva a la primera terminal abierta.
 
-- `tty`: Con este comando, en el caso de tener varias terminales abiertas, nos dirá en cuál nos encontramos.
+- `tty` Con este comando, en el caso de tener varias terminales abiertas, nos dirá en cuál nos encontramos.
 
-- `Ctrl + Alt + F7`: Nos devolverá al entorno gráfico (si usábamos alguno).
+- `Ctrl + Alt + F7` Nos devolverá al entorno gráfico (si usábamos alguno).
 
-- `Shift (Mayus) + RePág`: Realizaremos scroll hacia arriba en la terminal.
+- `Shift (Mayus) + RePág` Realizaremos scroll hacia arriba en la terminal.
 
-- `Shift (Mayus) + AvPág`: Realizaremos scroll hacia abajo en la terminal.
+- `Shift (Mayus) + AvPág` Realizaremos scroll hacia abajo en la terminal.
 
 - `Tab` (Tabulador) Función de  expansión. Completará el comando, nombre de fichero o directorio que estemos escribiendo. En caso de múltiples coincidencias, con una doble pulsación de esta tecla obtendremos todos los resultados posibles encontrados en el directorio o sistema.
 
--` Flecha de dirección ‘arriba’ y /o ‘abajo’`: La shell almacena un historial de las órdenes tecleadas anteriormente. Nos moveremos por el historial compuesto por los últimos comandos usados.
+- `Flecha de dirección ‘arriba’ y /o ‘abajo’`: La shell almacena un historial de las órdenes tecleadas anteriormente. Nos moveremos por el historial compuesto por los últimos comandos usados.
 
-- `clear`limpia la pantalla.
+- `clear` limpia la pantalla.
 
-- `history`: muestra el historial de comandos introducidos por el usuario.
+- `history` muestra el historial de comandos introducidos por el usuario.
 	
 	Ejemplos: 
 	
 	`history | more`
 
-- `Ctrl + r`: Buscará en el historial el último comando usado según lo que vayamos escribiendo. Por ejemplo utilizamos el comando `clear` hace unas horas, si pulsamos `Ctrl + r` y escribimos `cl` nos mostrará el comando `clear`, puesto que lo ha buscado en el historial y es el más reciente que coincide.
+- `Ctrl + r` Buscará en el historial el último comando usado según lo que vayamos escribiendo. Por ejemplo utilizamos el comando `clear` hace unas horas, si pulsamos `Ctrl + r` y escribimos `cl` nos mostrará el comando `clear`, puesto que lo ha buscado en el historial y es el más reciente que coincide.
 
-- `Ctrl + c`: Interrumpe cualquier proceso en ejecución de forma inmediata y nos devuelve al prompt.
+- `Ctrl + c` Interrumpe cualquier proceso en ejecución de forma inmediata y nos devuelve al prompt.
 
-- `Ctrl + z`: Envía el proceso actual a segundo plano. Para recuperarlo sólo tendremos que escribir `fg` y pulsar Intro.
+- `Ctrl + z` Envía el proceso actual a segundo plano. Para recuperarlo sólo tendremos que escribir `fg` y pulsar Intro.
 
 - `Ctrl + d`: Cierra la sesión de la terminal en la que nos encontramos. Si estamos usando una interfaz gráfica en la que hemos abierto una terminal, ésta sólo se cerrará.
 
-- `Ctrl + w`: Elimina la palabra anterior a la posición del cursor.
+- `Ctrl + w` Elimina la palabra anterior a la posición del cursor.
 
 - `Ctrl + k`: Corta todo aquello que se encuentra entre la situación del cursor y el final de la línea.
 
-- `Ctrl + u`: Corta la línea en la que nos encontramos al completo.
+- `Ctrl + u` Corta la línea en la que nos encontramos al completo.
 
-- `Ctrl + y`: Pega el contenido copiado o cortado con `Ctrl + u` o `Ctrl + k`.
+- `Ctrl + y` Pega el contenido copiado o cortado con `Ctrl + u` o `Ctrl + k`.
 
-- `!!`: Repetirá el último comando usado.
+- `!!` Repetirá el último comando usado.
 
 
 ## Comandos de Información del Sistema ##
 
-- `date`: Muestra la fecha y hora al completo.
+- `date` Muestra la fecha y hora al completo.
 
-- `cal`: Muestra el calendario del mes en curso.
+- `cal` Muestra el calendario del mes en curso.
 
-- `who`: muestra los usuarios de sistema que han iniciado una sesion.
+- `who` muestra los usuarios de sistema que han iniciado una sesion.
 
 	Ejemplos:
  
@@ -672,13 +714,13 @@ Ejemplos: `chmod +r fichero`, `chmod +w directorio`, `chmod +rw directorio -R`, 
 
 	`who am i`
 
-- `whoami`: Muestra el nombre del usuario con el que estamos trabajando.
+- `whoami` Muestra el nombre del usuario con el que estamos trabajando.
 
-- `w`: Muestra qué usuarios están conectados actualmente.
+- `w` Muestra qué usuarios están conectados actualmente.
 
-- `uptime`: Muestra el tiempo que lleva encendido el sistema, y cuántos usuarios lo han usado.
+- `uptime` Muestra el tiempo que lleva encendido el sistema, y cuántos usuarios lo han usado.
 
-- `uname –a`: (unix name) Ofrece información del Kernel del sistema.Información sobre el tipo de ***unix*** en el que estamos, kernel, etc.
+- `uname –a` (unix name) Ofrece información del Kernel del sistema.Información sobre el tipo de ***unix*** en el que estamos, kernel, etc.
 
 	Ejemplos: 
 
@@ -686,15 +728,15 @@ Ejemplos: `chmod +r fichero`, `chmod +w directorio`, `chmod +rw directorio -R`, 
 
 	`uname -a`
 
-- `cat /proc/cpuinfo`: Muestra información del Microprocesador
+- `cat /proc/cpuinfo` Muestra información del Microprocesador
 
-- `cat /proc/meminfo`: Muestra información de la memoria del equipo.
+- `cat /proc/meminfo` Muestra información de la memoria del equipo.
 
-- `free`: Muestra la cantidad de memoria total, usada y libre, así como el espacio en la unidad de intercambio.
+- `free` Muestra la cantidad de memoria total, usada y libre, así como el espacio en la unidad de intercambio.
 
 ## Comandos de administración ##
 
-- `adduser xxxxxx`: Donde sustituiremos las x por el nombre del usuario que queramos añadir.
+- `adduser xxxxxx` Donde sustituiremos las x por el nombre del usuario que queramos añadir.
 
 	Ejemplos: 
 
@@ -702,21 +744,21 @@ Ejemplos: `chmod +r fichero`, `chmod +w directorio`, `chmod +rw directorio -R`, 
 
 	`adduser -s /bin/false pepe`
 
-- `userdel`: eliminar usuario de sistema.
+- `userdel` eliminar usuario de sistema.
 
 	Ejemplos: 
 
 	`userdel pepe`
 
-- `passwd xxxxxxx`: Donde xxxxxxx será el nombre del usuario al que queramos cambiar la contraseña. Necesitaremos conocer la contraseña ya establecida si queremos cambiarla.
+- `passwd xxxxxxx` Donde xxxxxxx será el nombre del usuario al que queramos cambiar la contraseña. Necesitaremos conocer la contraseña ya establecida si queremos cambiarla.
 
-- `su`: Inicia sesión como superusuario o root desde la sesión actual.
+- `su` Inicia sesión como superusuario o root desde la sesión actual.
 
-- `exit`: Cierra la sesión del superusuario o root, volviendo al usuario desde la que se inició.
+- `exit` Cierra la sesión del superusuario o root, volviendo al usuario desde la que se inició.
 
 ## Comandos de proceso ##
 
-- `ps`: Muestra los procesos que se encuentran activos en el sistema actualmente.Despliega todos los procesos del sistema, con nombre y tiempo de inicio.
+- `ps` Muestra los procesos que se encuentran activos en el sistema actualmente.Despliega todos los procesos del sistema, con nombre y tiempo de inicio.
 
 	Ejemplo: 
 
@@ -731,28 +773,31 @@ Ejemplos: `chmod +r fichero`, `chmod +w directorio`, `chmod +rw directorio -R`, 
 		`ps axu | grep java`
 		`ps axu | grep tomcat`
 
-- `pstree`: Muestra la estructura jerárquica de los procesos.
+- `pstree` Muestra la estructura jerárquica de los procesos.
 
-- `top`: Muestra todos los procesos en funcionamiento. Esta herramiente monitorea varios recursos del sistema y tiene un carácter dinámico, muestra uso de CPU por proceso, cantidad de memoria, tiempo desde su inicio,etc. vmstat Es muy similar a top ya que es un condensado de los procesos del sistema, para que esta herramienta se vuelva dinámica se deben especificar los argumentos: `vmstat -n`
+- `top` Muestra todos los procesos en funcionamiento. Esta herramiente monitorea varios recursos del sistema y tiene un carácter dinámico, muestra uso de CPU por proceso, cantidad de memoria, tiempo desde su inicio,etc. vmstat Es muy similar a top ya que es un condensado de los procesos del sistema, para que esta herramienta se vuelva dinámica se deben especificar los argumentos: `vmstat -n`
 
 - `kill “pid”` (process id): Detiene el proceso asignado al pid que muestra la salida del comando ps.
 
-- `bg`: Muestra todos los procesos pausados o en segundo plano (recordamos que `Ctrl + z` establecía procesos en segundo plano).
+- `bg` Muestra todos los procesos pausados o en segundo plano (recordamos que `Ctrl + z` establecía procesos en segundo plano).
 
-- `fg`: Trae de vuelta el proceso más reciente puesto en segundo plano.
+- `fg` Trae de vuelta el proceso más reciente puesto en segundo plano.
 
-- `crontab`: Al igual que `at` especifica el tiempo al cual se ejecutará un programa “script”, `crontab` tiene la siguiente forma: minutos horas días meses fin_de_semana nombre_de_usuario instrucción argumentos
-El siguiente ejemplo ejecutará el programa `oracle.pl` cada media hora todos los dias:
-Código :
-`30 * * * * root /usr/oracle.pl`
+- `crontab` Al igual que `at` especifica el tiempo al cual se ejecutará un programa “script”, `crontab` tiene la siguiente forma: 
 
-Si se desea realizarlo mensualmente:
-Código :
-`01 3 1 * * root /usr/oracle.pl`
-Lo anterior ejecutará oracle.pl el dia primero de cada mes, a las 3:01 AM.
-Para especificar trabajos cron cada usuario mantiene un archivo en el directorio `/var/spool/cron/` , este directorio lo accesa cada usario con el comando `crontab -e`
-La ejecución de `crontab` se facilita debido al archivo `/etc/crontab` que especifica trabajos `crontab` por hora,dia,semana y mes, de esta forma solo se requiere que el usuario coloque un archivo en los
-directorios correspondientes: `/etc/cron.hourly | /etc/cron.daily | /etc/cron.weekly | /etc/cron.monthly`
+	`minutos horas días meses fin_de_semana nombre_de_usuario instrucción argumentos`
+
+	El siguiente ejemplo ejecutará el programa `oracle.pl` cada media hora todos los dias:
+
+	`30 * * * * root /usr/oracle.pl`
+
+	Si se desea realizarlo mensualmente:
+
+	`01 3 1 * * root /usr/oracle.pl` Ejecutará oracle.pl el dia primero de cada mes, a las 3:01 AM.
+
+	Para especificar trabajos cron cada usuario mantiene un archivo en el directorio `/var/spool/cron/`, este directorio lo accesa cada usuario con el comando `crontab -e`.
+
+	La ejecución de `crontab` se facilita debido al archivo `/etc/crontab` que especifica trabajos `crontab` por hora, dia, semana y mes, de esta forma solo se requiere que el usuario coloque un archivo en los directorios correspondientes: `/etc/cron.hourly | /etc/cron.daily | /etc/cron.weekly | /etc/cron.monthly`
 
 
 
@@ -863,9 +908,9 @@ Ejemplos:
 
 
 
-
-
 ## Referencias ##
+
+https://es.wikipedia.org/wiki/GNU/Linux
 
 https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/
 
