@@ -10,9 +10,22 @@
 <!--
 <nav class="navbar navbar-default navbar-fixed-top navbar-scroll" role="navigation">
 -->
-<nav role="navigation">    
+<!-- para dispositivos medianos-grandes -->
+<nav role="navigation" class="hidden-xs">    
     <div class="container" style="width: auto;">
-        <div class="visible-xs-block navbar-header page-scroll">
+        <div class="navbar-header page-scroll">
+            <a class="btn btn-lg btn-default btn-logo-home-scroll" href="/" id="i18_title">
+                <img src="{{ site.img_logo_path | prepend: site.baseurl }}" height="35px" width="35px" class="img-responsive" alt="" style="display: inline; margin-right: 1em;">
+                <span data-i18n="website.title">{{ site.title }}</span>
+            </a>                
+        </div>   
+    </div>
+</nav>
+
+<!-- para dispositivos pequeños -->
+<nav role="navigation" class="visible-xs-block">    
+    <div class="container" style="width: auto;">
+        <div class="navbar-header page-scroll">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="fas fa-bars"></span>
