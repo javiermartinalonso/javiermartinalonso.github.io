@@ -27,7 +27,7 @@ A continuación, explico algunas las razones por las que creo que esto es conven
 
 - **Espacio**:
 
-	Tu repositorio de Subversion acumula ramas de desarrollo difuntas que ocupan espacio aunque ya no se necesitan. En git, el repositorio central sólo necesita guardar lo que realmente está terminado y funcionando. Con git no hay miedo a estar trabajando en distintas ramas a la vez, ya que el espacio que requiere es insignificante, con SVN puedes hacer lo mismo pero tardarias mucho mas en realizar copias y ocuparia bastante mas.
+	Tu repositorio de Subversión acumula ramas de desarrollo difuntas que ocupan espacio aunque ya no se necesitan. En git, el repositorio central sólo necesita guardar lo que realmente está terminado y funcionando. Con git no hay miedo a estar trabajando en distintas ramas a la vez, ya que el espacio que requiere es insignificante, con SVN puedes hacer lo mismo pero tardarías mucho más en realizar copias y ocuparía bastante más.
 
 	El tamaño que ocupa el repositorio es menor, ya que cada vez que haces commit se crea un tag pero solo con los cambios con respecto al tag anterior.
 
@@ -37,23 +37,23 @@ A continuación, explico algunas las razones por las que creo que esto es conven
 
 - **Gestión de ramas y agilidad**:
 
-	Es más fácil crear y gestionar las ramas en local, lo cual te permite estar haciendo el desarrollo de un requisito y si las prioridades cambian, guardar la rama con estas modificaciones en local y volver muy rápidamente a la rama principal para desarrollar la nueva prioridad. 
-	Facilitando el poder volver e incorporar el desarrollo que dejaste parado en paralelo y haciendonos mucho más agiles a los cambios.
+	Es más fácil crear y gestionar las ramas en local, lo cual te permite estar haciendo el desarrollo de un requisito y si las prioridades cambian, guardar la rama con estas modificaciones en local y volver muy rápidamente a la rama principal para desarrollar la nueva prioridad. Facilitando el poder volver e incorporar el desarrollo que dejaste parado en paralelo y haciéndonos mucho más agiles a los cambios.
 
-	En sistemas como SVN a veces volver a la versión anterior es muy dificil, Con Git es más fácil revisar el histórico de cambios viendo de golpe todos los ficheros que se cambiaron en un única subida y pudiendo ver el resumen de cambios, esto debido a su naturaleza de commits incrementales.
-	Con GIT esto no sucede ya que puedes ver todos los cambios en varios ficheros a la vez, para un repositorio completo, ya que cada tag es sobre un commict completo del repositorio y no de archivos sueltos de este, con SVN para hacer lo mismo tienes que recurrir a programas de terceros como sonar, que registran los últimos cambios para mostrartelos más como lo hace GIT.
+	En sistemas como SVN a veces volver a la versión estable anterior es muy difícil, Con Git es más fácil revisar el histórico de cambios viendo de golpe todos los ficheros que se cambiaron en un única subida y pudiendo ver el resumen de cambios, esto debido a su naturaleza de commits incrementales, ya que cada tag es sobre un commit completo del repositorio y no de archivos sueltos de este, con SVN para hacer lo mismo tienes que recurrir a programas de terceros como sonar, que registran los últimos cambios para mostrártelos más como lo hace GIT.
+
 
 - **Asegurar la integridad del desarrollo**:
 
 	Una de las cualidades de Git es que no puedes hacer commit a una rama sin haber integrado primero los cambios de esta en la rama que quieres subir.
-	Con esto aseguras que tus cambios están incorporados y que si has probado correctamente la integración, aseguras que tu commit no rompe la calidad del proyecto.
+	Con esto aseguras que tus cambios están incorporados y que si has probado correctamente la integración, aseguras que tu commit no rompe la integridad del proyecto.
 
 - **Problemas con el repositorio central**.
 
-	Ante una caída de la red, puedes seguir haciendo commits de tus cambios al repositorio local sin miedo a perdelos y pudiendo volver atrás sin problemas.
-Con SVN a menos que tengas configurado el guardado de historico de las últimas horas esto no sería posible y aún así puedes perder los cambios, con Git esto no te pasará nunca.
+	Ante una caída de la red, puedes seguir haciendo commits de tus cambios al repositorio local sin miedo a perderlos y pudiendo volver atrás sin problemas.
 
-- **Gestión del proyecto con plataforma GIthub**.
+	Con SVN a menos que tengas configurado el guardado de histórico de las últimas horas esto no sería posible y aún así puedes perder los cambios, con Git esto no te pasará nunca.
+
+- **Gestión del proyecto con plataforma Github**.
 
 	1. **Revisión de la integración de los cambios por el responsable técnico (El pull request)**.
 	
@@ -75,22 +75,21 @@ Con SVN a menos que tengas configurado el guardado de historico de las últimas 
 
 - **Mercado actual:**
 
-	Es una tecnología muy madura que lleva bastante tiempo en uso, existe desde 2005. Git lo usan los grandes como google, facebook, twitter, android y es fácil que los clientes lo empiezen a incorporar en sus infraestructuras, lo cual si no empezamos a usarlo en la empresa nos iria dejando rezagados contra otros competidores que ya estén acostumbrados a trabajar bien con este sistema.
+	Es una tecnología muy madura que lleva bastante tiempo en uso, existe desde 2005. Git lo usan los grandes como google, facebook, twitter, android y es fácil que los clientes lo empiecen a incorporar en sus infraestructuras, lo cual si no empezamos a usarlo en la empresa nos iria dejando rezagados contra otros competidores que ya estén acostumbrados a trabajar bien con este sistema.
 
 	A nivel social, cada día está más en auge usar git, sobre todo desde plataformas web como GitHub o BitBucket. 
 	Es una manera muy buena de crear infraestructuras comunity, para que personas de todo el mundo se involucren en el desarrollo de proyectos. 
 	Esto quiere decir que los nuevos profesionales están aumentando su uso y reduciendo su curva de aprendizaje. 
 	Lo usan para mejorar sus herramientas de trabajo, tener software propio y fiable disponible, poder publicarlo y que otros participen en su mejora. 
-	Poder mostrar el conocimiento y la valía de estos profesionales, al poder mostrar directamente su trabajo. I
-	Incluso muchas empresas piden la cuenta de github del candidato para estudiar su trabajo durante las campañas de selección de personal.
+	Poder mostrar el conocimiento y la valía de estos profesionales, al poder mostrar directamente su trabajo. Incluso muchas empresas piden la cuenta de github del candidato para estudiar su trabajo durante las campañas de selección de personal.
 
-	Las empresas y frameworks que todos conocemos usan esta vía para sus desarrollos: Spring, BonitaSoft, Angular, Android, Google, linux ... Lo cual nos obliga como profesionales ha hacer uso de este tipo de repositorios sin ninguna duda.
+	Las empresas y frameworks que todos conocemos usan esta vía para sus desarrollos: Spring, BonitaSoft, Angular, Android, Google, linux ... Lo cual nos obliga como profesionales el hacer uso de este tipo de repositorios sin ninguna duda.
 
 Para finalizar y desde mi experiencia personal lo recomiendo encarecidamente, sobre todo con plataformas como **gitHub o BitBucket**, sobre todo por la potencia que tiene para generar entregas rápidas, generar tags y releases y la facilidad de gestión del repositorio.
 
-Llevo mas de un año usándolo como herramienta para mejorar mi visibilidad profesional, aprender, recopilar desarrollos, herramientas y acceder a las publicaciones de los frameworks que uso y estoy encantado, es más creo que es imprescindible su uso para el trabajo del día a día.
+Llevo más de un año usándolo como herramienta para mejorar mi visibilidad profesional, aprender, recopilar desarrollos, herramientas y acceder a las publicaciones de los frameworks que uso y estoy encantado, es más creo que es imprescindible su uso para el trabajo del día a día.
 
-Esto que comento a nivel personal se puede extrapolar al nivel de la empresa mostrando algún proyecto/producto que queramos montar con la filosofía comunity. De este modo podríamos contar con una comunidad que de ideas e incluso nos ayude con la codificación, pruebas, feedback de uso de un producto que luego queramos vender o dar soporte de modo privado, como hacen empresas como JBOSS o Bonitasoft. Esto mejoraría la imagen de la empresa, ayudaría a darse a conocer e introducirse como servicio en nuevas soluciones.
+Esto que comento a nivel personal se puede extrapolar al nivel de la empresa mostrando algún proyecto/producto que queramos montar con la filosofía comunity. De este modo podríamos contar con una comunidad que de ideas e incluso nos ayude con la codificación, pruebas, feedback de uso de un producto que luego queramos vender o dar soporte de modo privado, como hacen empresas como JBOSS o Bonitasoft. Esto mejoraría la imagen de la empresa, ayudaría a darse a conocer e introducirse como servicio de implantación de nuevas soluciones.
 
 Saludos cordiales
 

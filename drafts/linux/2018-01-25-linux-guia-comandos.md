@@ -4,9 +4,9 @@ section: "LINUX"
 title:  "Linux: Guía de comandos"
 date:   2017-12-25
 desc: "Recopilatorio de los comandos de Unix que son más usados habitualmente."
-keywords: "linux, shell, comandos"
+keywords: "linux, shell, comandos, host"
 categories: [linux]
-tags: [linux, shell, comandos]
+tags: [linux, shell, comandos, host]
 icon: fab fa-linux
 image: static/img/blog/linux/linux-logo.png
 ---
@@ -70,7 +70,7 @@ Esta estructura de árbol y los nombres de los directorios no es al azar, tiene 
 | `/var/tmp` | Ficheros temporales que, a diferencia de `/tmp`, no se borran entre sesiones o reinicios del sistema. |
 
 
-# Interface Linea de Comando (Command LineInterface, CLI) #
+# Interface Linea de Comando (Command Line Interface, CLI) #
 
 Si todo sistema operativo tiene una **Interfaz de Linea de Comandos (*Command LineInterface, CLI*)**, en **UNIX** esta interfaz tiene aun mayor importancia, ya que el uso de un **sistema UNIX** como servidor está más extendido que como sistema de escritorio. Que el interfaz sea *“austero”* permite que la potencia del sistema se use en los procesos y no en otra cosa. A estos servidores normalmente se accederá abriendo sesiones remotas en modo comando.
 
@@ -89,29 +89,7 @@ También podemos redireccionar la salida estándar del comando `cat` y pasarla c
 Tanto las ***redirecciones*** como las ***tuberías*** son conceptos fundamentales que sin duda debes manejar para empezar a sentirte cómodo con la ***terminal***. Verás que al cabo de un tiempo no sabrás cómo pudiste vivir sin ellos.
 
 
-## Concatenar comandos en linux ##
 
-### Concatenar comandos ###
-
-- Con `|` hace que la salida del primero se convierta en la entrada del segundo.
-
-		$ cmd1 | cmd2
-
-- Con `&` hará que los dos (o más) comandos se ejecuten de manera simultanea.
-
-		$ cmd1 & cmd2
-
-- Con `||` El segundo comando se ejecutará si el primero termina sin éxito.
-
-		$ cmd1 || cmd2
-
-- Con `&&` El segundo comando se ejecutará solo si el primero termina con éxito.
-
-		$ cmd1 && cmd2
-
-- Con `;` El segundo comando se ejecutará sin importar el resultado del primero.
-
-		$ cmd1 ; cmd2
 
 ## Información de la línea de comandos ##
 
@@ -143,7 +121,7 @@ Tanto las ***redirecciones*** como las ***tuberías*** son conceptos fundamental
 	
 		`scp user@host:absolutePath destinationPath`
 
-		Ejemplo: Si queremos copiar el fichero archivo.txt del servidor a nuestro ordenador en la carpeta Documentos, hacemos lo siguiente:
+		Si queremos copiar el fichero `archivo.txt` del servidor a nuestro ordenador en la carpeta *Documentos*, hacemos lo siguiente:
 		
 		`$ scp usuario@dominio.com:/home/usuario/archivo.txt Documentos`
 
@@ -151,11 +129,11 @@ Tanto las ***redirecciones*** como las ***tuberías*** son conceptos fundamental
 	
 		`scp originPath user@host:destinationPath`
 
-		Ejemplo: Si queremos subir el archivo archivo.txt de nuestro ordenador a la carpeta `/home/usuario` del servidor, hacemos lo siguiente:
+		Si queremos subir el archivo `archivo.txt` de nuestro ordenador a la carpeta `/home/usuario` del servidor, hacemos lo siguiente:
 		
 		`$ scp archivo.txt usuario@dominio.com:/home/usuario`
 
-		Ejemplo: Para copiar un directorio completo de mi ordenador al servidor, por ejemplo `/home/javi/` carpeta a `/home/usuario`, añadimos un `-r` en el comando:
+		Para copiar un directorio completo de mi ordenador al servidor, por ejemplo `/home/javi/` carpeta a `/home/usuario`, añadimos un `-r` en el comando:
 
 		`$ scp -r /home/javi/carpeta usuario@dominio.com:/home/usuario`
 
@@ -163,7 +141,7 @@ Tanto las ***redirecciones*** como las ***tuberías*** son conceptos fundamental
 	
 		`scp user1@host1:absolutePath user2@host2:absolutePath`
 
-		Ejemplo: Para copiar un archivo de un servidor a otro, hacemos lo siguiente:
+		Para copiar un archivo de un servidor a otro, hacemos lo siguiente:
 		`$ scp usuario1@dominio1.com:/home/usuario1/archivo.txt usuario2@dominio2.com:/home/usuario2/`
 
 
@@ -323,16 +301,21 @@ Tanto las ***redirecciones*** como las ***tuberías*** son conceptos fundamental
 
 - `tar` Descripción: =Tape ARchiver. archivador de ficheros.
 
-	Ejemplos: 
-		`tar cvf fichero.tar directorio`
-		`tar xvf fichero.tar`
-		`tar zcvf fichero.tgz directorio`
-		`tar zxvf fichero.tgz`
+	Ejemplos:
+
+	`tar cvf fichero.tar directorio`
+
+	`tar xvf fichero.tar`
+
+	`tar zcvf fichero.tgz directorio`
+
+	`tar zxvf fichero.tgz`
 
 - `gunzip` Descripción: descompresor compatible con ZIP.
 	
 	Ejemplos: 
-		`gunzip fichero`
+
+	`gunzip fichero`
 
 
 
@@ -340,25 +323,26 @@ Tanto las ***redirecciones*** como las ***tuberías*** son conceptos fundamental
 
 ## Búsquedas con el comando `grep` ##
 
-- Hacer **búsquedas** dentro del contenido de un fichero. **Filtrar, resaltar mediante expresiones regulares**. `grep` nos permite buscar dentro de los archivos, las líneas que concuerdan con un patrón. Pero si no especificamos ningún nombre de archivo, tomará la entrada estándar, con lo que podemos encadenarlo con otros filtros e imprimir las líneas encontradas en la salida estándar. 
+Hacer **búsquedas** dentro del contenido de un fichero. **Filtrar, resaltar mediante expresiones regulares**. `grep` nos permite buscar dentro de los archivos, las líneas que concuerdan con un patrón. Pero si no especificamos ningún nombre de archivo, tomará la entrada estándar, con lo que podemos encadenarlo con otros filtros e imprimir las líneas encontradas en la salida estándar. 
 
-	- Busca el texto ERROR en el archivo catalina.out
+> **Esto es muy útil para hacer debuggeo en un servidor, sacar estadísticas o recopilar información dentro de una maquina UNIX.**
 
-		`grep ERROR catalina.out`
+- Busca el texto `ERROR` en el archivo `catalina.out`
 
-	- Busca el texto ERROR en el archivo catalina.out y lo marca con un color
+	`grep ERROR catalina.out`
 
- 		`grep --color "ERROR" catalina.out`
+- Busca el texto `ERROR` en el archivo `catalina.out` y lo marca con un color
+
+	`grep --color "ERROR" catalina.out`
  
+- Listar los archivos cuyo nombre comiencen por *'ab'* en el directorio actual:
 
-Por ejemplo si queremos listar los archivos cuyo nombre comiencen por *'ab'* en el directorio actual:
-
-`ls -l | grep ab*` 
+	`ls -l | grep ab*` 
 
 Como tiene muchísimas opciones, vamos a ver tan sólo las más usadas:
 
 - `-c` En lugar de imprimir las líneas que coinciden, muestra el número de líneas que coinciden.
-- `-e` PATRON nos permite especificar varios patrones de búsqueda o proteger aquellos patrones de búsqueda que comienzan con el signo `-`.
+- `-e pattern` nos permite especificar varios patrones de búsqueda o proteger aquellos patrones de búsqueda que comienzan con el signo `-`.
 - `-r` busca recursivamente dentro de todos los subdirectorios del directorio actual.
 - `-v` nos muestra las líneas que no coinciden con el patrón buscado.
 - `-i` ignora la distinción entre mayúsculas y minúsculas.
@@ -368,7 +352,7 @@ Como tiene muchísimas opciones, vamos a ver tan sólo las más usadas:
 - `-f` ARCHIVO extrae los patrones del archivo que especifiquemos. Los patrones del archivo deben ir uno por línea.
 - `-H` nos imprime el nombre del archivo con cada coincidencia.
 
-Veamos algunos ejemplos:
+Veamos algunos ejemplos más:
 
 - Buscar todas las líneas que contengan palabras que comiencen por `'a'` en un archivo:
 `$ grep '\<a.*\>' archivo`
@@ -385,17 +369,17 @@ Veamos algunos ejemplos:
 - Contar el número de interfaces de red que tenemos definidos en el fichero `/etc/network/interfaces`:
 `$ grep -c "iface" /etc/network/interfaces`
 
-- Mostrar las líneas de un fichero que contienen la palabra BADAJOZ o HUELVA:
+- Mostrar las líneas de un fichero que contienen la palabra Madrid o Santander:
 
-	`$ grep -e "BADAJOZ" -e "HUELVA" archivo`
+	`$ grep -e "Madrid" -e "Santander" archivo`
 
-- Mostrar las líneas de un fichero que contienen la palabra BADAJOZ o HUELVA, numerando las líneas de salida:
+- Mostrar las líneas de un fichero que contienen la palabra Madrid o Santander, numerando las líneas de salida:
 
-	`$ grep -n -e "BADAJOZ" -e "HUELVA" archivo`
+	`$ grep -n -e "Madrid" -e "Santander" archivo`
 
-- Mostrar los ficheros que contienen la palabra TOLEDO en el directorio actual y todos sus subdirectorios:
+- Mostrar los ficheros que contienen la palabra `Madrid` en el directorio actual y todos sus subdirectorios:
 
-	`$ grep -r "TOLEDO" *`
+	`$ grep -r "Madrid" *`
 
 Veamos algunos ejemplos con expresiones regulares:
 
@@ -440,7 +424,8 @@ Veamos algunos ejemplos con expresiones regulares:
 	`[a-z0-9.-]+` seguido de una cadena de letras, números y/o los símbolos `.` y `-`
 	`[a-z]{2,4}` seguido de una cadena de entre dos y cuatro caracteres.
 	
-	- Obtener la dirección IP de la interfaz de red eth1 de nuestra máquina:
+- Obtener la dirección IP de la interfaz de red eth1 de nuestra máquina:
+
 	`$ ifconfig eth1 | grep -oiE '([0-9]{1,3}\.){3}[0-9]{1,3}' | grep -v 255`
 	
 	En el ejemplo anterior, hemos tomado la información que nos ofrece ifconfig:
@@ -477,7 +462,7 @@ Veamos algunos ejemplos con expresiones regulares:
 
 
 
-## Enlaces simbólicos ##
+## Enlaces físicos (Hard links) y simbólicos (Soft links) ##
 
 ### Enlaces físicos ###
 
@@ -547,7 +532,9 @@ Ejemplo: Supongamos que quiere apuntar el último enlace suave ahora al nuevo di
 | w | write | escribir en un archivo o directorio |
 | x | execute | ejecutar un archivo |
 
-- `chown` (change owner) nos permite cambiar de propietario en archivos y directorios de ***linux***. Hay diferentes formas de usar el comando. La más básica es:
+### `chown` (change owner) ###
+
+`chown` Nos permite cambiar de propietario en archivos y directorios de ***linux***. Hay diferentes formas de usar el comando. La más básica es:
 
 `chown nuevousuario archivo`
 
@@ -655,47 +642,7 @@ Ejemplos: `chmod +r fichero`, `chmod +w directorio`, `chmod +rw directorio -R`, 
 
 		> Con este comando estaríamos contando todos los archivos .php, fíjate que también puedes poner un nombre de archivo o una parte como por ejemplo “clase*” o “*log*” para buscar archivos con estas cadenas y contarlos.
 
-## Atajos de teclado ##
 
-- `Ctrl + Alt + Fn (1-6)`: Para abrir terminales a pantalla completa. Requiere autentificación con usuario y contraseña. Cambiaremos a la terminal correspondiente a la tecla Fn que pulsemos, correspondiendo ésta al orden en el que las abrimos. En ***Linux*** podemos tener múltiples terminales funcionando simultáneamente, por defecto controlaremos hasta 6 con esta combinación de teclas. Por ejemplo `Ctrl + Alt + F1` nos lleva a la primera terminal abierta.
-
-- `tty` Con este comando, en el caso de tener varias terminales abiertas, nos dirá en cuál nos encontramos.
-
-- `Ctrl + Alt + F7` Nos devolverá al entorno gráfico (si usábamos alguno).
-
-- `Shift (Mayus) + RePág` Realizaremos scroll hacia arriba en la terminal.
-
-- `Shift (Mayus) + AvPág` Realizaremos scroll hacia abajo en la terminal.
-
-- `Tab` (Tabulador) Función de  expansión. Completará el comando, nombre de fichero o directorio que estemos escribiendo. En caso de múltiples coincidencias, con una doble pulsación de esta tecla obtendremos todos los resultados posibles encontrados en el directorio o sistema.
-
-- `Flecha de dirección ‘arriba’ y /o ‘abajo’`: La shell almacena un historial de las órdenes tecleadas anteriormente. Nos moveremos por el historial compuesto por los últimos comandos usados.
-
-- `clear` limpia la pantalla.
-
-- `history` muestra el historial de comandos introducidos por el usuario.
-	
-	Ejemplos: 
-	
-	`history | more`
-
-- `Ctrl + r` Buscará en el historial el último comando usado según lo que vayamos escribiendo. Por ejemplo utilizamos el comando `clear` hace unas horas, si pulsamos `Ctrl + r` y escribimos `cl` nos mostrará el comando `clear`, puesto que lo ha buscado en el historial y es el más reciente que coincide.
-
-- `Ctrl + c` Interrumpe cualquier proceso en ejecución de forma inmediata y nos devuelve al prompt.
-
-- `Ctrl + z` Envía el proceso actual a segundo plano. Para recuperarlo sólo tendremos que escribir `fg` y pulsar Intro.
-
-- `Ctrl + d`: Cierra la sesión de la terminal en la que nos encontramos. Si estamos usando una interfaz gráfica en la que hemos abierto una terminal, ésta sólo se cerrará.
-
-- `Ctrl + w` Elimina la palabra anterior a la posición del cursor.
-
-- `Ctrl + k`: Corta todo aquello que se encuentra entre la situación del cursor y el final de la línea.
-
-- `Ctrl + u` Corta la línea en la que nos encontramos al completo.
-
-- `Ctrl + y` Pega el contenido copiado o cortado con `Ctrl + u` o `Ctrl + k`.
-
-- `!!` Repetirá el último comando usado.
 
 
 ## Comandos de Información del Sistema ##
@@ -849,63 +796,137 @@ Ejemplos: `chmod +r fichero`, `chmod +w directorio`, `chmod +rw directorio -R`, 
 
 - `ping xxxx`: Manda una señal que deberá ser devuelta por el equipo xxxx para comprobar si se encuentra en línea o no.
 
-Ejemplos: 
-`ping www.google.es`
+	Ejemplo: `ping www.google.es`
 
 - `whois xxxxx`: Obtiene información acerca de un dominio xxxxx, como por ejemplo www.google.com
 
 - `traceroute`: herramienta de red que nos muestra el camino que se necesita para llegar a otra maquina.
 	
-	Ejemplos: 
-	`traceroute www.rediris.es`
+	Ejemplos: `traceroute www.rediris.es`
 
 - `wget xxxx`: programa para descargar ficheros por http o ftp.Descargará el archivo xxxx. Deberemos proporcionarle una dirección completa como por ejemplo:  `https://direccionip/carpeta/subcarpeta/archivo.file`
 
-	Ejemplos: 
-	`wget http://www.rediris.es/documento.pdf`
+	Ejemplos: `wget http://www.rediris.es/documento.pdf`
 
 - `ifup`: Habilita la interfase especificada,
-	Ejemplo: 
 	
-	`ifup eth0`
+	Ejemplo:  `ifup eth0`
 
 - `ifdown`: Deshabilita la interfase especificada
 
-	Ejemplo: 
-
-	`ifdown eth0`
+	Ejemplo: `ifdown eth0`
 
 - `netstat -a`: Todas la conexiones de Red originadas y recibidas por el “Host”. la informacion sobre las conexiones de red activas.
-Ejemplos: 
+
+	Ejemplos: 
+
 	`netstat`
+
 	`netstat -ln`
+
 	`netstat -l`
+
 	`netstat -a`
+
 	`netstat -r` Muestra la tabla de ruteo “routing table” del sistema
+
 	`netstat -i` Estadisticas de red de cada interfase
 
-- `nslookup`: Busca información en los servidores DNS,ejemplo: `nslookup -query=mx osomosis.com`, si no se especifican parámetros se entra en modo interactivo
+- `nslookup`: Busca información en los servidores DNS
+
+	`nslookup -query=mx osomosis.com`, si no se especifican parámetros se entra en modo interactivo
 
 - `route`: Permite agregar tablas de ruteo de y hacia el “Host”. Gestiona las rutas a otras redes.
 `route add`
-. Ejemplo: Para guiar toda la información de la red `206.171.55.16 netmask 255.255.255.240` vía la interfase `eth0`:
-Código :
-`route add ‐net 206.171.55.16 255.255.255.240 eth0`
-Para routear todo el trafico por cierta interfase (“Default Gateway”):
-Código :
-`route add default gw 206.171.55.51 eth0`
-Esto enviará toda la infromacion por la dirección `206.171.55.51`
-`route -n` Despliega la tabla de ruteo del “Host”. NOTA: Debe de estar “IP Forwarding” ON en
-/etc/sysconfig/network , además el “kernel” debe de estar configurado para “IP Forwarding” .
+
+	Para guiar toda la información de la red `206.171.55.16 netmask 255.255.255.240` vía la interfase `eth0`:
+
+	`route add ‐net 206.171.55.16 255.255.255.240 eth0`
+
+	Para routear todo el trafico por cierta interfase (“Default Gateway”):
+
+	`route add default gw 206.171.55.51 eth0` Esto enviará toda la informacion por la dirección `206.171.55.51`
+
+	`route -n` Despliega la tabla de ruteo del “Host”. 
+
+	> NOTA: Debe de estar “IP Forwarding” ON en `/etc/sysconfig/network` , además el “kernel” debe de estar configurado para “IP Forwarding”.
 
 - `mail`: Envío y lectura de correo electrónico.
-Ejemplos: 
 
-`mail javimartinalonso@gmail.com < fichero`
-`mail -v javimartinalonso@gmail.com < fichero`
+	Ejemplos: 
+
+	`mail javimartinalonso@gmail.com < fichero`
+
+	`mail -v javimartinalonso@gmail.com < fichero`
 
 
+# TIPS Linux #
 
+## Atajos de teclado ##
+
+- `Ctrl + Alt + Fn (1-6)`: Para abrir terminales a pantalla completa. Requiere autentificación con usuario y contraseña. Cambiaremos a la terminal correspondiente a la tecla Fn que pulsemos, correspondiendo ésta al orden en el que las abrimos. En ***Linux*** podemos tener múltiples terminales funcionando simultáneamente, por defecto controlaremos hasta 6 con esta combinación de teclas. Por ejemplo `Ctrl + Alt + F1` nos lleva a la primera terminal abierta.
+
+- `tty` Con este comando, en el caso de tener varias terminales abiertas, nos dirá en cuál nos encontramos.
+
+- `Ctrl + Alt + F7` Nos devolverá al entorno gráfico (si usábamos alguno).
+
+- `Shift (Mayus) + RePág` Realizaremos scroll hacia arriba en la terminal.
+
+- `Shift (Mayus) + AvPág` Realizaremos scroll hacia abajo en la terminal.
+
+- `Tab` (Tabulador) Función de  expansión. Completará el comando, nombre de fichero o directorio que estemos escribiendo. En caso de múltiples coincidencias, con una doble pulsación de esta tecla obtendremos todos los resultados posibles encontrados en el directorio o sistema.
+
+- `Flecha de dirección ‘arriba’ y /o ‘abajo’`: La shell almacena un historial de las órdenes tecleadas anteriormente. Nos moveremos por el historial compuesto por los últimos comandos usados.
+
+- `clear` limpia la pantalla.
+
+- `history` muestra el historial de comandos introducidos por el usuario.
+	
+	Ejemplos: 
+	
+	`history | more`
+
+- `Ctrl + r` Buscará en el historial el último comando usado según lo que vayamos escribiendo. Por ejemplo utilizamos el comando `clear` hace unas horas, si pulsamos `Ctrl + r` y escribimos `cl` nos mostrará el comando `clear`, puesto que lo ha buscado en el historial y es el más reciente que coincide.
+
+- `Ctrl + c` Interrumpe cualquier proceso en ejecución de forma inmediata y nos devuelve al prompt.
+
+- `Ctrl + z` Envía el proceso actual a segundo plano. Para recuperarlo sólo tendremos que escribir `fg` y pulsar Intro.
+
+- `Ctrl + d`: Cierra la sesión de la terminal en la que nos encontramos. Si estamos usando una interfaz gráfica en la que hemos abierto una terminal, ésta sólo se cerrará.
+
+- `Ctrl + w` Elimina la palabra anterior a la posición del cursor.
+
+- `Ctrl + k`: Corta todo aquello que se encuentra entre la situación del cursor y el final de la línea.
+
+- `Ctrl + u` Corta la línea en la que nos encontramos al completo.
+
+- `Ctrl + y` Pega el contenido copiado o cortado con `Ctrl + u` o `Ctrl + k`.
+
+- `!!` Repetirá el último comando usado.
+
+## Concatenar comandos en linux ##
+
+### Concatenar comandos ###
+
+- Con `|` hace que la salida del primero se convierta en la entrada del segundo.
+
+		$ cmd1 | cmd2
+
+- Con `&` hará que los dos (o más) comandos se ejecuten de manera simultanea.
+
+		$ cmd1 & cmd2
+
+- Con `||` El segundo comando se ejecutará si el primero termina sin éxito.
+
+		$ cmd1 || cmd2
+
+- Con `&&` El segundo comando se ejecutará solo si el primero termina con éxito.
+
+		$ cmd1 && cmd2
+
+- Con `;` El segundo comando se ejecutará sin importar el resultado del primero.
+
+		$ cmd1 ; cmd2
 
 
 ## Referencias ##
