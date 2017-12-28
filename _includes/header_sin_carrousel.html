@@ -23,7 +23,7 @@
 </nav>
 
 <!-- para dispositivos pequeños -->
-<nav role="navigation" class="visible-xs-block">    
+<nav class="visible-xs-block" role="navigation">    
     <div class="container" style="width: auto;">
         <div class="navbar-header page-scroll">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -33,7 +33,9 @@
 
             <a class="btn btn-lg btn-default btn-logo-home-scroll" href="/" id="i18_title">
                 <img src="{{ site.img_logo_path | prepend: site.baseurl }}" height="35px" width="35px" class="img-responsive" alt="" style="display: inline; margin-right: 1em;">
-                <span data-i18n="website.title">{{ site.title }}</span>
+                <!--
+                    <span data-i18n="website.title">{{ site.title }}</span>
+                -->
             </a>                
         </div>
 

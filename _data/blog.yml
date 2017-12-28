@@ -1,7 +1,7 @@
 - name: 'Blog'
   href: '/blog/'
 
-- name: 'BONITA BPM'
+- name: 'Bonita BPM'
   href: '/bonita/'
 
 - name: 'LDAP'
@@ -19,14 +19,17 @@
 - name: 'JAVA'
   href: '/java/'
 
-- name: 'ANGULAR'
+- name: 'Angular'
   href: '/angular/'
 
-- name: 'SPRING'
+- name: 'Spring'
   href: '/spring/'
 
 - name: 'LINUX'
   href: '/linux/'
+
+- name: 'Git'
+  href: '/git/'
 
 - name: 'DOCKER'
   href: '/docker/'
