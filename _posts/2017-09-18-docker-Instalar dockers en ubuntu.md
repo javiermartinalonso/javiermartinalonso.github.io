@@ -24,7 +24,7 @@ Este tutorial está basado en la documentación oficial de docker donde se expli
 
 # Requisitos previos #
 
-Aunque vamos a definir los conceptos a lo largo del camino, es bueno que usted entienda, [qué es Docker y por qué lo utilizaría]({{ site.baseurl }}arquitectura/2017/09/04/arquitectura-Introduccion-a-Dockers.html "qué es Docker y por qué lo utilizaría") y [cuales son las principales piezas de la plataforma docker]({{ site.baseurl }}arquitectura/2017/09/11/arquitectura-plataforma-Docker.html "cuales son las principales piezas de la plataforma docker") antes de comenzar.
+Aunque vamos a definir los conceptos a lo largo del camino, es bueno que usted entienda, [qué es Docker y por qué lo utilizaría]({{ site.baseurl }}docker/2017/09/04/docker-Introduccion-a-Dockers.html "qué es Docker y por qué lo utilizaría") y [cuales son las principales piezas de la plataforma docker]({{ site.baseurl }}docker/2017/09/11/docker-plataforma-Docker.html "cuales son las principales piezas de la plataforma docker") antes de comenzar.
 
 
 # Requisitos del sistema operativo #
