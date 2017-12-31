@@ -1,0 +1,65 @@
+#############################################################
+# Archivo Dockerfile para ejecutar contenedores postgres
+# Basado en una imagen de Ubuntu
+# Esta configuración de PostgreSQL es para propósitos de sólo desarrollo. 
+# Consulte la documentación de PostgreSQL para afinar estas configuraciones
+# https://hub.docker.com/_/postgres/.
+#############################################################
+
+# Establece la imagen de base a utilizar para Ubuntu
+FROM ubuntu
+
+# Especifica el autor que mantiene la imagen
+MAINTAINER Javier Martín Alonso <javimartinalonso@gmail.com>
+
+# Actualización de la lista de fuentes del repositorio de aplicaciones por defecto
+RUN apt-get update
+
+###################### EMPEZAR INSTALACION #######################
+# Configuración de argumentos y comandos
+# Instalar postgres
+##################################################################
+# Agregue la clave PGP de PostgreSQL para verificar sus paquetes Debian.
+# Debe ser la misma clave que https://www.postgresql.org/media/keys/ACCC4CF8.asc
+RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
+
+# Añade el repositorio de PostgreSQL. Contiene la versión estable más reciente de PostgreSQL.
+RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list
+
+# Instala ``python-software-properties``, ``software-properties-common`` y PostgreSQL 9.3
+# Hay algunos avisos (en rojo) Que aparecen durante la construcción. 
+# Puedes ocultarlos prefijando cada sentencia apt-get con DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y python-software-properties software-properties-common postgresql-9.3 postgresql-client-9.3 postgresql-contrib-9.3
+
+# Nota: Las imágenes oficiales de Debian y Ubuntu se limpian automáticamente ejecutando `` apt-get clean``, después de cada `` apt-get``
+
+# Ejecuta el resto de los comandos como el usuario `` postgres`` 
+# creado por el paquete `` postgres-9.3`` cuando ejecutamos `` apt-get installed``
+USER postgres
+
+# Crear un rol de PostgreSQL llamado `` docker`` con contraseña:`` docker``.
+# Luego cree una base de datos llamada `docker` propiedad del rol ` `docker`` que hemos creado antes.
+# Nota: aquí usamos `` && \ `` para ejecutar comandos uno tras otro - el `` \ ``
+# Permite que el comando RUN abarque varias líneas.
+RUN    /etc/init.d/postgresql start &&\
+    psql --command "CREATE USER docker WITH SUPERUSER PASSWORD 'docker';" &&\
+    createdb -O docker docker
+
+# Ajustamos la configuración de PostgreSQL para que permita 
+# las conexiones remotas a la base de datos.
+RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/9.3/main/pg_hba.conf
+
+# y añadimos ``listen_addresses`` a ``/etc/postgresql/9.3/main/postgresql.conf``
+RUN echo "listen_addresses='*'" >> /etc/postgresql/9.3/main/postgresql.conf
+##################################################################
+##################### INSTALACION TERMINADA ######################
+##################################################################
+
+# Exponemos el puerto de conexion al servidor PostgreSQL
+EXPOSE 5432
+
+# añadimos volumenes para permitir copias de seguridad de la configuracón, logs and base de datos
+VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
+
+# Configuración del comando por defecto que se ejecutará cuando se inicie el contenedor
+CMD ["/usr/lib/postgresql/9.3/bin/postgres", "-D", "/var/lib/postgresql/9.3/main", "-c", "config_file=/etc/postgresql/9.3/main/postgresql.conf"]

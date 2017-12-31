@@ -1,0 +1,164 @@
+
+#desde la maquina virtual conecto con el docker??????
+ssh docker@192.168.99.100
+
+Las credenciales para acceder serán usuario docker y contraseña tcuser.
+
+cambiamos a usuario root para crear los directorios de los volumenes
+
+sudo su root
+
+mkdir /etc/postgresql
+mkdir /var/log/postgresql
+mkdir /var/lib/postgresql
+
+#volvemos a entrar como usuario docker
+sudo su docker
+
+#volvemos al docker??????
+
+#Construir la imagen:
+
+docker build . -t jmartin/postgres-prueba-dockerfile
+
+#Arrancar un contenedor:
+
+  docker run  -i -t --name postgres-prueba-dockerfile -p 5433:5432 -d jmartin/postgres-prueba-dockerfile
+
+
+  
+
+\l    ---> Te muestra las bases de datos existentes.
+
+\d  ---->  Te muestra las relaciones (tablas, secuencias, etc.) existentes
+en la base de datos.
+
+\d [nombre_tabla] ---> Para ver la descripción (nombre de columnas, tipo
+de datos, etc.) de una tabla.
+
+\c [nombre_bd]  ---> Para conectarte a otra base de datos.
+
+SHOW search_path;    ---> Para ver la ruta de búsqueda actual.
+
+SET search_path TO [nombre_esquema];  ---> Para actualizar la ruta de
+busqueda.
+
+\q  -----> Para salir de psql
+
+
+
+
+
+
+
+#Eliminar todos los contenedores Docker
+#Para eliminar todos los contenedores Docker, primero se deben parar los contenedores y después con un comando los eliminas.
+
+docker stop $(docker ps -a -q)
+
+docker rm $(docker ps -a -q)
+
+#borrar una imagen docker rmi <idimagen>
+
+
+
+
+
+
+
+
+
+
+
+
+
+docker-machine ssh
+cd /c/postgres-prueba-dockerfile
+
+
+
+
+
+docker run -i -t --name postgres-prueba-dockerfile -v /c/dockerpostgres/etc/postgresql:/etc/postgresql -v /c/dockerpostgres/var/log/postgresql:/var/log/postgresql -v /c/dockerpostgres/var/lib/postgresql:/var/lib/postgresql -p 5433:5432 -d jmartin/postgres-prueba-dockerfile 
+  
+  
+
+"/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql",
+docker create -v //c/Users/javier.martin/postgres-prueba-dockerfile/etc/postgresql:/etc/postgresql --name etc jmartin/postgres-prueba-dockerfile  
+docker create -v //c/Users/javier.martin/postgres-prueba-dockerfile/var/log/postgresql:/var/log/postgresql --name log jmartin/postgres-prueba-dockerfile  
+docker create -v //c/Users/javier.martin/postgres-prueba-dockerfile/var/lib/postgresql:/var/lib/postgresql --name lib jmartin/postgres-prueba-dockerfile
+
+
+docker create -v /c/dev/:/app/dev --name dev image
+
+docker create -v //c/dockerpostgres/etc/postgresql:/etc/postgresql --name etc jmartin/postgres-prueba-dockerfile  
+docker create -v //c/dockerpostgres/var/log/postgresql:/var/log/postgresql --name log jmartin/postgres-prueba-dockerfile  
+docker create -v //c/dockerpostgres/var/lib/postgresql:/var/lib/postgresql --name lib jmartin/postgres-prueba-dockerfile
+
+
+
+
+#UBUNTU
+
+docker create -v /home/javi/postgresql/etc/postgresql:/etc/postgresql --name docker-etc jmartin/postgres-prueba-dockerfile
+docker create -v /home/javi/postgresql/var/log/postgresql:/var/log/postgresql --name docker-log jmartin/postgres-prueba-dockerfile
+docker create -v /home/javi/postgresql/var/lib/postgresql:/var/lib/postgresql --name docker-lib jmartin/postgres-prueba-dockerfile
+
+
+
+docker run \
+-v /home/javi/postgresql/etc/postgresql:/etc/postgresql \
+-v /home/javi/postgresql/var/log/postgresql:/var/log/postgresql \
+--rm -P --name pg-volume-dockerfile jmartin/postgres-prueba-dockerfile
+
+
+
+
+
+docker run -d --name cli_postgres -p 5432:5432 -v pg-data:/etc/postgresql jmartin/postgres-prueba-dockerfile
+
+docker exec -it cli_postgres /bin/sh
+
+
+
+
+
+
+docker run -d -it --volumes-from docker-etc jmartin/postgres-prueba-dockerfile
+
+
+
+
+
+docker run --rm --volumes-from postgres-prueba-dockerfile -t -i jmartin/postgres-prueba-dockerfile sh
+
+
+
+--name postgres-prueba-dockerfile -p 5433:5432 -d jmartin/postgres-prueba-dockerfile
+
+
+
+docker create -v //c/Users/myuser:/myuser --name data hello-world
+winpty docker run -it --rm --volumes-from data ubuntu
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+- salir de un conector interactivo
+
+	ctrl + c + q
+
+- conectar con un contenedor interactivo
+
+	docker attach <containerId/containerName>
+	
+  
