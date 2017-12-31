@@ -1,4 +1,4 @@
-https://www.youtube.com/watch?v=pOGVngLsaX4
+﻿https://www.youtube.com/watch?v=pOGVngLsaX4
 
 
 	
@@ -64,7 +64,7 @@ En el comando anterior:
 -P publicará todos los puertos de contenedores expuestos a puertos aleatorios en el host Docker
 -e es cómo pasar las variables de entorno al contenedor
 --name permite especificar un nombre de contenedor
-AUTHORes el nombre de la variable de entorno y Your Namees el valor que puede pasar
+AUTHOR es el nombre de la variable de entorno y Your Name es el valor que puede pasar
 	
 	
 	

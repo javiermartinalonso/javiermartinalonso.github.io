@@ -20,10 +20,10 @@ ENV POSTGRES_PASSWORD admin
 # Nombre bbdd
 ENV POSTGRES_DB world
 # Ruta para persistir la bbdd cuando usemos un gestor de volumenes de persistencia
-#ENV PGDATA /var/lib/postgresql/data/pgdata
+ENV PGDATA /var/lib/postgresql/data/pgdata
 
 # Add VOLUMEs to allow backup of config, logs and databases
-#VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql", "PGDATA /var/lib/postgresql/data/pgdata"]
+VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql", "PGDATA /var/lib/postgresql/data/pgdata"]
 
 # Añadimos nuestro sql al directorio docker-entrypoint-initdb.d de la imagen. 
 # Este se ejecutará al crear el contenedor
