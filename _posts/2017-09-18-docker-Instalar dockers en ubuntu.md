@@ -44,6 +44,12 @@ Para ***Ubuntu 16.04 y superior, el kernel de Linux incluye soporte para [Overla
 
 # Instalar Docker #
 
+<div class="delimitador-multimedia">
+    <div class="contenido-multimedia">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JwqkjKkEIDw" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
 La forma más sencilla de instalar ***docker*** es con una ***maquina virtual 64 bits Ubuntu***. Yo he instalado ***VirtualBox 5.1.24 y he creado una maquina virtual preconfigurada para usar Ubuntu 64 bits. a continuación he instalado el Sistema operativo: Ubuntu 16.04.1 LTS***
 
 > ***Nota***: A este tipo de maquinas virtuales se les denomina Servidores Privados Virtuales o ***VPS (del inglés Virtual Private Server)***,

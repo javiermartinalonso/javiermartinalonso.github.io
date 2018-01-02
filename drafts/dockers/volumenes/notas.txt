@@ -1,4 +1,9 @@
-﻿https://www.youtube.com/watch?v=pOGVngLsaX4
+﻿docker info interesante para ver un resumen de lo que tenemos en un lab de docker.
+
+
+
+
+https://www.youtube.com/watch?v=pOGVngLsaX4
 
 
 	

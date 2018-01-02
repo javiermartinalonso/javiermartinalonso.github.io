@@ -1,3 +1,6 @@
+docker info interesante para ver un resumen de lo que tenemos en un lab de docker.
+
+
 Curso video muy bueno
 
 https://www.youtube.com/watch?v=Fv-97I_wrJ0&index=1&list=PLEtcGQaT56chIpnSavOSvaU2ZGAW7d1vE
