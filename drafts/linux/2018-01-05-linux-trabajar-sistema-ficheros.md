@@ -18,7 +18,32 @@ Recopilatorio de los comandos de Unix que son más usados habitualmente para tra
 
 <!-- more -->
 
-## 1. Buscar ficheros ##
+## 1. Principales comandos para navegar por los directorios ##
+
+- `pwd`: ***Print working directory***: Muestra el directorio de trabajo, nos mostrará la ruta en la que nos encontramos actualmente. Muy útil si hemos estado saltando de subcarpeta en subcarpeta y el prompt nos muestra sólo una ruta abreviada.
+
+- `ls`: Nos muestra una lista con el contenido del directorio actual (o el que le pasemos como argumento).
+
+	Ejemplo: `ls /home/usuario`
+
+- `ls –l` o `ll`: Muestra una lista del contenido del directorio añadiendo información adicional de los ficheros o carpetas, como permisos, fecha y hora de creación o modificación, etc…
+
+- `ls –a`: Muestra una lista de todos los ficheros del directorio, incluyendo los ficheros o carpetas ocultos.
+
+- Listar un archivo/directorio con un nombre que comience con un caracter particular:
+
+	`ls -l | grep <character>*`
+
+	Ejemplo: Listar archivo/directorio que comienzan con 'ab':
+	
+	`ls -l | grep ab*`
+
+- `cd`: nos lleva al directorio raíz.
+
+- `cd..` : Subiremos un nivel en el árbol de directorios. Si por ejemplo nos encontramos en `/home/usuario`, con este comando nos iremos a `/home`.
+
+
+## 2. Buscar ficheros ##
 
 - Busca archivos en una jerarquía de directorios, imagina que quieres buscar el log de tu aplicación pero no sabes en que directorio está, veamos un ejemplo:
 
@@ -34,7 +59,7 @@ Recopilatorio de los comandos de Unix que son más usados habitualmente para tra
 
 	`find / -name catalina.log`
 
-## 2. Leer y revisar documentos ##
+## 3. Leer y revisar documentos ##
 
 - **Determinar el tipo de un archivo (fichero, directorio)**
 
@@ -102,7 +127,7 @@ Recopilatorio de los comandos de Unix que son más usados habitualmente para tra
 	- Edición
 		- `v`: Cargar el editor de texto en el lugar donde se encuentre el usuario dentro del archivo. El editor que normalmente se utiliza es el `vi`
 
-## 3. Manipular archivos y directorios: Crear / Modificar ##
+## 4. Manipular archivos y directorios: Crear / Modificar ##
 
 - `touch <fileName>` **Crear un nuevo archivo:**
 
@@ -143,7 +168,7 @@ Recopilatorio de los comandos de Unix que son más usados habitualmente para tra
 
 - `rm –i fichero`: Elimina un fichero solicitando confirmación. Es muy recomendable usarlo con la opción `–r` para poder usarlo con directorios evitando problemas.
 
-## 4. Compresión de ficheros ##
+## 5. Compresión de ficheros ##
 
 - `tar` Descripción: =Tape ARchiver. archivador de ficheros.
 
@@ -163,12 +188,8 @@ Recopilatorio de los comandos de Unix que son más usados habitualmente para tra
 
 	`gunzip fichero`
 
-
-
 ## Referencias ##
 
-https://es.wikipedia.org/wiki/GNU/Linux
+[https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/](https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/ "https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/")
 
-https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/
-
-https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX
+[https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX](https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX "https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX")

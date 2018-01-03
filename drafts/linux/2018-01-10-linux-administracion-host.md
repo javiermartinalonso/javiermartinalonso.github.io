@@ -53,7 +53,7 @@ Recopilatorio de los comandos de administración de sistemas Unix que son más u
 
 	`w`
 
-	`who am i`
+	`whoami`
 
 - `whoami` Muestra el nombre del usuario con el que estamos trabajando.
 
@@ -225,8 +225,6 @@ Recopilatorio de los comandos de administración de sistemas Unix que son más u
 
 ## Referencias ##
 
-https://es.wikipedia.org/wiki/GNU/Linux
+[https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/](https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/ "https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/")
 
-https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/
-
-https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX
+[https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX](https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX "https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX")

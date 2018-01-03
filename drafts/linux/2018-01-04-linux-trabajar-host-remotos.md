@@ -4,9 +4,9 @@ section: "LINUX"
 title:  "Linux: Operaciones con host remotos"
 date:   2017-12-25
 desc: "Recopilatorio de los comandos de Unix que son más usados habitualmente para operaciones con host remotos: conectar con host remoto, copiar, subir o descargar ficheros."
-keywords: "linux, shell, comandos, host"
+keywords: "linux, shell, comandos, host, scp, shh"
 categories: [linux]
-tags: [linux, shell, comandos, host]
+tags: [linux, shell, comandos, host, scp, shh]
 icon: fab fa-linux
 image: static/img/blog/linux/linux-logo.png
 ---
@@ -55,17 +55,3 @@ Recopilatorio de los comandos de Unix que son más usados habitualmente para ope
 
 		Para copiar un archivo de un servidor a otro, hacemos lo siguiente:
 		`$ scp usuario1@dominio1.com:/home/usuario1/archivo.txt usuario2@dominio2.com:/home/usuario2/`
-
-
-
-
-
-
-
-## Referencias ##
-
-https://es.wikipedia.org/wiki/GNU/Linux
-
-https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/
-
-https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX

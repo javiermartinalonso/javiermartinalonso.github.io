@@ -61,8 +61,6 @@ Trucos para optimizar la escritura y sacarle todo el provecho al shell de linux 
 
 ## Referencias ##
 
-https://es.wikipedia.org/wiki/GNU/Linux
+[https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/](https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/ "https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/")
 
-https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/
-
-https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX
+[https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX](https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX "https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX")

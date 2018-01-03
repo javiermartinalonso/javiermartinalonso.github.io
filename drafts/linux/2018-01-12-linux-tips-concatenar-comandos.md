@@ -39,11 +39,29 @@ Trucos para la concatenación y encadenamiento de comandos en linux. Esto te pue
 
 		$ cmd1 ; cmd2
 
+## Hacer un comando más legible a un humano escribiéndolo en varias lineas ##
+
+En el promt se puede usar para dar `enter` sin que eso signifique que se termino de escribir la orden. Solo se escribe al final de cada línea una **contrabarra (`\`)** y se da enter para pasar a la siguiente. Para dar por aceptado el script basta omitir la **back slash (`\`)** y dar enter.
+
+Por ejemplo Escribir en la shell:
+
+		FLOR=rosa; COLOR=roja; echo Esta \
+		$FLOR \
+		es \
+		$COLOR
+
+Nos devuelve:
+
+		Esta rosa es roja
+
+Después de cada retorno de carro aparece automáticamente un signo `>` en la terminal para indicarnos que todavía no terminamos con esa orden y podemos continuar. Muestra:
+
+		FLOR=rosa; COLOR=roja; echo Esta \
+		> $FLOR \
+		> es \
+		> $COLOR
+		Esta rosa es roja
 
 ## Referencias ##
 
-https://es.wikipedia.org/wiki/GNU/Linux
-
-https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/
-
-https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX
+[http://best-linux-server.blogspot.com.es/2012/05/concatenar-comandos-en-linux.html](http://best-linux-server.blogspot.com.es/2012/05/concatenar-comandos-en-linux.html "http://best-linux-server.blogspot.com.es/2012/05/concatenar-comandos-en-linux.html")

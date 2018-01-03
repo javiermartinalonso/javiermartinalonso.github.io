@@ -4,9 +4,9 @@ section: "LINUX"
 title:  "Gestión de los permisos de archivos o directorios UNIX"
 date:   2017-12-25
 desc: "Gestión de los permisos de archivos o directorios UNIX."
-keywords: "linux, shell, comandos, host"
+keywords: "linux, shell, comandos, host, chmod, chow, permisos, grupos, usuarios"
 categories: [linux]
-tags: [linux, shell, comandos, host]
+tags: [linux, shell, comandos, host, chmod, chow, permisos, grupos, usuarios]
 icon: fab fa-linux
 image: static/img/blog/linux/linux-logo.png
 ---
@@ -105,8 +105,6 @@ Ejemplos: `chmod +r fichero`, `chmod +w directorio`, `chmod +rw directorio -R`, 
 
 ## Referencias ##
 
-https://es.wikipedia.org/wiki/GNU/Linux
+[https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/](https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/ "https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/")
 
-https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/
-
-https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX
+[https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX](https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX "https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX")

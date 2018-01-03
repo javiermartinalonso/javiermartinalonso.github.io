@@ -4,9 +4,9 @@ section: "LINUX"
 title:  "LINUX: Enlaces físicos (Hard links) y simbólicos (Soft links)"
 date:   2017-12-25
 desc: "Enlaces físicos (Hard links) y simbólicos (Soft links)."
-keywords: "linux, shell, comandos, host"
+keywords: "linux, shell, comandos, host, hard-link, soft_link"
 categories: [linux]
-tags: [linux, shell, comandos, host]
+tags: [linux, shell, comandos, host, hard-link, soft_link]
 icon: fab fa-linux
 image: static/img/blog/linux/linux-logo.png
 ---
@@ -59,8 +59,4 @@ Ejemplo: Supongamos que quiere apuntar el último enlace suave ahora al nuevo di
 
 ## Referencias ##
 
-https://es.wikipedia.org/wiki/GNU/Linux
-
-https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/
-
-https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX
+[https://hipertextual.com/archivo/2014/07/enlaces-fisicos-y-simbolicos-linux/](https://hipertextual.com/archivo/2014/07/enlaces-fisicos-y-simbolicos-linux/ "https://hipertextual.com/archivo/2014/07/enlaces-fisicos-y-simbolicos-linux/")

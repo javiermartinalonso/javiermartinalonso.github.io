@@ -4,9 +4,9 @@ section: "LINUX"
 title:  "Búsquedas avanzadas con el comando grep"
 date:   2017-12-25
 desc: "Búsquedas avanzadas con el comando grep. Esto es muy útil para hacer debuggeo en un servidor, sacar estadísticas o recopilar información dentro de una maquina UNIX."
-keywords: "linux, shell, comandos, host"
+keywords: "linux, shell, comandos, host, grep"
 categories: [linux]
-tags: [linux, shell, comandos, host]
+tags: [linux, shell, comandos, host, grep]
 icon: fab fa-linux
 image: static/img/blog/linux/linux-logo.png
 ---
@@ -141,14 +141,14 @@ Veamos algunos ejemplos con expresiones regulares:
 	
 	En cuanto a la expresión regular:
 	`'([0-9]{1,3}\.){3}[0-9]{1,3}'`
-	`([0-9]{1,3}\.){3}` Representa 3 bloques de entre uno y tres dígitos separados por puntos. Observemos que como el punto es un metacaracter, tengo que usar el caracter de escape \ para que no sea interpretado como un metacaracter, sino como un caracter normal.
+	`([0-9]{1,3}\.){3}` Representa 3 bloques de entre uno y tres dígitos separados por puntos. Observemos que como el punto es un metacaracter, tengo que usar el caracter de escape `\` para que no sea interpretado como un metacaracter, sino como un caracter normal.
 	`[0-9]{1,3}` Representa el último bloque de la dirección IP, que está formado por un número de entre 1 y 3 dígitos.
 
 
 ## Referencias ##
 
-https://es.wikipedia.org/wiki/GNU/Linux
+[https://enavas.blogspot.com.es/2008/04/el-shell-de-linux-comando-grep.html](https://enavas.blogspot.com.es/2008/04/el-shell-de-linux-comando-grep.html "https://enavas.blogspot.com.es/2008/04/el-shell-de-linux-comando-grep.html")
 
-https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/
+[https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/](https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/ "https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/")
 
-https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX
+[https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX](https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX "https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX")

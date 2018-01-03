@@ -38,6 +38,8 @@ Recopilatorio de los comandos de Unix usados para obtener información de tamañ
 
 - `wc records.log` Imprimir todas las líneas que tiene un archivo y el número de bytes:
 
+> `wc` ***wordcount*** cuenta el número de líneas (`-l`), palabras (separadas por espacio blanco) (`-w`), caracteres (`-c`) en filas especificadas o de stdin, dependiendo del flag.
+
 - Contar número de archivos dentro de una carpeta. Este otro comando está un poco más rebuscado, ya que implica la utilización de `find` para encontrar todos los archivos, y luego los vamos a contar.
 
 	Tenemos varias formas de hacerlo, pero todas nos van a devolver un solo número que será el número total de coincidencias de archivos. Vamos a ver los tipos más útiles a la hora de hacerlo 
@@ -56,8 +58,6 @@ Recopilatorio de los comandos de Unix usados para obtener información de tamañ
 
 ## Referencias ##
 
-https://es.wikipedia.org/wiki/GNU/Linux
+[https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/](https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/ "https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/")
 
-https://openwebinars.net/blog/La-guia-definitiva-para-aprender-a-usar-la-terminal-de-Linux/
-
-https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX
+[https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX](https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX "https://es.scribd.com/document/284941275/01-Resumen-Comandos-UNIX")
