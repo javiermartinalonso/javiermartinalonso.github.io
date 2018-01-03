@@ -34,6 +34,7 @@ Para el caso de Windows, ***Docker Machine*** creará una máquina virtual emple
 
 El paquete ***Docker Toolbox***  incluye todo lo necesario para crear un ***servidor Docker***, entre otras cosas ***Virtual Box, Docker-Machine y Docker Engine***. Los componentes se pueden instalar de forma opcional, por ejemplo, es posible que ya contemos con una versión actualizada de ***Virtual Box*** en nuestro sistema, por lo que no será necesario instalarlo.
 
+<!-- more -->
 
 # Máquina utilizada para el tutorial #
 
@@ -59,6 +60,14 @@ El paquete ***Docker Toolbox***  incluye todo lo necesario para crear un ***serv
 - El ***shell Docker QuickStart*** preconfigurado para un entorno de ***línea de comandos Docker***.
 
 - ***Oracle VM VirtualBox***. Dado que el ***daemon de Docker Engine*** utiliza funciones de kernel específicas de Linux, no puede ejecutar ***Docker Engine*** de forma nativa en Windows. En su lugar, debe utilizar el ***comando Docker Machine*** para crear y adjuntar una pequeña maquina virtual de Linux (***Boot2docker***) en su máquina a través del ***Oracle VM VirtualBox***. Esta ***VM*** hospeda ***Docker Engine*** para usted en su sistema Windows y es accesible a través del ***shell Docker QuickStart***.
+
+# Video resumen de la instalación #
+
+<div class="delimitador-multimedia">
+    <div class="contenido-multimedia">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8TwFQFyGtqU" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
 
 
 # Paso 1: Revise su versión de windows #

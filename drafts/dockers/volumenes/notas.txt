@@ -72,6 +72,38 @@ En el comando anterior:
 AUTHOR es el nombre de la variable de entorno y Your Name es el valor que puede pasar
 	
 	
+
+
+
+
+docker run --name postgres -p 5433:5432 -d jmartin/postgres
+
+docker build ./postgres-blog -t jmartin/postgres-prueba-dockerfile
+
+docker run  -i -t --name postgres-prueba-dockerfile -p 5433:5432 -d jmartin/postgres-prueba-dockerfile
+
+psql -h localhost -p 5432 -d docker -U docker --password
+
+
+CREATE TABLE cities (name varchar(80), location point);
+
+INSERT INTO cities VALUES ('San Francisco', '(-194.0, 53.0)');
+
+select * from cities;
+
+
+docker run --rm --volumes-from postgres-prueba-dockerfile -t -i busybox sh
+
+
+
+$ docker container stop devtest
+
+$ docker container rm devtest
+
+docker volume ls
+
+$ docker volume rm nginx-vol
+
 	
 	
 	
