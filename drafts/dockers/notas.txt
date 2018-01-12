@@ -7,11 +7,6 @@ https://www.youtube.com/watch?v=Fv-97I_wrJ0&index=1&list=PLEtcGQaT56chIpnSavOSva
 
 
 
-Aún como borradores:
-
-2017-11-16-arquitectura-Dockers-Machine.md
-2017-11-02-arquitectura-Como utilizar Docker-Kitematik.md
-
 **********************************************************************************************************************
 
 https://docs.docker.com/engine/admin/volumes/#choose-the-right-type-of-mount
@@ -48,19 +43,12 @@ https://www.youtube.com/watch?v=U7yJnNsnJZE
 https://juliomunoz.wordpress.com/2015/01/20/introduccion-a-docker/
 
 *************************************************************************************************
-Ordenar argumentos de varias líneas
 
-Como siempre, para hacer sus declaraciones más Dockerfilelargas o complejas más legibles, 
-comprensibles y mantenibles, divididas RUNen múltiples líneas separadas con barras invertidas.
-
-
-Siempre que sea posible, facilite los cambios posteriores ordenando argumentos multilínea de forma alfanumérica. 
-Esto le ayudará a evitar la duplicación de paquetes y hacer la lista mucho más fácil de actualizar. 
-Esto también hace PRs mucho más fácil de leer y revisar. Agregar un espacio antes de una barra invertida ( \) ayuda también.
 
 *************************************************************************************************
 Requisitos previos
-Aunque vamos a definir los conceptos a lo largo del camino, es bueno que usted entienda lo que Docker es y por qué utilizaría Docker antes de comenzar.
+Aunque vamos a definir los conceptos a lo largo del camino, es bueno que usted entienda lo que Docker es 
+y por qué utilizaría Docker antes de comenzar.
 
 También debemos asumir que está familiarizado con algunos conceptos antes de continuar:
 
@@ -72,6 +60,19 @@ Términos de uso de recursos de la máquina, como porcentajes de CPU, uso de RAM e
 *************************************************************************************************
 
 
+https://juliomunoz.wordpress.com/2015/01/20/introduccion-a-docker/
+
+Links
+
+Cuando un contenedor Docker arranca se le asigna una IP privada para que otros contenedores puedan comunicarse con él mediante dicha IP. Con esto podemos ver que los contenedores conforman una red local privada.
+
+Para poder realizar la comunicación entre los contenedores Docker permite referencer otro contenedor cuando se crea uno nuevo mediante un alias (especificado por tí). De esta manera ambos contenedores quedan enlazados (linked). Para este enlazado Docker nos pedirá, además, indicar qué puertos se usarán para la comunicación, ya que sino no pondrá disponible ningún puerto.
+
+De esta manera si mi contenedor de base de datos está corriendo, puedo crear mi contenedor donde alojaré mi servidor web y referenciar el de base de datos dando, por ejemplo, el alias myddbb. De esta manera puedo usar el hostname myddbb para comunicarme con el contenedor de base de datos siempre que quiera.
+
+*************************************************************************************************
+
+https://plainoldobjects.com/2014/11/16/deploying-spring-boot-based-microservices-with-docker/
 
 
 http://blog.marcnuri.com/docker-accediendo-al-shell-ssh-de-docker-machine/

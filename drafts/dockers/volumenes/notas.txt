@@ -2,6 +2,7 @@
 
 
 
+Peter Fisher
 
 https://www.youtube.com/watch?v=pOGVngLsaX4
 
@@ -9,24 +10,49 @@ https://www.youtube.com/watch?v=pOGVngLsaX4
 	
 	IMAGENES
 	#extraer versión especifica de una imagen
-	docker image pull ubuntu:12.04
+	$ docker image pull ubuntu:12.04
 	
 	
 	# lista de imágenes que están disponibles localmente en su sistema
-	docker image ls
+	$ docker image ls
 	
 	CONTENEDORES
 	
-$ docker container stop devtest
+	$ docker container stop devtest
 
-$ docker container rm devtest
+	$ docker container rm devtest
+
+	
+	
+	docker container run --name static-site -e AUTHOR="Your Name" -d -P seqvence/static-site
+	e61d12292d69556eabe2a44c16cbd54486b2527e2ce4f95438e504afb7b02810
+	En el comando anterior:
+
+	-d creará un contenedor con el proceso separado de nuestro terminal
+	-P publicará todos los puertos de contenedores expuestos a puertos aleatorios en el host Docker
+	-e es cómo pasar las variables de entorno al contenedor
+	--name permite especificar un nombre de contenedor
+	AUTHOR es el nombre de la variable de entorno y Your Name es el valor que puede pasar
+
+	
+	
+	docker run --rm -ti ubuntu /bin/bash	
+	--rm: le dice a Docker que retire el contenedor tan pronto como el proceso se ejecute. Bueno para hacer pruebas y evitar el desorden
+
+	-ti: dile a Docker que asigne un pseudo tty y me ponga en modo interactivo. Esto es para ingresar al contenedor y es bueno para hacer prototipos rápidos y jugar, pero para los contenedores de producción no se encenderán estas banderas
+
+	ubuntu: esta es la imagen en la que basamos el contenedor
+
+	/ bin / bash: el comando para ejecutar, y desde que comenzamos en modo interactivo, nos da un aviso al contenedor
 
 
-
+	
+	
+	
 	VOLUMENES
-docker volume ls
+	$ docker volume ls
 
-$ docker volume rm nginx-vol
+	$ docker volume rm nginx-vol
 	
 	
 	DOCKERFILE
@@ -41,46 +67,42 @@ $ docker volume rm nginx-vol
 	ls
 	cd ../
 	ls
-	docker run -it --name test1 -v ~/docker-vid/data:data ubuntu bash
+	$ docker run -it --name test1 -v ~/docker-vid/data:data ubuntu bash
 	
 	#Ejecutar el contenedor y entrar en la consola
-	docker start test1docker exec -it test1 bash
+	$ docker start test1docker exec -it test1 bash
 	
 	#define dos variables de entorno
-	docker run -it -e MODE=test -e DOC_ROOT=/var/www ubuntu bash
+	$ docker run -it -e MODE=test -e DOC_ROOT=/var/www ubuntu bash
 	
 	#borrar varios contenedores a la vez
-	docker rm id1 id2 id3
+	$ docker rm id1 id2 id3
 	
-	#contenedor maestro, solo para datos y contenedores esclavos que se conectan a sus volmenes para modificar los datos.
+	#contenedor maestro, solo para datos y contenedores esclavos que se conectan a sus volumenes para modificar los datos.
 	
 	#definir variables de entorno a partir de un fichero con una lista de variables de entorno pares KEY=valor
-	docker run -it --env-file ./env.list ubuntu bash
+	$ docker run -it --env-file ./env.list ubuntu bash
 	
 	
 	
 	
 	
-docker container run --name static-site -e AUTHOR="Your Name" -d -P seqvence/static-site
-e61d12292d69556eabe2a44c16cbd54486b2527e2ce4f95438e504afb7b02810
-En el comando anterior:
 
--d creará un contenedor con el proceso separado de nuestro terminal
--P publicará todos los puertos de contenedores expuestos a puertos aleatorios en el host Docker
--e es cómo pasar las variables de entorno al contenedor
---name permite especificar un nombre de contenedor
-AUTHOR es el nombre de la variable de entorno y Your Name es el valor que puede pasar
 	
 	
 
 
 
 
-docker run --name postgres -p 5433:5432 -d jmartin/postgres
+
 
 docker build ./postgres-blog -t jmartin/postgres-prueba-dockerfile
 
+docker run --name postgres -p 5433:5432 -d jmartin/postgres
+
 docker run  -i -t --name postgres-prueba-dockerfile -p 5433:5432 -d jmartin/postgres-prueba-dockerfile
+
+Desde dentro del contenedor POSTGRESQL
 
 psql -h localhost -p 5432 -d docker -U docker --password
 
