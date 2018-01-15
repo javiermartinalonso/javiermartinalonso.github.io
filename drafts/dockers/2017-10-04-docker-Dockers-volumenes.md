@@ -31,13 +31,13 @@ Una de las mas importantes funcionalidades de **Docker** son los volúmenes.
 
 Los volúmenes son bastante útiles porque permiten compartirse entre contenedores, o el propio *host*. Eso nos permite cosas como:
 
-- Montar el código fuente de una aplicación web, dentro de un volumen, accesible desde el contenedor web y así ver en tiempo real los cambios durante el desarrollo.
+- **Montar el código fuente de una aplicación web, dentro de un volumen, accesible desde el contenedor web y así ver en tiempo real los cambios durante el desarrollo**.
 
-- Consultar todos los *logs* cómodamente desde un contenedor dedicado.
+- **Consultar todos los *logs* cómodamente desde un contenedor dedicado**.
 
-- Hacer *backups* de un contenedor desde otro dedicado, o recuperar esos mismo *backups* hacia nuestro *host*.
+- **Hacer *backups* de un contenedor desde otro dedicado, o recuperar esos mismo *backups* hacia nuestro *host***.
 
-- Compartir la misma información entre varios contenedores sin duplicarla Por ejemplo la información relativa al entorno: desarrollo, integración, preproducción, producción.
+- **Compartir la misma información entre varios contenedores sin duplicarla**. Por ejemplo la información relativa al entorno: desarrollo, integración, preproducción, producción.
 
 De hecho, he visto contenedores con la única función de producir ficheros (*.tar.gz*, *.deb*, ...) en volúmenes que luego son consumidos por servicios de *runtime*, por ejemplo un servidor web, un repositorio o simplemente un NFS. Para ello hay que definir qué parte del contenedor se dedica a la aplicación y qué parte a los datos.
 
@@ -57,7 +57,116 @@ De hecho, he visto contenedores con la única función de producir ficheros (*.t
 	</div>
 
 
-## Agregar un volumen de datos ##
+
+
+
+
+
+
+
+
+https://raw.githubusercontent.com/Sirtea/www.linuxsysadmin.tk/master/content/articles/tipos-de-volumenes-en-docker.md
+
+# Tipos de Volúmenes #
+
+Los volúmenes pueden ser de 3 tipos distintos, y se categorizan según esta lista:
+
+- Data volumes
+	- Anonymous data volumes
+	- Named data volumes
+- Mounted volumes
+
+## Data volumes ##
+
+Se trata de carpetas que se crean en `/var/lib/docker/` y que pueden compartirse entre diferentes contenedores. A su vez este tipo de volúmenes se puede categorizar en:
+
+### Anonymous data volumes ###
+
+Se crean cuando se levanta un contenedor y no se le asigna un nombre concreto, mediante el comando `docker run`, por ejemplo:
+
+	gerard@sirius:~$ docker run -ti --rm -v /data alpine:3.4 sh
+
+Esto nos crea un volumen asociado al contenedor creado.
+
+	root@sirius:~# docker volume ls
+	DRIVER              VOLUME NAME
+	local               1b39e6601cd3711c27f3a1a4eb50d82e182151fd14b82048f47b0d50ad22b97a
+	root@sirius:~# tree /var/lib/docker/volumes/
+	/var/lib/docker/volumes/
+	├── 1b39e6601cd3711c27f3a1a4eb50d82e182151fd14b82048f47b0d50ad22b97a
+	│   └── _data
+	└── metadata.db
+	
+	2 directories, 1 file
+	root@sirius:~# 
+
+
+A su vez, otro contenedor puede montar los volúmenes de otro contenedor, ya sea porque los creó o porque los ha montado de un tercero.
+
+	root@sirius:~# docker run -ti --rm --volumes-from adoring_lovelace alpine:3.4 sh
+
+Ahora mismo, la carpeta */data/* pertenece al primer contenedor, pero es la misma para ambos contenedores.
+
+> **Docker** mantiene una cuenta de los contenedores que están usando un volumen, y estos solo se eliminan cuando el último contenedor que lo usa sale con el parámetro `--rm` o si se hace un `docker rm -v`. En cualquier otro caso, el volumen se queda parasitando, hasta que lo eliminamos manualmente usado `docker volume rm`. Ver el apartado Eliminar Volúmenes
+
+
+### Named data volumes ###
+
+Estos volúmenes no dependen de ningún contenedor concreto, y se pueden montar en cualquier contenedor. Se crean específicamente usando el comando `docker volume create`, o al ejecutar un contenedor si le damos un nombre en la línea de comandos.
+
+	gerard@sirius:~$ docker volume create --name vol1
+	vol1
+	gerard@sirius:~$ docker run -ti --rm -v vol2:/data alpine:3.4 true
+	gerard@sirius:~$ docker volume ls
+	DRIVER              VOLUME NAME
+	local               vol1
+	local               vol2
+	gerard@sirius:~$ 
+
+Estos volúmenes no se eliminan por si solos nunca y persisten cuando su contenedor desaparece. Para eliminarlos se necesita una intervención manual mediante el comando `docker volume rm`.
+
+
+	gerard@sirius:~$ docker volume ls
+	DRIVER              VOLUME NAME
+	local               vol1
+	local               vol2
+	gerard@sirius:~$ docker volume rm vol1 vol2
+	vol1
+	vol2
+	gerard@sirius:~$ docker volume ls
+	DRIVER              VOLUME NAME
+	gerard@sirius:~$ 
+
+
+> REVISAR DONDE ENCAJO ESTA IDEA Y SI DE VERDAD ES ÚTIL
+> 
+> ## Etiquetas de volumen ##
+> 
+> Los sistemas de etiquetado como **SELinux** requieren que se coloquen etiquetas adecuadas en el contenido del volumen montado en un contenedor. Sin una etiqueta, el sistema de seguridad puede evitar que los procesos que se ejecutan dentro del contenedor utilicen el contenido. De forma predeterminada, **Docker** no cambia las etiquetas establecidas por el sistema operativo.
+> 
+> Para cambiar una etiqueta en el contexto del contenedor, puede agregar cualquiera de los dos sufijos `:z` o `:Z` al montaje del volumen. Estos sufijos indican a Docker que vuelva a etiquetar objetos de archivo en los volúmenes compartidos. La opción `z` le dice a Docker que dos contenedores comparten el contenido del volumen. Como resultado, **Docker etiqueta el contenido con una etiqueta de contenido compartido**. Las etiquetas de volumen compartido permiten que todos los contenedores lean/escriban contenido. La opción `Z` le dice a Docker que etiquete el contenido con una etiqueta privada no compartida. Solo el contenedor actual puede usar un volumen privado.
+
+
+## Mounted volumes##
+
+Otras veces nos interesa montar ficheros o carpetas desde la máquina *host*. En este caso, podemos montar la carpeta o el fichero especificando la ruta completa desde la máquina *host*, y la ruta completa en el contenedor. Es posible también especificar si el volumen es de lectura y escritura (por defecto) o de solo lectura.
+
+		```bash
+		gerard@sirius:~/docker$ docker run -ti --rm -v /etc/hostname:/root/parent_name:ro -v /opt/:/data alpine:3.4 sh
+		/ # cat /root/parent_name 
+		sirius
+		/ # ls /data/
+		/ # 
+		```
+
+	> Este último caso es ideal para recuperar *backups* o ficheros generados en un contenedor, en vistas a su utilización futura por parte de otros contenedores o del mismo *host*.
+
+
+
+# Principales acciones a realizar con volúmenes #
+
+
+## 1. Agregar un volumen de datos ##
 
 **Puede agregar un volumen de datos a un contenedor utilizando el indicador `-v` con el comando `docker create` y `docker run`. Puede usar las `-v` múltiples veces para montar múltiples volúmenes de datos.**
 
@@ -70,7 +179,7 @@ Esto creará un nuevo volumen dentro de un contenedor en `/webapp`. Este volumen
 > Nota : También puede usar las instrucciones `VOLUME` en un `Dockerfile` para agregar uno o más volúmenes nuevos a cualquier contenedor creado a partir de esa imagen.
 
 
-## Ubica un volumen ##
+## 2. Ubica un volumen ##
 
 Puede ubicar el volumen (donde se localiza exactamente y cómo se llama) en el host utilizando el comando `docker inspect`.
 
@@ -95,7 +204,39 @@ La salida proporcionará detalles sobre las configuraciones del contenedor, incl
 
 Notarás en lo anterior que en `Source` se especifica la ubicación en el host y en `Destination` se especifica la ubicación del volumen dentro del contenedor. `RW` muestra si el volumen es de lectura / escritura.
 
-## Montar un directorio de host como un volumen de datos ##
+## 3. Listar todos los volúmenes ##
+
+Puede enumerar todos los volúmenes existentes usando `docker volume ls`.
+
+	$ docker volume ls
+	DRIVER              VOLUME NAME
+	local               ec75c47aa8b8c61fdabcf37f89dad44266841b99dc4b48261a4757e70357ec06
+	local               f73e499de345187639cdf3c865d97f241216c2382fe5fa67555c64f258892128
+	local               tmp_data
+
+## 4. Eliminar volúmenes ##
+
+**El volumen de datos de Docker persiste después de que se elimina un contenedor. Puede crear volúmenes con nombre o anónimos. Los volúmenes nombrados tienen una ruta fuente específico fuera del contenedor, por ejemplo `awesome:/bar`. Los volúmenes anónimos no tienen una ruta fuente específica. Cuando se elimina el contenedor, debe indicar al demonio Docker Engine que limpie los volúmenes anónimos. Para hacer esto, use la opción `--rm`**, por ejemplo:
+
+    $ docker run --rm -v /foo -v awesome:/bar busybox top
+
+Este comando crea un volumen anónimo `/foo`. Cuando se elimina el contenedor, Docker Engine elimina el volumen `/foo` pero no el volumen `awesome`.
+
+Para eliminar todos los volúmenes no utilizados y liberar espacio,
+
+    $ docker volume prune
+
+> **Eliminará todos los volúmenes no utilizados que no estén asociados con ningún contenedor**.
+
+
+
+
+
+
+# Ejemplos prácticos #
+
+
+## 1. Montar un DIRECTORIO de host como un volumen de datos ##
 
 Montar un directorio de host puede ser útil para probar. Por ejemplo, puede montar el código fuente dentro de un contenedor. Luego, cambie el código fuente y vea su efecto en la aplicación en tiempo real.
 
@@ -110,7 +251,7 @@ Además de crear un volumen usando el indicador `-v`, también puedes montar un 
 
 ESTO HAY QUE ASEGURARSE MUCHO, MUCHO, MUCHO!!!!!!!
 
-
+CAMBIAR EL EJEMPLO A ALGO MAS SIMPLE: UN SERVIDOR WEB Y UNA PAGINA HTML QUE VAMOS MODIFICANDO PARA VER LOS CAMBIOS.
 
 
 
@@ -148,6 +289,23 @@ La opción `cached` generalmente mejora el rendimiento de las cargas de trabajo 
 
 > Nota : **El directorio de host es, por su naturaleza, dependiente del host. Por esta razón, no puede montar un directorio de host desde Dockerfile, la instrucción `VOLUME` no admite pasar a `host-dir`, porque las imágenes construidas deben ser portátiles. Un directorio de host no estaría disponible en todos los hosts potenciales**.
 
+## 2. Montar un ARCHIVO de host como volumen de datos ##
+
+El indicador `-v` también se puede usar para montar un solo archivo, en lugar de solo directorios, desde el equipo host.
+
+    $ docker run --rm -it -v ~/.bash_history:/root/.bash_history ubuntu /bin/bash
+
+Esto lo llevará a un shell de bash en un contenedor nuevo, tendrá su historial de bash desde el host y cuando salga del contenedor, el host tendrá el historial de los comandos escritos en el contenedor.
+
+
+> **Nota** : Muchas herramientas utilizadas para editar archivos incluidas `vi` y `sed --in-place` pueden dar como resultado un cambio de inodo. Desde Docker v1.1.0, esto producirá un error como *"sed: cannot rename ./sedKdJ9Dy: Device or resource busy"*. En el caso en que desee editar el archivo montado, a menudo es más fácil montar el directorio principal.
+
+
+
+
+
+
+	ESTO NO LO ENTIENDO DEMASIADO, QUE YO SEPA NO HACE FALTA PLUGINS, REVISAR USO, PUEDE QUE ESTÉ ANTICUADO.
 
 
 
@@ -156,21 +314,7 @@ La opción `cached` generalmente mejora el rendimiento de las cargas de trabajo 
 
 
 
-
-ME HE QUEDADO AQUI
-
-
-
-
-
-
-
-
-
-
-
-
-## Montar un volumen de almacenamiento compartido como un volumen de datos ##
+## 3. Montar un volumen de almacenamiento compartido como un volumen de datos ##
 
 Además de montar un directorio de host en su contenedor, algunos [Docker volume plugins](https://docs.docker.com/v17.03/engine/extend/plugins_volume/ "https://docs.docker.com/v17.03/engine/extend/plugins_volume/") le permiten aprovisionar y montar almacenamiento compartido, como ***iSCSI***, ***NFS*** o ***FC***.
 
@@ -197,24 +341,8 @@ El siguiente ejemplo también crea el volumen `my-named-volume`, esta vez usando
 
 Una lista de complementos disponibles, incluidos los complementos de volumen, está disponible [aquí](https://docs.docker.com/v17.03/engine/extend/legacy_plugins/ "https://docs.docker.com/v17.03/engine/extend/legacy_plugins/") .
 
-## Etiquetas de volumen ##
 
-Los sistemas de etiquetado como **SELinux** requieren que se coloquen etiquetas adecuadas en el contenido del volumen montado en un contenedor. Sin una etiqueta, el sistema de seguridad puede evitar que los procesos que se ejecutan dentro del contenedor utilicen el contenido. De forma predeterminada, **Docker** no cambia las etiquetas establecidas por el sistema operativo.
-
-Para cambiar una etiqueta en el contexto del contenedor, puede agregar cualquiera de los dos sufijos `:z` o `:Z` al montaje del volumen. Estos sufijos indican a Docker que vuelva a etiquetar objetos de archivo en los volúmenes compartidos. La opción `z` le dice a Docker que dos contenedores comparten el contenido del volumen. Como resultado, **Docker etiqueta el contenido con una etiqueta de contenido compartido**. Las etiquetas de volumen compartido permiten que todos los contenedores lean/escriban contenido. La opción `Z` le dice a Docker que etiquete el contenido con una etiqueta privada no compartida. Solo el contenedor actual puede usar un volumen privado.
-
-## Montar un archivo de host como volumen de datos ##
-
-El indicador `-v` también se puede usar para montar un solo archivo, en lugar de solo directorios, desde el equipo host.
-
-    $ docker run --rm -it -v ~/.bash_history:/root/.bash_history ubuntu /bin/bash
-
-Esto lo llevará a un shell de bash en un contenedor nuevo, tendrá su historial de bash desde el host y cuando salga del contenedor, el host tendrá el historial de los comandos escritos en el contenedor.
-
-
-> **Nota** : Muchas herramientas utilizadas para editar archivos incluidas `vi` y `sed --in-place` pueden dar como resultado un cambio de inodo. Desde Docker v1.1.0, esto producirá un error como *"sed: cannot rename ./sedKdJ9Dy: Device or resource busy"*. En el caso en que desee editar el archivo montado, a menudo es más fácil montar el directorio principal.
-
-## Crear y montar un contenedor de volumen de datos ##
+## 4. Crear y montar un contenedor de volumen de datos ##
 
 **Si tiene algunos datos persistentes que desea compartir entre contenedores, o desea utilizarlos desde contenedores no persistentes, es mejor crear un contenedor de volúmenes de datos con nombre y luego montar los datos desde él.**
 
@@ -232,7 +360,7 @@ Y otro:
 
 **En este caso, si la imagen postgres contiene un directorio llamado, `/dbdata` entonces el montaje de los volúmenes desde el contenedor `dbstore` oculta los archivos `/dbdata` de la imagen postgres. El resultado es que solo los archivos del contenedor `dbstore` son visibles.**
 
-Puede usar múltiples parámetros `--volumes-from` para combinar volúmenes de datos de varios contenedores. Para encontrar información detallada sobre cómo `--volumes-from` deberias consultar [montaje de los volúmenes desde el contenedor](https://docs.docker.com/v17.03/engine/reference/commandline/run/#mount-volumes-from-container-volumes-from "https://docs.docker.com/v17.03/engine/reference/commandline/run/#mount-volumes-from-container-volumes-from") en la eeferencia del comando `run`.
+Puede usar múltiples parámetros `--volumes-from` para combinar volúmenes de datos de varios contenedores. Para encontrar información detallada sobre cómo `--volumes-from` deberias consultar [montaje de los volúmenes desde el contenedor](https://docs.docker.com/v17.03/engine/reference/commandline/run/#mount-volumes-from-container-volumes-from "https://docs.docker.com/v17.03/engine/reference/commandline/run/#mount-volumes-from-container-volumes-from") en la referencia del comando `run`.
 
 También puede extender la cadena mediante el montaje del volumen que vino del contenedor `dbstore` en otro recipiente a través de los contenedores `db1` o `db2`.
 
@@ -243,7 +371,19 @@ También puede extender la cadena mediante el montaje del volumen que vino del c
 
 > **Nota** : **Docker no le avisará cuando retire un contenedor sin proporcionar la opción `-v` de eliminar sus volúmenes. Si quita contenedores sin usar la opción `-v`, puede terminar con volúmenes *"huerfanos"*; volúmenes a los que ya no hace referencia un contenedor. Puede usar `docker volume ls -f dangling=true` para encontrar volúmenes huerfanos y usar `docker volume rm <volume name>` para eliminar un volumen que ya no se necesita.**
 
-## Copia de seguridad, restauración o migración de volúmenes de datos ##
+REHACER EL TEXTO DE LA EXPLICACION PARA ENCAJAR ESTA IDEA, LA EXPLICACIÓN ACTUAL ES MALISIMA.
+
+> ## Consejos importantes sobre el uso de volúmenes compartidos ##
+> 
+> **Varios contenedores también pueden compartir uno o más volúmenes de datos. Sin embargo, los contenedores múltiples que escriben en un único volumen compartido pueden causar daños en los datos. Asegúrese de que sus aplicaciones estén diseñadas para escribir en almacenes de datos compartidos.**
+> 
+> **Los volúmenes de datos son directamente accesibles desde el host de Docker. Esto significa que puede leer y escribir con las herramientas normales de Linux. En la mayoría de los casos, no debe hacer esto, ya que puede dañar los datos si sus contenedores y aplicaciones desconocen su acceso directo.**
+
+
+
+## 5. Copia de seguridad, restauración o migración de volúmenes de datos ##
+
+https://stackoverflow.com/questions/21597463/how-to-port-data-only-volumes-from-one-host-to-another
 
 Otra función útil que podemos realizar con volúmenes es usarlos para copias de seguridad, restauraciones o migraciones. Para ello, usa la bandera `--volumes-from` para crear un nuevo contenedor que monte ese volumen, así:
 
@@ -255,8 +395,6 @@ Otra función útil que podemos realizar con volúmenes es usarlos para copias d
 
 Luego puede **restaurarlo** en el mismo contenedor u otro que haya creado en otro lugar. 
 
-
-
 1. Crea un nuevo contenedor.
 
 		$ docker run -v /dbdata --name dbstore2 ubuntu /bin/bash
@@ -267,218 +405,9 @@ Luego puede **restaurarlo** en el mismo contenedor u otro que haya creado en otr
 
 > **NOTA**: Puede utilizar las técnicas anteriores para automatizar la copia de seguridad, la migración y las pruebas de restauración utilizando sus herramientas preferidas.
 
-## Listar todos los volúmenes ##
 
-Puede enumerar todos los volúmenes existentes usando `docker volume ls`.
 
-	$ docker volume ls
-	DRIVER              VOLUME NAME
-	local               ec75c47aa8b8c61fdabcf37f89dad44266841b99dc4b48261a4757e70357ec06
-	local               f73e499de345187639cdf3c865d97f241216c2382fe5fa67555c64f258892128
-	local               tmp_data
 
-## Eliminar volúmenes ##
-
-**El volumen de datos de Docker persiste después de que se elimina un contenedor. Puede crear volúmenes con nombre o anónimos. Los volúmenes nombrados tienen una ruta fuente específico fuera del contenedor, por ejemplo `awesome:/bar`. Los volúmenes anónimos no tienen una ruta fuente específica. Cuando se elimina el contenedor, debe indicar al demonio Docker Engine que limpie los volúmenes anónimos. Para hacer esto, use la opción `--rm`**, por ejemplo:
-
-    $ docker run --rm -v /foo -v awesome:/bar busybox top
-
-Este comando crea un /foovolumen anónimo . Cuando se elimina el contenedor, Docker Engine elimina el volumen `/foo` pero no el volumen `awesome`.
-
-Para eliminar todos los volúmenes no utilizados y liberar espacio,
-
-    $ docker volume prune
-
-eliminará todos los volúmenes no utilizados que no estén asociados con ningún contenedor.
-
-## Consejos importantes sobre el uso de volúmenes compartidos ##
-
-**Varios contenedores también pueden compartir uno o más volúmenes de datos. Sin embargo, los contenedores múltiples que escriben en un único volumen compartido pueden causar daños en los datos. Asegúrese de que sus aplicaciones estén diseñadas para escribir en almacenes de datos compartidos.**
-
-**Los volúmenes de datos son directamente accesibles desde el host de Docker. Esto significa que puede leer y escribir con las herramientas normales de Linux. En la mayoría de los casos, no debe hacer esto, ya que puede dañar los datos si sus contenedores y aplicaciones desconocen su acceso directo.**
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-https://docs.docker.com/engine/admin/volumes/volumes/#start-a-service-with-volumes
-
-## Rellenar un volumen usando un contenedor ##
-
-
-https://raw.githubusercontent.com/Sirtea/www.linuxsysadmin.tk/master/content/articles/tipos-de-volumenes-en-docker.md
-
-
-Los volúmenes pueden ser de 3 tipos distintos, y se categorizan según esta lista:
-
-* Data volumes
-    * Anonymous data volumes
-    * Named data volumes
-* Mounted volumes
-
-## Data volumes
-
-Se trata de carpetas que se crean en */var/lib/docker/* y que pueden compartirse entre diferentes contenedores.
-
-### Anonymous data volumes
-
-Se crean cuando se levanta un contenedor, mediante el comando *docker run*, por ejemplo:
-
-```bash
-gerard@sirius:~$ docker run -ti --rm -v /data alpine:3.4 sh
-/ # 
-```
-
-Esto nos crea un volumen asociado al contenedor creado.
-
-```bash
-root@sirius:~# docker volume ls
-DRIVER              VOLUME NAME
-local               1b39e6601cd3711c27f3a1a4eb50d82e182151fd14b82048f47b0d50ad22b97a
-root@sirius:~# tree /var/lib/docker/volumes/
-/var/lib/docker/volumes/
-├── 1b39e6601cd3711c27f3a1a4eb50d82e182151fd14b82048f47b0d50ad22b97a
-│   └── _data
-└── metadata.db
-
-2 directories, 1 file
-root@sirius:~# 
-```
-
-A su vez, otro contenedor puede montar los volúmenes de otro contenedor, ya sea porque los creó o porque los ha montado de un tercero.
-
-```bash
-root@sirius:~# docker run -ti --rm --volumes-from adoring_lovelace alpine:3.4 sh
-/ # 
-```
-
-Ahora mismo, la carpeta */data/* pertenece al primer contenedor, pero es la misma para ambos contenedores.
-
-> **Docker** mantiene una cuenta de los contenedores que están usando un volumen, y estos solo se eliminan cuando el último contenedor que lo usa sale con el parámetro `--rm` o si se hace un `docker rm -v`*. En cualquier otro caso, el volumen se queda parasitando, hasta que lo eliminamos manualmente usado `docker volume rm`.
-
-### Named data volumes
-
-Estos volúmenes no dependen de ningún contenedor concreto, y se pueden montar en cualquier contenedor. Se crean específicamente usando el comando *docker volume create*, o al ejecutar un contenedor si le damos un nombre en la línea de comandos.
-
-	bash
-	gerard@sirius:~$ docker volume create --name vol1
-	vol1
-	gerard@sirius:~$ docker run -ti --rm -v vol2:/data alpine:3.4 true
-	gerard@sirius:~$ docker volume ls
-	DRIVER              VOLUME NAME
-	local               vol1
-	local               vol2
-	gerard@sirius:~$ 
-
-
-Estos volúmenes no se eliminan por si solos nunca y persisten cuando su contenedor desaparece. Para eliminarlos se necesita una intervención manual mediante el comando *docker volume rm*.
-
-```bash
-gerard@sirius:~$ docker volume ls
-DRIVER              VOLUME NAME
-local               vol1
-local               vol2
-gerard@sirius:~$ docker volume rm vol1 vol2
-vol1
-vol2
-gerard@sirius:~$ docker volume ls
-DRIVER              VOLUME NAME
-gerard@sirius:~$ 
-```
-
-## Mounted volumes
-
-Otras veces nos interesa montar ficheros o carpetas desde la máquina *host*. En este caso, podemos montar la carpeta o el fichero especificando la ruta completa desde la máquina *host*, y la ruta completa en el contenedor. Es posible también especificar si el volumen es de lectura y escritura (por defecto) o de solo lectura.
-
-```bash
-gerard@sirius:~/docker$ docker run -ti --rm -v /etc/hostname:/root/parent_name:ro -v /opt/:/data alpine:3.4 sh
-/ # cat /root/parent_name 
-sirius
-/ # ls /data/
-/ # 
-```
-
-Este último caso es ideal para recuperar *backups* o ficheros generados en un contenedor, en vistas a su utilización futura por parte de otros contenedores o del mismo *host*.
-
-
-
-
-https://stackoverflow.com/questions/21597463/how-to-port-data-only-volumes-from-one-host-to-another
-
-## ¿Cómo portar volúmenes solo de datos de un host a otro? ##
-
-Tal como se describe en la documentación de Docker sobre Trabajar con volúmenes, existe el concepto de los llamados **contenedores sólo de datos**, que proporcionan un volumen que se puede montar en varios otros contenedores, sin importar si el contenedor de solo datos se está ejecutando realmente o no.
-
-Básicamente, esto suena increíble. Pero hay una cosa que no entiendo.
-
-Estos volúmenes (que no se asignan explícitamente a una carpeta en el host por razones de portabilidad, como lo indica la documentación) son creados y gestionados por Docker en alguna carpeta interna en el host ( /var/docker/volumes/…).
-
-Supongamos que uso ese volumen y luego tengo que migrarlo de un host a otro. ¿Cómo transfiero el volumen? AFAICS tiene una ID única: ¿puedo ir y copiar el volumen y su contenedor de datos de acuerdo a un nuevo host? ¿Cómo averiguo qué archivos copiar? ¿O hay algún soporte incorporado a Docker que aún no descubrí?
-
-Puede exportar el directorio del contenedor de datos: 
-
-`docker run --volumes-from <data container> ubuntu tar -cO <volume path> | gzip -c > volume.tgz`
-
-Esto no depende de los detalles de implementación de los volúmenes. E importar los datos con tar en la segunda máquina.
-
-
-
-
-# Copia de seguridad, restauración o migración de volúmenes de datos #
-
-Otra función útil que podemos realizar con volúmenes es usarlos para copias de seguridad, restauraciones o migraciones. Para ello, usa la --volumes-frombandera para crear un nuevo contenedor que monte ese volumen, así:
-
-    $ docker run --rm --volumes-from dbstore -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /dbdata
-
-Aquí ha lanzado un nuevo contenedor y montado el volumen desde el dbstorecontenedor. Luego ha montado un directorio de host local como /backup. Finalmente, ha pasado un comando que utiliza tarpara hacer una copia de seguridad del contenido del dbdatavolumen en un backup.tararchivo dentro de nuestro /backupdirectorio. Cuando el comando finalice y el contenedor se detenga, nos quedará una copia de seguridad de nuestro dbdatavolumen.
-
-Luego puede restaurarlo en el mismo contenedor u otro que haya creado en otro lugar. Crea un nuevo contenedor.
-
-    $ docker run -v /dbdata --name dbstore2 ubuntu /bin/bash
-
-A continuación, desactive el archivo de copia de seguridad en el volumen de datos del nuevo contenedor.
-
-    $ docker run --rm --volumes-from dbstore2 -v $(pwd):/backup ubuntu bash -c "cd /dbdata && tar xvf /backup/backup.tar --strip 1"
-
-Puede utilizar las técnicas anteriores para automatizar la copia de seguridad, la migración y las pruebas de restauración utilizando sus herramientas preferidas.
 
 
 
@@ -490,3 +419,6 @@ Puede utilizar las técnicas anteriores para automatizar la copia de seguridad, 
 
 
 [https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch02-basic-concepts.adoc](https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch02-basic-concepts.adoc "https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch02-basic-concepts.adoc")
+
+ESTA DEBERIA SER LA DOCU OFICIAL PARA EL ARTICULO
+https://docs.docker.com/engine/admin/volumes/volumes

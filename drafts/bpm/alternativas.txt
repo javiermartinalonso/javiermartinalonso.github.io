@@ -6,4 +6,18 @@
 - AuraPortal iBPMS
 
 
+- flow-forma-BPM
 
+Bonitasoft BPM
+Docuware
+Dokuflex	
+Doxis4 de SER Group
+Elma BPM	
+Itemdoc	
+Laserfiche	
+Liferay	
+mProductos	
+Onbase ECM	
+proquo
+R2 Docuo
+Ricoh
