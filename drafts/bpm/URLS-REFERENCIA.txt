@@ -1,3 +1,5 @@
 http://bpm-forum.org/
 
 https://bpm.com/resources/case-studies
+
+http://www.omg.org/spec/BPMN/2.0/
