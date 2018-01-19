@@ -73,12 +73,18 @@ BPM debe entenderse como un enfoque amplio, que se refiere no sólo a la aplicac
 
 # Algunos de los beneficios que la tecnología BPM traerá a su negocio #
 
-Transparencia en todas las etapas del proceso.
-Un mayor control administrativo.
-Aumento de productividad.
-Reducción de costos.
-Automatización de procesos y generación de evidencias.
-
-
+- Transparencia en todas las etapas del proceso.
+- Un mayor control administrativo.
+- Aumento de productividad.
+- Reducción de costos.
+- Automatización de procesos y generación de evidencias.
+-  Automatización de los procesos a través de las funciones de negocio: ganando en interoperabilidad de los sistemas subyacentes, gracias al aprovisionamiento de interfaces estándar que logran la deseada automatización de procesos.
+-  Aumento de velocidad en la automatización de nuevos procesos: la implementación de los nuevos procesos se agiliza cuando el diseño SOA permite exponer las capacidades de negocio como servicios.
+-  Adaptación de los procesos a las necesidades de negocio: garantizando un impacto mínimo en el resto de procesos y partiendo de un análisis de viabilidad de los cambios propuestos, todo ello en condiciones de alta velocidad.
+-  Minimización de errores y ahorro de costes: exportando e implementando los procesos de negocio que más robustos y menos propensos a errores.
+-  Alineación de las inversiones de TI con las necesidades del negocio: priorizando el dar solución a los servicios de construcción necesarios para los procesos clave del negocio, para ganar en alineación y rendimiento.
+-  Consecución de una mayor visibilidad del negocio: que además se logra en tiempo real.
+-  Rapidez en la adopción de los servicios basados ​​en la nube: la infraestructura SOA adecuada permite que  tanto los servicios internos como los externos se utilicen de la misma manera a nivel de procesos.
+-  Entrega de los procesos de negocio a través de dispositivos móviles: la movilidad es una realidad al tiempo que se garantiza la preservación de la integridad de los sistemas internos y el cumplimiento de los requisitos de calidad de servicio.
 
 ## Referencias ##
