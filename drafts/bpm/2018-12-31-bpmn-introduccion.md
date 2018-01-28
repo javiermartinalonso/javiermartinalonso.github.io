@@ -11,6 +11,11 @@ icon: fas fa-cogs
 image: static/img/blog/
 ---
 
+
+http://www.heflo.com/the-bpm-cookbook-online-guide/
+
+
+
 #  Introducción #
 
 En la actualidad el concepto de arquitectura empresarial (AE) no es extraño en ninguna empresa, ya que cada una de éstas trabaja conjuntamente los procesos de negocio y la infraestructura de las tecnologías de información (TI), debido a que poseen una dependencia mutua y a que se requieren para suplir las necesidades de la operación del negocio.

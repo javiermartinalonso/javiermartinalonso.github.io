@@ -6,7 +6,7 @@ date:   2016-12-26
 desc: "Estudiamos el concepto de componente dentro de la tecnología Angular."
 keywords: "Angular, Componente,MVVM,MVC,template,class,decorator,controller"
 categories: [angular]
-tags: [Angular, Componente,MVVM,MVC,template,class,decorator,controller]
+tags: [Angular,MVVM,MVC]
 icon: fab fa-angular
 image: static/img/blog/angular/angular-logo_150.png
 # variables para sustituir las llaves, sino no van a aparecer en el html hay que referenciarlas así {{ page.saludo }}

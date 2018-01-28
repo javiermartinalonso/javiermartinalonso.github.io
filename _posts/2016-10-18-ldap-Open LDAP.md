@@ -6,7 +6,7 @@ date:   2016-10-18
 desc: "OpenLDAP es una implementación libre y de código abierto del protocolo Lightweight Directory Access Protocol (LDAP) desarrollada por el proyecto OpenLDAP."
 keywords: "OpenLDAP,ldap,instalación, windows"
 categories: [LDAP]
-tags: [OpenLDAP,ldap,instalación, windows]
+tags: [OpenLDAP,ldap]
 icon: fas fa-sitemap
 image: static/img/blog/ldap/ldap-logo.png
 ---

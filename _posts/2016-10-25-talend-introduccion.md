@@ -6,7 +6,7 @@ date:   2016-10-25
 desc: "Herramienta ETL para la migración e integración de datos"
 keywords: "Talend,Talend Open Studio, Introducción, Integration"
 categories: [talend]
-tags: [Talend,Talend_Open_Studio]
+tags: [Talend,TalendOpenStudio]
 icon: fas fa-exchange-alt
 image: static/img/blog/talend/talend-logo.png
 ---

@@ -6,7 +6,7 @@ date:   2016-11-06
 desc: "Variables de entorno de JAVA"
 keywords: "java,jdk,instalación,windows,JAVA_HOME,PATH"
 categories: [java]
-tags: [java,jdk,instalación, windows,JAVA_HOME,PATH]
+tags: [java,JDK,JAVA_HOME]
 icon: icon-java-bold
 image: static/img/blog/java/java-logo.png
 ---

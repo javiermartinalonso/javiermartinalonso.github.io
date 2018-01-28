@@ -6,7 +6,7 @@ date:   2018-01-03
 desc: "Teoría sobre el sistema de ficheros de Unix que todo devOps debe conocer."
 keywords: "linux, shell, comandos, host"
 categories: [linux]
-tags: [linux, shell, comandos, host]
+tags: [linux]
 icon: fab fa-linux
 image: static/img/blog/linux/linux-logo.png
 ---
@@ -58,6 +58,36 @@ Esta estructura de árbol y los nombres de los directorios no es al azar, tiene 
 | `/var/log` | Ficheros de registro, Log. Varios registros, logs. |
 | `/var/mail` | Buzón de mensajes de correo electrónico |
 | `/var/tmp` | Ficheros temporales que, a diferencia de `/tmp`, no se borran entre sesiones o reinicios del sistema. |
+
+
+## Artículos relacionados ##
+
+[Introducción al sistema operativo Linux]({{ site.baseurl }}linux/2018/01/02/linux-introduccion.html "Introducción al sistema operativo Linux")
+
+[Jerárquía estándar sistema de ficheros UNIX]({{ site.baseurl }}linux/2018/01/03/linux-jerarquia-sistema-ficheros "Jerárquía estándar sistema de ficheros UNIX")
+
+[Interface Linea de Comando]({{ site.baseurl }}linux/2018/01/10/linux-linea-comandos "Interface Linea de Comando")
+
+[Operaciones con host remotos]({{ site.baseurl }}linux/2018/01/11/linux-trabajar-host-remotos "Operaciones con host remotos")
+
+[Trabajar con el sistema de ficheros]({{ site.baseurl }}linux/2018/01/12/linux-trabajar-sistema-ficheros "Trabajar con el sistema de ficheros")
+
+[Búsquedas avanzadas con el comando grep]({{ site.baseurl }}linux/2018/01/15/linux-grep-patrones-debug.html "Búsquedas avanzadas con el comando grep")
+
+[Enlaces físicos (Hard links) y simbólicos (Soft links)]({{ site.baseurl }}linux/2018/01/16/linux-enlaces-fisicos-simbolicos "Enlaces físicos (Hard links) y simbólicos (Soft links)")
+
+[Gestión de los permisos de archivos o directorios UNIX]({{ site.baseurl }}linux/2018/01/17/linux-gestion-permisos "Gestión de los permisos de archivos o directorios UNIX")
+
+[Linux: Espacio en disco, tamaños de directorios]({{ site.baseurl }}linux/2018/01/18/linux-tamanio-espacio "Linux: Espacio en disco, tamaños de directorios")
+
+[Comandos de administración Host Unix]({{ site.baseurl }}linux/2018/01/19/linux-administracion-host "Comandos de administración Host Unix")
+
+[TIPS Atajos de teclado shell Linux]({{ site.baseurl }}linux/2018/01/22/linux-tips-atajos-teclado "TIPS Atajos de teclado shell Linux")
+
+[TIPS Concatenar comandos en linux]({{ site.baseurl }}linux/2018/01/23/linux-tips-concatenar-comandos "TIPS Concatenar comandos en linux")
+
+[Artículos sobre Linux]({{ site.baseurl }}linux/ "Artículos sobre Linux")
+
 
 ## Referencias ##
 

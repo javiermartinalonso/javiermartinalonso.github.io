@@ -6,7 +6,7 @@ date:   2016-11-06
 desc: "Instalación JDK"
 keywords: "java,jdk,instalación, windows"
 categories: [java]
-tags: [java,jdk,instalación, windows]
+tags: [java,JDK]
 icon: icon-java-bold
 image: static/img/blog/java/java-logo.png
 ---

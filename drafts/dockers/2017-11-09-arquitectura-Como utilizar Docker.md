@@ -9,6 +9,9 @@ categories: [arquitectura]
 tags: [Dockers]
 icon: fas fa-university
 image: static/img/blog/docker/docker-logo.png
+# variables para sustituir las llaves, sino no van a aparecer en el html hay que referenciarlas así {{ page.saludo }}
+name: '{{.Name}}'
+networkSettings: '{{.NetworkSettings.IPAddress }}'
 ---
 
 https://github.com/brunocascio/docker-espanol
@@ -368,7 +371,7 @@ Para acceder al servidor postgres instalado en el contenedor necesitamos conocer
 
 obtener los nombres e IPs de los contenedores desde el docker machine:
 
-    docker inspect -f '{{.Name}} - {{.NetworkSettings.IPAddress }}' $(docker ps -aq)
+    docker inspect -f '{{page.name}} - {{page.networkSettings}}' $(docker ps -aq)
 
 
 

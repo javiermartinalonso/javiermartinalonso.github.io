@@ -6,7 +6,7 @@ date:   2017-09-18
 desc: "Procedimiento de instalación de Docker en Ubuntu. Este tutorial está basado en la documentación oficial de docker donde se explica el procedimiento de instalación de Docker en Ubuntu."
 keywords: "Dockers, Ubuntu, Docker Community Edition, Docker CE"
 categories: [docker]
-tags: [Dockers, Ubuntu, Docker_Community_Edition, Docker_CE]
+tags: [Dockers,Ubuntu,Docker_Community_Edition,Docker_CE]
 icon: fab fa-docker
 image: static/img/blog/docker/docker-logo.png
 ---

@@ -6,7 +6,7 @@ date:   2017-09-04
 desc: "Docker es una herramienta open-source que nos permite realizar una ‘virtualización ligera’, con la que poder empaquetar entornos y aplicaciones que posteriormente podremos desplegar en cualquier sistema que disponga de esta tecnología. Docker le permite obtener su código probado y desplegado en producción lo más rápido posible"
 keywords: "Dockers, virtualización, portabilidad, contenedor, maquina_virtual, integración_continua, DevOps"
 categories: [docker]
-tags: [Dockers, virtualización, portabilidad,contenedor, maquina_virtual, integración_continua, DevOps]
+tags: [Dockers,virtualización,maquina_virtual,integración_continua,DevOps]
 icon: fab fa-docker
 image: static/img/blog/docker/docker-logo.png
 ---
