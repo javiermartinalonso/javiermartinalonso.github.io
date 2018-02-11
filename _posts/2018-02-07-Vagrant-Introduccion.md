@@ -57,7 +57,7 @@ Por ejemplo, si tenemos una máquina windows que no puede ejecutar contenedores 
 
 > Para entrar en una comparación más igualitaria, **no compararía Vagrant con Docker, sino que compararía Vagrant con Boot2Docker**, la herramienta que permite ejecutar **Docker** en máquinas Windows y MacOs.
 >
-> Como hemos visto si necesitas ejecutar **contenedores de Docker **sobre sistemas windows o MacOs, ***tienes que crearte una máquina virtual con Linux o usar Boot2Docker***.
+> Como hemos visto si necesitas ejecutar **contenedores de Docker** sobre sistemas windows o MacOs, ***tienes que crearte una máquina virtual con Linux o usar Boot2Docker***.
 >
 > **Boot2Docker es una maquina virtual Linux, con los artefactos docker (docker machine, docker engine...) necesarios para poder ejecutar Docker**.
 >
