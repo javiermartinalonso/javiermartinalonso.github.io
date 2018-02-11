@@ -121,6 +121,8 @@ Sigue por aquí para saber más sobre ***[Vagrant]({{ site.baseurl }}DevOps/vagr
 
 ## Referencias ##
 
+[artículos sobre Vagrant]({{ site.baseurl }}DevOps/vagrant "artículos sobre Vagrant")
+
 [Vagrant](https://www.vagrantup.com "vagrant")
 
 [documentación oficial vagrantfile](https://www.vagrantup.com/docs/vagrantfile/ "www.vagrantup.com/docs/vagrantfile/")
