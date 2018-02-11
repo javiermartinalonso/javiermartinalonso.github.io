@@ -56,11 +56,11 @@ Luego si lo hemos entendido bien veremos que ambas herramientas ni son competido
 Por ejemplo, si tenemos una máquina windows que no puede ejecutar contenedores Linux de forma nativa y queremos un entorno de desarrollo con **dockers**. ***Con Vagrant podemos activar una "máquina virtual anfitriona" para ejecutar Docker***. **Vagrant** activará una única instancia de una máquina virtual anfitriona y ejecutará varios contenedores en esta máquina virtual. Esto significa que con **vagrant**, solo tiene la sobrecarga de una máquina virtual, y sólo si es absolutamente necesario.
 
 > Para entrar en una comparación más igualitaria, **no compararía Vagrant con Docker, sino que compararía Vagrant con Boot2Docker**, la herramienta que permite ejecutar **Docker** en máquinas Windows y MacOs.
-
+>
 > Como hemos visto si necesitas ejecutar **contenedores de Docker **sobre sistemas windows o MacOs, ***tienes que crearte una máquina virtual con Linux o usar Boot2Docker***.
-
+>
 > **Boot2Docker es una maquina virtual Linux, con los artefactos docker (docker machine, docker engine...) necesarios para poder ejecutar Docker**.
-
+>
 > Sigue por aquí para saber más sobre ***[docker]({{ site.baseurl }}DevOps/docker/ "artículos sobre docker")***.
 
 Sigue por aquí para saber más sobre ***[Vagrant]({{ site.baseurl }}DevOps/vagrant "artículos sobre Vagrant")***.
