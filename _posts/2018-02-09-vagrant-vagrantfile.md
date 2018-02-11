@@ -83,7 +83,7 @@ A continuación veamos como modificar este fichero para personalizar la imagen v
 
 		config.vm.provsion "shell", path: "bootstrap.sh"
 
-	> El nombre del fichero no es obligatorio que sea `bootstrap.sh` puede ser el que quieras, solo debes mantener la terminarción .sh para que pueda ser un fichero de scripting en linux.
+	> El nombre del fichero no es obligatorio que sea `bootstrap.sh` puede ser el que quieras, solo debes mantener la terminarción `.sh` para que pueda ser un fichero de scripting en linux.
 
 El fichero Vagrantfile quedaría así:
 
