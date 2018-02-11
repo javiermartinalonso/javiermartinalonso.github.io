@@ -25,7 +25,7 @@ Partimos de una carpeta vacía donde queramos trabajar por ejemplo `C:/vagrant/v
 
 			$ vagrant init
 
-		Y luego modificar el fichero, según hemos indicado en el [anterior post]({{ site.baseurl }}devops/devops/vagrant/2018/02/10/vagrant-vagrantfile.html "vagrant vagrantfile") para personalizar la máquina virtual a crear.
+		Y luego modificar el fichero, según hemos indicado en el [anterior post]({{ site.baseurl }}devops/devops/vagrant/2018/02/09/vagrant-vagrantfile.html "vagrant vagrantfile") para personalizar la máquina virtual a crear.
 
 	3. También podemos **obtener un Vagrantfile apuntando al box concreto que hemos buscado antes**, simplemente tienes que poner el nombre o la URL al final.
 
