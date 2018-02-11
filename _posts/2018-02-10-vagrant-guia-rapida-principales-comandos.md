@@ -29,7 +29,7 @@ Partimos de una carpeta vacía donde queramos trabajar por ejemplo `C:/vagrant/v
 
 	3. También podemos **obtener un Vagrantfile apuntando al box concreto que hemos buscado antes**, simplemente tienes que poner el nombre o la URL al final.
 
-		$ vagrant init ubuntu/xenial64
+			$ vagrant init ubuntu/xenial64
 
 
 - **listar las cajas descargadas en el equipo**:
