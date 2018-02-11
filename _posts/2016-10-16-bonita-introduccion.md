@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "Bonita BPM"
+sections: [bonita]
 title:  "Bonita BPM Introducción"
 date:   2016-10-16
 desc: "Bonita BPM es una suite ofimática para la creación y gestión de potentes aplicaciones basadas en procesos de negocio (BPM) y realización de Workflows."

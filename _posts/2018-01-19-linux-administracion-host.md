@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "LINUX"
+sections: [LINUX]
 title:  "Comandos de administración Host Unix"
 date:   2018-01-19
 desc: "Recopilatorio de los comandos de administración de sistemas Unix que son más usados habitualmente: Administración de usuarios, sistema, procesos, configuración de red."

@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "LINUX"
+sections: [LINUX]
 title:  "TIPS Atajos de teclado shell Linux"
 date:   2018-01-22
 desc: "Trucos para optimizar la escritura y sacarle todo el provecho al shell de linux y aumentar así tu productividad."

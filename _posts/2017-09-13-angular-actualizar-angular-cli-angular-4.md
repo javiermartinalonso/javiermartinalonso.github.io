@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "Angular"
+sections: [Angular]
 title:  "Proceso de actualización de Angular CLI para usar angular 4"
 date:   2017-09-13
 desc: "Con la aparición de Angular 4, debemos actualizar la instalación de Angular CLI. Aquí veremos en unos pequeños pasos como realizar esta tarea."

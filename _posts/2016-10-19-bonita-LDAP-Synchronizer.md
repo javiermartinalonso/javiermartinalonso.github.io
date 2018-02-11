@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "Bonita BPM"
+sections: [bonita]
 title:  "Bonita BPM LDAP synchronizer"
 date:   2016-10-19
 desc: "Bonita BPM Herramientas para la gestión de una organización"

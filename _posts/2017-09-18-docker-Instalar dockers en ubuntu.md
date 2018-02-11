@@ -1,11 +1,11 @@
 ---
 layout: post
-section: "DOCKER"
+sections: [docker]
 title:  "Instalar Docker Ubuntu"
 date:   2017-09-18
 desc: "Procedimiento de instalación de Docker en Ubuntu. Este tutorial está basado en la documentación oficial de docker donde se explica el procedimiento de instalación de Docker en Ubuntu."
 keywords: "Dockers, Ubuntu, Docker Community Edition, Docker CE"
-categories: [docker]
+categories: [DevOps, DevOps/docker]
 tags: [Dockers,Ubuntu,Docker_Community_Edition,Docker_CE]
 icon: fab fa-docker
 image: static/img/blog/docker/docker-logo.png
@@ -34,7 +34,7 @@ Para ***instalar Docker CE***, ***necesita la versión de 64 bits de una de esta
 - Zesty 17.04
 - Yakkety 16.10
 - Xenial 16.04 (LTS)
-- Confiable 14.04 (LTS)
+- trusty 14.04 (LTS)
 
 Para ***Ubuntu 16.04 y superior, el kernel de Linux incluye soporte para [OverlayFS](https://docs.docker.com/engine/userguide/storagedriver/overlayfs-driver/#how-the-overlay2-driver-works "overlayfs"), y Docker CE usará el controlador [overlay2](https://docs.docker.com/engine/userguide/storagedriver/overlayfs-driver/#how-the-overlay2-driver-works "overlay2") de almacenamiento de forma predeterminada***.
 

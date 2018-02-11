@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "Angular"
+sections: [Angular]
 title:  "¿Qué es Angular?"
 date:   2016-12-08
 desc: "Introducción y primeros pasos con Angular"

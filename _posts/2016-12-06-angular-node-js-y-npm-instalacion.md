@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "Angular"
+sections: [Angular]
 title:  "Instalacion NodeJs y NPM"
 date:   2016-12-06
 desc: "Información sobre como instalar NodeJs y NPM"

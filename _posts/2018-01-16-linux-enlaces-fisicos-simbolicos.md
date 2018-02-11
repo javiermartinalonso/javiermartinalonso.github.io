@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "LINUX"
+sections: [LINUX]
 title:  "LINUX: Enlaces físicos (Hard links) y simbólicos (Soft links)"
 date:   2018-01-16
 desc: "Enlaces físicos (Hard links) y simbólicos (Soft links)."

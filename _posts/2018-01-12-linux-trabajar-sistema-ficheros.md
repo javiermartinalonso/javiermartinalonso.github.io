@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "LINUX"
+sections: [LINUX]
 title:  "Linux: Trabajar con el sistema de ficheros"
 date:   2018-01-12
 desc: "Recopilatorio de los comandos de Unix que son más usados habitualmente para trabajar con el sistema de ficheros. Buscar, leer, crear y editar, comprimir ficheros."

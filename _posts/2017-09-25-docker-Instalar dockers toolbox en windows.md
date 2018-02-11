@@ -1,11 +1,11 @@
 ---
 layout: post
-section: "DOCKER"
+sections: [docker]
 title:  "Instalar Docker ToolBox en Windows"
 date:   2017-09-25
 desc: "Procedimiento de instalación de Docker Toolbox en Windows. Solución de escritorio legacy. Permite instalar y configurar un entorno docker para sistemas Mac y Windows antiguos que no cumplen los requisitos de Docker para Windows."
 keywords: "Dockers, Windows,Docker_Toolbox,Virtual_Box,Docker_Machine,Docker_for_Windows,Docker_CLI,Docker_Engine, docker-compose"
-categories: [docker]
+categories: [DevOps, DevOps/docker]
 tags: [Dockers, Windows]
 icon: fab fa-docker
 image: static/img/blog/docker/docker-logo.png

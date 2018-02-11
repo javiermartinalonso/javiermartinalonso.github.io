@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "Spring"
+sections: [Spring]
 title:  "Hola mundo!!! con Spring-Boot"
 date:   2017-01-09
 desc: "En este post explicamos cómo funciona Spring-boot a través de la creación de un hola mundo!!!."

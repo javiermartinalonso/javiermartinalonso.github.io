@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "LINUX"
+sections: [LINUX]
 title:  "Linux: Interface Linea de Comando"
 date:   2018-01-10
 desc: "Teoría que debemos concocer sobre la shell de linux."

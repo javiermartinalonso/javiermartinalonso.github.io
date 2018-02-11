@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "LDAP"
+sections: [LDAP]
 title:  "OpenLDAP"
 date:   2016-10-18
 desc: "OpenLDAP es una implementación libre y de código abierto del protocolo Lightweight Directory Access Protocol (LDAP) desarrollada por el proyecto OpenLDAP."

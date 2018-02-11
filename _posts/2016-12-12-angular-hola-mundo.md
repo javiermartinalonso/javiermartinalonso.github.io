@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "Angular"
+sections: [Angular]
 title:  "!!Hola Mundo!! con Angular"
 date:   2016-12-12
 desc: "Primeros Pasos con Angular"

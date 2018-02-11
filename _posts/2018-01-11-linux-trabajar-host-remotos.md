@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "LINUX"
+sections: [LINUX]
 title:  "Linux: Operaciones con host remotos"
 date:   2018-01-11
 desc: "Recopilatorio de los comandos de Unix que son más usados habitualmente para operaciones con host remotos: conectar con host remoto, copiar, subir o descargar ficheros."

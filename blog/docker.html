@@ -2,7 +2,7 @@
 layout: blog
 section: "DOCKER"
 title: DOCKER
-permalink: /docker/
+permalink: /DevOps/docker/
 image: static/img/blog/docker/docker-logo.png
 ---
 
@@ -24,7 +24,7 @@ image: static/img/blog/docker/docker-logo.png
                 <div>
             		<ul id="pag-itemContainer" style="list-style:none;">
                     {% assign counter = 0 %}
-            		{% for post in site.categories['docker'] %}
+            		{% for post in site.categories['DevOps/docker'] %}
 
                         {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
                         {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}

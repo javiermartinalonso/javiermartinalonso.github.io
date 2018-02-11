@@ -31,5 +31,11 @@
 - name: 'Git'
   href: '/git/'
 
+- name: 'DEVOPS'
+  href: '/DevOps/'
+
 - name: 'DOCKER'
-  href: '/docker/'
+  href: '/DevOps/docker/'
+
+- name: 'VAGRANT'
+  href: '/DevOps/vagrant/'

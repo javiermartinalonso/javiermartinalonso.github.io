@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "LINUX"
+sections: [LINUX]
 title:  "Gestión de los permisos de archivos o directorios UNIX"
 date:   2018-01-17
 desc: "Gestión de los permisos de archivos o directorios UNIX."

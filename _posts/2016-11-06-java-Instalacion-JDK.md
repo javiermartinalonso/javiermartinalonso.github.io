@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "JAVA"
+sections: [JAVA]
 title:  "Instalación JDK"
 date:   2016-11-06
 desc: "Instalación JDK"

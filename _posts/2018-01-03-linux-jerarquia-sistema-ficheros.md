@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "LINUX"
+sections: [LINUX]
 title:  "Jerárquía estándar sistema de ficheros UNIX"
 date:   2018-01-03
 desc: "Teoría sobre el sistema de ficheros de Unix que todo devOps debe conocer."

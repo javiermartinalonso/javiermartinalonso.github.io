@@ -1,0 +1,22 @@
+- pagina de descargas de versiones de firefox
+
+https://ftp.mozilla.org/pub/firefox/releases/45.9.0esr/win64/es-ES/
+
+- addon firefox 45.9 graba y reproduce pruebas y genera ficheros de prueba que se pueden exportar a pruebas junit java
+
+https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/
+
+
+- ejecutables para evitar depender del navegador
+https://github.com/mozilla/geckodriver/
+https://sites.google.com/a/chromium.org/chromedriver/
+
+https://github.com/bonigarcia/webdrivermanager
+
+
+$ set PATH=%PATH%;C:\selenium\chromedriver
+$ set PATH=%PATH%;C:\selenium\geckodriver
+
+
+
+https://docs.spring.io/spring-boot/docs/current/reference/html/howto-properties-and-configuration.html

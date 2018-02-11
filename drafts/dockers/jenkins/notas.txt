@@ -1,0 +1,39 @@
+https://jenkins.io/solutions/docker/
+
+https://jenkins.io/blog/2014/08/12/official-jenkins-lts-docker-image/
+
+https://hub.docker.com/_/jenkins/
+
+
+
+
+C:\DOCKER\DOCKER-JENKINS\jenkins-home
+C:\DOCKER\DOCKER-JENKINS\jenkins-home
+
+docker run -p 8080:8080 -p 50000:50000 \
+	-v c/DOCKER/DOCKER-JENKINS/jenkins-home:/var/jenkins_home \
+	-v c/DOCKER/DOCKER-JENKINS/jenkins_workspace:/var/jenkins_workspace \ 
+	jenkins/jenkins
+	
+	
+	
+docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins	
+docker run -p 8080:8080 -p 50000:50000 -v /c/DOCKER/DOCKER-JENKINS/jenkins-home:/var/jenkins_home -v /c/DOCKER/DOCKER-JENKINS/jenkins_workspace:/var/jenkins_workspace jenkins/jenkins
+docker run -p 8080:8080 -p 50000:50000 -v /c/DOCKER/DOCKER-JENKINS/jenkins-home:/var/jenkins_home -v /c/DOCKER/DOCKER-JENKINS/jenkins_workspace:/var/jenkins_workspace jenkins/jenkins:lts
+
+docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins
+docker run -p 8080:8080 -p 50000:50000 -v /c/DOCKER/DOCKER-JENKINS/jenkins-home:/var/jenkins_home jenkins/jenkins
+
+
+# Conectar como máquina interactiva
+docker run --rm -ti jenkins/jenkins bash
+docker run --rm -ti jenkins/jenkins:lts bash
+
+
+
+hay que cambiar los permisos de la carpeta de windows de 
+
+sudo chown -R 1000:1000 /c/DOCKER/DOCKER-JENKINS
+
+
+montar un contenedor docker de datos con estas carpetas y con estos permisos?????

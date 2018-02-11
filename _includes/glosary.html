@@ -22,7 +22,8 @@
                             <span data-i18n="glosary.Categories">Categories</span>
                         </div>
                         <ul class="content-ul" cate>
-                            {% for category in site.categories %}
+                            {% assign sorted_categories = site.categories | sort %}
+                            {% for category in sorted_categories %}
                             <li>
                                 <a href="{{ baseurl }}/{{ category | first }}" class="categories-list-item" cate="{{ category | first }}">
                                     <span class="name">

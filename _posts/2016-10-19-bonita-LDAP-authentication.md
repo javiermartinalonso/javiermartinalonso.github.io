@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "Bonita BPM"
+sections: [bonita]
 title:  "Bonita BPM LDAP authentication"
 date:   2016-10-19
 desc: "Bonita BPM autenticar contra LDAP"

@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "Angular"
+sections: [Angular]
 title:  "Visual Studio Code"
 date:   2016-12-19
 desc: "Visual Studio Code: Es un ID perfecto para trabajar con Angular. Es gratuito, open source y multiplataforma. Creado por Microsoft y enfocado a trabajar con TypeScript"

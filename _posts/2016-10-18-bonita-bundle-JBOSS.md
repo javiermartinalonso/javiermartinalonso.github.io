@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "Bonita BPM"
+sections: [bonita]
 title:  "Bonita bundle JBOSS"
 date:   2016-10-18
 desc: "Video sobre la instalación del bundle JBOSS de Bonita BPM"

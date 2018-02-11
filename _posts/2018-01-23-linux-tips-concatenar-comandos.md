@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "LINUX"
+sections: [LINUX]
 title:  "TIPS Concatenar comandos en linux"
 date:   2018-01-23
 desc: "Trucos para la concatenación y encadenamiento de comandos en linux. Esto te puede ser muy útil para crear scripts y aumentar tu productividad."

@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "TALEND"
+sections: [TALEND]
 title:  "Talend Open Studio Data Integration"
 date:   2016-10-30
 desc: "Herramienta ETL para la migración e integración de datos"

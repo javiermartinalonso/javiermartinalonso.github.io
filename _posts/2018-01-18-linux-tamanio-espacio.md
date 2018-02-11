@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "LINUX"
+sections: [LINUX]
 title:  "Linux: Espacio en disco, tamaños de directorios"
 date:   2018-01-18
 desc: "Recopilatorio de los comandos de Unix usados para obtener información de tamaño de ficheros, espacio disponible u ocupado en disco."
@@ -18,14 +18,14 @@ Recopilatorio de los comandos de Unix usados para obtener información de tamañ
 - `df -h` Espacio disponible en disco. Esto nos devolverá las particiones montadas, el uso de espacio en cada una y lo que nos queda de resto, y todo de forma fácil para leer.
 
 <!-- more -->
-- `du -bsh [absolutePath]` Tamaño total de una carpeta. Uso de disco. Muestra el espacio que esta ocupado en disco:
+- `du -bshc [absolutePath]` Tamaño total de una carpeta. Uso de disco. Muestra el espacio que esta ocupado en disco:
 
-	`Du` tiene más opciones, pero en este caso uso estas 3:
+	`Du` tiene más opciones, pero en este caso uso estas 4:
 	
 	- `-b` **[–bytes]**: Mostrar en bytes.
-	- `-s` **[–sumarize]**: Mostrar solamente el tamaño total de cada argumento.
-	- `-h` **[–human-readable]**: Imprime los tamaños de forma leíble (e.g., 1K, 234M, 2G)
-
+	- `-s` **[–sumarize]**: Mostrar solamente el tamaño total de cada archivo especificado (* para todos los archivos).
+	- `-h` **[–human-readable]**: Imprime los tamaños de forma leíble, al agregar el tamaño de los archivos en kb, mb, gb...(e.g., 1K, 234M, 2G)
+	- `-c` Esta opción la podemos emplear para que nos muestre el total del espacio consumido, al final de la lista.
 
 	Si sólo quisiéramos ver cuáles son, por ejemplo, los 5 directorios más pesados en nuestro` /home` podríamos usa du con una serie de comandos extras, por ejemplo:
 
@@ -35,6 +35,36 @@ Recopilatorio de los comandos de Unix usados para obtener información de tamañ
 		68G Documentos
 		50G Música
 		28G Imágenes
+
+	Si sólo quisiéramos ver cuáles son, por ejemplo, los archivos y directorios que ocupen más de 1 Gb, por ejemplo:
+
+		$ du -csh * | grep G
+		3,6G	Dropbox
+		6,9G	total
+
+	Si quisiéramos ver los archivos desde el más pesado al más liviano (ordenados):
+
+		$  du -cs * | sort -nr
+		8747536	total
+		3881532	Dropbox
+		2032968	Descargas
+		747856	sts-bundle
+		52240	Documentos
+		3852	Imágenes
+		52	pgadmin.log
+		8	Desktop
+		4	Vídeos
+		4	Público
+		4	Plantillas
+		4	Música
+		4	Escritorio
+
+	Si por ejemplo, quisiéramos ver los 3 archivos y carpetas más pesados:
+
+		$ du -csh * | sort -nr | head -3
+		733M	sts-bundle
+		635M	Descargas
+		606M	netbeans-8.0.2
 
 - `wc records.log` Imprimir todas las líneas que tiene un archivo y el número de bytes:
 

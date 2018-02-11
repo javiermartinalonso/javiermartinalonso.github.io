@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "Angular"
+sections: [Angular]
 title:  "Conceptos: Componente"
 date:   2016-12-26
 desc: "Estudiamos el concepto de componente dentro de la tecnología Angular."

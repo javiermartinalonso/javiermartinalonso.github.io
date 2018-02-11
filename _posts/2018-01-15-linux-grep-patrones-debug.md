@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "LINUX"
+sections: [LINUX]
 title:  "Búsquedas avanzadas con el comando grep"
 date:   2018-01-15
 desc: "Búsquedas avanzadas con el comando grep. Esto es muy útil para hacer debuggeo en un servidor, sacar estadísticas o recopilar información dentro de una maquina UNIX."

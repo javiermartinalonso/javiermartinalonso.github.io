@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "TALEND"
+sections: [TALEND]
 title:  "Talend Introducción"
 date:   2016-10-25
 desc: "Herramienta ETL para la migración e integración de datos"

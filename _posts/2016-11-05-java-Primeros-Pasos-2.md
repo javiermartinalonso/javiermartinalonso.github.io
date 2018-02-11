@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "JAVA"
+sections: [JAVA]
 title:  "Primeros Pasos con Java (2 de 2)"
 date:   2016-11-05
 desc: "Primeros Pasos con Java (2 de 2)"

@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "JAVA"
+sections: [JAVA]
 title:  "Variables de entorno de JAVA"
 date:   2016-11-06
 desc: "Variables de entorno de JAVA"

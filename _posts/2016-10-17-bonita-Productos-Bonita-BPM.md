@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "Bonita BPM"
+sections: [bonita]
 title:  "Productos Bonita BPM"
 date:   2016-10-17
 desc: "Video sobre las ediciones y herramientas de Bonita BPM"

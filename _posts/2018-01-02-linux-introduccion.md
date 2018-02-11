@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "LINUX"
+sections: [LINUX]
 title:  "Linux: Introducción al sistema operativo Linux"
 date:   2018-01-02
 desc: "Introducción al sistema operativo Linux."
