@@ -68,7 +68,7 @@ A continuación veamos como modificar este fichero para personalizar la imagen v
 
 - **Instalar aplicaciones en la imagen virtual**. Podemos definir los comandos a ejecutarse tras la creación de la imagen para ***aprovisionar la imagen con las aplicaciones necesarias***.
 
-	Por ejemplo si queremos ***instalar Docker en la imagen virtual*** como ya vimos en un post anterior **[Instalar Docker Ubuntu]({{ site.baseurl }}docker/2017/09/18/docker-Instalar-dockers-en-ubuntu.html "Instalar docker en ubuntu")** Podriamos añadir lo siguiente:
+	Por ejemplo si queremos ***instalar Docker en la imagen virtual*** como ya vimos en un post anterior **[Instalar Docker Ubuntu]({{ site.baseurl }}devops/devops/docker/2017/09/18/docker-Instalar-dockers-en-ubuntu.html "Instalar docker en ubuntu")** Podriamos añadir lo siguiente:
 
 		config.vm.provision "shell", inline: <<-SHELL
 			apt-get update
