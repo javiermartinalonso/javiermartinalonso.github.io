@@ -60,10 +60,12 @@ A continuación veamos como modificar este fichero para personalizar la imagen v
 
 	La anterior línea compartirá la carpeta del host `"./backup"`, con la carpeta de la máquina virtual `"/vagrant_data"`.
 
+	> El primer parámetro es una ruta a un directorio en la máquina host. Si la ruta es relativa, es relativa a la raíz del proyecto. El segundo parámetro debe ser una ruta absoluta de dónde compartir la carpeta dentro de la máquina invitada. Esta carpeta se creará (recursivamente, si es necesario) si no existe.
+
 - **Configurar características de la máquina virtual en virtualBox**. Por ejemplo para modificar la memoria asignada a la máquina indicando que sea de 8GB:
 
 		config.vm.provider "virtualbox" do |vb|
-			vb.memory = "8192"
+			vb.memory = "2048"
 		end
 
 - **Instalar aplicaciones en la imagen virtual**. Podemos definir los comandos a ejecutarse tras la creación de la imagen para ***aprovisionar la imagen con las aplicaciones necesarias***.
@@ -77,6 +79,9 @@ A continuación veamos como modificar este fichero para personalizar la imagen v
 			sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 			apt-get update
 			apt-get install -y docker-ce
+			
+			#Añada al usuario al grupo docker.
+			sudo usermod -aG docker $USER	
 		SHELL
 
 	También podriamos crear un nuevo archivo de scripting con extensión `.sh`. Esto le indicará a **Vagrant** que debe hacer uso de la herramienta nativa `Shell`, y ejecutar todos los comandos agregados al archivo `.sh`  para que se ejecute junto con la provisión de la máquina. Sustituiriamos todo el bloque anterior por algo similar a esto:
@@ -87,22 +92,19 @@ A continuación veamos como modificar este fichero para personalizar la imagen v
 
 El fichero Vagrantfile quedaría así:
 
-		# -*- mode: ruby -*-
-		# vi: set ft=ruby :
-	
-		Vagrant.configure("2") do |config|
-	
+	Vagrant.configure("2") do |config|
+
 		config.vm.box = "ubuntu/xenial64"
 		
-		#config.vm.network "forwarded_port", guest: 80, host: 8080
+		config.vm.network "forwarded_port", guest: 80, host: 8080
 		config.vm.network "private_network", ip: "192.168.33.10"
 		  
 		config.vm.network "public_network"
 
-		config.vm.synced_folder "./backup", "/vagrant_data"
+		config.vm.synced_folder "./backup", "/vagrant_data", create: true
 
 		config.vm.provider "virtualbox" do |vb|
-			vb.memory = "8192"
+			vb.memory = "2048"
 		end
 
 		config.vm.provision "shell", inline: <<-SHELL
@@ -112,6 +114,9 @@ El fichero Vagrantfile quedaría así:
 			sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 			apt-get update
 			apt-get install -y docker-ce
+			
+			#Añada al usuario al grupo docker.
+			sudo usermod -aG docker $USER	
 		SHELL
 	end
 
