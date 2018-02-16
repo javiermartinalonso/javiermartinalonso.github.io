@@ -1,12 +1,12 @@
 ---
 layout: post
-section: "DOCKER"
+sections: [docker]
 title:  "Dockerfile"
 date:   2017-10-02
 desc: "Dockerfiles son scripts que contienen comandos declarados sucesivamente que serán ejecutados, en el orden dado, por Docker para crear automáticamente una nueva imagen Docker. Estos ayudan en gran medida durante los despliegues.."
 keywords: "Dockers, Dockerfile, imagen-Docker"
-categories: [docker]
-tags: [Dockers, Dockerfile, imagen-Docker]
+categories: [DevOps, DevOps/docker]
+tags: [Dockers,Dockerfile,imagen-Docker]
 icon: fab fa-docker
 image: static/img/blog/docker/docker-logo.png
 ---

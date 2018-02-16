@@ -1,6 +1,6 @@
 ---
 layout: post
-section: "Git"
+sections: [Git]
 title:  "Ventajas de usar GIT"
 date:   2017-09-13
 desc: "."
@@ -10,6 +10,11 @@ tags: [git, GitHub, BitBucket]
 icon: fas fa-university
 image: static/img/blog/docker/docker-logo.png
 ---
+
+https://codeburst.io/git-and-github-in-a-nutshell-b0a3cc06458f
+
+https://dzone.com/articles/gitlab-vs-github-for-open-source-projects?edition=358115&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-03
+
 
 # ¿Qué es Git? #
 

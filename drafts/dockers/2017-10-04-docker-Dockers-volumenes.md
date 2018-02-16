@@ -1,15 +1,17 @@
 ---
 layout: post
-section: "DOCKER"
+sections: [docker]
 title:  "Volumenes Dockers"
 date:   2017-10-04
 desc: "Volumenes"
 keywords: "Dockers, virtualización, portabilidad, contenedor, maquina_virtual, integración_continua, DevOps, volumenes"
-categories: [docker]
-tags: [Dockers, virtualización, portabilidad,contenedor, maquina_virtual, integración_continua, DevOps, volumenes]
+categories: [DevOps, DevOps/docker]
+tags: [Dockers,virtualización,integración_continua,DevOps,volumenes]
 icon: fab fa-docker
 image: static/img/blog/docker/docker-logo.png
 ---
+
+http://www.tricksofthetrades.net/2016/03/14/docker-data-volumes/
 
 
 https://gist.github.com/alister/ed664cb51c21bc801e9a

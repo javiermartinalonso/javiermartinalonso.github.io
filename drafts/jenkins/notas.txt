@@ -1,0 +1,36 @@
+- CAMBIAR EL PARENT DE CADA MODULO A UNA CARPETA ÚNICA, PARA DESCARGAR SOLO EL .POM
+- AL DESCARGAR LOS MODULOS DEPENDIENTES Y EL PROPIO MODULO, LO MISMO DESCARGAR SOLO LO NECESARIO.
+- acciones en función del resultado de Pipeline
+	- notificaciones por slack
+	- notificaciones por correo
+- DIvIDIR EL JENKINS FILE EN  stages
+- definir los pasos de cada stage
+- guardar las credenciales si es necesario como variables de entorno
+- definir bien el paso de guardar pruebas para estudiar los casos en los que fallan los tests.
+- limpieza de los workspaces
+
+
+
+
+SonarQube Scanner
+clean compile test org.jacoco:jacoco-maven-plugin:prepare-agent
+
+desinstalar plugin de ssh
+
+
+
+NEXUS
+
+se puede instalar nexus en /opt y confurarlo para que deje datos en /data
+
+https://help.sonatype.com/display/NXRM3/Configuring+the+Runtime+Environment
+
+
+Configurando el Directorio de Datos
+Puede usar   $install-dir/bin/nexus.vmoptions  para definir una nueva ubicación para los datos que desea conservar. En el archivo de configuración, cambie los valores de - Dkaraf.data,    y  para designar una ruta absoluta que prefiera usar. El servicio nexus buscará agregar el directorio de datos a la ruta absoluta que configure. Por ejemplo, para usar la ruta absoluta,  cambie los valores de la siguiente manera:-Djava.io.tmpdir -XX:LogFile /opt/sonatype-work/nexus3
+
+-Dkaraf.data=/opt/sonatype-work/nexus3
+-Djava.io.tmpdir=/opt/sonatype-work/nexus3/tmp
+-XX:LogFile=/opt/sonatype-work/nexus3/log/jvm.log
+
+

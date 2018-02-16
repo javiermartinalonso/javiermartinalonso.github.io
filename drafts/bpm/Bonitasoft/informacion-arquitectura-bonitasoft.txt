@@ -1,0 +1,25 @@
+*************************************************************************************************************************************************************************************************************
+
+# contenido del repositorio de Bonita Studio. #
+
+https://community.bonitasoft.com/questions-and-answers/bonita-studio-7-not-deleting-process-files
+
+Si revisas el contenido de la carpeta, verás que un repositorio de Bonita Studio contiene varios artefactos. Los más importantes son probablemente:BonitaBPMCommunity-7.0.1/workspace/default/
+
+- Diagramas: archivos .proc ubicados en la carpeta "diagramas". Los archivos .proc almacenan la información del diagrama (es decir, definiciones de procesos).
+- Modelo de datos comerciales: un único archivo "bdm.zip" ubicado en la carpeta "bdm"
+- Definición e implementación de conectores: archivos de descripción (.def y .impl), archivos de traducción (.properties) y código fuente de Java (.java) para conectores desarrollados en el Studio (connectors-def, connectors-impl y src-connectors)
+- Filtros: Igual que los conectores pero para los filtros
+- Bibliotecas Java: todos los archivos jar agregados a la classpath de Studio y disponibles al compilar el código fuente (por ejemplo, scripts Groovy). Incluye controladores JDBC proporcionados por defecto con Studio. Tenga en cuenta que la configuración del proceso y las dependencias de los conectores definen si se integrará o no un archivo jar al crear un proceso (es decir, si se genera el archivo .bar).
+- Definición de organizaciones: un XML por organización se define en el Studio (principalmente para fines de prueba). La organización predeterminada se llama ACME.
+- Formularios, páginas y widgets de diseñadores de interfaz de usuario: archivos JSON y JavaScript almacenados en carpetas "web_pages" y "web_widgets". Los archivos se nombran con UID como 0096d371-549a-4210-a02c-2f915198a374.
+
+Cuando eliminó un diagrama en Studio, en realidad solo borró el archivo .proc (y la configuración de proceso asociada). Los formularios, BDM ... no se borran porque pueden ser utilizados por otros diagramas / procesos. Si realmente desea eliminarlos, debe ir al diseñador de la interfaz de usuario, ir al menú de Studio (Editar conector para eliminarlos) ... dependiendo del tipo de artefacto que desee eliminar.
+
+Tenga en cuenta que para BDM solo se puede definir un único BDM por repositorio y Studio no ofrece una interfaz de usuario para fusionar dos BDM. Si desea trabajar con varios BDM, se recomienda utilizar repositorio separado (edición de suscripción) o espacio de trabajo (edición de comunidad).
+
+
+
+
+
+*************************************************************************************************************************************************************************************************************
