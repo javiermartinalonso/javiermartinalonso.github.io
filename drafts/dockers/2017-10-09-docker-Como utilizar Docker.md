@@ -14,6 +14,8 @@ name: '{{.Name}}'
 networkSettings: '{{.NetworkSettings.IPAddress }}'
 ---
 
+https://rootsudo.wordpress.com/2016/06/29/docker-manual-en-espanol/?blogsub=confirming#blog_subscription-2
+https://www.muylinux.com/2016/04/19/tutorial-docker/
 https://github.com/brunocascio/docker-espanol
 http://training.play-with-docker.com/alacart/
 

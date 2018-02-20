@@ -1,17 +1,6 @@
-- name: Spring
-  percentage: 85
+# skills section data
 
-- name: jQuery
-  percentage: 70
-
-- name: Linux/Shell
-  percentage: 65  
-
-- name: Bonita BPM
-  percentage: 15
-
-- name: LDAP
-  percentage: 15
-
-- name: ANGULAR 2
-  percentage: 15  
+label: Ability
+id: cs
+aspects: Linux, Spring, Java, HTML/CSS, jQuery, Angular, MySQL, Oracle, Postgresql, BPMN, DevOps, vagrant, Docker
+percentage: 60, 90, 90, 85, 70, 60, 75, 60, 80, 60, 75, 60, 70, 60

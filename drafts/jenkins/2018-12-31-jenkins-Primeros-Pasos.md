@@ -4,88 +4,158 @@ section: "Jenkins"
 title:  "Primeros Pasos con Jenkins"
 date:   2018-02-14
 desc: "Primeros Pasos con Jenkins"
-keywords: ""
+keywords: "jenkins, "
 categories: [Jenkins]
-tags: []
+tags: [Integración_Continua, DevOps, jenkins, Blue Ocean]
 icon: fab fa-jenkins
 image: static/img/blog/jenkins/jenkins-logo.png
 ---
-
-https://en.wikipedia.org/wiki/Continuous_delivery
-
-La entrega continua ( CD ) es un enfoque de ingeniería de software en el cual los equipos producen software en ciclos cortos, lo que garantiza que el software se pueda lanzar confiablemente en cualquier momento. [1] Su objetivo es construir, probar y lanzar software más rápido y con mayor frecuencia. El enfoque ayuda a reducir el costo, el tiempo y el riesgo de realizar cambios al permitir más actualizaciones incrementales para las aplicaciones en producción. Un proceso de implementación sencillo y repetible es importante para la entrega continua.
-
-# Relación con DevOps # 
-
-La entrega continua y DevOps son similares en sus significados y a menudo se combinan, pero son dos conceptos diferentes. [2] DevOps tiene un alcance más amplio, [3] y se centra en el cambio cultural, específicamente la colaboración de los diversos equipos involucrados en la entrega de software (desarrolladores, operaciones, control de calidad, administración, etc.), así como la automatización de los procesos en la entrega de software. [3] La entrega continua, por otro lado, es un enfoque para automatizar el aspecto de la entrega, y se centra en reunir diferentes procesos y ejecutarlos más rápidamente y con mayor frecuencia. [4] Por lo tanto, DevOps puede ser un producto de entrega continua y el CD fluye directamente a DevOps.
-
-# Relación con la implementación continua #
-
-La entrega continua a veces se confunde con la implementación continua. La implementación continua significa que cada cambio se implementa automáticamente en la producción. La entrega continua significa que el equipo se asegura de que cada cambio se pueda implementar en la producción, pero puede optar por no hacerlo, generalmente por motivos comerciales. Para hacer una implementación continua, uno debe hacer una entrega continua. [5]
-
-# Herramientas / tipos de herramientas  #
-
-La entrega continua lleva la automatización desde el control de la fuente hasta la producción. Hay varias herramientas que ayudan a lograr todo o parte de este proceso. [10] Estas herramientas forman parte de la canalización de implementación que incluye la entrega continua. Los tipos de herramientas que ejecutan diversas partes del proceso incluyen: integración continua , automatización de lanzamiento de aplicaciones , automatización de compilación , gestión del ciclo de vida de las aplicaciones.
-
-# Arquitecturas para la entrega continua # 
-
-Para practicar la entrega continua de manera efectiva, las aplicaciones de software deben cumplir un conjunto de requisitos arquitectónicamente significativos (ASR) tales como la capacidad de despliegue, la capacidad de modificación y la capacidad de prueba. [12] Estos ASR requieren una alta prioridad y ya no se pueden intercambiar a la ligera.
-
-
-
-# Estrategias para superar los desafíos de adopción #
-
-Se han informado varias estrategias para superar los desafíos de adopción de entrega continua.
-
-| Estrategias para superar los desafíos de la adopción de CD | Estrategia !! Descripción |
-| Vender CD como analgésico | Identifique los puntos problemáticos de cada parte interesada que el CD puede resolver, y venda el CD como analgésico a ese interesado. Esta estrategia ayuda a lograr la aceptación de la amplia gama de partes interesadas que requiere una implementación de CD. |
-| Equipo dedicado con miembros multidisciplinarios | Sin un equipo dedicado, puede ser difícil progresar porque a menudo se asigna a los empleados a trabajar en otros flujos de valor. Un equipo multidisciplinario no solo proporciona la amplia gama de habilidades requeridas para la implementación del CD, sino que también suaviza la comunicación con los equipos relacionados. |
-| Entrega continua de entrega continua | Organice la implementación del CD de una manera que genere valor para la empresa lo antes posible, incorporando gradualmente más proyectos, en pequeños incrementos y, finalmente, implementando el CD en toda la organización. Esta estrategia ayuda a justificar la inversión requerida al hacer visibles los beneficios concretos en el camino. Los beneficios visibles, a su vez, ayudan a lograr el apoyo sostenido de la compañía y la inversión requerida para sobrevivir al largo y difícil viaje al CD. |
-| Comenzando con aplicaciones fáciles pero importantes | Al seleccionar las primeras aplicaciones para migrar a un CD, elija las que sean fáciles de migrar pero que sean importantes para la empresa. Ser fácil de migrar ayuda a demostrar los beneficios del CD rápidamente, lo que puede evitar que se mate la iniciativa de implementación. Ser importante para el negocio ayuda a asegurar los recursos requeridos, demuestra un valor claro e indiscutible y aumenta la visibilidad del CD en la organización. |
-| Esqueleto de la tubería Visual CD | Ofrezca a un equipo un esqueleto visual de canal de CD que tenga la vista completa de la línea de CD, pero con etapas vacías para aquellos que aún no pueden implementar. Esto ayuda a construir una mentalidad de CD y mantener el impulso para la adopción de CD. El esqueleto del pipeline es especialmente útil cuando la migración del equipo al CD requiere un gran esfuerzo y cambios de mentalidad durante un largo período de tiempo. |
-| Caída experta | Asigne un experto en CD para que se una a proyectos difíciles como miembro sénior del equipo de desarrollo. Tener al experto en el equipo ayuda a construir la motivación y el impulso para pasar al CD desde el interior del equipo. También ayuda a mantener el impulso cuando la migración requiere un gran esfuerzo y un largo período de tiempo. |
-
-
-
-
 
 
 # Tutorial Jenkins #
 
 # ¿Qué es Jenkins? #
 
-Jenkins es un servidor autónomo de código abierto que se puede usar para automatizar todo tipo de tareas relacionadas con la construcción, prueba y entrega o implementación de software.
+***Jenkins*** es un servidor autónomo de código abierto que se puede usar para automatizar todo tipo de tareas relacionadas con la [integración continua]({{ site.baseurl }}devops/2018/02/25/devops-integracion-continua.html) de software.
 
-Jenkins puede instalarse a través de paquetes de sistema nativos, Docker, o incluso ejecutarse de manera independiente en cualquier máquina con Java Runtime Environment (JRE) instalado.
+***Jenkins*** puede instalarse a través de paquetes de sistema nativos, Docker, o incluso ejecutarse de manera independiente en cualquier máquina con [Java Runtime Environment (JRE)]({{site.baseurl}}/java/2016/11/06/java-Instalacion-JDK.html) instalado.
 
-Jenkins es un producto altamente extensible cuya funcionalidad puede extenderse mediante la instalación de complementos.
+***Jenkins*** es un producto altamente extensible cuya funcionalidad puede extenderse mediante la instalación de complementos.
 
-Hay una gran variedad de complementos disponibles para Jenkins
+Hay una gran variedad de complementos disponibles para ***Jenkins***
 
 ----------
+https://jenkins.io/doc/book/installing/#installing-docker
+
+# Instalando Jenkins  #
+
+Los procedimientos en esta página son para nuevas instalaciones de ***Jenkins*** en una máquina única / local.
+Nota: Aunque esta página se centra en las instalaciones locales de ***Jenkins***, este contenido también se puede usar para ayudar a configurar ***Jenkins*** en entornos de producción.
+
+
+***Jenkins*** normalmente se ejecuta como una aplicación independiente en su propio proceso con el servidor de aplicaciones / contenedor de servlets Java integrado ( Jetty ).
+
+***Jenkins*** también se puede ejecutar como un servlet en diferentes contenedores de servlets de Java como Apache Tomcat o GlassFish . Sin embargo, las instrucciones para configurar este tipo de instalaciones están fuera del alcance de esta página.
+
 
 
 ## Requisitos previos ##
 
-Configuración mínima recomendada:
-
-Java 7
-256 MB de memoria libre
-+ 1 GB de espacio libre en disco
-Configuración recomendada para el pequeño equipo:
-
-Java 8
-1 GB de memoria libre +
-50 GB + espacio libre en disco
+- Java 8
+- 1 GB de memoria libre +
+- 50 GB + espacio libre en disco
 
 ## Stand-alone or Servlet? ##
 
-Jenkins puede funcionar stand-alone esto es independientemente en su propio proceso utilizando su propio servidor web. También puede funcionar como un servlet en un marco existente, como Tomcat. Esta sección está dirigida específicamente a stand-alone instalación y ejecución.
+***Jenkins*** puede funcionar *stand-alone*, es decir, que se puede ejecutar sin necesidad de un procedimiento de instalación, basta con desplegarlo en su propio servidor web y ejecutarlo con su propio servicio. También puede funcionar en un contenedor de servlet existente, como Tomcat. Esta sección está dirigida específicamente a una instalación y ejecución *stand-alone*.
+
+
+
+# Docker #
+
+***Docker*** es una plataforma para ejecutar aplicaciones en un entorno aislado llamado ***contenedor Docker***. Las aplicaciones como ***Jenkins*** se pueden descargar como ***imágenes de solo lectura (imágenes Docker)***, cada una de las cuales se ejecuta en ***Docker*** como contenedor. Un ***contenedor Docker*** es en efecto una "instancia en ejecución" de una ***imagen Docker***. Desde esta perspectiva, una imagen se almacena permanentemente más o menos (es decir, en la medida en que se publican las actualizaciones de imágenes), mientras que los contenedores se almacenan temporalmente. 
 
 
 
 
+Lea más acerca de estos conceptos en la sección Primeros pasos de la documentación de ***Docker*** , Orientación y configuración .
 
+
+
+
+La filosofía de trabajo de contenedores de la plataforma ***Docker*** significa que una ***imagen Docker***, para cualquier aplicación dada como ***Jenkins***, se puede ejecutar en cualquier sistema operativo compatible (macOS, Linux y Windows) o servicio en la nube (AWS y Azure) que también ejecute ***Docker***.
+
+
+La imagen recomendada de ***Docker*** para usar es la imagen [jenkinsci/blueocean](https://hub.docker.com/r/jenkinsci/blueocean/) (del repositorio de [Docker Hub](https://hub.docker.com/)). Esta imagen contiene la [versión actual de Soporte a Largo Plazo (LTS) de Jenkins](https://jenkins.io/download/)  (que está lista para producción) incluida con todos los complementos y características de ***Blue Ocean***. Esto significa que no necesita instalar el plugin ***Blue Ocean*** por separado.
+
+		docker run \
+		  -u root \
+		  --rm \
+		  -d \
+		  -p 8080:8080 \
+		  -p 50000:50000 \
+		  -v jenkins-data:/var/jenkins_home \
+		  -v /var/run/docker.sock:/var/run/docker.sock \
+		  jenkinsci/blueocean
+
+- `-u` indicamos el usuario con el que se ejecutaran los servicios dentro del contenedor.
+
+- `-rm`	(Opcional) Elimina automáticamente el contenedor ***Docker*** cuando se apaga. Esto mantiene las cosas ordenadas si necesita abandonar ***Jenkins***.
+
+- `-d` ( Opcional ) Ejecuta el contenedor ***jenkinsci/blueocean*** en segundo plano y muestra la ID del contenedor. Si no especifica esta opción, el log de la ejecución del contenedor se muestra en la ventana del terminal.
+
+- `-p` Mapea o publica, el puerto interno del contenedor al puerto 8080 en la máquina host. El primer número representa el puerto en el host, mientras que el último representa el puerto del contenedor. El segundo mapeo de puertos al puerto 50000 en la máquina host, sólo es necesario si ha configurado uno o más agentes ***Jenkins*** en otras máquinas, que a su vez interactúan con el contenedor ***jenkinsci/blueocean*** (actuando como el servidor "maestro" de ***Jenkins***, o simplemente como *"Jenkins master"*) en el puerto por defecto 50000.
+
+- `-v` ( Opcional pero muy recomendado ) Mapeo del directorio `/var/jenkins_home` en el contenedor al volumen Docker con el nombre `jenkins-data`. Si este volumen no existe, este comando `docker run` creará automáticamente el volumen por usted. Esta opción es necesaria si desea que su estado de ***Jenkins*** persista cada vez que reinicie ***Jenkins***. Si no especifica esta opción, entonces ***Jenkins*** se restablecerá efectivamente a una nueva instancia después de cada reinicio.
+
+> Notas: El volumen  `jenkins-data` también se puede crear de forma independiente con el comando `docker volume create`:
+> 
+> 		docker volume create jenkins-data
+> 
+> En lugar de mapear el directorio `/var/jenkins_home` a un volumen ***Docker***, también podría asignar este directorio a uno en el sistema de archivos local de su máquina. Por ejemplo, al especificar la opción `- v $HOME/jenkins:/var/jenkins_home` sincroniza el directorio `/var/jenkins_home` del contenedor con el subdirectorio `jenkins` dentro del directorio `$HOME` en su máquina local, que típicamente sería `/Users/<your-username>/jenkins` o `/home/<your-username>/jenkins`.
+
+- `-v /var/run/docker.sock:/var/run/docker.sock` ( Opcional ) Sirve para que el contenedor se comunique con el `daemon Docker`, que es necesario si el ***jenkins*** necesita crear instancias de otros contenedores ***Docker*** en la sección `agent { docker { ... } }` de pipelines declarativos.
+
+- `jenkinsci/blueocean` identifica la imagen de ***Docker*** en sí. Si esta imagen aún no se ha descargado, este comando `docker run` descargará automáticamente la imagen por usted. Además, si se publicaron actualizaciones de esta imagen desde la última vez que ejecutó este comando, ejecutar nuevamente este comando descargará automáticamente las actualizaciones de imágenes publicadas por usted.
+
+> Nota: Esta imagen Docker también se puede descargar (o actualizar) de forma independiente con el comando `docker pull`:
+> 
+> 		docker pull jenkinsci/blueocean
+
+
+# Desbloqueo de Jenkins #
+
+Cuando accede por primera vez a una nueva instancia de ***Jenkins*** en `http://localhost:8080` (o el puerto que configuró para ***Jenkins*** cuando lo instaló), se le solicita que la desbloquee usando una contraseña generada automáticamente.
+
+imagen
+
+
+Consulta el registro de log de la consola de ***Jenkins*** y copie la contraseña alfanumérica generada automáticamente (entre los 2 conjuntos de asteriscos) y haga clic en Continuar. 
+
+
+
+
+imagen
+
+
+
+
+> Notas:
+> 
+> Si ejecutó ***Jenkins*** en Docker en segundo plano, puede acceder al registro de log de la consola de ***Jenkins*** desde la carpeta sincronizada en el host.
+> 
+> El registro de log de la consola de ***Jenkins*** indica la ubicación (en el directorio `jenkins_home`) donde también se puede obtener esta contraseña. Esta contraseña debe ingresarse en el asistente de configuración en las nuevas instalaciones de ***Jenkins*** antes de que pueda acceder a la interfaz de usuario principal de ***Jenkins***. Esta contraseña también sirve como la contraseña predeterminada de la cuenta de administrador (con nombre de usuario "admin") si se salta el siguiente paso de creación de usuario en el asistente de configuración.
+
+# Personalizando Jenkins con complementos #
+
+Después de desbloquear a ***Jenkins*** , aparece la página Personalizar ***Jenkins*** . Aquí puede instalar cualquier cantidad de complementos útiles como parte de su configuración inicial.
+
+Haga clic en una de las dos opciones que se muestran:
+
+Instale los complementos sugeridos : para instalar el conjunto recomendado de complementos, que se basan en los casos de uso más comunes.
+
+Seleccione los complementos para instalar : para elegir el conjunto de complementos que se instalará inicialmente. Cuando accede por primera vez a la página de selección de complementos, los complementos sugeridos se seleccionan de forma predeterminada.
+
+Si no está seguro de qué complementos necesita, elija Instalar complementos sugeridos . Puede instalar (o eliminar) complementos adicionales de ***Jenkins*** en un momento posterior a través de la página Administrar Jenkins > Administrar complementos en ***Jenkins***.
+El asistente de instalación muestra la progresión de la configuración de ***Jenkins*** y la instalación del conjunto de plugins de ***Jenkins*** elegido. Este proceso puede tardar unos minutos.
+
+# Creando el primer usuario administrador #
+
+Finalmente, después de personalizar ***Jenkins*** con complementos , ***Jenkins*** le pide que cree su primer usuario administrador.
+
+1. Cuando aparezca la página Crear primer usuario de administrador, especifique los detalles para su usuario administrador en los campos respectivos y haga clic en Guardar y finalizar .
+
+2. Cuando la página de ***Jenkins*** está lista , haga clic en Comenzar a usar ***Jenkins*** . 
+
+	> Notas:
+	> 
+	> ¡Esta página puede indicar que ***Jenkins*** está casi listo! en su lugar, y si es así, haz clic en Reiniciar .
+	> 
+	> Si la página no se actualiza automáticamente después de un minuto, use su navegador web para actualizar la página manualmente.
+	
+3. Si es necesario, inicie sesión en ***Jenkins*** con las credenciales del usuario que acaba de crear y ¡ya está listo para comenzar a usar ***Jenkins***!
+ 
+> A partir de este momento, solo se puede acceder a la interfaz de usuario de ***Jenkins*** proporcionando credenciales válidas de nombre de usuario y contraseña.
 ----------
 
 https://jenkins.io/doc/pipeline/tour/hello-world/
@@ -94,11 +164,11 @@ https://jenkins.io/doc/pipeline/tour/hello-world/
 
 ## ¿Qué es un Pipeline Jenkins? ##
 
-Jenkins Pipeline (o simplemente "Pipeline") es un conjunto de complementos que permite implementar e integrar interconexiones continuas en Jenkins.
+Jenkins Pipeline (o simplemente "Pipeline") es un conjunto de complementos que permite implementar e integrar interconexiones continuas en ***Jenkins***.
 
 Una cartera de entrega continua es una expresión automática de su proceso para obtener software desde el control de la versión hasta sus usuarios y clientes.
 
-Jenkins Pipeline proporciona un conjunto extensible de herramientas para modelar tuberías de entrega simples a complejas "como código". La definición de Jenkins Pipeline normalmente se escribe en un archivo de texto (llamado a Jenkinsfile) que a su vez se registra en el repositorio de control de origen de un proyecto. 
+Jenkins Pipeline proporciona un conjunto extensible de herramientas para modelar tuberías de entrega simples a complejas "como código". La definición de Jenkins Pipeline normalmente se escribe en un archivo de texto (llamado a **Jenkinsfile**) que a su vez se registra en el repositorio de control de origen de un proyecto. 
 
 
 
@@ -131,7 +201,7 @@ Las secciones en el Canal Declarativo típicamente contienen una o más Directiv
 
 **agente**
 
-La sección **agent** especifica dónde se ejecutará el **Pipeline**, o un `stage` específico, en el entorno de Jenkins dependiendo de dónde se ubica la sección `agent`. La sección debe definirse en el nivel superior dentro del bloque pipeline, pero el uso a nivel de escenario es opcional.
+La sección **agent** especifica dónde se ejecutará el **Pipeline**, o un `stage` específico, en el entorno de ***Jenkins*** dependiendo de dónde se ubica la sección `agent`. La sección debe definirse en el nivel superior dentro del bloque pipeline, pero el uso a nivel de escenario es opcional.
 
 
 Stage-level agent section
@@ -309,9 +379,9 @@ Otra forma de administrar el control de flujo de Scripted Pipeline es con el sop
 
 # Comparación de sintaxis #
 
-Cuando se creó Jenkins Pipeline, Groovy fue seleccionada como la base. Jenkins ha sido enviado por mucho tiempo con un motor Groovy incorporado para proporcionar capacidades avanzadas de scripting para administradores y usuarios por igual. Además, los implementadores de Jenkins Pipeline descubrieron que Groovy era una base sólida sobre la cual construir lo que ahora se conoce como el DSL "Scripted Pipeline". [ 2 ] .
+Cuando se creó Jenkins Pipeline, Groovy fue seleccionada como la base. ***Jenkins*** ha sido enviado por mucho tiempo con un motor Groovy incorporado para proporcionar capacidades avanzadas de scripting para administradores y usuarios por igual. Además, los implementadores de Jenkins Pipeline descubrieron que Groovy era una base sólida sobre la cual construir lo que ahora se conoce como el DSL "Scripted Pipeline". [ 2 ] .
 
-Como es un entorno de programación con todas las funciones, Scripted Pipeline ofrece una tremenda cantidad de flexibilidad y extensibilidad para los usuarios de Jenkins. La curva de aprendizaje de Groovy no suele ser deseable para todos los miembros de un equipo determinado, por lo que Declarative Pipeline se creó para ofrecer una sintaxis más simple y con más opiniones para la creación de Jenkins Pipeline.
+Como es un entorno de programación con todas las funciones, Scripted Pipeline ofrece una tremenda cantidad de flexibilidad y extensibilidad para los usuarios de ***Jenkins***. La curva de aprendizaje de Groovy no suele ser deseable para todos los miembros de un equipo determinado, por lo que Declarative Pipeline se creó para ofrecer una sintaxis más simple y con más opiniones para la creación de Jenkins Pipeline.
 
 Los dos son fundamentalmente el mismo subsistema Pipeline debajo. Ambas son implementaciones duraderas de "Pipeline as code". Ambos pueden usar pasos integrados en Pipeline o proporcionados por complementos. Ambos pueden utilizar bibliotecas compartidas
 
@@ -337,7 +407,7 @@ En la sección anterior, puede haber notado la directiva `agent` en cada uno de 
 
 Debajo del capó, hay algunas cosas que `agent` hace que suceda:
 
-- Todos los pasos contenidos dentro del bloque son puestos en cola para su ejecución por Jenkins. Tan pronto como un **ejecutor** esté disponible, los pasos comenzarán a ejecutarse.
+- Todos los pasos contenidos dentro del bloque son puestos en cola para su ejecución por ***Jenkins***. Tan pronto como un **ejecutor** esté disponible, los pasos comenzarán a ejecutarse.
 
 - Se asigna un **workspace (espacio de trabajo)** que contendrá los archivos desprotegidos del control de origen, así como cualquier archivo de trabajo adicional para Pipeline.
 
@@ -346,7 +416,7 @@ Debajo del capó, hay algunas cosas que `agent` hace que suceda:
 > Un espacio para la ejecución del trabajo definido por un **Pipeline** o Proyecto en un Nodo . Un nodo puede tener cero o más ejecutores configurados, lo que corresponde a la cantidad de proyectos simultáneos o **Pipelines** que se pueden ejecutar en ese nodo.
 > 
 > **workspace Espacio de trabajo**
-> Un directorio desechable en el sistema de archivos de un Nodo donde el trabajo puede ser realizado por un Pipeline o Proyecto . Los espacios de trabajo generalmente se dejan en su lugar después de que se complete una ejecución de build (compilación) o Pipeline, a menos que se hayan implementado políticas de limpieza específicas del espacio de trabajo en Jenkins Master .
+> Un directorio desechable en el sistema de archivos de un Nodo donde el trabajo puede ser realizado por un Pipeline o Proyecto . Los espacios de trabajo generalmente se dejan en su lugar después de que se complete una ejecución de build (compilación) o Pipeline, a menos que se hayan implementado políticas de limpieza específicas del espacio de trabajo en ***Jenkins*** Master .
 
 Pipeline está diseñado para usar fácilmente imágenes y contenedores Docker para ejecutar dentro. Esto permite que Pipeline defina el entorno y las herramientas requeridas sin tener que configurar varias herramientas del sistema y dependencias de los agentes manualmente. Este enfoque le permite utilizar prácticamente cualquier herramienta que pueda empaquetarse en un contenedor Docker
 
@@ -403,7 +473,7 @@ Las variables de entorno pueden establecerse globalmente, como en el siguiente e
 
 
 
-Este enfoque para definir variables de entorno desde dentro Jenkinsfile puede ser muy útil para instruir scripts, como a Makefile, para configurar la compilación o las pruebas de manera diferente para ejecutarlas dentro de Jenkins.
+Este enfoque para definir variables de entorno desde dentro Jenkinsfile puede ser muy útil para instruir scripts, como a Makefile, para configurar la compilación o las pruebas de manera diferente para ejecutarlas dentro de ***Jenkins***.
 
 Otro uso común para las variables de entorno es establecer o anular las credenciales "ficticias" en los scripts de compilación o prueba. Debido a que ( obviamente ) es una mala idea colocar las credenciales directamente en una Jenkinsfile, Jenkins Pipeline permite a los usuarios acceder de forma rápida y segura a las credenciales predefinidas Jenkinsfilesin necesidad de conocer sus valores.
 
@@ -429,13 +499,13 @@ https://jenkins.io/doc/pipeline/tour/tests-and-artifacts/
 
 # Pruebas de grabación y artefactos # 
 
-Si bien las pruebas son una parte crítica de una buena canalización continua de entregas, la mayoría de las personas no quiere examinar miles de líneas de resultados de la consola para encontrar información sobre las pruebas fallidas. Para hacerlo más fácil, Jenkins puede registrar y agregar resultados de prueba siempre y cuando el corredor de prueba pueda dar salida a los archivos de resultados de prueba. Jenkins generalmente viene incluido con el junitpaso, pero si su corredor de prueba no puede generar informes XML de estilo JUnit, existen complementos adicionales que procesan prácticamente cualquier formato de informe de prueba ampliamente utilizado.
+Si bien las pruebas son una parte crítica de una buena canalización continua de entregas, la mayoría de las personas no quiere examinar miles de líneas de resultados de la consola para encontrar información sobre las pruebas fallidas. Para hacerlo más fácil, ***Jenkins*** puede registrar y agregar resultados de prueba siempre y cuando el corredor de prueba pueda dar salida a los archivos de resultados de prueba. ***Jenkins*** generalmente viene incluido con el junitpaso, pero si su corredor de prueba no puede generar informes XML de estilo JUnit, existen complementos adicionales que procesan prácticamente cualquier formato de informe de prueba ampliamente utilizado.
 
 Para recopilar nuestros resultados de prueba y artefactos, utilizaremos la postsección.
 
-Esto siempre tomará los resultados de la prueba y permitirá a Jenkins rastrearlos, calcular tendencias e informar sobre ellos. Una tubería que tiene pruebas fallidas se marcará como "INESTABLE", indicada por amarillo en la interfaz de usuario web. Eso es distinto del estado "FAILED", denotado por rojo.
+Esto siempre tomará los resultados de la prueba y permitirá a ***Jenkins*** rastrearlos, calcular tendencias e informar sobre ellos. Una tubería que tiene pruebas fallidas se marcará como "INESTABLE", indicada por amarillo en la interfaz de usuario web. Eso es distinto del estado "FAILED", denotado por rojo.
 
-Cuando hay fallas en las pruebas, a menudo es útil tomar artefactos construidos de Jenkins para su análisis e investigación local. Esto es práctico gracias al soporte integrado de Jenkins para almacenar "artefactos", archivos generados durante la ejecución de Pipeline.
+Cuando hay fallas en las pruebas, a menudo es útil tomar artefactos construidos de ***Jenkins*** para su análisis e investigación local. Esto es práctico gracias al soporte integrado de ***Jenkins*** para almacenar "artefactos", archivos generados durante la ejecución de Pipeline.
 
 Esto se hace fácilmente con el archiveArtifactspaso y una expresión de archivo globbing, como se demuestra en el siguiente ejemplo:
 		
@@ -466,7 +536,7 @@ Esto se hace fácilmente con el archiveArtifactspaso y una expresión de archivo
 Si se especifica más de un parámetro en el paso archiveArtifacts, el nombre de cada parámetro debe especificarse explícitamente en el código del paso, es decir, para artifacts la ruta y el nombre del archivo del artefacto, y para fingerprint elegir esta opción. Si solo necesita especificar la ruta y los nombres de archivo de los artefactos, puede omitir el nombre del parámetro artifacts, por ejemplo
 archiveArtifacts 'build/libs/**/*.jar'
 
-Las pruebas de grabación y los artefactos en Jenkins son útiles para hacer emerger rápida y fácilmente información a varios miembros del equipo. En la siguiente sección, hablaremos sobre cómo decirles a los miembros del equipo lo que ha estado sucediendo en nuestro Pipeline.
+Las pruebas de grabación y los artefactos en ***Jenkins*** son útiles para hacer emerger rápida y fácilmente información a varios miembros del equipo. En la siguiente sección, hablaremos sobre cómo decirles a los miembros del equipo lo que ha estado sucediendo en nuestro Pipeline.
 
 
 
@@ -491,26 +561,26 @@ Una máquina macOS, Linux o Windows con:
 
 256 MB de RAM, aunque se recomienda más de 512 MB.
 
-10 GB de espacio en disco para Jenkins y sus imágenes y contenedores Docker.
+10 GB de espacio en disco para ***Jenkins*** y sus imágenes y contenedores Docker.
 
 El siguiente software instalado:
 
-Docker : lea más sobre la instalación de Docker en la sección Instalación Docker de la página Instalación de Jenkins . 
+Docker : lea más sobre la instalación de Docker en la sección Instalación Docker de la página Instalación de ***Jenkins*** . 
 Nota: Si usa Linux, este tutorial supone que no está ejecutando comandos Docker como usuario raíz, sino que tiene una única cuenta de usuario que también tiene acceso a las otras herramientas utilizadas en este tutorial.
 
 Git y opcionalmente GitHub Desktop .
 
 Ejecutar Jenkins en Docker
-En este tutorial, ejecutará Jenkins como un contenedor Docker de la jenkinsci/blueoceanimagen Docker.
+En este tutorial, ejecutará ***Jenkins*** como un contenedor Docker de la jenkinsci/blueoceanimagen Docker.
 
 Para ejecutar Jenkins en Docker, siga las instrucciones relevantes a continuación para macOS y Linux o Windows .
 
-Puede leer más sobre los conceptos de imagen y contenedor de Docker en Docker y descargar y ejecutar Jenkins en las secciones Docker de la página Instalación de Jenkins .
+Puede leer más sobre los conceptos de imagen y contenedor de Docker en Docker y descargar y ejecutar ***Jenkins*** en las secciones Docker de la página Instalación de Jenkins .
 
 En macOS y Linux
 Abre una ventana de terminal.
 
-Ejecute la jenkinsci/blueoceanimagen como contenedor en Docker con el siguiente docker run comando (teniendo en cuenta que este comando descarga automáticamente la imagen si no se ha hecho):
+Ejecute la ***jenkinsci/blueocean*** imagen como contenedor en Docker con el siguiente docker run comando (teniendo en cuenta que este comando descarga automáticamente la imagen si no se ha hecho):
 
 docker run \
   --rm \
@@ -526,20 +596,82 @@ docker run \
 
 
 
-Blue Ocean es una nueva interfaz de usuario (UI) y experiencia de usuario (UX) para Jenkins. Está diseñada para hacer que la UI de Jenkins sea más eficiente (reduce el desorden y aumenta la claridad). En palabras simples: Blue Ocean es una nueva interfaz de usuario para Jenkins. una vista interactiva para Jenkins Pipeline (y trabajos) Cómo obtener Blue Ocean 
 
-Asegúrese de tener Jenkins 2.7 o superior y siga los pasos: 
-Paso 1 Instalar Blue Ocean Plugin 
-Paso 2 Cambiar a Blue Ocean View 
 
-Referencias: Blue Ocean Wiki
+https://wiki.jenkins.io/display/JENKINS/Blue+Ocean+Plugin
 
+
+Blue Ocean Plugin
+Saltar al final de los metadatos
+Creado por Michael Neale , última modificación hecha por Vivek Pandey hace menos de un minuto Ir al inicio de los metadatos
+Vea Blue Ocean en el sitio del complemento para obtener más información.
+
+¿Qué es Blue Ocean?
+ 
+Blue Ocean es un nuevo proyecto que replantea la experiencia del usuario de ***Jenkins***. Diseñado desde cero para ***Jenkins*** Pipeline y compatible con trabajos de Freestyle, Blue Ocean reduce el desorden y aumenta la claridad para cada miembro de su equipo a través de las siguientes características clave:
+
+Visualizaciones sofisticadas de líneas  de CD , lo que permite una comprensión rápida e intuitiva del estado del canal de software.
+Editor de  canalización que hace que la automatización de las canalizaciones de CD sea accesible guiando al usuario a través de un proceso intuitivo y visual para crear una canalización.
+Personalización  de la interfaz de usuario de ***Jenkins*** para satisfacer las necesidades basadas en roles de cada miembro del equipo DevOps.
+Determine la precisión  cuando se necesita intervención y / o surgen problemas. La interfaz de usuario de Blue Ocean muestra en qué punto se necesita atención, lo que facilita el manejo de excepciones y aumenta la productividad.
+La integración nativa para las solicitudes de extracción y extracción  permite la máxima productividad del desarrollador cuando se colabora en el código con otros en GitHub y Bitbucket.
+Tenga en cuenta que  el plugin Blue Ocean  es el único que necesita instalar desde Jenkins UpdateCenter. 
+  
+[Aprende más](https://jenkins.io/projects/blueocean/) 
+
+https://jenkins.io/doc/book/blueocean/getting-started/
 
 
 ## Referencias ##
+
+[https://en.wikipedia.org/wiki/Continuous_delivery](https://en.wikipedia.org/wiki/Continuous_delivery)
+
 
 [https://jenkins.io](https://jenkins.io "https://jenkins.io")
 
 [https://jenkins.io/doc/book/getting-started/installing/](https://jenkins.io/doc/book/getting-started/installing/ "https://jenkins.io/doc/book/getting-started/installing/")
 
 [manual de usuario Jenkins](https://jenkins.io/doc/book/)
+
+
+
+
+
+
+
+
+
+
+
+https://jenkins.io/doc/tutorials/build-a-multibranch-pipeline-project/
+
+
+		environment {
+		        CI = 'true'
+		    }
+
+
+
+		stage('Deliver for development') {
+			when {
+			    branch 'development'
+			}
+			steps {
+			    sh './jenkins/scripts/deliver-for-development.sh'
+			    input message: 'Finished using the web site? (Click "Proceed" to continue)'
+			    sh './jenkins/scripts/kill.sh'
+			}
+			}
+			stage('Deploy for production') {
+			when {
+			    branch 'production'
+			}
+			steps {
+			    sh './jenkins/scripts/deploy-for-production.sh'
+			    input message: 'Finished using the web site? (Click "Proceed" to continue)'
+			    sh './jenkins/scripts/kill.sh'
+			}
+		}
+
+
+	Estas whendirectivas (junto con sus condiciones branch) determinan si se debe ejecutar stages(que contiene estas directivas when). Si branc hel valor de una condición (es decir, el patrón) coincide con el nombre de la rama desde la que ***Jenkins*** está ejecutando la construcción, entonces se ejecutará la stage que contiene esto when y la branch construcción.

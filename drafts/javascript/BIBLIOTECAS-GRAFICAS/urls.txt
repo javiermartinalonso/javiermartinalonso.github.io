@@ -1,1 +1,5 @@
+http://www.chartjs.org/docs/latest/getting-started/installation.html
+https://cdnjs.com/libraries/Chart.js
+https://github.com/chartjs/Chart.js/releases/tag/v2.7.1
+https://github.com/chartjs/Chart.js
 http://bpmn.io/toolkit/bpmn-js/
