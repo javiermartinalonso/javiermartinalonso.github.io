@@ -66,6 +66,10 @@ Lea más acerca de estos conceptos en la sección Primeros pasos de la documenta
 La filosofía de trabajo de contenedores de la plataforma ***Docker*** significa que una ***imagen Docker***, para cualquier aplicación dada como ***Jenkins***, se puede ejecutar en cualquier sistema operativo compatible (macOS, Linux y Windows) o servicio en la nube (AWS y Azure) que también ejecute ***Docker***.
 
 
+
+
+# Lanzar Jenkins en un contenedor Docker #
+
 La imagen recomendada de ***Docker*** para usar es la imagen [jenkinsci/blueocean](https://hub.docker.com/r/jenkinsci/blueocean/) (del repositorio de [Docker Hub](https://hub.docker.com/)). Esta imagen contiene la [versión actual de Soporte a Largo Plazo (LTS) de Jenkins](https://jenkins.io/download/)  (que está lista para producción) incluida con todos los complementos y características de ***Blue Ocean***. Esto significa que no necesita instalar el plugin ***Blue Ocean*** por separado.
 
 		docker run \
@@ -103,6 +107,120 @@ La imagen recomendada de ***Docker*** para usar es la imagen [jenkinsci/blueocea
 > 		docker pull jenkinsci/blueocean
 
 
+
+# Accediendo al terminal / símbolo del sistema contenedor Jenkins / Blue Ocean Docker #
+
+Si tiene alguna experiencia con ***Docker*** y desea o necesita acceder al ***contenedor jenkinsci/blueocean*** a través de un terminal / símbolo del sistema puede hacerlo usando el comando `docker exec` con la opcion `-it` para entrar en modo iterativo en una terminal añadiendo al final el comando `bash`, para acceder directamente a la terminal del contenedor. Para ello necesita que el contenedor este identificado para acceder al contenedor en ejecución. 
+
+> Puede agregar una opción como `--name jenkins-blueocean` en el comando de arranque del contenedor (comando `docker run` [explicado en el apartado anterior](#lanzar-jenkins-en-un-contenedor-docker)), que le daría al contenedor `jenkinsci/blueocean` el nombre "jenkins-blueocean" o bien con el comando `docker ps` podría obtener el id del contenedor o el nombre asignado por el ***daemon docker***. 
+
+Esto significa que puede acceder al contenedor (a través de una ventana de solicitud de terminal /  símbolo del sistema separada) con un comando `docker exec` como:
+
+		docker exec -it <docker-container-name> bash
+
+# Accediendo al registro de log de la consola de Jenkins a través de Docker logs#
+
+Existe la posibilidad de que necesite acceder al registro de la consola de ***Jenkins***, por ejemplo, al desbloquear ***Jenkins*** como parte del asistente de instalación posterior a la instalación .
+
+Puede acceder desde desde el terminal como se indica en el apartado anterior o bien directamente ejecutando el comando:
+
+		docker logs <docker-container-name>
+
+> Tu `<docker-container-name>` puedes obtenerlo usando el comando `docker ps`. Si especificó la opción `--name jenkins-blueocean` en el comando `docker run` [explicado anteriormente](#lanzar-jenkins-en-un-contenedor-docker).
+
+# Accediendo al directorio `jenkins_home` #
+
+Existe la posibilidad de que necesite acceder al directorio `jenkins_home`, por ejemplo, para verificar los detalles de una compilación de ***Jenkins*** en el subdirectorio `workspace` .
+
+Puedes acceder a través de la shell del contenedor o bien a través del directorio del host sincronizado con un volumen dentro del contenedor como se explicó en los apartados anteriores.
+
+# Instalacion del Archivo WAR como stand-alone#
+
+La versión de archivo de la aplicación web (WAR de ***Jenkins***) se puede instalar en cualquier sistema operativo o plataforma que admita Java, se recomienda la version 8 de java.
+
+- Descargue el [último archivo WAR estable de Jenkins](http://mirrors.jenkins.io/war-stable/latest/jenkins.war) a un directorio apropiado en su máquina .
+
+- Abra una ventana de terminal / símbolo del sistema en el directorio de descarga y ejecuta el comando `java -jar jenkins.war`.
+
+- Busque en el navegador`http://localhost:8080` y espere hasta que aparezca la página Desbloquear Jenkins .
+
+
+> Notas:
+> 
+> A diferencia de la opción [antes explicada de descargar y ejecutar Jenkins con Blue Ocean en Docker](#lanzar-jenkins-en-un-contenedor-docker), este proceso no instala automáticamente las características de ***Blue Ocean***, que tendrían que instalarse por separado a través de la página` Administrar Jenkins Administrar complementos en Jenkins`. 
+> 
+> Puede cambiar el puerto especificando la opción `--httpPort` cuando ejecuta el comando anterior. Por ejemplo, para hacer que ***Jenkins*** sea accesible a través del puerto `9090`, ejecute ***Jenkins*** usando el comando:
+> 
+> 		java -jar jenkins.war --httpPort=9090
+
+
+# Instalación en un contenedor de servlets #
+
+Simplemente copie el archivo war en el directorio de deploy de aplicaciones war. Puede acceder al servidor como habitualmente acceder al resto de aplicaciones desplegadas en su servidor con una ruta similar a esta `dominio-servidor:puerto/jenkins` por ejemplo `localhost:8080/jenkins`.
+
+
+https://wiki.jenkins.io/display/JENKINS/Administering+Jenkins
+
+## Configurar la ruta del directorio `jenkins_home` ##
+
+***Jenkins*** necesita algo de espacio en disco para realizar compilaciones y guardar archivos. Puedes verificar esta ubicación desde la pantalla de configuración de Jenkins. **De forma predeterminada, esto se establece en `~/.jenkins`, y esta ubicación se almacenará inicialmente en la ubicación del perfil de usuario que arrancó el servidor. Así por ejemplo si el usuario que arranca el servidor se llama `javi` entonces la ruta en un sistema Unix será `/home/javi/.jenkins`.**. 
+
+> Esta ruta se puede comprobar en el tablero de instrumentos de ***Jenkins***, haz clic en `Administrar Jenkins / Configurar sistema`.
+> 
+> 
+> Poner imagen
+
+
+En un entorno adecuado, debe cambiar esta ubicación a una ubicación adecuada para almacenar todas las construcciones y archivos relevantes. Una vez puede hacer esto de las siguientes maneras:
+
+1. Opción 1 Usando enlace simbólico (Sólo es válido para un sistema Unix)
+
+		# movemos el directorio al nuevo emplazamiento
+		mv .jenkins /data/jenkins_home
+		
+		# creamos un enlace simbólico para que la ruta anterior apunte al nuevo emplazamiento 
+		ln -s /data/jenkins_home .jenkins
+		
+		#cambiamos los permisos al nuevo enlace simbolico
+		chown javi:grupo .jenkins
+
+2. Opción 2 Modificando la variable de entorno "JENKINS_HOME" (Es válido tanto para Unix como para windows)
+
+	- Movemos el directorio al nuevo emplazamiento.
+	
+	- Establecer la variable de entorno "JENKINS_HOME", cualquiera de estas tres opciones es válida (basta con realizar una):
+	
+		1. Establezca la variable de entorno "JENKINS_HOME" en el nuevo directorio de inicio antes de iniciar el contenedor de servlets.
+			Por ejemplo en unix: `export JENKINS_HOME =/data/jenkins_home`
+
+		2. Establezca la propiedad del sistema "JENKINS_HOME" en el contenedor de servlets.
+		
+		3. Establezca la entrada de entorno JNDI "JENKINS_HOME" en el nuevo directorio.
+
+Compruebe en el tablero de instrumentos de ***Jenkins*** que la ruta ha cambiado, haz clic en `Administrar Jenkins / Configurar sistema`.
+
+En el directorio de inicio, ahora verá el nuevo directorio que se ha configurado.
+
+Poner imagen
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Asistente de configuración posterior a la instalación #
+
+Después de descargar, instalar y ejecutar ***Jenkins*** utilizando uno de los procedimientos anteriores, comienza el asistente de instalación posterior a la instalación.
+
+Este asistente de instalación le muestra algunos pasos rápidos y únicos para desbloquear ***Jenkins***, personalizarlo con complementos y crear el primer usuario administrador a través del cual puede seguir accediendo a ***Jenkins***.
+
 # Desbloqueo de Jenkins #
 
 Cuando accede por primera vez a una nueva instancia de ***Jenkins*** en `http://localhost:8080` (o el puerto que configuró para ***Jenkins*** cuando lo instaló), se le solicita que la desbloquee usando una contraseña generada automáticamente.
@@ -112,23 +230,18 @@ imagen
 
 Consulta el registro de log de la consola de ***Jenkins*** y copie la contraseña alfanumérica generada automáticamente (entre los 2 conjuntos de asteriscos) y haga clic en Continuar. 
 
-
-
-
 imagen
-
-
 
 
 > Notas:
 > 
-> Si ejecutó ***Jenkins*** en Docker en segundo plano, puede acceder al registro de log de la consola de ***Jenkins*** desde la carpeta sincronizada en el host.
+> Si ejecutó ***Jenkins*** en ***Docker*** en segundo plano, puede acceder al registro de log de la consola de ***Jenkins*** desde la carpeta sincronizada en el host.
 > 
 > El registro de log de la consola de ***Jenkins*** indica la ubicación (en el directorio `jenkins_home`) donde también se puede obtener esta contraseña. Esta contraseña debe ingresarse en el asistente de configuración en las nuevas instalaciones de ***Jenkins*** antes de que pueda acceder a la interfaz de usuario principal de ***Jenkins***. Esta contraseña también sirve como la contraseña predeterminada de la cuenta de administrador (con nombre de usuario "admin") si se salta el siguiente paso de creación de usuario en el asistente de configuración.
 
 # Personalizando Jenkins con complementos #
 
-Después de desbloquear a ***Jenkins*** , aparece la página Personalizar ***Jenkins*** . Aquí puede instalar cualquier cantidad de complementos útiles como parte de su configuración inicial.
+Después de desbloquear a ***Jenkins***, aparece la página Personalizar ***Jenkins***. Aquí puede instalar cualquier cantidad de complementos útiles como parte de su configuración inicial.
 
 Haga clic en una de las dos opciones que se muestran:
 
