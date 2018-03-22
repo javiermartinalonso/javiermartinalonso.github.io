@@ -40,7 +40,6 @@ La administración de usuarios y grupos solamente puede realizarlas el usuario `
 	- `-s <shell>`: Permite modificar la shell de inicio de sesión del usuario, por defecto `/bin/bash`.
 	- `-u <UID>`: Nos permite especificar la ID del usuario (el número con el que el sistema identificará al usuario), debe ser mayor a 499 y única.
 	
-	
 	> Para ver todas las opciones, puedes usar el comando de ayuda `man adduser`.
 
 - `userdel [opciones] nombre-usuario`: Eliminar usuario de sistema.
