@@ -19,19 +19,65 @@ Recopilatorio de los comandos de administración de sistemas Unix que son más u
 
 ## Administración de usuarios ##
 
-- `adduser xxxxxx` Donde sustituiremos las x por el nombre del usuario que queramos añadir.
+La administración de usuarios y grupos solamente puede realizarlas el usuario `root` utilizando los comandos de gestión de usuarios. Las tareas y los comandos para realizarlas son:
 
-	Ejemplos: 
+- `useradd [opciones] nombre-usuario`
 
-	`adduser pepe`
+	Ejemplos: `useradd pepe`
 
-	`adduser -s /bin/false pepe`
+	Opciones:
 
-- `userdel` eliminar usuario de sistema.
+	- `-d <directorio>`: Esta opción nos permite cambiar el directorio por defecto del usuario, que suele ser `/home/<usuario>`.
+	- `-e <YYYYMMDD>`: Permite seleccionar la fecha en la que la cuenta se deshabilitará. Debe introducirse en el formato indicado: añomesdía.
+	- `-f <días>`: Nos permite seleccionar el tiempo en días a partir de la fecha de expiración de la contraseña en la cual la cuenta se deshabilitará. Con un valor de `-1`, no lo hará.
+	- `-g <grupo>`: Permite añadir el usuario a un grupo. Debe existir con anterioridad para poder añadirlo. Podemos introducir el grupo por su nombre o por su ID.
+	- `-G <grupos>`: Similar a la opción anterior, pero permite introducir varios grupos separados por comas.
+	- `-m`: Crea el directorio del usuario si no existe.
+	- `-M`: No crea el directorio del usuario.
+	- `-n`: No crea un grupo privado para el usuario.
+	- `-r`: La cuenta se convierte en cuenta del sistema, con ID de usuario (UID) menor a 500 y sin directorio.
+	- `-p <contraseña>`: Establece una contraseña de usuario. Se puede crear posteriormente con el comando` passwd <usuario>`. Se encriptará con crypt.
+	- `-s <shell>`: Permite modificar la shell de inicio de sesión del usuario, por defecto `/bin/bash`.
+	- `-u <UID>`: Nos permite especificar la ID del usuario (el número con el que el sistema identificará al usuario), debe ser mayor a 499 y única.
+	
+	
+	> Para ver todas las opciones, puedes usar el comando de ayuda `man adduser`.
 
-	Ejemplos: 
+- `userdel [opciones] nombre-usuario`: Eliminar usuario de sistema.
 
-	`userdel pepe`
+	Ejemplos: `userdel -r pepe`
+
+	> Con la opción `-r` eliminará también su carpeta home.
+
+- `usermod [opciones] nombre-usuario`: Modificación de usuarios.
+	
+	Ejemplos: `usermod -d /home/carpeta_pedro pedro`
+
+	> Cambiar el home del usuario `pedro`
+
+- `groupadd [opciones] nombre-grupo`: Creación de grupos.
+
+	Ejemplos: `groupadd developers`
+
+- `groupmod [-g nuevo-gid] [-n nuevo-nombre] nombre-grupo`: Modificación de grupos. Permite modificar el nombre de un grupo o el gid del mismo.
+
+	Ejemplos: `groupmod -g 2000 developers`
+
+	> Cambiar el gid del grupo `developers`
+
+- `groupdel [opciones] nombre-grupo`: Eliminación de grupos.
+
+	Ejemplos: `groupdel developers`
+
+	> Eliminaría el grupo `developers`. Si algún usuario tuviera dicho grupo como grupo primario, el comando `groupdel` no eliminará el grupo.
+
+- `adduser`: Añadir usuarios a un grupo.
+
+	Ejemplos: `adduser pedro developers`
+
+- `deluser`: Quitar usuarios de un grupo.
+
+	Ejemplos: `deluser pedro developers`
 
 - `passwd xxxxxxx` Donde xxxxxxx será el nombre del usuario al que queramos cambiar la contraseña. Necesitaremos conocer la contraseña ya establecida si queremos cambiarla.
 

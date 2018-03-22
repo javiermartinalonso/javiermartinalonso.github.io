@@ -1,0 +1,4 @@
+JIRA
+Buscar avanzada en JIRA
+ISSUES/advanced
+ comment ~10474 OR description ~10474

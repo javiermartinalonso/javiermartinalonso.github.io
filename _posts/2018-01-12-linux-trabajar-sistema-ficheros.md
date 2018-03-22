@@ -127,7 +127,7 @@ Recopilatorio de los comandos de Unix que son más usados habitualmente para tra
 	- Búsqueda (Muy útil para búsqueda en logs):
 		- `/pattern`: Busca la siguiente línea que haga match con el patron
 		- `?patten`: Busca hacia atrás la línea que haga match con el patrón
-		- `n`: Repite la búsqueda anterior
+		- `n`: Buscar la siguiente ocurrencia de la búsqueda
 		- `N` :Repite la búsqueda anterior en sentido contrario
 		- `&pattern`: Muestra solo las líneas que hagan match
 
@@ -177,23 +177,87 @@ Recopilatorio de los comandos de Unix que son más usados habitualmente para tra
 
 ## 5. Compresión de ficheros ##
 
-- `tar` Descripción: =Tape ARchiver. archivador de ficheros.
+- Archivos `.tar`: Descripción: ***Tape ARchiver. archivador de ficheros. Fusionar varios ficheros en uno para facilitar su transmisión por la red.***
+
+	- Comprimir: `tar -cvf empaquetado.tar path_carpeta_a_empaquetar`.
+
+		- `-c` : indica a tar que cree un archivo de empaquetado.
+
+		- `-v` : indica a tar que muestre lo que va empaquetando.
+
+		- `-f` : indica a tar que el siguiente argumento es el nombre del `fichero.tar`.
+
+	- Descomprimir: `tar -xvf archivo.tar`
+
+		- `-x` : indica a tar que descomprima el fichero.tar.
+		
+		- `-v` : indica a tar que muestre lo que va desempaquetando.
+		
+		- `-f` : indica a tar que el siguiente argumento es el nombre del fichero a desempaquetar.
 
 	Ejemplos:
+	
+		`tar cvf fichero.tar /home/javi/directorio`
+	
+		`tar xvf fichero.tar`
 
-	`tar cvf fichero.tar directorio`
+	- Si se quiere ver el contenido de un fichero .tar, se utiliza el siguiente comando:
 
-	`tar xvf fichero.tar`
+		- `tar -tf archivo.tar`
+		
+		- `-t` : Lista el contenido del fichero .tar
+		
+		- `-f` : indica a tar que el siguiente argumento es el nombre del fichero a ver.
 
-	`tar zcvf fichero.tgz directorio`
 
-	`tar zxvf fichero.tgz`
+- Archivos `.tar.gz`: Descripción: Son iguales que los anteriores: ***Tape ARchiver. archivador de ficheros. Fusionar varios ficheros en uno para facilitar su transmisión por la red.*** ***Pero además están comprimidos con GZIP para reducir su tamaño***. La única diferencia es que tenemos que añadir la opción `z`.
 
-- `gunzip` Descripción: descompresor compatible con ZIP.
+	- Comprimir: `tar -czvf empaquetado.tar.gz path_carpeta_a_empaquetar`
+	
+	- Descomprimir: `tar -xzvf archivo.tar.gz`
+	
+	Ejemplos:
+	
+		`tar zcvf fichero.tgz /home/javi/directorio`
+	
+		`tar zxvf fichero.tgz`
+
+- Archivos `.gz`: Archivos comprimidos con GZIP para reducir su tamaño.
+
+	- Comprimir: `gzip -9 fichero path_carpeta_a_empaquetar`
+	
+	- Descomprimir: `gzip -d fichero.gz`
+	
+- Archivos `.zip`: Archivos comprimidos con ZIP para reducir su tamaño.
+
+	- Comprimir: `zip fichero path_carpeta_a_empaquetar`
+	
+	- Descomprimir: `unzip fichero.zip`
+
+- `gunzip` Descripción: descompresor compatible con ZIP para reducir su tamaño.
 	
 	Ejemplos: 
 
 	`gunzip fichero`
+
+- Archivos `.rar`: Descripción:.
+
+	- Comprimir: `rar -a archivo.rar path_carpeta_a_empaquetar`
+	
+	- Descomprimir: `unrar -x archivo.rar`
+
+	- Para ver el contenido de un fichero rar, se usa el siguiente comando: `unrar -v archivo.rar` o `unrar -l archivo.rar`.
+	
+	Ejemplos:
+	
+		`rar -a fichero.rar /home/javi/directorio`
+	
+		`unrar -x fichero.rar`
+
+		`unrar -v fichero.rar`
+
+		`unrar -l fichero.rar`
+
 
 ## Artículos relacionados ##
 

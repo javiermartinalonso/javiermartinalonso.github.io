@@ -15,6 +15,10 @@ image: static/img/blog/
 http://www.heflo.com/the-bpm-cookbook-online-guide/
 
 
+soluciones orientadas a RPA --> lectores de teclado, reconocimiento facial, tactil, etc, geolocalizacion...
+Automatizar procesos de tipo humano. No cambiar el proceso para que se realice de modo automatico sino automatizarlo. Solución de Google car --> No cambiamos las calles para que los coches se puedan conducir solos sino que enseñamos a los coches a conducir como las personas.
+
+
 
 #  Introducción #
 
