@@ -1,0 +1,62 @@
+Sería una solucion de analitica, pero que puede tocar todos los apartados que se indican en el concurso:
+
+1. Big data y analítica
+2. Ciberseguridad
+3. IoT
+4. Automatización
+
+
+ Necesidad: cuál es el problema identificado
+Gestionar y monitorizar entorno productivo para identificar y gestionar fallos en los módulos que componen la solución.
+ Tipo de clientes o ejemplos concretos de empresas que compartan esa necesidad
+Telco, administracion publica, automoción, energía, plantas industriales... Realmente cualquier cliente con una solucion compleja formada por un cojunto de diferentes servicios desplegados en distintos entornos.
+ Idea: solución o servicio que resuelva la necesidad identificada
+Aplicación web de dashboard del sistema, que sea capaz de monitorizar cada componente de la arquitectura.
+- Sistema unificado de gestión de logs.
+	- Monitoriza los logs del conjunto de componentes del sistema, cacheandolos para su analisis.
+	- alerta de errores producidos. Alerta temprana, antes de que lo identifique el usuario.
+	
+	Nota: La arquitectura de esta solución se puede apoyar en productos que ya existen en el mercado como:
+	https://www.elastic.co/products/logstash
+	
+- dashboard visual que represente la arquitectura del producto instalado en produccion:
+	- Representará si los componentes del sistema están operativos y su uso de recursos:
+		- Servidor de BBDD
+		- Servidores de gestion documental
+		- Servidores de microservicios
+		- Bus ESB
+		- Colas de mensajeria
+		...
+	
+- Herramienta avanzada de administración.
+	- Facilitará el arranque y parada de servicios, sin tener que tener conocimientos tecnicos.
+	- gestión avanzada de usuarios, activacion, suspensión, gestión de organización.
+
+- Herramienta de depuración de errores, permitiendo depurar ejecuciones en entornos productivos, acceder, editar y monitorizar variables
+en tiempo de ejecucion y solucionar errores en caliente.
+	
+Esto sería una explicación muy general, pero se podría ampliar y personalizar para cada proyecto. 
+Realmente es una necesidad que aparece en cualquier	proyecto de software y hoy en día en el mercado se están desarrollando
+un montón de soluciones que abordan, algunas de estas necesidades por separado. Es un producto que devuelve el ROI muy rápido
+ya que ahorras en formación de tecnicos y en tiempos de respuesta ante errores. Siempre se puede vender como una solución 
+aparte de cualquier proyecto en curso.
+
+Además, se valoran documentos de apoyo que expliquen la solución o cualquier otro material
+de soporte (vídeos, imágenes, etc.). 
+
+
+
+
+
+
+Recopila datos automáticamente.
+Detalla los paros de máquina y los motivos del producto rechazado.
+Permite la gestión sin papeles de toda la fábrica.
+Muestra la producción realizada y pendiente en tiempo real, permitiendo saber cómo está el plan de fabricación en cualquier momento y desde cualquier lugar.
+Analiza la productividad y la eficiencia de los recursos.
+Ofrece informes para la gestión de la producción a corto, medio y largo plazo.
+Traza actividades directas e indirectas, paros de máquina justificados, preparaciones, cantidades producidas, rechazos según tipología, retrabajos.
+Monitoriza los recursos y consumos en tiempo real.
+Dispone de cuadros de mando en tiempo real (operador, máquina, OF…).
+Habilita histogramas de carga de trabajo para cada máquina.
+Genera mapas interactivos de fábrica, departamento, área o centro de trabajo, mostrando el estado de las máquinas en todo momento.
