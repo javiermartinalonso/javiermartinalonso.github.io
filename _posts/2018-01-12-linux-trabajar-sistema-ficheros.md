@@ -167,6 +167,14 @@ Recopilatorio de los comandos de Unix que son más usados habitualmente para tra
 
 - `mkdir`: Crea un directorio.
 
+	> Con `mkdir` hay una opcion interesante poco conocida. Podemos ***crear un directorio si no existe en sistemas UNIX***.
+	> 
+	> 
+	>     mkdir -p carpeta1/carpeta2/newcarpeta
+	> 
+	> 
+	> Si añadimos la opción` -p mkdir` se encarga de crear, si no existen, los directorios carpeta1 y carpeta2. Si usaras este comando sin la opción `-p` obtendrías como resultado un error.
+
 - `rmdir`: Elimina un directorio vacío.
 
 - `rm file`: Elimina ficheros.

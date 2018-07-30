@@ -27,9 +27,9 @@ Recopilatorio de los comandos de Unix usados para obtener información de tamañ
 	- `-h` **[–human-readable]**: Imprime los tamaños de forma leíble, al agregar el tamaño de los archivos en kb, mb, gb...(e.g., 1K, 234M, 2G)
 	- `-c` Esta opción la podemos emplear para que nos muestre el total del espacio consumido, al final de la lista.
 
-	Si sólo quisiéramos ver cuáles son, por ejemplo, los 5 directorios más pesados en nuestro` /home` podríamos usa du con una serie de comandos extras, por ejemplo:
+	Si sólo quisiéramos ver cuáles son, por ejemplo, los 5 directorios más pesados en nuestro` /home` podríamos usar `du` con una serie de comandos extras, por ejemplo:
 
-		$ du ‐hs * | sort ‐nr | head ‐5
+		$ du -hs * | sort -nr | head -5
 		215G Videos
 		171G Linux
 		68G Documentos
