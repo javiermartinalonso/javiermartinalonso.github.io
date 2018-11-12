@@ -1,0 +1,91 @@
+necesidades instalacion
+
+cloud --> orquestacion servicios
+
+
+simular costes en las cargas de trabajo  --> No por ahora
+
+
+
+Integracion continua, automatizacio pruebas  ??????????
+Importarlo de otro BPM/Exportar partes de esta solucion a otro proyecto	. Documentar los scripts, pantallas, etc.	
+documentar procesos   ??????
+	documentar los cripts
+	modelo de datos
+
+	
+	
+integracion de la organizacion con single sign on?  --> LDAP
+
+firma electronica
+
+
+
+
+
+
+*************************************************************************************************************
+SOLUCION IBM  RPA --> software de alquiler mensual
+*************************************************************************************************************
+- Digital business Automation
+- dataCap --> captura de informacion de documentos. basada en watson
+- file content manager --> gestor contenidos
+- Enterprise Business Rules --> externaliza el motor de reglas --> delegar en un ODM las reglas
+- TASK --> RPA (robot process aplications) -->
+
+
+
+El RPA incluye el BPM
+
+
+
+*************************************************************************************************************
+SOLUCION IBM BPM reemplazado por workflow --> software de alquiler mensual
+*************************************************************************************************************
+- Proceso secuenciales
+- En caliente --> tareas definidas pero no fijadas cuando se usan
+- Maquina de estados  que pueden lanzar procesos o tareas humanas
+- actividades sueltas --> segun reglas una tarea u otra.
+
+
+el estado del proceso se puede ver cualquier aplicacion
+el servicio como interfaz del servicio --> la navegacion
+migrar instancias en vuelo de una version a otra de proceso 
+	--> adapto el estado de la instancia del proceso al de la nueva version
+	--> cuidado con los estados huerfanos, podemos definr comportamientos.
+kpis --> tiempo entre ejecucion de tareas.
+tolkit --> definen los componentes de reutilizacion.
+
+
+Process center  --> repositorio con todos los procesos, gestion de personas, servidores de entornos, etc. Alto rendimiento.
+Process (WAS):
+	- Developer
+	- UAT
+	- STAGING
+	- PRODUCTION
+	- DB2 
+	
+	
+BPM incluye
+		BUS cerrado al BPM
+		gestion documental, soporta conexion CMIS con otros gestores documentales.
+		Reglas
+		captura de datos
+		
+tareas automaticas --> javascript, conectores SOAP, REST		
+		
+Discovery Workshop --> prototipo adaptado al cliente, en plan rapido y ver como se trabaja con la herramienta.
+
+	googel light ni idea de como lo ha pronunciado --> en un par de dias te genera algo ejecutable en el BPM.
+	
+
+******************************************************************************************	
+PROBLEMAS
+******************************************************************************************
+internacionalizacion i18n PRODUCTO INTERNACIONAL
+		etiquetas de las paginas
+		el proceso tiene que estar en cada idioma
+Ver una tarea en el proceso global, cual es su lugar
+
+asignacion de tareas, mediante reglas, manual, etc
+no hay informe como tal, pero podemos saber donde se utiliza cada elemento que cambiamos.
