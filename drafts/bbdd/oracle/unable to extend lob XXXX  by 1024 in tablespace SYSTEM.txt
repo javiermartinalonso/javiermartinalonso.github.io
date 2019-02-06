@@ -1,0 +1,16 @@
+Aumentar el tamaño de la bbdd de oracle, cuando sale el error:
+
+Caused by: java.sql.BatchUpdateException: ORA-01691: unable to extend lob segment BONITA.SYS_LOB0000026185C00006$$ by 1024 in tablespace SYSTEM
+
+
+
+
+
+select tablespace_name, sum(bytes/1024/1024)
+from dba_free_space
+group by tablespace_name
+
+select tablespace_name, file_name, bytes/1024/1024, maxbytes/1024/1024
+from dba_data_files
+
+alter database datafile 'C:\ORACLEXE\APP\ORACLE\ORADATA\XE\SYSTEM.DBF' resize 1500m;

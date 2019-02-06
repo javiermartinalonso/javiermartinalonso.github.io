@@ -1,0 +1,96 @@
+-  explotar la info de la bbdd, para generar querys masivas sobre la bbdd
+
+chr(10) --> salto de linea
+
+select 'DROP USER ' || username || ' CASCADE;'|| chr(10) || 
+'CREATE USER ' || username || ' IDENTIFIED BY ' || lower(username) || ' ;' || chr(10) ||
+'GRANT ALL PRIVLEGES TO ' || username || ';'
+  from all_users where username in ('ACTIVATION', 'BPM');
+
+
+
+revisar el charset de Oraclerevisar
+
+	SELECT value$ FROM sys.props$ WHERE name = 'NLS_CHARACTERSET';
+
+revisar los ficheros fisicos de las bbdd
+	select tablespace_name from dba_tablespaces;  
+
+ruta local
+	C:\oraclexe\app\oracle\product\11.2.0\server\database
+	
+	
+	
+-	CREAR SCHEMA
+	- Solucion rapida (que no la buena)
+		create user NOTIFICATION_DES IDENTIFIED BY notification_des;
+
+		grant all privileges to NOTIFICATION_DES;
+		
+	- Creacion buena con tablespace:
+
+		CREATE TABLESPACE phoneprefixes DATAFILE 
+		  '+DATA' SIZE 100M AUTOEXTEND ON NEXT 100M MAXSIZE UNLIMITED
+		LOGGING
+		ONLINE
+		EXTENT MANAGEMENT LOCAL AUTOALLOCATE
+		BLOCKSIZE 8K
+		SEGMENT SPACE MANAGEMENT AUTO
+		FLASHBACK ON;
+
+
+
+		CREATE USER phoneprefixes
+		  IDENTIFIED BY phoneprefixes
+		  DEFAULT TABLESPACE phoneprefixes
+		  TEMPORARY TABLESPACE TEMP
+		  PROFILE DEFAULT
+		  ACCOUNT UNLOCK;
+		  -- 2 Roles for phoneprefixes 
+		  GRANT CONNECT TO phoneprefixes;
+		  GRANT RESOURCE TO phoneprefixes;
+		  ALTER USER phoneprefixes DEFAULT ROLE ALL;
+		  -- 1 System Privilege for phoneprefixes 
+		  GRANT CREATE VIEW TO phoneprefixes;
+		  -- 2 Tablespace Quotas for phoneprefixes 
+		  ALTER USER phoneprefixes QUOTA UNLIMITED ON phoneprefixes;
+		  ALTER USER phoneprefixes QUOTA UNLIMITED ON phoneprefixes;	
+
+
+
+
+
+--- Script chulo para mover los objetos de un schema a otro tablespace
+---OJO Te va a salvar la vida mas de una vez 
+select 'ALTER TABLE BPM_DES.' || object_name || ' MOVE TABLESPACE BPM_DES;'  from all_objects where OBJECT_TYPE = 'TABLE' and owner = 'BPM_DES';
+select 'ALTER INDEX BPM_DES.' || object_name || ' REBUILD TABLESPACE BPM_DES;'  from all_objects where OBJECT_TYPE = 'INDEX' and owner = 'BPM_DES';
+
+select 'ALTER TABLE BPM_DES.' || TABLE_NAME || ' MOVE LOB('|| COLUMN_NAME||') STORE AS (TABLESPACE BPM_DES);' from all_tab_columns where owner = 'BPM_DES' and (data_type = 'CLOB' or data_type = 'BLOB');
+
+select 'ALTER INDEX BPM_DES.' || object_name || ' REBUILD online nologging;'  from all_objects where OBJECT_TYPE = 'INDEX' and owner = 'BPM_DES';
+
+--- Un saludo.
+
+
+
+
+
+
+
+
+
+cambios masivos de un par de columnas
+
+update provision.service_info
+set band_width = CASE band_with_unit 
+WHEN 'Kb' then band_width / 1024
+END
+WHERE band_with_unit = 'Kb';
+
+
+
+update provision.service_info
+set band_with_unit = CASE band_with_unit 
+WHEN 'Kb' then 'Mb'
+END
+WHERE band_with_unit = 'Kb';

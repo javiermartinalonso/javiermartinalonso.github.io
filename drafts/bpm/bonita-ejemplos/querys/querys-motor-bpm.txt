@@ -1,0 +1,22 @@
+--- Instancias de un proceso por nombre de proceso
+select p.id, p.name, fw.* from BPM.PROCESS_INStance p
+left join BPM.FLOWNODE_INSTANCE fw on fw.ROOTCONTAINERID = p.id
+where p.name like '%POTS%' and p.name != 'Alta POTS' order by p.id, fw.REACHEDSTATEDATE;
+
+--- Los de POTS 
+select p.id, p.name, p.callerid, TO_CHAR(di.CLOBVALUE), pord.STATUS, pord.start_date, 
+pord.customer_name, 
+wo.service_request_id, wo.service_request_status_code, wo.summary,
+inct.incident_id, inct.INCIDENT_STATUS_CODE, inct.message from BPM.PROCESS_INSTANCE p 
+left join BPM.DATA_INSTANCE di on p.id = di.CONTAINERID and di.name = 'provisioningId'
+left join CRM_MEDIATOR.PROVISION_ORDER pord on pord.provisioning_id = TO_CHAR(di.CLOBVALUE)
+left join ITSM_MEDIATOR.WORK_ORDER wo on wo.PROVISIONING_ID = pord.provisioning_id
+left join ITSM_MEDIATOR.INCIDENT inct on inct.provisioning_id = pord.provisioning_id
+where p.name like '%POTS%' and callerid = -1 /*and (inct.incident_id is not null or wo.SERVICE_REQUEST_ID is not null)*/
+order by p.id, wo.INCOMING_DATE desc, inct.INCOMING_DATE desc;
+
+select * from BPM.FLOWNODE_INSTANCE fw where fw.PARENTCONTAINERID = 101018 order by fw.REACHEDSTATEDATE desc;
+
+select * from BPM.FLOWNODE_INSTANCE where id = 1167657;
+
+select * from BPM.PROCESS_INSTANCE where callerid = 1279178;

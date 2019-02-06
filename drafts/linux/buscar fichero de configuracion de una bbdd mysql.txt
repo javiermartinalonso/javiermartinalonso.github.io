@@ -1,0 +1,17 @@
+root/ATSig0_admvm
+
+
+Necesitamos saber cual es la interfaz de red por la que viajan los paquetes en el puerto de mysql 3306
+asi nos aseguramos que hay comunicacion con bbdd
+a continuacion buscamos el directorio donde se instala la aplicacion que hace comunicaciones con esa bbdd
+y hacemos una busqueda en los ficheros por el numero del puerto
+
+tcpdump dst port 3306
+5968 2019-01-24 10:45:03 ifconfig
+5969 2019-01-24 10:45:29 tcpdump -i lo dst port 3306
+5970 2019-01-24 10:46:06 cd /opt/provision/
+5971 2019-01-24 10:46:06 ll
+5972 2019-01-24 10:46:13 cd jasper_server/
+5973 2019-01-24 10:46:13 ls
+5974 2019-01-24 10:47:21 grep -rl 3306 *
+5975 2019-01-24 10:49:35 less standalone/deployments/jasperserver.war/WEB-INF/internal/jasperserver.properties

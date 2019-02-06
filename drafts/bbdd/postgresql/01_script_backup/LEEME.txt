@@ -1,0 +1,15 @@
+RUTA DE BACKUPS EN IH:
+
+/var/lib/pgsql/9.3/backups
+
+comando a ejecutar:
+
+/var/lib/pgsql/9.3/backups:   
+
+./pg_dump.sh silcam
+./pg_dump.sh bonita
+
+
+
+pass: ZadM2014
+
