@@ -1,0 +1,26 @@
+oracle convert epoch to date
+
+https://stackoverflow.com/questions/37305135/oracle-convert-unix-epoch-time-to-date
+
+select to_date('19700101', 'YYYYMMDD') + ( 1 / 24 / 60 / 60 / 1000) * 1322629200000
+from dual;
+
+1322629200000 es lo que en la columna
+
+lo contrario sería
+
+select (to_date('11/30/2011 05:00:00', 'MM/DD/YYYY HH24:MI:SS') - to_date('19700101', 'YYYYMMDD')) * 24 * 60 * 60 * 1000 from dual;
+
+
+Selecting from the DUAL Table
+https://docs.oracle.com/cd/B19306_01/server.102/b14200/queries009.htm
+
+
+to_date('20190210', 'YYYYMMDD')
+
+
+SELECT 
+   NAME, VERSION, (select to_date('19700101', 'YYYYMMDD') + ( 1 / 24 / 60 / 60 / 1000) * DEPLOYMENTDATE from dual) AS DEPLOYMENTDATE, ACTIVATIONSTATE, 
+   CONFIGURATIONSTATE, DISPLAYNAME
+FROM BPM.PROCESS_DEFINITION
+WHERE ((select to_date('19700101', 'YYYYMMDD') + ( 1 / 24 / 60 / 60 / 1000) * DEPLOYMENTDATE from dual) > TO_DATE('150219', 'DDMMYY'));
