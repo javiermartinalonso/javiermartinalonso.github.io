@@ -1,0 +1,14 @@
+***************************************************************************
+Info sobre less
+	http://lesscss.org/usage/
+
+Use with Node.js:
+
+npm install -g less
+
+
+> lessc styles.less styles.css 
+
+
+
+http://winless.org/
