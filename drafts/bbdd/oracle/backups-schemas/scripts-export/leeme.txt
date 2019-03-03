@@ -1,0 +1,20 @@
+!!!importante asegurarse del SID de la bbbdd, para no tocar otra base de datos diferente del mismo servidor oracle.
+	ORACLE_SID="bpm_prov1"
+
+comprimir el fichero dump generado (expdp_${ORACLE_SID}_provision_${dia}.dmp) a tar comprimido (.tar.gz), para que sea mas facil moverlo por la red
+	- se genera en la misms ruta donde se genera el script con extension .dmp y en el nombre lleva el día de su creacion
+	- para comprimirlo 
+tar -czvf /u01/dump/expdp_bpm_prov1_provision_2019-02-28_18_25.dmp.tar.gz /u01/dump/expdp_bpm_prov1_provision_2019-02-28_18_25.dmp
+                   
+
+
+a la hora de restaurar la bbdd igual!!!
+!!!importante asegurarse del SID de la bbbdd, para no tocar otra base de datos diferente del mismo servidor oracle.
+	ORACLE_SID="bpm_prov1"
+
+cd /u01/dump/BACKUP-PRODUCCION
+tar -xzvf expdp_bpm_prov1_provision_2019-02-28_18_25.dmp.tar.gz
+cd /u01/dump/BACKUP-PRODUCCION/u01/dump/
+mv expdp_bpm_prov1_provision_2019-02-28_18_25.dmp /u01/dump/
+cd /u01/dump/BACKUP-PRODUCCION/
+./imp_provision.sh

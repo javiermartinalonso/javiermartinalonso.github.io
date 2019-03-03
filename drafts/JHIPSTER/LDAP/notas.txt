@@ -1,0 +1,1 @@
+https://www.jhipster.tech/tips/016_tip_ldap_authentication.html

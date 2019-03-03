@@ -1,7 +1,121 @@
--  explotar la info de la bbdd, para generar querys masivas sobre la bbdd
+*******************************************************************************************
+*** 								cambiar de schema									***				
+*******************************************************************************************
+-- cambiar de usuario para ejecutar sobre un schema concreto
+alter session set current_schema = BPM;
 
+
+
+*******************************************************************************************
+*** 								TOP QUERYS											***				
+*******************************************************************************************
+Estudiar sobre la bbdd que querys consumen mas disco, tardan mas o fuerzan la cpu...
+https://stackoverflow.com/questions/316812/top-5-time-consuming-sql-queries-in-oracle
+
+
+SELECT * FROM
+(SELECT
+    sql_fulltext,
+    sql_id,
+    elapsed_time,
+    child_number,
+    disk_reads,
+    executions,
+    first_load_time,
+    last_load_time
+FROM    v$sql
+ORDER BY elapsed_time DESC)   --TIEMPO QUE TARDA EN EJECUTARE
+-- ORDER BY DISK_READS DESC)  --NUMERO DE VECES QUE LEE EN DISCO
+-- ORDER BY EXECUTIONS DESC) --LECTURAS EN DISCO Y NUMERO DE VECES QUE SE EJECUTAN
+-- ORDER BY DISK_READS * EXECUTIONS DESC) --LECTURAS EN DISCO Y NUMERO DE VECES QUE SE EJECUTAN
+WHERE ROWNUM < 10;
+
+
+Querys que tardan más
+
+SELECT * FROM
+(SELECT
+    sql_fulltext,
+    sql_id,
+    elapsed_time,
+    child_number,
+    disk_reads,
+    executions,
+    first_load_time,
+    last_load_time
+FROM    v$sql
+ORDER BY elapsed_time DESC)
+WHERE ROWNUM < 10;
+*******************************************************************************************
+
+
+*******************************************************************************************
+*** 									Splain											***				
+*******************************************************************************************
+Estudiar la complejidad de las querys sobre la bbdd que querys consumen mas disco, tardan mas o fuerzan la cpu...
+Esto se hace desde el propio toad en el botón para tal efecto!!!!!!!
+
+
+*******************************************************************************************
+
+
+
+*******************************************************************************************
+*** 						GENERAR SCRIPTS CORRECTIVOS									***				
+*******************************************************************************************
+ || para generar querys a partir de querys sobre la propia bbdd.
 chr(10) --> salto de linea
 
+EJEMPLOS:
+
+
+1) Obtener las querys para deshabilitar las constraints de todas las tablas que indiquemos en el conjunto de nombres de tablas (IN)
+desde el toad se puede hacer seleccionando las tablas y con boton derecho selecciona DISABLE_ALL --> CONSTRAINTS, pero si lo queremos en 
+un script, generamos las sentencias sql de esta forma.
+
+SELECT 
+ 'ALTER TABLE ' || c.owner || '.' || c.table_name || ' ENABLE CONSTRAINT ' ||  c.constraint_name || ';'
+--'ALTER TABLE ' || c.owner || '.' || c.table_name || ' DISABLED CONSTRAINT ' ||  c.constraint_name || ';'
+--c.owner, c.table_name, c.constraint_name  
+FROM all_constraints c, all_tables t
+WHERE c.owner = 'BPM' and c.table_name = t.table_name and t.table_name in ('QRTZ_BLOB_TRIGGERS','QRTZ_CALENDARS','QRTZ_CRON_TRIGGERS','QRTZ_FIRED_TRIGGERS','QRTZ_JOB_DETAILS','QRTZ_LOCKS','QRTZ_PAUSED_TRIGGER_GRPS','QRTZ_SCHEDULER_STATE','QRTZ_SIMPLE_TRIGGERS','QRTZ_SIMPROP_TRIGGERS','QRTZ_LOCKS','QRTZ_TRIGGERS')
+-- AND c.status = 'DISABLED'
+ORDER BY c.constraint_type;
+
+
+2) Obtener las variables para montar un job que con esas variables ejecute todas las querys de actualizacion necesarias
+
+-- obtener datos para ejecutar en un procedimiento de modificacion masivo
+SELECT 
+ c.owner || '.' || c.table_name, c.constraint_name
+--'ALTER TABLE ' || c.owner || '.' || c.table_name || ' DISABLED CONSTRAINT ' ||  c.constraint_name || ';'
+--c.owner, c.table_name, c.constraint_name  
+FROM all_constraints c, all_tables t
+WHERE c.owner = 'BPM' and c.table_name = t.table_name and t.table_name like ('QRTZ%');
+-- AND c.status = 'DISABLED';
+
+3) Montar un job que haga lo anterior de forma automatica
+-- Deshabilitar o habilitar las constraints de todas las tablas del filtro .!!!!!!ESTO NO FUNCIONA POR TEMAS DE RESTRICCIONES ES MAS COMPLEJO QUE ESTO!!!!!
+BEGIN
+  FOR r IN 
+  (
+    SELECT (c.owner || '.' || c.table_name) as table_name, c.constraint_name as constraint_name
+    FROM all_constraints c, all_tables t
+    WHERE c.owner = 'BPM' and c.table_name = t.table_name and t.table_name like ('QRTZ%')
+    -- AND c.status = 'ENABLED'
+    ORDER BY c.constraint_type  
+  )
+  LOOP
+    EXECUTE IMMEDIATE  'ALTER TABLE ' || r.table_name || ' DISABLE CONSTRAINT ' ||  r.constraint_name;
+--    EXECUTE IMMEDIATE  'ALTER TABLE ' || r.table_name || ' ENABLE CONSTRAINT ' ||  r.constraint_name; 	
+  END LOOP;
+END;
+
+
+
+
+3) 
+-- Obtener las querys de drop users de los usuarios indicados en un conjunto
 select 'DROP USER ' || username || ' CASCADE;'|| chr(10) || 
 'CREATE USER ' || username || ' IDENTIFIED BY ' || lower(username) || ' ;' || chr(10) ||
 'GRANT ALL PRIVLEGES TO ' || username || ';'
@@ -9,8 +123,36 @@ select 'DROP USER ' || username || ' CASCADE;'|| chr(10) ||
 
 
 
-revisar el charset de Oraclerevisar
+4) -- Borrar sesiones de un usuario que impidan el drop
+BEGIN
+  FOR r IN (select sid,serial# from v$session where username = 'PROVISION_MONIT')
+  LOOP
+    EXECUTE IMMEDIATE 'alter system kill session ''' || r.sid 
+      || ',' || r.serial# || '''';
+  END LOOP;
+END;
 
+
+si podemos acceder desde el toad
+
+http://www.dba-oracle.com/t_sqlplus_spool.htm
+La idea es si no podemos acceder desde el toad. explotar la info de la bbdd, para generar querys masivas sobre la bbdd
+ejecutariamos desde el sqlplus en la maquina de la bbdd oracle conectandonos por ssh y accediendo al sqlplus.
+con el spool, podriamos ejecutar las querys y escupirlas en ficheros para posteriormente usarlas como scripts correctivos.
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+*******************************************************************************************
+***		 					revisar el charset de Oracle						***
+*******************************************************************************************
 	SELECT value$ FROM sys.props$ WHERE name = 'NLS_CHARACTERSET';
 
 revisar los ficheros fisicos de las bbdd
