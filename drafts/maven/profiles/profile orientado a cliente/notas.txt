@@ -1,0 +1,100 @@
+La idea es poder añadir un profile orientado al cliente para el que queremos generar sus estilos, menus de navegación etc.
+
+
+mediante una propertie poder definir para que cliente queremos generar nuestra compilacion.
+Necesitamos por tanto una variable properties para identificar el cliente.
+
+modificamos el .pom de la siguiente forma:
+
+
+- Properties:
+    <properties>
+		...
+        <!-- client para el skin de la interfaz por defecto -->
+        <client.name>at</client.name>
+		...
+   </properties>		
+		
+- Resources:	
+
+Tenemos que crear la carpeta clients/<idCliente>	
+src/main/clients/at
+src/main/clients/gabon
+
+y en ella meter las carpetas y recursos que cambian según el cliente:
+ahora en resources indicamos que carpetas de recursos se usan durante la construccion de los anteriores recursos de cliente:
+
+Se copian los recursos de <directory> en <targetPath>, no sobreescriben los recursos que coincidan 
+y no se tocan los ficheros que no tienen coincidencias en el <targetPath> estos se mantienen.
+
+	<resources>	
+
+		...
+		<!-- PARA MODIFICAR CLIENT SKIN -->
+		<resource>
+			<targetPath>${basedir}/src/main/webapp/assets</targetPath>
+			<directory>src/main/clients/${client.name}/assets</directory>
+		</resource>
+		<resource>
+			<targetPath>${basedir}/src/main/webapp/scripts/components/navbar</targetPath>
+			<directory>src/main/clients/${client.name}/scripts/components/navbar</directory>
+		</resource>
+		...		
+	</resources>	
+
+
+en plugins hacer el siguiente cambio, la idea es indicar que ficheros debemos eliminar en la fase de limpieza "clean"
+
+
+	<!-- PARA MODIFICAR CLIENT SKIN -->
+	<plugin>
+		<artifactId>maven-clean-plugin</artifactId>
+		<configuration>
+			<filesets>
+				<!-- borrar directorio de assets -->
+				<fileset>
+
+					<directory>src/main/webapp/assets</directory>
+					<includes>
+						<include>**/*.*</include>
+					</includes>
+					<excludes />
+					<followSymlinks>false</followSymlinks>
+				</fileset>
+
+				<!-- borrar fichero navbar -->
+				<fileset>
+					<directory>src/main/webapp/scripts/components/navbar</directory>
+					<includes>
+						<include>navbar.html</include>
+					</includes>
+					<excludes />
+					<followSymlinks>false</followSymlinks>
+				</fileset>
+			</filesets>
+		</configuration>
+	</plugin>	
+	
+	
+Por ultimo dentro de profiles, habilitar el estilo del profile por defecto y configurar la opcion de poder compilar con maven para perfil de cliente
+
+	<!-- PROFILES PARA EL SKIN DE LA INTERFAZ -->
+	<profile>
+		<id>at</id>
+		<activation>
+			<activeByDefault>true</activeByDefault>
+		</activation>
+		<properties>
+			<client.name>at</client.name>
+		</properties>
+	</profile>
+	<profile>
+		<id>gabon</id>
+		<activation>
+			<activeByDefault>false</activeByDefault>
+		</activation>
+		<properties>
+			<client.name>gabon</client.name>
+		</properties>
+	</profile>
+	<!--  **************************************** -->
