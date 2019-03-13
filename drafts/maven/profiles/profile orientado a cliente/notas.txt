@@ -1,8 +1,12 @@
-La idea es poder añadir un profile orientado al cliente para el que queremos generar sus estilos, menus de navegación etc.
+La idea es poder añadir un profile orientado al cliente para el que queremos generar sus estilos, menús de navegación etc.
+Por defecto será el de Angola Telecom.
 
+Mediante una properties poder diferenciar las carpetas especificas del cliente para el que queremos generar nuestra compilación.
+Indicar a maven que hay que borrar los ficheros (sección plugin, plugin clean) que cambian según el cliente e indicarle además que recursos son específicos del cliente y que se deben de copiar en el war resultante (resources, targetPath y directory).
 
-mediante una propertie poder definir para que cliente queremos generar nuestra compilacion.
-Necesitamos por tanto una variable properties para identificar el cliente.
+Se creará una carpeta clients con los archivos específicos para cada cliente:
+
+Durante la generación del target por parte maven se copiaran los ficheros específicos del cliente indicado mediante el profile.
 
 modificamos el .pom de la siguiente forma:
 
@@ -24,8 +28,7 @@ src/main/clients/gabon
 y en ella meter las carpetas y recursos que cambian según el cliente:
 ahora en resources indicamos que carpetas de recursos se usan durante la construccion de los anteriores recursos de cliente:
 
-Se copian los recursos de <directory> en <targetPath>, no sobreescriben los recursos que coincidan 
-y no se tocan los ficheros que no tienen coincidencias en el <targetPath> estos se mantienen.
+Se copian los recursos contenidos en la carpeta <directory> dentro de la carpeta <targetPath>
 
 	<resources>	
 
@@ -43,8 +46,9 @@ y no se tocan los ficheros que no tienen coincidencias en el <targetPath> estos 
 	</resources>	
 
 
-en plugins hacer el siguiente cambio, la idea es indicar que ficheros debemos eliminar en la fase de limpieza "clean"
-
+en plugins hacer el siguiente cambio, la idea es indicar que ficheros debemos eliminar en la fase de limpieza "clean",
+para asegurar que podemos reemplazarlos por los especificos de cada cliente. 
+En nuestro caso hemos borrado los ficheros del cliente en la fase de limpieza de maven.
 
 	<!-- PARA MODIFICAR CLIENT SKIN -->
 	<plugin>
@@ -98,3 +102,9 @@ Por ultimo dentro de profiles, habilitar el estilo del profile por defecto y con
 		</properties>
 	</profile>
 	<!--  **************************************** -->
+
+	
+	doc referencia:
+	
+	http://maven.apache.org/ref/3.1.1/maven-model/maven.html#class_resource
+	https://stackoverflow.com/questions/19409220/copying-multiple-resource-directories-to-independent-target-directories-with-mav
