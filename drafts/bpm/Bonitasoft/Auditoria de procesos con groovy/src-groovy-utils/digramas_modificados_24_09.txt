@@ -1,0 +1,29 @@
+_CDMA__ELEG_Principal-1.0.proc
+_CDMA__PROV_ACT_SUSP-1.0.proc
+_CDMA__PROV_ALTA-1.0.proc
+_CDMA__PROV_BAJA-1.0.proc
+_CDMA_PROV_MODIFICACION-1.0.proc
+_GEN_ Creacion de servicio-1.0.proc
+_GEN_ Notificar CRM-1.0.proc
+_GEN_ Operaciones inventario-1.0.proc
+_LTE__ELEG_Principal-1.0.proc
+_LTE__PROV_ACT_SUSP-1.0.proc
+_LTE__PROV_ALTA-1.0.proc
+_LTE__PROV_BAJA-1.0.proc
+_LTE_PROV_MODIFICACION-1.0.proc
+_POTS__ELEG_Principal-1.0.proc
+_POTS__PROV_ACT_SUSP-1.0.proc
+_POTS__PROV_ACTIVATION_ORDERS-1.0.proc
+_POTS__PROV_ALTA-1.0.proc
+_POTS__PROV_BAJA-1.0.proc
+_POTS_Change_bandwidth-1.0.proc
+_POTS_PROV_MODIFICACION-1.0.proc
+_PROV_ NotificarCRM-1.0.proc
+_PROV__ITSM_INCIDENCIA-1.0.proc
+_WiMAX__ELEG_Principal-1.0.proc
+_WiMAX__PROV_ACT_SUSP-1.0.proc
+_WiMAX__PROV_ALTA-1.0.proc
+_WiMAX__PROV_BAJA-1.0.proc
+_WIMAX_PROV_MODIFICACION-1.0.proc
+IncidenciaITSM-1.0.proc
+MediadorITSM-1.0.proc

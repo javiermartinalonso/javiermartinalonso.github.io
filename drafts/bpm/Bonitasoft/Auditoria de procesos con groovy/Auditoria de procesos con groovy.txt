@@ -1,0 +1,11 @@
+Auditoria de procesos con groovy
+
+
+C:\04_ANGOLA_TELECOM_OSS_INVyPROV\trunk\5Provision\trunk\2Procesos\trunk\1Código\workspace\repositorio-angola-telecom\trunk\src-groovy-utils
+
+
+indicar ruta con los diagramas en el estudio
+indicar ruta de salida del excel con la auditoria de los procesos.
+
+
+

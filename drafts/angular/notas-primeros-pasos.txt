@@ -1,0 +1,39 @@
+Doc oficial de angular:
+
+https://docs.angularjs.org/api/ng/directive/select
+
+y de aqui nos lleva a ejemplos que se pueden probar en:
+
+https://plnkr.co/edit/?p=preview
+
+
+de aqui podemos coger el codigo para incluirlo en nuestros proyectos
+
+
+
+
+parar el servidor en el puerto 8080
+
+
+
+0
+
+intenta esto si estás usando Linux
+
+	sudo killall ng
+	
+si dice lo contrario, dice que el puerto todavía está en uso cuando se reinicia, intente seguir para detener el progreso en el puerto 8080:
+
+sudo kill $(sudo lsof -t -i:8080)
+
+
+
+intenta esto si estás usando Windows
+
+En cmd.exe intente encontrar el PID del puerto 8080: 
+
+	netstat -ano | findstr :8080	
+
+Luego elimine el proceso que tiene la Propiedad "LISTENING" con este comando (el número en el comando puede diferir): 
+
+	taskkill /PID 4480 /F

@@ -1,0 +1,90 @@
+********************************************************************************************************************************************************
+Si cambiamos un grovy de utils de desarrollo, hay que estudiar en la carpeta diagramas que procesos 
+llaman a dicho metodo modificado para estudiar un impacto que implicaría subir de versión a estos procesos
+********************************************************************************************************************************************************
+
+********************************************************************************************************************************************************
+Si cambiamos un proceso, hay que subirle de version, para ver que procesos se ven afectados por el cambio de version
+********************************************************************************************************************************************************
+
+C:\04_ANGOLA_TELECOM_OSS_INVyPROV\trunk\5Provision\trunk\2Procesos\trunk\1Código\workspace\repositorio-angola-telecom\trunk\src-groovy-utils
+con este fichero puedo generar un excel para estudiar o auditar la dependencia entre procesos
+DiagramUtils.groovy
+
+
+averiguar que parametros de de que proceso en que diagrama hay que cambiar de que version a que otra version
+
+ejemplo:
+
+Los diagramas afectados son:
+
+_LTE__PROV_ALTA-1.0.proc
+	"Alta elementos red LTE (1.0)"  --> Tarea "Alta IN"
+
+	"Baja recursos red  LTE (1.0)"  --> Tarea "Baja IN"
+
+vamos a subir de versión estos procesos a la 2.0 y vamos a eliminar las tareas anteriores del flujo.
+
+
+los diagramas y procesos que se ven afectados por el cambio de version de los anteriores son:
+	
+DIAGRAMA							PROCESO									PARAMETRO_CONFIGURACION			cambio
+----------------					----------------						------------------------		------------------------
+_LTE_PROV_MODIFICACION-1.0.proc		Mudança producto LTE (1.0)				v_altaElementosRed				1.0 --> 2.0
+_LTE_PROV_MODIFICACION-1.0.proc		Mudança producto LTE (1.0)				v_bajaRecursos					1.0 --> 2.0
+_LTE_PROV_MODIFICACION-1.0.proc		Mudança numero telefone LTE (1.0)		vAltaElementosRedLTE			1.0 --> 2.0
+_LTE_PROV_MODIFICACION-1.0.proc		Mudança numero telefone LTE (1.0)		vBajaElementosRedLTE			1.0 --> 2.0
+_LTE__PROV_ALTA-1.0.proc			Alta LTE (1.0)							v_altaElementosRed				1.0 --> 2.0
+_LTE__PROV_ALTA-1.0.proc			Cancelar provisión LTE (1.0)			v_bajaRecursos					1.0 --> 2.0
+_LTE__PROV_BAJA-1.0.proc			Baja LTE (1.0)							v_bajaRecursos					1.0 --> 2.0
+
+
+Script de ejemplo para actualizar los parametros:
+
+-- Job para actualizar el valor del parametro de una lista de procesos y parametros
+-- Impacto en parametros de procesos tras la elmininacion de la IN en procesos LTE.
+BEGIN
+  FOR r IN 
+  (
+    Select 
+        pd.name as proc_name, pd.version as proc_ver, pp.id as param_id, pp.name as param_name, pp.value as param_value
+    from 
+        BPM_DES.PROC_PARAMETER pp
+    left join BPM_DES.PROCESS_DEFINITION pd on pd.PROCESSID = pp.PROCESS_ID 
+    where pd.name = 'Mudança producto LTE' AND pd.version = '1.0' AND pp.name = 'v_altaElementosRed'
+    OR pd.name = 'Mudança producto LTE' AND pd.version = '1.0' AND pp.name = 'v_bajaRecursos'
+    OR pd.name = 'Mudança numero telefone LTE' AND pd.version = '1.0' AND pp.name = 'vAltaElementosRedLTE'
+    OR pd.name = 'Mudança numero telefone LTE' AND pd.version = '1.0' AND pp.name = 'vBajaElementosRedLTE'
+    OR pd.name = 'Alta LTE' AND pd.version = '1.0' AND pp.name = 'v_altaElementosRed'
+    OR pd.name = 'Cancelar provisión LTE' AND pd.version = '1.0' AND pp.name = 'v_bajaRecursos'
+    OR pd.name = 'Baja LTE' AND pd.version = '1.0' AND pp.name = 'v_bajaRecursos'
+  )
+  LOOP
+    EXECUTE IMMEDIATE  'UPDATE BPM_DES.PROC_PARAMETER SET VALUE = ''2.0'' WHERE ID = ' || r.param_id;     
+  END LOOP;
+END;
+
+commit;
+
+
+Para el despliegue en producción de los cambios:
+
+hay que desplegar los procesos que se han modificado de version:
+"Alta elementos red LTE (2.0)"
+"Baja recursos red  LTE (2.0)"
+
+actualizar los parametros de los procesos antes indicados (por script sql a poder ser)
+
+
+
+revisar en el fichero config la version de los procesos que llama el crm-mediator
+/opt/provision/conf/bpm-app-config-1.0.xml
+
+
+pruebas de LTE alta, baja, cancelacion, modificacion de producto y de numero de telefono.
+
+
+hay que actualizar también la traducción de los dysplaynames de los procesos, pues son procesos nuevos a desplegar.
+hay un script y un metodo para actualizar.
+
+

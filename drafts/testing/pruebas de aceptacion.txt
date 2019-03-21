@@ -1,0 +1,10 @@
+Pruebas de aceptacion
+
+La conclusión es que las pruebas de aceptación deben cubrir las pruebas de integración de extremo a extremo, 
+las pruebas que aseguran los procesos de trabajo de la aplicación, la organización especial debe garantizar 
+el cumplimiento comercial y el producto está listo para ser entregado por una organización de entrega o 
+listo para ser recibido por una organización receptora. Se debe tener en cuenta que las pruebas de aceptación 
+de una organización de entrega deben satisfacer un requisito de pruebas de aceptación para una organización receptora 
+en términos de entrega contra orden.
+
+
