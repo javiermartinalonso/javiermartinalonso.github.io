@@ -1,3 +1,19 @@
+Select 
+    --PO.ORDER_TYPE ,  WS.WORKSHEET_ID   ,ws.FEASIBILITY_ID
+    *
+from 
+    PROVISION.WORKSHEET ws
+left join CRM_MEDIATOR.PROVISION_ORDER po on  ws.FEASIBILITY_ID = po.FEASIBILITY_ID
+where  WS.WORKSHEET_CODE_NUMBER = '12620/DVE/BPAG/2019' 
+OR WS.WORKSHEET_CODE_NUMBER = '12621/DVE/BPAG/2019'
+OR WS.WORKSHEET_CODE_NUMBER = '12622/DVE/BPAG/2019'
+OR WS.WORKSHEET_CODE_NUMBER = '12623/DVE/BPAG/2019'
+OR WS.WORKSHEET_CODE_NUMBER = '12624/DVE/BPAG/2019';
+
+
+
+
+
 -- worksheets, sales references, id de caso en bonita
 select feasibility_case_id, worksheet_code_number, sales_reference from provision.worksheet 
 where WORKSHEET_CODE_NUMBER = '12619/DVE/BPAG/2019'

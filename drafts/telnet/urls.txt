@@ -1,0 +1,3 @@
+https://docs.microsoft.com/es-es/exchange/mail-flow/test-smtp-with-telnet?view=exchserver-2019
+
+http://systemadmin.es/2009/01/como-mandar-un-email-con-telnet-protocolo-smtp
