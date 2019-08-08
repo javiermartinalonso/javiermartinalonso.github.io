@@ -1,3 +1,8 @@
+revisar:
+
+https://www.javacodegeeks.com/2019/05/angular-spring-boot-build-crud-app-today.html
+
+
 Doc oficial de angular:
 
 https://docs.angularjs.org/api/ng/directive/select

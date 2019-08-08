@@ -1,0 +1,12 @@
+HELO vms-cvasigsvi141.gestao.sigo.angolatelecom.ao
+
+MAIL FROM: ejemplo@fakemail.com
+
+RCPT TO: milton.silva@angolatelecom.ao
+
+DATA
+
+Subject: email entregado con telnet
+esto es el cuerpo del mensaje
+finaliza con un intro un punto i otro intro
+.

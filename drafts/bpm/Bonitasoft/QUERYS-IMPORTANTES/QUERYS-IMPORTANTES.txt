@@ -199,3 +199,28 @@ left join TICKET@ITSM_DB ticket on (ticket.ticketid = INCT.INCIDENT_ID or  ticke
 --where sda.value = 'SO48532' or 
 where sda3.value = '12614/DVG/ZAPA/2019'
 order by pi.name asc, process_instance asc, FI.LASTUPDATEDATE asc, pi.STARTDATE asc, ord.customer_id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+create table BPM.USER_CONTACTINFO_BACKUP as (select * from BPM.USER_CONTACTINFO);
+
+commit;
+
+UPDATE BPM.USER_CONTACTINFO
+SET    EMAIL    = 'desarrollo.provision@desarrollo.ao';
+
+commit;

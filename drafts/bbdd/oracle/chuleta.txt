@@ -144,7 +144,11 @@ con el spool, podriamos ejecutar las querys y escupirlas en ficheros para poster
 
 
   
-  
+*******************************************************************************************
+***		 					revisar entradas con datos en columnas repetidas			***
+*******************************************************************************************
+
+select * from PROVISION.WORKSHEET where feasibility_id in (select feasibility_id from PROVISION.WORKSHEET group by feasibility_id having count (*) > 1) order by feasibility_id;    
   
   
   
