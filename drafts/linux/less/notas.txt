@@ -1,0 +1,5 @@
+less -S para visualizar el archivo sin ajustar el ancho de línea
+con / hace busquedas de las palabras que busquemos
+con F va al final del archivo y se mantiene en el final aunque cambie
+con G va al final del archivo simplemente
+con g va al principio del archivo
