@@ -1,0 +1,538 @@
+pg_dump: reading schemas
+pg_dump: reading user-defined tables
+pg_dump: reading extensions
+pg_dump: reading user-defined functions
+pg_dump: reading user-defined types
+pg_dump: reading procedural languages
+pg_dump: reading user-defined aggregate functions
+pg_dump: reading user-defined operators
+pg_dump: reading user-defined operator classes
+pg_dump: reading user-defined operator families
+pg_dump: reading user-defined text search parsers
+pg_dump: reading user-defined text search templates
+pg_dump: reading user-defined text search dictionaries
+pg_dump: reading user-defined text search configurations
+pg_dump: reading user-defined foreign-data wrappers
+pg_dump: reading user-defined foreign servers
+pg_dump: reading default privileges
+pg_dump: reading user-defined collations
+pg_dump: reading user-defined conversions
+pg_dump: reading type casts
+pg_dump: reading table inheritance information
+pg_dump: reading event triggers
+pg_dump: finding extension members
+pg_dump: finding inheritance relationships
+pg_dump: reading column info for interesting tables
+pg_dump: finding the columns and types of table "spatial_ref_sys"
+pg_dump: finding check constraints for table "spatial_ref_sys"
+pg_dump: finding the columns and types of table "geography_columns"
+pg_dump: finding the columns and types of table "geometry_columns"
+pg_dump: finding the columns and types of table "raster_columns"
+pg_dump: finding the columns and types of table "raster_overviews"
+pg_dump: finding the columns and types of table "escr_aplicacion"
+pg_dump: finding default expressions of table "escr_aplicacion"
+pg_dump: finding the columns and types of table "escr_documento"
+pg_dump: finding default expressions of table "escr_documento"
+pg_dump: finding the columns and types of table "escr_evento_calendario"
+pg_dump: finding default expressions of table "escr_evento_calendario"
+pg_dump: finding the columns and types of table "escr_evento_documento"
+pg_dump: finding the columns and types of table "escr_evento_perfil"
+pg_dump: finding the columns and types of table "escr_grupo_aplicacion"
+pg_dump: finding the columns and types of table "escr_nota"
+pg_dump: finding default expressions of table "escr_nota"
+pg_dump: finding the columns and types of table "escr_nota_documento"
+pg_dump: finding the columns and types of table "escr_nota_perfil"
+pg_dump: finding the columns and types of table "escr_personal"
+pg_dump: finding default expressions of table "escr_personal"
+pg_dump: finding the columns and types of table "escr_personal_rpt_aux"
+pg_dump: finding default expressions of table "escr_personal_rpt_aux"
+pg_dump: finding the columns and types of table "escr_prioridad_tarea"
+pg_dump: finding the columns and types of table "escr_tarea"
+pg_dump: finding default expressions of table "escr_tarea"
+pg_dump: finding the columns and types of table "escr_tarea_documento"
+pg_dump: finding the columns and types of table "escr_tarea_perfil"
+pg_dump: finding the columns and types of table "escr_tipo_evento"
+pg_dump: finding the columns and types of table "gen_cargo"
+pg_dump: finding default expressions of table "gen_cargo"
+pg_dump: finding the columns and types of table "gen_carretera"
+pg_dump: finding default expressions of table "gen_carretera"
+pg_dump: finding the columns and types of table "gen_carretera_muni"
+pg_dump: finding default expressions of table "gen_carretera_muni"
+pg_dump: finding the columns and types of table "gen_carretera_zona"
+pg_dump: finding default expressions of table "gen_carretera_zona"
+pg_dump: finding the columns and types of table "gen_categoria"
+pg_dump: finding default expressions of table "gen_categoria"
+pg_dump: finding the columns and types of table "gen_comuna"
+pg_dump: finding default expressions of table "gen_comuna"
+pg_dump: finding the columns and types of table "gen_comunidad_autonoma"
+pg_dump: finding default expressions of table "gen_comunidad_autonoma"
+pg_dump: finding the columns and types of table "gen_cuadrilla"
+pg_dump: finding default expressions of table "gen_cuadrilla"
+pg_dump: finding the columns and types of table "gen_documento"
+pg_dump: finding default expressions of table "gen_documento"
+pg_dump: finding the columns and types of table "gen_empleado"
+pg_dump: finding default expressions of table "gen_empleado"
+pg_dump: finding the columns and types of table "gen_festivos"
+pg_dump: finding default expressions of table "gen_festivos"
+pg_dump: finding the columns and types of table "gen_festivos_municipio"
+pg_dump: finding default expressions of table "gen_festivos_municipio"
+pg_dump: finding the columns and types of table "gen_localidad"
+pg_dump: finding default expressions of table "gen_localidad"
+pg_dump: finding the columns and types of table "gen_municipio"
+pg_dump: finding default expressions of table "gen_municipio"
+pg_dump: finding the columns and types of table "gen_pais"
+pg_dump: finding default expressions of table "gen_pais"
+pg_dump: finding the columns and types of table "gen_periodo_vac"
+pg_dump: finding default expressions of table "gen_periodo_vac"
+pg_dump: finding the columns and types of table "gen_persona"
+pg_dump: finding default expressions of table "gen_persona"
+pg_dump: finding the columns and types of table "gen_persona_cargo"
+pg_dump: finding the columns and types of table "gen_provincia"
+pg_dump: finding default expressions of table "gen_provincia"
+pg_dump: finding the columns and types of table "gen_zona"
+pg_dump: finding default expressions of table "gen_zona"
+pg_dump: finding the columns and types of table "aplicacion"
+pg_dump: finding the columns and types of table "acuse"
+pg_dump: finding the columns and types of table "documento"
+pg_dump: finding the columns and types of table "interesado"
+pg_dump: finding the columns and types of table "lote"
+pg_dump: finding the columns and types of table "notificacion"
+pg_dump: finding the columns and types of table "plantilla"
+pg_dump: finding the columns and types of table "igdocument"
+pg_dump: finding the columns and types of table "resource_node_connection"
+pg_dump: finding the columns and types of table "resource_node_description"
+pg_dump: finding the columns and types of table "combustible"
+pg_dump: finding the columns and types of table "combustibles"
+pg_dump: finding the columns and types of table "comercializacion"
+pg_dump: finding the columns and types of table "empresa"
+pg_dump: finding the columns and types of table "expediente"
+pg_dump: finding the columns and types of table "fichero"
+pg_dump: finding the columns and types of table "personal"
+pg_dump: finding the columns and types of table "produccion"
+pg_dump: finding the columns and types of table "relatorio"
+pg_dump: finding the columns and types of table "tasa"
+pg_dump: finding the columns and types of table "tipo_combustible"
+pg_dump: finding the columns and types of table "user"
+pg_dump: finding the columns and types of table "user"
+pg_dump: finding the columns and types of table "igdocument"
+pg_dump: finding the columns and types of table "silcam_parcelas"
+pg_dump: finding the columns and types of table "silcam_parques"
+pg_dump: finding the columns and types of table "audit_entry"
+pg_dump: finding the columns and types of table "ci_direccion"
+pg_dump: finding the columns and types of table "ci_role"
+pg_dump: finding the columns and types of table "configuration"
+pg_dump: finding the columns and types of table "coordinate"
+pg_dump: finding the columns and types of table "cuenta_bancaria"
+pg_dump: finding the columns and types of table "documento_entregado"
+pg_dump: finding the columns and types of table "documento_requerido"
+pg_dump: finding the columns and types of table "estados_expedientes"
+pg_dump: finding the columns and types of table "evento"
+pg_dump: finding the columns and types of table "exp_mining"
+pg_dump: finding the columns and types of table "expediente"
+pg_dump: finding the columns and types of table "expediente_datos_adicionales"
+pg_dump: finding the columns and types of table "expediente_eventos"
+pg_dump: finding the columns and types of table "expediente_terceros"
+pg_dump: finding the columns and types of table "gen_comuna"
+pg_dump: finding default expressions of table "gen_comuna"
+pg_dump: finding the columns and types of table "gen_municipio"
+pg_dump: finding default expressions of table "gen_municipio"
+pg_dump: finding the columns and types of table "gen_pais"
+pg_dump: finding default expressions of table "gen_pais"
+pg_dump: finding the columns and types of table "gen_provincia"
+pg_dump: finding default expressions of table "gen_provincia"
+pg_dump: finding the columns and types of table "grid"
+pg_dump: finding the columns and types of table "grid_title"
+pg_dump: finding the columns and types of table "grupo_recursos_catastro"
+pg_dump: finding the columns and types of table "grupo_resource_title"
+pg_dump: finding the columns and types of table "localization"
+pg_dump: finding the columns and types of table "monitor_entry"
+pg_dump: finding the columns and types of table "persona_fisica"
+pg_dump: finding the columns and types of table "persona_juridica"
+pg_dump: finding the columns and types of table "pfisicas_rol"
+pg_dump: finding the columns and types of table "pjuridicas_rol"
+pg_dump: finding the columns and types of table "recursos_catastro"
+pg_dump: finding the columns and types of table "requerimiento"
+pg_dump: finding the columns and types of table "resource_"
+pg_dump: finding the columns and types of table "resource_mi"
+pg_dump: finding the columns and types of table "resource_title"
+pg_dump: finding the columns and types of table "state"
+pg_dump: finding the columns and types of table "tipo_grupo_recurso"
+pg_dump: finding the columns and types of table "tipos_via"
+pg_dump: finding the columns and types of table "title"
+pg_dump: finding the columns and types of table "title_state"
+pg_dump: finding the columns and types of table "title_type"
+pg_dump: finding the columns and types of table "silcam_titulos"
+pg_dump: finding the columns and types of table "v_search_resource_"
+pg_dump: finding the columns and types of table "v_search_state"
+pg_dump: finding the columns and types of table "v_search_title_type"
+pg_dump: finding the columns and types of table "v_title"
+pg_dump: finding the columns and types of table "v_title_lasts_versions"
+pg_dump: finding the columns and types of table "v_search_persona"
+pg_dump: flagging inherited columns in subtables
+pg_dump: reading indexes
+pg_dump: reading indexes for table "spatial_ref_sys"
+pg_dump: reading indexes for table "escr_aplicacion"
+pg_dump: reading indexes for table "escr_documento"
+pg_dump: reading indexes for table "escr_evento_calendario"
+pg_dump: reading indexes for table "escr_evento_documento"
+pg_dump: reading indexes for table "escr_evento_perfil"
+pg_dump: reading indexes for table "escr_grupo_aplicacion"
+pg_dump: reading indexes for table "escr_nota"
+pg_dump: reading indexes for table "escr_nota_documento"
+pg_dump: reading indexes for table "escr_nota_perfil"
+pg_dump: reading indexes for table "escr_personal"
+pg_dump: reading indexes for table "escr_personal_rpt_aux"
+pg_dump: reading indexes for table "escr_prioridad_tarea"
+pg_dump: reading indexes for table "escr_tarea"
+pg_dump: reading indexes for table "escr_tarea_documento"
+pg_dump: reading indexes for table "escr_tarea_perfil"
+pg_dump: reading indexes for table "escr_tipo_evento"
+pg_dump: reading indexes for table "gen_cargo"
+pg_dump: reading indexes for table "gen_carretera"
+pg_dump: reading indexes for table "gen_carretera_muni"
+pg_dump: reading indexes for table "gen_carretera_zona"
+pg_dump: reading indexes for table "gen_categoria"
+pg_dump: reading indexes for table "gen_comuna"
+pg_dump: reading indexes for table "gen_comunidad_autonoma"
+pg_dump: reading indexes for table "gen_cuadrilla"
+pg_dump: reading indexes for table "gen_documento"
+pg_dump: reading indexes for table "gen_empleado"
+pg_dump: reading indexes for table "gen_festivos"
+pg_dump: reading indexes for table "gen_festivos_municipio"
+pg_dump: reading indexes for table "gen_localidad"
+pg_dump: reading indexes for table "gen_municipio"
+pg_dump: reading indexes for table "gen_pais"
+pg_dump: reading indexes for table "gen_periodo_vac"
+pg_dump: reading indexes for table "gen_persona"
+pg_dump: reading indexes for table "gen_persona_cargo"
+pg_dump: reading indexes for table "gen_provincia"
+pg_dump: reading indexes for table "gen_zona"
+pg_dump: reading indexes for table "aplicacion"
+pg_dump: reading indexes for table "acuse"
+pg_dump: reading indexes for table "documento"
+pg_dump: reading indexes for table "interesado"
+pg_dump: reading indexes for table "lote"
+pg_dump: reading indexes for table "notificacion"
+pg_dump: reading indexes for table "plantilla"
+pg_dump: reading indexes for table "igdocument"
+pg_dump: reading indexes for table "resource_node_connection"
+pg_dump: reading indexes for table "resource_node_description"
+pg_dump: reading indexes for table "combustible"
+pg_dump: reading indexes for table "combustibles"
+pg_dump: reading indexes for table "comercializacion"
+pg_dump: reading indexes for table "empresa"
+pg_dump: reading indexes for table "expediente"
+pg_dump: reading indexes for table "fichero"
+pg_dump: reading indexes for table "personal"
+pg_dump: reading indexes for table "produccion"
+pg_dump: reading indexes for table "relatorio"
+pg_dump: reading indexes for table "tasa"
+pg_dump: reading indexes for table "tipo_combustible"
+pg_dump: reading indexes for table "user"
+pg_dump: reading indexes for table "user"
+pg_dump: reading indexes for table "igdocument"
+pg_dump: reading indexes for table "silcam_parcelas"
+pg_dump: reading indexes for table "silcam_parques"
+pg_dump: reading indexes for table "audit_entry"
+pg_dump: reading indexes for table "ci_direccion"
+pg_dump: reading indexes for table "ci_role"
+pg_dump: reading indexes for table "configuration"
+pg_dump: reading indexes for table "coordinate"
+pg_dump: reading indexes for table "cuenta_bancaria"
+pg_dump: reading indexes for table "documento_entregado"
+pg_dump: reading indexes for table "documento_requerido"
+pg_dump: reading indexes for table "estados_expedientes"
+pg_dump: reading indexes for table "evento"
+pg_dump: reading indexes for table "exp_mining"
+pg_dump: reading indexes for table "expediente"
+pg_dump: reading indexes for table "expediente_datos_adicionales"
+pg_dump: reading indexes for table "expediente_eventos"
+pg_dump: reading indexes for table "expediente_terceros"
+pg_dump: reading indexes for table "gen_comuna"
+pg_dump: reading indexes for table "gen_municipio"
+pg_dump: reading indexes for table "gen_pais"
+pg_dump: reading indexes for table "gen_provincia"
+pg_dump: reading indexes for table "grid"
+pg_dump: reading indexes for table "grid_title"
+pg_dump: reading indexes for table "grupo_recursos_catastro"
+pg_dump: reading indexes for table "grupo_resource_title"
+pg_dump: reading indexes for table "localization"
+pg_dump: reading indexes for table "monitor_entry"
+pg_dump: reading indexes for table "persona_fisica"
+pg_dump: reading indexes for table "persona_juridica"
+pg_dump: reading indexes for table "pfisicas_rol"
+pg_dump: reading indexes for table "pjuridicas_rol"
+pg_dump: reading indexes for table "recursos_catastro"
+pg_dump: reading indexes for table "requerimiento"
+pg_dump: reading indexes for table "resource_"
+pg_dump: reading indexes for table "resource_mi"
+pg_dump: reading indexes for table "resource_title"
+pg_dump: reading indexes for table "state"
+pg_dump: reading indexes for table "tipo_grupo_recurso"
+pg_dump: reading indexes for table "tipos_via"
+pg_dump: reading indexes for table "title"
+pg_dump: reading indexes for table "title_state"
+pg_dump: reading indexes for table "title_type"
+pg_dump: reading indexes for table "silcam_titulos"
+pg_dump: reading constraints
+pg_dump: reading foreign key constraints for table "escr_aplicacion"
+pg_dump: reading foreign key constraints for table "escr_documento"
+pg_dump: reading foreign key constraints for table "escr_evento_calendario"
+pg_dump: reading foreign key constraints for table "escr_evento_documento"
+pg_dump: reading foreign key constraints for table "escr_evento_perfil"
+pg_dump: reading foreign key constraints for table "escr_grupo_aplicacion"
+pg_dump: reading foreign key constraints for table "escr_nota"
+pg_dump: reading foreign key constraints for table "escr_nota_documento"
+pg_dump: reading foreign key constraints for table "escr_nota_perfil"
+pg_dump: reading foreign key constraints for table "escr_personal"
+pg_dump: reading foreign key constraints for table "escr_personal_rpt_aux"
+pg_dump: reading foreign key constraints for table "escr_prioridad_tarea"
+pg_dump: reading foreign key constraints for table "escr_tarea"
+pg_dump: reading foreign key constraints for table "escr_tarea_documento"
+pg_dump: reading foreign key constraints for table "escr_tarea_perfil"
+pg_dump: reading foreign key constraints for table "escr_tipo_evento"
+pg_dump: reading foreign key constraints for table "gen_cargo"
+pg_dump: reading foreign key constraints for table "gen_carretera"
+pg_dump: reading foreign key constraints for table "gen_carretera_muni"
+pg_dump: reading foreign key constraints for table "gen_carretera_zona"
+pg_dump: reading foreign key constraints for table "gen_categoria"
+pg_dump: reading foreign key constraints for table "gen_comuna"
+pg_dump: reading foreign key constraints for table "gen_comunidad_autonoma"
+pg_dump: reading foreign key constraints for table "gen_cuadrilla"
+pg_dump: reading foreign key constraints for table "gen_documento"
+pg_dump: reading foreign key constraints for table "gen_empleado"
+pg_dump: reading foreign key constraints for table "gen_festivos"
+pg_dump: reading foreign key constraints for table "gen_festivos_municipio"
+pg_dump: reading foreign key constraints for table "gen_localidad"
+pg_dump: reading foreign key constraints for table "gen_municipio"
+pg_dump: reading foreign key constraints for table "gen_pais"
+pg_dump: reading foreign key constraints for table "gen_persona"
+pg_dump: reading foreign key constraints for table "gen_persona_cargo"
+pg_dump: reading foreign key constraints for table "gen_provincia"
+pg_dump: reading foreign key constraints for table "gen_zona"
+pg_dump: reading foreign key constraints for table "documento"
+pg_dump: reading foreign key constraints for table "lote"
+pg_dump: reading foreign key constraints for table "notificacion"
+pg_dump: reading foreign key constraints for table "resource_node_connection"
+pg_dump: reading foreign key constraints for table "resource_node_description"
+pg_dump: reading foreign key constraints for table "combustible"
+pg_dump: reading foreign key constraints for table "combustibles"
+pg_dump: reading foreign key constraints for table "empresa"
+pg_dump: reading foreign key constraints for table "expediente"
+pg_dump: reading foreign key constraints for table "fichero"
+pg_dump: reading foreign key constraints for table "relatorio"
+pg_dump: reading foreign key constraints for table "ci_direccion"
+pg_dump: reading foreign key constraints for table "ci_role"
+pg_dump: reading foreign key constraints for table "coordinate"
+pg_dump: reading foreign key constraints for table "cuenta_bancaria"
+pg_dump: reading foreign key constraints for table "documento_entregado"
+pg_dump: reading foreign key constraints for table "estados_expedientes"
+pg_dump: reading foreign key constraints for table "evento"
+pg_dump: reading foreign key constraints for table "expediente"
+pg_dump: reading foreign key constraints for table "expediente_eventos"
+pg_dump: reading foreign key constraints for table "expediente_terceros"
+pg_dump: reading foreign key constraints for table "gen_comuna"
+pg_dump: reading foreign key constraints for table "gen_municipio"
+pg_dump: reading foreign key constraints for table "gen_pais"
+pg_dump: reading foreign key constraints for table "gen_provincia"
+pg_dump: reading foreign key constraints for table "grid_title"
+pg_dump: reading foreign key constraints for table "grupo_recursos_catastro"
+pg_dump: reading foreign key constraints for table "grupo_resource_title"
+pg_dump: reading foreign key constraints for table "localization"
+pg_dump: reading foreign key constraints for table "persona_fisica"
+pg_dump: reading foreign key constraints for table "persona_juridica"
+pg_dump: reading foreign key constraints for table "recursos_catastro"
+pg_dump: reading foreign key constraints for table "requerimiento"
+pg_dump: reading foreign key constraints for table "resource_mi"
+pg_dump: reading foreign key constraints for table "resource_title"
+pg_dump: reading foreign key constraints for table "state"
+pg_dump: reading foreign key constraints for table "tipo_grupo_recurso"
+pg_dump: reading foreign key constraints for table "title"
+pg_dump: reading foreign key constraints for table "title_state"
+pg_dump: reading foreign key constraints for table "title_type"
+pg_dump: reading triggers
+pg_dump: reading triggers for table "escr_aplicacion"
+pg_dump: reading triggers for table "escr_documento"
+pg_dump: reading triggers for table "escr_evento_calendario"
+pg_dump: reading triggers for table "escr_evento_documento"
+pg_dump: reading triggers for table "escr_evento_perfil"
+pg_dump: reading triggers for table "escr_grupo_aplicacion"
+pg_dump: reading triggers for table "escr_nota"
+pg_dump: reading triggers for table "escr_nota_documento"
+pg_dump: reading triggers for table "escr_nota_perfil"
+pg_dump: reading triggers for table "escr_personal"
+pg_dump: reading triggers for table "escr_personal_rpt_aux"
+pg_dump: reading triggers for table "escr_prioridad_tarea"
+pg_dump: reading triggers for table "escr_tarea"
+pg_dump: reading triggers for table "escr_tarea_documento"
+pg_dump: reading triggers for table "escr_tarea_perfil"
+pg_dump: reading triggers for table "escr_tipo_evento"
+pg_dump: reading triggers for table "gen_cargo"
+pg_dump: reading triggers for table "gen_carretera"
+pg_dump: reading triggers for table "gen_carretera_muni"
+pg_dump: reading triggers for table "gen_carretera_zona"
+pg_dump: reading triggers for table "gen_categoria"
+pg_dump: reading triggers for table "gen_comuna"
+pg_dump: reading triggers for table "gen_comunidad_autonoma"
+pg_dump: reading triggers for table "gen_cuadrilla"
+pg_dump: reading triggers for table "gen_documento"
+pg_dump: reading triggers for table "gen_empleado"
+pg_dump: reading triggers for table "gen_festivos"
+pg_dump: reading triggers for table "gen_festivos_municipio"
+pg_dump: reading triggers for table "gen_localidad"
+pg_dump: reading triggers for table "gen_municipio"
+pg_dump: reading triggers for table "gen_pais"
+pg_dump: reading triggers for table "gen_persona"
+pg_dump: reading triggers for table "gen_persona_cargo"
+pg_dump: reading triggers for table "gen_provincia"
+pg_dump: reading triggers for table "gen_zona"
+pg_dump: reading triggers for table "documento"
+pg_dump: reading triggers for table "lote"
+pg_dump: reading triggers for table "notificacion"
+pg_dump: reading triggers for table "resource_node_connection"
+pg_dump: reading triggers for table "resource_node_description"
+pg_dump: reading triggers for table "combustible"
+pg_dump: reading triggers for table "combustibles"
+pg_dump: reading triggers for table "empresa"
+pg_dump: reading triggers for table "expediente"
+pg_dump: reading triggers for table "fichero"
+pg_dump: reading triggers for table "relatorio"
+pg_dump: reading triggers for table "ci_direccion"
+pg_dump: reading triggers for table "ci_role"
+pg_dump: reading triggers for table "coordinate"
+pg_dump: reading triggers for table "cuenta_bancaria"
+pg_dump: reading triggers for table "documento_entregado"
+pg_dump: reading triggers for table "estados_expedientes"
+pg_dump: reading triggers for table "evento"
+pg_dump: reading triggers for table "expediente"
+pg_dump: reading triggers for table "expediente_eventos"
+pg_dump: reading triggers for table "expediente_terceros"
+pg_dump: reading triggers for table "gen_comuna"
+pg_dump: reading triggers for table "gen_municipio"
+pg_dump: reading triggers for table "gen_pais"
+pg_dump: reading triggers for table "gen_provincia"
+pg_dump: reading triggers for table "grid_title"
+pg_dump: reading triggers for table "grupo_recursos_catastro"
+pg_dump: reading triggers for table "grupo_resource_title"
+pg_dump: reading triggers for table "localization"
+pg_dump: reading triggers for table "persona_fisica"
+pg_dump: reading triggers for table "persona_juridica"
+pg_dump: reading triggers for table "recursos_catastro"
+pg_dump: reading triggers for table "requerimiento"
+pg_dump: reading triggers for table "resource_mi"
+pg_dump: reading triggers for table "resource_title"
+pg_dump: reading triggers for table "state"
+pg_dump: reading triggers for table "tipo_grupo_recurso"
+pg_dump: reading triggers for table "title"
+pg_dump: reading triggers for table "title_state"
+pg_dump: reading triggers for table "title_type"
+pg_dump: reading rewrite rules
+pg_dump: reading large objects
+pg_dump: reading dependency data
+pg_dump: saving encoding = UTF8
+pg_dump: saving standard_conforming_strings = on
+pg_dump: saving database definition
+pg_dump: dumping contents of table escr_aplicacion
+pg_dump: dumping contents of table escr_documento
+pg_dump: dumping contents of table escr_evento_calendario
+pg_dump: dumping contents of table escr_evento_documento
+pg_dump: dumping contents of table escr_evento_perfil
+pg_dump: dumping contents of table escr_grupo_aplicacion
+pg_dump: dumping contents of table escr_nota
+pg_dump: dumping contents of table escr_nota_documento
+pg_dump: dumping contents of table escr_nota_perfil
+pg_dump: dumping contents of table escr_personal
+pg_dump: dumping contents of table escr_personal_rpt_aux
+pg_dump: dumping contents of table escr_prioridad_tarea
+pg_dump: dumping contents of table escr_tarea
+pg_dump: dumping contents of table escr_tarea_documento
+pg_dump: dumping contents of table escr_tarea_perfil
+pg_dump: dumping contents of table escr_tipo_evento
+pg_dump: dumping contents of table gen_cargo
+pg_dump: dumping contents of table gen_carretera
+pg_dump: dumping contents of table gen_carretera_muni
+pg_dump: dumping contents of table gen_carretera_zona
+pg_dump: dumping contents of table gen_categoria
+pg_dump: dumping contents of table gen_comuna
+pg_dump: dumping contents of table gen_comunidad_autonoma
+pg_dump: dumping contents of table gen_cuadrilla
+pg_dump: dumping contents of table gen_documento
+pg_dump: dumping contents of table gen_empleado
+pg_dump: dumping contents of table gen_festivos
+pg_dump: dumping contents of table gen_festivos_municipio
+pg_dump: dumping contents of table gen_localidad
+pg_dump: dumping contents of table gen_municipio
+pg_dump: dumping contents of table gen_pais
+pg_dump: dumping contents of table gen_periodo_vac
+pg_dump: dumping contents of table gen_persona
+pg_dump: dumping contents of table gen_persona_cargo
+pg_dump: dumping contents of table gen_provincia
+pg_dump: dumping contents of table gen_zona
+pg_dump: dumping contents of table silcam_parcelas
+pg_dump: dumping contents of table silcam_parques
+pg_dump: dumping contents of table silcam_titulos
+pg_dump: dumping contents of table aplicacion
+pg_dump: dumping contents of table igdocument
+pg_dump: dumping contents of table acuse
+pg_dump: dumping contents of table documento
+pg_dump: dumping contents of table interesado
+pg_dump: dumping contents of table lote
+pg_dump: dumping contents of table notificacion
+pg_dump: dumping contents of table plantilla
+pg_dump: dumping contents of table igdocument
+pg_dump: dumping contents of table resource_node_connection
+pg_dump: dumping contents of table resource_node_description
+pg_dump: dumping contents of table spatial_ref_sys
+pg_dump: dumping contents of table audit_entry
+pg_dump: dumping contents of table ci_direccion
+pg_dump: dumping contents of table ci_role
+pg_dump: dumping contents of table configuration
+pg_dump: dumping contents of table coordinate
+pg_dump: dumping contents of table cuenta_bancaria
+pg_dump: dumping contents of table documento_entregado
+pg_dump: dumping contents of table documento_requerido
+pg_dump: dumping contents of table estados_expedientes
+pg_dump: dumping contents of table evento
+pg_dump: dumping contents of table exp_mining
+pg_dump: dumping contents of table expediente
+pg_dump: dumping contents of table expediente_datos_adicionales
+pg_dump: dumping contents of table expediente_eventos
+pg_dump: dumping contents of table expediente_terceros
+pg_dump: dumping contents of table gen_comuna
+pg_dump: dumping contents of table gen_municipio
+pg_dump: dumping contents of table gen_pais
+pg_dump: dumping contents of table gen_provincia
+pg_dump: dumping contents of table grid
+pg_dump: dumping contents of table grid_title
+pg_dump: dumping contents of table grupo_recursos_catastro
+pg_dump: dumping contents of table grupo_resource_title
+pg_dump: dumping contents of table localization
+pg_dump: dumping contents of table monitor_entry
+pg_dump: dumping contents of table persona_fisica
+pg_dump: dumping contents of table persona_juridica
+pg_dump: dumping contents of table pfisicas_rol
+pg_dump: dumping contents of table pjuridicas_rol
+pg_dump: dumping contents of table recursos_catastro
+pg_dump: dumping contents of table requerimiento
+pg_dump: dumping contents of table resource_
+pg_dump: dumping contents of table resource_mi
+pg_dump: dumping contents of table resource_title
+pg_dump: dumping contents of table state
+pg_dump: dumping contents of table tipo_grupo_recurso
+pg_dump: dumping contents of table tipos_via
+pg_dump: dumping contents of table title
+pg_dump: dumping contents of table title_state
+pg_dump: dumping contents of table title_type
+pg_dump: dumping contents of table combustible
+pg_dump: dumping contents of table combustibles
+pg_dump: dumping contents of table comercializacion
+pg_dump: dumping contents of table empresa
+pg_dump: dumping contents of table expediente
+pg_dump: dumping contents of table fichero
+pg_dump: dumping contents of table personal
+pg_dump: dumping contents of table produccion
+pg_dump: dumping contents of table relatorio
+pg_dump: dumping contents of table tasa
+pg_dump: dumping contents of table tipo_combustible
+pg_dump: dumping contents of table user
+pg_dump: dumping contents of table user

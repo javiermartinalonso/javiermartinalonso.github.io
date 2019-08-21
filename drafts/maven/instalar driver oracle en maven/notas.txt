@@ -1,0 +1,3 @@
+con copiarlo de un repository de maven donde ya estaba instalado correctamente basta.
+
+se copian las carpetas de com/oracle y listo
