@@ -2,7 +2,10 @@
 
 ALTER SESSION SET CURRENT_SCHEMA = joe;
 
-
+***************************************************************************************************************************
+**** BUSCAR EN LOS LOGS por el feasibilityID
+***************************************************************************************************************************
+ grep '86194337-d335-46f0-96c7-abc2c3e95d1d' /opt/provision/bpm/standalone/logs/
 
 ***************************************************************************************************************************
 *falta de espacio en bonita
@@ -244,8 +247,7 @@ BPM.DATA_INSTANCE
 BPM.ARCH_DATA_INSTANCE
 PROVISION.TASK_EXECUTIONKPI
 
-
-
+**** BUSCAR EN LOS LOGS por el feasibilityID
 
 
  grep '86194337-d335-46f0-96c7-abc2c3e95d1d' /opt/provision/bpm/standalone/logs/

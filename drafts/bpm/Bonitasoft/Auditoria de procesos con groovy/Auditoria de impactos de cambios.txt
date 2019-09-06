@@ -12,7 +12,7 @@ con este fichero puedo generar un excel para estudiar o auditar la dependencia e
 DiagramUtils.groovy
 
 
-averiguar que parametros de de que proceso en que diagrama hay que cambiar de que version a que otra version
+averiguar que parametros de que proceso en que diagrama hay que cambiar de que version a que otra version
 
 ejemplo:
 
@@ -73,7 +73,7 @@ hay que desplegar los procesos que se han modificado de version:
 "Alta elementos red LTE (2.0)"
 "Baja recursos red  LTE (2.0)"
 
-actualizar los parametros de los procesos antes indicados (por script sql a poder ser)
+actualizar los parámetros de los procesos antes indicados (por script sql a poder ser)
 
 
 
