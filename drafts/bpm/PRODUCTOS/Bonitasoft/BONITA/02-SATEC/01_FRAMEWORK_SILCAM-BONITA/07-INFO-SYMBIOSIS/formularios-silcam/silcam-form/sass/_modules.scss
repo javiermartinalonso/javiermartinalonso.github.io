@@ -1,0 +1,216 @@
+//##INPUTS - FORMULARIOS
+.lbl-form {
+	display: block;
+	margin-bottom: 2px;
+	font-weight: bold;
+	color: $c-g40;
+	font-size: 0.8em;
+	margin-top: 15px;
+}
+
+select:focus, input:focus  {
+	border:2px solid $br-input;
+}
+
+
+.custom-input {	
+	padding: 8px 0px 8px 8px;	
+}
+
+.custom-select {
+	padding: 8px 48px 8px 8px;
+		
+	background: url("../img/arrow-select.png");
+	background-position: right center;	
+}
+
+.custom-dpicker {
+	padding: 8px 8px 8px 35px;
+	
+	background: url("../img/ico-dpicker.png");
+	background-position: left center;
+
+}
+
+.custom-form {
+	width: 100%;
+	
+	outline: none!important;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 1em;
+	
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	
+	text-indent: 0.01px;
+	text-overflow: "";
+	color: $c-g60;
+	
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px!important;
+	border: 2px solid transparent;
+
+	content: "";
+	
+	background-color:$bg-input;
+	background-repeat: no-repeat;
+}
+
+
+.custom-file {
+	opacity: 0;
+	position: absolute;
+}
+
+
+
+//##AJUSTES
+.adj-ico-check {
+	position: relative;
+	top:3px;
+	left: 3px;
+}
+
+
+/*Hack para que no se vea nuestro background de la flecha en firefox ya que no funciona el apperance:none por un bug en versiones 30+*/
+@-moz-document url-prefix() { 
+  .custom-select {
+     background-image:none!important;
+     padding-right: 10px;
+  }
+}
+
+/* Hack para hacer desaparecer la flecha en xplorer 10+ */
+select.custom-select::-ms-expand { 
+	display: none; 
+}
+
+
+
+
+//#ENLACES
+.a-main, .a-main:link, .a-main:active, .a-main:visited, .a-main:focus {
+	color: $main-color;
+	text-decoration: none;
+	opacity: 1;
+	-webkit-transition: all 0.3s ease;                  
+    -moz-transition: all 0.3s ease;                 
+    -o-transition: all 0.3s ease;   
+    -ms-transition: all 0.3s ease;          
+    transition: all 0.3s ease;
+}
+
+.a-main:hover{
+	background-color: $a-main-hover;
+}
+
+.a-action {
+	display: block;
+	padding: 8px 8px 8px 35px;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+.a-action:hover{
+	color: $a-main-hover;
+	background-color: $c-g20;
+}
+
+.a-ac-upload{
+	background-image: url("../img/ico-upload.png");
+}
+
+.a-ac-upload-ok{
+	background-image: url("../img/ico-upload-ok.png")!important;
+}
+
+
+
+//##BOTONES
+.btn, .btn:visited {
+	display: block;
+	background-repeat: no-repeat;
+	width:100%;
+	padding: 8px 16px;
+	color: $contrast-color;
+	text-align: center;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px!important;
+	text-decoration: none;
+	font-size: 0.8em;
+}
+
+.btn:hover {
+	text-decoration: none;
+	color: $contrast-color;
+	opacity: 0.9;
+}
+
+.btn-inl {
+	width: 100%;
+	padding: 8px 16px;
+	display: block;
+	margin: 0;
+	margin-bottom: 15px;
+	
+	@include modular-mq(sm) {
+		width: auto!important;
+		min-width: 150px;
+		padding: 8px 16px;
+		margin-bottom:0px;
+		margin-left:20px;
+		display: inline-block;
+	}
+}
+
+.btn-system {
+	background-color: $c-btn-system;
+}
+
+.btn-action {
+	background-color: $c-btn-action;
+}
+
+.ico-btn {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	position: relative;
+	top: 3px;
+}
+
+.btn-txt {
+	display: inline-block;
+	position: relative;
+	top:-3px;
+}
+
+.ico-btn-cancel {
+	background-image: url("../img/ico-btn-cancel.png");
+}
+
+.ico-btn-send {
+	background-image: url("../img/ico-btn-send.png");
+}
+
+.ico-btn-filter {
+	background-image: url("../img/ico-btn-filter.png");
+}
+
+.ico-btn-save {
+	background-image: url("../img/ico-btn-save.png");
+}
+
+.ico-btn-new {
+	background-image: url("../img/ico-btn-new.png");
+}
+
+.ico-btn-search {
+	background-image: url("../img/ico-btn-search.png");
+}

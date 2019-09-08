@@ -1,0 +1,2 @@
+http://www.dforge.net/2013/09/16/enabling-cors-on-apache-tomcat-6/
+http://software.dzhuvinov.com/cors-filter-installation.html

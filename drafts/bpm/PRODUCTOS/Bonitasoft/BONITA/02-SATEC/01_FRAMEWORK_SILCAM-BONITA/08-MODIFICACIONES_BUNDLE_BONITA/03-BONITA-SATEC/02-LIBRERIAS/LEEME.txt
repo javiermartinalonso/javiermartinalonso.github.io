@@ -1,0 +1,5 @@
+EL CONTENIDO DE "SERVIDOR_BONITA" SE COPIA EN LA RUTA:
+/opt/BonitaBPMCommunity-6.3.0-Tomcat-6.0.37/lib
+
+EL CONTENIDO DE "WAR_BONITA" SE COPIA EN LA RUTA:
+/srv/datos/tomcatBonita/webapps/bonita/WEB-INF/lib

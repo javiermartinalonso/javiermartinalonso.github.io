@@ -1,3 +1,13 @@
+https://bpmn-bayard.blogspot.com/2011/03/1-introduccion-bpmn.html
+
+
+historia BPM, entender su evolucion y necesidad
+	timeline
+
+componentes del BPMN 2.0
+ejemplos bpm
+
+
 diapositiva aburridos, de siempre lo mismo
 si mirais debajo de vuestros asientos... vereis que no teneis nada...
 

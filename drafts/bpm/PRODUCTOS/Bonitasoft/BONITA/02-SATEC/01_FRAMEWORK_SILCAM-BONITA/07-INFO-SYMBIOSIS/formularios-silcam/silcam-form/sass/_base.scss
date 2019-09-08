@@ -1,0 +1,410 @@
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/text-shadow";
+@import "compass/css3/transition";
+
+
+//Fonts
+.f-monserrat {
+	font-family: 'Montserrat', sans-serif!important;
+}
+
+
+//Margins
+
+.m-xs-top {
+	margin-top:5px;
+}
+
+.m-s-top {
+	margin-top:10px;
+}
+
+.m-mtop {
+	margin-top:15px;
+}
+
+.m-l-top {
+	margin-top:20px;
+}
+
+.m-xl-top {
+	margin-top:30px;
+}
+
+.m-xs-bottom {
+	margin-bottom:5px;
+}
+
+.m-s-bottom {
+	margin-bottom:10px;
+}
+
+.m-m-bottom {
+	margin-top:15px;
+}
+
+.m-l-bottom {
+	margin-bottom:20px;
+}
+
+.m-xl-bottom {
+	margin-bottom:30px;
+}
+
+.m-right-xs {
+	margin-right: 5px;
+}
+
+.m-left-xs {
+	margin-left: 5px;
+}
+
+.m-left {
+	margin-left: 10px;
+}
+
+.m-right {
+	margin-right: 10px;
+}
+
+.no-m-top {
+	margin-top: 0;
+}
+
+.no-m-bottom {
+	margin-bottom: 0;
+}
+
+
+
+
+
+//Paddings
+
+.p-xs-top {
+	padding-top:5px;
+}
+
+.p-s-top {
+	padding-top:10px;
+}
+
+.p-m-top {
+	padding-top:15px;
+}
+
+.p-l-top {
+	padding-top:20px;
+}
+
+.p-xl-top {
+	padding-top:30px;
+}
+
+.p-xs-bottom {
+	padding-bottom:5px;
+}
+
+.p-s-bottom {
+	padding-bottom:10px;
+}
+
+.p-m-bottom {
+	padding-bottom:15px;
+}
+
+.p-l-bottom {
+	padding-bottom:20px;
+}
+
+.p-xl-bottom {
+	padding-bottom:30px;
+}
+
+.no-p-right {
+	padding-right: 0px;
+}
+
+.no-p-left {
+	padding-left: 0px;
+}
+
+
+//Line heights
+
+.lh-s {
+	line-height: 24px;
+}
+
+
+
+
+//Aux
+
+.uppc {
+	text-transform: uppercase;
+}
+
+.fwnormal {
+	font-weight: normal;
+}
+
+.click {
+	cursor: pointer;
+}
+
+.displayb {
+	display: block;
+}
+
+.displayib {
+	display: inline-block;
+}
+
+.clearb {
+	clear:both;
+}
+
+.overfh {
+	overflow: hidden;
+}
+
+.txt-ind{
+	text-indent: -9999px!important;
+}
+
+.txt-c {
+	text-align: center;
+}
+
+.txt-rg {
+	text-align: right;
+}
+
+.txt-lf {
+	text-align: left
+}
+
+.hddn {
+	display: none;
+}
+
+.htext {
+	text-indent: -9999px!important;
+}
+
+.c-obj {
+	margin: 0 auto!important;
+}
+
+.no-format {
+	text-decoration: none;
+	font-weight: normal;
+}
+
+.no-radius {
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+}
+
+.n-outl {
+	outline: none!important;
+}
+
+.b-shadow {
+	@include single-box-shadow;
+}
+
+.br-inside {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+
+.txt-b {
+	font-weight: bold;
+}
+
+
+.b-top {
+	border-top:1px solid $c-g20;
+}
+
+.b-bottom {
+	border-bottom: 1px solid $c-g20;
+}
+
+.b-bottom-sep {
+	border-bottom: 2px solid $c-g40;
+}
+
+.b-bottom-lh {
+	border-bottom: 1px solid $b-lh;
+}
+
+.b-bottom-lh-mb {
+	border-bottom: 1px solid $b-lh;
+	@include modular-mq(sm) {
+		border-bottom: none;
+	}
+}
+
+.n-padding {
+	padding: 0;
+}
+
+.n-margin {
+	margin: 0;
+}
+
+.no-p-lat {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.no-p-lat-mob {
+	padding-left: 0px;
+	padding-right: 0px;
+	@include modular-mq(sm) {
+		padding-left: none;
+		padding-right: none;
+	}
+}
+
+.p-content {
+	padding: 15px;
+}
+
+.txt-sh {
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, 1);
+}
+
+.box-sh {
+	@include single-box-shadow;
+}
+
+
+
+
+
+//Position
+.fleft {
+	float: left;
+}
+
+.fright {
+	float: right;
+}
+
+.r-pos {
+	position: relative;
+}
+
+.a-pos {
+	position: absolute;
+}
+
+
+
+//Titulos
+
+.tit-s {
+	//font-size:1.6em;
+	font-size: 6.5vw;
+
+	@include modular-mq(xs) {
+		font-size: 4.5vw;
+	}
+
+	@include modular-mq(sm) {
+		font-size: 3.1vw;
+	}
+	@include modular-mq(md) {
+		font-size: 2em;
+	}
+	
+	@include modular-mq(lg) {
+		font-size: 2em;
+	}
+}
+
+//Txt sizes - EM's sobre texto base de 14px
+
+
+
+.txt-big {
+	font-size: 2em; //34px
+	@include modular-mq(sm) {
+		font-size: 2.429em; //34px
+	}
+	
+	
+}
+
+.lh-txt-big {
+	line-height: 35px;
+}
+
+.txt-xxl {
+	font-size: 1.714em; //24px
+}
+
+.txt-xl {
+	font-size: 1.571em; //22px
+}
+
+.txt-l {
+	font-size: 1.286em; //18px
+}
+
+.txt-m {
+	font-size: 1.143em; //16px
+}
+
+.txt-s {
+	font-size: 0.857em; //12px
+}
+
+.txt-xs {
+	font-size: 0.714em; //10px
+}
+
+.txt-al {
+	text-align: left;
+}
+
+.txt-ar {
+	text-align: right;
+}
+
+.txt-n {
+	font-style: normal;
+	font-weight: normal;
+}
+
+
+//Colores
+
+
+.c-ctrs {
+	color: $contrast-color;
+}
+
+.c-advr { //advertise
+	color:$c-g40;
+}
+
+.c-txt-forms {
+	color: $c-g30;
+}
+
+
+//Ajustes:
+.adj-logo-top {
+	position: relative;
+	right: 5px;
+}
+
+

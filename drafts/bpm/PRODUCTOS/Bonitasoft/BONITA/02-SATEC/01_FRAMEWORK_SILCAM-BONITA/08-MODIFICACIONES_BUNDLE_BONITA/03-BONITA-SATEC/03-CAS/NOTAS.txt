@@ -1,0 +1,40 @@
+####
+# Datos para conectar con CAS 
+####
+ruta_cas = https://cas.igeo.satec.es:8443/cas
+ruta_servicio_silcam = http://ih-vm-stccatastro.c.mad.interhost.com:8080/SILCAM
+ruta_servicio_bonita = http://ih-vm-stccatastro.c.mad.interhost.com:8090/bonita
+grupo_cas_silcam = cn=silcam,ou=groups,dc=int,dc=igeo,dc=satec,dc=es
+grupo_cas_bonita = cn=bonita,ou=groups,dc=int,dc=igeo,dc=satec,dc=es
+[18:01:42] Eduardo Gonzalez: igeo.properties de la maquina de bonita
+[18:01:55] *** Eduardo Gonzalez envió keystore_igeo.jks ***
+[18:02:05] Eduardo Gonzalez: Ese en la misma ruuta que el igeo.properties
+[18:02:13] Eduardo Gonzalez: (es el mismo que hay ahora)
+
+
+
+
+
+2. Se deben actualizar ciertas librerías que vienen por defecto en el bundle de bonita , en concreto:
+
+a. Httpclient-4.2.5 por Httpclient-4.3.5
+b. Httpcore-4.2.4 por Httpcore-4.3.2
+
+(BonitaBPMCommunity-6.3.0-Tomcat-6.0.37\webapps\bonita\WEB-INF\lib)
+
+3. Modificar el cfg-bonita-authentication-impl.xml para que apunte a la implementación del plugin:
+
+/srv/datos/tomcatBonita/bonita/server/tenants/1/conf/services
+o bien en
+\BonitaBPMCommunity-6.3.0-Tomcat-6.0.37\bonita\server\tenants\1\conf\services
+
+<bean id="authenticationService" class="es.satec.org.bonitasoft.engine.authentication.impl.SatecAuthenticationServiceImpl">
+<constructor-arg name="logger" ref="tenantTechnicalLoggerService" />
+</bean>
+
+4. Modificar los ficheros loginManager-config.properties para coger el loginManager del plugin, en tres lugares:
+C:\BonitaBPM\BonitaBPMCommunity-6.3.0-Tomcat-6.0.37\bonita\client\tenants\1\conf
+C:\BonitaBPM\BonitaBPMCommunity-6.3.0-Tomcat-6.0.37\bonita\client\platform\conf
+C:\BonitaBPM\BonitaBPMCommunity-6.3.0-Tomcat-6.0.37\bonita\client\platform\tenant-template\conf
+#login.LoginManager = org.bonitasoft.console.common.server.login.impl.standard.StandardLoginManagerImpl
+login.LoginManager = es.satec.org.bonitasoft.engine.authentication.impl.SatecLoginManagerImpl

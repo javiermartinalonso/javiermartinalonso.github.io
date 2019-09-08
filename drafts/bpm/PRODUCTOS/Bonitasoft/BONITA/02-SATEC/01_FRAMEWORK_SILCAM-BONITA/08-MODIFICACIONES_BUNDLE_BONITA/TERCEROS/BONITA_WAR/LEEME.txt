@@ -1,0 +1,5 @@
+para funcionar desde el bundle del estudio, se ha tenido que modificar la jsp para que lea contra el properties correcto.
+
+debe estar en la ruta:
+
+c:/srv/datos/silcam/igeo.properties
