@@ -1,6 +1,6 @@
 https://bpmn-bayard.blogspot.com/2011/03/1-introduccion-bpmn.html
 
-
+hacer con visio:
 historia BPM, entender su evolucion y necesidad
 	timeline
 
