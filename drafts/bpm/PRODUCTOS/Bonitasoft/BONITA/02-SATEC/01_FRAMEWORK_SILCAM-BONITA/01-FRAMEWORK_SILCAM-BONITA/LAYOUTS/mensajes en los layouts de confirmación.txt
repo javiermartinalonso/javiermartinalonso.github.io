@@ -1,0 +1,8 @@
+
+Mensaje de confirmacion:
+- instancia de proceso:
+
+" O processo " + _ID_EXPEDIENTE + " foi iniciado "
+
+- confirmación de una tarea
+A informação foi enviada.

@@ -7,6 +7,7 @@ http://training.play-with-docker.com/alacart/
 Pendiente estudiar y documentar
 https://platzi.com/clases/graphql/
 
+https://www.lawebdelprogramador.com/cursos/Java/index1.html
 
 ## Requisitos previos ##
 

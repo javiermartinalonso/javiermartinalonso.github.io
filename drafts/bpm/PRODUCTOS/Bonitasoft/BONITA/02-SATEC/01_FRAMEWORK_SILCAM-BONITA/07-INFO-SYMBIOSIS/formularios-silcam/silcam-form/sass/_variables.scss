@@ -1,0 +1,42 @@
+//Funciones Responsive
+$size-xs : 480px;
+$size-sm : 768px;
+$size-md : 992px;
+$size-lg : 1200px;
+
+@mixin modular-mq($breakpoint) {
+	
+	@if $breakpoint == xs {
+	  @media (screen and min-width:$size-xs ) {@content;}
+	}
+	@else { @if $breakpoint == sm {
+	  @media (screen and min-width:$size-sm ) {@content;}
+	}
+	@else { @if $breakpoint == md {
+	  @media (screen and min-width:$size-md) {@content;}
+	}
+	@else { @if $breakpoint == lg {
+	  @media (screen and min-width:$size-lg) {@content;}
+	}}}}
+	
+}
+
+
+//Colores
+$main-color:#E01D25;
+$bg-input:rgba(234,238,242,0.6);
+$br-input: #999;//#5B5B5A
+$contrast-color:#FFF;
+$a-main-hover:#990000;
+
+$c-btn-system:#999999;
+$c-btn-action:#007F16;
+
+//Gray scale:
+$c-100:#000;
+$c-g80:#333;
+$c-g60:#666;
+$c-g40:#999;
+$c-g30:#CCC;
+$c-g20:#EFEFEF;
+$b-lh:#333;

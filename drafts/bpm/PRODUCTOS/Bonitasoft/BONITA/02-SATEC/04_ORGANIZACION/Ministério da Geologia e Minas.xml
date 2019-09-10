@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<organization:Organization xmlns:organization="http://documentation.bonitasoft.com/organization-xml-schema">
+  <users>
+    <user userName="luis.antonio">
+      <firstName>Luis Antonio</firstName>
+      <jobTitle></jobTitle>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <password encrypted="false">luis.antonio</password>
+    </user>
+    <user userName="isabel.marisa">
+      <firstName>Isabel Marisa</firstName>
+      <lastName>Ventura Romão Pina</lastName>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <password encrypted="false">isabel.marisa</password>
+    </user>
+    <user userName="antonio.kassoma">
+      <firstName>Antonio</firstName>
+      <lastName>Kassoma</lastName>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <password encrypted="false">antonio.kassoma</password>
+    </user>
+    <user userName="eunice.diogo">
+      <firstName>Eunice</firstName>
+      <lastName>Diogo</lastName>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <password encrypted="false">eunice.diogo</password>
+    </user>
+    <user userName="rui.silva">
+      <firstName>Rui</firstName>
+      <lastName>Silva</lastName>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <password encrypted="false">rui.silva</password>
+    </user>
+    <user userName="elvices.luis">
+      <firstName>Elvíces Luís</firstName>
+      <lastName>Costa Soares</lastName>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <password encrypted="false">elvices.luis</password>
+    </user>
+    <user userName="isabel.joao">
+      <firstName>Isabel João</firstName>
+      <lastName>de Carvalho Dias</lastName>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <password encrypted="false">isabel.joao</password>
+    </user>
+    <user userName="manuel.augusto">
+      <firstName>Manuel Augusto</firstName>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <password encrypted="false">manuel.augusto</password>
+    </user>
+    <user userName="manuel.assureira">
+      <firstName>Manuel</firstName>
+      <lastName>Assureira</lastName>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <password encrypted="false">manuel.assureira</password>
+    </user>
+    <user userName="domingos.jacinto">
+      <firstName>Domingos</firstName>
+      <lastName>Jacinto</lastName>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <password encrypted="false">domingos.jacinto</password>
+    </user>
+  </users>
+  <roles>
+    <role name="Ministro">
+      <displayName>Ministro</displayName>
+    </role>
+    <role name="Gerente">
+      <displayName>Gerente</displayName>
+      <description>Gerente que desenvolve um trabalho do próprio departamento</description>
+    </role>
+    <role name="Director Nacional">
+      <displayName>Director Nacional</displayName>
+    </role>
+    <role name="Chefe de Departamento">
+      <displayName>Chefe de Departamento</displayName>
+      <description>Chefe de um departamento da organização</description>
+    </role>
+    <role name="Chefe de Seção">
+      <displayName>Chefe de Seção</displayName>
+      <description>Chefe de uma seção da organização</description>
+    </role>
+  </roles>
+  <groups>
+    <group name="MGM">
+      <displayName>Ministério da Geologia e Minas</displayName>
+      <description></description>
+    </group>
+    <group name="Ministro" parentPath="/MGM">
+      <displayName>Ministro</displayName>
+    </group>
+    <group name="SAI" parentPath="/MGM">
+      <displayName>Serviços de Apoio Instrumental</displayName>
+    </group>
+    <group name="GM" parentPath="/MGM/SAI">
+      <displayName>Gabinete do Ministro</displayName>
+    </group>
+    <group name="SAT" parentPath="/MGM">
+      <displayName>Serviços de Apoio Técnico</displayName>
+    </group>
+    <group name="GJ" parentPath="/MGM/SAT">
+      <displayName>Gabinete Jurídico</displayName>
+    </group>
+    <group name="GNM" parentPath="/MGM/SAT">
+      <displayName>Gabinete de Negociações Mineiras</displayName>
+    </group>
+    <group name="IG" parentPath="/MGM/SAT">
+      <displayName>Inspecção Geral do MGM</displayName>
+    </group>
+    <group name="SEC" parentPath="/MGM">
+      <displayName>Serviços Executivos Centrais</displayName>
+    </group>
+    <group name="DNLCM" parentPath="/MGM/SEC">
+      <displayName>Direcção Nacional de Lic. E Cadastro Mineiro</displayName>
+    </group>
+    <group name="DCM" parentPath="/MGM/SEC/DNLCM">
+      <displayName>Departamento de Cadastro Mineiro</displayName>
+    </group>
+    <group name="SA" parentPath="/MGM/SEC/DNLCM/DCM">
+      <displayName>Secção de Arquivo</displayName>
+    </group>
+    <group name="SGC" parentPath="/MGM/SEC/DNLCM/DCM">
+      <displayName>Secção de Gestão de Concessões</displayName>
+    </group>
+    <group name="DLRM" parentPath="/MGM/SEC/DNLCM">
+      <displayName>Departamento de Licenciamento e Registro Mineiro</displayName>
+    </group>
+    <group name="SLM" parentPath="/MGM/SEC/DNLCM/DLRM">
+      <displayName>Secção de Licencimento Mineiro</displayName>
+    </group>
+    <group name="SRM" parentPath="/MGM/SEC/DNLCM/DLRM">
+      <displayName>Secção de Registro Mineiro</displayName>
+    </group>
+    <group name="DTD" parentPath="/MGM/SEC/DNLCM">
+      <displayName>Departamento de Topografia e Desenho</displayName>
+    </group>
+    <group name="SDM" parentPath="/MGM/SEC/DNLCM/DTD">
+      <displayName>Secção de Desenho Mineiro</displayName>
+    </group>
+    <group name="STM" parentPath="/MGM/SEC/DNLCM/DTD">
+      <displayName>Secção de Topografia Mineira</displayName>
+    </group>
+    <group name="Direcção" parentPath="/MGM/SEC/DNLCM">
+      <displayName>Direcção</displayName>
+    </group>
+    <group name="CD" parentPath="/MGM/SEC/DNLCM/Direcção">
+      <displayName>Conselho de Direcção</displayName>
+    </group>
+    <group name="GD" parentPath="/MGM/SEC/DNLCM/Direcção">
+      <displayName>Gabinete do director</displayName>
+    </group>
+    <group name="RSA" parentPath="/MGM/SEC/DNLCM">
+      <displayName>Repartição dos Serviços Administrativos</displayName>
+    </group>
+    <group name="SSA" parentPath="/MGM/SEC/DNLCM/RSA">
+      <displayName>Secção de Serviços Administrativos</displayName>
+    </group>
+    <group name="SEP" parentPath="/MGM">
+      <displayName>Serviços Executivos Provincias</displayName>
+    </group>
+    <group name="Direcções provinciais" parentPath="/MGM/SEP">
+      <displayName>Direcções provinciais</displayName>
+    </group>
+    <group name="Bengo" parentPath="/MGM/SEP/Direcções provinciais">
+      <displayName>Bengo</displayName>
+    </group>
+    <group name="Benguela" parentPath="/MGM/SEP/Direcções provinciais">
+      <displayName>Benguela</displayName>
+    </group>
+    <group name="Bié" parentPath="/MGM/SEP/Direcções provinciais">
+      <displayName>Bié</displayName>
+    </group>
+    <group name="Cabinda" parentPath="/MGM/SEP/Direcções provinciais">
+      <displayName>Cabinda</displayName>
+    </group>
+    <group name="Cunene" parentPath="/MGM/SEP/Direcções provinciais">
+      <displayName>Cunene</displayName>
+    </group>
+    <group name="Huambo" parentPath="/MGM/SEP/Direcções provinciais">
+      <displayName>Huambo</displayName>
+    </group>
+    <group name="Huíla" parentPath="/MGM/SEP/Direcções provinciais">
+      <displayName>Huíla</displayName>
+    </group>
+    <group name="Kuando Kubango" parentPath="/MGM/SEP/Direcções provinciais">
+      <displayName>Kuando Kubango</displayName>
+    </group>
+    <group name="Kuanza Norte" parentPath="/MGM/SEP/Direcções provinciais">
+      <displayName>Kuanza Norte</displayName>
+    </group>
+    <group name="Kuanza Sul" parentPath="/MGM/SEP/Direcções provinciais">
+      <displayName>Kuanza Sul</displayName>
+    </group>
+    <group name="Luanda" parentPath="/MGM/SEP/Direcções provinciais">
+      <displayName>Luanda</displayName>
+    </group>
+    <group name="Lunda Norte" parentPath="/MGM/SEP/Direcções provinciais">
+      <displayName>Lunda Norte</displayName>
+    </group>
+    <group name="Lunda Sul" parentPath="/MGM/SEP/Direcções provinciais">
+      <displayName>Lunda Sul</displayName>
+    </group>
+    <group name="Malanje" parentPath="/MGM/SEP/Direcções provinciais">
+      <displayName>Malanje</displayName>
+    </group>
+    <group name="Moxico" parentPath="/MGM/SEP/Direcções provinciais">
+      <displayName>Moxico</displayName>
+    </group>
+    <group name="Namibe" parentPath="/MGM/SEP/Direcções provinciais">
+      <displayName>Namibe</displayName>
+    </group>
+    <group name="Uíge" parentPath="/MGM/SEP/Direcções provinciais">
+      <displayName>Uíge</displayName>
+    </group>
+    <group name="Zaire" parentPath="/MGM/SEP/Direcções provinciais">
+      <displayName>Zaire</displayName>
+    </group>
+  </groups>
+  <memberships>
+    <membership>
+      <userName>luis.antonio</userName>
+      <roleName>Director Nacional</roleName>
+      <groupName>GD</groupName>
+      <groupParentPath>/MGM/SEC/DNLCM/Direcção</groupParentPath>
+    </membership>
+    <membership>
+      <userName>isabel.marisa</userName>
+      <roleName>Chefe de Seção</roleName>
+      <groupName>SSA</groupName>
+      <groupParentPath>/MGM/SEC/DNLCM/RSA</groupParentPath>
+    </membership>
+    <membership>
+      <userName>antonio.kassoma</userName>
+      <roleName>Gerente</roleName>
+      <groupName>GNM</groupName>
+      <groupParentPath>/MGM/SAT</groupParentPath>
+    </membership>
+    <membership>
+      <userName>eunice.diogo</userName>
+      <roleName>Gerente</roleName>
+      <groupName>GJ</groupName>
+      <groupParentPath>/MGM/SAT</groupParentPath>
+    </membership>
+    <membership>
+      <userName>rui.silva</userName>
+      <roleName>Gerente</roleName>
+      <groupName>GM</groupName>
+      <groupParentPath>/MGM/SAI</groupParentPath>
+    </membership>
+    <membership>
+      <userName>elvices.luis</userName>
+      <roleName>Gerente</roleName>
+      <groupName>STM</groupName>
+      <groupParentPath>/MGM/SEC/DNLCM/DTD</groupParentPath>
+    </membership>
+    <membership>
+      <userName>isabel.joao</userName>
+      <roleName>Chefe de Seção</roleName>
+      <groupName>SLM</groupName>
+      <groupParentPath>/MGM/SEC/DNLCM/DLRM</groupParentPath>
+    </membership>
+    <membership>
+      <userName>manuel.augusto</userName>
+      <roleName>Gerente</roleName>
+      <groupName>SA</groupName>
+      <groupParentPath>/MGM/SEC/DNLCM/DCM</groupParentPath>
+    </membership>
+    <membership>
+      <userName>manuel.assureira</userName>
+      <roleName>Gerente</roleName>
+      <groupName>GD</groupName>
+      <groupParentPath>/MGM/SEC/DNLCM/Direcção</groupParentPath>
+    </membership>
+    <membership>
+      <userName>domingos.jacinto</userName>
+      <roleName>Gerente</roleName>
+      <groupName>Moxico</groupName>
+      <groupParentPath>/MGM/SEP/Direcções provinciais</groupParentPath>
+    </membership>
+  </memberships>
+</organization:Organization>

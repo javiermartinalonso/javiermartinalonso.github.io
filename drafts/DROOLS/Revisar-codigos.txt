@@ -1,0 +1,9 @@
+pluging para drools???
+	Eclipse Graphical Editing Framework (GEF)
+
+
+
+https://docs.jboss.org/drools/release/7.25.0.Final/drools-docs/html_single/index.html
+https://docs.jboss.org/drools/release/7.25.0.Final/drools-docs/html_single/index.html#_changingthedefaultbuildresultseverity
+
+https://nheron.gitbooks.io/droolsonboarding/content/gettingStarted/first_rule_language_element.html
