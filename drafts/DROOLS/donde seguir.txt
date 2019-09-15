@@ -1,0 +1,3 @@
+https://docs.jboss.org/drools/release/7.25.0.Final/drools-docs/html_single/index.html#_changingthedefaultbuildresultseverity
+
+https://nheron.gitbooks.io/droolsonboarding/content/gettingStarted/lesson_2__binding.html

@@ -1,0 +1,2 @@
+19.3 Cuándo usar la protección CSRF
+¿Cuándo debe usar la protección CSRF? Nuestra recomendación es utilizar la protección CSRF para cualquier solicitud que pueda ser procesada por un navegador por usuarios normales. Si solo está creando un servicio que es utilizado por clientes que no son navegadores, es probable que desee deshabilitar la protección CSRF.

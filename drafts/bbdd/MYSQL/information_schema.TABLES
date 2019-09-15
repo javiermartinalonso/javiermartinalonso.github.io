@@ -1,0 +1,134 @@
+mysql> SELECT
+    ->      table_schema as `Database`,
+    ->      table_name AS `Table`,
+    ->      round(((data_length + index_length) / 1024 / 1024), 2) `Size in MB`
+    -> FROM information_schema.TABLES
+    -> WHERE table_schema = "nsim_ng"
+    -> ORDER BY (data_length + index_length) DESC;
++----------+---------------------------------+------------+
+| Database | Table                           | Size in MB |
++----------+---------------------------------+------------+
+| nsim_ng  | muestrasagregadoshorarios       |   79089.80 |
+| nsim_ng  | muestrasagregadosdiarios        |   21687.05 |
+| nsim_ng  | muestrasagregadossemanales      |    2022.00 |
+| nsim_ng  | muestrasagregadosmensuales      |    1082.00 |
+| nsim_ng  | notificaciones                  |     160.67 |
+| nsim_ng  | targets                         |      49.25 |
+| nsim_ng  | operacionagtemp_target          |      42.11 |
+| nsim_ng  | frecuenciasagregacion_target    |      38.11 |
+| nsim_ng  | descubrimientosfallidos         |      31.45 |
+| nsim_ng  | elementos_propiedades           |      30.98 |
+| nsim_ng  | muestrasagregados15min          |       8.16 |
+| nsim_ng  | elementos                       |       6.78 |
+| nsim_ng  | umbralesporvalor                |       2.56 |
+| nsim_ng  | log_procedimientos_particionado |       1.52 |
+| nsim_ng  | componentes                     |       0.80 |
+| nsim_ng  | particiones_dia_mes             |       0.45 |
+| nsim_ng  | msipt_cdr                       |       0.27 |
+| nsim_ng  | credenciales_equipos            |       0.20 |
+| nsim_ng  | informes                        |       0.14 |
+| nsim_ng  | indicadores                     |       0.13 |
+| nsim_ng  | gruposusuarios_regiones         |       0.13 |
+| nsim_ng  | informe_nodosestructurados      |       0.13 |
+| nsim_ng  | formulas                        |       0.11 |
+| nsim_ng  | eventos                         |       0.11 |
+| nsim_ng  | graficos                        |       0.08 |
+| nsim_ng  | usuarios                        |       0.08 |
+| nsim_ng  | tipos                           |       0.06 |
+| nsim_ng  | suscripciones_indicadores       |       0.06 |
+| nsim_ng  | informe_portipos                |       0.06 |
+| nsim_ng  | arboles_agregacion              |       0.06 |
+| nsim_ng  | ipsla_sondas                    |       0.06 |
+| nsim_ng  | protocolos                      |       0.06 |
+| nsim_ng  | propiedades                     |       0.06 |
+| nsim_ng  | informe_graficos                |       0.06 |
+| nsim_ng  | permisos                        |       0.05 |
+| nsim_ng  | permisos_roles                  |       0.05 |
+| nsim_ng  | grupos_elementos                |       0.05 |
+| nsim_ng  | informe_criteriosagrupacion     |       0.05 |
+| nsim_ng  | calendarios                     |       0.05 |
+| nsim_ng  | areas_gruposusuarios            |       0.05 |
+| nsim_ng  | parsers                         |       0.05 |
+| nsim_ng  | grafico_propiedades             |       0.05 |
+| nsim_ng  | areas                           |       0.05 |
+| nsim_ng  | grafico_indicadores             |       0.05 |
+| nsim_ng  | paquetes                        |       0.05 |
+| nsim_ng  | supervisionproceso              |       0.05 |
+| nsim_ng  | gruposusuarios_tecnologias      |       0.05 |
+| nsim_ng  | itemsordenprovisionipsla        |       0.05 |
+| nsim_ng  | supertipos                      |       0.05 |
+| nsim_ng  | filtro_avanzado_extracrit       |       0.05 |
+| nsim_ng  | definiciongrafica               |       0.05 |
+| nsim_ng  | gruposusuarios_organizaciones   |       0.05 |
+| nsim_ng  | filtro_avanzado                 |       0.05 |
+| nsim_ng  | gruposusuarios_grupos           |       0.05 |
+| nsim_ng  | nodos_agregacion                |       0.05 |
+| nsim_ng  | reglasprovision                 |       0.05 |
+| nsim_ng  | gruposusuarios_clientes         |       0.05 |
+| nsim_ng  | zonas                           |       0.05 |
+| nsim_ng  | nodos                           |       0.05 |
+| nsim_ng  | ficherosprovision_reglas        |       0.05 |
+| nsim_ng  | comandos_gruposusuarios         |       0.05 |
+| nsim_ng  | ipsla_nodos_matriz              |       0.05 |
+| nsim_ng  | muestrasagregadostrimestrales   |       0.05 |
+| nsim_ng  | recolectores                    |       0.05 |
+| nsim_ng  | muestrasagregadosanuales        |       0.05 |
+| nsim_ng  | informe_graficos_elementos      |       0.05 |
+| nsim_ng  | umbralesporflanco               |       0.05 |
+| nsim_ng  | gruposldap                      |       0.05 |
+| nsim_ng  | categoriaclientes               |       0.03 |
+| nsim_ng  | ipsla_ips_equipos               |       0.03 |
+| nsim_ng  | periodomantenimiento            |       0.03 |
+| nsim_ng  | grupos                          |       0.03 |
+| nsim_ng  | equipos                         |       0.03 |
+| nsim_ng  | indicadoresespeciales           |       0.03 |
+| nsim_ng  | itemsordenprovisionipsla_save   |       0.03 |
+| nsim_ng  | indicadoresdiferidos            |       0.03 |
+| nsim_ng  | itemsordenprovisionipsla_jitter |       0.03 |
+| nsim_ng  | indicadoresderivados            |       0.03 |
+| nsim_ng  | timezones                       |       0.03 |
+| nsim_ng  | informepersonal                 |       0.03 |
+| nsim_ng  | itemsordenprovisionipsla_icmp   |       0.03 |
+| nsim_ng  | paquetesgrupos                  |       0.03 |
+| nsim_ng  | itemsordenprovisionipsla_http   |       0.03 |
+| nsim_ng  | suscripciones                   |       0.03 |
+| nsim_ng  | destinatarios                   |       0.03 |
+| nsim_ng  | ordenesprovisionipsla           |       0.03 |
+| nsim_ng  | franjashorarias                 |       0.03 |
+| nsim_ng  | itemsordenprovisionipsla_baja   |       0.03 |
+| nsim_ng  | destinatario_endpoints          |       0.03 |
+| nsim_ng  | ipsla_nodos_vista_matriz        |       0.03 |
+| nsim_ng  | roles                           |       0.03 |
+| nsim_ng  | ipsla_nodos_vista               |       0.03 |
+| nsim_ng  | reglas                          |       0.03 |
+| nsim_ng  | versiones                       |       0.03 |
+| nsim_ng  | ficherosprovision               |       0.03 |
+| nsim_ng  | categoriatecnologias            |       0.03 |
+| nsim_ng  | export_listarouters             |       0.03 |
+| nsim_ng  | ipsla_matrices_vista            |       0.03 |
+| nsim_ng  | categoriaregiones               |       0.03 |
+| nsim_ng  | export_listainterfaces          |       0.03 |
+| nsim_ng  | gruposusuarios                  |       0.03 |
+| nsim_ng  | categoriaorganizaciones         |       0.03 |
+| nsim_ng  | categoriagrupos                 |       0.03 |
+| nsim_ng  | equipos_ws                      |       0.03 |
+| nsim_ng  | ipsla_matrices                  |       0.02 |
+| nsim_ng  | equipos_eliminar                |       0.02 |
+| nsim_ng  | tiposinformes                   |       0.02 |
+| nsim_ng  | lg_comandos                     |       0.02 |
+| nsim_ng  | tiposgrafico                    |       0.02 |
+| nsim_ng  | aso_one_minute                  |       0.02 |
+| nsim_ng  | indicadoresbase                 |       0.02 |
+| nsim_ng  | ipsla_vistas                    |       0.02 |
+| nsim_ng  | seqidsonda                      |       0.02 |
+| nsim_ng  | configuracion                   |       0.02 |
+| nsim_ng  | expresiones                     |       0.02 |
+| nsim_ng  | nivelesalarma                   |       0.02 |
+| nsim_ng  | ipsla_matrices_jitter           |       0.02 |
+| nsim_ng  | ipsla_matrices_icmp             |       0.02 |
+| nsim_ng  | ultimo_purgado                  |       0.02 |
+| nsim_ng  | ipsla_matrices_http             |       0.02 |
+| nsim_ng  | pluginsarbol                    |       0.02 |
+| nsim_ng  | elemento_base_version           |       NULL |
++----------+---------------------------------+------------+
+122 rows in set (36.95 sec)

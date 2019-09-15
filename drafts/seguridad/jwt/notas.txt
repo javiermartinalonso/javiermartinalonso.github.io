@@ -1,0 +1,9 @@
+https://jwt.io/introduction/
+
+¿Qué es el token web JSON?
+JSON Web Token (JWT) es un estándar abierto ( RFC 7519 ) que define una forma compacta y autónoma para transmitir información de 
+forma segura entre las partes como un objeto JSON. Esta información se puede verificar y confiar porque está firmada digitalmente. 
+Los JWT se pueden firmar usando un secreto (con el algoritmo HMAC ) o un par de claves pública / privada usando RSA o ECDSA .
+
+
+https://medium.com/swlh/spring-boot-security-jwt-hello-world-example-b479e457664c

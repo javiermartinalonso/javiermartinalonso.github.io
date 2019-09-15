@@ -1,0 +1,56 @@
+mysql> select * from log_procedimientos_particionado order by id desc limit 50;
++------+---------------------+---------------------------+---------------------------------------------+---------------------+
+| id   | nombreProcedimiento | nombreTabla               | descripcionAccion                           | fechaAccion         |
++------+---------------------+---------------------------+---------------------------------------------+---------------------+
+| 6861 | deletePartition     | muestrasagregadoshorarios | No quedan particiones pendientes de borrado | 2018-06-06 08:04:08 |
+| 6860 | deletePartition     | muestrasagregadoshorarios | Borrando particion pH_20180422000000        | 2018-06-06 08:04:08 |
+| 6859 | deletePartition     | muestrasagregadoshorarios | INICIO Fecha tope: 2018-04-22               | 2018-06-06 08:04:00 |
+| 6858 | deletePartition     | muestrasagregadosdiarios  | No quedan particiones pendientes de borrado | 2018-06-05 21:35:49 |
+| 6857 | deletePartition     | muestrasagregadosdiarios  | Borrando particion pD_20170604000000        | 2018-06-05 21:35:49 |
+| 6856 | deletePartition     | muestrasagregadosdiarios  | INICIO Fecha tope: 2017-06-04               | 2018-06-05 21:35:00 |
+| 6855 | deletePartition     | muestrasagregados15min    | No quedan particiones pendientes de borrado | 2018-06-05 21:15:00 |
+| 6854 | deletePartition     | muestrasagregados15min    | Borrando particion p15_20180307000000       | 2018-06-05 21:15:00 |
+| 6853 | deletePartition     | muestrasagregados15min    | INICIO Fecha tope: 2018-03-07               | 2018-06-05 21:15:00 |
+| 6852 | createPartitions    | muestrasagregadoshorarios | Particion Creada pH_20180608000000          | 2018-06-05 21:10:47 |
+| 6851 | createPartitions    | muestrasagregadosdiarios  | Particion Creada pD_20180608000000          | 2018-06-05 21:08:59 |
+| 6850 | createPartitions    | muestrasagregados15min    | Particion Creada p15_20180608000000         | 2018-06-05 21:00:00 |
+| 6849 | deletePartition     | muestrasagregadoshorarios | No quedan particiones pendientes de borrado | 2018-06-05 08:04:13 |
+| 6848 | deletePartition     | muestrasagregadoshorarios | Borrando particion pH_20180421000000        | 2018-06-05 08:04:13 |
+| 6847 | deletePartition     | muestrasagregadoshorarios | INICIO Fecha tope: 2018-04-21               | 2018-06-05 08:04:00 |
+| 6846 | deletePartition     | muestrasagregadosdiarios  | No quedan particiones pendientes de borrado | 2018-06-04 21:36:02 |
+| 6845 | deletePartition     | muestrasagregadosdiarios  | Borrando particion pD_20170603000000        | 2018-06-04 21:36:01 |
+| 6844 | deletePartition     | muestrasagregadosdiarios  | INICIO Fecha tope: 2017-06-03               | 2018-06-04 21:35:00 |
+| 6843 | deletePartition     | muestrasagregados15min    | No quedan particiones pendientes de borrado | 2018-06-04 21:15:00 |
+| 6842 | deletePartition     | muestrasagregados15min    | Borrando particion p15_20180306000000       | 2018-06-04 21:15:00 |
+| 6841 | deletePartition     | muestrasagregados15min    | INICIO Fecha tope: 2018-03-06               | 2018-06-04 21:15:00 |
+| 6840 | createPartitions    | muestrasagregadoshorarios | Particion Creada pH_20180607000000          | 2018-06-04 21:10:57 |
+| 6839 | createPartitions    | muestrasagregadosdiarios  | Particion Creada pD_20180607000000          | 2018-06-04 21:10:19 |
+| 6838 | createPartitions    | muestrasagregados15min    | Particion Creada p15_20180607000000         | 2018-06-04 21:00:00 |
+| 6837 | deletePartition     | muestrasagregadoshorarios | No quedan particiones pendientes de borrado | 2018-06-04 08:04:08 |
+| 6836 | deletePartition     | muestrasagregadoshorarios | Borrando particion pH_20180420000000        | 2018-06-04 08:04:07 |
+| 6835 | deletePartition     | muestrasagregadoshorarios | INICIO Fecha tope: 2018-04-20               | 2018-06-04 08:04:00 |
+| 6834 | deletePartition     | muestrasagregadosdiarios  | No quedan particiones pendientes de borrado | 2018-06-03 21:35:38 |
+| 6833 | deletePartition     | muestrasagregadosdiarios  | Borrando particion pD_20170602000000        | 2018-06-03 21:35:38 |
+| 6832 | deletePartition     | muestrasagregadosdiarios  | INICIO Fecha tope: 2017-06-02               | 2018-06-03 21:35:00 |
+| 6831 | deletePartition     | muestrasagregados15min    | No quedan particiones pendientes de borrado | 2018-06-03 21:15:00 |
+| 6830 | deletePartition     | muestrasagregados15min    | Borrando particion p15_20180305000000       | 2018-06-03 21:15:00 |
+| 6829 | deletePartition     | muestrasagregados15min    | INICIO Fecha tope: 2018-03-05               | 2018-06-03 21:15:00 |
+| 6828 | createPartitions    | muestrasagregadoshorarios | Particion Creada pH_20180606000000          | 2018-06-03 21:10:25 |
+| 6827 | createPartitions    | muestrasagregadosdiarios  | Particion Creada pD_20180606000000          | 2018-06-03 21:08:07 |
+| 6826 | createPartitions    | muestrasagregados15min    | Particion Creada p15_20180606000000         | 2018-06-03 21:00:00 |
+| 6825 | deletePartition     | muestrasagregadoshorarios | No quedan particiones pendientes de borrado | 2018-06-03 08:04:08 |
+| 6824 | deletePartition     | muestrasagregadoshorarios | Borrando particion pH_20180419000000        | 2018-06-03 08:04:08 |
+| 6823 | deletePartition     | muestrasagregadoshorarios | INICIO Fecha tope: 2018-04-19               | 2018-06-03 08:04:00 |
+| 6822 | deletePartition     | muestrasagregadosdiarios  | No quedan particiones pendientes de borrado | 2018-06-02 21:35:44 |
+| 6821 | deletePartition     | muestrasagregadosdiarios  | Borrando particion pD_20170601000000        | 2018-06-02 21:35:43 |
+| 6820 | deletePartition     | muestrasagregadosdiarios  | INICIO Fecha tope: 2017-06-01               | 2018-06-02 21:35:00 |
+| 6819 | deletePartition     | muestrasagregados15min    | No quedan particiones pendientes de borrado | 2018-06-02 21:15:00 |
+| 6818 | deletePartition     | muestrasagregados15min    | Borrando particion p15_20180304000000       | 2018-06-02 21:15:00 |
+| 6817 | deletePartition     | muestrasagregados15min    | INICIO Fecha tope: 2018-03-04               | 2018-06-02 21:15:00 |
+| 6816 | createPartitions    | muestrasagregadoshorarios | Particion Creada pH_20180605000000          | 2018-06-02 21:10:26 |
+| 6815 | createPartitions    | muestrasagregadosdiarios  | Particion Creada pD_20180605000000          | 2018-06-02 21:08:21 |
+| 6814 | createPartitions    | muestrasagregados15min    | Particion Creada p15_20180605000000         | 2018-06-02 21:00:00 |
+| 6813 | deletePartition     | muestrasagregadoshorarios | No quedan particiones pendientes de borrado | 2018-06-02 08:04:09 |
+| 6812 | deletePartition     | muestrasagregadoshorarios | Borrando particion pH_20180418000000        | 2018-06-02 08:04:08 |
++------+---------------------+---------------------------+---------------------------------------------+---------------------+
+50 rows in set (0.00 sec)

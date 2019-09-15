@@ -1,0 +1,421 @@
+SELECT s.schema_name,
+CONCAT(IFNULL(ROUND((SUM(t.data_length)+SUM(t.index_length))/1024/1024,2),0.00),"Mb") total_size,
+CONCAT(IFNULL(ROUND(((SUM(t.data_length)+SUM(t.index_length))-SUM(t.data_free))/1024/1024,2),0.00),"Mb") data_used,
+CONCAT(IFNULL(ROUND(SUM(data_free)/1024/1024,2),0.00),"Mb") data_free,
+IFNULL(ROUND((((SUM(t.data_length)+SUM(t.index_length))-SUM(t.data_free))/((SUM(t.data_length)+SUM(t.index_length)))*100),2),0) pct_used
+FROM INFORMATION_SCHEMA.SCHEMATA s, INFORMATION_SCHEMA.TABLES t
+WHERE s.schema_name = t.table_schema
+GROUP BY s.schema_name
+ORDER BY total_size DESC
+
+
+
+mysql> show databases
+    -> ;
++---------------------+
+| Database            |
++---------------------+
+| information_schema  |
+| backup              |
+| foodmart            |
+| inventoryquartz     |
+| jasperreports       |
+| #mysql50#lost+found |
+| lost+found          |
+| mysql               |
+| nsim_ng             |
+| nsim_ng_zone1       |
+| performance_schema  |
+| sugarcrm            |
++---------------------+
+12 rows in set (0.03 sec)
+
+mysql> SELECT s.schema_name,
+    -> CONCAT(IFNULL(ROUND((SUM(t.data_length)+SUM(t.index_length))/1024/1024,2),0.00),"Mb") total_size,
+    -> CONCAT(IFNULL(ROUND(((SUM(t.data_length)+SUM(t.index_length))-SUM(t.data_free))/1024/1024,2),0.00),"Mb") data_used,
+    -> CONCAT(IFNULL(ROUND(SUM(data_free)/1024/1024,2),0.00),"Mb") data_free,
+    -> IFNULL(ROUND((((SUM(t.data_length)+SUM(t.index_length))-SUM(t.data_free))/((SUM(t.data_length)+SUM(t.index_length)))                                                      *100),2),0) pct_used
+    -> FROM INFORMATION_SCHEMA.SCHEMATA s, INFORMATION_SCHEMA.TABLES t
+    -> WHERE s.schema_name = t.table_schema
+    -> GROUP BY s.schema_name
+    -> ORDER BY total_size DESC;
++--------------------+-------------+----------------+---------------+--------------+
+| schema_name        | total_size  | data_used      | data_free     | pct_used     |
++--------------------+-------------+----------------+---------------+--------------+
+| foodmart           | 65.33Mb     | 65.33Mb        | 0.00Mb        |       100.00 |
+| nsim_ng_zone1      | 202.41Mb    | -1252958.59Mb  | 1253161.00Mb  |   -619031.57 |
+| jasperreports      | 17.80Mb     | -1679751.20Mb  | 1679769.00Mb  |  -9438461.55 |
+| sugarcrm           | 14.28Mb     | 14.28Mb        | 0.00Mb        |       100.00 |
+| nsim_ng            | 107023.08Mb | -20690116.92Mb | 20797140.00Mb |    -19332.39 |
+| mysql              | 0.65Mb      | 0.65Mb         | 0.00Mb        |       100.00 |
+| inventoryquartz    | 0.50Mb      | -293292.50Mb   | 293293.00Mb   | -58658500.00 |
+| information_schema | 0.01Mb      | 0.01Mb         | 0.00Mb        |       100.00 |
+| performance_schema | 0.00Mb      | 0.00Mb         | 0.00Mb        |         0.00 |
++--------------------+-------------+----------------+---------------+--------------+
+9 rows in set (49.61 sec)
+
+
+
+Use nsim_ng;
+
+
+
+
+
+mysql> SELECT CURRENT_USER(), SCHEMA();
++----------------+----------+
+| CURRENT_USER() | SCHEMA() |
++----------------+----------+
+| root@localhost | nsim_ng  |
++----------------+----------+
+1 row in set (0.02 sec)
+
+mysql> SHOW EVENTS\G
+*************************** 1. row ***************************
+                  Db: nsim_ng
+                Name: e_BorraParticionesTablaAgregados15min
+             Definer: root@127.0.0.1
+           Time zone: SYSTEM
+                Type: RECURRING
+          Execute at: NULL
+      Interval value: 1
+      Interval field: DAY
+              Starts: 2015-03-03 21:15:00
+                Ends: NULL
+              Status: ENABLED
+          Originator: 1
+character_set_client: utf8
+collation_connection: utf8_general_ci
+  Database Collation: latin1_swedish_ci
+*************************** 2. row ***************************
+                  Db: nsim_ng
+                Name: e_BorraParticionesTablaAgregadosDiarios
+             Definer: root@127.0.0.1
+           Time zone: SYSTEM
+                Type: RECURRING
+          Execute at: NULL
+      Interval value: 1
+      Interval field: DAY
+              Starts: 2015-03-03 21:35:00
+                Ends: NULL
+              Status: ENABLED
+          Originator: 1
+character_set_client: utf8
+collation_connection: utf8_general_ci
+  Database Collation: latin1_swedish_ci
+*************************** 3. row ***************************
+                  Db: nsim_ng
+                Name: e_BorraParticionesTablaAgregadosHorarios
+             Definer: root@127.0.0.1
+           Time zone: SYSTEM
+                Type: RECURRING
+          Execute at: NULL
+      Interval value: 1
+      Interval field: DAY
+              Starts: 2016-08-12 08:04:00
+                Ends: NULL
+              Status: ENABLED
+          Originator: 1
+character_set_client: utf8
+collation_connection: utf8_general_ci
+  Database Collation: latin1_swedish_ci
+*************************** 4. row ***************************
+                  Db: nsim_ng
+                Name: e_CreaParticionesTablaAgregados15min
+             Definer: root@127.0.0.1
+           Time zone: SYSTEM
+                Type: RECURRING
+          Execute at: NULL
+      Interval value: 1
+      Interval field: DAY
+              Starts: 2015-03-03 21:00:00
+                Ends: NULL
+              Status: ENABLED
+          Originator: 1
+character_set_client: utf8
+collation_connection: utf8_general_ci
+  Database Collation: latin1_swedish_ci
+*************************** 5. row ***************************
+                  Db: nsim_ng
+                Name: e_CreaParticionesTablaAgregadosDiarios
+             Definer: root@127.0.0.1
+           Time zone: SYSTEM
+                Type: RECURRING
+          Execute at: NULL
+      Interval value: 1
+      Interval field: DAY
+              Starts: 2015-03-03 21:05:00
+                Ends: NULL
+              Status: ENABLED
+          Originator: 1
+character_set_client: utf8
+collation_connection: utf8_general_ci
+  Database Collation: latin1_swedish_ci
+*************************** 6. row ***************************
+                  Db: nsim_ng
+                Name: e_CreaParticionesTablaAgregadosHorarios
+             Definer: root@127.0.0.1
+           Time zone: SYSTEM
+                Type: RECURRING
+          Execute at: NULL
+      Interval value: 1
+      Interval field: DAY
+              Starts: 2015-03-03 21:10:00
+                Ends: NULL
+              Status: ENABLED
+          Originator: 1
+character_set_client: utf8
+collation_connection: utf8_general_ci
+  Database Collation: latin1_swedish_ci
+6 rows in set (0.01 sec)
+
+
+
+
+
+
+mysql> select * from log_procedimientos_particionado order by id desc limit 50;
++------+---------------------+---------------------------+---------------------------------------------+---------------------+
+| id   | nombreProcedimiento | nombreTabla               | descripcionAccion                           | fechaAccion         |
++------+---------------------+---------------------------+---------------------------------------------+---------------------+
+| 6861 | deletePartition     | muestrasagregadoshorarios | No quedan particiones pendientes de borrado | 2018-06-06 08:04:08 |
+| 6860 | deletePartition     | muestrasagregadoshorarios | Borrando particion pH_20180422000000        | 2018-06-06 08:04:08 |
+| 6859 | deletePartition     | muestrasagregadoshorarios | INICIO Fecha tope: 2018-04-22               | 2018-06-06 08:04:00 |
+| 6858 | deletePartition     | muestrasagregadosdiarios  | No quedan particiones pendientes de borrado | 2018-06-05 21:35:49 |
+| 6857 | deletePartition     | muestrasagregadosdiarios  | Borrando particion pD_20170604000000        | 2018-06-05 21:35:49 |
+| 6856 | deletePartition     | muestrasagregadosdiarios  | INICIO Fecha tope: 2017-06-04               | 2018-06-05 21:35:00 |
+| 6855 | deletePartition     | muestrasagregados15min    | No quedan particiones pendientes de borrado | 2018-06-05 21:15:00 |
+| 6854 | deletePartition     | muestrasagregados15min    | Borrando particion p15_20180307000000       | 2018-06-05 21:15:00 |
+| 6853 | deletePartition     | muestrasagregados15min    | INICIO Fecha tope: 2018-03-07               | 2018-06-05 21:15:00 |
+| 6852 | createPartitions    | muestrasagregadoshorarios | Particion Creada pH_20180608000000          | 2018-06-05 21:10:47 |
+| 6851 | createPartitions    | muestrasagregadosdiarios  | Particion Creada pD_20180608000000          | 2018-06-05 21:08:59 |
+| 6850 | createPartitions    | muestrasagregados15min    | Particion Creada p15_20180608000000         | 2018-06-05 21:00:00 |
+| 6849 | deletePartition     | muestrasagregadoshorarios | No quedan particiones pendientes de borrado | 2018-06-05 08:04:13 |
+| 6848 | deletePartition     | muestrasagregadoshorarios | Borrando particion pH_20180421000000        | 2018-06-05 08:04:13 |
+| 6847 | deletePartition     | muestrasagregadoshorarios | INICIO Fecha tope: 2018-04-21               | 2018-06-05 08:04:00 |
+| 6846 | deletePartition     | muestrasagregadosdiarios  | No quedan particiones pendientes de borrado | 2018-06-04 21:36:02 |
+| 6845 | deletePartition     | muestrasagregadosdiarios  | Borrando particion pD_20170603000000        | 2018-06-04 21:36:01 |
+| 6844 | deletePartition     | muestrasagregadosdiarios  | INICIO Fecha tope: 2017-06-03               | 2018-06-04 21:35:00 |
+| 6843 | deletePartition     | muestrasagregados15min    | No quedan particiones pendientes de borrado | 2018-06-04 21:15:00 |
+| 6842 | deletePartition     | muestrasagregados15min    | Borrando particion p15_20180306000000       | 2018-06-04 21:15:00 |
+| 6841 | deletePartition     | muestrasagregados15min    | INICIO Fecha tope: 2018-03-06               | 2018-06-04 21:15:00 |
+| 6840 | createPartitions    | muestrasagregadoshorarios | Particion Creada pH_20180607000000          | 2018-06-04 21:10:57 |
+| 6839 | createPartitions    | muestrasagregadosdiarios  | Particion Creada pD_20180607000000          | 2018-06-04 21:10:19 |
+| 6838 | createPartitions    | muestrasagregados15min    | Particion Creada p15_20180607000000         | 2018-06-04 21:00:00 |
+| 6837 | deletePartition     | muestrasagregadoshorarios | No quedan particiones pendientes de borrado | 2018-06-04 08:04:08 |
+| 6836 | deletePartition     | muestrasagregadoshorarios | Borrando particion pH_20180420000000        | 2018-06-04 08:04:07 |
+| 6835 | deletePartition     | muestrasagregadoshorarios | INICIO Fecha tope: 2018-04-20               | 2018-06-04 08:04:00 |
+| 6834 | deletePartition     | muestrasagregadosdiarios  | No quedan particiones pendientes de borrado | 2018-06-03 21:35:38 |
+| 6833 | deletePartition     | muestrasagregadosdiarios  | Borrando particion pD_20170602000000        | 2018-06-03 21:35:38 |
+| 6832 | deletePartition     | muestrasagregadosdiarios  | INICIO Fecha tope: 2017-06-02               | 2018-06-03 21:35:00 |
+| 6831 | deletePartition     | muestrasagregados15min    | No quedan particiones pendientes de borrado | 2018-06-03 21:15:00 |
+| 6830 | deletePartition     | muestrasagregados15min    | Borrando particion p15_20180305000000       | 2018-06-03 21:15:00 |
+| 6829 | deletePartition     | muestrasagregados15min    | INICIO Fecha tope: 2018-03-05               | 2018-06-03 21:15:00 |
+| 6828 | createPartitions    | muestrasagregadoshorarios | Particion Creada pH_20180606000000          | 2018-06-03 21:10:25 |
+| 6827 | createPartitions    | muestrasagregadosdiarios  | Particion Creada pD_20180606000000          | 2018-06-03 21:08:07 |
+| 6826 | createPartitions    | muestrasagregados15min    | Particion Creada p15_20180606000000         | 2018-06-03 21:00:00 |
+| 6825 | deletePartition     | muestrasagregadoshorarios | No quedan particiones pendientes de borrado | 2018-06-03 08:04:08 |
+| 6824 | deletePartition     | muestrasagregadoshorarios | Borrando particion pH_20180419000000        | 2018-06-03 08:04:08 |
+| 6823 | deletePartition     | muestrasagregadoshorarios | INICIO Fecha tope: 2018-04-19               | 2018-06-03 08:04:00 |
+| 6822 | deletePartition     | muestrasagregadosdiarios  | No quedan particiones pendientes de borrado | 2018-06-02 21:35:44 |
+| 6821 | deletePartition     | muestrasagregadosdiarios  | Borrando particion pD_20170601000000        | 2018-06-02 21:35:43 |
+| 6820 | deletePartition     | muestrasagregadosdiarios  | INICIO Fecha tope: 2017-06-01               | 2018-06-02 21:35:00 |
+| 6819 | deletePartition     | muestrasagregados15min    | No quedan particiones pendientes de borrado | 2018-06-02 21:15:00 |
+| 6818 | deletePartition     | muestrasagregados15min    | Borrando particion p15_20180304000000       | 2018-06-02 21:15:00 |
+| 6817 | deletePartition     | muestrasagregados15min    | INICIO Fecha tope: 2018-03-04               | 2018-06-02 21:15:00 |
+| 6816 | createPartitions    | muestrasagregadoshorarios | Particion Creada pH_20180605000000          | 2018-06-02 21:10:26 |
+| 6815 | createPartitions    | muestrasagregadosdiarios  | Particion Creada pD_20180605000000          | 2018-06-02 21:08:21 |
+| 6814 | createPartitions    | muestrasagregados15min    | Particion Creada p15_20180605000000         | 2018-06-02 21:00:00 |
+| 6813 | deletePartition     | muestrasagregadoshorarios | No quedan particiones pendientes de borrado | 2018-06-02 08:04:09 |
+| 6812 | deletePartition     | muestrasagregadoshorarios | Borrando particion pH_20180418000000        | 2018-06-02 08:04:08 |
++------+---------------------+---------------------------+---------------------------------------------+---------------------+
+50 rows in set (0.00 sec)
+
+
+
+
+SELECT 
+     table_schema as `Database`, 
+     table_name AS `Table`, 
+     round(((data_length + index_length) / 1024 / 1024), 2) `Size in MB` 
+FROM information_schema.TABLES 
+WHERE table_schema = "nsim_ng"
+ORDER BY (data_length + index_length) DESC;
+
+
++----------+---------------------------------+------------+
+| Database | Table                           | Size in MB |
++----------+---------------------------------+------------+
+| nsim_ng  | muestrasagregadoshorarios       |   79089.80 |
+| nsim_ng  | muestrasagregadosdiarios        |   21687.05 |
+| nsim_ng  | muestrasagregadossemanales      |    2022.00 |
+| nsim_ng  | muestrasagregadosmensuales      |    1082.00 |
+| nsim_ng  | notificaciones                  |     160.67 |
+| nsim_ng  | targets                         |      49.25 |
+| nsim_ng  | operacionagtemp_target          |      42.11 |
+| nsim_ng  | frecuenciasagregacion_target    |      38.11 |
+| nsim_ng  | descubrimientosfallidos         |      31.45 |
+| nsim_ng  | elementos_propiedades           |      30.98 |
+| nsim_ng  | muestrasagregados15min          |       8.16 |
+| nsim_ng  | elementos                       |       6.78 |
+| nsim_ng  | umbralesporvalor                |       2.56 |
+| nsim_ng  | log_procedimientos_particionado |       1.52 |
+| nsim_ng  | componentes                     |       0.80 |
+| nsim_ng  | particiones_dia_mes             |       0.45 |
+| nsim_ng  | msipt_cdr                       |       0.27 |
+| nsim_ng  | credenciales_equipos            |       0.20 |
+| nsim_ng  | informes                        |       0.14 |
+| nsim_ng  | indicadores                     |       0.13 |
+| nsim_ng  | gruposusuarios_regiones         |       0.13 |
+| nsim_ng  | informe_nodosestructurados      |       0.13 |
+| nsim_ng  | formulas                        |       0.11 |
+| nsim_ng  | eventos                         |       0.11 |
+| nsim_ng  | graficos                        |       0.08 |
+| nsim_ng  | usuarios                        |       0.08 |
+| nsim_ng  | tipos                           |       0.06 |
+| nsim_ng  | suscripciones_indicadores       |       0.06 |
+| nsim_ng  | informe_portipos                |       0.06 |
+| nsim_ng  | arboles_agregacion              |       0.06 |
+| nsim_ng  | ipsla_sondas                    |       0.06 |
+| nsim_ng  | protocolos                      |       0.06 |
+| nsim_ng  | propiedades                     |       0.06 |
+| nsim_ng  | informe_graficos                |       0.06 |
+| nsim_ng  | permisos                        |       0.05 |
+| nsim_ng  | permisos_roles                  |       0.05 |
+| nsim_ng  | grupos_elementos                |       0.05 |
+| nsim_ng  | informe_criteriosagrupacion     |       0.05 |
+| nsim_ng  | calendarios                     |       0.05 |
+| nsim_ng  | areas_gruposusuarios            |       0.05 |
+| nsim_ng  | parsers                         |       0.05 |
+| nsim_ng  | grafico_propiedades             |       0.05 |
+| nsim_ng  | areas                           |       0.05 |
+| nsim_ng  | grafico_indicadores             |       0.05 |
+| nsim_ng  | paquetes                        |       0.05 |
+| nsim_ng  | supervisionproceso              |       0.05 |
+| nsim_ng  | gruposusuarios_tecnologias      |       0.05 |
+| nsim_ng  | itemsordenprovisionipsla        |       0.05 |
+| nsim_ng  | supertipos                      |       0.05 |
+| nsim_ng  | filtro_avanzado_extracrit       |       0.05 |
+| nsim_ng  | definiciongrafica               |       0.05 |
+| nsim_ng  | gruposusuarios_organizaciones   |       0.05 |
+| nsim_ng  | filtro_avanzado                 |       0.05 |
+| nsim_ng  | gruposusuarios_grupos           |       0.05 |
+| nsim_ng  | nodos_agregacion                |       0.05 |
+| nsim_ng  | reglasprovision                 |       0.05 |
+| nsim_ng  | gruposusuarios_clientes         |       0.05 |
+| nsim_ng  | zonas                           |       0.05 |
+| nsim_ng  | nodos                           |       0.05 |
+| nsim_ng  | ficherosprovision_reglas        |       0.05 |
+| nsim_ng  | comandos_gruposusuarios         |       0.05 |
+| nsim_ng  | ipsla_nodos_matriz              |       0.05 |
+| nsim_ng  | muestrasagregadostrimestrales   |       0.05 |
+| nsim_ng  | recolectores                    |       0.05 |
+| nsim_ng  | muestrasagregadosanuales        |       0.05 |
+| nsim_ng  | informe_graficos_elementos      |       0.05 |
+| nsim_ng  | umbralesporflanco               |       0.05 |
+| nsim_ng  | gruposldap                      |       0.05 |
+| nsim_ng  | categoriaclientes               |       0.03 |
+| nsim_ng  | ipsla_ips_equipos               |       0.03 |
+| nsim_ng  | periodomantenimiento            |       0.03 |
+| nsim_ng  | grupos                          |       0.03 |
+| nsim_ng  | equipos                         |       0.03 |
+| nsim_ng  | indicadoresespeciales           |       0.03 |
+| nsim_ng  | itemsordenprovisionipsla_save   |       0.03 |
+| nsim_ng  | indicadoresdiferidos            |       0.03 |
+| nsim_ng  | itemsordenprovisionipsla_jitter |       0.03 |
+| nsim_ng  | indicadoresderivados            |       0.03 |
+| nsim_ng  | timezones                       |       0.03 |
+| nsim_ng  | informepersonal                 |       0.03 |
+| nsim_ng  | itemsordenprovisionipsla_icmp   |       0.03 |
+| nsim_ng  | paquetesgrupos                  |       0.03 |
+| nsim_ng  | itemsordenprovisionipsla_http   |       0.03 |
+| nsim_ng  | suscripciones                   |       0.03 |
+| nsim_ng  | destinatarios                   |       0.03 |
+| nsim_ng  | ordenesprovisionipsla           |       0.03 |
+| nsim_ng  | franjashorarias                 |       0.03 |
+| nsim_ng  | itemsordenprovisionipsla_baja   |       0.03 |
+| nsim_ng  | destinatario_endpoints          |       0.03 |
+| nsim_ng  | ipsla_nodos_vista_matriz        |       0.03 |
+| nsim_ng  | roles                           |       0.03 |
+| nsim_ng  | ipsla_nodos_vista               |       0.03 |
+| nsim_ng  | reglas                          |       0.03 |
+| nsim_ng  | versiones                       |       0.03 |
+| nsim_ng  | ficherosprovision               |       0.03 |
+| nsim_ng  | categoriatecnologias            |       0.03 |
+| nsim_ng  | export_listarouters             |       0.03 |
+| nsim_ng  | ipsla_matrices_vista            |       0.03 |
+| nsim_ng  | categoriaregiones               |       0.03 |
+| nsim_ng  | export_listainterfaces          |       0.03 |
+| nsim_ng  | gruposusuarios                  |       0.03 |
+| nsim_ng  | categoriaorganizaciones         |       0.03 |
+| nsim_ng  | categoriagrupos                 |       0.03 |
+| nsim_ng  | equipos_ws                      |       0.03 |
+| nsim_ng  | ipsla_matrices                  |       0.02 |
+| nsim_ng  | equipos_eliminar                |       0.02 |
+| nsim_ng  | tiposinformes                   |       0.02 |
+| nsim_ng  | lg_comandos                     |       0.02 |
+| nsim_ng  | tiposgrafico                    |       0.02 |
+| nsim_ng  | aso_one_minute                  |       0.02 |
+| nsim_ng  | indicadoresbase                 |       0.02 |
+| nsim_ng  | ipsla_vistas                    |       0.02 |
+| nsim_ng  | seqidsonda                      |       0.02 |
+| nsim_ng  | configuracion                   |       0.02 |
+| nsim_ng  | expresiones                     |       0.02 |
+| nsim_ng  | nivelesalarma                   |       0.02 |
+| nsim_ng  | ipsla_matrices_jitter           |       0.02 |
+| nsim_ng  | ipsla_matrices_icmp             |       0.02 |
+| nsim_ng  | ultimo_purgado                  |       0.02 |
+| nsim_ng  | ipsla_matrices_http             |       0.02 |
+| nsim_ng  | pluginsarbol                    |       0.02 |
+| nsim_ng  | elemento_base_version           |       NULL |
++----------+---------------------------------+------------+
+122 rows in set (36.95 sec)
+
+
+
+
+
+
+
+
+DESCRIBE muestrasagregadoshorarios;
+select max(la fecha) from muestrasagregadoshorarios;
+y select min(la fecha) from muestrasagregadoshorarios;
+
+
+
+mysql> DESCRIBE muestrasagregadoshorarios;
++---------------------+---------------------+------+-----+---------------------+-----------------------------+
+| Field               | Type                | Null | Key | Default             | Extra                       |
++---------------------+---------------------+------+-----+---------------------+-----------------------------+
+| idAgregadoTemporal  | bigint(20) unsigned | NO   | PRI | NULL                | auto_increment              |
+| tsFecha             | bigint(20)          | NO   | PRI | 0                   |                             |
+| idOperacionTarget   | bigint(20)          | NO   | MUL | NULL                |                             |
+| fecha               | timestamp           | NO   |     | CURRENT_TIMESTAMP   | on update CURRENT_TIMESTAMP |
+| valor               | double              | NO   |     | NULL                |                             |
+| fiabilidad          | tinyint(4)          | NO   |     | 100                 |                             |
+| fechaRepresentativa | timestamp           | NO   |     | 0000-00-00 00:00:00 |                             |
++---------------------+---------------------+------+-----+---------------------+-----------------------------+
+7 rows in set (0.00 sec)
+
+
+select max(fechaRepresentativa) from muestrasagregadoshorarios;
+select min(fechaRepresentativa) from muestrasagregadoshorarios;
+
+
+mysql> select max(fechaRepresentativa) from muestrasagregadoshorarios;
++--------------------------+
+| max(fechaRepresentativa) |
++--------------------------+
+| 2018-05-24 09:01:23      |
++--------------------------+
+1 row in set (24 min 30.23 sec)
+
+
++--------------------------+
+| min(fechaRepresentativa) |
++--------------------------+
+| 2015-12-12 23:55:00      |
++--------------------------+
+1 row in set (25 min 1.30 sec)
+
