@@ -4,6 +4,16 @@
 -- cambiar de usuario para ejecutar sobre un schema concreto
 alter session set current_schema = BPM;
 
+*******************************************************************************************
+*** 								Desconectar un usuario en oracle 10g									***				
+*******************************************************************************************
+debemos obtener el SID y SERIAL# del usuario. Para eso ejecutamos la siguiente sentencia sql:
+select SID, SERIAL#, username, osuser, machine from v$session where username = ‘nombre_usuario’;
+Donde nombre_usuario es el nombre de usuario que quiere desconectar. 
+Una vez obtenidos los datos con la consulta anterior, ejecutamos la sentencia siguiente tantas veces como filas nos haya arrojado la consulta:
+Alter system kill session ‘SID,SERIAL#’;
+Reemplazando SID y SERIAL# con los datos correpondientes de cada fila resultante que arrojó la primera consulta.
+
 
 
 *******************************************************************************************
