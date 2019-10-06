@@ -96,7 +96,7 @@ El ***fichero Compose*** **proporciona una forma de documentar y configurar toda
 Las ***docker machines***, máquinas locales (y virtuales) o remotas (como Amazon AWS) ejecutando un ***Docker***. Como cualquier otra máquina, tiene una dirección IP física. Cada ***máquina Docker*** puede gestionar varias ***imágenes*** y ***contenedores***.
 
 
-## Sistema de archivos de unión (Union FileSystem)##
+## Sistema de archivos de unión (Union FileSystem) ##
 
 [Sistema de archivos de unión](https://es.wikipedia.org/wiki/UnionFS "sistema de archivos de unión"), ***reúne todas las capas como una sola entidad cuando se trabaja con un contenedor***.
 
