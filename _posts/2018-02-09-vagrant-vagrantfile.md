@@ -57,12 +57,12 @@ A continuación veamos como modificar este fichero para personalizar la imagen v
 - **Carpetas compartidas**. Por defecto la máquina virtual que se cree, tendrá compartida la carpeta `/vagrant` con la carpeta del host donde se encuentra el fichero **Vagrantfile**. Para sincronizar otras carpetas del host con una dentro de la imagen virtual, podemos escribir una línea semejante a esta:
 
 		config.vm.synced_folder "./backup", "/vagrant_data"
-
-	La anterior línea compartirá la carpeta del host `"./backup"`, con la carpeta de la máquina virtual `"/vagrant_data"`.
+	
+    La anterior línea hará que el contenido del subdirectorio de la máquina host `./backup` (siendo la raíz el directorio donde se encuentra nuestro Vagrantfile) sea accesible por la máquina virtual en la ruta `/vagrant_data`.
 
 	> El primer parámetro es una ruta a un directorio en la máquina host. Si la ruta es relativa, es relativa a la raíz del proyecto. El segundo parámetro debe ser una ruta absoluta de dónde compartir la carpeta dentro de la máquina invitada. Esta carpeta se creará (recursivamente, si es necesario) si no existe.
 
-- **Configurar características de la máquina virtual en virtualBox**. Por ejemplo para modificar la memoria asignada a la máquina indicando que sea de 8GB:
+- **Configurar características de la máquina virtual en virtualBox**. Por ejemplo para modificar la memoria asignada a la máquina indicando que sea de 2GB:
 
 		config.vm.provider "virtualbox" do |vb|
 			vb.memory = "2048"
