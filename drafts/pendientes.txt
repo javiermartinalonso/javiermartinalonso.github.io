@@ -1,6 +1,58 @@
-https://descargas2020.com/descargar/serie/juego-de-tronos/temporada-8/capitulo-06/
-
 limpieza equipo
-copiar diagramas a version comunity
+
 drools
-acive mq
+active mq
+
+
+---------------------------------------------------------------------------------------------------------------
+
+terminar curso de microservicios
+
+---------------------------------------------------------------------------------------------------------------
+realizar un cliente rest bien completo que envie post con objetos complejos, como entity, como json, etc
+y su respectivo servidor rest con el api rest para comerse esas peticiones.
+
+
+https://howtodoinjava.com/spring-boot2/resttemplate/resttemplate-post-json-example/
+https://www.baeldung.com/spring-resttemplate-post-json
+
+---------------------------------------------------------------------------------------------------------------
+hacer un ejemplo completo de camunda que sirva para ir recopilando todo el conocimiento sobre camunda.
+
+resultado de la prueba de concepto, compararlo con la tabla de productos de BPMN
+
+
+---------------------------------------------------------------------------------------------------------------
+
+
+limpiar el workspace de spring, modulos repetidos con información confusa.
+
+
+---------------------------------------------------------------------------------------------------------------
+
+
+Estudiar diagramas de Provision BPMN tienen que estar exportados por lo menos para no perder los diagramas 
+en cuanto a los scripts, ver como pegarse con los datos en el repositorio.
+
+---------------------------------------------------------------------------------------------------------------
+
+
+estudiar ingles, recopilar chuletas y paginas de estudio
+
+Resumen gramatica inglesa
+
+D:\89_CURSOS_ACTUALES\SATEC\INGLES
+---------------------------------------------------------------------------------------------------------------
+
+
+restaurar backup en docker oracle
+C:\dockers\oracle\backups_restores
+
+---------------------------------------------------------------------------------------------------------------
+
+
+mejorar blog
+
+C:\11_GIT\javiermartinalonso.github.io\drafts\pendientes
+---------------------------------------------------------------------------------------------------------------
+

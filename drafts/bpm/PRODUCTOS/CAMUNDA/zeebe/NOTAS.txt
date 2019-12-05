@@ -1,0 +1,16 @@
+Por donde empezar:
+
+***************************************************************************
+***						video tutorial desde cero						***
+***************************************************************************
+https://www.youtube.com/watch?v=RV9_7Ct2j0g
+
+Documentación
+https://docs.zeebe.io/
+
+
+instalador docker
+https://docs.zeebe.io/introduction/install.html
+instalador modeler
+https://github.com/zeebe-io/zeebe-modeler/releases
+

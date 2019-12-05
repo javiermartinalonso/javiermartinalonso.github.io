@@ -1,0 +1,15 @@
+GIT
+
+* descargar un repositorio:
+	git clone https://github.com/ibnesayeed/linkextractor.git
+
+* cambiar a una rama del repositorio
+	vamos a la carpeta del repositorio y desde dentro del repositorio
+	cd linkextractor
+	cambiamos a otra rama
+	git checkout demo
+	
+	
+* eliminar los cambios en la rama actual y volver al estado anterior a los cambios.
+
+git reset --hard

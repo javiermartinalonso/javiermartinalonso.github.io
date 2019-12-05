@@ -1,0 +1,237 @@
+https://training.play-with-docker.com/microservice-orchestration/
+https://training.play-with-docker.com/swarm-stack-intro/
+
+
+
+
+#Eliminar datos no utilizados
+https://www.vidaxp.com/tecnologia/como-borrar-imagenes-contenedores-y-volumenes-docker/
+docker system prune [OPTIONS]
+
+De forma predeterminada, los volúmenes no se eliminan para evitar que se eliminen datos importantes si actualmente no hay ningún contenedor que use el volumen. Use la --volumes bandera cuando ejecute el comando para podar también los volúmenes:
+
+$ docker system prune -a --volumes
+
+
+
+La solución es bien sencilla. Con el siguiente script podéis ver el listado de volumenes huerfanos:
+
+1
+docker volume ls -qf dangling=true
+Y el siguiente script borrará todos estos volumenes que nos sobran(Podéis, directamente, borrarlos sin pasar por ver el listado 😀 ):
+
+1
+docker volume rm $(docker volume ls -qf dangling=true)
+
+
+
+
+
+
+#comprobar los volúmenes que hemos creados ejecutando:
+docker volume ls
+
+aunque borremos el contenedor, el volumen no se borra
+
+
+
+
+
+
+
+https://training.play-with-docker.com/beginner-linux/
+
+1 List all containers.
+
+docker container ls --all
+
+2 List the running containers.
+
+docker container ls
+
+Ejecute un contenedor Docker y acceda a su shell.
+
+ docker container run --interactive --tty --rm ubuntu bash
+En este ejemplo, le estamos dando a Docker tres parámetros:
+
+--interactive dice que quieres una sesión interactiva.
+--tty asigna un pseudo-tty.
+--rm le dice a Docker que continúe y retire el contenedor cuando termine de ejecutarse.
+Los dos primeros parámetros le permiten interactuar con el contenedor Docker.
+
+También le estamos diciendo al contenedor que se ejecute bashcomo su proceso principal (PID 1).
+
+Cuando se inicie el contenedor, caerá en el shell bash con la solicitud predeterminada root@<container id>:/#. Docker se ha conectado al shell en el contenedor, retransmitiendo entrada y salida entre su sesión local y la sesión de shell en el contenedor.
+
+
+"ls /" enumerará el contenido del director raíz en el contenedor, "ps aux"  mostrará los procesos en ejecución en el contenedor, "cat /etc/issue" mostrará qué distribución de Linux está ejecutando el contenedor, en este caso Ubuntu 18.04.1 LTS.
+
+
+Ejecute un nuevo contenedor MySQL con el siguiente comando.
+
+ docker container run \
+ --detach \
+ --name mydb \
+ -e MYSQL_ROOT_PASSWORD=my-secret-pw \
+ mysql:latest
+--detach ejecutará el contenedor en segundo plano.
+--namelo llamará mydb .
+-e utilizará una variable de entorno para especificar la contraseña de root (NOTA: esto nunca debe hacerse en producción).
+
+
+1 List all containers.
+
+docker ps
+docker container ls --all
+docker container ls
+docker container ls -a
+
+2 List the running containers.
+
+docker container ls
+
+3 You can check what’s happening in your containers by using a couple of built-in Docker commands: docker container logs and docker container top.
+
+	docker container logs mydb
+	docker logs mydb
+ 
+ 
+4 Let’s look at the processes running inside the container.
+
+   docker container top mydb
+   
+
+
+
+
+
+
+5 Liste la versión de MySQL usando docker container exec.
+
+"docker container exec" le permite ejecutar un comando dentro de un contenedor. En este ejemplo, usaremos docker container execpara ejecutar el equivalente de la línea de comandos mysql --user=root --password=$MYSQL_ROOT_PASSWORD --versiondentro de nuestro contenedor MySQL.
+
+ docker exec -it mydb \
+ mysql --user=root --password=$MYSQL_ROOT_PASSWORD --version
+ 
+
+5-1 También puede usar "docker container exec" para conectarse a un nuevo proceso de shell dentro de un contenedor que ya se está ejecutando. Ejecutar el siguiente comando le dará un shell interactivo ( sh) dentro de su contenedor MySQL.
+
+ docker exec -it mydb sh
+ 
+ 
+6 Verifiquemos el número de versión ejecutando el mismo comando nuevamente, solo que esta vez desde la nueva sesión de shell en el contenedor.
+
+ mysql --user=root --password=$MYSQL_ROOT_PASSWORD --version
+
+7 Escriba exit para salir de la sesión de shell interactivo.
+
+ exit
+ 
+ 
+
+
+docker-compose up: da instrucciones a Docker para crear el contendor, y ejecutarlo segun docker-compose.yml
+docker-compose up -d: da instrucciones a Docker para crear el contendor y ejecutarlo en segundo plano segun docker-compose.yml
+docker-compose down: apaga todo los servicios que levantó con docker-compose up.
+
+*docker-compose ps *: permite ver los contenedores funcionando.
+
+docker-compose exec: permite ejecutar un comando a uno de los servicios levantados de Docker-compose.
+
+
+Con ello conseguiremos un acceso a la máquina virtual en la propia línea de comandos..
+
+# Usage: docker-machine ssh [nombre maquina docker]
+docker-machine ssh default
+
+
+
+
+
+
+
+#construir imagen
+
+docker build . -t activation/1.0.0
+
+#arrancar el contenedor
+docker run --name activation -p 8080:8080 -it activation/1.0.0
+
+
+#comprobar la configuracion del compose levantados
+docker-compose config
+
+
+forzar a reconstruir las imagenes y contenedores
+docker-compose up -d --force-recreate --build
+
+Options:
+  -d                  Detached mode: Run containers in the background,
+                      print new container names. Incompatible with
+                      --abort-on-container-exit.
+  --force-recreate    Recreate containers even if their configuration
+                      and image haven't changed.
+  --build             Build images before starting containers.
+
+
+
+
+#de esta forma podriamos tener un fichero compose y uno adicional para activar el modo depuracion y los puertos de depuracion.
+docker-compose -f docker-compose.yml -f docker-compose.debug.yml up
+
+
+
+#Escalar un contenedor
+#para tener 4 instancias de aplicación "prueba" en ejecución.
+docker-compose scale test-app=4
+
+
+
+
+#averiguar qué capas contiene una imagen de Docker
+docker history <imagen>
+
+
+#mostrar la configuración de nuestro container.
+docker inspect oracle/database:12.1.0.2-ee 
+
+
+
+
+
+
+#descargar imagen del repositorio de imagenes
+docker pull <imagen>
+
+
+#Estadísticas de Docker para contenedores
+docker container stats
+#para listar todos los contenedores que se ejecutan con la CPU, memoria, redes de E / S y las estadísticas del bloque de E / S.
+docker container stats $(docker container ps --format={{.Names}})
+
+
+
+#Detener contenedores
+#Cuando detiene un contenedor, los datos no se eliminan, a menos que elimine el contenedor.
+docker container stop <container_id>
+
+#Ajuste de memoria
+#Para optimizar el uso de memoria para aplicaciones que se ejecutan en el contenedor, puede configurar los parámetros de memoria Java en Dockerfileodocker-compose.yml
+
+#Agregar parámetros de memoria a Dockerfile. Establecer la variable de entorno.
+ENV JAVA_OPTS=-Xmx512m -Xms256m
+
+
+Agregar parámetros de memoria a docker-compose.yml
+Esta solución se desea sobre Dockerfile. De esta manera, usted tiene un único punto de control para la configuración de la memoria en todos los contenedores que componen su aplicación.
+
+Agrega sección el JAVA_OPT Sen la environment.
+
+    environment:
+      - (...)
+      - JAVA_OPTS=-Xmx512m -Xms256m
+Dependiendo de la imagen base de Docker, JAVA_OPTS no funcionará. En este caso, intente usar _JAVA_OPTIONS en su lugar:
+
+    environment:
+      - (...)
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m

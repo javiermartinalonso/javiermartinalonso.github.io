@@ -1,0 +1,18 @@
+https://www.albertcoronado.com/tag/docker/
+
+Suscríbete y recibe formación, consultoría y desarrollo gratis en tu mail
+
+tu portal del desarrollo, transformación digital y la gestión IT
+
+ejemplo
+
+http://codebeerstartups.com/2013/04/how-to-use-git-flow-in-your-projects/
+
+https://stackoverflow.com/questions/34667905/jquery-scrollbubble-on-scroll
+
+https://codepen.io/anon/pen/EPmKLJ
+
+Tengo una función que muestra una burbuja flotante con números en el desplazamiento. 
+Está funcionando bien y muestra una burbuja en el desplazamiento, pero sobre todo después de desplazarse, 
+la burbuja sigue alternando. Aquí está el ejemplo a continuación, verifique y ayúdeme dónde hay algo mal en el código. Y gracias de antemano.
+

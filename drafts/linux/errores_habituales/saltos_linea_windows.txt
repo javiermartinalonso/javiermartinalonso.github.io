@@ -1,0 +1,39 @@
+https://stackoverflow.com/questions/19425857/env-python-r-no-such-file-or-directory
+
+
+Solución a los problemas de formatos de archivo, los saltos de linea en windows y en sistema linux son diferentes: 
+
+
+
+El script contiene caracteres CR. El shell interpreta estos caracteres CR como argumentos.
+
+Solución: elimine los caracteres CR del script con el siguiente script.
+
+
+Abra el archivo en vim o vi y administre el siguiente comando:
+
+:set ff=unix
+Guardar y Salir:
+
+:wq
+¡Hecho!
+
+Explicación
+ffsignifica formato de archivo , y puede aceptar los valores de unix( \n), dos( \r\n) y mac( \r) (solo para usarse en macs pre-intel, en el uso de macs modernos unix). .
+
+Para leer más sobre el ffcomando:
+
+:help ff
+:wq significa Write y Quit, un equivalente más rápido es Shift+ zz(es decir, mantenga presionada la tecla Mayús y luego presione z dos veces).
+
+Ambos comandos deben usarse en modo comando .
+
+Uso en múltiples archivos
+No es necesario abrir realmente el archivo en vim. La modificación se puede hacer directamente desde la línea de comando:
+
+ vi +':wq ++ff=unix' file_with_dos_linebreaks.py
+Para procesar múltiples *.pyarchivos (en bash):
+
+for file in *.* ; do
+    vi +':w ++ff=unix' +':q' ${file}
+done
