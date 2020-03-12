@@ -8,10 +8,11 @@ https://training.play-with-docker.com/swarm-stack-intro/
 https://www.vidaxp.com/tecnologia/como-borrar-imagenes-contenedores-y-volumenes-docker/
 docker system prune [OPTIONS]
 
-De forma predeterminada, los volúmenes no se eliminan para evitar que se eliminen datos importantes si actualmente no hay ningún contenedor que use el volumen. Use la --volumes bandera cuando ejecute el comando para podar también los volúmenes:
+De forma predeterminada, los volúmenes no se eliminan para evitar que se eliminen datos importantes si actualmente no hay ningún contenedor que use el volumen. 
+Use la bandera --volumes cuando ejecute el comando para podar también los volúmenes:
 
 $ docker system prune -a --volumes
-
+  docker system prune -f –volume
 
 
 La solución es bien sencilla. Con el siguiente script podéis ver el listado de volumenes huerfanos:
@@ -35,6 +36,8 @@ aunque borremos el contenedor, el volumen no se borra
 
 
 
+Para averiguar los nombres de los contenedores en ejecución, ejecute el siguiente comando:
+ docker ps --format {{.Names}}
 
 
 
@@ -138,7 +141,7 @@ docker-compose down: apaga todo los servicios que levantó con docker-compose up
 
 docker-compose exec: permite ejecutar un comando a uno de los servicios levantados de Docker-compose.
 
-
+•	docker-compose logs -f --tail=0: Imprime mensajes de registro de todos los contenedores. -f significa que el comando no se completará y, en cambio, espera nuevos mensajes de registro. --tail=0 significa que no queremos ver ningún mensaje de registro anterior, solo mensajes nuevos.
 Con ello conseguiremos un acceso a la máquina virtual en la propia línea de comandos..
 
 # Usage: docker-machine ssh [nombre maquina docker]
@@ -152,10 +155,10 @@ docker-machine ssh default
 
 #construir imagen
 
-docker build . -t activation/1.0.0
+docker build . -t activation/1.0.6
 
 #arrancar el contenedor
-docker run --name activation -p 8080:8080 -it activation/1.0.0
+docker run --name activator -p 8080:8080 activator
 
 
 #comprobar la configuracion del compose levantados
@@ -211,6 +214,12 @@ docker container stats $(docker container ps --format={{.Names}})
 
 
 
+docker rm -f $ (docker ps -aq)
+El comando docker rm -f detiene y elimina los contenedores cuyos ID de contenedor se especifican para el comando.
+El comando docker ps -aq enumera las ID de contenedor de todos los contenedores en ejecución y detenidos en el motor Docker. 
+La opción -q reduce la salida del comando docker ps para que solo enumere las ID de contenedor.
+
+
 #Detener contenedores
 #Cuando detiene un contenedor, los datos no se eliminan, a menos que elimine el contenedor.
 docker container stop <container_id>
@@ -235,3 +244,22 @@ Dependiendo de la imagen base de Docker, JAVA_OPTS no funcionará. En este caso,
     environment:
       - (...)
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
+
+
+
+
+
+# Para probar una aplicacion web, nos basta con ver que nos devuelve la url del siguiente modo. (supongamos que está escuchando en el puerto 8080)
+
+$ curl http://localhost:8080
+
+Si estamos usando alguna maquina virtual o similar y desconocemos la dirección ip (en este caso 127.0.0.1 o localhost), podemos usar el siguiente comando:
+
+$ curl http://$(boot2docker ip 2>/dev/null):8080
+
+Entonces tengo que usar el comando boot2docker, que me da la dirección IP de mi VM. 
+Así que aquí estoy obteniendo la dirección IP de mi máquina virtual, ignorando cualquier error que salga y mirando el puerto 8080
+
+
+
+

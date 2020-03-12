@@ -1,0 +1,32 @@
+5.2 Comprender los códigos de estado
+- Los códigos de estado HTTP transmiten al cliente los resultados del intento del servidor de satisfacer una solicitud. 
+Existen diferentes franjas amplias de categorías de códigos de estado HTTP. 
+100 a 200 son códigos de estado informativos. 
+Le dicen al cliente información sobre la solicitud. 200 a 300 indica éxito. 
+Por ejemplo, puede hacer una solicitud y obtener 200, lo que indica que todo está bien. Esa es la situación ideal. 
+Todo lo demás es atípico. 
+300 a 400 indica redirección. Entonces, por ejemplo, 304 podría decirle al cliente que la solicitud no ha cambiado. 
+Las series 400 a 500 son quizás los códigos de estado más famosos. 
+404 no encontrado, por ejemplo, indica que el recurso al que el cliente intentó acceder ya no existe o se mueve. 
+410 en realidad señala algo más permanente. Le indica al cliente que el recurso estaba aquí y ahora se ha ido, mientras que 404 podría indicar que no está allí en este momento, pero podría estar disponible en el futuro en ese URI. 
+Las 500 series o errores, indican problemas del servidor. Cosas que el cliente puede arreglar o cambiar modificando la solicitud, como la serie 400. 
+Los errores de la serie 500 son cosas que indican problemas en el lado del servidor. Hemos examinado las categorías generales. 
+Aquí hay algunos códigos de estado comunes de la serie 200: 
+200, por ejemplo, todo funcionó muy bien, 
+201 es lo que responde cuando tiene un recurso que ha cargado. Por ejemplo, puede enviar datos de formulario a un punto final posterior y luego crear un 201, 
+lo que indica que se ha creado un objeto en el back-end o que se ha creado algún tipo de datos en el back-end. 
+Y el cliente debe buscar un encabezado de ubicación, en respuesta a esa solicitud posterior. 
+202 indica algo un poco más sutil que 201. Indica que el servidor está procesando la solicitud, pero aún no se ha completado. 
+Por ejemplo, si sube un video a YouTube, podría demorar una hora en transcodificar, 
+pero el cliente, tan pronto como sea posible, devolverá un encabezado aceptado, junto con la ubicación que el cliente puede usar para obtener el objeto resultante, 
+o al menos verifique el estado del objeto resultante. 
+Aquí hay algunos ejemplos de códigos de estado de la serie 400. 
+400 indica una solicitud incorrecta. Esto es algo que dice que un cliente necesita cambiar para que esta solicitud tenga éxito. 
+401 indica que el cliente necesita enviar credenciales de autenticación para poder acceder al recurso. 
+403 prohibido indica que el servidor comprende la solicitud, todo está bien en lo que respecta a eso, pero se niega a procesarlo. 
+404 no encontrado, por supuesto, significa que el URI ya no está allí. 406 incompatible indica que los encabezados de aceptación 
+enviados por el cliente al servicio no son compatibles con los tipos de contenido con los que este servicio puede responder. 
+El conflicto 409 indica que la solicitud ha roto alguna regla arbitraria en el servidor. Puede crear sus propias reglas aquí, 
+pero un ejemplo podría ser que intentó cargar un archivo que es más antiguo que el recurso que ya está en el servidor, 
+y el servidor lo ha rechazado por este motivo. Este es un tipo de error muy raro, pero habla del hecho de que estos códigos de estado tienen un significado, 
+y se pueden usar para señalar de manera consistente,

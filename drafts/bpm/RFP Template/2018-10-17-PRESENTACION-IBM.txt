@@ -5,7 +5,7 @@ cloud --> orquestacion servicios
 
 simular costes en las cargas de trabajo  --> No por ahora
 
-
+soluciones existentes para integrar con JMS o con ESB para la gestión de mensajes y solicitudes aunque el sistema esté caido u ocupado.
 
 Integracion continua, automatizacio pruebas  ??????????
 Importarlo de otro BPM/Exportar partes de esta solucion a otro proyecto	. Documentar los scripts, pantallas, etc.	
