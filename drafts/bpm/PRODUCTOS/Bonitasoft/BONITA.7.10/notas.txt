@@ -1,0 +1,5 @@
+- cambios version 7.10 respecto a las anteriores
+https://www.youtube.com/watch?v=bG7tqyMZfyE&feature=em-uploademail
+
+- formularios y errores comunes en produccion
+https://www.youtube.com/watch?v=_vCOJKPnG2s&feature=em-uploademail

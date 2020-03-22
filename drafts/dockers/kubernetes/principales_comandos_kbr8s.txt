@@ -17,6 +17,15 @@ kubectl cluster-info
 kubectl get nodes
 
 
+kubectl get all
+
+
+kubectl get ns
+
+
+
+
+
 
 
 ### Ejecute una instancia del contenedor nginx creando un objeto de implementación ###

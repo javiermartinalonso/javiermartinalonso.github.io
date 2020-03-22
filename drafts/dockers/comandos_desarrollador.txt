@@ -260,6 +260,10 @@ $ curl http://$(boot2docker ip 2>/dev/null):8080
 Entonces tengo que usar el comando boot2docker, que me da la dirección IP de mi VM. 
 Así que aquí estoy obteniendo la dirección IP de mi máquina virtual, ignorando cualquier error que salga y mirando el puerto 8080
 
+#######################################################################################################################
+Instalar el editor en un contenedor sin vi
+https://blog.softwaremill.com/editing-files-in-a-docker-container-f36d76b9613c
 
 
-
+app # apt-get update 
+app # apt-get -y install vim
