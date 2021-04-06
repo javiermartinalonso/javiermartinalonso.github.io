@@ -1,9 +1,9 @@
 ---
 layout: post
 sections: [JAVA]
-title:  "Variables de entorno de JAVA"
+title:  "Aumentar memoria asignada al IDE Java"
 date:   2016-11-06
-desc: "Variables de entorno de JAVA"
+desc: "Aumentar memoria asignada al IDE Java"
 keywords: "java,jdk,instalación,windows,JAVA_HOME,PATH"
 categories: [java]
 tags: [java,JDK,JAVA_HOME]
@@ -12,7 +12,7 @@ image: static/img/blog/java/java-logo.png
 ---
 
 
-# Aumentar memoria asignada al ide Java #
+# Aumentar memoria asignada al IDE Java #
 
 Estamos usando un IDE basado en eclipse comp STS y va lento o se cierra de forma “inesperada”, sin mensaje de error ni nada o a veces recibimos al menos el mensaje de error: “Out of memory”..
 
