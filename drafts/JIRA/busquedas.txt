@@ -1,3 +1,7 @@
+componentes y filtros de jira
+https://www.youtube.com/watch?v=IjLRCckcnMU&feature=em-lsp
+
+
 JIRA
 Buscar avanzada en JIRA
 ISSUES/advanced

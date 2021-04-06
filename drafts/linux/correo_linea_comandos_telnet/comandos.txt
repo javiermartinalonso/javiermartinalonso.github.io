@@ -1,0 +1,24 @@
+telnet mail.mtc.com.na 25
+
+
+ehlo mail.mtc.com.na
+
+
+mail from: singleview@mtc.com.na
+
+rcpt to: ricardo.vinagre@satecgroup.com
+
+
+
+Para escribir el mensaje, escriba los datos, seguido de su asunto y mensaje. Para finalizar el mensaje, coloque un punto en una línea y presione enter:
+data
+Subject: My Telnet Test Email
+
+Hello,
+
+This is an email sent by using the telnet command.
+
+Your friend,
+Me
+
+.

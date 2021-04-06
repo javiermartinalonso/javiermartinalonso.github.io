@@ -1,0 +1,167 @@
+############################################
+####		NOTAS SOBRE EL LIBRO		####
+############################################
+-	no hay codigo asociado al libro que poder descargar o por lo menos no lo encuentro
+
+
+
+-	pag 115 filtros, multiples tableros para un proyecto, flags en backlog
+
+-	pag 135 emitir voto sobre un issue
+
+-	pag 163 campos personalizados
+
+
+187
+	Configuracion
+		tipo de incidencias y encima en la columna configuración de campo
+
+		http://localhost:9080/secure/admin/ViewCustomFields.jspa		
+
+
+216
+	pantallas en rh
+	
+252 flujos de trabajo en rh	
+	
+295 notificaciones en proyecto rh	
+	
+342 permisos en proyecto rh
+
+
+377 filtros, paneles, gadgets rh	
+	
+	
+############################################
+#### migrar de una base de datos a otra	####
+############################################
+
+
+https://confluence.atlassian.com/adminjiraserver/switching-databases-938846867.html
+
+############################################
+#### 		  INSTALACIÓN JIRA  		####
+############################################
+directorios:
+
+JIRA_home
+Jira_install
+
+Pag 39 directorios
+
+
+como Jira Server o Jira Data Center. La principal diferencia entre los dos es que Jira Data Center permite la agrupación en clúster, por lo que puede tener beneficios adicionales, como alta disponibilidad y mejor escalabilidad. Atlassian también ofrece una alternativa basada en la nube llamada Jira Cloud , disponible en  https://www.atlassian.com/software#cloud-products .
+
+
+BBDD
+https://confluence.atlassian.com/adminjiraserver085/connecting-jira-applications-to-mysql-5-7-981154582.html#ConnectingJiraapplicationstoMySQL5.7-dbconnectionfields
+https://downloads.mysql.com/archives/installer/
+
+driver:
+mysql-connector-java-5.1.48.jar
+C:\Program Files\Atlassian\JIRA\lib
+
+
+
+BBDD y servidor
+C:\ProgramData\MySQL\MySQL Server 5.7
+my.ini
+
+
+Tome nota especial del requisito del controlador en cada base de datos, 
+ya que algunos controladores que vienen incluidos con el proveedor de la base de datos o Jira (por ejemplo, PostgreSQL) no son compatibles 
+y deberán reemplazarse con las versiones apropiadas.
+
+version Mysql:
+
+	8.0.19  --> no vale para jira
+
+
+https://downloads.mysql.com/archives/installer/	
+5.7.13
+
+	
+windows service name:	MySQL57
+port:	3306
+user root:
+	root
+	root
+	
+user db admin:
+	adminmysql
+	adminmysql
+
+
+-conectar como root
+mysql -u root -p
+
+	
+- crear bbdd(schema de jira)	
+CREATE DATABASE jiradb CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+create database jiradb character set utf8;
+
+- crear usuario con permisos sobre el schema (desde el workbench no he podido via comandos sql)
+
+grant all on jiradb.* to 'adminjira'@'localhost' identified by 'adminjira';
+
+quit;
+
+mysql -u adminjira -p
+
+show databases;
+
+use jiradb;
+show tables;
+
+
+
+SET GLOBAL time_zone = '+2:00';
+
+
+
+Como administrador de mySql:
+CREATE DATABASE jiradb CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+
+grant all on jiradb.* to 'adminjira'@'localhost' identified by 'adminjira';
+
+Sino hacemos lo siguiente no podras crear proyectos de software
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER,INDEX,REFERENCES on jiradb.* TO 'adminjira'@'localhost' IDENTIFIED BY 'adminjira';
+flush privileges;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+JIRA SERVER
+
+version de jira de SATEC
+Jira v8.5.4
+
+
+directorios:
+	- JIRA_INSTALL
+		C:\Program Files\Atlassian\JIRA
+
+	- JIRA_HOME
+		C:\Program Files\Atlassian\Application Data\JIRA
+
+Puertos		
+	http port number
+		9080
+	control port number
+		9005
+	
+
+
+	

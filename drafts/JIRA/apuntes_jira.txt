@@ -1,0 +1,42 @@
+Proyecto Scrum
+Proyecto kambam
+Proyecto Clasico
+
+
+Spring planification --> en la planificacion del spring es cuando se realizan los workshops 
+	y se averiguan las tareas para una epica, y esta se divide en tareas.
+tareas muy grandes --> Epicas y no se ponen en el sprint, se dividen en tareas 
+	y son estas las que se ponen en el spring 
+
+
+restrospectiva
+
+https://retromat.org/
+
+Paso a Paso de un proyecto SCRUM en JIRA Software JIRA TIPS
+https://www.youtube.com/watch?v=X9jaqaSSv28
+
+- Version/release
+- Epicas, task
+- Backlog
+- Sprint
+- graficas
+
+COMO DIVIDIR LAS HISTORIAS DE USUARIO EN TAREAS
+https://www.youtube.com/watch?v=Ueq786iZ30I
+
+
+Cómo usar KANBAN en JIRA Software JIRA TIPS
+https://www.youtube.com/watch?v=t4w8E2dKtQ8
+
+Proyectos Clasicos con Jira, diagrama de gant
+https://www.youtube.com/watch?v=Tv0du0BfCXw
+
+Cómo configurar tableros en JIRA
+https://www.youtube.com/watch?v=C-O4xeEoDOY
+
+Confluence
+
+https://www.youtube.com/watch?v=M29vXmYnl1g
+https://www.youtube.com/watch?v=PR_q8ej61_Y
+

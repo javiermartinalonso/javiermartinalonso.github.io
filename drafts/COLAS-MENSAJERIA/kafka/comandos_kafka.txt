@@ -1,0 +1,80 @@
+# log del kafka
+stern kafka- | grep kafka-broker
+  
+
+
+
+# Ejecución de Apache Zookeper
+Nota : Requiere facilitarle el fichero de configuración
+
+
+%KAFKA_HOME%\bin\windows\zookeeper-server-start.bat ..\..\config\zookeeper.properties
+
+/c/kafka_2.12-2.5.0/bin/windows/zookeeper-server-start.bat /c/kafka_2.12-2.5.0/config/zookeeper.properties
+C:\kafka_2.12-2.5.0\bin\windows\zookeeper-server-start.bat C:\kafka_2.12-2.5.0\config\zookeeper.properties
+
+# Ejecución de un Kafka Broker / Server
+
+%KAFKA_HOME%\bin\windows\kafka-server-start.bat ..\..\config\server.properties
+
+/c/kafka_2.12-2.5.0/bin/windows/kafka-server-start.bat /c/kafka_2.12-2.5.0/config/server.properties
+C:\kafka_2.12-2.5.0\bin\windows\kafka-server-start.bat C:\kafka_2.12-2.5.0\config\server.properties
+
+
+# Gestión de Topics
+
+## Listar todos los topics
+Muestra todos los topics que se encuentran dados de alta en Zookeeper
+
+%KAFKA_HOME%\bin\windows\kafka-topics.bat --list --zookeeper localhost:2181
+
+/c/kafka_2.12-2.5.0/bin/windows/kafka-topics.bat --list --zookeeper localhost:2181
+C:\kafka_2.12-2.5.0\bin\windows\kafka-topics.bat --list --zookeeper localhost:2181
+
+## Crear un topic
+Permite crear un topic con una configuración específica
+
+KAFKA_HOME\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 100 --topic demo
+C:\kafka_2.12-2.5.0\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 100 --topic serviceOrderTopic
+%KAFKA_HOME%\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic topic-basic-test
+
+C:\kafka_2.12-2.5.0\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic serviceOrderTopic
+
+## configurar un grupo en el topic
+C:\kafka_2.12-2.5.0\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic serviceOrderTopic --group serviceOrderConsumer
+
+
+## verificar detalles del topic
+C:\kafka_2.12-2.5.0\bin\windows\kafka-topics.bat --describe --zookeeper localhost:2181 --topic demo
+
+
+
+Para obtener los detalles de los consumidores y el offset de cada partición, accedemos con este comando:
+C:\kafka_2.12-2.5.0\bin\windows\kafka-consumer-groups.bat --bootstrap-server localhost:9092 --group grupo1 --describe
+
+
+
+## Borrar un topic
+Permite borrar un topic
+
+KAFKA_HOME\bin\windows\kafka-topics.bat --delete --zookeeper localhost:2181 --topic demo  
+C:\kafka_2.12-2.5.0\bin\windows\kafka-topics.bat --delete --zookeeper localhost:2181 --topic demo
+
+## Ver información del detalle de un topic
+Permite ver la información detallada sobre el uso y configuración de un topic.
+
+KAFKA_HOME\bin\windows\kafka-topics.bat --describe --zookeeper localhost:2181 --topic demo  
+
+## Arrancar un consumidor por consola
+Hay que ejecutar el siguiente comando :
+
+C:\kafka_2.12-2.5.0\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --from-beginning --topic demo
+
+### consumidor en un grupo
+C:\kafka_2.12-2.5.0\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic serviceOrderTopic --group serviceOrderConsumer
+
+## Arrancar un productor por consola
+Hay que ejecutar el siguiente comando :
+
+C:\kafka_2.12-2.5.0\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic demo
+C:\kafka_2.12-2.5.0\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic serviceOrderTopic

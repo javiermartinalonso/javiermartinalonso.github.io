@@ -28,15 +28,15 @@ hay que eliminar las carpetas con los arranques mas antiguos
 
 *********************************************************************************************************************************
 falla tarea alta en el Activation, en el IN, AAA...
-
+*********************************************************************************************************************************
 Exception executing consequence for rule "Deducir params IN - ALTA" 
 in es.satec.angolatelecom.activation.activator.rules.task: 
 es.satec.angolatelecom.activation.activator.service.tasks.rule.exception.EvaluationException: 
 File ./drl/data/IN-AAA-NGN-Mappings.xlsx, Sheet Products SV: Couldnt determine unique result for SV-ID = 30004107.
 ***************************************************************************************************************************
-
+*********************************************************************************************************************************
 No hay entrada para el producto en el excel de SV:
-
+*********************************************************************************************************************************
 hay que añadir la entrada en el excel:
 opt/provision/activator-1.0.0-SNAPSHOT/drl/data/IN-AAA-NGN-Mappings.xlsx
 

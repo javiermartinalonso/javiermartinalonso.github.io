@@ -1,3 +1,31 @@
+docker images
+docker system prune -a --volumes
+
+mvn clean install package -Dmaven.test.skip=true -Pdev
+
+
+docker build . -t bonita_mtc
+docker run -it -p 8080:8080 --rm bonita_mtc
+- entrar en el contenedor que se está ejecutando pudiendo ejecutar comandos desde linea de comandos
+docker exec -it bonita_mtc sh
+docker exec -u root -it 14a sh
+
+- ver los logs
+docker logs -f <name_container>
+
+- entrar en el contenedor para ver lo que hay durante el arranque (entrar con el hipervisor de windows)
+docker run -it --rm --entrypoint="/bin/bash" bonita_mtc
+
+- copiar contenido del contendor al host
+docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-
+docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
+
+docker cp bonita:/opt/bonita/ C:\10_workspaces\albatross\om\soo\soo_bpm_bonita_7.10.4\contenedor
+docker cp bonita_7.12:/opt/files C:\10_workspaces\albatross\om\soo\soo_bpm_bonita_docker_2021\contenedor
+docker cp bonita_mtc:/opt/files/ C:\10_workspaces\albatross\om\soo\soo_bpm_bonita_docker_2021\contenedor
+ 
+ 
+ 
 https://training.play-with-docker.com/microservice-orchestration/
 https://training.play-with-docker.com/swarm-stack-intro/
 

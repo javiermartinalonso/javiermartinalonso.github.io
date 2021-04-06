@@ -1,0 +1,333 @@
+-------------------------------------------------------------------------------------------------------------------------------------	
+	
+
+# arrancar el zookeeper (o que primero debe iniciar un servidor ZooKeeper)
+C:\kafka_2.12-2.5.0\bin\windows\zookeeper-server-start.bat C:\kafka_2.12-2.5.0\config\zookeeper.properties
+
+# arrancar el servidor de kafka
+C:\kafka_2.12-2.5.0\bin\windows\kafka-server-start.bat C:\kafka_2.12-2.5.0\config\server.properties
+
+#listar los topics
+C:\kafka_2.12-2.5.0\bin\windows\kafka-topics.bat --list --zookeeper localhost:2181
+
+# si no existe creamos el topic
+C:\kafka_2.12-2.5.0\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic serviceOrderTopic
+
+# borrar un topic
+C:\kafka_2.12-2.5.0\bin\windows\kafka-topics.bat --delete --zookeeper localhost:2181 --topic serviceOrderTopic  
+
+# detalles del topic
+C:\kafka_2.12-2.5.0\bin\windows\kafka-topics.bat --describe --zookeeper localhost:2181 --topic serviceOrderTopic
+
+
+# consumidor con grupo
+C:\kafka_2.12-2.5.0\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic serviceOrderTopic --group serviceOrderConsumer
+
+C:\kafka_2.12-2.5.0\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --property print.key=true --topic nuevo-topic  --new-consumer --consumer.config config/consumer.properties
+
+# crear un productor o publicador
+C:\kafka_2.12-2.5.0\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic serviceOrderTopic
+C:\kafka_2.12-2.5.0\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic planExecutionTopic
+
+C:\kafka_2.12-2.5.0\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic serviceOrderTopic_serviceOrderPlannerConsumer_ERROR
+
+
+C:\kafka_2.12-2.5.0\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic topicError1
+C:\kafka_2.12-2.5.0\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic topicError2
+
+C:\kafka_2.12-2.5.0\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic nuevo-topic  --property parse.key=true --property key.separator=,
+
+Este comando nos permite enviar mensajes con clave a Kafka. Usando el símbolo indicado en —property key.seperator se puede separar la clave del mensaje. Probemos a enviar varios mensajes:
+
+1,hola
+2,mundo
+clave,mensaje
+Los mensajes se dan por terminados y se envían cuando se pulsa enter.
+
+Nota: Si intentamos enviar un mensaje sin la ‘,’ el productor fallará al no poder distinguir la clave del valor.
+
+
+# configurar o alterar las particiones/replicas de un topic
+	kafka-topics --bootstrap-server localhost:9092 --alter --topic serviceActivationConfigurationTopic --partitions 16
+
+
+
+##zookeeper
+
+- conectar con zookeeper:
+	../zookeeper-3.4.9/bin/zkcli.sh
+
+- listar broker (nombres):
+	ls /brokers
+	
+- listar broker (ids):
+	ls /brokers
+		
+- informacion de un broker
+	get /brokers/ids/1
+	
+- listar caracteristicas de la configuracion del topic (es como navegar por el sistema de ficheros)
+	ls /brokers/topics/nombre_topic/partitions/num_particion/state
+
+desde kafka:
+
+C:\kafka_2.12-2.5.0\bin\windows\kafka-topics.bat --describe --zookeeper localhost:2181 --topic serviceOrderTopic	
+
+se ve como esta dividio en particiones, replicas y repartido en los brokers.
+-------------------------------------------------------------------------------------------------------------------------------------	
+
+
+
+
+https://medium.com/@TimvanBaarsen/head-first-kafka-the-basics-of-producing-data-to-kafka-explained-using-a-conversation-2df6544462f
+https://medium.com/@TimvanBaarsen/head-first-kafka-the-basics-of-consuming-data-from-kafka-explained-using-a-conversation-part-1-771380266c36
+https://medium.com/@TimvanBaarsen/programmatically-create-kafka-topics-using-spring-kafka-8db5925ed2b1
+https://reflectoring.io/spring-boot-kafka/
+https://www.baeldung.com/spring-kafka
+
+https://www.confluent.io/blog/how-choose-number-topics-partitions-kafka-cluster/
+https://www.confluent.io/blog/apache-kafka-supports-200k-partitions-per-cluster/
+
+https://docs.confluent.io/platform/current/quickstart/cos-docker-quickstart.html
+
+https://learning.oreilly.com/videos/apache-kafka-series/9781789342604
+https://learning.oreilly.com/library/view/kafka-streams-in/9781617294471/
+https://learning.oreilly.com/videos/apache-kafka-complete/9781800208247
+
+https://developpaper.com/spring-boot-kafka-overview-configuration-and-elegant-implementation-of-publish-and-subscribe/
+https://xiaobaiai.net/2019/20191222145654.html
+
+
+https://learning.oreilly.com/library/view/apache-kafka-series/9781789342604/video2_1.html?autoplay=false
+
+
+
+/**
+ * The topic pattern for this listener.
+ * The entries can be 'topic name', 'property-placeholder keys' or 'expressions'.
+ * Expression must be resolved to the topic pattern.
+ * Mutually exclusive with {@link #topics()} and {@link #topicPartitions()}.
+ * @return the topic pattern or expression (SpEL).
+ */
+String topicPattern() default "";
+
+topicPattern
+2.3.6 Gestión del ciclo de vida de @kafkalistener
+
+
+
+
+
+* El "log -compaction" se suele usar en topic que se utlizan para guardar información que quieres o necesitas mantener siempre, para poder recuperar un estado al leer el topic desde el inicio de los tiempos, pero solo se recupera el ultimo estado de cada key.
+
+	- ¡Recuerde que el orden de sus registros en su tema solo está garantizado por partición!
+	- Si se aumentan las particiones para un tema, y ​​el productor está usando una clave para producir mensajes, la lógica de la partición o el orden de los mensajes se verán afectados.
+	Por tanto planifique la cantidad de particiones y réplicas para su tema con anticipación según su caso de uso. Se pueden añadir particiones (y las particiones actuales no cambian) pero NO se pueden eliminar
+	- El número de particiones para un tema de Kafka solo se puede aumentar.
+	- De la documentación de Kafka: Las particiones del registro se distribuyen entre los servidores del clúster de Kafka y cada servidor maneja los datos y las solicitudes para compartir las particiones. Cada partición se replica en una cantidad configurable de servidores para tolerancia a fallas.
+	- Dado que no desea configurar un factor de replicación de uno para entornos que no sean de desarrollo, debe configurar el número de réplicas.
+	- Apache Kafka admite 200.000 particiones por clúster
+	- los lideres tienen que estar distribuidos para balancear la carga.
+			
+			
+Conclusiones de mi entrada de blog
+	La creación programática de temas de Kafka es poderosa, pero tenga en cuenta los peligros.
+	Planifique la cantidad de particiones y réplicas para su tema con anticipación según su caso de uso.
+	Para un clúster Kafka de un solo nodo de desarrollo local, solo puede configurar un factor de replicación de uno.
+	El uso de AdminClient puede estar restringido en su clúster de Kafka, lo que hace que no sea posible crear temas de Kafka mediante programación.
+
+
+- ¿Cómo elegir el número de temas / particiones en un clúster de Kafka?
+
+https://www.confluent.io/blog/how-choose-number-topics-partitions-kafka-cluster/
+https://www.confluent.io/blog/apache-kafka-supports-200k-partitions-per-cluster/
+
+
+particiones máximas = rendimiento objetivo / productor
+particiones máximas = rendimiento objetivo / consumidor
+
+
+
+- Productor 10s of MB/sec en solo un partición única
+- El rendimiento del consumidor a menudo depende de la aplicación, ya que corresponde a la rapidez con la que la lógica del consumidor puede procesar cada mensaje. Entonces, realmente necesitas medirlo.
+- As a rule of thumb, if you care about latency, it’s probably a good idea to limit the number of partitions per broker to 100 x b x r, where b is the number of brokers in a Kafka cluster and r is the replication factor.
+
+
+
+
+- ¿como ha conectado Antonio con el kafka en desarrollo y ha configurado las particiones?
+
+	kubectl exec -it kafka-0 sh
+
+	kafka-topics --bootstrap-server localhost:9092 --alter --topic serviceActivationConfigurationTopic --partitions 16
+	kafka-topics --bootstrap-server localhost:9092 --alter --topic prueba --partitions 16
+
+	
+- ¿QUE VERSIÓN DE KAFKA estamos usando en el k8s?
+
+
+
+
+¿como indicar a los microservicioes que levantemos a que particiones leer?
+		Por ahora solo he visto que en los listeners se les indica la particion de la que leen
+			https://docs.spring.io/spring-kafka/reference/html/
+			
+			
+
+[16:57] Antonio González Kirchenmayer
+    mínimo 6 particiones y 3 replicas
+​[16:58] Antonio González Kirchenmayer
+    y hilos podría 3 por microservicio
+​[16:58] Antonio González Kirchenmayer
+    así si hay 2 instancias de k8s procesamos las 6 parTiciones
+
+PRUEBAS CON 8 SELECT
+
+
+cuantas particiones crear por cada topic
+kafka rebalancea entre los consumidores
+key delimita a que particion va el mensaje, si necesitamos orden que el mismo hilo siempre atienda la misma SO, debería llevar la misma key.
+
+
+
+# revisar keys y poner particiones
+	cola del plan
+	ServiceActivationConf
+	
+	
+	todas las keys están generadas con java.util.UUID
+			planNotification.setEventId(UUID.randomUUID().toString());
+	ServiceOrderTopic --> "eventId": "8ca87783-c56f-4fc0-94ad-f04091f1dab7"
+	planExecutionTopic --> "eventId": "f88a0c42-f838-4e50-b216-dae9639bacbf"
+	
+	
+	Cada mensaje puede tener un bit opcional de metadatos que se denomina "clave"/"key"
+	No tiene un significado específico para Kafka
+	Puede facilitar la escritura controlada de mensajes en las particiones -> Criterio de asignación de partición
+	Asegura que mensajes con una misma clave se escribirán en la misma partición -> Determinista
+
+
+
+	
+	
+20 particiones
+5 hilos
+
+
+
+
+
+
+
+
+    @Bean("kafkaListenerContainerFactoryServiceOrderNotification")
+    public ConcurrentKafkaListenerContainerFactory<String, ServiceOrderNotification> kafkaListenerContainerFactoryServiceOrderNotification() {​​​​​​​
+        ConcurrentKafkaListenerContainerFactory<String, ServiceOrderNotification> factory = new ConcurrentKafkaListenerContainerFactory<>();
+        factory.setConsumerFactory(consumerFactoryServiceOrderNotification());
+        factory.getContainerProperties().setIdleEventInterval(60000L);//1 minute Set the idle event interval; when set, an event is emitted if a poll returns
+           //no records and this interval has elapsed since a record was returned.
+        factory.setConcurrency(5);
+        return factory;
+    }​​​​​​​
+
+    
+
+factory.setConcurrency(5);
+ConcurrentKafkaListenerContainerFactory<>();
+
+
+
+
+
+
+
+
+https://enmilocalfunciona.io/aprendiendo-apache-kafka-parte-2-2/
+
+
+Topic / Tema
+	Identificador :
+	"nombre" con el que se identificará de forma única el topic dentro de Kafka
+	Nº de particiones:
+	Cantidad de fragmentos en los que se dividirá el "topic log" de un topic
+	Depende de la cantidad de brokers que componen la topología
+	Ejemplo : Si se dispone de 5 brokers y un valor de partición de 3 significa que : 3 brokers tendrán una parte de la partición de un topic log y 2 brokers no tendrán partición de topic log
+	Factor de replicación:
+	Nº de replicaciones / copias que de las particiones que mantendrá en el clúster
+	La cantidad de réplicas necesarias tiene que ser menor o igual al número de brokers
+	Consejo : usar un factor de replicación de al menos 2 (normalmente es un valor de 3) con 3 se sobrevive a un fallo de AZ (Availability Zone)
+	Permite obtener la tolerancia a fallos
+	Criterios de retención:
+	Reglas que facilitan la invalidez de los mensajes de un topic
+	El incumplimiento de alguno de estos criterios hace los mensajes "caduquen" y sean eliminados
+	Asegura disponer de la cantidad mínima de mensajes con los que trabajar
+	Tipos
+	Retención durante cierto tiempo (por ejemplo 7 días)
+	Retención hasta alcanzar cierto tamaño
+	Compactación : sólo se conserva el último mensaje producido con una clave específica
+
+Partition / Partición
+	Definiciones
+	Secuencia de mensajes ordenada e inmutable
+	Cada uno de los partes en las que se puede fragmentar/dividir el "Topic Log" de un topic
+	Unidad de replicación de un topic
+	Símil : Sería como tener el contenido de registros de una tabla de base de datos "troceados" y repartidos en tablas más pequeñas que se encuentran en servidores diferentes -> distribuido
+
+
+
+Ordenación:
+	Para el caso : 1 Partición
+
+	Mantiene el orden de los registros
+	Es la opción más básica
+	
+	Para el caso : N Particiones
+	Se garantiza el orden a nivel de sharding / particiones -> pero no se garantiza el ordenamiento temporal a nivel de todo el topic
+	Agrupar mensajes en una partición en base a la clave
+	Se puede configurar una instancia de consumo por partición dentro de un grupo de consumidor
+	En Kafka la replicación sólo se realiza a nivel de partición
+	
+	
+	
+https://enmilocalfunciona.io/aprendiendo-apache-kafka-parte-3-conceptos-basicos-extra/	
+	
+Consumidor
+	Definiciones
+		Tipo de cliente de Kafka que se encarga de consumir los mensajes
+
+		API para consumir un stream de mensajes
+
+	Características
+		También se denomina "subscriber", "suscriptor" o "lector"
+
+		Puede estar subscrito a uno o más topics -> cierta independencia del broker/nodo y las particiones
+
+		Cada consumidor es responsable de gestionar su propio offset en su partición
+
+		Múltiples consumidores pueden leer mensajes desde el mismo topic
+
+		Cada consumidor realiza el seguimiento de sus punteros vía tuplas (offset, partition, topic)
+
+		Consumer lag : ¿Cuánto de lejos está el consumidor de los productores?
+
+		Existen diferentes scripts que pueden utilizarse para conocer el offset, reasignar particiones etc.	
+		
+		
+		
+		
+		Se puede ejecutar más de un consumidor en un proceso JVM usando threads /hilos -> Cada uno en su propio hilo
+Los mensajes no son quitados de la partición después de ser procesados a menos que exista algún criterio para hacerlo
+
+
+
+4.5. Modificar un topic
+Existe la posibilidad de tener que modificar la configuración de un topic, para ellos existe el parámetro --alter.
+
+Para ello hay que tener claro una serie de normas :
+
+Se pueden añadir particiones (y las particiones actuales no cambian) pero NO se pueden eliminar
+No se puede cambiar el factor de replicación
+Se le pueden pasar otros parámetros de configuración con --config
+Se le pueden eliminar ciertos parámetros de configuración con --deleteconfig
+	
+	

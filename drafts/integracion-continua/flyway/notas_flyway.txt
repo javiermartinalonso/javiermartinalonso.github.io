@@ -1,0 +1,65 @@
+docker run -v "C:\10_workspaces\albatross\om\soo\soo_file_manager_api\flyway\drivers:/flyway/drivers" -v "C:\10_workspaces\albatross\om\soo\soo_file_manager_api\flyway\sql:/flyway/sql" -v "C:\10_workspaces\albatross\om\soo\soo_file_manager_api\flyway\conf:/flyway/conf" -e "FLYWAY_USER=filemanager" -e "FLYWAY_PASSWORD=filemanager" --rm flyway/flyway:6.3.2-alpine info
+
+
+mvn -Pdevelopment flyway:migrate
+
+
+https://flywaydb.org/documentation/configfiles
+
+
+https://flywaydb.org/documentation/maven/
+https://flywaydb.org/documentation/commandline/
+
+
+
+https://stackoverflow.com/questions/58732335/run-flyway-in-gitlab-ci
+#https://joaorosa.io/2019/01/13/using-flyway-and-gitlab-to-deploy-a-mysql-database-to-aws-rds-securely/
+deploy-database:
+#  image: 
+#    name: flyway/flyway:6.3.2-alpine
+#    entrypoint: [""]    
+  stage: deploy-database
+  script:
+#    - export FLYWAY_PASSWORD=$DB_PASSWORD
+#    - export FLYWAY_USER=FILEMANAGER
+#    - export FLYWAY_PASSWORD=FILEMANAGER
+#    - docker pull flyway/flyway:6.3.2-alpine
+    - docker run -v ${PWD}/flyway/sql:/flyway/sql -v ${PWD}/flyway/drivers:/flyway/drivers -v ${PWD}/flyway/conf:/flyway/conf -e "FLYWAY_USER=filemanager" -e "FLYWAY_PASSWORD=filemanager" --rm boxfuse/flyway:5.0.7 info
+    - docker run -v ${PWD}/flyway/sql:/flyway/sql -v ${PWD}/flyway/drivers:/flyway/drivers -v ${PWD}/flyway/conf:/flyway/conf -e "FLYWAY_USER=filemanager" -e "FLYWAY_PASSWORD=filemanager" --rm boxfuse/flyway:5.0.7 migrate
+    # Catch exit code 0
+    #Ni funciona la comprobacion del if ni el undo está permitido en la versión comunity
+    # - if [ $exit_code -ne 0 ]; then echo "Migration success"; else docker run -v ${PWD}/flyway/sql:/flyway/sql -v ${PWD}/flyway/drivers:/flyway/drivers -v ${PWD}/flyway/conf:/flyway/conf -e "FLYWAY_USER=filemanager" -e "FLYWAY_PASSWORD=filemanager" --rm boxfuse/flyway:5.0.7 undo; fi
+    - docker run -v ${PWD}/flyway/sql:/flyway/sql -v ${PWD}/flyway/drivers:/flyway/drivers -v ${PWD}/flyway/conf:/flyway/conf -e "FLYWAY_USER=filemanager" -e "FLYWAY_PASSWORD=filemanager" --rm boxfuse/flyway:5.0.7 info
+
+#    - flyway -configFiles=flyway/conf/flyway.conf info
+#    - flyway -configFiles=flyway/conf/flyway.conf migrate
+#    - flyway -configFiles=flyway/conf/flyway.conf info
+  tags:
+    - docker
+    
+#https://findingpaths.io/blog/validating-flyway-schema-definitions-with-gitlab-cicd/    
+#test:migrations:
+#  image:
+#    name: boxfuse/flyway:5.2-alpine
+#    entrypoint: [""]
+#  before_script:
+##    - echo "flyway.url=jdbc:mysql://database:3306?useSSL=false" >> ${HOME}/flyway.conf
+##    - echo "flyway.user=root" >> ${HOME}/flyway.conf
+##    - echo "flyway.password=" >> ${HOME}/flyway.conf
+##    - echo "flyway.schemas=${MYSQL_DATABASE}" >> ${HOME}/flyway.conf
+#    - apk add --no-cache git
+#    - git clone ${CI_REPOSITORY_URL} --reference ${CI_PROJECT_DIR} --branch master --single-branch ~/db-reference-branch --depth 1
+#    - pushd ~/db-reference-branch && flyway migrate && popd
+#  script: flyway migrate
+#  services:
+#    - name: mysql:8.0
+#      alias: database
+#  variables:
+#    MYSQL_DATABASE: "example"
+#    MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+#  only:
+#    refs:
+##      - merge_requests
+#    changes:
+#      - flyway/conf/flyway.conf
+#      - flyway/sql/*.sql

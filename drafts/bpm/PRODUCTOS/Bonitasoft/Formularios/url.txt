@@ -1,0 +1,4 @@
+
+Bonita BPM 7 UI Designer technical deep dive
+
+https://www.youtube.com/watch?v=hk_SHNKPPd8

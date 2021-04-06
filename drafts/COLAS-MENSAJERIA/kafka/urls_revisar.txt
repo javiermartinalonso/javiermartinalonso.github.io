@@ -1,0 +1,3 @@
+https://programmersought.com/article/57471178263/;jsessionid=DFE97C1D42DBD7DB603FC21435360366
+
+https://memorynotfound.com/spring-kafka-adding-custom-header-kafka-message-example/

@@ -1,3 +1,10 @@
+GESTION APLICACIONES
+/env
+/health
+/swagger-resources
+
+http://inventory-mediator.lab36.int.satec.es/
+
 echo -n Enero2020 | docker login -u javier.martin --password-stdin registry.int.satec.es/app/albatross
 
 
@@ -21,6 +28,54 @@ kubectl get all
 
 
 kubectl get ns
+
+
+# sirve tanto para crear, modificar objects creados
+kubectl apply -f bonita-service.yaml, bonita-deployment.yaml, bonita-secret.yaml
+
+
+#ver los logs
+kubectl logs -f hello-node-5f76cf6ccf-br9b5
+
+#ver los logs de todas las replicas de un mismo servicio
+kubectl logs -f -lapp=order-executor-planner
+stern -lapp kafka-watchdog --tail 1
+
+
+
+### Eliminar los objetos definidos en dos archivos de configuración ###
+
+kubectl delete -f nginx.yaml -f redis.yaml
+
+### Actualice los objetos definidos en un archivo de configuración sobrescribiendo la configuración en vivo ###
+
+kubectl replace -f nginx.yaml
+
+
+
+## entrar en el contendor
+kubectl exec -it nombre_pod sh
+
+######################################################################
+## reiniciar un pod
+
+
+kubectl rollout restart deployment bonita-7-10
+
+
+
+
+
+
+kubectl delete pod <nombre_pod>
+kubectl delete pod bonita-f6b599554-n58gr
+
+
+o bien
+
+kubectl delete -f <fichero_deployment>
+kubectl create -f <fichero_deployment>
+######################################################################
 
 
 
@@ -213,6 +268,9 @@ La salida es similar a:
 
 NAME                          READY     STATUS    RESTARTS   AGE
 hello-node-5f76cf6ccf-br9b5   1/1       Running   0          1m
+
+ver los logs
+kubectl logs -f hello-node-5f76cf6ccf-br9b5
 
 
 ### Ver eventos de clúster ###
