@@ -155,7 +155,7 @@ Algunos de los usos más habituales que se le dan a ***Docker***:
 
 	Tal y como comentábamos antes, ***Docker*** ofrecerá el mismo sistema base para desarrollar o testear aplicaciones o servicios. De igual forma es un sistema aislado del sistema anfitrión, por lo que la ejecución de una aplicación en esa máquina no afectará al puesto en el que estamos trabajando .
 	
-	***Un claro ejemplo de aislamiento de aplicaciones es cuando queremos desplegar dos servidores pero cada uno de ellos tiene diferentes dependencias que causan conflictos con las que necesita el otro. Por ejemplo: las aplicaciones de un servidor necesitan ejecutarse sobre java 7 y en el otro sobre java8. Desplegando cada servidor en contenedores distintos, solventamos este problema de forma fácil, pudiendo aislar los servidores y sus dependencias de posibles errores por dichos conflictos.***
+	***Un claro ejemplo de aislamiento de aplicaciones es cuando queremos desplegar dos servidores pero cada uno de ellos tiene diferentes dependencias que causan conflictos con las que necesita el otro. Por ejemplo: las aplicaciones de un servidor necesitan ejecutarse sobre java 7 y en el otro sobre java 8. Desplegando cada servidor en contenedores distintos, solventamos este problema de forma fácil, pudiendo aislar los servidores y sus dependencias de posibles errores por dichos conflictos.***
 
 4. ***Ahorro de costes en servidores.***
 
