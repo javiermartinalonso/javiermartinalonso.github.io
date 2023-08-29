@@ -1,3 +1,10 @@
+docker run -p 8529:8529 -e ARANGO_ROOT_PASSWORD=openSesame arangodb/arangodb:3.8.1
+docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=admin -d postgres
+docker run --name sqlserver -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=password!1' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest
+
+
+
+
 docker images
 docker system prune -a --volumes
 

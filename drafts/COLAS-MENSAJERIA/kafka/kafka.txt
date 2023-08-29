@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------------------------------------------------------------	
 	
 
-# arrancar el zookeeper (o que primero debe iniciar un servidor ZooKeeper)
+# arrancar el zookeeper (primero debe iniciar un servidor ZooKeeper)
 C:\kafka_2.12-2.5.0\bin\windows\zookeeper-server-start.bat C:\kafka_2.12-2.5.0\config\zookeeper.properties
 
 # arrancar el servidor de kafka

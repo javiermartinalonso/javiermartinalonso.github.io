@@ -1,5 +1,7 @@
 GIT
 
+https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/
+
 * descargar un repositorio:
 	git clone https://github.com/ibnesayeed/linkextractor.git
 

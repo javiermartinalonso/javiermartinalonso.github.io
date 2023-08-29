@@ -1,0 +1,26 @@
+https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/
+
+https://docs.github.com/es/get-started/getting-started-with-git/managing-remote-repositories
+Managing remote repositories - GitHub Docs
+Learn to work with your local repositories on your computer and remote repositories hosted on GitHub.
+
+#Change your remote's URL from SSH to HTTPSgit remote set-url origin https://gitlab.int.satec.es/alvatross/si/si-service-inventory-frontend.git
+
+https://docs.gitlab.com/ee/user/project/merge_requests/revert_changes.html
+Reverting changes | GitLab
+Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner.
+
+
+git cat-file -p [commit-id]
+
+
+git cat-file -p 50b325aa
+
+
+## Here’s an example to revert a merge commit using the second parent as the mainline:
+git revert -m 1 50b325aa
+
+
+
+git revert --no-commit HEAD~20.. -m 1
+

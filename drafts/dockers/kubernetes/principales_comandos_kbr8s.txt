@@ -1,7 +1,64 @@
 GESTION APLICACIONES
-/env
-/health
-/swagger-resources
+/actuator/env
+/actuator/health
+/actuator/swagger-resources
+
+
+
+# vemos los namespaces dentro del kubernates donde estan desplegados los pods
+
+	kubectl get ingress -A
+	
+	NAMESPACE    NAME                                        CLASS    HOSTS                                                          ADDRESS                                                         PORTS     AGE
+	argocd       argocd-server-ingress                       nginx    argocd.async.alvatest.net                                      asyncapi-k8s-nlb-7d8c5c5f47f08960.elb.eu-west-3.amazonaws.com   80, 443   42d
+	components   gateway-gateway                             nginx    oryx.async.alvatest.net                                        asyncapi-k8s-nlb-7d8c5c5f47f08960.elb.eu-west-3.amazonaws.com   80, 443   23d
+	components   product-leanrepo                            nginx    oryx.async.alvatest.net                                        asyncapi-k8s-nlb-7d8c5c5f47f08960.elb.eu-west-3.amazonaws.com   80, 443   34d
+	default      castlemock                                  <none>   castlemock.async.alvatest.net                                  asyncapi-k8s-nlb-7d8c5c5f47f08960.elb.eu-west-3.amazonaws.com   80, 443   34d
+	default      http                                        <none>   akhq.async.alvatest.net                                        asyncapi-k8s-nlb-7d8c5c5f47f08960.elb.eu-west-3.amazonaws.com   80, 443   31d
+	default      order-config-planner                        <none>   order-config-planner.async.alvatest.net                        asyncapi-k8s-nlb-7d8c5c5f47f08960.elb.eu-west-3.amazonaws.com   80, 443   31d
+
+
+# ver los pods desplegados en un namespace
+
+	kubectl get pods -n components
+	
+# ver los yaml de un namespace, por ejemplo para ver el path al que ataco, que servicio tiene asociado:
+
+	 kubectl get ingress gateway-gateway -n components -o yaml
+	 
+	 
+	 busco algo como esto:
+		  - host: oryx.async.alvatest.net
+			http:
+			  paths:
+			  - backend:
+				  service:
+					name: gateway-gateway
+					port:
+					  number: 8080
+				path: /gateway-eventmanagement/
+				pathType: Prefix
+		
+	ahora se que el servicio o nombre de pod asociado al path:  "/gateway-eventmanagement/" es:  "gateway-gateway"	
+	
+	
+# aseguramos que el nombre del servicio es ese:
+	kubectl get services gateway-gateway -n components -o yaml
+	
+	kubectl get deployments -n components
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
 
 http://inventory-mediator.lab36.int.satec.es/
 
@@ -41,6 +98,16 @@ kubectl logs -f hello-node-5f76cf6ccf-br9b5
 kubectl logs -f -lapp=order-executor-planner
 stern -lapp kafka-watchdog --tail 1
 
+# ver los logs cuando indica error: a container name must be specified for pod
+
+[root@node1 ~]# k logs -f customer-order-management-tmf622-product-ordering-api-5848qvrfn
+error: a container name must be specified for pod customer-order-management-tmf622-product-ordering-api-5848qvrfn, choose one of: [tmf622-product-ordering-api traffic-agent]
+[root@node1 ~]# k logs -f customer-order-management-tmf622-product-ordering-api-5848qvrfn -c tmf622-product-ordering-api
+
+
+
+
+k logs -f customer-order-management-tmf622-product-ordering-api-5848qvrfn -c tmf622-product-ordering-api
 
 
 ### Eliminar los objetos definidos en dos archivos de configuración ###

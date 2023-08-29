@@ -1,0 +1,3 @@
+helm comandos
+
+helm template . > salida.yaml
